@@ -1,0 +1,13 @@
+{{#> layouts/default }}
+
+<div class="entry">
+	<h1 class="entry__heading">
+		{{ config.title }}
+	</h1>
+
+	<div class="entry__content"
+		{{> @partial-block }}
+	</div>
+</div>
+
+{{/layouts/default}}

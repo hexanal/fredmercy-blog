@@ -1,0 +1,12 @@
+{
+	"config": {
+		"template": "entries/whaddup-test",
+		"path": "whaddup-test",
+		"title": "Whaddup Test",
+		"meta": {
+			"description": "Fred Mercy's Old-School Blog"
+		},
+		"lang": "en",
+		"locale": "en-US"
+	}
+}

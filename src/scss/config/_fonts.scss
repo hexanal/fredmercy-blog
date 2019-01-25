@@ -1,0 +1,29 @@
+/*
+@font-face {
+	font-family: 'IBM Plex Sans';
+	src: url('../fonts/plex-sans-extra-light.woff2') format('woff2'),
+		url('../fonts/plex-sans-extra-light.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+*/
+@font-face {
+	font-family: 'IBM Plex Serif';
+	src: url('../fonts/plex-serif-medium.woff2') format('woff2'),
+		url('../fonts/plex-serif-medium.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'IBM Plex Serif';
+	src: url('../fonts/plex-serif-bold-italic.woff2') format('woff2'),
+		url('../fonts/plex-serif-bold-italic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+}
+
+/*
+ * Vars
+ */
+$font-serif: 'IBM Plex Serif', Georgia, serif;
+// $font-sans: 'IBM Plex Sans', Helvetica, Arial, sans-serif;

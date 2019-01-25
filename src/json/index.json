@@ -1,0 +1,12 @@
+{
+	"config": {
+		"template": "index",
+		"path": "",
+		"title": "Blog",
+		"meta": {
+			"description": "Fred Mercy's Old-School Blog"
+		},
+		"lang": "en",
+		"locale": "en-US"
+	}
+}

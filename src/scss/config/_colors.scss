@@ -1,0 +1,17 @@
+/*
+ * Color vars
+ *
+ * NOTE:
+ *
+ * - Please use the prefix "color-"
+ *
+ * - It is recommended not to use the variables for black and white because
+ * color names for black and white (among others) is standard and well
+ * supported: https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+ *
+ * - Still leaving them for the example, though.
+ */
+
+$color-black: black;
+$color-white: white;
+$color-ruby: #9B111E;

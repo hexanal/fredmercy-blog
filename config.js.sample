@@ -1,0 +1,46 @@
+var srcBasePath = './src/';
+var destBasePath = './dist/';
+
+module.exports = {
+	base: {
+		src: srcBasePath,
+		dest: destBasePath,
+	},
+	html: {
+		watch: [
+			srcBasePath + 'views/**/*',
+			srcBasePath + 'json/**/*'
+		]
+	},
+	scss: {
+		watch: srcBasePath + 'scss/**/*.scss',
+		src: srcBasePath + 'scss/style.scss',
+		dest: destBasePath + 'css',
+	},
+	js: {
+		watch: srcBasePath + 'js/**/*.js',
+		entry: 'index.js',
+		rename: 'app.js',
+		minified: 'app.min.js',
+		src: srcBasePath + 'js/index.js',
+		dest: destBasePath + 'js',
+	},
+	images: {
+		watch: srcBasePath + 'images/**/*',
+		src: srcBasePath + 'images/**/*',
+		dest: destBasePath + 'images',
+	},
+	fonts: {
+		watch: srcBasePath + 'fonts/*',
+		src: srcBasePath + 'fonts/*',
+		dest: destBasePath + 'fonts',
+	},
+	browsersync: {
+		watch: [
+			destBasePath + 'images/*',
+			srcBasePath + 'views/**/*',
+			srcBasePath + 'json/**/*'
+		],
+		proxy: 'http://if-using-a-proxy.any'
+	},
+}
