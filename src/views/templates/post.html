@@ -2,11 +2,14 @@
 
 <div class="entry">
 	<h1 class="entry__heading">
-		{{ config.title }}
+		{{ title }}
 	</h1>
+	<time class="entry__date">
+		{{ date }}
+	</time>
 
-	<div class="entry__content"
-		{{> @partial-block }}
+	<div class="entry__content">
+		{{{ body }}}
 	</div>
 </div>
 

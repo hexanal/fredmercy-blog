@@ -1,0 +1,21 @@
+{{#> layouts/default }}
+
+<h1>INDEX</h1>
+
+<ul class="entries">
+{{#each entries}}
+	<li class="entries__item">
+		<span class="entries__date">
+			{{ this.date }}
+		</span>
+		<a
+			class="entries__link"
+			href="{{ this.url }}"
+		>
+			{{this.title}}
+		</a>
+	</li>
+{{/each}}
+</ul>
+
+{{/layouts/default}}

@@ -8,20 +8,20 @@ module.exports = {
 	},
 	html: {
 		watch: [
-			srcBasePath + 'views/**/*',
-			srcBasePath + 'json/**/*'
+			'.entries/**/*',
+			srcBasePath + 'views/**/*'
 		],
-		src: srcBasePath + 'json/**/*.json',
-		srcViews: srcBasePath + 'views/',
+		src: './entries/**/*.md',
+		templates: srcBasePath + 'views/templates/',
 		dest: './blog/',
 	},
 	scss: {
-		watch: srcBasePath + 'scss/**/*.scss',
+		watch: [srcBasePath + 'scss/**/*.scss'],
 		src: srcBasePath + 'scss/style.scss',
 		dest: destBasePath + 'css',
 	},
 	js: {
-		watch: srcBasePath + 'js/**/*.js',
+		watch: [srcBasePath + 'js/**/*.js'],
 		entry: 'index.js',
 		rename: 'app.js',
 		minified: 'app.min.js',
@@ -29,12 +29,12 @@ module.exports = {
 		dest: destBasePath + 'js',
 	},
 	images: {
-		watch: srcBasePath + 'images/**/*',
+		watch: [srcBasePath + 'images/**/*'],
 		src: srcBasePath + 'images/**/*',
 		dest: destBasePath + 'images',
 	},
 	fonts: {
-		watch: srcBasePath + 'fonts/*',
+		watch: [srcBasePath + 'fonts/*'],
 		src: srcBasePath + 'fonts/*',
 		dest: destBasePath + 'fonts',
 	},
