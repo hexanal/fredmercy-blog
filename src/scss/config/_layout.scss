@@ -2,36 +2,61 @@ $max-width: 1200px;
 $responsive-width: 90%;
 
 @mixin container($width: $max-width) {
-  width: $responsive-width;
-  max-width: $width;
-  margin-left: auto;
-  margin-right: auto;
+	width: $responsive-width;
+	max-width: $width;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: ' ';
-    display: table;
-  }
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
 
-  &:after {
-    clear: both;
-  }
+	&:after {
+		clear: both;
+	}
 }
 
 html {
-  font-size: 16px;
-  font-smoothing: subpixel-antialiased;
-  box-sizing: border-box;
-  font-family: $font-serif;
-  font-size: 18px;
+	margin: 1em;
+	font-size: 16px;
+	font-smoothing: subpixel-antialiased;
+	box-sizing: border-box;
+	font-family: $font-plex;
+	font-size: 13px;
+	color: $color-primary;
+	background-color: $color-bg;
+}
+
+::-moz-selection {
+	color: $color-bg;
+	background: $color-active;
+}
+::selection {
+	color: $color-bg;
+	background: $color-active;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 img {
-  max-width: 100%;
+	max-width: 100%;
+}
+
+a {
+	color: $color-secondary;
+
+	&:hover {
+		color: $color-active;
+	}
+	&:focus {
+		color: $color-active;
+		text-decoration: none;
+		border-bottom: 1px solid $color-active;
+	}
 }

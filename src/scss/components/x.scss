@@ -1,0 +1,26 @@
+.x_hd {
+	font-size: 1em;
+	font-weight: 400;
+	// font-
+	margin-bottom: 1em;
+}
+
+.x_ls {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.x_it + .x_it {
+	margin-top: 1em;
+}
+
+.x_mt {
+	display: inline-block;
+	margin-right: 0.25em;
+	color: $color-subdued;
+}
+
+.x_tp {
+	font-style: italic;
+}

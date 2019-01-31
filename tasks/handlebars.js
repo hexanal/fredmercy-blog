@@ -23,6 +23,7 @@ module.exports = {
 					title: front.attributes.title,
 					date: post.date,
 					description: front.attributes.description,
+					type: front.attributes.type
 				});
 
 				cb(null);
@@ -57,11 +58,17 @@ module.exports = {
 					: 'post'; // default to post template type
 				var post = getPostPathAndDate(file);
 
+				marked.setOptions({
+					gfm: true,
+					breaks: true
+				});
+
 				var params = {
 					url: post.url,
 					title: pageData.attributes.title,
 					description: pageData.attributes.description,
 					date: post.date,
+					type: pageData.attributes.type,
 					body: marked(pageData.body)
 				};
 
@@ -85,7 +92,7 @@ function getPostPathAndDate(file) {
 	// gets you '2019-01-20' and 'file-name-yo', for example
 
 	return {
-		url: pathData[0] + '/' + pathData[1],
+		url: '/blog/' + pathData[0] + '/' + pathData[1],
 		date: pathData[0],
 		path: pathData[1]
 	};

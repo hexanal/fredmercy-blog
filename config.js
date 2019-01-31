@@ -8,7 +8,7 @@ module.exports = {
 	},
 	html: {
 		watch: [
-			'.entries/**/*',
+			'./entries/**/*.md',
 			srcBasePath + 'views/**/*'
 		],
 		src: './entries/**/*.md',

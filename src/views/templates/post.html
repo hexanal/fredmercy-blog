@@ -1,14 +1,26 @@
 {{#> layouts/default }}
 
-<div class="entry">
-	<h1 class="entry__heading">
-		{{ title }}
-	</h1>
-	<time class="entry__date">
-		{{ date }}
-	</time>
+<div class="e">
+	<a href="/blog" class="e_bk">
+		back
+	</a>
 
-	<div class="entry__content">
+	<header class="e_hd">
+		<div class="e_mt">
+			<time class="e_dt">
+				{{ date }}
+			</time>
+			<span class="e_tp">
+				[{{ type }}]
+			</span>
+		</div>
+
+		<h1 class="e_tt">
+			{{ title }}
+		</h1>
+	</header>
+
+	<div class="e_bd">
 		{{{ body }}}
 	</div>
 </div>

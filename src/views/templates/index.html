@@ -1,17 +1,22 @@
 {{#> layouts/default }}
 
-<h1>INDEX</h1>
+<h1 class="x_hd">
+	ENTRIES
+</h1>
 
-<ul class="entries">
+<ul class="x_ls">
 {{#each entries}}
-	<li class="entries__item">
-		<span class="entries__date">
-			{{ this.date }}
-		</span>
-		<a
-			class="entries__link"
-			href="{{ this.url }}"
-		>
+	<li class="x_it">
+		<div class="x_mt">
+			<span class="x_dt">
+				{{ this.date }}
+			</span>
+			<span class="x_tp">
+				[{{ this.type }}]
+			</span>
+		</div>
+
+		<a href="{{ this.url }}">
 			{{this.title}}
 		</a>
 	</li>
