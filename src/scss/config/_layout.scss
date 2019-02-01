@@ -51,12 +51,8 @@ img {
 a {
 	color: $color-secondary;
 
-	&:hover {
-		color: $color-active;
-	}
+	&:hover,
 	&:focus {
 		color: $color-active;
-		text-decoration: none;
-		border-bottom: 1px solid $color-active;
 	}
 }

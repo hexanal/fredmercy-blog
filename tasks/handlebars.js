@@ -92,7 +92,7 @@ function getPostPathAndDate(file) {
 	// gets you '2019-01-20' and 'file-name-yo', for example
 
 	return {
-		url: '/blog/' + pathData[0] + '/' + pathData[1],
+		url: pathData[0] + '/' + pathData[1],
 		date: pathData[0],
 		path: pathData[1]
 	};
