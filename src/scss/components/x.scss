@@ -1,13 +1,23 @@
 .x_hd {
+	display: inline-block;
+	margin-bottom: 1em;
 	font-size: 1em;
 	font-weight: 400;
-	margin-bottom: 1em;
+	line-height: 1.4;
+	font-style: italic;
+	color: $color-bg;
+	background-color: $color-active;
 }
 
 .x_ls {
 	list-style: none;
 	padding-left: 0;
 	margin: 0;
+	line-height: 1.4;
+}
+
+.x_lk {
+	display: inline-block;
 }
 
 .x_it + .x_it {

@@ -27,6 +27,12 @@ export default function() {
 	/**
 	 * Events
 	 */
+	document.addEventListener('keyup', (e) => {
+		const {key} = e;
+
+		if (key === 'Escape') closeAll(); // close all the popups on Escape
+	});
+
 	commentsSlots.forEach((slot) => {
 		slot.addEventListener('click', (e) => {
 			const slotId = e.target.dataset.letterIndex;
@@ -125,24 +131,38 @@ export default function() {
 	function showComment(slotId) {
 		const {author, content} = entryComments[slotId];
 
-		leaveCommentPopup.classList.remove('state-leave-comment-active');
-		readCommentPopup.classList.add('state-read-comment-active');
-
 		readCommentAuthor.innerHTML = author;
 		readCommentBody.innerHTML = content;
+
+		closeAll();
+		// unselectAllComments();
+		// leaveCommentPopup.classList.remove('state-leave-comment-active');
+		readCommentPopup.classList.add('state-read-comment-active');
+
+		document.querySelector('#comment_' + slotId).classList.add('state-selected-comment');
 	}
 
 	function showWriteForm(slotId) {
 		selectedComment = slotId;
 
+		closeAll();
+		// unselectAllComments();
+		// readCommentPopup.classList.remove('state-read-comment-active');
 		leaveCommentPopup.classList.add('state-leave-comment-active');
-		readCommentPopup.classList.remove('state-read-comment-active');
 
+		document.querySelector('#comment_' + slotId).classList.add('state-selected-comment');
 		document.querySelector('.js-comment-content').focus();
 	}
 
 	function closeAll() {
+		unselectAllComments();
 		readCommentPopup.classList.remove('state-read-comment-active');
 		leaveCommentPopup.classList.remove('state-leave-comment-active');
+	}
+
+	function unselectAllComments() {
+		commentsSlots.forEach(slot => {
+			slot.classList.remove('state-selected-comment');
+		})
 	}
 }

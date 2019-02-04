@@ -1,15 +1,15 @@
 .c {
-	width: 120px;
+	width: 125px;
 	margin-right: 3em;
 	flex-shrink: 0;
 }
 
 .c_tt {
-	display: inline-block;
 	margin: 3em 0 2em;
 	padding: 0.25em;
 	font-size: 1em;
 	font-weight: 400;
+	text-align: center;
 	color: $color-bg;
 	background-color: $color-primary;
 }
@@ -17,31 +17,67 @@
 .c_gd {
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: -0.5em;
 }
 
 .c_cm {
+	position: relative;
+	width: 25px;
+	height: 25px;
 	margin: 0;
-	padding: 0.18em 0.15em;
-	font-size: 2em;
-	line-height: 0.5;
+	padding: 0;
+	color: $color-primary;
 	background: none;
 	border: 0;
-	color: $color-primary;
+	border-radius: 50%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 55%;
+		height: 55%;
+		border-radius: 50%;
+		background-color: transparent;
+		border: 2px solid currentColor;
+	}
 
 	&:hover,
 	&:focus {
 		color: $color-bg;
-		background-color: $color-active;
+		background-color: $color-secondary;
+	}
+
+	&.state-selected-comment {
+		color: $color-secondary;
+
+		&:hover,
+		&:focus {
+			color: $color-bg;
+			background-color: $color-secondary;
+
+			&:before {
+				background-color: $color-secondary;
+			}
+		}
 	}
 
 	&.state-has-comment {
 		color: $color-active;
 
+		&:before {
+			background-color: currentColor;
+		}
+
 		&:hover,
 		&:focus {
 			color: $color-bg;
 			background-color: $color-active;
+
+			&:before {
+				background-color: $color-active;
+			}
 		}
 	}
 
