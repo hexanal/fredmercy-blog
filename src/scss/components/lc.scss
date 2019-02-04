@@ -1,0 +1,91 @@
+.lc {
+	display: none;
+	flex-grow: 1;
+	margin: 0 0 5em;
+	min-width: 300px;
+	max-width: 500px;
+
+	&.state-leave-comment-active {
+		display: block;
+	}
+}
+
+.lc_hd {
+	margin: 3em 0 2em;
+}
+
+.lc_tt {
+	display: inline-block;
+	margin: 0;
+	padding: 0.25em;
+	font-size: 1em;
+	font-weight: 400;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.lc_cl {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0;
+	color: $color-primary;
+	font-family: $font-plex;
+	font-size: 1em;
+	border: 0;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-active;
+		text-decoration: none;
+	}
+}
+
+.lc_tx,
+.lc_ip {
+	width: 100%;
+	padding: 0.5em;
+	font-family: $font-plex;
+	font-size: 1em;
+	color: $color-primary;
+	background-color: $color-bg;
+	border: 2px solid $color-primary;
+
+	&:focus {
+		color: $color-active;
+		border-color: $color-active;
+	}
+}
+
+.lc_tx {
+	min-height: 120px;
+	resize: vertical;
+	line-height: 1.4;
+}
+
+.lc_ll {
+	display: block;
+	margin-bottom: 0.25em;
+}
+
+.lc_lb {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.lc_sb {
+	padding: 0;
+	color: $color-primary;
+	font-family: $font-plex;
+	font-size: 1em;
+	border: 0;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-active;
+		text-decoration: none;
+	}
+}

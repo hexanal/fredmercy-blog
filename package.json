@@ -1,5 +1,5 @@
 {
-  "name": "hexablog",
+  "name": "fredmercy-blog",
   "version": "0.0.2",
   "description": "hexanal.blog",
   "author": "hexanal",
@@ -38,11 +38,16 @@
     "gulp-uglify": "3.0.1",
     "gulp-util": "3.0.8",
     "handlebars": "4.0.12",
+    "handlebars-intl": "^1.1.2",
     "lodash.orderby": "^4.6.0",
     "npm-run-all": "4.1.5",
     "through2": "3.0.0",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0",
     "watchify": "3.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "sanitize-html": "^1.20.0"
   }
 }

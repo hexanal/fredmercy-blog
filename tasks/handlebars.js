@@ -1,5 +1,9 @@
 var gulp = require('gulp');
 var handlebars = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
+
+HandlebarsIntl.registerWith(handlebars); // register helper
+
 var hb = require('gulp-handlebars-html')(handlebars);
 var frontMatter = require('front-matter');
 var marked = require('marked');
@@ -22,6 +26,7 @@ module.exports = {
 					url: post.url,
 					title: front.attributes.title,
 					date: post.date,
+					rawDate: post.date + 'T12:00:00', // otherwise the formatDate thing returns yesterday's date
 					description: front.attributes.description,
 					type: front.attributes.type
 				});
@@ -31,8 +36,8 @@ module.exports = {
 			.on('end', function() {
 				var posts = orderBy(entries, 'date', 'desc'); // reorder, and populate our pageData
 				var params = {
-					title: 'Fred Mercy Blog',
-					description: 'A collection of thoughts, I suppose',
+					pageTitle: config.info.title,
+					description: config.info.description,
 					entries: posts
 				};
 
@@ -63,13 +68,21 @@ module.exports = {
 					breaks: true
 				});
 
+				var title = pageData.attributes.title || '';
+				var pageTitle = pageData.attributes.title
+					? title + '——' + config.info.title
+					// : 'Untitled Entry——' + config.info.title;
+					: '𝘜𝘯𝘵𝘪𝘵𝘭𝘦𝘥 Entry——' + config.info.title;
+
 				var params = {
 					url: post.url,
-					title: pageData.attributes.title,
-					description: pageData.attributes.description,
+					title: title,
+					pageTitle: pageTitle,
+					description: pageData.attributes.description || config.info.title,
 					date: post.date,
 					type: pageData.attributes.type,
-					body: marked(pageData.body)
+					body: marked(pageData.body),
+					commentsGrid: buildCommentsGrid(post.date)
 				};
 
 				return gulp.src(config.html.templates + template + '.html')
@@ -96,4 +109,15 @@ function getPostPathAndDate(file) {
 		date: pathData[0],
 		path: pathData[1]
 	};
+}
+
+function buildCommentsGrid(entryId) {
+	return Array(25).fill(null).map((val, index) => {
+		return {
+			index,
+			letterIndex: String.fromCharCode(index + 97),
+			entryId,
+			commentId: '_' + entryId + '_' + String.fromCharCode(index + 97)
+		}
+	});
 }

@@ -1,28 +1,39 @@
 {{#> layouts/default }}
 
 <div class="e">
-	<a href="/blog" class="e_bk">
-		back
-	</a>
+	<div class="e_ps">
+		<a href="/blog" class="e_bk">
+			Back to entries
+		</a>
 
-	<header class="e_hd">
-		<div class="e_mt">
-			<time class="e_dt">
-				{{ date }}
-			</time>
-			<span class="e_tp">
-				[{{ type }}]
-			</span>
+		<header class="e_hd">
+			<div class="e_mt">
+				<time class="e_dt">
+					{{ date }}
+				</time>
+				<span class="e_tp">
+					[{{ type }}]
+				</span>
+			</div>
+
+			{{#if title}}
+			<h1 class="e_tt">
+				{{ title }}
+			</h1>
+			{{/if}}
+		</header>
+
+		<div class="e_bd">
+			{{{ body }}}
 		</div>
+	</div>
 
-		<h1 class="e_tt">
-			{{ title }}
-		</h1>
-	</header>
-
-	<div class="e_bd">
-		{{{ body }}}
+	<div class="e_cm">
+		{{> entries/comments}}
+		{{> entries/leave-comment}}
+		{{> entries/read-comment}}
 	</div>
 </div>
+
 
 {{/layouts/default}}

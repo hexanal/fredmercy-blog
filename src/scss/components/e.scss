@@ -1,5 +1,24 @@
 .e {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.e_ps {
+	display: inline-block;
+	vertical-align: top;
 	max-width: 700px;
+	margin-right: 2em;
+	margin-bottom: 2em;
+}
+.e_cm {
+	margin-right: 2em;
+	margin-bottom: 2em;
+	flex-grow: 1;
+
+	@media (min-width: $mq-mobile) {
+		display: inline-flex;
+		vertical-align: top;
+	}
 }
 
 .e_bk {
@@ -12,8 +31,10 @@
 
 .e_mt {
 	display: inline-block;
-	color: $color-subdued;
 	margin-right: 0.25em;
+	padding: 0.25em;
+	color: $color-bg;
+	background-color: $color-primary;
 }
 
 .e_tp {
@@ -27,7 +48,7 @@
 }
 
 .e_bd {
-	margin: 2em 0;
+	margin-top: 2em;
 	line-height: 1.5em;
 
 	> * {
@@ -37,5 +58,43 @@
 		+ * {
 			margin-top: 1em;
 		}
+	}
+
+	code {
+		display: inline-block;
+		padding: 0 0.15em;
+		font-family: $font-plex;
+		font-size: 1em;
+		line-height: 1.4;
+		font-style: italic;
+		color: $color-bg;
+		background-color: $color-active;
+	}
+
+	ul {
+		padding-left: 1.5em;
+		margin: 1.5em 0 2em;
+		list-style: none;
+
+		ul {
+			margin-top: 0.25em;
+			padding-left: 0;
+		}
+	}
+
+	li {
+		position: relative;
+		padding-left: 1em;
+
+		&:before {
+			content: '_ ';
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	li + li {
+		margin-top: 0.25em;
 	}
 }

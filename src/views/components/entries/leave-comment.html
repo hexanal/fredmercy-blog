@@ -1,0 +1,34 @@
+<div class="lc js-leave-comment">
+	<header class="lc_hd">
+		<h2 class="lc_tt">
+			Leave a comment
+		</h2>
+
+		<button type="button" class="lc_cl js-comment-close">
+			Close
+		</button>
+	</header>
+
+	<form
+		class="lc_fm js-comment-form"
+		data-entry-id="{{ date }}"
+	>
+		<label class="lc_lb">
+			<span class="lc_ll">
+				Comment
+			</span>
+			<textarea class="lc_tx js-comment-content" name="content"></textarea>
+		</label>
+
+		<label class="lc_lb">
+			<span class="lc_ll">
+				Name
+			</span>
+			<input type="text" class="lc_ip js-comment-author" name="author">
+		</label>
+
+		<button type="submit" class="lc_sb">
+			Done
+		</button>
+	</form>
+</div>

@@ -1,7 +1,7 @@
 {{#> layouts/default }}
 
 <h1 class="x_hd">
-	ENTRIES
+	Latest entries:
 </h1>
 
 <ul class="x_ls">
@@ -17,7 +17,11 @@
 		</div>
 
 		<a href="{{ this.url }}">
-			{{this.title}}
+			{{#if this.title}}
+				{{this.title}}
+			{{else}}
+				<em>Untitled</em> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em>
+			{{/if}}
 		</a>
 	</li>
 {{/each}}

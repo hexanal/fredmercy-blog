@@ -1,0 +1,58 @@
+.c {
+	width: 120px;
+	margin-right: 3em;
+	flex-shrink: 0;
+}
+
+.c_tt {
+	display: inline-block;
+	margin: 3em 0 2em;
+	padding: 0.25em;
+	font-size: 1em;
+	font-weight: 400;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.c_gd {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -0.5em;
+}
+
+.c_cm {
+	margin: 0;
+	padding: 0.18em 0.15em;
+	font-size: 2em;
+	line-height: 0.5;
+	background: none;
+	border: 0;
+	color: $color-primary;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-active;
+	}
+
+	&.state-has-comment {
+		color: $color-active;
+
+		&:hover,
+		&:focus {
+			color: $color-bg;
+			background-color: $color-active;
+		}
+	}
+
+	.state-loading & {
+		color: $color-subdued;
+		cursor: not-allowed;
+
+		&:hover,
+		&:focus {
+			color: $color-subdued;
+			background-color: transparent;
+		}
+	}
+}

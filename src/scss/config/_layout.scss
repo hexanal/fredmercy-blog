@@ -33,11 +33,11 @@ html {
 
 ::-moz-selection {
 	color: $color-bg;
-	background: $color-active;
+	background: $color-secondary;
 }
 ::selection {
 	color: $color-bg;
-	background: $color-active;
+	background: $color-secondary;
 }
 
 *, *:before, *:after {
@@ -49,10 +49,12 @@ img {
 }
 
 a {
-	color: $color-secondary;
+	color: $color-primary;
 
 	&:hover,
 	&:focus {
-		color: $color-active;
+		color: $color-bg;
+		background-color: $color-active;
+		text-decoration: none;
 	}
 }

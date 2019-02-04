@@ -1,7 +1,11 @@
 var srcBasePath = './src/';
-var destBasePath = './blog/dist/';
+var destBasePath = '../main/blog/dist/';
 
 module.exports = {
+	info: {
+		title: 'Fred Mercy Blog',
+		description: 'A collection of thoughts, I suppose'
+	},
 	base: {
 		src: srcBasePath,
 		dest: destBasePath,
@@ -13,7 +17,7 @@ module.exports = {
 		],
 		src: './entries/**/*.md',
 		templates: srcBasePath + 'views/templates/',
-		dest: './blog/',
+		dest: '../main/blog/',
 	},
 	scss: {
 		watch: [srcBasePath + 'scss/**/*.scss'],

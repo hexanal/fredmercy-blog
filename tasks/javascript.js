@@ -45,7 +45,7 @@ function map_error(err) {
 function runWatchify() {
 	var args = merge(watchify.args, { debug: true })
 	var bundler = watchify(browserify(entry, args))
-		.transform(babelify, {presets: ['env']});
+		.transform(babelify, {presets: ['@babel/preset-env']});
 
 	bundle_js(bundler);
 
@@ -71,7 +71,7 @@ function bundle_js(bundler) {
 // Without watchify
 function runBrowserify() {
 	var bundler = browserify(entry, { debug: true })
-		.transform(babelify, {presets: ['env']});
+		.transform(babelify, {presets: ['@babel/preset-env']});
 
 	return bundle_js(bundler);
 }

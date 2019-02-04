@@ -1,0 +1,22 @@
+<div class="c">
+	<h2 class="c_tt">
+		Comment slots
+	</h2>
+
+	<div
+		class="c_gd state-loading js-comments-grid"
+		data-entry-id="{{ date }}"
+	>
+	{{#each commentsGrid}}
+		<button
+			id="comment_{{ this.letterIndex }}"
+			type="button"
+			class="c_cm js-comment-slot"
+			data-letter-index="{{ this.letterIndex }}"
+			data-id="{{ this.commentId }}"
+		>
+			○
+		</button>
+	{{/each}}
+	</div>
+</div>

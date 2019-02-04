@@ -1,1 +1,3 @@
-console.log('Time to start writing some code, my dude.');
+import comments from './comments';
+
+comments();

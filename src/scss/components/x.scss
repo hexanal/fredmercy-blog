@@ -1,7 +1,6 @@
 .x_hd {
 	font-size: 1em;
 	font-weight: 400;
-	// font-
 	margin-bottom: 1em;
 }
 
@@ -18,7 +17,8 @@
 .x_mt {
 	display: inline-block;
 	margin-right: 0.25em;
-	color: $color-subdued;
+	color: $color-bg;
+	background-color: $color-primary;
 }
 
 .x_tp {

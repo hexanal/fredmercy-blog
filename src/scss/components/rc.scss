@@ -1,0 +1,48 @@
+.rc {
+	display: none;
+	flex-grow: 1;
+	margin: 0 0 5em;
+	min-width: 300px;
+	max-width: 500px;
+
+	&.state-read-comment-active {
+		display: block;
+	}
+}
+
+.rc_hd {
+	margin: 3em 0 2em;
+}
+
+.rc_tt {
+	display: inline-block;
+	margin: 0;
+	padding: 0.25em;
+	font-size: 1em;
+	font-weight: 400;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.rc_cl {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0;
+	color: $color-primary;
+	font-family: $font-plex;
+	font-size: 1em;
+	border: 0;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-active;
+		text-decoration: none;
+	}
+}
+
+.rc_bd {
+	margin-bottom: 1em;
+	line-height: 1.4;
+}
