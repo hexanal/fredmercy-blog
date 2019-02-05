@@ -10,14 +10,15 @@
 }
 
 .x_ls {
+	overflow: hidden;
 	list-style: none;
 	padding-left: 0;
 	margin: 0;
 	line-height: 1.4;
 }
 
-.x_lk {
-	display: inline-block;
+.x_it {
+	white-space: nowrap;
 }
 
 .x_it + .x_it {
@@ -25,12 +26,25 @@
 }
 
 .x_mt {
-	display: inline-block;
+	display: inline;
 	margin-right: 0.25em;
 	color: $color-bg;
 	background-color: $color-primary;
 }
 
 .x_tp {
+	display: none;
 	font-style: italic;
+
+	@media (min-width: $mq-mobile) {
+		display: inline;
+	}
+}
+
+.x_ex {
+	display: none;
+
+	@media (min-width: 500px) {
+		display: inline;
+	}
 }

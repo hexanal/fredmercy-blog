@@ -1,23 +1,30 @@
 .e {
-	display: flex;
-	flex-wrap: wrap;
+	@media (min-width: 1280px) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .e_ps {
-	display: inline-block;
-	vertical-align: top;
 	max-width: 700px;
-	margin-right: 2em;
 	margin-bottom: 2em;
+
+	@media (min-width: 1280px) {
+		margin-right: 2em;
+	}
 }
 .e_cm {
-	margin-right: 2em;
 	margin-bottom: 2em;
 	flex-grow: 1;
 
-	@media (min-width: $mq-mobile) {
+	@media (min-width: 500px) {
 		display: inline-flex;
 		vertical-align: top;
+		width: 100%;
+	}
+	@media (min-width: 1280px) {
+		width: auto;
+		margin-right: 2em;
 	}
 }
 
@@ -26,12 +33,13 @@
 }
 
 .e_hd {
-	margin: 2em 0;
+	margin: 2em 0 0;
 }
 
 .e_mt {
 	display: inline-block;
 	margin-right: 0.25em;
+	margin-bottom: 2em;
 	padding: 0.25em;
 	color: $color-bg;
 	background-color: $color-primary;
@@ -39,16 +47,17 @@
 
 .e_tp {
 	font-style: italic;
+	margin-bottom: 2em;
 }
 
 .e_tt {
 	display: inline-block;
+	margin-bottom: 2em;
 	font-size: 1em;
 	font-weight: 400;
 }
 
 .e_bd {
-	margin-top: 2em;
 	line-height: 1.5em;
 
 	> * {
