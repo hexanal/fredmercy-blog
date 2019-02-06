@@ -71,8 +71,7 @@ module.exports = {
 				var title = pageData.attributes.title || '';
 				var pageTitle = pageData.attributes.title
 					? title + '——' + config.info.title
-					// : 'Untitled Entry——' + config.info.title;
-					: '𝘜𝘯𝘵𝘪𝘵𝘭𝘦𝘥 Entry——' + config.info.title;
+					: 'Untitled Entry——' + config.info.title;
 
 				var params = {
 					url: post.url,

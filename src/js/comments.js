@@ -9,9 +9,10 @@ export default function() {
 	/**
 	 * Setup
 	 */
-	const commentsSlots = document.querySelectorAll('.js-comment-slot');
+	const commentsDots = document.querySelectorAll('.js-comment-dot');
 	const leaveCommentPopup = document.querySelector('.js-leave-comment');
 	const leaveCommentForm = document.querySelector('.js-comment-form');
+	const leaveCommentDot = document.querySelector('.js-leave-comment-dot');
 	const closeCommentPopupBtn = document.querySelectorAll('.js-comment-close');
 	const commentInputAuthor = document.querySelector('.js-comment-author');
 	const commentInputContent = document.querySelector('.js-comment-content');
@@ -33,14 +34,14 @@ export default function() {
 		if (key === 'Escape') closeAll(); // close all the popups on Escape
 	});
 
-	commentsSlots.forEach((slot) => {
-		slot.addEventListener('click', (e) => {
-			const slotId = e.target.dataset.letterIndex;
+	commentsDots.forEach((dot) => {
+		dot.addEventListener('click', (e) => {
+			const dotId = e.target.dataset.letterIndex;
 
-			if (entryComments[slotId]) {
-				showComment(slotId);
+			if (entryComments[dotId]) {
+				showComment(dotId);
 			} else {
-				showWriteForm(slotId);
+				showWriteForm(dotId);
 			}
 		});
 	});
@@ -56,7 +57,7 @@ export default function() {
 			: false;
 
 		if (!content) {
-			alert('Unable to leave an empty comment.');
+			showErrorMessage('Unable to leave an empty comment.');
 			commentInputContent.focus();
 
 			return;
@@ -66,7 +67,7 @@ export default function() {
 			author,
 			content,
 			entryId,
-			slot: selectedComment
+			slot: selectedComment // calling the dot a "slot" on the server
 		};
 
 		axios.post('/api/comment', data)
@@ -100,9 +101,6 @@ export default function() {
 	/**
 	 * API Calls
 	 */
-	// function addComment(data) {
-	// }
-
 	function fetchComments() {
 		commentsGrid.classList.add('state-loading');
 
@@ -112,12 +110,12 @@ export default function() {
 
 				commentsGrid.classList.remove('state-loading'); // not loading no more
 				comments.map((comment) => {
-					const commentSlot = document.querySelector(`#comment_${comment.slot}`);
+					const commentDot = document.querySelector(`#comment_${comment.slot}`);
 					entryComments[comment.slot] = {
 						author: comment.author,
 						content: comment.content.replace(/\n/g, '<br>')
 					}; // populate the entryComments;
-					commentSlot.classList.add('state-has-comment');
+					commentDot.classList.add('state-has-comment');
 				});
 			})
 			.catch(function (error) {
@@ -128,29 +126,26 @@ export default function() {
 	/**
 	 * UI Work
 	 */
-	function showComment(slotId) {
-		const {author, content} = entryComments[slotId];
+	function showComment(dotId) {
+		const {author, content} = entryComments[dotId];
 
 		readCommentAuthor.innerHTML = author;
 		readCommentBody.innerHTML = content;
 
 		closeAll();
-		// unselectAllComments();
-		// leaveCommentPopup.classList.remove('state-leave-comment-active');
 		readCommentPopup.classList.add('state-read-comment-active');
 
-		document.querySelector('#comment_' + slotId).classList.add('state-selected-comment');
+		document.querySelector('#comment_' + dotId).classList.add('state-selected-comment');
 	}
 
-	function showWriteForm(slotId) {
-		selectedComment = slotId;
+	function showWriteForm(dotId) {
+		selectedComment = dotId;
 
 		closeAll();
-		// unselectAllComments();
-		// readCommentPopup.classList.remove('state-read-comment-active');
 		leaveCommentPopup.classList.add('state-leave-comment-active');
 
-		document.querySelector('#comment_' + slotId).classList.add('state-selected-comment');
+		leaveCommentDot.innerHTML = selectedComment;
+		document.querySelector('#comment_' + dotId).classList.add('state-selected-comment');
 		document.querySelector('.js-comment-content').focus();
 	}
 
@@ -161,8 +156,12 @@ export default function() {
 	}
 
 	function unselectAllComments() {
-		commentsSlots.forEach(slot => {
-			slot.classList.remove('state-selected-comment');
+		commentsDots.forEach(dot => {
+			dot.classList.remove('state-selected-comment');
 		})
+	}
+
+	function showErrorMessage(msg) {
+		console.log('Should show error message: ', msg);
 	}
 }
