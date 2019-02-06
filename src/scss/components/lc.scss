@@ -72,6 +72,10 @@
 .lc_ll {
 	display: block;
 	margin-bottom: 0.25em;
+
+	i {
+		color: $color-subdued;
+	}
 }
 
 .lc_lb {

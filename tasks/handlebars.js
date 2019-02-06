@@ -70,8 +70,8 @@ module.exports = {
 
 				var title = pageData.attributes.title || '';
 				var pageTitle = pageData.attributes.title
-					? title + '——' + config.info.title
-					: 'Untitled Entry——' + config.info.title;
+					? title + '—' + config.info.title
+					: 'Untitled Entry—' + config.info.title;
 
 				var params = {
 					url: post.url,

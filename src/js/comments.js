@@ -19,6 +19,7 @@ export default function() {
 	const readCommentPopup = document.querySelector('.js-read-comment');
 	const readCommentBody = document.querySelector('.js-read-comment-body');
 	const readCommentAuthor = document.querySelector('.js-read-comment-author');
+	const readCommentDot = document.querySelector('.js-read-comment-dot');
 	const entryId = commentsGrid.dataset.entryId;
 	let entryComments = {};
 	let selectedComment = null;
@@ -135,6 +136,7 @@ export default function() {
 		closeAll();
 		readCommentPopup.classList.add('state-read-comment-active');
 
+		readCommentDot.innerHTML = dotId;
 		document.querySelector('#comment_' + dotId).classList.add('state-selected-comment');
 	}
 
