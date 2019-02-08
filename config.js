@@ -25,9 +25,6 @@ module.exports = {
 		dest: destBasePath + 'css',
 	},
 	js: {
-		watch: [srcBasePath + 'js/**/*.js'],
-		entry: 'index.js',
-		rename: 'app.js',
 		minified: 'app.min.js',
 		src: srcBasePath + 'js/index.js',
 		dest: destBasePath + 'js',

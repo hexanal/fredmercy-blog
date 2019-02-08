@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-var js = require('./tasks/javascript.js');
+// var js = require('./tasks/javascript.js');
 var scss = require('./tasks/scss.js');
 var handlebars = require('./tasks/handlebars.js');
 var images = require('./tasks/images.js');
@@ -16,14 +16,11 @@ gulp.task('handlebars', gulp.series('handlebars:index', 'handlebars:posts'));
 
 gulp.task('scss', scss);
 
-gulp.task('js', js.browserify);
-gulp.task('js:watch', js.watchify);
-
 gulp.task('images', images);
 
 gulp.task('fonts', fonts);
 
-gulp.task('build', gulp.parallel('handlebars', 'images', 'fonts', 'scss', 'js'));
+gulp.task('build', gulp.parallel('handlebars', 'images', 'fonts', 'scss'));
 
 gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));
@@ -37,10 +34,7 @@ gulp.task('watch:scss', function() {
 gulp.task('watch:images', function() {
 	gulp.watch(config.images.watch, gulp.series('images'));
 });
-gulp.task('watch:js', function() {
-	gulp.watch(config.js.watch, gulp.series('js:watch'));
-});
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:js', 'watch:scss', 'watch:images'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:scss', 'watch:images'));
 
 gulp.task('serve', gulp.parallel('watch', browsersync));
 gulp.task('kickstart', gulp.series('build', 'watch'));

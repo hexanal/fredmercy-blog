@@ -1,5 +1,5 @@
-import axios from 'axios';
-import sanitizeHtml from 'sanitize-html';
+// import axios from 'axios';
+import axios from 'axios/dist/axios'; // https://github.com/axios/axios/issues/464
 
 export default function() {
 	const commentsGrid = document.querySelector('.js-comments-grid');
@@ -58,7 +58,7 @@ export default function() {
 			: false;
 
 		if (!content) {
-			showErrorMessage('Unable to leave an empty comment.');
+			showErrorMessage('Be sure to leave a comment before submitting.');
 			commentInputContent.focus();
 
 			return;
@@ -75,7 +75,7 @@ export default function() {
 			.then((res) => {
 				entryComments[selectedComment] = {
 					author,
-					content: sanitizeHtml(content.replace(/\n/g, '<br>'))
+					content: content.replace(/\n/g, '<br>')
 				};
 
 				commentInputContent.value = ''; // clear textarea body
