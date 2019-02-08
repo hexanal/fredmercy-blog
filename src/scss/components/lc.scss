@@ -1,8 +1,25 @@
 .lc {
+	overflow-x: hidden;
+	overflow-y: auto;
 	display: none;
-	flex-grow: 1;
-	margin: 0 0 5em;
-	max-width: 500px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+	background-color: #f8f4ff;
+
+	@media (min-width: 500px) {
+		overflow: visible;
+		flex-grow: 1;
+		position: static;
+		width: auto;
+		height: auto;
+		padding: 0;
+		max-width: 500px;
+		background-color: transparent;
+	}
 
 	&.state-leave-comment-active {
 		display: block;
@@ -10,7 +27,15 @@
 }
 
 .lc_hd {
-	margin: 3em 0 2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0 2em;
+
+	@media (min-width: 500px) {
+		display: block;
+		margin-top: 3em;
+	}
 }
 
 .lc_tt {
@@ -24,9 +49,14 @@
 }
 
 .lc_st {
-	display: inline-block;
+	display: none;
+	flex-grow: 1;
 	margin-left: 0.5em;
 	font-style: italic;
+
+	@media (min-width: 350px) {
+		display: inline-block;
+	}
 }
 
 .lc_cl {
@@ -42,7 +72,7 @@
 	&:hover,
 	&:focus {
 		color: $color-bg;
-		background-color: $color-active;
+		background-color: $color-secondary;
 		text-decoration: none;
 	}
 }
@@ -95,7 +125,7 @@
 	&:hover,
 	&:focus {
 		color: $color-bg;
-		background-color: $color-active;
+		background-color: $color-secondary;
 		text-decoration: none;
 	}
 }

@@ -33,17 +33,18 @@
 	display: inline-block;
 	margin-left: 0.5em;
 	padding: 0;
-	color: $color-primary;
 	font-family: $font-plex;
 	font-size: 1em;
-	border: 0;
 	text-decoration: underline;
+	color: $color-primary;
+	border: 0;
+	background-color: transparent;
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-active;
 		text-decoration: none;
+		color: $color-bg;
+		background-color: $color-secondary;
 	}
 }
 

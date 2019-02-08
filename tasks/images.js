@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var images = require('gulp-image');
+var images = require('gulp-imagemin');
 var config = require('../config.js');
 
 module.exports = function() {

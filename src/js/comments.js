@@ -37,7 +37,7 @@ export default function() {
 
 	commentsDots.forEach((dot) => {
 		dot.addEventListener('click', (e) => {
-			const dotId = e.target.dataset.letterIndex;
+			const dotId = e.target.dataset.index;
 
 			if (entryComments[dotId]) {
 				showComment(dotId);

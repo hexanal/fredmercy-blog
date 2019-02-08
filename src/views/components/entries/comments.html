@@ -9,10 +9,10 @@
 	>
 	{{#each commentsGrid}}
 		<button
-			id="comment_{{ this.letterIndex }}"
+			id="comment_{{ this.index }}"
 			type="button"
 			class="c_cm js-comment-dot"
-			data-letter-index="{{ this.letterIndex }}"
+			data-index="{{ this.index }}"
 			data-id="{{ this.commentId }}"
 		>
 			<div class="c_ci"></div>

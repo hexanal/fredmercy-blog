@@ -72,6 +72,10 @@ module.exports = {
 				var pageTitle = pageData.attributes.title
 					? title + '—' + config.info.title
 					: 'Untitled Entry—' + config.info.title;
+				var comments = typeof pageData.attributes.comments === 'number'
+					? pageData.attributes.comments
+					: 25;
+				var commentsGrid = buildCommentsGrid(post.date, comments);
 
 				var params = {
 					url: post.url,
@@ -81,7 +85,7 @@ module.exports = {
 					date: post.date,
 					type: pageData.attributes.type,
 					body: marked(pageData.body),
-					commentsGrid: buildCommentsGrid(post.date)
+					commentsGrid: commentsGrid
 				};
 
 				return gulp.src(config.html.templates + template + '.html')
@@ -110,13 +114,15 @@ function getPostPathAndDate(file) {
 	};
 }
 
-function buildCommentsGrid(entryId) {
-	return Array(25).fill(null).map((val, index) => {
+function buildCommentsGrid(entryId, comments) {
+	if (comments === 0) return;
+
+	return Array(comments).fill(null).map((val, index) => {
 		return {
-			index,
-			letterIndex: String.fromCharCode(index + 97),
 			entryId,
-			commentId: '_' + entryId + '_' + String.fromCharCode(index + 97)
+			index: index + 1,
+			letterIndex: String.fromCharCode(index + 97),
+			commentId: entryId + '_' + (index + 1)
 		}
 	});
 }

@@ -26,8 +26,9 @@
 }
 
 .x_mt {
-	display: inline;
-	margin-right: 0.75em;
+	display: inline-block;
+	margin-right: 0.25em;
+	line-height: 1.1;
 	color: $color-bg;
 	background-color: $color-primary;
 }
