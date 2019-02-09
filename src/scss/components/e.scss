@@ -112,7 +112,7 @@
 		height: 200px;
 
 		@media (min-width: $mq-mobile) {
-			height: 400px;
+			height: 394px; // best ratio when video is full-width (700px wide)
 		}
 	}
 }

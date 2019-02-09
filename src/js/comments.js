@@ -1,5 +1,4 @@
-// import axios from 'axios';
-import axios from 'axios/dist/axios'; // https://github.com/axios/axios/issues/464
+import axios from 'axios';
 
 export default function() {
 	const commentsGrid = document.querySelector('.js-comments-grid');

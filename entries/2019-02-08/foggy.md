@@ -18,3 +18,6 @@ Obviously not the best ever, but I've barely started yet. More to come, hopefull
 
 The comment system (_Dotty™_) is still under construction and hasn't been road tested yet. There is a new option to specify the number of dots to use for each post, which might allow more flexibility, let's say if for some reason many people were to leave comments (hahaha!)
 
+`3:34pm:` Done with the javascript compilation issues... _for now!_
+
+`6:57pm:` Going oot.

@@ -70,8 +70,8 @@ module.exports = {
 
 				var title = pageData.attributes.title || '';
 				var pageTitle = pageData.attributes.title
-					? title + '—' + config.info.title
-					: 'Untitled Entry—' + config.info.title;
+					? title + ' __ ' + config.info.title
+					: 'Untitled Entry __' + config.info.title;
 				var comments = typeof pageData.attributes.comments === 'number'
 					? pageData.attributes.comments
 					: 25;

@@ -3,7 +3,7 @@ var destBasePath = '../main/blog/dist/';
 
 module.exports = {
 	info: {
-		title: 'Fred Mercy Blog',
+		title: 'Fred Mercy __ Blog',
 		description: 'A collection of thoughts, I suppose'
 	},
 	base: {
