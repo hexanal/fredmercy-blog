@@ -34,11 +34,17 @@ module.exports = {
 				cb(null);
 			}))
 			.on('end', function() {
+				var isoDate = new Date().toISOString().split('T');
+				var lastUpdatedOn = isoDate[0];
 				var posts = orderBy(entries, 'date', 'desc'); // reorder, and populate our pageData
 				var params = {
 					pageTitle: config.info.title,
 					description: config.info.description,
-					entries: posts
+					entries: posts,
+					stats: {
+						numberOfEntries: entries.length,
+						lastUpdatedOn: lastUpdatedOn
+					}
 				};
 
 				return gulp.src(config.html.templates + 'index.html')
@@ -71,7 +77,7 @@ module.exports = {
 				var title = pageData.attributes.title || '';
 				var pageTitle = pageData.attributes.title
 					? title + ' __ ' + config.info.title
-					: 'Untitled Entry __' + config.info.title;
+					: 'Untitled __ ' + config.info.title;
 				var comments = typeof pageData.attributes.comments === 'number'
 					? pageData.attributes.comments
 					: 25;
