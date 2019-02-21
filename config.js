@@ -16,6 +16,7 @@ module.exports = {
 			srcBasePath + 'views/**/*'
 		],
 		src: './entries/**/*.md',
+		archives: './archives/**/*.md',
 		templates: srcBasePath + 'views/templates/',
 		dest: '../main/blog/',
 	},

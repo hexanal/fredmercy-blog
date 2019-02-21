@@ -11,8 +11,10 @@ var config = require('./config.js');
 
 gulp.task('handlebars:index', handlebars.index);
 gulp.task('handlebars:posts', handlebars.posts);
+gulp.task('handlebars:archives', handlebars.archives);
+gulp.task('handlebars:archivesIndex', handlebars.archivesIndex);
 
-gulp.task('handlebars', gulp.series('handlebars:index', 'handlebars:posts'));
+gulp.task('handlebars', gulp.parallel('handlebars:index', 'handlebars:posts', 'handlebars:archives', 'handlebars:archivesIndex'));
 
 gulp.task('scss', scss);
 
