@@ -2,7 +2,7 @@
 	display: none;
 	flex-grow: 1;
 	margin: 0 0 5em;
-	max-width: 500px;
+	max-width: 535px;
 
 	&.state-read-comment-active {
 		display: block;
@@ -10,7 +10,10 @@
 }
 
 .rc_hd {
-	margin: 3em 0 2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 3em 0 1.5em;
 }
 
 .rc_tt {
@@ -25,6 +28,7 @@
 
 .rc_st {
 	display: inline-block;
+	flex-grow: 1;
 	margin-left: 0.5em;
 	font-style: italic;
 }
@@ -39,6 +43,7 @@
 	color: $color-primary;
 	border: 0;
 	background-color: transparent;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {

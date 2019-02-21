@@ -1,7 +1,7 @@
 ---
 title: Foggy
 description: Maybe I should just embed YouTube...
-type: video, journal
+type: journal, video
 ---
 
 `10:07am:` It's unequivocal that YouTube is the _de facto_ platform for hosting video content so that most people can see it. Certainly there are other solutions out there, but it's more of a pain in the ~~ass~~: hosting it means that you're gonna use up a ton of space, real quick; and uploading it to another service also makes it a tiny bit harder for some users to watch it (on their phone, for instance)

@@ -15,7 +15,7 @@ This stuff's trippy.
 [Infinity Times Infinity](/files/music/infinity-times-infinity.mp3) _(July 1, 2017)_
 
 <code class="lyrics">
-<button type="button">Lyrics ±</button>
+<button type="button">Show/Hide Lyrics</button>
 
 Win some and lose some
 Lose some and then some
@@ -38,7 +38,7 @@ Only human after all...
 [It's an honor](/files/music/its-an-honor.mp3) _(December 20, 2017)_
 
 <code class="lyrics">
-<button type="button">Lyrics ±</button>
+<button type="button">Show/Hide Lyrics</button>
 
 It's an honor
 To be here

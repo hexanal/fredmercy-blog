@@ -13,11 +13,14 @@
 		font-family: $font-plex;
 		font-size: 1em;
 		line-height: 1;
+		text-decoration: underline;
 		background-color: transparent;
 		border: 0;
+		cursor: pointer;
 
 		&:hover,
 		&:focus {
+			text-decoration: none;
 			color: $color-bg;
 			background-color: $color-secondary;
 		}

@@ -11,6 +11,10 @@ And it's all good to build a blog and fill it with written accounts of how munda
 
 Here's a short one: [_langsam_](/files/music/langsam.mp3) 🎵
 
+<audio controls src="/files/music/langsam.mp3">
+Your browser does not support the <code>audio</code> element.
+</audio>
+
 This one was recorded in March 2018, when I was still experimenting with my setup. Feel free to use the quirky comment system to give feedback, insult me, or whatever. I have no formal training in music but if you follow this weblog you'll know I _am_ learning!
 
 `2:53pm:` I always set the volume on my Apple laptop to four squares; that's the optimal sound level for me. Is it weird that I have a definitive sound level that I use?
