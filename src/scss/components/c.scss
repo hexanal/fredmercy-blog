@@ -91,9 +91,19 @@
 		}
 	}
 
-	.state-loading & {
-		color: $color-subdued;
+	// .state-loading & {
+	// 	color: $color-subdued;
+
+	// 	&:hover,
+	// 	&:focus {
+	// 		color: $color-subdued;
+	// 		background-color: transparent;
+	// 	}
+	// }
+
+	&[disabled] {
 		cursor: not-allowed;
+		color: $color-subdued;
 
 		&:hover,
 		&:focus {

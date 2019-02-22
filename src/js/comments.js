@@ -109,6 +109,7 @@ export default function() {
 				const {comments} = res.data;
 
 				commentsGrid.classList.remove('state-loading'); // not loading no more
+				commentsDots.forEach(dot => dot.removeAttribute('disabled'));
 				comments.map((comment) => {
 					const commentDot = document.querySelector(`#comment_${comment.slot}`);
 					entryComments[comment.slot] = {

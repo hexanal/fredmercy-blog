@@ -168,7 +168,7 @@ function getEntryParams(file, isArchive) {
 	var comments = typeof pageData.attributes.comments === 'number'
 		? pageData.attributes.comments
 		: 25;
-	var commentsGrid = buildCommentsGrid(post.date, comments);
+	var commentsGrid = buildCommentsGrid(date, comments);
 
 	return {
 		isArchive: isArchive,
