@@ -1,34 +1,38 @@
 {{#> layouts/default }}
 
-<h1 class="x_hd">
-	Latest entries:
-</h1>
+<div class="x">
+	<div class="x_ok">
+		<h1 class="x_hd">
+			Latest entries
+		</h1>
 
-<ul class="x_ls">
-{{#each entries}}
-	<li class="x_it">
-		<div class="x_mt">
-			<span class="x_dt">
-				{{ this.date }}
-			</span>
-			<span class="x_tp">
-				[{{ this.type }}]
-			</span>
-		</div>
-
-		<a class="x_lk" href="{{ this.url }}">
-			{{#if this.title}}
-				{{this.title}}
-			{{else}}
-				<em>Untitled</em><span class="x_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
-			{{/if}}
+		<a href="/blog/archives" class="x_ar">
+			Browse archives...
 		</a>
-	</li>
-{{/each}}
-</ul>
+	</div>
 
-<a href="/blog/archives" class="x_ar">
-	Browse archives...
-</a>
+	<ul class="x_ls">
+	{{#each entries}}
+		<li class="x_it">
+			<div class="x_mt">
+				<span class="x_dt">
+					{{ this.date }}
+				</span>
+				<span class="x_tp">
+					[{{ this.type }}]
+				</span>
+			</div>
+
+			<a class="x_lk" href="{{ this.url }}">
+				{{#if this.title}}
+					{{this.title}}
+				{{else}}
+					<em>Untitled</em><span class="x_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
+				{{/if}}
+			</a>
+		</li>
+	{{/each}}
+	</ul>
+</div>
 
 {{/layouts/default}}

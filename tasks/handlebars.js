@@ -56,7 +56,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest));
+					.pipe(gulp.dest(config.html.dest + config.info.rootPath));
 			});
 	},
 
@@ -94,7 +94,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest( config.html.dest + params.dest))
+					.pipe(gulp.dest( config.html.dest + params.url))
 					.on('error', cb)
 					.on('end', cb);
 			}));
@@ -140,7 +140,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest + '/archives'));
+					.pipe(gulp.dest(config.html.dest + config.info.rootPath + '/archives'));
 			});
 	}
 }
@@ -154,7 +154,6 @@ function getEntryParams(file, isArchive) {
 	var date = isArchive === true ? post.path : post.date;
 	var archiveUrl = getArchiveUrl(post);
 	var url = isArchive === true ? archiveUrl.url : post.url;
-	var dest = isArchive === true ? archiveUrl.dest : '';
 
 	marked.setOptions({
 		gfm: true,
@@ -179,7 +178,6 @@ function getEntryParams(file, isArchive) {
 		rawDate: date + 'T12:00:00',
 		commentsGrid: commentsGrid,
 		template: template,
-		dest: dest,
 		description: pageData.attributes.description || config.info.title,
 		body: marked(pageData.body),
 		type: pageData.attributes.type
@@ -191,7 +189,7 @@ function getPostPathAndDate(file) {
 	// gets you '2019-01-20' and 'file-name-yo', for example
 
 	return {
-		url: pathData[0] + '/' + pathData[1],
+		url: config.info.rootPath + '/' + pathData[0] + '/' + pathData[1],
 		date: pathData[0],
 		path: pathData[1],
 		extra: pathData[2]
@@ -215,12 +213,9 @@ function getArchiveUrl(post) {
 	var year = dateElements[0];
 	var month = getMonthName(dateElements[1]);
 	var title = month + '-' + year;
-	var archivePath = '/blog/archives/' + post.path;
-	var postPath = archivePath + '/' + post.extra;
+	var postPath = config.info.rootPath + '/' + post.path + '/' + post.extra; // path is.. date, extra is the entry title
 
 	return {
-		dest: '/archives/' + post.path + '/' + post.extra,
-		path: archivePath,
 		url: postPath,
 		title: title,
 		month: month,

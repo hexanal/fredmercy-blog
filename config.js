@@ -3,6 +3,7 @@ var destBasePath = '../main/blog/dist/';
 
 module.exports = {
 	info: {
+		rootPath: '/blog',
 		title: 'Fred Mercy __ blog',
 		description: 'A collection of thoughts, I suppose'
 	},
@@ -18,7 +19,7 @@ module.exports = {
 		src: './entries/**/*.md',
 		archives: './archives/**/*.md',
 		templates: srcBasePath + 'views/templates/',
-		dest: '../main/blog/',
+		dest: '../main',
 	},
 	scss: {
 		watch: [srcBasePath + 'scss/**/*.scss'],

@@ -2,15 +2,7 @@
 
 <div class="e">
 	<div class="e_ps">
-		{{#if isArchive}}
-			<a href="/blog/archives" class="e_bk">
-				Back to archives
-			</a>
-		{{else}}
-			<a href="/blog" class="e_bk">
-				Back to entries
-			</a>
-		{{/if}}
+		{{> entries/back }}
 
 		<header class="e_hd">
 			<div class="e_mt">

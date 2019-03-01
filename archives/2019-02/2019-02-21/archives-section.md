@@ -10,4 +10,4 @@ It doesn't have to be though...! But there's navigation logic I'd have to work a
 
 `4:11pm:` I'd just started watching it when I [mentioned it earlier this month](/blog/2019-02-03/read), and now season three of [The Good Place (IMDB)](https://www.imdb.com/title/tt4955642/) just dropped on Netflix! Let the bingeing begin!
 
-`4:16pm:` Just realized while writing the latest update that internal links are gonna be hard to manage... once I archive post, everything's gonna be out of whack!... meh, I'll figure it out.
+`4:16pm:` Just realized while writing the latest update that internal links are gonna be hard to manage... once I archive a post, everything's gonna be out of whack!... meh, I'll figure it out.

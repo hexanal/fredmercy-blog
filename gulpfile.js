@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-// var js = require('./tasks/javascript.js');
+var reset = require('./tasks/reset.js');
 var scss = require('./tasks/scss.js');
 var handlebars = require('./tasks/handlebars.js');
 var images = require('./tasks/images.js');
@@ -8,6 +8,8 @@ var fonts = require('./tasks/fonts.js');
 var browsersync = require('./tasks/browsersync.js');
 
 var config = require('./config.js');
+
+gulp.task('reset', reset);
 
 gulp.task('handlebars:index', handlebars.index);
 gulp.task('handlebars:posts', handlebars.posts);
@@ -22,7 +24,7 @@ gulp.task('images', images);
 
 gulp.task('fonts', fonts);
 
-gulp.task('build', gulp.parallel('handlebars', 'images', 'fonts', 'scss'));
+gulp.task('build', gulp.series('reset', gulp.parallel('handlebars', 'images', 'fonts', 'scss')));
 
 gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));

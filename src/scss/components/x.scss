@@ -1,6 +1,17 @@
+.x {
+	max-width: 700px;
+}
+
+.x_ok {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1.5em;
+}
+
 .x_hd {
-	display: inline-block;
-	margin: 0 0 1em;
+	margin: 0;
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.4;

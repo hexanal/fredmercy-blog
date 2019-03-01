@@ -3,6 +3,7 @@ var destBasePath = './blog/dist/';
 
 module.exports = {
 	info: {
+		rootPath: '/',
 		title: 'Default Website Title',
 		description: 'Default Website Description'
 	},
@@ -16,6 +17,7 @@ module.exports = {
 			srcBasePath + 'views/**/*'
 		],
 		src: './entries/**/*.md',
+		archives: './archives/**/*.md',
 		templates: srcBasePath + 'views/templates/',
 		dest: './blog/',
 	},
@@ -25,9 +27,6 @@ module.exports = {
 		dest: destBasePath + 'css',
 	},
 	js: {
-		watch: [srcBasePath + 'js/**/*.js'],
-		entry: 'index.js',
-		rename: 'app.js',
 		minified: 'app.min.js',
 		src: srcBasePath + 'js/index.js',
 		dest: destBasePath + 'js',
