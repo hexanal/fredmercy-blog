@@ -1,4 +1,4 @@
-.c {
+.comments {
 	width: 100%;
 	margin-right: 3em;
 	flex-shrink: 0;
@@ -8,8 +8,8 @@
 	}
 }
 
-.c_tt {
-	margin: 3em 0 1em;
+.comments_tt {
+	margin: 2.5em 0 1em;
 	padding: 0.25em;
 	font-size: 1em;
 	font-weight: 400;
@@ -18,7 +18,7 @@
 	background-color: $color-primary;
 }
 
-.c_gd {
+.comments_gd {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -28,7 +28,7 @@
 	}
 }
 
-.c_cm {
+.comments_cm {
 	position: relative;
 	width: 25px;
 	height: 25px;

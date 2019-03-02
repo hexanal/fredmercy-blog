@@ -1,4 +1,4 @@
-.lc {
+.leave-comment {
 	overflow-x: hidden;
 	overflow-y: auto;
 	display: none;
@@ -26,18 +26,18 @@
 	}
 }
 
-.lc_hd {
+.leave-comment_hd {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin: 0 0 1.5em;
 
 	@media (min-width: 500px) {
-		margin-top: 3em;
+		margin-top: 2.5em;
 	}
 }
 
-.lc_tt {
+.leave-comment_tt {
 	display: inline-block;
 	margin: 0;
 	padding: 0.25em;
@@ -47,7 +47,7 @@
 	background-color: $color-primary;
 }
 
-.lc_st {
+.leave-comment_st {
 	display: none;
 	flex-grow: 1;
 	margin-left: 0.5em;
@@ -58,7 +58,7 @@
 	}
 }
 
-.lc_cl {
+.leave-comment_cl {
 	display: inline-block;
 	margin-left: 0.5em;
 	padding: 0;
@@ -78,8 +78,8 @@
 	}
 }
 
-.lc_tx,
-.lc_ip {
+.leave-comment_tx,
+.leave-comment_ip {
 	width: 100%;
 	padding: 0.5em;
 	font-family: $font-plex;
@@ -94,13 +94,13 @@
 	}
 }
 
-.lc_tx {
+.leave-comment_tx {
 	min-height: 120px;
 	resize: vertical;
 	line-height: 1.4;
 }
 
-.lc_ll {
+.leave-comment_ll {
 	display: block;
 	margin-bottom: 0.25em;
 
@@ -109,12 +109,12 @@
 	}
 }
 
-.lc_lb {
+.leave-comment_lb {
 	display: block;
 	margin-bottom: 1.5em;
 }
 
-.lc_sb {
+.leave-comment_sb {
 	padding: 0;
 	color: $color-primary;
 	font-family: $font-plex;

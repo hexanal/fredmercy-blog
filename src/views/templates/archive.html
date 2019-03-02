@@ -1,40 +1,40 @@
 {{#> layouts/default }}
 
-<div class="x">
-	<div class="x_ok">
-		<h1 class="x_hd">
+<div class="index">
+	<div class="index_ok">
+		<h1 class="index_hd">
 			Archives
 		</h1>
 
-		<a href="/blog" class="x_ar">
+		<a href="/blog" class="index_ar">
 			Latest entries
 		</a>
 	</div>
 
-	<ul class="a_ls">
+	<ul class="archive_ls">
 	{{#each entries as |entry index|}}
-		<li class="a_mn">
-			<h2 class="a_mnyr">
+		<li class="archive_mn">
+			<h2 class="archive_mnyr">
 				{{ index }}
 			</h2>
 		</li>
 
 		{{#each entry}}
-			<li class="a_it">
-				<div class="a_mt">
-					<span class="a_dt">
+			<li class="archive_it">
+				<div class="archive_mt">
+					<span class="archive_dt">
 						{{ this.date }}
 					</span>
-					<span class="a_tp">
+					<span class="archive_tp">
 						[{{ this.type }}]
 					</span>
 				</div>
 
-				<a class="a_lk" href="{{ this.url }}">
+				<a class="archive_lk" href="{{ this.url }}">
 					{{#if this.title}}
 						{{this.title}}
 					{{else}}
-						<em>Untitled</em><span class="a_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
+						<em>Untitled</em><span class="archive_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
 					{{/if}}
 				</a>
 			</li>
@@ -44,6 +44,3 @@
 </div>
 
 {{/layouts/default}}
-
-<!--
--->

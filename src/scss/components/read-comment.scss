@@ -1,4 +1,4 @@
-.rc {
+.read-comment {
 	display: none;
 	flex-grow: 1;
 	margin: 0 0 5em;
@@ -9,14 +9,14 @@
 	}
 }
 
-.rc_hd {
+.read-comment_hd {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin: 3em 0 1.5em;
 }
 
-.rc_tt {
+.read-comment_tt {
 	display: inline-block;
 	margin: 0;
 	padding: 0.25em;
@@ -26,14 +26,14 @@
 	background-color: $color-primary;
 }
 
-.rc_st {
+.read-comment_st {
 	display: inline-block;
 	flex-grow: 1;
 	margin-left: 0.5em;
 	font-style: italic;
 }
 
-.rc_cl {
+.read-comment_cl {
 	display: inline-block;
 	margin-left: 0.5em;
 	padding: 0;
@@ -53,7 +53,7 @@
 	}
 }
 
-.rc_bd {
+.read-comment_bd {
 	margin-bottom: 1em;
 	line-height: 1.4;
 }

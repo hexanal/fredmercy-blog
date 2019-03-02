@@ -20,6 +20,7 @@ export default function() {
 	const readCommentAuthor = document.querySelector('.js-read-comment-author');
 	const readCommentDot = document.querySelector('.js-read-comment-dot');
 	const entryId = commentsGrid.dataset.entryId;
+
 	let entryComments = {};
 	let selectedComment = null;
 
@@ -164,6 +165,7 @@ export default function() {
 	}
 
 	function showErrorMessage(msg) {
-		console.log('Should show error message: ', msg);
+		alert('Woops, something went wrong. Try again?');
+		// console.log('Should show error message: ', msg);
 	}
 }

@@ -5,11 +5,11 @@
 @import 'config/layout';
 @import 'config/typography';
 
-@import 'components/a';
-@import 'components/b';
-@import 'components/c';
-@import 'components/e';
-@import 'components/lc';
+@import 'components/archive';
+@import 'components/back';
+@import 'components/comments';
+@import 'components/index';
+@import 'components/leave-comment';
 @import 'components/lyrics';
-@import 'components/rc';
-@import 'components/x';
+@import 'components/post';
+@import 'components/read-comment';

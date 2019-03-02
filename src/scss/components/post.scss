@@ -1,4 +1,4 @@
-.e {
+.post {
 	margin-bottom: 5em;
 
 	@media (min-width: $mq-desktop) {
@@ -7,14 +7,14 @@
 	}
 }
 
-.e_ps {
+.post_ps {
 	max-width: 700px;
 
 	@media (min-width: $mq-desktop) {
 		margin-right: 2em;
 	}
 }
-.e_cm {
+.post_cm {
 	flex-grow: 1;
 
 	@media (min-width: $mq-mobile) {
@@ -28,15 +28,15 @@
 	}
 }
 
-.e_bk {
+.post_bk {
 	display: inline-block;
 }
 
-.e_hd {
+.post_hd {
 	margin: 1.5em 0 0;
 }
 
-.e_mt {
+.post_mt {
 	display: inline-block;
 	margin-right: 0.25em;
 	margin-bottom: 1.5em;
@@ -45,19 +45,19 @@
 	background-color: $color-primary;
 }
 
-.e_tp {
+.post_tp {
 	font-style: italic;
 	margin-bottom: 1.5em;
 }
 
-.e_tt {
+.post_tt {
 	display: inline-block;
 	margin: 0 0 1.5em;
 	font-size: 1em;
 	font-weight: 400;
 }
 
-.e_bd {
+.post_bd {
 	line-height: 1.5em;
 
 	> * {

@@ -1,9 +1,9 @@
-.a_bk {
+.archive_bk {
 	display: inline-block;
 	margin-bottom: 1.5em;
 }
 
-.a_hd {
+.archive_hd {
 	display: inline-block;
 	margin: 0 0 1em;
 	font-size: 1em;
@@ -14,7 +14,7 @@
 	background-color: $color-active;
 }
 
-.a_ls {
+.archive_ls {
 	overflow: hidden;
 	list-style: none;
 	padding-left: 0;
@@ -22,7 +22,7 @@
 	line-height: 1.4;
 }
 
-.a_mnyr {
+.archive_mnyr {
 	display: inline-block;
 	margin: 1em 0;
 	font-size: 1em;
@@ -33,15 +33,15 @@
 	background-color: $color-secondary;
 }
 
-.a_it {
+.archive_it {
 	white-space: nowrap;
 }
 
-.a_it + .a_it {
+.archive_it + .archive_it {
 	margin-top: 0.5em;
 }
 
-.a_mt {
+.archive_mt {
 	display: inline-block;
 	margin-right: 0.25em;
 	line-height: 1.1;
@@ -49,7 +49,7 @@
 	background-color: $color-primary;
 }
 
-.a_tp {
+.archive_tp {
 	display: none;
 	font-style: italic;
 
@@ -58,7 +58,7 @@
 	}
 }
 
-.a_ex {
+.archive_ex {
 	display: none;
 
 	@media (min-width: 500px) {

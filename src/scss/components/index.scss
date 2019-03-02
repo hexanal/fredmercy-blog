@@ -1,8 +1,8 @@
-.x {
+.index {
 	max-width: 700px;
 }
 
-.x_ok {
+.index_ok {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -10,7 +10,7 @@
 	margin-bottom: 1.5em;
 }
 
-.x_hd {
+.index_hd {
 	margin: 0;
 	font-size: 1em;
 	font-weight: 400;
@@ -20,7 +20,7 @@
 	background-color: $color-active;
 }
 
-.x_ls {
+.index_ls {
 	overflow: hidden;
 	list-style: none;
 	padding-left: 0;
@@ -28,15 +28,15 @@
 	line-height: 1.4;
 }
 
-.x_it {
+.index_it {
 	white-space: nowrap;
 }
 
-.x_it + .x_it {
+.index_it + .index_it {
 	margin-top: 1em;
 }
 
-.x_mt {
+.index_mt {
 	display: inline-block;
 	margin-right: 0.25em;
 	line-height: 1.1;
@@ -44,7 +44,7 @@
 	background-color: $color-primary;
 }
 
-.x_tp {
+.index_tp {
 	display: none;
 	font-style: italic;
 
@@ -53,7 +53,7 @@
 	}
 }
 
-.x_ex {
+.index_ex {
 	display: none;
 
 	@media (min-width: 500px) {
@@ -61,6 +61,6 @@
 	}
 }
 
-.x_ar {
+.index_ar {
 	font-style: italic;
 }

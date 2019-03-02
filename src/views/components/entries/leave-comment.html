@@ -1,47 +1,47 @@
-<div class="lc js-leave-comment">
-	<header class="lc_hd">
-		<h2 class="lc_tt">
+<div class="leave-comment js-leave-comment">
+	<header class="leave-comment_hd">
+		<h2 class="leave-comment_tt">
 			Leave a comment
 		</h2>
 
-		<div class="lc_st">
+		<div class="leave-comment_st">
 			(in dot <span class="js-leave-comment-dot"></span>)
 		</div>
 
-		<button type="button" class="lc_cl js-comment-close">
+		<button type="button" class="leave-comment_cl js-comment-close">
 			close ×
 		</button>
 	</header>
 
 	<form
-		class="lc_fm js-comment-form"
+		class="leave-comment_fm js-comment-form"
 		data-entry-id="{{ date }}"
 	>
-		<label class="lc_lb">
-			<span class="lc_ll">
+		<label class="leave-comment_lb">
+			<span class="leave-comment_ll">
 				Comment <i>(1500 characters max.)</i>
 			</span>
 			<textarea
-				class="lc_tx js-comment-content"
+				class="leave-comment_tx js-comment-content"
 				name="content"
 				maxlength="1500"
 				required
 			></textarea>
 		</label>
 
-		<label class="lc_lb">
-			<span class="lc_ll">
+		<label class="leave-comment_lb">
+			<span class="leave-comment_ll">
 				Name <i>(if left blank, “Anonymous” will be used)</i>
 			</span>
 			<input
-				class="lc_ip js-comment-author"
+				class="leave-comment_ip js-comment-author"
 				type="text"
 				name="author"
 				maxlength="100"
 			>
 		</label>
 
-		<button type="submit" class="lc_sb">
+		<button type="submit" class="leave-comment_sb">
 			Done
 		</button>
 	</form>
