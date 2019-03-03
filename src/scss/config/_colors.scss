@@ -1,62 +1,24 @@
-/*
- * Color vars
- *
- * NOTE:
- *
- * - Please use the prefix "color-"
- *
- * - It is recommended not to use the variables for black and white because
- * color names for black and white (among others) is standard and well
- * supported: https://www.w3.org/TR/CSS21/syndata.html#value-def-color
- *
- * - Still leaving them for the example, though.
+/**
+ * Color Palettes
  */
 
-$color-black: black;
-$color-white: white;
+// Sandy Beach
+// $color-bg: #fffefc; // Baby Powder
+// $color-primary: #277399; // Lapis Lazuli
+// $color-active: #ffa035; // Deep Saffron
+// $color-secondary: #a82a69; // Amaranth Deep Purple
+// $color-subdued: #b1adce; // Wild Blue Yonder
 
-/**
- * Color Palette
- *
-// ICE
-$color-bg: #f7f4ff;
-$color-primary: #000516;
-$color-secondary: #e55255;
-$color-active: #af8e21;
-$color-subdued: #514572;
-*/
-
+// Panamá
+// $color-bg: #fffefc; // Baby Powder
+// $color-primary: #233b8c; // Cosmic Cobalt
+// $color-active: #ffbb35; // Sunglow
+// $color-secondary: #58d3aa; // Medium Aquamarine
+// $color-subdued: #cf99d8; // Light Grayish Magenta
 
 // PAPPERR
-$color-bg: #f8f4ff;
-$color-primary: #00b288;
-$color-active: #f72762;
-$color-secondary: #3c449e;
-$color-subdued: #cec6d1;
-
-/*
-// JUNGLE
-$color-bg: #051600;
-$color-primary: #f4fff7;
-$color-secondary: #ffdc00;
-$color-active: #5255e5;
-$color-subdued: #457254;
-*/
-
-/*
-// OLD SCHOOL COOL CPU
-$color-bg: #001616;
-$color-primary: #f4fbff;
-$color-secondary: #ff00c3;
-$color-active: #00ff1d;
-$color-subdued: #455772;
-*/
-
-/*
-previous scheme
-$color-bg: #0d0026;
-$color-primary: #f6f4ff;
-$color-secondary: #ff144b;
-$color-active: #00ffdd;
-$color-subdued: #554572;
-*/
+$color-bg: #fffefc; // Baby Powder
+$color-primary: #00b288; // Persian Green
+$color-active: #f72762; // Radical Red
+$color-secondary: #3c449e; // Blue (Pigment)
+$color-subdued: #cec6d1; // Lavender Gray
