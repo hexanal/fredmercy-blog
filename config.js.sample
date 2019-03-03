@@ -40,13 +40,5 @@ module.exports = {
 		watch: [srcBasePath + 'fonts/*'],
 		src: srcBasePath + 'fonts/*',
 		dest: destBasePath + 'fonts',
-	},
-	browsersync: {
-		watch: [
-			destBasePath + 'images/*', // or whatever
-			srcBasePath + 'views/**/*',
-			srcBasePath + 'json/**/*'
-		],
-		proxy: 'http://website-proxy-url.hx'
-	},
+	}
 }
