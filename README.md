@@ -1,5 +1,7 @@
 # HX_BLOG
 
+Source files for [my blog](http://fredmercy.com/blog).
+
 ## Getting started
 
 If you want to fork that and use it for yourself (why?!), here are some instructions:
