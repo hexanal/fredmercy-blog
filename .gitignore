@@ -3,7 +3,7 @@
 node_modules/
 npm-debug.log
 
-.config.js.sample
+config.js
 
 blog/
 *.css.map
