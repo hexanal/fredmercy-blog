@@ -1,33 +1,33 @@
 {{#> layouts/default }}
 
 <div class="index">
-	<div class="index_ok">
-		<h1 class="index_hd">
+	<div class="index__header">
+		<h1 class="index__heading">
 			Latest entries
 		</h1>
 
-		<a href="/blog/archives" class="index_ar">
+		<a href="/blog/archives" class="index__secondary">
 			Browse archives...
 		</a>
 	</div>
 
-	<ul class="index_ls">
+	<ul class="index__list">
 	{{#each entries}}
-		<li class="index_it">
-			<div class="index_mt">
-				<span class="index_dt">
+		<li class="index__item">
+			<div class="index__meta">
+				<span class="index__date">
 					{{ this.date }}
 				</span>
-				<span class="index_tp">
+				<span class="index__type">
 					[{{ this.type }}]
 				</span>
 			</div>
 
-			<a class="index_lk" href="{{ this.url }}">
+			<a class="index__link" href="{{ this.url }}">
 				{{#if this.title}}
 					{{this.title}}
 				{{else}}
-					<em>Untitled</em><span class="index_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
+					<em>Untitled</em><span class="index__extra"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
 				{{/if}}
 			</a>
 		</li>

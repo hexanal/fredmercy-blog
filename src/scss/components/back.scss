@@ -7,14 +7,40 @@
 	}
 }
 
-.back_lk {
+.back__link {
+	position: relative;
 	display: inline-block;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 	font-style: italic;
 
+	&:before {
+		position: absolute;
+		left: 0.25em;
+		font-style: normal;
+	}
+
 	@media (min-width: 500px) {
 		margin-left: 1em;
 		margin-right: 0;
+	}
+}
+
+.back__link--latest {
+	padding-left: 1.75em;
+
+	&:before {
+		content: '⟵';
+		top: -0.1em;
+	}
+}
+
+.back__link--archive {
+	padding-left: 1.5em;
+
+	&:before {
+		content: '★';
+		top: 0.1em;
+		font-size: 0.75em;
 	}
 }

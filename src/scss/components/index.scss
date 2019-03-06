@@ -2,7 +2,7 @@
 	max-width: 700px;
 }
 
-.index_ok {
+.index__header {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -10,7 +10,7 @@
 	margin-bottom: 1.5em;
 }
 
-.index_hd {
+.index__heading {
 	margin: 0;
 	font-size: 1em;
 	font-weight: 400;
@@ -20,7 +20,11 @@
 	background-color: $color-active;
 }
 
-.index_ls {
+.index__secondary {
+	font-style: italic;
+}
+
+.index__list {
 	overflow: hidden;
 	list-style: none;
 	padding-left: 0;
@@ -28,15 +32,15 @@
 	line-height: 1.4;
 }
 
-.index_it {
+.index__item {
 	white-space: nowrap;
 }
 
-.index_it + .index_it {
+.index__item + .index__item {
 	margin-top: 1em;
 }
 
-.index_mt {
+.index__meta {
 	display: inline-block;
 	margin-right: 0.25em;
 	line-height: 1.1;
@@ -44,7 +48,7 @@
 	background-color: $color-primary;
 }
 
-.index_tp {
+.index__type {
 	display: none;
 	font-style: italic;
 
@@ -53,14 +57,10 @@
 	}
 }
 
-.index_ex {
+.index__extra {
 	display: none;
 
 	@media (min-width: 500px) {
 		display: inline;
 	}
-}
-
-.index_ar {
-	font-style: italic;
 }
