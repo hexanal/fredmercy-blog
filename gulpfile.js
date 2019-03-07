@@ -5,7 +5,6 @@ var scss = require('./tasks/scss.js');
 var handlebars = require('./tasks/handlebars.js');
 var images = require('./tasks/images.js');
 var fonts = require('./tasks/fonts.js');
-var browsersync = require('./tasks/browsersync.js');
 
 var config = require('./config.js');
 
@@ -40,5 +39,4 @@ gulp.task('watch:images', function() {
 });
 gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:scss', 'watch:images'));
 
-gulp.task('serve', gulp.parallel('watch', browsersync));
 gulp.task('kickstart', gulp.series('build', 'watch'));
