@@ -22,13 +22,11 @@
 		font-family: $font-plex;
 		font-size: 1em;
 		line-height: 1;
-		// text-decoration: underline;
 		color: $color-bg;
 		background-color: $color-active;
 
 		&:hover,
 		&:focus {
-			// text-decoration: none;
 			color: $color-bg;
 			background-color: $color-secondary;
 		}

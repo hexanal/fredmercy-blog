@@ -14,14 +14,19 @@
 	margin: 0;
 	font-size: 1em;
 	font-weight: 400;
-	line-height: 1.4;
+	line-height: 1.2;
 	font-style: italic;
 	color: $color-bg;
 	background-color: $color-active;
 }
 
-.index__secondary {
+.index__jump-to {
+	font-size: 0.9em;
+	line-height: 1.2;
+	font-family: $font-plex;
 	font-style: italic;
+	color: $color-primary;
+	cursor: pointer;
 }
 
 .index__list {
