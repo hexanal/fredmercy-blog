@@ -1,20 +1,4 @@
-.archive_bk {
-	display: inline-block;
-	margin-bottom: 1.5em;
-}
-
-.archive_hd {
-	display: inline-block;
-	margin: 0 0 1em;
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 1.4;
-	font-style: italic;
-	color: $color-bg;
-	background-color: $color-active;
-}
-
-.archive_ls {
+.archive__list {
 	overflow: hidden;
 	list-style: none;
 	padding-left: 0;
@@ -22,25 +6,25 @@
 	line-height: 1.4;
 }
 
-.archive_mnyr {
+.archive__month-year {
 	display: inline-block;
 	margin: 1em 0;
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.4;
 	color: $color-bg;
-	background-color: $color-secondary;
+	background-color: $color-active;
 }
 
-.archive_it {
+.archive__item {
 	white-space: nowrap;
 }
 
-.archive_it + .archive_it {
+.archive__item + .archive__item {
 	margin-top: 0.5em;
 }
 
-.archive_mt {
+.archive__meta {
 	display: inline-block;
 	margin-right: 0.25em;
 	line-height: 1.1;
@@ -48,7 +32,7 @@
 	background-color: $color-primary;
 }
 
-.archive_tp {
+.archive__type {
 	display: none;
 	font-style: italic;
 
@@ -57,7 +41,7 @@
 	}
 }
 
-.archive_ex {
+.archive__extra {
 	display: none;
 
 	@media (min-width: 500px) {

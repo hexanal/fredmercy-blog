@@ -11,30 +11,30 @@
 		</a>
 	</div>
 
-	<ul class="archive_ls">
+	<ul class="archive__list">
 	{{#each entries as |entry index|}}
-		<li class="archive_mn">
-			<h2 class="archive_mnyr">
+		<li class="archive__list-header">
+			<h2 class="archive__month-year">
 				{{ index }}
 			</h2>
 		</li>
 
 		{{#each entry}}
-			<li class="archive_it">
-				<div class="archive_mt">
-					<span class="archive_dt">
+			<li class="archive__item">
+				<div class="archive__meta">
+					<span class="archive__date">
 						{{ this.date }}
 					</span>
-					<span class="archive_tp">
+					<span class="archive__type">
 						[{{ this.type }}]
 					</span>
 				</div>
 
-				<a class="archive_lk" href="{{ this.url }}">
+				<a class="archive__link" href="{{ this.url }}">
 					{{#if this.title}}
 						{{this.title}}
 					{{else}}
-						<em>Untitled</em><span class="archive_ex"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
+						<em>Untitled</em><span class="archive__extra"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
 					{{/if}}
 				</a>
 			</li>
