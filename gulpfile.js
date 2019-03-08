@@ -21,7 +21,7 @@ gulp.task('images', images);
 
 gulp.task('fonts', fonts);
 
-gulp.task('build', gulp.series('reset', gulp.parallel('handlebars', 'images', 'fonts', 'scss')));
+gulp.task('build', gulp.parallel('handlebars', 'images', 'fonts', 'scss'));
 
 gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));

@@ -5,12 +5,14 @@
   "author": "hexanal",
   "scripts": {
     "html": "gulp handlebars",
+    "reset": "gulp reset",
     "build-assets": "gulp build",
     "build-js": "webpack --mode=production",
     "watch-assets": "gulp kickstart",
     "watch-js": "webpack --mode=development --watch",
+    "watch": "run-p watch-assets watch-js",
     "build": "run-p build-assets build-js",
-    "dev": "run-p watch-assets watch-js"
+    "dev": "npm run reset && run-p watch-assets watch-js"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
