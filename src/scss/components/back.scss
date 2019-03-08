@@ -1,10 +1,6 @@
 .back {
 	margin-bottom: 1.5em;
-	text-align: center;
-
-	@media (min-width: 500px) {
-		text-align: right;
-	}
+	text-align: right;
 }
 
 .back__link {
