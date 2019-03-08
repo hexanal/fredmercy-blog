@@ -26,7 +26,7 @@
 	}
 }
 
-.leave-comment_hd {
+.leave-comment__header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -37,7 +37,7 @@
 	}
 }
 
-.leave-comment_tt {
+.leave-comment__heading {
 	display: inline-block;
 	margin: 0;
 	padding: 0.25em;
@@ -47,7 +47,7 @@
 	background-color: $color-primary;
 }
 
-.leave-comment_st {
+.leave-comment__status {
 	display: none;
 	flex-grow: 1;
 	margin-left: 0.5em;
@@ -58,7 +58,7 @@
 	}
 }
 
-.leave-comment_cl {
+.leave-comment__close {
 	display: inline-block;
 	margin-left: 0.5em;
 	padding: 0;
@@ -76,8 +76,22 @@
 	}
 }
 
-.leave-comment_tx,
-.leave-comment_ip {
+.leave-comment__field {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.leave-comment__label {
+	display: block;
+	margin-bottom: 0.25em;
+
+	i {
+		color: $color-subdued;
+	}
+}
+
+.leave-comment__textarea,
+.leave-comment__input {
 	width: 100%;
 	padding: 0.5em;
 	font-family: $font-plex;
@@ -91,28 +105,14 @@
 	}
 }
 
-.leave-comment_tx {
+.leave-comment__textarea {
 	min-height: 120px;
 	resize: vertical;
 	line-height: 1.4;
 }
 
-.leave-comment_ll {
-	display: block;
-	margin-bottom: 0.25em;
-
-	i {
-		color: $color-subdued;
-	}
-}
-
-.leave-comment_lb {
-	display: block;
-	margin-bottom: 1.5em;
-}
-
-.leave-comment_sb,
-.leave-comment_cn {
+.leave-comment__submit,
+.leave-comment__cancel {
 	padding: 0;
 	color: $color-primary;
 	font-family: $font-plex;
@@ -128,7 +128,7 @@
 	}
 }
 
-.leave-comment_cn {
+.leave-comment__cancel {
 	margin-left: 1em;
 	color: $color-subdued;
 
