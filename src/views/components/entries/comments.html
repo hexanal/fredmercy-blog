@@ -1,22 +1,21 @@
 <div class="comments">
-	<h2 class="comments_tt">
+	<h2 class="comments__heading">
 		Comment dots
 	</h2>
 
 	<div
-		class="comments_gd state-loading js-comments-grid"
+		class="comments__grid state-loading js-comments-grid"
 		data-entry-id="{{ date }}"
 	>
 	{{#each commentsGrid}}
 		<button
 			id="comment_{{ this.index }}"
 			type="button"
-			class="comments_cm js-comment-dot"
+			class="comments__dot js-comment-dot"
 			data-index="{{ this.index }}"
 			data-id="{{ this.commentId }}"
 			disabled
 		>
-			<div class="comments_ci"></div>
 		</button>
 	{{/each}}
 	</div>

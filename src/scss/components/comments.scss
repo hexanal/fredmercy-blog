@@ -8,7 +8,7 @@
 	}
 }
 
-.comments_tt {
+.comments__heading {
 	margin: 2.5em 0 1em;
 	padding: 0.25em;
 	font-size: 1em;
@@ -18,7 +18,7 @@
 	background-color: $color-primary;
 }
 
-.comments_gd {
+.comments__grid {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -28,7 +28,7 @@
 	}
 }
 
-.comments_cm {
+.comments__dot {
 	position: relative;
 	width: 25px;
 	height: 25px;
@@ -38,7 +38,6 @@
 	background: none;
 	border: 0;
 	border-radius: 50%;
-	cursor: pointer;
 
 	&:before {
 		content: '';

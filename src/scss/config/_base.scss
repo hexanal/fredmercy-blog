@@ -1,6 +1,21 @@
+// colors, courtesy of https://coolors.co/0059ff-f9f9f9-38e06d-a0b4bf-000000
+$color-bg: #f9f9f9; // Snow
+$color-primary: #0059ff; // Blue (RYB)
+$color-active: #38e06d; // UFO Green
+$color-secondary: #0059ff; // Blue (RYB)
+$color-subdued: #a0b4bf; // Wild Blue Yonder
+
+// sizes
 $max-width: 1200px;
 $responsive-width: 90%;
 
+// media queries
+$mq-mobile : 500px;
+$mq-tablet-portrait : 900px;
+$mq-tablet : 1050px;
+$mq-desktop : 1280px;
+
+// mixins
 @mixin container($width: $max-width) {
 	width: $responsive-width;
 	max-width: $width;
@@ -20,6 +35,7 @@ $responsive-width: 90%;
 	}
 }
 
+// base styles
 html {
 	font-size: 16px;
 	font-smoothing: subpixel-antialiased;
@@ -53,6 +69,7 @@ img {
 
 a {
 	color: $color-primary;
+	outline: none;
 
 	&:visited {
 		color: $color-primary;
@@ -64,6 +81,12 @@ a {
 		background-color: $color-secondary;
 		text-decoration: none;
 	}
+}
+
+button {
+	border: 0;
+	outline: none;
+	cursor: pointer;
 }
 
 del {
