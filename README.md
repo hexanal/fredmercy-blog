@@ -29,7 +29,9 @@ $ npm run build
 
 ### Posting an entry
 
-Create a new folder in `/entries/` with today's date, with the format: "YYYY-MM-DD"
+If it doesn't exist yet, create a new month folder in `/entries` with the format `YYYY-MM`.
+
+Create a new folder in this folder with the entry date, format `YYYY-MM-DD`.
 
 In that folder, drop a single Mardown file (`.md` extension) with whatever name you want. The filename will end up being displayed in the URL.
 
@@ -48,14 +50,6 @@ type: tag, category, something, comma-separated
 A special `template` parameter can be used to use a different view template, which are located in `/src/views/templates`. These are html files with [HandlebarsJS](http://handlebarsjs.com/) syntax.
 
 Then it's all [Github Flavored Markdown](https://github.github.com/gfm/).
-
-### Archives
-
-Archiving entries is a manual process.
-
-For monthly archives, create a new month in `/archives` with format "YYYY-MM", then move all the entries for that month into it.
-
-You got it.
 
 ## Development
 
