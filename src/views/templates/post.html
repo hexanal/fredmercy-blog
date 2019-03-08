@@ -1,33 +1,33 @@
 {{#> layouts/default }}
 
 <div class="post">
-	<div class="post_ps">
+	<div class="post__window">
 		{{> entries/back }}
 
-		<header class="post_hd">
-			<div class="post_mt">
-				<time class="post_dt">
+		<header class="post__heading">
+			<div class="post__meta">
+				<time class="post__date">
 					{{ date }}
 				</time>
-				<span class="post_tp">
+				<span class="post__type">
 					[{{ type }}]
 				</span>
 			</div>
 
 			{{#if title}}
-			<h1 class="post_tt">
+			<h1 class="post__title">
 				{{ title }}
 			</h1>
 			{{/if}}
 		</header>
 
-		<div class="post_bd">
+		<div class="post__body">
 			{{{ body }}}
 		</div>
 	</div>
 
 	{{#if commentsGrid}}
-	<div class="post_cm">
+	<div class="post__comments">
 		{{> entries/comments}}
 		{{> entries/leave-comment}}
 		{{> entries/read-comment}}

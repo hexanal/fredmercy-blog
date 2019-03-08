@@ -14,52 +14,6 @@ var orderBy = require('lodash.orderby');
 var groupBy = require('lodash.groupby');
 
 module.exports = {
-	index: function() {
-		var entries = [];
-
-		return gulp
-			.src(config.html.src)
-			.pipe(through.obj(function (file, enc, cb) {
-				var front = frontMatter(file.contents.toString());
-				var post = getPostPathAndDate(file);
-
-				entries.push({
-					url: post.url,
-					title: front.attributes.title,
-					date: post.date,
-					rawDate: post.date + 'T12:00:00', // otherwise the formatDate thing returns yesterday's date
-					description: front.attributes.description,
-					type: front.attributes.type
-				});
-
-				cb(null);
-			}))
-			.on('end', function() {
-				var isoDate = new Date().toISOString().split('T');
-				var lastUpdatedOn = isoDate[0];
-				var posts = orderBy(entries, 'date', 'desc'); // reorder, and populate our pageData
-				var params = {
-					pageTitle: config.info.title,
-					description: config.info.description,
-					entries: posts,
-					stats: {
-						numberOfEntries: entries.length,
-						lastUpdatedOn: lastUpdatedOn
-					}
-				};
-
-				return gulp.src(config.html.templates + 'index.html')
-					.pipe(hb(params, {
-						allowedExtensions: ['html', 'hbs'],
-						partialsDirectory: [
-							config.base.src + '/views/components',
-						],
-					}))
-					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest + config.info.rootPath));
-			});
-	},
-
 	posts: function() {
 		return gulp
 			.src(config.html.src)
@@ -80,42 +34,22 @@ module.exports = {
 			}));
 	},
 
-	archives: function() {
-		return gulp
-			.src(config.html.archives)
-			.pipe(through.obj(function (file, enc, cb) {
-				var params = getEntryParams(file, true);
-
-				return gulp.src(config.html.templates + params.template + '.html')
-					.pipe(hb(params, {
-						allowedExtensions: ['html', 'hbs'],
-						partialsDirectory: [
-							config.base.src + '/views/components',
-						],
-					}))
-					.pipe(rename('index.html'))
-					.pipe(gulp.dest( config.html.dest + params.url))
-					.on('error', cb)
-					.on('end', cb);
-			}));
-	},
-
-	archivesIndex: function() {
+	index: function() {
 		var entries = [];
 
 		return gulp
-			.src(config.html.archives)
+			.src(config.html.src)
 			.pipe(through.obj(function (file, enc, cb) {
 				var front = frontMatter(file.contents.toString());
 				var post = getPostPathAndDate(file);
-				var archiveData = getArchiveUrl(post);
+				var archiveData = getArchiveData(post);
 
 				entries.push({
-					url: archiveData.url,
+					url: post.url,
 					title: front.attributes.title,
-					archive: capitalize(archiveData.month) + ' ' + archiveData.year,
-					date: post.path,
-					rawDate: post.path + 'T12:00:00', // otherwise the formatDate thing returns yesterday's date
+					archive: archiveData.title,
+					date: post.date,
+					rawDate: post.date + 'T12:00:00', // otherwise the formatDate thing returns yesterday's date
 					description: front.attributes.description,
 					type: front.attributes.type
 				});
@@ -127,12 +61,12 @@ module.exports = {
 					return post.archive;
 				});
 				var params = {
-					pageTitle: 'Archives __ ' + config.info.title,
-					description: 'Archives of past entries for my blog.',
+					pageTitle: config.info.title,
+					description: config.info.description,
 					entries: posts
 				};
 
-				return gulp.src(config.html.templates + 'archive.html')
+				return gulp.src(config.html.templates + 'index.html')
 					.pipe(hb(params, {
 						allowedExtensions: ['html', 'hbs'],
 						partialsDirectory: [
@@ -140,7 +74,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest + config.info.rootPath + '/archives'));
+					.pipe(gulp.dest(config.html.dest + config.info.rootPath));
 			});
 	}
 }
@@ -151,9 +85,8 @@ function getEntryParams(file, isArchive) {
 		? pageData.attributes.template
 		: 'post'; // default to post template type
 	var post = getPostPathAndDate(file);
-	var date = isArchive === true ? post.path : post.date;
-	var archiveUrl = getArchiveUrl(post);
-	var url = isArchive === true ? archiveUrl.url : post.url;
+	var date = post.date;
+	var url = post.url;
 
 	marked.setOptions({
 		gfm: true,
@@ -162,15 +95,14 @@ function getEntryParams(file, isArchive) {
 
 	var title = pageData.attributes.title || '';
 	var pageTitle = pageData.attributes.title
-		? title + ' __ ' + config.info.title
-		: 'Untitled __ ' + config.info.title;
+		? title + ' / ' + config.info.title
+		: 'Untitled / ' + config.info.title;
 	var comments = typeof pageData.attributes.comments === 'number'
 		? pageData.attributes.comments
 		: 25;
 	var commentsGrid = buildCommentsGrid(date, comments);
 
 	return {
-		isArchive: isArchive,
 		url: url,
 		date: date,
 		title: title,
@@ -189,10 +121,9 @@ function getPostPathAndDate(file) {
 	// gets you '2019-01-20' and 'file-name-yo', for example
 
 	return {
-		url: config.info.rootPath + '/' + pathData[0] + '/' + pathData[1],
-		date: pathData[0],
-		path: pathData[1],
-		extra: pathData[2]
+		url: config.info.rootPath + '/' + pathData[1] + '/' + pathData[2],
+		date: pathData[1],
+		path: pathData[2]
 	};
 }
 
@@ -208,15 +139,13 @@ function buildCommentsGrid(entryId, comments) {
 	});
 }
 
-function getArchiveUrl(post) {
-	var dateElements = post.path.split('-');
+function getArchiveData(post) {
+	var dateElements = post.date.split('-');
 	var year = dateElements[0];
 	var month = getMonthName(dateElements[1]);
-	var title = month + '-' + year;
-	var postPath = config.info.rootPath + '/' + post.path + '/' + post.extra; // path is.. date, extra is the entry title
+	var title = capitalize(month) + ' ' + year;
 
 	return {
-		url: postPath,
 		title: title,
 		month: month,
 		year: year

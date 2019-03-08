@@ -12,10 +12,8 @@ gulp.task('reset', reset);
 
 gulp.task('handlebars:index', handlebars.index);
 gulp.task('handlebars:posts', handlebars.posts);
-gulp.task('handlebars:archives', handlebars.archives);
-gulp.task('handlebars:archivesIndex', handlebars.archivesIndex);
 
-gulp.task('handlebars', gulp.parallel('handlebars:index', 'handlebars:posts', 'handlebars:archives', 'handlebars:archivesIndex'));
+gulp.task('handlebars', gulp.parallel('handlebars:index', 'handlebars:posts'));
 
 gulp.task('scss', scss);
 

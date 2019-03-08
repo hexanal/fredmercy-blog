@@ -32,12 +32,22 @@
 	line-height: 1.4;
 }
 
+.index__month-year {
+	display: inline-block;
+	margin: 1em 0;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.4;
+	color: $color-bg;
+	background-color: $color-active;
+}
+
 .index__item {
 	white-space: nowrap;
 }
 
 .index__item + .index__item {
-	margin-top: 1em;
+	margin-top: 0.8em;
 }
 
 .index__meta {

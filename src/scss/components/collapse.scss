@@ -1,9 +1,18 @@
-.lyrics {
+.collapse {
+	position: relative;
 	overflow: hidden;
-	height: 1em;
+	height: 1.25em;
+	padding-left: 1em;
 	margin-top: 0;
 
-	&.state-lyrics-shown {
+	&:before {
+		content: '_ ';
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&.state-collapse-expand {
 		height: auto;
 	}
 
@@ -13,26 +22,26 @@
 		font-family: $font-plex;
 		font-size: 1em;
 		line-height: 1;
-		text-decoration: underline;
-		background-color: transparent;
+		// text-decoration: underline;
+		color: $color-bg;
+		background-color: $color-active;
 
 		&:hover,
 		&:focus {
-			text-decoration: none;
+			// text-decoration: none;
 			color: $color-bg;
 			background-color: $color-secondary;
 		}
 	}
 
-	.e_bd & { // override the styles from "e"
-		padding: 0 0 1.5em;
+	.post__body & { // override the styles from "post"
+		margin: 0 0 1.5em 0;
+		padding: 0 0 0.5em 1em;
 		color: $color-secondary;
 		background-color: transparent;
 	}
 
 	p {
-		margin-left: 2em;
-
 		+ p {
 			margin-top: 1.5em;
 		}

@@ -1,5 +1,5 @@
 import comments from './comments';
-import lyrics from './lyrics';
+import collapse from './collapse';
 
 comments();
-lyrics();
+collapse();
