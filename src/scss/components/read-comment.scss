@@ -9,14 +9,14 @@
 	}
 }
 
-.read-comment_hd {
+.read-comment__header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin: 3em 0 1.5em;
 }
 
-.read-comment_tt {
+.read-comment__heading {
 	display: inline-block;
 	margin: 0;
 	padding: 0.25em;
@@ -26,14 +26,14 @@
 	background-color: $color-primary;
 }
 
-.read-comment_st {
+.read-comment__status {
 	display: inline-block;
 	flex-grow: 1;
 	margin-left: 0.5em;
 	font-style: italic;
 }
 
-.read-comment_cl {
+.read-comment__close {
 	display: inline-block;
 	margin-left: 0.5em;
 	padding: 0;
@@ -51,7 +51,7 @@
 	}
 }
 
-.read-comment_bd {
+.read-comment__body {
 	margin-bottom: 1em;
 	line-height: 1.4;
 }
