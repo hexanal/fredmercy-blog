@@ -107,6 +107,13 @@
 		margin-top: 0.25em;
 	}
 
+	hr {
+		height: 2px;
+		margin: 2.5em 0;
+		background-color: $color-primary;
+		border: none;
+	}
+
 	iframe {
 		width: 100%;
 		height: 200px;
