@@ -16,6 +16,7 @@ This stuff's trippy.
 
 <code class="collapse">
 <button type="button">Show/Hide Lyrics</button>
+<em>
 
 Win some and lose some
 Lose some and then some
@@ -33,14 +34,17 @@ Yes I do smile sometimes
 Who knows why I do?
 Only human after all...
 
+</em>
 </code>
 
 [It's an honor](/files/music/its-an-honor.mp3) _(December 20, 2017)_
 
 <code class="collapse">
 <button type="button">Show/Hide Lyrics</button>
+<em>
 
 It's an honor
 To be here
 
+</em>
 </code>
