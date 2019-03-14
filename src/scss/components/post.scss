@@ -114,6 +114,17 @@
 		border: none;
 	}
 
+	sup[title] {
+		position: relative;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $color-bg;
+			background-color: $color-primary;
+		}
+	}
+
 	iframe {
 		width: 100%;
 		height: 200px;

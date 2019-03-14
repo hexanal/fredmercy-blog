@@ -1,0 +1,37 @@
+.note {
+	display: none;
+	position: absolute;
+	top: 120%;
+	left: 0;
+	min-width: 20em;
+	padding: 1em;
+	line-height: 1.4;
+	color: $color-primary;
+	border: 2px solid currentColor;
+	background-color: $color-bg;
+	cursor: help;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		background-color: $color-primary;
+	}
+	&:before {
+		top: 0.5em;
+		left: 100%;
+		width: 1em;
+		height: calc(100% + 0.5em);
+	}
+	&:after {
+		top: 100%;
+		left: 0.5em;
+		width: calc(100% + 0.5em);
+		height: 1em;
+	}
+
+	&.state-note-visible {
+		display: block;
+	}
+}
