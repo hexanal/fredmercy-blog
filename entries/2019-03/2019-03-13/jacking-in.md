@@ -18,7 +18,7 @@ For such a short time, forgoing an _uncapped_ home connection to the internet pr
 
 `10:56pm:` Third gin & tonic; obviously I've been replacing one addiction with another again.
 
-`12:33am:` Technically we're tomorrow but fuk it... psshhhyeah whatever. no internet means I get to listen to the mp3 I have on my computer, which means I get to listen to Tool! (which isn't on Spotify yet) Oh fuck yeah it's good!
+`12:33am:` Technically we're tomorrow but fuk it... psshhhyeah whatever. no internet means I get to listen to the mp3 I have on my computer, which means I get to listen to Tool! (which isn't on Spotify) Oh fuck yeah it's good!
 
 `12:45am:` [...]
 
