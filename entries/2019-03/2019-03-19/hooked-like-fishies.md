@@ -9,3 +9,5 @@ type: journal, tech
 `1:56pm:` Ok, first test failed, but whatever. I'll try something else.
 
 `2:14pm:` I mean... still nothing, but maybe soon.
+
+`2:22pm:` And to think I skipped lunch for _this?!_ Haha, just kidding, this is important and I will make it work.
