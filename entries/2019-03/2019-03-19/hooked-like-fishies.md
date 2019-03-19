@@ -11,3 +11,5 @@ type: journal, tech
 `2:14pm:` I mean... still nothing, but maybe soon.
 
 `2:22pm:` And to think I skipped lunch for _this?!_ Haha, just kidding, this is important and I will make it work.
+
+`2:56pm:` I think I fundamentally misunderstood the concept of the _githooks_ and it won't be possible to implement exactly what I had in mind. That's a bummer, man. I guess I'll continue to ssh into the server and manually pull & build the blog. Like a _chump_.
