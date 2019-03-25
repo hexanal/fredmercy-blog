@@ -1,6 +1,7 @@
 .note {
 	display: none;
 	position: absolute;
+	z-index: 100;
 	top: 120%;
 	left: 0;
 	min-width: 35em;
