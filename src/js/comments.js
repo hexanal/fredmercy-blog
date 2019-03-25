@@ -8,6 +8,7 @@ export default function() {
 	/**
 	 * Setup
 	 */
+	const commentsContainer = document.querySelector('.js-comments');
 	const commentsDots = document.querySelectorAll('.js-comment-dot');
 	const leaveCommentPopup = document.querySelector('.js-leave-comment');
 	const leaveCommentForm = document.querySelector('.js-comment-form');
@@ -103,13 +104,13 @@ export default function() {
 	 * API Calls
 	 */
 	function fetchComments() {
-		commentsGrid.classList.add('state-loading');
+		commentsContainer.classList.add('state-loading');
 
 		axios.get('/api/comments/' + entryId)
 			.then((res) => {
 				const {comments} = res.data;
 
-				commentsGrid.classList.remove('state-loading'); // not loading no more
+				commentsContainer.classList.remove('state-loading'); // not loading no more
 				commentsDots.forEach(dot => dot.removeAttribute('disabled'));
 				comments.map((comment) => {
 					const commentDot = document.querySelector(`#comment_${comment.slot}`);
