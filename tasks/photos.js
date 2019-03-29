@@ -16,7 +16,7 @@ module.exports = {
 	copy: function() {
 		return gulp.src(config.photos.files)
 			.pipe(images())
-			.pipe(gulp.dest(config.photos.dest + config.info.rootPath + '/photos'));
+			.pipe(gulp.dest(config.photos.dest + config.info.photos.path));
 	},
 
 	index: function() {
@@ -54,7 +54,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.photos.dest + config.info.rootPath + '/photos'));
+					.pipe(gulp.dest(config.photos.dest + config.info.photos.path));
 			});
 	}
 }
@@ -65,6 +65,6 @@ function getPostPathAndDate(file) {
 
 	return {
 		date: pathData[0],
-		path: config.info.rootPath + '/photos/' + pathData[0] + '/' + pathData[1] + '.jpg'
+		path: config.info.photos.path + '/' + pathData[0] + '/' + pathData[1] + '.jpg'
 	};
 }
