@@ -167,13 +167,6 @@
 			background-color: $color-primary;
 		}
 
-		/*
-		&:after {
-			content: 'view more';
-			font-style: normal;
-		}
-		*/
-
 		&:hover,
 		&:focus {
 			&:before {
@@ -196,7 +189,11 @@
 
 	@media (min-width: 500px) {
 		width: auto;
-		height: 100%;
+		height: auto;
+
+		.state-show-details & {
+			height: 100%;
+		}
 	}
 }
 
