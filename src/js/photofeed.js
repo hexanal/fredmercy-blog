@@ -14,7 +14,7 @@ export default function() {
 	/**
 	 * Events
 	 */
-	document.addEventListener('keyup', keyUpEvent);
+	document.addEventListener('keyup', e => keyUpEvent(e));
 
 	photoLinks.forEach((link) => {
 		link.addEventListener('click', (e) => {
@@ -41,7 +41,38 @@ export default function() {
 	function keyUpEvent(e) {
 		const {key} = e;
 
+		if (key === 'ArrowLeft') {
+			e.preventDefault();
+			showSiblingImage(e, 'previous');
+		}
+		if (key === 'ArrowRight') {
+			e.preventDefault();
+			showSiblingImage(e, 'next');
+		}
 		if (key === 'Escape') closeDetails();
+	}
+
+	function showSiblingImage(e, direction) {
+		if (!currentPhoto) return;
+
+		closeButtons.forEach(btn => {
+			btn.setAttribute('tabindex', '-1');
+		});
+		currentPhoto.classList.remove('state-show-details');
+
+		currentPhoto = direction === 'next'
+			? currentPhoto.nextElementSibling
+			: currentPhoto.previousElementSibling;
+
+		if (!currentPhoto) return;
+
+		currentPhoto.scrollLeft = 0; // reset the left scroll bro
+		document.body.scrollLeft = 0; // reset the left scroll bro
+
+		currentPhoto.classList.add('state-show-details');
+
+		const closeBtn = currentPhoto.querySelector('.js-photofeed-close');
+		closeBtn.removeAttribute('tabindex');
 	}
 
 	function closeDetails() {

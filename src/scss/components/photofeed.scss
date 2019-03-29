@@ -210,3 +210,20 @@
 	display: inline-block;
 	margin-right: 1em;
 }
+
+.photofeed__date {
+	display: inline-block;
+	line-height: 1.2;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.photofeed__help {
+	display: block;
+	margin-top: 1em;
+	color: $color-subdued;
+
+	@media (min-width: 500px) {
+		display: none;
+	}
+}
