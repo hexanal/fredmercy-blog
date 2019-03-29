@@ -1,3 +1,5 @@
+import imagesLoaded from 'imagesloaded';
+
 export default function() {
 	const feed = document.querySelector('.js-photofeed');
 
@@ -6,15 +8,28 @@ export default function() {
 	/**
 	 * Setup
 	 */
+	const photos = document.querySelectorAll('.js-photofeed-item');
 	const photoLinks = document.querySelectorAll('.js-photofeed-photo');
 	const closeButtons = document.querySelectorAll('.js-photofeed-close');
 
 	let currentPhoto = null;
 
+	photos.forEach(pic => {
+		const img = pic.querySelector('img');
+		const src = img.dataset.src;
+
+		img.src = src;
+
+		imagesLoaded(img, function(instance) {
+			pic.classList.add('state-loaded');
+		});
+	});
+
 	/**
 	 * Events
 	 */
 	document.addEventListener('keyup', e => keyUpEvent(e));
+	document.addEventListener('keydown', e => keyDownEvent(e));
 
 	photoLinks.forEach((link) => {
 		link.addEventListener('click', (e) => {
@@ -38,7 +53,7 @@ export default function() {
 		})
 	});
 
-	function keyUpEvent(e) {
+	function keyDownEvent(e) {
 		const {key} = e;
 
 		if (key === 'ArrowLeft') {
@@ -49,6 +64,11 @@ export default function() {
 			e.preventDefault();
 			showSiblingImage(e, 'next');
 		}
+	}
+
+	function keyUpEvent(e) {
+		const {key} = e;
+
 		if (key === 'Escape') closeDetails();
 	}
 
@@ -85,4 +105,5 @@ export default function() {
 		currentPhoto.classList.remove('state-show-details');
 		currentPhoto = null;
 	}
+
 }
