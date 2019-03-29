@@ -63,6 +63,7 @@ module.exports = {
 				var params = {
 					pageTitle: config.info.title,
 					description: config.info.description,
+					photosPath: config.info.photos.path,
 					entries: posts
 				};
 

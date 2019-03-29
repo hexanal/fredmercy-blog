@@ -1,0 +1,3 @@
+---
+title: Seductive Home Decor
+---

@@ -1,0 +1,55 @@
+{{#> layouts/default }}
+
+<div class="photofeed js-photofeed">
+	<div class="photofeed__header">
+		<h1 class="photofeed__heading">
+			{{ pageTitle }}
+		</h1>
+
+		<a href="/blog" class="back__link back__link--latest">
+			back to blog
+		</a>
+	</div>
+
+	<ul class="photofeed__list">
+	{{#each photos as |photo index|}}
+		<li class="photofeed__item js-photofeed-item">
+			<a
+				href="{{ photo.path }}"
+				id="{{ photo.date }}"
+				class="photofeed__link js-photofeed-photo"
+				title="{{ photo.description }}"
+			>
+				<img
+					class="photofeed__img"
+					src="{{ photo.path }}"
+					alt="{{ photo.title }}"
+				>
+			</a>
+
+			<button
+				class="photofeed__close-btn js-photofeed-close"
+				type="button"
+				tabindex="-1"
+			>
+				close<!-- × -->
+			</button>
+
+
+			<div class="photofeed__description js-photo-description">
+				{{#if photo.title}}
+					<h2 class="photofeed__photo-title">
+						{{photo.title}}
+					</h2>
+				{{/if}}
+				<em>{{formatDate photo.rawDate day="numeric" month="long" year="numeric"}}</em>
+				{{#if photo.description}}
+					<p>{{ photo.description }}</p>
+				{{/if}}
+			</div>
+		</li>
+	{{/each}}
+	</ul>
+</div>
+
+{{/layouts/default}}

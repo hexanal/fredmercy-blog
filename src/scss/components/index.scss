@@ -20,7 +20,17 @@
 	background-color: $color-active;
 }
 
+.index__menu {
+	display: flex;
+	align-items: center;
+}
+
+.index__menu-item {
+	//
+}
+
 .index__jump-to {
+	margin-left: 1em;
 	font-size: 0.9em;
 	line-height: 1.2;
 	font-family: $font-plex;
