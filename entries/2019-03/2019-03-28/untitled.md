@@ -7,4 +7,4 @@ type: journal
 
 `10:35am:` Second cup of coffee today and I'm back on track. I just needed a little pick-me-up. And the clouds are parting a little, too.
 
-`11:45am:` Watched [Chocolat](https://www.imdb.com/title/tt0241303/reference) with the girlfriend the other day. What a cute little movie! I rate it: ⭐️⭐️⭐️⭐️ I don't really know what the moral of the story is, or anything, but I quite enjoyed it.
+`11:45am:` Watched [Chocolat](https://www.imdb.com/title/tt0241303/reference) with the girlfriend the other day. What a cute little movie! I rate it: ★★★★☆️ I don't really know what the moral of the story is, or anything, but I quite enjoyed it.
