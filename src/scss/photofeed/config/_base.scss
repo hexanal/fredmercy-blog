@@ -42,12 +42,12 @@ body {
 }
 
 ::-moz-selection {
-	color: $color-primary;
-	background: $color-bg;
+	color: $color-bg;
+	background: $color-primary;
 }
 ::selection {
-	color: $color-primary;
-	background: $color-bg;
+	color: $color-bg;
+	background: $color-primary;
 }
 
 *, *:before, *:after {

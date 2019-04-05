@@ -13,12 +13,6 @@ var config = require('../config');
 var orderBy = require('lodash.orderby');
 
 module.exports = {
-	copy: function() {
-		return gulp.src(config.photos.files)
-			.pipe(images())
-			.pipe(gulp.dest(config.photos.dest + config.info.photos.path));
-	},
-
 	index: function() {
 		var photos = [];
 
@@ -29,7 +23,7 @@ module.exports = {
 				var post = getPostPathAndDate(file);
 
 				photos.push({
-					path: post.path,
+					path: front.attributes.url || post.path,
 					title: front.attributes.title,
 					date: post.date,
 					rawDate: post.date + 'T12:00:00', // otherwise the formatDate thing returns yesterday's date

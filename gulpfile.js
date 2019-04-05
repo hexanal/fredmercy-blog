@@ -16,9 +16,7 @@ gulp.task('entries:index', entries.index);
 gulp.task('entries:posts', entries.posts);
 gulp.task('entries', gulp.parallel('entries:index', 'entries:posts'));
 
-gulp.task('photos:index', photos.index);
-gulp.task('photos:files', photos.copy);
-gulp.task('photos', gulp.parallel('photos:index', 'photos:files'));
+gulp.task('photos', photos.index);
 
 gulp.task('scss', scss);
 
@@ -32,7 +30,7 @@ gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));
 });
 gulp.task('watch:html', function() {
-	gulp.watch(config.html.watch, gulp.series('entries', 'photos:index'));
+	gulp.watch(config.html.watch, gulp.series('entries', 'photos'));
 });
 gulp.task('watch:photos', function() {
 	gulp.watch(config.photos.watch, gulp.series('photos'));

@@ -1,6 +1,4 @@
-.photofeed {
-	background-color: $color-rainbow3;
-}
+// .photofeed { }
 
 .photofeed__header {
 	display: flex;
@@ -31,51 +29,82 @@
 }
 
 .photofeed__item {
+	overflow: hidden;
+	position: relative;
 	display: block;
 	width: 50%;
+	background-image: linear-gradient(-45deg, $color-rainbow5, $color-rainbow1);
 
-	background-image: linear-gradient(-45deg, $color-rainbow1, $color-rainbow3);
-
-	&:nth-child(2n) {
-		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow4);
-	}
-	&:nth-child(3n) {
+	/*
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
 		background-image: linear-gradient(-45deg, $color-rainbow5, $color-rainbow1);
+		animation: rotateBg 3s linear infinite;
 	}
-	&:nth-child(4n) {
-		background-image: linear-gradient(-45deg, $color-rainbow4, $color-rainbow2);
-	}
-	&:nth-child(5n) {
-		background-image: linear-gradient(-45deg, $color-rainbow3, $color-rainbow5);
-	}
-	&:nth-child(6n) {
-		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow3);
-	}
+	*/
+
+	// background-image: linear-gradient(-45deg, $color-rainbow1, $color-rainbow3);
+	// background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow4);
+	// background-image: linear-gradient(-45deg, $color-rainbow4, $color-rainbow2);
+	// background-image: linear-gradient(-45deg, $color-rainbow3, $color-rainbow5);
+
+	// &:nth-child(2n) {
+	// 	&:after {
+	// 		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow3);
+	// 	}
+	// }
+	// &:nth-child(3n) {
+	// 	&:after {
+	// 		background-image: linear-gradient(-45deg, $color-rainbow4, $color-rainbow5);
+	// 	}
+	// }
+	// &:nth-child(4n) {
+	// 	&:after {
+	// 		background-image: linear-gradient(-45deg, $color-rainbow1, $color-rainbow2);
+	// 	}
+	// }
+	// &:nth-child(5n) {
+	// 	&:after {
+	// 		background-image: linear-gradient(-45deg, $color-rainbow5, $color-rainbow1);
+	// 	}
+	// }
+	// &:nth-child(6n) {
+	// 	&:after {
+	// 		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow3);
+	// 	}
+	// }
 
 	@media (min-width: 500px) {
 		width: 33.333%;
 	}
 
-	@media (min-width: 1000px) {
+	@media (min-width: 700px) {
 		width: 20%;
+	}
+
+	@media (min-width: 1100px) {
+		width: 12.5%;
 	}
 
 	&.state-show-details {
 		overscroll-behavior: contain;
-		overflow-y: hidden;
-		overflow-x: scroll;
+		overflow-y: scroll;
+		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		position: fixed;
 		z-index: 1000;
 		top: 0;
 		left: 0;
-		width: auto;
+		width: 100vw;
 		height: 100vh;
-
-		@media (min-width: 500px) {
-			flex-direction: row;
-		}
 
 		.photofeed__link {
 			&:before {
@@ -83,6 +112,8 @@
 			}
 			&:hover,
 			&:focus {
+				mix-blend-mode: normal;
+
 				&:before {
 					display: none;
 				}
@@ -98,6 +129,9 @@
 	}
 
 	&.state-loaded {
+		.photofeed__spin {
+			opacity: 0;
+		}
 		.photofeed__link {
 			&:after {
 				display: none;
@@ -106,42 +140,43 @@
 	}
 }
 
+@keyframes rotateSpin {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+.photofeed__spin {
+	position: absolute;
+	z-index: 4;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 2em;
+	height: 2em;
+	animation: rotateSpin 1s linear infinite;
+}
+
 .photofeed__link {
 	flex-shrink: 0;
 	display: block;
 	position: relative;
 	z-index: 4;
+	width: 100%;
 	height: 0;
 	padding-bottom: 100%;
 	color: transparent;
 	cursor: wait;
-
-	/*
-	&:after {
-		content: 'loading...';
-		display: block;
-		position: absolute;
-		z-index: 10;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		padding: 0.25em;
-		color: $color-primary;
-		background-color: $color-bg;
-		font-style: italic;
-		text-decoration: underline;
-	}
-	*/
 
 	&:hover,
 	&:focus {
 		outline: none;
 		color: transparent;
 		background-color: transparent;
-
-		.photofeed__img {
-			opacity: 0.3;
-		}
+		mix-blend-mode: luminosity;
 	}
 
 	.state-show-details & {
@@ -159,7 +194,7 @@
 		padding-bottom: 0;
 
 		@media (min-width: 500px) {
-			height: 100%;
+			width: 100%;
 		}
 
 		&:hover,
@@ -177,19 +212,14 @@
 	display: block;
 	width: 100vw;
 	visibility: hidden;
-	mix-blend-mode: multiply;
 
 	.state-loaded & {
 		visibility: visible;
 	}
 
 	@media (min-width: 500px) {
-		width: auto;
+		width: 100%;
 		height: auto;
-
-		.state-show-details & {
-			height: 100%;
-		}
 	}
 }
 
@@ -198,18 +228,19 @@
 	position: relative;
 	z-index: 6;
 	display: none;
+	flex-grow: 1;
 	flex-shrink: 0;
-	height: 100%;
 	padding: 1em 5em 1em 1em;
 	color: $color-primary;
 	background-color: $color-bg;
 
-	@media (min-width: 500px) {
-		bottom: 1em;
+	@media (min-width: 1000px) {
 		position: fixed;
-		left: 1em;
-		right: 1em;
-		height: auto;
+		bottom: 0.5em;
+		left: 0.5em;
+		right: 0.5em;
+		width: auto;
+		padding: 1em;
 	}
 
 	.state-show-details & {
@@ -218,15 +249,17 @@
 
 	p {
 		line-height: 1.5;
+		margin-top: 0.75em;
+		margin-bottom: 0;
 	}
 }
 
 .photofeed__close-btn {
 	display: none;
 	position: fixed;
-	z-index: 3;
+	z-index: 7;
 	top: 0.5em;
-	right: 0.5em;
+	left: 0.5em;
 	padding: 0.5em;
 	color: $color-primary;
 	font-size: 1em;
@@ -240,8 +273,10 @@
 		text-decoration: none;
 	}
 
-	.state-show-details & {
-		display: block;
+	@media (min-width: 500px) {
+		.state-show-details & {
+			display: block;
+		}
 	}
 }
 
