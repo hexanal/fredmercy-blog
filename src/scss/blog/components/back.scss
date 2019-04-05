@@ -1,0 +1,36 @@
+.back {
+	margin-bottom: 1.5em;
+	text-align: right;
+}
+
+.back__link {
+	position: relative;
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	padding-left: 1.25em;
+	font-style: italic;
+
+	&:before {
+		position: absolute;
+		left: 0.25em;
+		font-style: normal;
+	}
+
+	@media (min-width: 500px) {
+		margin-left: 1em;
+		margin-right: 0;
+	}
+}
+
+.back__link--latest {
+	&:before {
+		content: '<';
+	}
+}
+
+.back__link--archive {
+	&:before {
+		content: '*';
+	}
+}

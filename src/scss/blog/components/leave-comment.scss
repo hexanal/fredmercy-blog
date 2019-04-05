@@ -1,0 +1,139 @@
+.leave-comment {
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+	background-color: $color-bg;
+
+	@media (min-width: 500px) {
+		overflow: visible;
+		flex-grow: 1;
+		position: static;
+		width: auto;
+		height: auto;
+		padding: 0;
+		max-width: 535px;
+		background-color: transparent;
+	}
+
+	&.state-leave-comment-active {
+		display: block;
+	}
+}
+
+.leave-comment__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0 1.5em;
+
+	@media (min-width: 500px) {
+		margin-top: 2.5em;
+	}
+}
+
+.leave-comment__heading {
+	display: inline-block;
+	margin: 0;
+	padding: 0.25em;
+	font-size: 1em;
+	font-weight: 400;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.leave-comment__status {
+	display: none;
+	flex-grow: 1;
+	margin-left: 0.5em;
+	font-style: italic;
+
+	@media (min-width: 350px) {
+		display: inline-block;
+	}
+}
+
+.leave-comment__close {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0;
+	color: $color-primary;
+	font-family: $font-plex;
+	font-size: 1em;
+	text-decoration: underline;
+	background-color: transparent;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		text-decoration: none;
+	}
+}
+
+.leave-comment__field {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+.leave-comment__label {
+	display: block;
+	margin-bottom: 0.25em;
+
+	i {
+		color: $color-subdued;
+	}
+}
+
+.leave-comment__textarea,
+.leave-comment__input {
+	width: 100%;
+	padding: 0.5em;
+	font-family: $font-plex;
+	font-size: 1em;
+	color: $color-primary;
+	background-color: $color-bg;
+	border: 2px solid $color-primary;
+
+	&:focus {
+		border-color: $color-active;
+	}
+}
+
+.leave-comment__textarea {
+	min-height: 120px;
+	resize: vertical;
+	line-height: 1.4;
+}
+
+.leave-comment__submit,
+.leave-comment__cancel {
+	padding: 0;
+	color: $color-primary;
+	font-family: $font-plex;
+	font-size: 1em;
+	background-color: transparent;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		text-decoration: none;
+	}
+}
+
+.leave-comment__cancel {
+	margin-left: 1em;
+	color: $color-subdued;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+	}
+}

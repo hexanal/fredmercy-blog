@@ -1,0 +1,122 @@
+.comments {
+	width: 100%;
+	margin-right: 3em;
+	flex-shrink: 0;
+
+	@media (min-width: 500px) {
+		width: 125px;
+	}
+
+	&.state-loading {
+		.comments__heading,
+		.comments__grid {
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url('../../dist/images/grid.gif');
+				background-color: $color-bg;
+			}
+		}
+	}
+}
+
+.comments__heading {
+	position: relative;
+	margin: 2.5em 0 1em;
+	padding: 0.25em;
+	font-size: 1em;
+	font-weight: 400;
+	text-align: center;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.comments__grid {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@media (min-width: 500px) {
+		justify-content: flex-start;
+	}
+}
+
+.comments__dot {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+	color: $color-primary;
+	background: none;
+	border: 0;
+	border-radius: 50%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: scale(0.55);
+		border-radius: 50%;
+		background-color: transparent;
+		border: 3px solid currentColor;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+	}
+
+	&.state-selected-comment {
+		color: $color-active;
+
+		&:hover,
+		&:focus {
+			color: $color-bg;
+			background-color: $color-secondary;
+
+			&:before {
+				background-color: $color-secondary;
+			}
+		}
+	}
+
+	&.state-has-comment {
+		color: $color-active;
+
+		&:before {
+			background-color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: $color-bg;
+			background-color: $color-active;
+
+			&:before {
+				background-color: $color-active;
+			}
+		}
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		color: $color-subdued;
+
+		&:hover,
+		&:focus {
+			color: $color-subdued;
+			background-color: transparent;
+		}
+	}
+}

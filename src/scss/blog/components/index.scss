@@ -1,0 +1,87 @@
+.index {
+	max-width: 700px;
+}
+
+.index__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.index__heading {
+	margin: 0 1em 1em 0;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.2;
+	font-style: italic;
+	color: $color-bg;
+	background-color: $color-active;
+}
+
+.index__menu {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+.index__jump-to {
+	margin-left: 1em;
+	font-size: 0.9em;
+	line-height: 1.2;
+	font-family: $font-plex;
+	font-style: italic;
+	color: $color-primary;
+	cursor: pointer;
+}
+
+.index__list {
+	overflow: hidden;
+	list-style: none;
+	padding-left: 0;
+	margin: 0 0 5em;
+	line-height: 1.4;
+}
+
+.index__month-year {
+	display: inline-block;
+	margin: 1em 0;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.2;
+	color: $color-bg;
+	background-color: $color-active;
+}
+
+.index__item {
+	white-space: nowrap;
+}
+
+.index__item + .index__item {
+	margin-top: 0.8em;
+}
+
+.index__meta {
+	display: inline-block;
+	margin-right: 0.25em;
+	line-height: 1.1;
+	color: $color-bg;
+	background-color: $color-primary;
+}
+
+.index__type {
+	display: none;
+	font-style: italic;
+
+	@media (min-width: $mq-mobile) {
+		display: inline;
+	}
+}
+
+.index__extra {
+	display: none;
+
+	@media (min-width: 500px) {
+		display: inline;
+	}
+}
