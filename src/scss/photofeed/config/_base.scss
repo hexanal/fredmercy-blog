@@ -4,12 +4,6 @@ $color-rainbow3: rgb(27, 166, 255);
 $color-rainbow4: rgb(191, 255, 66);
 $color-rainbow5: rgb(144, 90, 255);
 
-// $color-bg: $color-rainbow3;
-// $color-primary: white;
-// $color-active: $color-rainbow5;
-// $color-secondary: $color-rainbow4;
-// $color-subdued: $color-rainbow2;
-
 $color-bg: white;
 $color-primary: black;
 $color-active: white;
@@ -34,7 +28,7 @@ html {
 	font-family: monospace;
 	font-size: 14px;
 	color: white;
-	background-color: $color-rainbow3;
+	background-color: $color-rainbow5;
 }
 
 body {
