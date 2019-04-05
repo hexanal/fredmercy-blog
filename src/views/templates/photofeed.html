@@ -1,15 +1,9 @@
-{{#> layouts/default }}
+{{#> layouts/photofeed }}
 
 <div class="photofeed js-photofeed">
-	<div class="photofeed__header">
-		<h1 class="photofeed__heading">
-			{{ pageTitle }}
-		</h1>
-
-		<a href="/blog" class="photofeed__back">
-			back to blog
-		</a>
-	</div>
+	<a href="/blog" class="photofeed__back">
+		blog
+	</a>
 
 	<ul class="photofeed__list">
 	{{#each photos as |photo index|}}
@@ -53,4 +47,4 @@
 	</ul>
 </div>
 
-{{/layouts/default}}
+{{/layouts/photofeed}}

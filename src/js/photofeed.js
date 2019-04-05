@@ -1,6 +1,6 @@
 import imagesLoaded from 'imagesloaded';
 
-export default function() {
+function photofeed() {
 	const feed = document.querySelector('.js-photofeed');
 
 	if (!feed) return;
@@ -107,3 +107,5 @@ export default function() {
 	}
 
 }
+
+photofeed();

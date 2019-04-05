@@ -1,5 +1,5 @@
 .photofeed {
-	max-width: 700px;
+	background-color: $color-rainbow3;
 }
 
 .photofeed__header {
@@ -11,56 +11,53 @@
 }
 
 .photofeed__back {
-	position: relative;
-	display: inline-block;
-	margin-bottom: 1em;
-	padding-left: 1.25em;
-	font-style: italic;
+	position: fixed;
+	z-index: 100;
+	bottom: 1em;
+	left: 0;
+	display: block;
+	padding: 0.5em 1em 0.5em 1em;
 	text-align: right;
-
-	&:before {
-		content: '<';
-		position: absolute;
-		left: 0.25em;
-		font-style: normal;
-	}
-}
-
-.photofeed__heading,
-.photofeed__photo-title {
-	margin: 0;
-	font-size: 1em;
-	font-weight: 400;
-	line-height: 1.2;
-	font-style: italic;
-	color: $color-bg;
-	background-color: $color-active;
-}
-
-.photofeed__heading {
-	margin-bottom: 1em;
-	margin-right: 1em;
+	background-color: $color-bg;
 }
 
 .photofeed__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 	list-style: none;
 	padding-left: 0;
-	margin: 0 0 5em;
-
-	@media (min-width: 500px) {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+	margin: 0;
 }
 
 .photofeed__item {
 	display: block;
-	width: 100%;
-	margin-bottom: 1em;
+	width: 50%;
+
+	background-image: linear-gradient(-45deg, $color-rainbow1, $color-rainbow3);
+
+	&:nth-child(2n) {
+		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow4);
+	}
+	&:nth-child(3n) {
+		background-image: linear-gradient(-45deg, $color-rainbow5, $color-rainbow1);
+	}
+	&:nth-child(4n) {
+		background-image: linear-gradient(-45deg, $color-rainbow4, $color-rainbow2);
+	}
+	&:nth-child(5n) {
+		background-image: linear-gradient(-45deg, $color-rainbow3, $color-rainbow5);
+	}
+	&:nth-child(6n) {
+		background-image: linear-gradient(-45deg, $color-rainbow2, $color-rainbow3);
+	}
 
 	@media (min-width: 500px) {
-		width: calc(50% - 0.5em);
+		width: 33.333%;
+	}
+
+	@media (min-width: 1000px) {
+		width: 20%;
 	}
 
 	&.state-show-details {
@@ -117,10 +114,9 @@
 	height: 0;
 	padding-bottom: 100%;
 	color: transparent;
-	background-color: $color-bg;
-	background-image: url(../../dist/images/grid.gif);
 	cursor: wait;
 
+	/*
 	&:after {
 		content: 'loading...';
 		display: block;
@@ -135,15 +131,25 @@
 		font-style: italic;
 		text-decoration: underline;
 	}
+	*/
 
 	&:hover,
 	&:focus {
 		outline: none;
 		color: transparent;
-		background-color: $color-bg;
+		background-color: transparent;
 
 		.photofeed__img {
-			opacity: 0.7;
+			opacity: 0.3;
+		}
+	}
+
+	.state-show-details & {
+		&:hover,
+		&:focus {
+			.photofeed__img {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -154,19 +160,6 @@
 
 		@media (min-width: 500px) {
 			height: 100%;
-		}
-
-		&:before {
-			content: '';
-			display: none;
-			position: absolute;
-			z-index: 3;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			transform: translate(0.5em, 0.5em);
-			background-color: $color-primary;
 		}
 
 		&:hover,
@@ -184,6 +177,7 @@
 	display: block;
 	width: 100vw;
 	visibility: hidden;
+	mix-blend-mode: multiply;
 
 	.state-loaded & {
 		visibility: visible;
@@ -202,20 +196,20 @@
 .photofeed__description {
 	overflow: hidden;
 	position: relative;
-	z-index: 2;
+	z-index: 6;
 	display: none;
 	flex-shrink: 0;
 	height: 100%;
 	padding: 1em 5em 1em 1em;
+	color: $color-primary;
 	background-color: $color-bg;
 
 	@media (min-width: 500px) {
-		width: 75vw;
+		bottom: 1em;
+		position: fixed;
+		left: 1em;
+		right: 1em;
 		height: auto;
-	}
-
-	@media (min-width: 1000px) {
-		width: 50vw;
 	}
 
 	.state-show-details & {
@@ -235,7 +229,6 @@
 	right: 0.5em;
 	padding: 0.5em;
 	color: $color-primary;
-	font-family: $font-plex;
 	font-size: 1em;
 	text-decoration: underline;
 	background-color: $color-bg;
@@ -254,7 +247,12 @@
 
 .photofeed__photo-title {
 	display: inline-block;
-	margin-right: 1em;
+	margin: 0 1em 0 0;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.2;
+	font-style: italic;
+	color: $color-primary;
 }
 
 .photofeed__date {
@@ -267,7 +265,7 @@
 .photofeed__help {
 	display: block;
 	margin-top: 1em;
-	color: $color-subdued;
+	color: $color-rainbow5;
 
 	@media (min-width: 500px) {
 		display: none;

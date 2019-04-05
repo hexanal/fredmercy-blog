@@ -1,0 +1,86 @@
+$color-rainbow1: rgb(0, 247, 93);
+$color-rainbow2: rgb(247, 214, 0);
+$color-rainbow3: rgb(27, 166, 255);
+$color-rainbow4: rgb(191, 255, 66);
+$color-rainbow5: rgb(144, 90, 255);
+
+// $color-bg: $color-rainbow3;
+// $color-primary: white;
+// $color-active: $color-rainbow5;
+// $color-secondary: $color-rainbow4;
+// $color-subdued: $color-rainbow2;
+
+$color-bg: white;
+$color-primary: black;
+$color-active: white;
+$color-secondary: $color-rainbow1;
+$color-subdued: black;
+
+// sizes
+$max-width: 1200px;
+$responsive-width: 90%;
+
+// media queries
+$mq-mobile : 500px;
+$mq-tablet-portrait : 900px;
+$mq-tablet : 1050px;
+$mq-desktop : 1280px;
+
+html {
+	font-size: 16px;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+	box-sizing: border-box;
+	font-family: monospace;
+	font-size: 14px;
+	color: white;
+	background-color: $color-rainbow3;
+}
+
+body {
+	margin: 0;
+}
+
+::-moz-selection {
+	color: $color-primary;
+	background: $color-bg;
+}
+::selection {
+	color: $color-primary;
+	background: $color-bg;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: $color-primary;
+	outline: none;
+
+	&:visited {
+		color: $color-primary;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		text-decoration: none;
+	}
+}
+
+button {
+	font-family: monospace;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+del {
+	background-color: $color-primary;
+}
