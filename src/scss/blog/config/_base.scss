@@ -1,9 +1,10 @@
-// colors, courtesy of https://coolors.co/0059ff-f9f9f9-38e06d-a0b4bf-000000
-$color-bg: #f9f9f9; // Snow
-$color-primary: #0059ff; // Blue (RYB)
-$color-active: #38e06d; // UFO Green
-$color-secondary: #0059ff; // Blue (RYB)
-$color-subdued: #a0b4bf; // Wild Blue Yonder
+// colorscheme crafted with: https://coolors.co/ff6c23-a46bea-f9eaea-ffdd21-65b25e
+$color-bg: #f9eaea; // Linen
+$color-primary: #a46bea; // Rich Lavender
+$color-active: #ff6c23; // Pumpkin
+$color-secondary: #ea8fcd; // Kobi
+$color-subdued: #65b25e; // Bud Green
+$color-extra: #ffdd21; // Banana Yellow
 
 // sizes
 $max-width: 1200px;
@@ -52,11 +53,11 @@ body {
 
 ::-moz-selection {
 	color: $color-bg;
-	background: $color-secondary;
+	background: $color-subdued;
 }
 ::selection {
 	color: $color-bg;
-	background: $color-secondary;
+	background: $color-subdued;
 }
 
 *, *:before, *:after {
