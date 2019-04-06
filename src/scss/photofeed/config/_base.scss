@@ -1,14 +1,40 @@
-$color-rainbow1: rgb(0, 247, 93);
-$color-rainbow2: rgb(247, 214, 0);
-$color-rainbow3: rgb(27, 166, 255);
-$color-rainbow4: rgb(191, 255, 66);
-$color-rainbow5: rgb(144, 90, 255);
+@font-face {
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/plex-mono-regular.woff2') format('woff2'),
+		url('../fonts/plex-mono-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/plex-mono-italic.woff2') format('woff2'),
+		url('../fonts/plex-mono-italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/plex-mono-bold.woff2') format('woff2'),
+		url('../fonts/plex-mono-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/plex-mono-bold-italic.woff2') format('woff2'),
+		url('../fonts/plex-mono-bold-italic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+}
 
-$color-bg: white;
-$color-primary: black;
-$color-active: white;
-$color-secondary: $color-rainbow1;
-$color-subdued: black;
+$font-plex: 'IBM Plex Mono', Courier, monospace;
+
+$color-bg: #f9eaea; // Linen
+$color-primary: #a46bea; // Rich Lavender
+$color-active: #ff6c23; // Pumpkin
+$color-secondary: #ea8fcd; // Kobi
+$color-subdued: #65b25e; // Bud Green
+$color-extra: #ffdd21; // Banana Yello
 
 // sizes
 $max-width: 1200px;
@@ -25,10 +51,10 @@ html {
 	font-smooth: never;
 	-webkit-font-smoothing: none;
 	box-sizing: border-box;
-	font-family: monospace;
+	font-family: $font-plex;
 	font-size: 14px;
-	color: white;
-	background-color: $color-rainbow5;
+	color: $color-primary;
+	background-color: $color-bg;
 }
 
 body {
@@ -37,11 +63,11 @@ body {
 
 ::-moz-selection {
 	color: $color-bg;
-	background: $color-primary;
+	background: $color-subdued;
 }
 ::selection {
 	color: $color-bg;
-	background: $color-primary;
+	background: $color-subdued;
 }
 
 *, *:before, *:after {
