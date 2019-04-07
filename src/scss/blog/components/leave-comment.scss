@@ -99,6 +99,7 @@
 	color: $color-primary;
 	background-color: $color-bg;
 	border: 2px solid $color-primary;
+	outline: none;
 
 	&:focus {
 		border-color: $color-active;

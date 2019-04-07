@@ -10,7 +10,7 @@
 .shapes {
 	display: none;
 
-	@media (min-width: 800px) {
+	@media (min-width: 1200px) {
 		display: block;
 		position: fixed;
 		z-index: -1; // ye olde hacke
@@ -28,7 +28,7 @@ $shapesSize: 10em;
 	height: 20em;
 	border-radius: 50%;
 	filter: blur(50px);
-	animation: levitate 4s ease-in-out infinite alternate-reverse;
+	animation: levitate 3s ease-in-out infinite alternate-reverse;
 }
 .shapes__circle--c1 {
 	z-index: 1;
