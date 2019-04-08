@@ -85,6 +85,9 @@ function getEntryParams(file, isArchive) {
 	var template = typeof pageData.attributes.template === 'string'
 		? pageData.attributes.template
 		: 'post'; // default to post template type
+	var edit = typeof pageData.attributes.edit === 'string'
+		? pageData.attributes.edit
+		: false;
 	var post = getPostPathAndDate(file);
 	var date = post.date;
 	var url = post.url;
@@ -111,6 +114,7 @@ function getEntryParams(file, isArchive) {
 		rawDate: date + 'T12:00:00',
 		commentsGrid: commentsGrid,
 		template: template,
+		edit: edit,
 		description: pageData.attributes.description || config.info.title,
 		body: marked(pageData.body),
 		type: pageData.attributes.type

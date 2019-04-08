@@ -24,6 +24,12 @@
 		<div class="post__body">
 			{{{ body }}}
 		</div>
+
+		{{#if edit}}
+		<i class="post__edit-date">
+			(last edited: {{ edit }})
+		</i>
+		{{/if}}
 	</div>
 
 	{{#if commentsGrid}}
