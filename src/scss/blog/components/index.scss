@@ -3,14 +3,23 @@
 }
 
 .index__header {
+	@media (min-width: 420px) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 0 1em;
+	}
+}
+
+.index__header-extend {
+	position: relative;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
 	justify-content: space-between;
+	flex-grow: 1;
 }
 
 .index__heading {
-	margin: 0 1em 1em 0;
+	margin: 0;
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.2;
@@ -19,23 +28,135 @@
 	background-color: $color-active;
 }
 
+.index__toggle-menu {
+	position: relative;
+	z-index: 100;
+	display: inline-block;
+	padding: 0;
+	font-family: $font-plex;
+	font-size: 1em;
+	text-decoration: underline;
+	color: $color-primary;
+	background-color: transparent;
+
+	&.state-menu-active {
+		.index__toggle-open {
+			display: none;
+		}
+		.index__toggle-close {
+			display: inline;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		text-decoration: none;
+	}
+}
+
+.index__toggle-open {
+	i {
+		font-size: 1.4em;
+		font-style: normal;
+		line-height: 0;
+	}
+}
+
+.index__toggle-close {
+	display: none;
+}
+
 .index__menu {
-	display: flex;
-	align-items: center;
-	margin-bottom: 1em;
+	display: none;
+	position: absolute;
+	z-index: 100;
+	right: 0;
+	top: 150%;
+	width: 100%;
+	padding: 1em;
+	border: 2px solid currentColor;
+	background-color: $color-bg;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		background-color: $color-primary;
+	}
+	&:before {
+		top: 0.5em;
+		left: 100%;
+		width: 1em;
+		height: calc(100% + 0.5em);
+	}
+	&:after {
+		top: 100%;
+		left: 0.5em;
+		width: calc(100% + 0.5em);
+		height: 1em;
+	}
+
+	&.state-menu-active {
+		display: block;
+	}
+
+	@media (min-width: 420px) {
+		width: auto;
+	}
+}
+
+.index__menu-bg {
+	display: none;
+	position: fixed;
+	z-index: 90;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	// background-color: transparent;
+	background-color: $color-bg;
+	opacity: 0.8;
+
+	&.state-menu-active {
+		display: block;
+	}
 }
 
 .index__menu-item {
-	margin-right: 1em;
+	display: block;
+	text-align: right;
+
+	+ .index__menu-item {
+		margin-top: 0.5em;
+	}
+
+	@media (min-width: 500px) {
+		margin: 0 0 0 1em;
+	}
+}
+
+.index__menu-link {
+	display: inline-block;
 }
 
 .index__jump-to {
+	width: 100%;
+	margin: 1em 0 0;
 	font-size: 0.9em;
 	line-height: 1.2;
 	font-family: $font-plex;
 	font-style: italic;
 	color: $color-primary;
 	cursor: pointer;
+
+	@media (min-width: 420px) {
+		width: auto;
+		margin: 0 0 0 1em;
+	}
 }
 
 .index__list {

@@ -2,32 +2,45 @@
 
 <div class="index">
 	<div class="index__header">
-		<h1 class="index__heading">
-			Fred Mercy / Blog
-		</h1>
+		<div class="index__header-extend">
+			<h1 class="index__heading">
+				Fred Mercy / Blog
+			</h1>
 
-		<div class="index__menu">
-			<a
-				class="index__menu-item"
-				href="/"
-			>
-				Main Site
-			</a>
-			<a
-				class="index__menu-item"
-				href="{{ photosPath }}"
-			>
-				Photofeed
-			</a>
-			<select type="button" class="index__jump-to js-index-jumpto">
-				<option value="">Jump to...</option>
-				{{#each entries as |entry index|}}
-					<option class="index__jump-to-month" value="#{{ index }}">
-						{{ index }}
-					</option>
-				{{/each}}
-			</select>
+			<button class="index__toggle-menu js-index-toggle-menu" type="button">
+				<span class="index__toggle-open">menu <i>≣</i></span>
+				<span class="index__toggle-close">close ×</span>
+			</button>
+
+			<div class="index__menu js-index-menu">
+				<div class="index__menu-item">
+					<a
+						class="index__menu-link"
+						href="{{ photosPath }}"
+					>
+						photofeed
+					</a>
+				</div>
+				<div class="index__menu-item">
+					<a
+						class="index__menu-link"
+						href="/"
+					>
+						fredmercy.com
+					</a>
+				</div>
+			</div>
+			<button class="index__menu-bg js-index-menu-close" type="button"></button>
 		</div>
+
+		<select type="button" class="index__jump-to js-index-jumpto">
+			<option value="">Jump to...</option>
+			{{#each entries as |entry index|}}
+				<option class="index__jump-to-month" value="#{{ index }}">
+					{{ index }}
+				</option>
+			{{/each}}
+		</select>
 	</div>
 
 	<ul class="index__list">
