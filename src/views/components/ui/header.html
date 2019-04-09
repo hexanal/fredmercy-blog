@@ -1,0 +1,59 @@
+<header class="header">
+	<div class="header__header-extend">
+		<h1 class="header__heading">
+			{{pageTitle}}
+		</h1>
+
+		<button class="header__toggle-menu js-index-toggle-menu" type="button">
+			<span class="header__toggle-open">menu <i>≣</i></span>
+			<span class="header__toggle-close">close ×</span>
+		</button>
+
+		<div class="header__menu js-index-menu">
+			<div class="header__menu-item">
+				<a
+					class="header__menu-link"
+					href="{{ rootPath }}"
+				>
+					blog
+				</a>
+			</div>
+			<div class="header__menu-item">
+				<a
+					class="header__menu-link"
+					href="{{ photosPath }}"
+				>
+					photofeed
+				</a>
+			</div>
+			<div class="header__menu-item">
+				<a
+					class="header__menu-link"
+					href="{{ bookmarksPath }}"
+				>
+					bookmarks
+				</a>
+			</div>
+			<div class="header__menu-item">
+				<a
+					class="header__menu-link"
+					href="/"
+				>
+					fredmercy.com
+				</a>
+			</div>
+		</div>
+		<button class="header__menu-bg js-index-menu-close" type="button"></button>
+	</div>
+
+	{{#if displayJumpTo}}
+	<select type="button" class="header__jump-to js-index-jumpto">
+		<option value="">Jump to...</option>
+		{{#each entries as |entry index|}}
+			<option class="header__jump-to-month" value="#{{ index }}">
+				{{ index }}
+			</option>
+		{{/each}}
+	</select>
+	{{/if}}
+</header>

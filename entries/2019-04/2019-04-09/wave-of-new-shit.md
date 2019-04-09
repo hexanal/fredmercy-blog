@@ -21,3 +21,5 @@ Another thing I found out right when I opened Twitter, is this fucking thing:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qtTi_uyYynA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 These boys can do no wrong!
+
+`8:56pm:` What the heck! I went ahead and started working on a "bookmarks" page. It's very barebone, but I guess it does the trick, for now!

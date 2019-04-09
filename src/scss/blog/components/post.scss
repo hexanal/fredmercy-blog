@@ -147,6 +147,28 @@
 	}
 }
 
+.post__body--bookmarks {
+	code {
+		background-color: $color-subdued;
+	}
+
+	ul {
+		padding-left: 0;
+	}
+
+	li + li {
+		margin-top: 0.5em;
+	}
+
+	li {
+		padding-left: 0;
+
+		&:before {
+			content: '';
+		}
+	}
+}
+
 .post__edit-date {
 	display: inline-block;
 	margin: 1.5em 0;

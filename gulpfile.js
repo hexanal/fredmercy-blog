@@ -14,7 +14,8 @@ gulp.task('reset', reset);
 
 gulp.task('entries:index', entries.index);
 gulp.task('entries:posts', entries.posts);
-gulp.task('entries', gulp.parallel('entries:index', 'entries:posts'));
+gulp.task('entries:bookmarks', entries.bookmarks);
+gulp.task('entries', gulp.parallel('entries:index', 'entries:posts', 'entries:bookmarks'));
 
 gulp.task('photos', photos.index);
 
@@ -29,6 +30,9 @@ gulp.task('build', gulp.parallel('entries', 'photos', 'images', 'fonts', 'scss')
 gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));
 });
+gulp.task('watch:bookmarks', function() {
+	gulp.watch(config.bookmarks.watch, gulp.series('entries'));
+});
 gulp.task('watch:html', function() {
 	gulp.watch(config.html.watch, gulp.series('entries', 'photos'));
 });
@@ -41,6 +45,6 @@ gulp.task('watch:scss', function() {
 gulp.task('watch:images', function() {
 	gulp.watch(config.images.watch, gulp.series('images'));
 });
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:photos', 'watch:scss', 'watch:images'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:bookmarks', 'watch:photos', 'watch:scss', 'watch:images'));
 
 gulp.task('kickstart', gulp.series('build', 'watch'));

@@ -1,47 +1,7 @@
 {{#> layouts/default }}
 
 <div class="index">
-	<div class="index__header">
-		<div class="index__header-extend">
-			<h1 class="index__heading">
-				Fred Mercy / Blog
-			</h1>
-
-			<button class="index__toggle-menu js-index-toggle-menu" type="button">
-				<span class="index__toggle-open">menu <i>≣</i></span>
-				<span class="index__toggle-close">close ×</span>
-			</button>
-
-			<div class="index__menu js-index-menu">
-				<div class="index__menu-item">
-					<a
-						class="index__menu-link"
-						href="{{ photosPath }}"
-					>
-						photofeed
-					</a>
-				</div>
-				<div class="index__menu-item">
-					<a
-						class="index__menu-link"
-						href="/"
-					>
-						fredmercy.com
-					</a>
-				</div>
-			</div>
-			<button class="index__menu-bg js-index-menu-close" type="button"></button>
-		</div>
-
-		<select type="button" class="index__jump-to js-index-jumpto">
-			<option value="">Jump to...</option>
-			{{#each entries as |entry index|}}
-				<option class="index__jump-to-month" value="#{{ index }}">
-					{{ index }}
-				</option>
-			{{/each}}
-		</select>
-	</div>
+	{{> ui/header displayJumpTo="true" }}
 
 	<ul class="index__list">
 	{{#each entries as |entry index|}}

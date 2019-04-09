@@ -63,7 +63,9 @@ module.exports = {
 				var params = {
 					pageTitle: config.info.title,
 					description: config.info.description,
+					rootPath: config.info.rootPath,
 					photosPath: config.info.photos.path,
+					bookmarksPath: config.info.bookmarks.path,
 					entries: posts
 				};
 
@@ -77,6 +79,40 @@ module.exports = {
 					.pipe(rename('index.html'))
 					.pipe(gulp.dest(config.html.dest + config.info.rootPath));
 			});
+	},
+
+	bookmarks: function() {
+		return gulp
+			.src(config.bookmarks.src)
+			.pipe(through.obj(function (file, enc, cb) {
+				var pageData = frontMatter(file.contents.toString());
+
+				marked.setOptions({
+					gfm: true,
+					breaks: true
+				});
+
+				var params = {
+					pageTitle: config.info.bookmarks.title,
+					description: config.info.bookmarks.description,
+					rootPath: config.info.rootPath,
+					photosPath: config.info.photos.path,
+					bookmarksPath: config.info.bookmarks.path,
+					body: marked(pageData.body),
+				};
+
+				return gulp.src(config.html.templates + 'bookmarks.html')
+					.pipe(hb(params, {
+						allowedExtensions: ['html', 'hbs'],
+						partialsDirectory: [
+							config.base.src + '/views/components',
+						],
+					}))
+					.pipe(rename('index.html'))
+					.pipe(gulp.dest(config.html.dest + config.info.bookmarks.path))
+					.on('error', cb)
+					.on('end', cb);
+			}));
 	}
 }
 
