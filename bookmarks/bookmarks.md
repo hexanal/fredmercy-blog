@@ -1,3 +1,6 @@
+- `music` [_I Wanna Go Home_, Bill Wurtz (YouTube)](https://www.youtube.com/watch?v=vjUOJEXiX3g)
+- `music` [_Spirits Will Collide_, Devin Townsend (YouTube)](https://www.youtube.com/watch?v=AdHJurX0yVA)
+- `podcast, science` [Sean Carroll's “Mindscape” podcast (official)](https://www.preposterousuniverse.com/podcast/)
 - `music` [_Planet B_, King Gizzard and the Lizard Wizard (YouTube)](https://www.youtube.com/watch?v=qtTi_uyYynA)
 - `creative code` [Devine Lu Linvega's website (official)](https://wiki.xxiivv.com/#home)
 - `inspiration` [httpster (official)](http://httpster.net)

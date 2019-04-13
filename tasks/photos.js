@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var images = require('gulp-imagemin');
 var handlebars = require('handlebars');
 var HandlebarsIntl = require('handlebars-intl');
 
