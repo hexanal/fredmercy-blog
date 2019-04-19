@@ -13,6 +13,13 @@ var config = require('../config');
 var orderBy = require('lodash.orderby');
 var groupBy = require('lodash.groupby');
 
+var replaceTokens = [
+	{
+		token: '${base_url}',
+		replace: config.info.rootPath
+	}
+];
+
 module.exports = {
 	posts: function() {
 		return gulp
@@ -137,6 +144,9 @@ function getEntryParams(file, isArchive) {
 	var pageTitle = pageData.attributes.title
 		? title + ' / ' + config.info.title
 		: 'Untitled / ' + config.info.title;
+
+	var body = getEntryBody(pageData.body);
+
 	var comments = typeof pageData.attributes.comments === 'number'
 		? pageData.attributes.comments
 		: 25;
@@ -147,14 +157,25 @@ function getEntryParams(file, isArchive) {
 		date: date,
 		title: title,
 		pageTitle: pageTitle,
+		body,
 		rawDate: date + 'T12:00:00',
 		commentsGrid: commentsGrid,
 		template: template,
 		edit: edit,
 		description: pageData.attributes.description || config.info.title,
-		body: marked(pageData.body),
 		type: pageData.attributes.type
 	};
+}
+
+function getEntryBody(pageBody) {
+	let body;
+	// const regex = /\${.*}/gi; // @todo maybe useful later
+
+	replaceTokens.map(({token, replace}) => {
+		body = pageBody.replace(token, replace);
+	});
+
+	return marked(body);
 }
 
 function getPostPathAndDate(file) {

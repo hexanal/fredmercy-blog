@@ -1,0 +1,28 @@
+.rainbow {
+	display: block;
+	position: fixed;
+	z-index: 100; // ye olde hacke
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 1em;
+	background-image: linear-gradient(to right,
+		$color-active,
+		$color-secondary,
+		$color-primary,
+		$color-subdued,
+		$color-extra
+	);
+
+	@media (min-width: 740px) {
+		width: 1em;
+		height: 100%;
+		background-image: linear-gradient(to bottom,
+			$color-active,
+			$color-secondary,
+			$color-primary,
+			$color-subdued,
+			$color-extra
+		);
+	}
+}

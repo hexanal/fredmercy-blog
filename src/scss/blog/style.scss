@@ -1,8 +1,6 @@
-// yep, order matters here
 @import 'config/typography';
 @import 'config/base';
 
-// alphebetical order here plz
 @import 'components/back';
 @import 'components/collapse';
 @import 'components/comments';
@@ -11,5 +9,5 @@
 @import 'components/leave-comment';
 @import 'components/note';
 @import 'components/post';
+@import 'components/rainbow';
 @import 'components/read-comment';
-@import 'components/shapes';
