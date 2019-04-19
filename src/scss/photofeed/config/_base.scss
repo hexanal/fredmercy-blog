@@ -1,40 +1,12 @@
-@font-face {
-	font-family: 'IBM Plex Mono';
-	src: url('../fonts/plex-mono-regular.woff2') format('woff2'),
-		url('../fonts/plex-mono-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'IBM Plex Mono';
-	src: url('../fonts/plex-mono-italic.woff2') format('woff2'),
-		url('../fonts/plex-mono-italic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-}
-@font-face {
-	font-family: 'IBM Plex Mono';
-	src: url('../fonts/plex-mono-bold.woff2') format('woff2'),
-		url('../fonts/plex-mono-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'IBM Plex Mono';
-	src: url('../fonts/plex-mono-bold-italic.woff2') format('woff2'),
-		url('../fonts/plex-mono-bold-italic.woff') format('woff');
-	font-weight: 700;
-	font-style: italic;
-}
+$font-georgia: Georgia, "Times New Roman", serif;
 
-$font-plex: 'IBM Plex Mono', Courier, monospace;
-
-$color-bg: #f9eaea; // Linen
-$color-primary: #a46bea; // Rich Lavender
-$color-active: #ff6c23; // Pumpkin
-$color-secondary: #ea8fcd; // Kobi
-$color-subdued: #65b25e; // Bud Green
-$color-extra: #ffdd21; // Banana Yello
+$color-bg: #ffffff;
+$color-clear: #F0F0F0; // Banana Yello
+$color-blue: #00ADFF;
+$color-primary: $color-blue;
+$color-magenta: #FF0094;
+$color-green: #00FF1D;
+$color-yellow: #EFFF00;
 
 // sizes
 $max-width: 1200px;
@@ -46,10 +18,14 @@ $mq-tablet-portrait : 900px;
 $mq-tablet : 1050px;
 $mq-desktop : 1280px;
 
+$ease-expo: cubic-bezier(.7, 0, .3, 1);
+$ease-expo-out: cubic-bezier(.2, .6, .3, 1);
+$ease-expo-in: cubic-bezier(.8, 0, .7, 1);
+
 html {
 	font-size: 16px;
 	box-sizing: border-box;
-	font-family: $font-plex;
+	font-family: $font-georgia;
 	font-size: 14px;
 	color: $color-primary;
 	background-color: $color-bg;
@@ -61,11 +37,11 @@ body {
 
 ::-moz-selection {
 	color: $color-bg;
-	background: $color-subdued;
+	background: $color-blue;
 }
 ::selection {
 	color: $color-bg;
-	background: $color-subdued;
+	background: $color-blue;
 }
 
 *, *:before, *:after {
@@ -87,7 +63,7 @@ a {
 	&:hover,
 	&:focus {
 		color: $color-bg;
-		background-color: $color-secondary;
+		background-color: $color-magenta;
 		text-decoration: none;
 	}
 }

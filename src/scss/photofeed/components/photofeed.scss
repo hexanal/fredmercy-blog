@@ -1,3 +1,154 @@
+.photofeed__container {
+	overflow: hidden;
+}
+
+.photofeed__list {
+	list-style: none;
+	width: 100%;
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.photofeed__link {
+	display: block;
+	position: relative;
+	height: 0;
+	padding-bottom: 100%;
+	background-image: linear-gradient(to bottom, $color-clear, $color-bg);
+}
+
+.photofeed__frame {
+	overflow: hidden;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.photofeed__img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: translate(-100%, -100%);
+	transition: transform 2s 200ms $ease-expo-out;
+
+	.state-loaded & {
+		transform: none;
+	}
+}
+
+.photofeed__circles {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60px;
+	height: 60px;
+	mix-blend-mode: multiply;
+	transition:
+		top 1s $ease-expo-out,
+		left 1s $ease-expo-out,
+		transform 1s ease-out;
+	animation: loadingRotate 350ms linear infinite;
+
+	.state-loaded & {
+		top: 100%;
+		left: 100%;
+		animation: none;
+	}
+}
+@keyframes loadingRotate {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(359.5deg);
+	}
+}
+
+.photofeed__circle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transition: opacity 200ms ease-out;
+	mix-blend-mode: multiply;
+}
+.photofeed__circle--magenta {
+	background-color: $color-magenta;
+	transform: rotate(0deg) translateY(33.33%);
+
+	.state-loaded & {
+		transform: rotate(0deg) translateY(0);
+	}
+}
+.photofeed__circle--blue {
+	background-color: $color-blue;
+	transform: rotate(-120deg) translateY(33.33%);
+
+	.state-loaded & {
+		opacity: 0;
+	}
+}
+.photofeed__circle--yellow {
+	background-color: $color-yellow;
+	transform: rotate(120deg) translateY(33.33%);
+
+	.state-loaded & {
+		opacity: 0;
+	}
+}
+
+.photofeed__description {
+	margin: 0.5em 0;
+	font-size: 1.3em;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	font-style: italic;
+	text-align: right;
+
+	p {
+		margin: 0;
+	}
+
+	@media (min-width: 600px) {
+		p {
+			padding-left: 50%;
+		}
+	}
+}
+
+.photofeed__title {
+	font-size: 1em;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	margin: 0 0 0 1em;
+}
+
+.photofeed__date {
+	display: block;
+	font-size: 0.75em;
+	color: $color-blue;
+}
+
+.photofeed__squiggle {
+	width: 100%;
+	height: 15em;
+	stroke: $color-blue;
+	stroke-width: 1em;
+	fill: transparent;
+
+	@media (min-width: 500px) {
+		height: 25em;
+	}
+}
+
+/*
 .photofeed__header {
 	display: flex;
 	flex-wrap: wrap;
@@ -261,3 +412,4 @@
 		display: none;
 	}
 }
+*/

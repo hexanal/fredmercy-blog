@@ -5,62 +5,50 @@
 		blog
 	</a>
 
-	<ul class="photofeed__list">
-	{{#each photos as |photo index|}}
-		<li class="photofeed__item js-photofeed-item">
-			<svg
-				class="photofeed__spin"
-				width="38"
-				height="38"
-				viewBox="0 0 38 38"
-				xmlns="http://www.w3.org/2000/svg"
-				stroke="#fff"
-			>
-				<g fill="none" fill-rule="evenodd">
-					<g transform="translate(1 1)" stroke-width="2">
-						<circle stroke="#a46bea" stroke-opacity=".5" cx="18" cy="18" r="18"/>
-						<path stroke="#f9eaea" d="M36 18c0-9.94-8.06-18-18-18"></path>
-					</g>
-				</g>
-			</svg>
-
-			<a
-				href="{{ photo.path }}"
-				id="{{ photo.date }}"
-				class="photofeed__link js-photofeed-photo"
-				title="{{ photo.description }}"
-			>
-				<img
-					class="photofeed__img"
-					data-src="{{ photo.path }}"
-					alt="{{ photo.title }}"
+	<div class="photofeed__container">
+		<ul class="photofeed__list">
+		{{#each photos as |photo index|}}
+			<li class="photofeed__item js-photofeed-item">
+				<a
+					href="{{ photo.path }}"
+					id="{{ photo.date }}"
+					class="photofeed__link js-photofeed-photo"
+					title="{{ photo.description }}"
 				>
-			</a>
+					<div class="photofeed__circles">
+						<div class="photofeed__circle photofeed__circle--blue"></div>
+						<div class="photofeed__circle photofeed__circle--magenta"></div>
+						<div class="photofeed__circle photofeed__circle--yellow"></div>
+					</div>
 
-			<button
-				class="photofeed__close-btn js-photofeed-close"
-				type="button"
-				tabindex="-1"
-			>
-				close ×
-			</button>
+					<div class="photofeed__frame">
+						<img
+							class="photofeed__img"
+							data-src="{{ photo.path }}"
+							alt="{{ photo.title }}"
+						>
+					</div>
+				</a>
 
+				<div class="photofeed__description">
+					{{#if photo.description}}
+						<p>{{ photo.description }}</p>
+					{{/if}}
+					{{#if photo.title}}
+						<h2 class="photofeed__title">
+							{{photo.title}}
+						</h2>
+					{{/if}}
+					<time class="photofeed__date">({{ photo.date }})</time>
+				</div>
 
-			<div class="photofeed__description js-photo-description">
-				{{#if photo.title}}
-					<h2 class="photofeed__photo-title">
-						{{photo.title}}
-					</h2>
-				{{/if}}
-				<time class="photofeed__date">{{ photo.date }}</time>
-				{{#if photo.description}}
-					<p>{{ photo.description }}</p>
-				{{/if}}
-				<em class="photofeed__help">Tap the photo to close</em>
-			</div>
-		</li>
-	{{/each}}
-	</ul>
+				<svg class="photofeed__squiggle">
+					<use xlink:href="#squiggle">
+				</svg>
+			</li>
+		{{/each}}
+		</ul>
+	</div>
 </div>
 
 {{/layouts/photofeed}}

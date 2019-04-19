@@ -149,7 +149,6 @@
 
 .state-paragraph-focused {
 	background-color: rgba($color-secondary, 0.3);
-	// transition: background-color 1s ease-out;
 	animation: fadeOutFocus 2s 2s ease-out forwards;
 }
 @keyframes fadeOutFocus {
