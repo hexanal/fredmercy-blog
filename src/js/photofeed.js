@@ -8,12 +8,16 @@ function photofeed() {
 	if (!feed) return;
 
 	photos.forEach(pic => {
-		window.addEventListener('scroll', e => {
-			if (isInView(pic, {top: '50%', bottom: '50%'})) {
-				loadPicture(pic);
-			};
-		})
+		onViewportChange(pic);
+		window.addEventListener('resize', e => onViewportChange(pic));
+		window.addEventListener('scroll', e => onViewportChange(pic));
 	});
+}
+
+function onViewportChange(pic) {
+	if (isInView(pic, {top: '50%', bottom: '50%'})) {
+		loadPicture(pic);
+	};
 }
 
 function loadPicture(pic) {
