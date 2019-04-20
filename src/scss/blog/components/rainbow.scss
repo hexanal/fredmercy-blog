@@ -11,8 +11,11 @@
 		$color-secondary,
 		$color-primary,
 		$color-subdued,
-		$color-extra
+		$color-extra,
+		$color-active,
 	);
+	background-size: 200% 1px;
+	animation: moveRainbowHorizontal 2s linear infinite;
 
 	@media (min-width: 740px) {
 		width: 1em;
@@ -22,7 +25,26 @@
 			$color-secondary,
 			$color-primary,
 			$color-subdued,
-			$color-extra
+			$color-extra,
+			$color-active,
 		);
+		background-size: 1px 200%;
+		animation: moveRainbowVertical 4s linear infinite;
+	}
+}
+@keyframes moveRainbowHorizontal {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 200% 0;
+	}
+}
+@keyframes moveRainbowVertical {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 0 200%;
 	}
 }
