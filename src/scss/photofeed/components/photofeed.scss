@@ -8,6 +8,10 @@
 	max-width: 620px;
 	margin: 0 auto;
 	padding: 1em;
+
+	@media (min-width: 600px) {
+		padding: 7em 1em;
+	}
 }
 
 .photofeed__link {
@@ -16,6 +20,41 @@
 	height: 0;
 	padding-bottom: 100%;
 	background-image: linear-gradient(to bottom, $color-clear, $color-bg);
+	cursor: default;
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		// background-color: $color-magenta;
+		background-image: linear-gradient(
+			to bottom,
+			rgba($color-magenta, 0),
+			rgba($color-magenta, 1)
+		);
+		mix-blend-mode: screen;
+		opacity: 0;
+		transition: opacity 250ms $ease-expo;
+	}
+
+	.state-loading & {
+		cursor: wait;
+	}
+
+	.state-loaded & {
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			&:after {
+				opacity: 0.8;
+			}
+		}
+	}
 }
 
 .photofeed__frame {
@@ -29,32 +68,37 @@
 }
 
 .photofeed__img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform: translate(-100%, -100%);
-	transition: transform 2s 200ms $ease-expo-out;
+	opacity: 0;
+	transition: opacity 2s $ease-expo-out;
 
 	.state-loaded & {
-		transform: none;
+		opacity: 1;
 	}
 }
 
 .photofeed__circles {
 	position: absolute;
+	z-index: 10;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 60px;
 	height: 60px;
 	mix-blend-mode: multiply;
+	opacity: 0;
 	transition:
-		top 1s $ease-expo-out,
-		left 1s $ease-expo-out,
-		transform 1s ease-out;
+		opacity 1s 300ms $ease-expo-out,
+		top 700ms 500ms $ease-expo,
+		left 700ms 500ms $ease-expo,
+		transform 1s $ease-expo;
 	animation: loadingRotate 350ms linear infinite;
 
+	.state-loading & {
+		opacity: 1;
+	}
+
 	.state-loaded & {
+		opacity: 1;
 		top: 100%;
 		left: 100%;
 		animation: none;
@@ -105,20 +149,32 @@
 }
 
 .photofeed__description {
-	margin: 0.5em 0;
-	font-size: 1.3em;
-	line-height: 1.5;
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 1.2;
 	letter-spacing: 0.02em;
 	font-style: italic;
 	text-align: right;
+	transform: translateY(-2em);
+	opacity: 0;
+	transform-origin: 100% 0;
+	transition:
+		opacity 1s 500ms $ease-expo-out,
+		transform 1s 500ms $ease-expo-out;
+
+	.state-loaded & {
+		transform: rotate(-6deg) translateY(0);
+		opacity: 1;
+	}
 
 	p {
 		margin: 0;
 	}
 
 	@media (min-width: 600px) {
+
 		p {
-			padding-left: 50%;
+			padding-left: 40%;
 		}
 	}
 }
@@ -132,8 +188,9 @@
 
 .photofeed__date {
 	display: block;
-	font-size: 0.75em;
-	color: $color-blue;
+	font-size: 0.5em;
+	font-style: normal;
+	color: $color-magenta;
 }
 
 .photofeed__squiggle {
@@ -145,6 +202,23 @@
 
 	@media (min-width: 500px) {
 		height: 25em;
+	}
+}
+.photofeed__item {
+	&:nth-child(2n) {
+		.photofeed__squiggle {
+			stroke: $color-magenta;
+		}
+	}
+	&:nth-child(3n) {
+		.photofeed__squiggle {
+			stroke: $color-yellow;
+		}
+	}
+	&:nth-child(4n) {
+		.photofeed__squiggle {
+			stroke: $color-green;
+		}
 	}
 }
 

@@ -1,10 +1,6 @@
 {{#> layouts/photofeed }}
 
 <div class="photofeed js-photofeed">
-	<a href="/blog" class="photofeed__back">
-		blog
-	</a>
-
 	<div class="photofeed__container">
 		<ul class="photofeed__list">
 		{{#each photos as |photo index|}}
@@ -13,7 +9,7 @@
 					href="{{ photo.path }}"
 					id="{{ photo.date }}"
 					class="photofeed__link js-photofeed-photo"
-					title="{{ photo.description }}"
+					title="{{ photo.date }} — {{ photo.description }}"
 				>
 					<div class="photofeed__circles">
 						<div class="photofeed__circle photofeed__circle--blue"></div>
@@ -34,12 +30,6 @@
 					{{#if photo.description}}
 						<p>{{ photo.description }}</p>
 					{{/if}}
-					{{#if photo.title}}
-						<h2 class="photofeed__title">
-							{{photo.title}}
-						</h2>
-					{{/if}}
-					<time class="photofeed__date">({{ photo.date }})</time>
 				</div>
 
 				<svg class="photofeed__squiggle">
