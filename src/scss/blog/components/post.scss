@@ -90,18 +90,21 @@
 			margin-top: 0.25em;
 			padding-left: 0;
 		}
+
+		li {
+			padding-left: 1em;
+
+			&:before {
+				content: '_ ';
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
 	}
 
 	li {
 		position: relative;
-		padding-left: 1em;
-
-		&:before {
-			content: '_ ';
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
 	}
 
 	li + li {
