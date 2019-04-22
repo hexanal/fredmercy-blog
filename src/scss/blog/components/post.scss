@@ -170,18 +170,18 @@
 
 	ul {
 		padding-left: 0;
+
+		li {
+			padding-left: 0;
+
+			&:before {
+				content: '';
+			}
+		}
 	}
 
 	li + li {
 		margin-top: 0.5em;
-	}
-
-	li {
-		padding-left: 0;
-
-		&:before {
-			content: '';
-		}
 	}
 }
 
