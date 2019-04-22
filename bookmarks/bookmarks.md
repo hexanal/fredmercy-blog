@@ -1,3 +1,4 @@
+- `article, tech` [_The Efficiency Delusion_, Evan Selinger (Medium)](https://onezero.medium.com/the-efficiency-delusion-f6a97241e1e1)
 - `music` [_I Wanna Go Home_, Bill Wurtz (YouTube)](https://www.youtube.com/watch?v=vjUOJEXiX3g)
 - `music` [_Spirits Will Collide_, Devin Townsend (YouTube)](https://www.youtube.com/watch?v=AdHJurX0yVA)
 - `podcast, science` [Sean Carroll's “Mindscape” podcast (official)](https://www.preposterousuniverse.com/podcast/)
