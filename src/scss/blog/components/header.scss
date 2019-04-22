@@ -171,8 +171,12 @@
 	color: $color-primary;
 	cursor: pointer;
 
+	@media (max-width: 419px) {
+		border: 1px solid currentColor;
+	}
 	@media (min-width: 420px) {
 		width: auto;
 		margin: 0 0 0 1em;
+		border: auto;
 	}
 }

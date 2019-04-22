@@ -9,6 +9,8 @@ export default function() {
 		const title = note.getAttribute('title');
 		const more = note.dataset.more || '';
 
+		if (!title) return;
+
 		const tip = document.createElement('div');
 
 		tip.classList.add('note');
