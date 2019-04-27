@@ -1,5 +1,5 @@
 ---
-title: Optimize Everthing To Oblivion
+title: Optimize Everything To Oblivion
 description: Free up my time; I need to waste more of time!
 type: rant
 ---
