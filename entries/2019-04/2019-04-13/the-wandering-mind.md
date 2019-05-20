@@ -4,7 +4,7 @@ description: Letting my mind come and go and get lost and get stuck in the ravin
 type: journal
 ---
 
-`7:51pm:` Eventually, I will need to try and produce something, anything. Just get the ball rolling, start something. Too much time to think isn't ideal; what's ideal is having time to dedicated oneself wholly to a hobby, to a given goal, or a project.
+`7:51pm:` Eventually, I will need to try and produce something, anything. Just get the ball rolling, start something. Too much time to think isn't ideal; what's ideal is having time to dedicate oneself wholly to a hobby, to a given goal, or a project.
 
 Right now I'm dancing around, trying to find my place. I'm stretching, trying to a most comfortable position, like a cat digging its paws in a pillow for far longer than necessary — and seemingly for no reason. I find myself doing things that are absolutely not related to the goals I had previously set for myself. I find myself changing my mind overnight. Nothing in my life seems to point to any particular direction, my life-plan an abstract painting of a flowchart diagram, full of recursion, dead-ends, overlap, and no visible end point.
 
