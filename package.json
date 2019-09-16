@@ -31,7 +31,6 @@
     "gulp-plumber": "1.2.1",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
-    "gulp-sass-lint": "1.4.0",
     "gulp-sourcemaps": "2.6.4",
     "handlebars": "^4.2.0",
     "handlebars-intl": "^1.1.2",
