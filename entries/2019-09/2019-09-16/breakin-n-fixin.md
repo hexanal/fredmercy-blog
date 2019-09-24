@@ -12,4 +12,4 @@ Anyway, how are y'all doing? Good? Glad to hear that.
 
 Don't know how many times I've typed "fix" in this entry, but I bet it's a lot.
 
-ain't I'm out. peace
+Aight, I'm out. Peace!
