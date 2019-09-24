@@ -1,6 +1,7 @@
 ---
 title: Breakin'n'Fixin
 description: Fix yourself *after* you wreck yourself.
+edit: 2019-09-23 @ 8:55pm
 type: journal
 ---
 
