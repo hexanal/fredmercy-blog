@@ -65,3 +65,49 @@ $ npm run dev
 To change stuff around, it'll mostly be in `/tasks/handlebars.js`
 
 That's it, you're on your own now, buddy!
+
+## Cheat Sheet
+
+Some thing I need to remember when writing:
+
+### Frontmatter
+
+```
+---
+title: This is a post
+description: This is gonna be the description
+type: journal # type of entry, duh
+edit: 2019-04-08 @ 7:10pm # when adding an edit and to show when it was edited
+comments: 0 # number of comment slots (if different from default)
+---
+```
+
+### Collapsible Block
+
+```
+<code class="collapse">
+<button type="button">Show/Hide</button>
+<em>
+
+Contents of this collapsible box that's hidden by default.
+
+</em>
+</code>
+```
+
+### Embed an MP3/audio
+
+```
+<audio controls src="/files/music/langsam.mp3">
+Your browser does not support the <code>audio</code> element.
+</audio
+```
+
+### Add a togglable reference (e.g. [1])
+
+```
+<sup title="Short text to explain">
+[1]
+</sup>
+```
+
