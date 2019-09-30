@@ -155,6 +155,16 @@
 		content: '🔖';
 	}
 }
+.header__menu-link--bandcamp {
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 1.15em;
+		height: 1.15em;
+		background-image: url('../images/bandcamp.png');
+		background-size: contain;
+	}
+}
 .header__menu-link--main {
 	&:after {
 		content: '🌀';

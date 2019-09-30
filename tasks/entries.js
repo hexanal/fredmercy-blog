@@ -73,6 +73,7 @@ module.exports = {
 					rootPath: config.info.rootPath,
 					photosPath: config.info.photos.path,
 					bookmarksPath: config.info.bookmarks.path,
+					bandcampPath: config.info.bandcamp.path,
 					entries: posts
 				};
 
