@@ -18,7 +18,7 @@ Your browser does not support the <code>audio</code> element.
 Your browser does not support the <code>audio</code> element.
 </audio>
 
-<code>
+<code class="collapse">
 <button type="button">Show/Hide Lyrics</button>
 <em>
 
@@ -36,7 +36,7 @@ in this shit life
 Your browser does not support the <code>audio</code> element.
 </audio>
 
-<code>
+<code class="collapse">
 <button type="button">Show/Hide Lyrics</button>
 <em>
 
@@ -58,7 +58,7 @@ you've got to stay strong
 Your browser does not support the <code>audio</code> element.
 </audio>
 
-<code>
+<code class="collapse">
 <button type="button">Show/Hide Lyrics</button>
 <em>
 
