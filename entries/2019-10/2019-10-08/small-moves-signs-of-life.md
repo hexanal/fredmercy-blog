@@ -18,13 +18,25 @@ Your browser does not support the <code>audio</code> element.
 Your browser does not support the <code>audio</code> element.
 </audio>
 
+<code>
+<button type="button">Show/Hide Lyrics</button>
+<em>
+
+so many things are happening all at once
+so many things are happening...
+
+in this shit life
+
+</em>
+</code>
+
 [In Your Head](/files/music/october2019/20191008-03-in-your-head.mp3)
 
 <audio controls src="/files/music/october2019/20191008-03-in-your-head.mp3">
 Your browser does not support the <code>audio</code> element.
 </audio>
 
-<code class="collapse">
+<code>
 <button type="button">Show/Hide Lyrics</button>
 <em>
 
@@ -46,7 +58,7 @@ you've got to stay strong
 Your browser does not support the <code>audio</code> element.
 </audio>
 
-<code class="collapse">
+<code>
 <button type="button">Show/Hide Lyrics</button>
 <em>
 
