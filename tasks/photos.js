@@ -36,6 +36,7 @@ module.exports = {
 					pageTitle: config.info.photos.title,
 					description: config.info.photos.description,
 					rootPath: config.info.rootPath,
+					bandcampPath: config.info.bandcamp.path,
 					photos: orderBy(photos, 'date', 'desc')
 				};
 
