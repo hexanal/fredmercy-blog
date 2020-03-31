@@ -4,13 +4,15 @@
 	{{> ui/header displayJumpTo="true" }}
 
 	<ul class="index__list">
-	{{#each entries as |entry index|}}
+	{{#each entries as |entry archive|}}
 		<li class="index__list-header">
 			<h2
-				id="{{ index }}"
+				id="{{ archive }}"
 				class="index__month-year"
+				aria-level="2"
+				data-anchor="{{ archive }}"
 			>
-				{{ index }}
+				{{ archive }}
 			</h2>
 		</li>
 
@@ -25,17 +27,26 @@
 					</span>
 				</div>
 
-				<a
-					class="index__link"
-					href="{{ this.url }}"
-					title="{{ this.description }}"
-				>
-					{{#if this.title}}
+				{{#if this.title}}
+					<a
+						class="index__link"
+						href="{{ this.url }}"
+						title="{{ this.description }}"
+						data-js="entry"
+					>
 						{{this.title}}
-					{{else}}
-						<em>Untitled</em><span class="index__extra"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
-					{{/if}}
-				</a>
+					</a>
+				{{else}}
+					<a
+						class="index__link"
+						href="{{ this.url }}"
+						title="{{ this.description }}"
+						data-js="entry"
+						aria-label='Untitled entry for {{formatDate this.rawDate day="numeric" month="long" year="numeric"}}'
+					>
+						<span aria-hidden="true"><em>Untitled</em><span class="index__extra"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span></span>
+					</a>
+				{{/if}}
 			</li>
 		{{/each}}
 	{{/each}}

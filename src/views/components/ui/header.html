@@ -1,12 +1,16 @@
 <header class="header">
-	<div class="header__header-extend">
-		<h1 class="header__heading">
+	<nav class="header__header-extend">
+		<h1 class="header__heading" aria-level="1">
 			{{pageTitle}}
 		</h1>
 
-		<button class="header__toggle-menu js-index-toggle-menu" type="button">
-			<span class="header__toggle-open">menu <i>≣</i></span>
-			<span class="header__toggle-close">close ×</span>
+		<button
+			class="header__toggle-menu js-index-toggle-menu"
+			type="button"
+			aria-label="Toggle navigation menu"
+		>
+			<span class="header__toggle-open">menu<i aria-hidden="true"> ≣</i></span>
+			<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
 		</button>
 
 		<div class="header__menu js-index-menu">
@@ -52,11 +56,11 @@
 			</div>
 		</div>
 		<button class="header__menu-bg js-index-menu-close" type="button"></button>
-	</div>
+	</nav>
 
 	{{#if displayJumpTo}}
-	<select type="button" class="header__jump-to js-index-jumpto">
-		<option value="">Jump to...</option>
+	<select type="button" class="header__jump-to js-index-jumpto" aria-labelledby="archiveLabel">
+		<option value="" id="archiveLabel">Jump to...</option>
 		{{#each entries as |entry index|}}
 			<option class="header__jump-to-month" value="#{{ index }}">
 				{{ index }}
