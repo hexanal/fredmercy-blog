@@ -1,10 +1,10 @@
 {{#> layouts/default }}
 
 <article class="post">
-	<div class="post__window">
+	<div class="post__window" aria-label="Entry content">
 		{{> entries/back }}
 
-		<header class="post__heading">
+		<header class="post__heading" role="heading">
 			<div class="post__meta">
 				<time class="post__date">
 					{{ date }}
@@ -40,6 +40,5 @@
 	</div>
 	{{/if}}
 </article>
-
 
 {{/layouts/default}}

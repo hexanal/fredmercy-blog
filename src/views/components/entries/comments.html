@@ -1,5 +1,5 @@
 <div class="comments js-comments state-loading">
-	<h2 class="comments__heading">
+	<h2 class="comments__heading" aria-level="2">
 		Comment dots
 	</h2>
 
@@ -14,6 +14,7 @@
 			class="comments__dot js-comment-dot"
 			data-index="{{ this.index }}"
 			data-id="{{ this.commentId }}"
+			aria-label="Comment slot #{{ this.index }}"
 			disabled
 		>
 		</button>

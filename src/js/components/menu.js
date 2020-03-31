@@ -11,9 +11,16 @@ export default function() {
 		menu.classList.toggle('state-menu-active');
 		bg.classList.toggle('state-menu-active');
 	});
-	bg.addEventListener('click', (e) => {
+	bg.addEventListener('click', closeMenu);
+	document.addEventListener('keyup', e => {
+		if (e.code === 'Escape') {
+			closeMenu();
+		}
+	});
+
+	function closeMenu(e) {
 		toggleMenuBtn.classList.remove('state-menu-active');
 		menu.classList.remove('state-menu-active');
 		bg.classList.remove('state-menu-active');
-	});
+	}
 }
