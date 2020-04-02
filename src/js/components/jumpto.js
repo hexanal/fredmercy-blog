@@ -15,8 +15,6 @@ function focusFirstPostFromArchive(hash) {
 	const postLink = archivePosts.querySelector('[data-js="entry"]');
 
 	postLink.focus({ preventScroll: true });
-
-	console.log( document.activeElement );
 }
 
 export default function() {
