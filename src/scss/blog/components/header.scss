@@ -108,7 +108,7 @@
 	text-align: right;
 
 	+ .header__menu-item {
-		margin-top: 0.5em;
+		margin-top: 0.75em;
 	}
 
 	@media (min-width: 420px) {
@@ -177,7 +177,7 @@
 	font-size: 0.9em;
 	line-height: 1.2;
 	font-family: $font-plex;
-	font-style: italic;
+	font-style: normal;
 	color: $color-primary;
 	cursor: pointer;
 

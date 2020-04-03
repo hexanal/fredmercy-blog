@@ -38,17 +38,20 @@ $mq-desktop : 1280px;
 
 // base styles
 html {
-	font-size: 16px;
-	// font-smoothing: subpixel-antialiased;
 	box-sizing: border-box;
 	font-family: $font-plex;
 	font-size: 13px;
 	color: $color-primary;
 	background-color: $color-bg;
+
+	&.state-a11y-big-font {
+		font-size: 16px;
+	}
 }
 
 body {
-	margin: 1em;
+	margin: 1rem 3rem;
+	font-size: 1rem;
 }
 
 ::-moz-selection {
@@ -95,6 +98,13 @@ button {
 	border: 0;
 	outline: none;
 	cursor: pointer;
+}
+
+hr {
+	height: 2px;
+	margin: 2.5em 0;
+	background-color: $color-primary;
+	border: none;
 }
 
 del {
