@@ -1,5 +1,5 @@
 .header {
-	@media (min-width: 420px) {
+	@media (min-width: 740px) {
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -26,8 +26,10 @@
 }
 
 .header__toggle-menu {
-	position: relative;
+	position: fixed;
 	z-index: 100;
+	top: 1rem;
+	right: 1rem;
 	display: inline-block;
 	padding: 0;
 	font-family: $font-plex;
@@ -51,6 +53,12 @@
 		background-color: $color-secondary;
 		text-decoration: none;
 	}
+
+	@media (min-width: 740px) {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
 }
 
 .header__toggle-open {
@@ -67,22 +75,29 @@
 
 .header__menu {
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 100;
-	right: 0;
-	top: 150%;
-	width: 100%;
+	left: 1rem;
+	right: 1rem;
+	top: 3rem;
 	padding: 1em;
 	border: 2px solid currentColor;
 	background-color: $color-bg;
 	box-shadow: 0.8em 0.8em 0 0 rgba($color-primary, 0.75);
 
+	hr {
+		margin: 1rem 0;
+	}
+
 	&.state-menu-active {
 		display: block;
 	}
 
-	@media (min-width: 420px) {
+	@media (min-width: 740px) {
 		width: auto;
+		right: auto;
+		left: 42rem;
+		transform: translateX(-100%);
 	}
 }
 
@@ -95,6 +110,7 @@
 	left: 0;
 	right: 0;
 	width: 100%;
+	padding: 0;
 	background-color: $color-bg;
 	opacity: 0.8;
 
@@ -111,7 +127,7 @@
 		margin-top: 0.75em;
 	}
 
-	@media (min-width: 420px) {
+	@media (min-width: 740px) {
 		text-align: left;
 		margin: 0 1em 0 0;
 	}
@@ -120,7 +136,24 @@
 .header__menu-link {
 	display: inline-block;
 	position: relative;
+	padding: 0; // reset button
 	padding-right: 1.75em;
+	font-family: $font-plex;
+	font-size: 1rem;
+	color: $color-primary;
+	background-color: transparent;
+	text-decoration: underline;
+
+	&:visited {
+		color: $color-primary;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		text-decoration: none;
+	}
 
 	&:after {
 		content: '';
@@ -130,7 +163,7 @@
 		transform: translateY(-50%);
 	}
 
-	@media (min-width: 420px) {
+	@media (min-width: 740px) {
 		padding-left: 1.75em;
 		padding-right: 0;
 
@@ -170,6 +203,11 @@
 		content: '🌀';
 	}
 }
+.header__menu-link--help {
+	&:after {
+		content: '🆘';
+	}
+}
 
 .header__jump-to {
 	width: 100%;
@@ -181,10 +219,10 @@
 	color: $color-primary;
 	cursor: pointer;
 
-	@media (max-width: 419px) {
+	@media (max-width: 739px) {
 		border: 1px solid currentColor;
 	}
-	@media (min-width: 420px) {
+	@media (min-width: 740px) {
 		width: auto;
 		margin: 0 0 0 1em;
 		border: auto;
