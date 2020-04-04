@@ -52,6 +52,10 @@
 		color: $color-bg;
 		background-color: $color-secondary;
 		text-decoration: none;
+
+		span {
+			text-decoration: none; // in toggle-open
+		}
 	}
 
 	@media (min-width: 740px) {
@@ -62,8 +66,21 @@
 }
 
 .header__toggle-open {
+	display: inline-block;
+	line-height: 1;
+	text-decoration: none;
+
+	span {
+		text-decoration: underline;
+	}
+
 	i {
-		font-size: 1.4em;
+		display: inline-block;
+		position: relative;
+		top: 0.15rem;
+		left: -0.25rem;
+		width: 1rem;
+		font-size: 1.15rem;
 		font-style: normal;
 		line-height: 0;
 	}

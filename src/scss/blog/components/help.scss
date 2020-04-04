@@ -31,7 +31,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	min-width: 35em;
+	width: 90%;
+	max-width: 42em;
 	padding: 1em;
 	line-height: 1.4;
 	color: $color-subdued;
@@ -49,6 +50,7 @@
 .help__item {
 	display: flex;
 	align-items: flex-start;
+	line-height: 2;
 
 	+ .help__item {
 		margin-top: 1.5rem;
@@ -58,23 +60,36 @@
 .help__icon {
 	margin-right: 1rem;
 	flex-shrink: 0;
+	font-size: 1.35rem;
+	line-height: 1.5;
 }
 
 .help__emphasis {
 	display: inline-block;
 	margin: 0;
 	white-space: nowrap;
+}
 
-	pre {
-		display: inline-block;
-		min-width: 1.75rem;
-		margin: 0;
-		padding: 0.15rem;
-		color: white;
-		font-family: $font-plex;
-		text-align: center;
-		background-color: $color-subdued;
-		border-radius: 1rem;
+.help__key {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	font-family: $font-plex;
+	color: $color-subdued;
+	border: 2px solid $color-subdued;
+	border-radius: 0.3rem;
+	background-color: transparent;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		border-color: $color-secondary;
 	}
 }
 
@@ -87,8 +102,6 @@
 	right: 0;
 	width: 100%;
 	padding: 0;
-	// background-color: $color-subdued;
 	background-color: $color-extra;
-	// opacity: 0.8;
 	opacity: 0.75;
 }

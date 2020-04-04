@@ -1,4 +1,4 @@
-<aside class="help">
+<aside class="help js-help">
 	<div class="help__box">
 		<button type="button" class="help__close js-help-close">
 			close<span aria-hidden="true"> ×</span>
@@ -7,11 +7,14 @@
 		<ul class="help__list">
 			<li class="help__item">
 				<div class="help__icon">
-					🆘
+					⚙️
 				</div>
 				<div>
-					<strong class="help__emphasis">Use the <pre>?</pre></strong>
-					key to toggle this help popup.
+					<strong class="help__emphasis">
+						Use the
+						<button class="help__key js-help-show" type="button">?</button>
+					</strong>
+					key to toggle this popup.
 				</div>
 			</li>
 			<li class="help__item">
@@ -20,9 +23,10 @@
 				</div>
 				<div>
 					<strong class="help__emphasis">
-						Use the <pre>+</pre>
+						Use the
+						<button class="help__key js-help-big-font" type="button">+</button>
 						and
-						<pre>-</pre>
+						<button class="help__key js-help-normal-font" type="button">-</button>
 					</strong>
 					keys to increase and decrease the size of the text.
 				</div>
@@ -33,13 +37,19 @@
 				</div>
 				<div>
 					<strong class="help__emphasis">
-						Use the <pre>m</pre>
+						Use the
+						<button class="help__key js-help-menu" type="button">m</button>
 					</strong>
 					key to toggle the main menu.
 				</div>
 			</li>
 		</ul>
 	</div>
-	<div class="help__bg">
-	</div>
+
+	<button
+		class="help__bg js-help-bg"
+		type="button"
+		tabindex="-1"
+	>
+	</button>
 </aside>

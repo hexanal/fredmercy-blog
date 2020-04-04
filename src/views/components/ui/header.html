@@ -9,14 +9,19 @@
 			type="button"
 			aria-label="Toggle navigation menu"
 		>
-			<span class="header__toggle-open">menu<i aria-hidden="true"> ≣</i></span>
+			<div class="header__toggle-open">
+				<span>menu</span>
+				<i aria-hidden="true">
+					🔸
+				</i>
+			</div>
 			<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
 		</button>
 
 		<div class="header__menu js-index-menu">
 			<div class="header__menu-item">
 				<a
-					class="header__menu-link header__menu-link--blog"
+					class="header__menu-link header__menu-link--blog js-menu-first"
 					href="{{ rootPath }}"
 				>
 					blog
@@ -57,7 +62,7 @@
 			<hr>
 			<div class="header__menu-item">
 				<button
-					class="header__menu-link header__menu-link--help js-help"
+					class="header__menu-link header__menu-link--help js-help-toggle"
 					type="button"
 				>
 					help

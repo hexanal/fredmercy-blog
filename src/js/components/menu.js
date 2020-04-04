@@ -3,18 +3,13 @@ export default function() {
 	if (!toggleMenuBtn) return;
 
 	const menu = document.querySelector('.js-index-menu');
+	const firstItem = menu.querySelector('.js-menu-first');
 	const bg = document.querySelector('.js-index-menu-close');
-	const help = document.querySelector('.js-help');
-	const helpCloseBtn = document.querySelector('.js-help-close');
 
-	function toggleHelp(e) {
-		e.preventDefault();
-		document.body.classList.toggle('state-help-active');
-	}
 	function toggleMenu(e) {
 		e.preventDefault();
 
-		toggleMenuBtn.focus();
+		firstItem.focus();
 
 		toggleMenuBtn.classList.toggle('state-menu-active');
 		menu.classList.toggle('state-menu-active');
@@ -29,8 +24,6 @@ export default function() {
 
 	// events
 	toggleMenuBtn.addEventListener('click', toggleMenu);
-	help.addEventListener('click', toggleHelp);
-	helpCloseBtn.addEventListener('click', toggleHelp);
 	bg.addEventListener('click', closeMenu);
 
 	document.addEventListener('keyup', e => {
@@ -39,9 +32,6 @@ export default function() {
 
 		if (e.code === 'KeyM') {
 			toggleMenu(e);
-		}
-		if (e.code === 'Slash') {
-			toggleHelp(e);
 		}
 		if (e.code === 'Escape') {
 			closeMenu();
