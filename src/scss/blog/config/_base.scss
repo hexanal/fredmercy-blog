@@ -16,6 +16,8 @@ $mq-tablet-portrait : 900px;
 $mq-tablet : 1050px;
 $mq-desktop : 1280px;
 
+$mq-medium: 50rem;
+
 // mixins
 @mixin container($width: $max-width) {
 	width: $responsive-width;
@@ -53,7 +55,7 @@ body {
 	margin: 1rem;
 	font-size: 1rem;
 
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		margin: 1rem 3rem;
 	}
 }

@@ -1,5 +1,5 @@
 .header {
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -47,6 +47,15 @@
 		}
 	}
 }
+@supports (-moz-appearance: none) {
+	.header__back {
+		&:before {
+			top: 0.1rem;
+			font-size: 0.9rem;
+		}
+	}
+
+}
 
 .header__toggle-menu {
 	position: fixed;
@@ -54,7 +63,8 @@
 	top: 1rem;
 	right: 1rem;
 	display: inline-block;
-	padding: 0;
+	padding: 0 0.25rem 0 0;
+	margin: 0;
 	font-family: $font-plex;
 	font-size: 1em;
 	text-decoration: underline;
@@ -81,7 +91,7 @@
 		}
 	}
 
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		position: relative;
 		top: auto;
 		right: auto;
@@ -133,11 +143,9 @@
 		display: block;
 	}
 
-	@media (min-width: 740px) {
-		width: auto;
+	@media (min-width: $mq-medium) {
 		right: auto;
-		left: 42rem;
-		transform: translateX(-100%);
+		left: 29rem;
 	}
 }
 
@@ -167,7 +175,7 @@
 		margin-top: 0.75em;
 	}
 
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		text-align: left;
 		margin: 0 1em 0 0;
 	}
@@ -203,7 +211,7 @@
 		transform: translateY(-50%);
 	}
 
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		padding-left: 1.75em;
 		padding-right: 0;
 
@@ -252,20 +260,26 @@
 .header__jump-to {
 	width: 100%;
 	margin: 1em 0 0;
-	font-size: 0.9em;
+	padding: 0.1rem;
+	font-size: 0.9rem;
 	line-height: 1.2;
 	font-family: $font-plex;
 	font-style: normal;
-	color: $color-primary;
+	color: $color-secondary;
+	border: 1px solid currentColor;
 	background-color: $color-bg;
+	border-radius: 0.25rem;
 	cursor: pointer;
 
-	@media (max-width: 739px) {
-		color: $color-secondary;
-		border: 1px solid currentColor;
+	&:hover,
+	&:focus {
+		color: $color-bg;
+		background-color: $color-secondary;
+		border-color: $color-secondary;
 	}
-	@media (min-width: 740px) {
-		width: auto;
+
+	@media (min-width: $mq-medium) {
+		width: 10rem;
 		margin: 0 0 0 1em;
 		border: auto;
 	}

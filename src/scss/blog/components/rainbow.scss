@@ -19,7 +19,7 @@
 		$color-extra 100%
 	);
 
-	@media (min-width: 740px) {
+	@media (min-width: $mq-medium) {
 		width: 1.25rem;
 		top: -2.5%; // little trick
 		height: 105%;
