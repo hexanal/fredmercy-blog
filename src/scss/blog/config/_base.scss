@@ -85,6 +85,7 @@ img {
 a {
 	color: $color-primary;
 	outline: none;
+	user-select: none;
 
 	&:visited {
 		color: $color-primary;
@@ -102,6 +103,7 @@ button {
 	border: 0;
 	outline: none;
 	cursor: pointer;
+	user-select: none;
 }
 
 hr {

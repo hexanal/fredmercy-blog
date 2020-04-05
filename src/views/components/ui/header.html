@@ -3,9 +3,15 @@
 	data-component="nav"
 >
 	<nav class="header__header-extend">
+		{{#if displayJumpTo}}
 		<h1 class="header__heading" aria-level="1">
 			{{pageTitle}}
 		</h1>
+		{{else}}
+			<a href="/blog" class="header__back">
+				to index
+			</a>
+		{{/if}}
 
 		<button
 			class="header__toggle-menu"

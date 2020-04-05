@@ -25,7 +25,15 @@ module.exports = {
 		return gulp
 			.src(config.html.src)
 			.pipe(through.obj(function (file, enc, cb) {
-				var params = getEntryParams(file);
+				var params = {
+					pageTitle: config.info.title,
+					description: config.info.description,
+					rootPath: config.info.rootPath,
+					photosPath: config.info.photos.path,
+					bookmarksPath: config.info.bookmarks.path,
+					bandcampPath: config.info.bandcamp.path,
+					...getEntryParams(file)
+				};
 
 				return gulp.src(config.html.templates + params.template + '.html')
 					.pipe(hb(params, {
