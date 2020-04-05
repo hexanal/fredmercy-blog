@@ -1,20 +1,28 @@
-<div class="leave-comment js-leave-comment">
+<div
+	class="leave-comment"
+	data-js="leave-comment-popup"
+>
 	<header class="leave-comment__header">
 		<h2 class="leave-comment__heading">
 			Leave a comment
 		</h2>
 
 		<div class="leave-comment__status">
-			(in dot <span class="js-leave-comment-dot"></span>)
+			(in dot <span data-js="selected-dot"></span>)
 		</div>
 
-		<button type="button" class="leave-comment__close js-comment-close">
+		<button
+			type="button"
+			class="leave-comment__close"
+			data-js="close"
+		>
 			close<span aria-hidden="true"> ×</span>
 		</button>
 	</header>
 
 	<form
-		class="leave-comment__form js-comment-form"
+		class="leave-comment__form"
+		data-js="comment-form"
 		data-entry-id="{{ date }}"
 	>
 		<label class="leave-comment__field">
@@ -22,7 +30,8 @@
 				Comment <i>(1500 characters max.)</i>
 			</span>
 			<textarea
-				class="leave-comment__textarea js-comment-content"
+				class="leave-comment__textarea"
+				data-js="content"
 				name="content"
 				maxlength="1500"
 				required
@@ -34,7 +43,8 @@
 				Name <i>(if left blank, “Anonymous” will be used)</i>
 			</span>
 			<input
-				class="leave-comment__input js-comment-author"
+				class="leave-comment__input"
+				data-js="author"
 				type="text"
 				name="author"
 				maxlength="100"
@@ -44,7 +54,11 @@
 		<button type="submit" class="leave-comment__submit">
 			Done
 		</button>
-		<button type="button" class="leave-comment__cancel js-comment-close">
+		<button
+			type="button"
+			class="leave-comment__cancel"
+			data-js="close"
+		>
 			Cancel
 		</button>
 	</form>

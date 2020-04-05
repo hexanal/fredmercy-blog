@@ -1,12 +1,14 @@
 export default function() {
-	const hash = window.location.hash;
-	const pageTimestamps = document.querySelectorAll('.post code');
+	this.onMount = function(component) {
+		const hash = window.location.hash;
+		const pageTimestamps = component.querySelectorAll('.post code');
 
-	if (!pageTimestamps) return;
+		if (!pageTimestamps) return;
 
-	pageTimestamps.forEach(code => {
-		if (`#@${code.innerHTML}` === `${hash}:`) {
-			code.parentElement.classList.add('state-paragraph-focused');
-		}
-	})
+		pageTimestamps.forEach(code => {
+			if (`#@${code.innerHTML}` === `${hash}:`) {
+				code.parentElement.classList.add('state-paragraph-focused');
+			}
+		});
+	}
 }

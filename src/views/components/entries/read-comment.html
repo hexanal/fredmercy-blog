@@ -1,20 +1,27 @@
-<div class="read-comment js-read-comment">
+<div
+	class="read-comment"
+	data-js="read-comment"
+>
 	<header class="read-comment__header">
 		<h2 class="read-comment__heading">
 			Comment
 		</h2>
 
 		<div class="read-comment__status">
-			(dot <span class="js-read-comment-dot"></span>)
+			(dot <span data-js="comment-dot"></span>)
 		</div>
 
-		<button type="button" class="read-comment__close js-comment-close">
+		<button
+			type="button"
+			class="read-comment__close"
+			data-js="close"
+		>
 			close ×
 		</button>
 	</header>
 
 	<div class="read-comment__comment">
-		<div class="read-comment__body js-read-comment-body"></div>
-		— <em class="read-comment__author js-read-comment-author"></em>
+		<div class="read-comment__body" data-js="comment-body"></div>
+		— <em class="read-comment__author" data-js="comment-author"></em>
 	</div>
 </div>

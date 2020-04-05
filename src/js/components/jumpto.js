@@ -18,18 +18,23 @@ function focusFirstPostFromArchive(hash) {
 }
 
 export default function() {
-	const jumpto = document.querySelector('.js-index-jumpto');
-	if (!jumpto) return;
+	this.global = true;
+	this.state = {
+		component: null,
+	};
 
-	// init
-	const currentHash = location.hash;
-	jumpto.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
-	focusFirstPostFromArchive(currentHash);
+	this.onMount = function(component, id) {
+		const currentHash = location.hash;
 
-	// event
-	jumpto.addEventListener('change', (e) => {
-		if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
-		location.hash = e.target.value;
-		focusFirstPostFromArchive(e.target.value);
-	});
+		this.state.component = component;
+		this.state.component.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
+		focusFirstPostFromArchive(currentHash);
+
+		// event
+		this.state.component.addEventListener('change', (e) => {
+			if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
+			location.hash = e.target.value;
+			focusFirstPostFromArchive(e.target.value);
+		});
+	}
 }

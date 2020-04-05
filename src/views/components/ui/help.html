@@ -1,6 +1,12 @@
-<aside class="help js-help">
+<aside
+	class="help"
+	data-component="help">
 	<div class="help__box">
-		<button type="button" class="help__close js-help-close">
+		<button
+			type="button"
+			class="help__close"
+			data-js="help-close"
+		>
 			close<span aria-hidden="true"> ×</span>
 		</button>
 
@@ -12,7 +18,7 @@
 				<div>
 					<strong class="help__emphasis">
 						Use the
-						<button class="help__key js-help-show" type="button">?</button>
+						<button class="help__key" data-js="help-show" type="button">?</button>
 					</strong>
 					key to toggle this popup.
 				</div>
@@ -24,9 +30,9 @@
 				<div>
 					<strong class="help__emphasis">
 						Use the
-						<button class="help__key js-help-big-font" type="button">+</button>
+						<button class="help__key" data-js="help-big-font" type="button">+</button>
 						and
-						<button class="help__key js-help-normal-font" type="button">-</button>
+						<button class="help__key" data-js="help-normal-font" type="button">-</button>
 					</strong>
 					keys to increase and decrease the size of the text.
 				</div>
@@ -38,7 +44,7 @@
 				<div>
 					<strong class="help__emphasis">
 						Use the
-						<button class="help__key js-help-menu" type="button">m</button>
+						<button class="help__key" data-js="show-menu" type="button">m</button>
 					</strong>
 					key to toggle the main menu.
 				</div>
@@ -47,7 +53,8 @@
 	</div>
 
 	<button
-		class="help__bg js-help-bg"
+		class="help__bg"
+		data-js="help-bg"
 		type="button"
 		tabindex="-1"
 	>
