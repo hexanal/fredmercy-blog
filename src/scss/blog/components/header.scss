@@ -21,8 +21,8 @@
 	font-weight: 400;
 	line-height: 1.2;
 	font-style: italic;
-	color: $color-bg;
-	background-color: $color-active;
+	color: var(--color-bg);
+	background-color: var(--color-active);
 }
 
 .header__back {
@@ -37,13 +37,13 @@
 		top: -0.1rem;
 		font-size: 1.2rem;
 		font-style: normal;
-		color: $color-active;
+		color: var(--color-active);
 	}
 
 	&:hover,
 	&:focus {
 		&:before {
-			color: $color-bg;
+			color: var(--color-bg);
 		}
 	}
 }
@@ -68,7 +68,7 @@
 	font-family: $font-plex;
 	font-size: 1em;
 	text-decoration: underline;
-	color: $color-primary;
+	color: var(--color-primary);
 	background-color: transparent;
 
 	&.state-menu-active {
@@ -82,8 +82,8 @@
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
 		text-decoration: none;
 
 		span {
@@ -132,8 +132,8 @@
 	top: 3rem;
 	padding: 1em;
 	border: 2px solid currentColor;
-	background-color: $color-bg;
-	box-shadow: 0.8em 0.8em 0 0 rgba($color-primary, 0.75);
+	background-color: var(--color-bg);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
 
 	hr {
 		margin: 1rem 0;
@@ -159,7 +159,7 @@
 	right: 0;
 	width: 100%;
 	padding: 0;
-	background-color: $color-bg;
+	background-color: var(--color-bg);
 	opacity: 0.8;
 
 	&.state-menu-active {
@@ -188,18 +188,18 @@
 	padding-right: 1.75em;
 	font-family: $font-plex;
 	font-size: 1rem;
-	color: $color-primary;
+	color: var(--color-primary);
 	background-color: transparent;
 	text-decoration: underline;
 
 	&:visited {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
 		text-decoration: none;
 	}
 
@@ -275,17 +275,17 @@
 	line-height: 1.2;
 	font-family: $font-plex;
 	font-style: normal;
-	color: $color-secondary;
+	color: var(--color-secondary);
 	border: 1px solid currentColor;
-	background-color: $color-bg;
+	background-color: var(--color-bg);
 	border-radius: 0.25rem;
 	cursor: pointer;
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
-		border-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		border-color: var(--color-secondary);
 	}
 
 	@media (min-width: $mq-medium) {

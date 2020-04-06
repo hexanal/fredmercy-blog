@@ -7,11 +7,11 @@
 	min-width: 35em;
 	padding: 1em;
 	line-height: 1.4;
-	color: $color-primary;
+	color: var(--color-primary);
 	border: 2px solid currentColor;
-	background-color: $color-bg;
+	background-color: var(--color-bg);
 	cursor: help;
-	box-shadow: 0.8em 0.8em 0 0 rgba($color-primary, 0.75);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
 
 	&.state-note-visible {
 		display: block;

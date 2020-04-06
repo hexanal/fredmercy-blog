@@ -23,14 +23,14 @@
 		font-size: 1em;
 		line-height: 1;
 		text-decoration: underline;
-		color: $color-primary;
+		color: var(--color-primary);
 		background-color: transparent;
 
 		&:hover,
 		&:focus {
 			text-decoration: none;
-			color: $color-bg;
-			background-color: $color-secondary;
+			color: var(--color-bg);
+			background-color: var(--color-secondary);
 		}
 	}
 
@@ -38,7 +38,7 @@
 		margin: 0.5em 0 1.5em 0;
 		padding: 0 0 0.5em 2.5em;
 		line-height: 1.5;
-		color: $color-subdued;
+		color: var(--color-subdued);
 		background-color: transparent;
 		font-style: initial;
 	}

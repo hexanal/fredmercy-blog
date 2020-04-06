@@ -1,10 +1,12 @@
-// colorscheme crafted with: https://coolors.co/ff6c23-a46bea-f9eaea-ffdd21-65b25e
-$color-bg: #f9eaea; // Linen
-$color-primary: #a46bea; // Rich Lavender
-$color-active: #ff6c23; // Pumpkin
-$color-secondary: #ea8fcd; // Kobi
-$color-subdued: #65b25e; // Bud Green
-$color-extra: #ffdd21; // Banana Yellow
+// "June" colorscheme crafted with: https://coolors.co/ff6c23-a46bea-f9eaea-ffdd21-65b25e
+:root {
+	--color-bg: #f9eaea; // Linen
+	--color-primary: #a46bea; // Rich Lavender
+	--color-active: #ff6c23; // Pumpkin
+	--color-secondary: #ea8fcd; // Kobi
+	--color-subdued: #65b25e; // Bud Green
+	--color-extra: #ffdd21; // Banana Yellow
+}
 
 // sizes
 $max-width: 1200px;
@@ -43,8 +45,8 @@ html {
 	box-sizing: border-box;
 	font-family: $font-plex;
 	font-size: 13px;
-	color: $color-primary;
-	background-color: $color-bg;
+	color: var(--color-primary);
+	background-color: var(--color-bg);
 
 	&.state-a11y-big-font {
 		font-size: 18px;
@@ -61,12 +63,12 @@ body {
 }
 
 ::-moz-selection {
-	color: $color-bg;
-	background: $color-subdued;
+	color: var(--color-bg);
+	background: var(--color-subdued);
 }
 ::selection {
-	color: $color-bg;
-	background: $color-subdued;
+	color: var(--color-bg);
+	background: var(--color-subdued);
 }
 
 *, *:before, *:after {
@@ -85,18 +87,18 @@ img {
 }
 
 a {
-	color: $color-primary;
+	color: var(--color-primary);
 	outline: none;
 	user-select: none;
 
 	&:visited {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
 		text-decoration: none;
 	}
 }
@@ -111,10 +113,10 @@ button {
 hr {
 	height: 2px;
 	margin: 2.5em 0;
-	background-color: $color-primary;
+	background-color: var(--color-primary);
 	border: none;
 }
 
 del {
-	background-color: $color-primary;
+	background-color: var(--color-primary);
 }

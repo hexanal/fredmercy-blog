@@ -42,8 +42,8 @@
 	margin-right: 0.25em;
 	margin-bottom: 1.5em;
 	padding: 0.25em;
-	color: $color-bg;
-	background-color: $color-primary;
+	color: var(--color-bg);
+	background-color: var(--color-primary);
 }
 
 .post__type {
@@ -77,8 +77,8 @@
 		font-size: 1em;
 		line-height: 1.4;
 		font-style: italic;
-		color: $color-bg;
-		background-color: $color-active;
+		color: var(--color-bg);
+		background-color: var(--color-active);
 	}
 
 	ul {
@@ -117,8 +117,8 @@
 
 		&:hover,
 		&:focus {
-			color: $color-bg;
-			background-color: $color-primary;
+			color: var(--color-bg);
+			background-color: var(--color-primary);
 		}
 	}
 
@@ -134,31 +134,31 @@
 	audio {
 		width: 100%;
 		height: 30px;
-		background-color: $color-primary;
-		border: 2px solid $color-primary;
+		background-color: var(--color-primary);
+		border: 2px solid var(--color-primary);
 	}
 
 	a:visited {
-		background-color: $color-subdued;
+		background-color: var(--color-subdued);
 	}
 }
 
 .state-paragraph-focused {
-	background-color: rgba($color-secondary, 0.3);
+	background-color: rgba(var(--color-secondary), 0.3);
 	animation: fadeOutFocus 2s 2s ease-out forwards;
 }
 @keyframes fadeOutFocus {
 	from {
-		background-color: rgba($color-secondary, 0.3);
+		background-color: rgba(var(--color-secondary), 0.3);
 	}
 	to {
-		background-color: rgba($color-secondary, 0);
+		background-color: rgba(var(--color-secondary), 0);
 	}
 }
 
 .post__body--bookmarks {
 	code {
-		background-color: $color-subdued;
+		background-color: var(--color-subdued);
 	}
 
 	ul {
@@ -181,5 +181,5 @@
 .post__edit-date {
 	display: inline-block;
 	margin: 1.5em 0;
-	color: $color-secondary;
+	color: var(--color-secondary);
 }

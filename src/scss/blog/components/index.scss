@@ -20,8 +20,8 @@
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.2;
-	color: $color-bg;
-	background-color: $color-active;
+	color: var(--color-bg);
+	background-color: var(--color-active);
 }
 
 .index__item {
@@ -36,8 +36,8 @@
 	display: inline-block;
 	margin-right: 0.25em;
 	line-height: 1.1;
-	color: $color-bg;
-	background-color: $color-primary;
+	color: var(--color-bg);
+	background-color: var(--color-primary);
 }
 
 .index__type {

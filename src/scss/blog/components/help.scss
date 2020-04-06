@@ -13,15 +13,15 @@
 	display: inline-block;
 	padding: 0;
 	color: white;
-	background-color: $color-subdued;
+	background-color: var(--color-subdued);
 	font-family: $font-plex;
 	font-size: 1em;
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
 	}
 }
 
@@ -35,10 +35,10 @@
 	max-width: 42em;
 	padding: 1em;
 	line-height: 1.4;
-	color: $color-subdued;
+	color: var(--color-subdued);
 	border: 2px solid currentColor;
-	background-color: $color-bg;
-	box-shadow: 0.8em 0.8em 0 0 rgba($color-subdued, 0.75);
+	background-color: var(--color-bg);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-subdued);
 }
 
 .help__list {
@@ -80,16 +80,16 @@
 	padding: 0;
 	font-size: 1rem;
 	font-family: $font-plex;
-	color: $color-subdued;
-	border: 2px solid $color-subdued;
+	color: var(--color-subdued);
+	border: 2px solid var(--color-subdued);
 	border-radius: 0.3rem;
 	background-color: transparent;
 
 	&:hover,
 	&:focus {
-		color: $color-bg;
-		background-color: $color-secondary;
-		border-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		border-color: var(--color-secondary);
 	}
 }
 
@@ -102,6 +102,6 @@
 	right: 0;
 	width: 100%;
 	padding: 0;
-	background-color: $color-extra;
+	background-color: var(--color-extra);
 	opacity: 0.75;
 }

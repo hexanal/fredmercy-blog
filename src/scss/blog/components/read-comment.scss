@@ -22,8 +22,8 @@
 	padding: 0.25em;
 	font-size: 1em;
 	font-weight: 400;
-	color: $color-bg;
-	background-color: $color-primary;
+	color: var(--color-bg);
+	background-color: var(--color-primary);
 }
 
 .read-comment__status {
@@ -40,14 +40,14 @@
 	font-family: $font-plex;
 	font-size: 1em;
 	text-decoration: underline;
-	color: $color-primary;
+	color: var(--color-primary);
 	background-color: transparent;
 
 	&:hover,
 	&:focus {
 		text-decoration: none;
-		color: $color-bg;
-		background-color: $color-secondary;
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
 	}
 }
 
