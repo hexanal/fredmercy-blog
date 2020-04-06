@@ -1,6 +1,7 @@
 <aside
 	class="help"
-	data-component="help">
+	data-component="help"
+>
 	<div class="help__box">
 		<button
 			type="button"
@@ -10,46 +11,87 @@
 			close<span aria-hidden="true"> ×</span>
 		</button>
 
-		<ul class="help__list">
-			<li class="help__item">
-				<div class="help__icon">
-					🔠
-				</div>
-				<div>
-					<strong class="help__emphasis">
-						Use
-						<button class="help__key" data-js="help-big-font" type="button">+</button>
-						and
-						<button class="help__key" data-js="help-normal-font" type="button">-</button>
-					</strong>
-					to increase and decrease the size of the text.
-				</div>
-			</li>
-			<li class="help__item">
-				<div class="help__icon">
-					Ⓜ️
-				</div>
-				<div>
-					<strong class="help__emphasis">
-						Use
-						<button class="help__key" data-js="show-menu" type="button">m</button>
-					</strong>
-					to toggle the main menu.
-				</div>
-			</li>
-			<li class="help__item">
-				<div class="help__icon">
-					⚙️
-				</div>
-				<div>
-					<strong class="help__emphasis">
-						Use
-						<button class="help__key" data-js="help-show" type="button">?</button>
-					</strong>
-					to toggle this popup.
-				</div>
-			</li>
-		</ul>
+		<div class="help__scroll">
+			<div class="help__section">
+				<h2 class="help__heading">
+					Interface
+				</h2>
+
+				<ul class="help__list">
+					<li
+						class="help__item"
+						data-component="themes"
+					>
+						<div class="help__icon">
+							🎨
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Color theme:
+							</strong>
+							<select
+								class="help__select"
+								data-js="theme-select"
+							>
+								<option value="june">Default — "June"</option>
+								<option value="high-contrast">High contrast</option>
+								<option value="black-and-white">Black & White</option>
+								<option value="dark-mode">Dark mode</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<hr class="help__separator">
+
+			<div class="help__section">
+				<h2 class="help__heading">
+					Accessibility shortcuts
+				</h2>
+
+				<ul class="help__list">
+					<li class="help__item">
+						<div class="help__icon">
+							🔠
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="help__key" data-js="help-big-font" type="button">+</button>
+								and
+								<button class="help__key" data-js="help-normal-font" type="button">-</button>
+							</strong>
+							to increase and decrease the size of the text.
+						</div>
+					</li>
+					<li class="help__item">
+						<div class="help__icon">
+							Ⓜ️
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="help__key" data-js="show-menu" type="button">m</button>
+							</strong>
+							to toggle the main menu.
+						</div>
+					</li>
+					<li class="help__item">
+						<div class="help__icon">
+							⚙️
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="help__key" data-js="help-show" type="button">?</button>
+							</strong>
+							to toggle this popup.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<button

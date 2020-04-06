@@ -8,6 +8,14 @@
 	--color-extra: #ffdd21; // Banana Yellow
 }
 
+
+
+// other themes:
+// High Contrast: https://coolors.co/e2530b-3b1768-f9f9f9-e2c000-1c8c12
+// Light
+// Dark mode: https://coolors.co/ff9763-e7d9f7-1d1542-ffe44f-9dd698
+
+
 // sizes
 $max-width: 1200px;
 $responsive-width: 90%;
@@ -50,6 +58,32 @@ html {
 
 	&.state-a11y-big-font {
 		font-size: 18px;
+	}
+
+	// Theme Declinations
+	&[data-theme="high-contrast"] {
+		--color-bg: #f9f9f9;
+		--color-primary: #3b1768;
+		--color-secondary: #ffc4ec;
+		--color-active: #e2530b;
+		--color-subdued: #1c8c12;
+		--color-extra: #e2c000;
+	}
+	&[data-theme="black-and-white"] {
+		--color-bg: #ffffff;
+		--color-primary: #000000;
+		--color-secondary: #000000;
+		--color-active: #000000;
+		--color-subdued: #000000;
+		--color-extra: #000000;
+	}
+	&[data-theme="dark-mode"] {
+		--color-bg: #1d1542;
+		--color-primary: #e7d9f7;
+		--color-secondary: #ffc4ec;
+		--color-active: #ff9763;
+		--color-subdued: #9dd698;
+		--color-extra: #ffe44f;
 	}
 }
 
@@ -119,4 +153,24 @@ hr {
 
 del {
 	background-color: var(--color-primary);
+}
+
+select {
+	padding: 0.1rem;
+	font-size: 0.9rem;
+	line-height: 1.2;
+	font-family: $font-plex;
+	font-style: normal;
+	color: var(--color-secondary);
+	border: 1px solid currentColor;
+	background-color: var(--color-bg);
+	border-radius: 0.25rem;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		border-color: var(--color-secondary);
+	}
 }

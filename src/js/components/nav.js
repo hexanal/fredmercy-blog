@@ -10,6 +10,7 @@ export default function() {
 		firstMenuItem: null,
 		bg: null,
 		helpToggle: null,
+		toTopBtn: null,
 	};
 
 	this.onMount = function(component, id) {
@@ -18,13 +19,13 @@ export default function() {
 		this.state.firstMenuItem = getChild('menu-first', component);
 		this.state.bg = getChild('menu-bg', component);
 		this.state.helpToggle = getChild('help-toggle', component);
+		this.state.toTopBtn = getChild('to-top', component);
 
 		// events
-		this.state.helpToggle.addEventListener('click', () => {
-			Components.broadcast('SHOW_HELP');
-		});
 		this.state.toggleBtn.addEventListener('click', this.toggleMenu);
 		this.state.bg.addEventListener('click', this.closeMenu);
+		this.state.helpToggle.addEventListener('click', () => Components.broadcast('SHOW_HELP') );
+		this.state.toTopBtn.addEventListener('click', () => window.scrollTo(0, 0));
 
 		// todo: think about a component that might handle all of the shortcuts
 		document.addEventListener('keyup', e => {

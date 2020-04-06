@@ -256,6 +256,12 @@
 		content: '🆘';
 	}
 }
+.header__menu-link--up {
+	&:after {
+		content: '☝️';
+	}
+}
+
 .header__menu-link--sounds {
 	&:after {
 		content: '🔇';
@@ -270,27 +276,9 @@
 .header__jump-to {
 	width: 100%;
 	margin: 1em 0 0;
-	padding: 0.1rem;
-	font-size: 0.9rem;
-	line-height: 1.2;
-	font-family: $font-plex;
-	font-style: normal;
-	color: var(--color-secondary);
-	border: 1px solid currentColor;
-	background-color: var(--color-bg);
-	border-radius: 0.25rem;
-	cursor: pointer;
-
-	&:hover,
-	&:focus {
-		color: var(--color-bg);
-		background-color: var(--color-secondary);
-		border-color: var(--color-secondary);
-	}
 
 	@media (min-width: $mq-medium) {
 		width: 10rem;
 		margin: 0 0 0 1em;
-		border: auto;
 	}
 }
