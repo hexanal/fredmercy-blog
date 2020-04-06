@@ -256,6 +256,16 @@
 		content: '🆘';
 	}
 }
+.header__menu-link--sounds {
+	&:after {
+		content: '🔇';
+	}
+	&.state-sounds-enabled {
+		&:after {
+			content: '🔈';
+		}
+	}
+}
 
 .header__jump-to {
 	width: 100%;

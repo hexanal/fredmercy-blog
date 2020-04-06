@@ -9,6 +9,7 @@ import highlight from './components/highlight';
 import jumpto from './components/jumpto';
 import nav from './components/nav';
 import notes from './components/notes';
+import sounds from './components/sounds';
 
 Components.register('a11y', a11y);
 Components.register('comments', comments);
@@ -18,6 +19,7 @@ Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);
 Components.register('nav', nav);
 Components.register('notes', notes);
+Components.register('sounds', sounds);
 
 RafManager.start(); // start the requestAnimationFrame manager
 Components.hello(); // mount all the components you find
