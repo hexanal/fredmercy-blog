@@ -1,0 +1,42 @@
+html { // specify that we're dealing with the documentElement
+	&[data-theme="high-contrast"] {
+		--color-bg: #f9f9f9;
+		--color-primary: #0059ff;
+		--color-secondary: #0059ff;
+		--color-active: #38e06d;
+		--color-subdued: #a0b4bf;
+		--color-extra: #ff5400;
+	}
+	&[data-theme="black-and-white"] {
+		--color-bg: #ffffff;
+		--color-primary: #000000;
+		--color-secondary: #000000;
+		--color-active: #000000;
+		--color-subdued: #000000;
+		--color-extra: #000000;
+	}
+	&[data-theme="dark-mode"] {
+		--color-bg: #1d1542;
+		--color-primary: #e7d9f7;
+		--color-secondary: #ffc4ec;
+		--color-active: #ff9763;
+		--color-subdued: #9dd698;
+		--color-extra: #ffe44f;
+	}
+	&[data-theme="xmas"] {
+		--color-bg: #2e9f43;
+		--color-primary: #fefefe;
+		--color-secondary:#67f218;
+		--color-active: #fdf9f9;
+		--color-subdued: #155513;
+		--color-extra: #f5390e;
+	}
+	&[data-theme="tron"] {
+		--color-bg: #000000;
+		--color-primary: #fedd4b;
+		--color-secondary:#ff7909;
+		--color-active: #00a1fd;
+		--color-subdued: #0092ff;
+		--color-extra: #f5e500;
+	}
+}

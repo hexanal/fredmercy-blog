@@ -3,6 +3,8 @@ const THEME_LIST = [
 	'high-contrast',
 	'black-and-white',
 	'dark-mode',
+	'xmas',
+	'tron',
 	'custom',
 ];
 const DEFAULT_THEME = 'june';
