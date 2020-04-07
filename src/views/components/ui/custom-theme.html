@@ -1,0 +1,24 @@
+
+<aside
+	class="custom-theme"
+	data-js="custom-theme-panel"
+>
+	<div class="custom-theme__container">
+		<button
+			type="button"
+			class="custom-theme__close"
+			data-js="custom-theme-close"
+		>
+			close<span aria-hidden="true"> ×</span>
+		</button>
+
+		<div class="custom-theme__options">
+			{{> ui/theme-option label="Background" id="bg" }}
+			{{> ui/theme-option label="Primary" id="primary" }}
+			{{> ui/theme-option label="Secondary" id="secondary" }}
+			{{> ui/theme-option label="Active" id="active" }}
+			{{> ui/theme-option label="Subdued" id="subdued" }}
+			{{> ui/theme-option label="Extra" id="extra" }}
+		</div>
+	</div>
+</aside>

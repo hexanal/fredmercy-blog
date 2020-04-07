@@ -12,7 +12,7 @@
 	right: 0;
 	display: inline-block;
 	padding: 0;
-	color: white;
+	color: var(--color-bg);
 	background-color: var(--color-subdued);
 	font-family: $font-plex;
 	font-size: 1em;
@@ -91,6 +91,44 @@
 	display: inline-block;
 	margin: 0;
 	white-space: nowrap;
+}
+
+.help__theme-edit {
+	display: none;
+	padding: 0;
+	font-size: 0.85rem;
+	font-family: $font-plex;
+	color: var(--color-primary);
+	background-color: transparent;
+	outline: none;
+
+	i {
+		display: inline-block;
+		position: relative;
+		top: 0.1rem;
+		left: -0.15rem;
+		width: 1rem;
+		font-size: 0.85rem;
+		font-style: normal;
+		line-height: 1;
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		i {
+			font-size: 1.15rem;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		text-decoration: none;
+	}
+
+	[data-theme="custom"] & {
+		display: inline-block;
+	}
 }
 
 .help__key {

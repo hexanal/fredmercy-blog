@@ -12,6 +12,7 @@ export default function() {
 		storage: null,
 		fontIncreaseBtn: null,
 		fontDecreaseBtn: null,
+		themeEditBtn: null,
 	};
 
 	this.onMount = function(component, id) {
@@ -23,6 +24,7 @@ export default function() {
 		this.state.fontDecreaseBtn = getChild('help-normal-font', component);
 		this.state.menuBtn = getChild('show-menu', component);
 		this.state.helpBtn = getChild('help-show', component);
+		this.state.themeEditBtn = getChild('theme-edit', component);
 
 		this.state.menuBtn.addEventListener('click', () => {
 			Components.broadcast('TOGGLE_MENU');
@@ -32,6 +34,11 @@ export default function() {
 		this.state.bg.addEventListener('click', this.closeHelp);
 		this.state.fontIncreaseBtn.addEventListener('click', () => this.updateFontSize(1));
 		this.state.fontDecreaseBtn.addEventListener('click', () => this.updateFontSize(0));
+		this.state.themeEditBtn.addEventListener('click', () => {
+			Components.broadcast('CLOSE_MENU');
+			Components.broadcast('CLOSE_HELP');
+			Components.broadcast('OPEN_THEME_EDITOR');
+		});
 
 		document.addEventListener('keyup', e => {
 			const { type } = document.activeElement;
@@ -49,6 +56,9 @@ export default function() {
 	this.listen = function(id) {
 		if (id === 'SHOW_HELP') {
 			this.toggleHelp();
+		}
+		if (id === 'CLOSE_HELP') {
+			this.closeHelp();
 		}
 	}
 

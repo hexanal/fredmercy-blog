@@ -85,6 +85,9 @@ html {
 		--color-subdued: #9dd698;
 		--color-extra: #ffe44f;
 	}
+	&[data-theme="custom"] {
+		// set by Javascript!
+	}
 }
 
 body {

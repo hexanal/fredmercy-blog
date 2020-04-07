@@ -1,0 +1,45 @@
+.custom-theme {
+	position: relative;
+	display: none;
+	margin: 3.5rem 0 2rem;
+	padding: 1em;
+	line-height: 1.4;
+	color: var(--color-primary);
+	border: 2px solid currentColor;
+	background-color: var(--color-bg);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
+
+	.state-theme-edit[data-theme="custom"] & {
+		display: block;
+	}
+}
+
+.custom-theme__close {
+	position: absolute;
+	top: -2rem;
+	left: 0;
+	display: inline-block;
+	padding: 0;
+	color: var(--color-primary);
+	background-color: transparent;
+	font-family: $font-plex;
+	font-size: 1em;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+	}
+}
+
+.custom-theme__options {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem 0;
+
+	@media (min-width: $mq-medium) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem 15%;
+	}
+}

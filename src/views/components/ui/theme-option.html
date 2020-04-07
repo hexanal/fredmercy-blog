@@ -1,0 +1,33 @@
+<div
+	class="theme-option"
+	data-js="custom-theme-control"
+	data-color-id="{{ id }}"
+>
+	<div
+		class="theme-option__color"
+		data-color-id="{{ id }}"
+	>
+		<div
+			class="theme-option__value"
+			data-js="color-value"
+		>
+			-
+		</div>
+
+		<div class="theme-option__control-mask">
+			<input
+				id="color-{{ id }}"
+				class="theme-option__control"
+				type="color"
+				data-color-id="{{ id }}"
+				data-js="color-picker"
+				title="Choose a custom color for {{ label }}"
+			>
+			<div class="theme-option__focus" aria-hidden="true"></div>
+		</div>
+	</div>
+
+	<label for="color-{{ id }}" class="theme-option__label">
+		{{ label }}
+	</label>
+</div>

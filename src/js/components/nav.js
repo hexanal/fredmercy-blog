@@ -42,6 +42,9 @@ export default function() {
 	}
 
 	this.listen = function(id) {
+		if (id === 'CLOSE_MENU') {
+			this.closeMenu();
+		}
 		if (id === 'TOGGLE_MENU') {
 			this.toggleMenu();
 		}

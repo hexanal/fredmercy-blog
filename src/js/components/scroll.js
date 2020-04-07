@@ -6,7 +6,7 @@ export default function() {
 		scrollPastViewport: false,
 	};
 
-	this.onMount = function(component, id) {
+	this.onMount = function() {
 		document.addEventListener('scroll', this.onScroll);
 	}
 
