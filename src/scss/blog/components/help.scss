@@ -52,6 +52,12 @@
 	background-color: var(--color-subdued);
 }
 
+.help__section {
+	&:last-child {
+		margin-bottom: 1rem;
+	}
+}
+
 .help__heading {
 	margin: 0 0 1rem;
 	font-size: 1rem;
