@@ -7,6 +7,13 @@ const Components = {
 		this.library.push({ id, Component });
 	},
 
+	autoMount(id, Component) {
+		this.register(id, Component);
+		const Instance = new Component;
+		Instance.onMount(document, id);
+		this.mounted.push(Instance);
+	},
+
 	mountAllInsideContainer(container) {
 		const mountable = container.querySelectorAll(`[data-component]`);
 

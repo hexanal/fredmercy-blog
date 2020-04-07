@@ -9,6 +9,7 @@ import highlight from './components/highlight';
 import jumpto from './components/jumpto';
 import nav from './components/nav';
 import notes from './components/notes';
+import scroll from './components/scroll';
 import sounds from './components/sounds';
 import themes from './components/themes';
 
@@ -20,6 +21,7 @@ Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);
 Components.register('nav', nav);
 Components.register('notes', notes);
+Components.autoMount('scroll', scroll);
 Components.register('sounds', sounds);
 Components.register('themes', themes);
 
