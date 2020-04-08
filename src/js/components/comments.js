@@ -24,7 +24,7 @@ export default function() {
 		selectedComment: null
 	};
 
-	this.onMount = function(component, id) {
+	this.onMount = function(component) {
 		this.elements.container = component;
 		this.elements.grid = getChild('grid', component);
 		this.elements.dots = getChildren('dot', component);
@@ -51,7 +51,7 @@ export default function() {
 			dot.addEventListener('click', (e) => {
 				const dotId = e.target.dataset.index;
 
-				if (entryComments[dotId]) {
+				if (this.state.entryComments[dotId]) {
 					this.showComment(dotId);
 				} else {
 					this.showWriteForm(dotId);
@@ -110,7 +110,7 @@ export default function() {
 		this.elements.closeCommentPopupBtn.forEach((btn) => {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
-				closeAll();
+				this.closeAll();
 			});
 		});
 	}
@@ -128,7 +128,7 @@ export default function() {
 				dots.forEach(dot => dot.removeAttribute('disabled'));
 				comments.map((comment) => {
 					const commentDot = container.querySelector(`#comment_${comment.slot}`);
-					entryComments[comment.slot] = {
+					this.state.entryComments[comment.slot] = {
 						author: comment.author,
 						content: comment.content.replace(/\n/g, '<br>')
 					};
@@ -142,7 +142,7 @@ export default function() {
 
 	this.showComment = function(dotId) {
 		const { author, content } = this.state.entryComments[dotId];
-		const { readCommentAuthor, readCommentBody, readCommentPopup } = this.elements;
+		const { readCommentDot, readCommentAuthor, readCommentBody, readCommentPopup } = this.elements;
 
 		readCommentAuthor.innerHTML = author;
 		readCommentBody.innerHTML = content;
@@ -156,16 +156,16 @@ export default function() {
 	}
 
 	this.showWriteForm = function(dotId) {
-		const { container,leaveCommentPopup, leaveCommentDot } = this.elements;
+		const { container, leaveCommentPopup, leaveCommentDot } = this.elements;
 		this.state.selectedComment = dotId;
 
 		this.closeAll();
 		leaveCommentPopup.classList.add('state-leave-comment-active');
 
-		leaveCommentDot.innerHTML = selectedComment;
+		leaveCommentDot.innerHTML = this.state.selectedComment;
 		container.querySelector('#comment_' + dotId)
 			.classList.add('state-selected-comment');
-		container.querySelector('.js-comment-content').focus();
+		container.querySelector('[data-js="content"]').focus();
 	}
 
 	this.closeAll = function() {
@@ -175,7 +175,7 @@ export default function() {
 	}
 
 	this.unselectAllComments = function() {
-		this.elements.commentsDots.forEach(dot => {
+		this.elements.dots.forEach(dot => {
 			dot.classList.remove('state-selected-comment');
 		})
 	}

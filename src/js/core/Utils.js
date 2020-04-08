@@ -75,6 +75,10 @@ const Utils = {
 	},
 
 	dom: {
+		shouldDisableShortcuts() {
+			const { tagName } = document.activeElement;
+			return (tagName === 'TEXTAREA' || tagName === 'INPUT');
+		},
 		getChild(id, component) {
 			return component.querySelector(`[data-js="${id}"]`);
 		},

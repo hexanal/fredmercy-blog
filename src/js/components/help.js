@@ -41,8 +41,7 @@ export default function() {
 		});
 
 		document.addEventListener('keyup', e => {
-			const { type } = document.activeElement;
-			if (type === 'textarea' || type === 'input') return;
+			if (Utils.dom.shouldDisableShortcuts()) return;
 
 			if (e.code === 'Slash') {
 				this.toggleHelp(e);

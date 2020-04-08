@@ -6,22 +6,6 @@
 	@media (min-width: 500px) {
 		width: 10rem;
 	}
-
-	&.state-comments-loading {
-		.comments__heading,
-		.comments__grid {
-			&:before {
-				content: '';
-				position: absolute;
-				z-index: 10;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: var(--color-primary);
-			}
-		}
-	}
 }
 
 .comments__heading {
@@ -116,6 +100,22 @@
 		&:focus {
 			color: var(--color-subdued);
 			background-color: transparent;
+		}
+	}
+}
+
+.state-loading {
+	.comments__heading,
+	.comments__grid {
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 10;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: var(--color-primary);
 		}
 	}
 }

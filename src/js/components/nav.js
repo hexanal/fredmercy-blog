@@ -29,8 +29,7 @@ export default function() {
 
 		// todo: think about a component that might handle all of the shortcuts
 		document.addEventListener('keyup', e => {
-			const { type } = document.activeElement;
-			if (type === 'textarea' || type === 'input') return;
+			if (Utils.dom.shouldDisableShortcuts()) return;
 
 			if (e.code === 'KeyM') {
 				this.toggleMenu();

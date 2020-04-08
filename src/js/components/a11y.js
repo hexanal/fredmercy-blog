@@ -1,3 +1,5 @@
+import Utils from '../core/Utils';
+
 export default function() {
 	this.global = true;
 	this.state = {
@@ -15,8 +17,7 @@ export default function() {
 		}
 
 		document.addEventListener('keyup', e => {
-			const { type } = document.activeElement;
-			if (type === 'textarea' || type === 'input') return;
+			if (Utils.dom.shouldDisableShortcuts()) return;
 
 			if (e.code === 'Equal') {
 				this.updateFontSize(1);

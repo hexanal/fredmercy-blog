@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 
 var entries = require('./tasks/entries.js');
-var photos = require('./tasks/photos.js');
 
 var reset = require('./tasks/reset.js');
 var scss = require('./tasks/scss.js');
@@ -17,15 +16,13 @@ gulp.task('entries:posts', entries.posts);
 gulp.task('entries:bookmarks', entries.bookmarks);
 gulp.task('entries', gulp.parallel('entries:index', 'entries:posts', 'entries:bookmarks'));
 
-gulp.task('photos', photos.index);
-
 gulp.task('scss', scss);
 
 gulp.task('images', images);
 
 gulp.task('fonts', fonts);
 
-gulp.task('build', gulp.parallel('entries', 'photos', 'images', 'fonts', 'scss'));
+gulp.task('build', gulp.parallel('entries', 'images', 'fonts', 'scss'));
 
 gulp.task('watch:fonts', function() {
 	gulp.watch(config.fonts.watch, gulp.series('fonts'));
@@ -34,10 +31,7 @@ gulp.task('watch:bookmarks', function() {
 	gulp.watch(config.bookmarks.watch, gulp.series('entries'));
 });
 gulp.task('watch:html', function() {
-	gulp.watch(config.html.watch, gulp.series('entries', 'photos'));
-});
-gulp.task('watch:photos', function() {
-	gulp.watch(config.photos.watch, gulp.series('photos'));
+	gulp.watch(config.html.watch, gulp.series('entries'));
 });
 gulp.task('watch:scss', function() {
 	gulp.watch(config.scss.watch, gulp.series('scss'));
@@ -45,6 +39,6 @@ gulp.task('watch:scss', function() {
 gulp.task('watch:images', function() {
 	gulp.watch(config.images.watch, gulp.series('images'));
 });
-gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:bookmarks', 'watch:photos', 'watch:scss', 'watch:images'));
+gulp.task('watch', gulp.parallel('watch:fonts', 'watch:html', 'watch:bookmarks', 'watch:scss', 'watch:images'));
 
 gulp.task('kickstart', gulp.series('build', 'watch'));

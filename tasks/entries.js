@@ -29,7 +29,6 @@ module.exports = {
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
-					photosPath: config.info.photos.path,
 					bookmarksPath: config.info.bookmarks.path,
 					bandcampPath: config.info.bandcamp.path,
 					...getEntryParams(file)
@@ -79,7 +78,6 @@ module.exports = {
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
-					photosPath: config.info.photos.path,
 					bookmarksPath: config.info.bookmarks.path,
 					bandcampPath: config.info.bandcamp.path,
 					entries: posts
@@ -112,7 +110,6 @@ module.exports = {
 					pageTitle: config.info.bookmarks.title,
 					description: config.info.bookmarks.description,
 					rootPath: config.info.rootPath,
-					photosPath: config.info.photos.path,
 					bookmarksPath: config.info.bookmarks.path,
 					bandcampPath: config.info.bandcamp.path,
 					body: marked(pageData.body),

@@ -2,7 +2,6 @@
 	display: none;
 	flex-grow: 1;
 	margin: 0 0 5em;
-	max-width: 38.5rem;
 
 	&.state-read-comment-active {
 		display: block;
@@ -13,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 2.5em 0 1.5em;
+	margin: 1.5em 0 1.5em;
 }
 
 .read-comment__heading {
