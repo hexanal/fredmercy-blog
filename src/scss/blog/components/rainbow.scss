@@ -37,7 +37,11 @@
 		);
 		background-size: 1px 200%;
 		animation: moveRainbowVertical 5s linear infinite;
-		transform: skewY(45deg);
+		transition: width 500ms cubic-bezier(.71,.02,.41,1);
+
+		.state-body-transition & {
+			width: 100vw;
+		}
 	}
 }
 

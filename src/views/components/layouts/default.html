@@ -10,8 +10,17 @@
 	<link rel="stylesheet" href="/blog/dist/css/style.css">
 </head>
 
-<body data-component="a11y">
-	{{> @partial-block }}
+<body
+	class="body"
+	data-barba="wrapper"
+>
+	<div
+		class="body__contents"
+		data-barba="container"
+	>
+		{{> @partial-block }}
+	</div>
+
 	{{> ui/help }}
 	<div class="rainbow"></div>
 

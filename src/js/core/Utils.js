@@ -20,7 +20,6 @@ const Utils = {
 		},
 	},
 
-
 	time: {
 		debounce ( callback, wait = 250 ) {
 			let timer;
@@ -54,24 +53,6 @@ const Utils = {
 				}
 			}
 		}
-	},
-
-	colors: {
-		getRandomColor() {
-			const palette = this.getPalette();
-			return palette[Utils.math.getRandomInt(0, palette.length)];
-		},
-
-		getPalette() {
-			return [
-				'#f9eaea', // Linen
-				'#a46bea', // Rich Lavender
-				'#ff6c23', // Pumpkin
-				'#ea8fcd', // Kobi
-				'#65b25e', // Bud Green
-				'#ffdd21', // Banana Yello
-			];
-		},
 	},
 
 	dom: {

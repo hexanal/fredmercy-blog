@@ -7,7 +7,7 @@ export default function() {
 		useBigFont: false
 	};
 
-	this.onMount = function(component, id) {
+	this.onMount = function() {
 		this.state.useBigFont = (this.state.storage.getItem('a11y_use_big_font') > 0);
 
 		if (this.state.useBigFont) {
