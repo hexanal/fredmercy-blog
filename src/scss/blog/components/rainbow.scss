@@ -18,6 +18,11 @@
 		var(--color-extra) 80%,
 		var(--color-extra) 100%
 	);
+	transition: height 500ms cubic-bezier(.71,.02,.41,1);
+
+	.state-body-transition & {
+		height: 100vh;
+	}
 
 	@media (min-width: $mq-medium) {
 		width: 1.25rem;
@@ -41,6 +46,7 @@
 
 		.state-body-transition & {
 			width: 100vw;
+			height: 105%;
 		}
 	}
 }

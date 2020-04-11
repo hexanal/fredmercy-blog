@@ -1,0 +1,25 @@
+{
+	"items": [
+		{
+			"id": "spurmentz",
+			"emoji": "💊",
+			"label": "Spurmentz",
+			"href": "http://fredmercy.com/demos/spurmentz",
+			"description": "experiments with patterns and CSS animations to create trippy visuals"
+		},
+		{
+			"id": "sandbox",
+			"emoji": "⛱",
+			"label": "Sandbox",
+			"href": "http://sandbox.fredmercy.com",
+			"description": "kitchensink React app where I play around with various things"
+		},
+		{
+			"id": "idle-hand",
+			"emoji": "☝️",
+			"label": "Idle Hand",
+			"href": "http://fredmercy.com/demos/idle-hand",
+			"description": "quick proof-of-concept for a “retro” inspired game"
+		}
+	]
+}

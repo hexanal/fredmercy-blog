@@ -77,7 +77,7 @@
 	code {
 		display: inline-block;
 		padding: 0 0.15em;
-		font-family: $font-plex;
+		font-family: var(--font);
 		font-size: 1em;
 		line-height: 1.4;
 		font-style: italic;

@@ -11,7 +11,7 @@ module.exports = {
 		src: srcBasePath,
 		dest: destBasePath,
 	},
-	html: {
+	posts: {
 		watch: [
 			'./entries/**/*.md',
 			srcBasePath + 'views/**/*'
@@ -19,6 +19,11 @@ module.exports = {
 		src: './entries/**/*.md',
 		templates: srcBasePath + 'views/templates/',
 		dest: './blog/',
+	},
+	pages: {
+		watch: ['./pages/**/*'],
+		src: './pages/**/*.md',
+		dest: '../main',
 	},
 	scss: {
 		watch: [srcBasePath + 'scss/**/*.scss'],

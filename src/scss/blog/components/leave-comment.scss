@@ -3,11 +3,12 @@
 	overflow-y: auto;
 	display: none;
 	position: fixed;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 1em;
+	padding: 1rem 1rem 5rem;
 	background-color: var(--color-bg);
 
 	@media (min-width: 500px) {
@@ -29,18 +30,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 
 	@media (min-width: 500px) {
-		margin-top: 1.5em;
+		margin-top: 1.5rem;
 	}
 }
 
 .leave-comment__heading {
 	display: inline-block;
 	margin: 0;
-	padding: 0.25em;
-	font-size: 1em;
+	padding: 0.25rem;
+	font-size: 1rem;
 	font-weight: 400;
 	color: var(--color-bg);
 	background-color: var(--color-primary);
@@ -49,7 +50,7 @@
 .leave-comment__status {
 	display: none;
 	flex-grow: 1;
-	margin-left: 0.5em;
+	margin-left: 0.5rem;
 	font-style: italic;
 
 	@media (min-width: 350px) {
@@ -59,11 +60,11 @@
 
 .leave-comment__close {
 	display: inline-block;
-	margin-left: 0.5em;
+	margin-left: 0.5rem;
 	padding: 0;
 	color: var(--color-primary);
-	font-family: $font-plex;
-	font-size: 1em;
+	font-family: var(--font);
+	font-size: 1rem;
 	text-decoration: underline;
 	background-color: transparent;
 
@@ -77,12 +78,12 @@
 
 .leave-comment__field {
 	display: block;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 
 .leave-comment__label {
 	display: block;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.25rem;
 
 	i {
 		color: var(--color-subdued);
@@ -91,13 +92,15 @@
 
 .leave-comment__textarea,
 .leave-comment__input {
+	appearance: none;
 	width: 100%;
-	padding: 0.5em;
-	font-family: $font-plex;
-	font-size: 1em;
+	padding: 0.5rem;
+	font-family: var(--font);
+	font-size: 1rem;
 	color: var(--color-primary);
 	background-color: var(--color-bg);
 	border: 2px solid var(--color-primary);
+	border-radius: 0;
 	outline: none;
 
 	&:focus {
@@ -115,8 +118,8 @@
 .leave-comment__cancel {
 	padding: 0;
 	color: var(--color-primary);
-	font-family: $font-plex;
-	font-size: 1em;
+	font-family: var(--font);
+	font-size: 1rem;
 	background-color: transparent;
 	text-decoration: underline;
 
@@ -129,7 +132,7 @@
 }
 
 .leave-comment__cancel {
-	margin-left: 1em;
+	margin-left: 1rem;
 	color: var(--color-subdued);
 
 	&:hover,

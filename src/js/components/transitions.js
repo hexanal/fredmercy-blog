@@ -4,13 +4,12 @@ import barba from '@barba/core';
 export default function() {
 	this.onMount = function() {
 		barba.init({
+			timeout: 10000,
+
 			transitions: [
 				{
 					before() {
 						Components.unmountAll();
-					},
-					afterEnter({ next }) {
-						Components.mountAllInsideContainer(next.container);
 					},
 					leave({ current }) {
 						return new Promise(resolve => {
@@ -25,10 +24,14 @@ export default function() {
 					},
 					enter({ next }) {
 						return new Promise(resolve => {
+							window.scrollTo(0, 0);
 							next.container.removeAttribute('style'); // prevent weirdness with the transform
 							resolve();
 						});
-					}
+					},
+					afterEnter({ next }) {
+						Components.mountAllInsideContainer(next.container);
+					},
 				}
 			]
 		});

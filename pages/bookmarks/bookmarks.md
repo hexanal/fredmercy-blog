@@ -1,3 +1,9 @@
+---
+title: Fred Mercy / Bookmarks
+description: Long list of anything I found interesting
+useTemplate: true
+---
+
 - `movie` [_The Neon Demon_ (IMDb)](https://www.imdb.com/title/tt1974419)
 - `movie` [_Akira_ (IMDb)](https://www.imdb.com/title/tt0094625)
 - `movie, music, art` [_Interface_, u m a m i (YouTube)](https://www.youtube.com/watch?v=b_V-VJQT6pM)

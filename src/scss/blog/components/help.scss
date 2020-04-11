@@ -9,12 +9,12 @@
 .help__close {
 	position: absolute;
 	top: -2rem;
-	right: 0;
+	right: -1rem;
 	display: inline-block;
 	padding: 0;
 	color: var(--color-bg);
 	background-color: var(--color-subdued);
-	font-family: $font-plex;
+	font-family: var(--font);
 	font-size: 1em;
 	text-decoration: none;
 
@@ -23,28 +23,39 @@
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 	}
+
+	@media (min-width: $mq-medium) {
+		right: 0;
+	}
 }
 
 .help__box {
 	position: fixed;
 	z-index: 200;
-	top: 50%;
+	top: 3rem;
 	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 90%;
+	transform: translate(-50%, 0) translateX(-0.5rem);
+	width: calc(100% - 2.5rem);
+	height: calc(100% - 6rem);
 	max-width: 42em;
 	line-height: 1.4;
 	color: var(--color-subdued);
 	border: 2px solid currentColor;
 	background-color: var(--color-bg);
 	box-shadow: 0.8em 0.8em 0 0 var(--color-subdued);
+
+	@media (min-width: $mq-medium) {
+		top: 50%;
+		height: auto;
+		transform: translate(-50%, -50%);
+	}
 }
 
 .help__scroll {
 	overflow: auto;
 	overscroll-behavior: contain;
 	padding: 1em;
-	max-height: 75vh;
+	height: 100%;
 }
 
 .help__separator {
@@ -97,7 +108,7 @@
 	display: none;
 	padding: 0;
 	font-size: 0.85rem;
-	font-family: $font-plex;
+	font-family: var(--font);
 	color: var(--color-primary);
 	background-color: transparent;
 	outline: none;
@@ -140,7 +151,7 @@
 	margin: 0;
 	padding: 0;
 	font-size: 1rem;
-	font-family: $font-plex;
+	font-family: var(--font);
 	color: var(--color-secondary);
 	border: 2px solid var(--color-secondary);
 	border-radius: 0.3rem;

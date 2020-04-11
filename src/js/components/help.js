@@ -2,6 +2,12 @@ import Components from '../core/Components';
 import Utils from '../core/Utils';
 const { getChild } = Utils.dom;
 
+const FONT_FAMILY_LIST = {
+	plex: '"IBM Plex Mono", Courier, monospace',
+	arial: 'Arial, sans-serif',
+	garamond: 'Garamond, Georgia, "Times New Roman", serif',
+};
+
 export default function() {
 	this.global = true;
 	this.state = {
@@ -25,6 +31,7 @@ export default function() {
 		this.state.menuBtn = getChild('show-menu', component);
 		this.state.helpBtn = getChild('help-show', component);
 		this.state.themeEditBtn = getChild('theme-edit', component);
+		// this.state.fontSelect = getChild('font-select', component);
 
 		this.state.menuBtn.addEventListener('click', () => {
 			Components.broadcast('TOGGLE_MENU');
@@ -39,6 +46,9 @@ export default function() {
 			Components.broadcast('CLOSE_HELP');
 			Components.broadcast('OPEN_THEME_EDITOR');
 		});
+		// this.state.fontSelect.addEventListener('change', e => {
+		// 	document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
+		// });
 
 		document.addEventListener('keyup', e => {
 			if (Utils.dom.shouldDisableShortcuts()) return;

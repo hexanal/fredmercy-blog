@@ -23,18 +23,16 @@ var replaceTokens = [
 module.exports = {
 	posts: function() {
 		return gulp
-			.src(config.html.src)
+			.src(config.posts.src)
 			.pipe(through.obj(function (file, enc, cb) {
 				var params = {
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
-					bookmarksPath: config.info.bookmarks.path,
-					bandcampPath: config.info.bandcamp.path,
 					...getEntryParams(file)
 				};
 
-				return gulp.src(config.html.templates + params.template + '.html')
+				return gulp.src(config.posts.templates + params.template + '.html')
 					.pipe(hb(params, {
 						allowedExtensions: ['html', 'hbs'],
 						partialsDirectory: [
@@ -42,7 +40,7 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest( config.html.dest + params.url))
+					.pipe(gulp.dest( config.posts.dest + params.url))
 					.on('error', cb)
 					.on('end', cb);
 			}));
@@ -52,7 +50,7 @@ module.exports = {
 		var entries = [];
 
 		return gulp
-			.src(config.html.src)
+			.src(config.posts.src)
 			.pipe(through.obj(function (file, enc, cb) {
 				var front = frontMatter(file.contents.toString());
 				var post = getPostPathAndDate(file);
@@ -78,12 +76,10 @@ module.exports = {
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
-					bookmarksPath: config.info.bookmarks.path,
-					bandcampPath: config.info.bandcamp.path,
 					entries: posts
 				};
 
-				return gulp.src(config.html.templates + 'index.html')
+				return gulp.src(config.posts.templates + 'index.html')
 					.pipe(hb(params, {
 						allowedExtensions: ['html', 'hbs'],
 						partialsDirectory: [
@@ -91,15 +87,19 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest + config.info.rootPath));
+					.pipe(gulp.dest(config.posts.dest + config.info.rootPath));
 			});
 	},
 
-	bookmarks: function() {
+	pages: function() {
 		return gulp
-			.src(config.bookmarks.src)
+			.src(config.pages.src, { allowEmpty: true })
 			.pipe(through.obj(function (file, enc, cb) {
 				var pageData = frontMatter(file.contents.toString());
+				var pageInfo = getPageInfo(file, pageData);
+				var jsonData = pageData.attributes.useJSON
+					? require(pageInfo.jsonPath)
+					: false;
 
 				marked.setOptions({
 					gfm: true,
@@ -107,15 +107,14 @@ module.exports = {
 				});
 
 				var params = {
-					pageTitle: config.info.bookmarks.title,
-					description: config.info.bookmarks.description,
+					pageTitle: pageData.attributes.title,
+					description: pageData.attributes.description,
 					rootPath: config.info.rootPath,
-					bookmarksPath: config.info.bookmarks.path,
-					bandcampPath: config.info.bandcamp.path,
+					jsonData,
 					body: marked(pageData.body),
 				};
 
-				return gulp.src(config.html.templates + 'bookmarks.html')
+				return gulp.src(pageInfo.template, { allowEmpty: true })
 					.pipe(hb(params, {
 						allowedExtensions: ['html', 'hbs'],
 						partialsDirectory: [
@@ -123,11 +122,29 @@ module.exports = {
 						],
 					}))
 					.pipe(rename('index.html'))
-					.pipe(gulp.dest(config.html.dest + config.info.bookmarks.path))
+					.pipe(gulp.dest(config.pages.dest + pageInfo.dest))
 					.on('error', cb)
 					.on('end', cb);
 			}));
 	}
+
+}
+
+function getPageInfo(file, pageData) {
+	const split = file.history[0].split('/pages/');
+	const endPath = split[1];
+	const splitPath = endPath.split('/');
+	const id = splitPath.pop().replace('.md', '');
+	const pagePath = splitPath.join('/');
+	const template = pageData.attributes.useTemplate
+		? `./pages/${pagePath}/${id}.html`
+		: './src/views/templates/page.html';
+
+	return {
+		jsonPath: `../pages/${pagePath}/${id}.json`,
+		dest: '/blog/' + pagePath,
+		template
+	};
 }
 
 function getEntryParams(file, isArchive) {

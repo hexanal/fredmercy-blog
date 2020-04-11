@@ -6,6 +6,8 @@
 	--color-secondary: #ea8fcd; // Kobi
 	--color-subdued: #65b25e; // Bud Green
 	--color-extra: #ffdd21; // Banana Yellow
+
+	--font: 'IBM Plex Mono', Courier, monospace;
 }
 
 // sizes
@@ -42,7 +44,7 @@ $mq-medium: 50rem;
 
 html {
 	box-sizing: border-box;
-	font-family: $font-plex;
+	font-family: var(--font);
 	font-size: 13px;
 	color: var(--color-primary);
 	background-color: var(--color-bg);
@@ -90,10 +92,6 @@ a {
 	outline: none;
 	user-select: none;
 
-	&:visited {
-		color: var(--color-primary);
-	}
-
 	&:hover,
 	&:focus {
 		color: var(--color-bg);
@@ -124,7 +122,7 @@ select {
 	padding: 0.1rem;
 	font-size: 0.9rem;
 	line-height: 1.2;
-	font-family: $font-plex;
+	font-family: var(--font);
 	font-style: normal;
 	color: var(--color-secondary);
 	border: 1px solid currentColor;

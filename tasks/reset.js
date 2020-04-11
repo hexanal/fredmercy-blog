@@ -2,7 +2,10 @@ var config = require('../config.js');
 var del = require('del');
 
 module.exports = function() {
-	return del([config.html.dest + config.info.rootPath], {
+	return del([
+		config.posts.dest + config.info.rootPath,
+		config.pages.dest + config.info.rootPath
+	], {
 		force: true // allow deleting outside the current working directory
 	})
 		.then(paths => {
