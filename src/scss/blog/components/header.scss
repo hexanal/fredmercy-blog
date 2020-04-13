@@ -30,11 +30,11 @@
 	padding-left: 1.3em;
 
 	&:before {
-		content: '↩';
+		content: '←';
 		position: absolute;
 		left: 0;
-		top: 0.3rem;
-		font-size: 1rem;
+		top: -0.15rem;
+		font-size: 1.4rem;
 		line-height: 1;
 		font-style: normal;
 		color: var(--color-active);
@@ -46,24 +46,6 @@
 			color: var(--color-bg);
 		}
 	}
-
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		padding-left: 1.15em;
-
-		&:before {
-			top: -0.1rem;
-			font-size: 1.2rem;
-		}
-	}
-}
-@supports (-moz-appearance: none) {
-	.header__back {
-		&:before {
-			top: 0.1rem;
-			font-size: 0.9rem;
-		}
-	}
-
 }
 
 .header__toggle-menu {
@@ -210,10 +192,6 @@
 	color: var(--color-primary);
 	background-color: transparent;
 	text-decoration: underline;
-
-	&:visited {
-		color: var(--color-primary);
-	}
 
 	&:hover,
 	&:focus {

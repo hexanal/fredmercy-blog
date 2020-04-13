@@ -4,7 +4,7 @@ description: Keeping myself busy while on quar'
 type: nerd shit
 ---
 
-`8:04am:` I've been spending a bit of time trying out a bunch of stuff on this blog. Today I was thinking of retiring the [photofeed](/blog/photofeed) because, in all honesty guys... I'm not going to post a lot on that. I'll probably just use a blog post for that.
+`8:04am:` I've been spending a bit of time trying out a bunch of stuff on this blog. Today I was thinking of retiring the <del>[photofeed](/blog/photofeed)</del> because, in all honesty guys... I'm not going to post a lot on that. I'll probably just use a blog post for that.
 
 So, yep. Quarantine is going well, thanks :)
 

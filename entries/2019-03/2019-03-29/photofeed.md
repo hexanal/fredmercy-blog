@@ -27,6 +27,6 @@ type: journal, update
 }
 </style>
 
-`2:09pm:` Maybe it's stupid in some ways, but I wanted to have my own little list of pretty pictures that's _not_ hosted on the leading “square-pictures-with-filters” social media platform. So I went ahead and added a new section called [Photofeed](/blog/photofeed) where I'll dump pictures once in a while.
+`2:09pm:` Maybe it's stupid in some ways, but I wanted to have my own little list of pretty pictures that's _not_ hosted on the leading “square-pictures-with-filters” social media platform. So I went ahead and added a new section called <del>[Photofeed](/blog/photofeed)</del> where I'll dump pictures once in a while.
 
 `8:57pm:` Just came back from a [Lawrence English & William Basinski](https://www.last.fm/music/William+Basinski+%252B+Lawrence+English) set: <span class="oh-shit-tilted">very</span> <span class="crap-again">very</span> <span class="no-way-jose">meditative</span>! I've been a fan of ambient music my whole life, but I could never bring myself to see a show before now and boy did I enjoy it!

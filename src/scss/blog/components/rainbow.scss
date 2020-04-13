@@ -1,24 +1,37 @@
+// use raf to "accelerate" the scrolling of the rainbows,... on scroll, with smooth out
 .rainbow {
-	display: block;
+	--duration: 220ms;
+	--stagger-delay: 42ms;
+	--color-rainbow: var(--color-primary);
 	position: fixed;
-	z-index: 100; // ye olde hacke
+	z-index: 100;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width: 20vw;
 	height: 1.5rem;
-	background-image: linear-gradient(to right,
-		var(--color-active) 0%,
-		var(--color-active) 20%,
-		var(--color-secondary) 20%,
-		var(--color-secondary) 40%,
-		var(--color-primary) 40%,
-		var(--color-primary) 60%,
-		var(--color-subdued) 60%,
-		var(--color-subdued) 80%,
-		var(--color-extra) 80%,
-		var(--color-extra) 100%
-	);
-	transition: height 500ms cubic-bezier(.71,.02,.41,1);
+	transition: height var(--duration) cubic-bezier(.71,.02,.41,1);
+	background-color: var(--color-rainbow);
+
+	&[c=secondary] {
+		--color-rainbow: var(--color-secondary);
+		left: 20%;
+		transition-delay: var(--stagger-delay);
+	}
+	&[c=active] {
+		--color-rainbow: var(--color-active);
+		left: 40%;
+		transition-delay: calc(var(--stagger-delay) * 2);
+	}
+	&[c=subdued] {
+		--color-rainbow: var(--color-subdued);
+		left: 60%;
+		transition-delay: calc(var(--stagger-delay) * 3);
+	}
+	&[c=extra] {
+		--color-rainbow: var(--color-extra);
+		left: 80%;
+		transition-delay: calc(var(--stagger-delay) * 4);
+	}
 
 	.state-body-transition & {
 		height: 100vh;
@@ -26,31 +39,34 @@
 
 	@media (min-width: $mq-medium) {
 		width: 1.25rem;
-		top: -2.5%; // little trick
-		height: 105%;
-		background-image: linear-gradient(to bottom,
-			var(--color-active) 0%,
-			var(--color-active) 20%,
-			var(--color-secondary) 20%,
-			var(--color-secondary) 40%,
-			var(--color-primary) 40%,
-			var(--color-primary) 60%,
-			var(--color-subdued) 60%,
-			var(--color-subdued) 80%,
-			var(--color-extra) 80%,
-			var(--color-extra) 100%
-		);
-		background-size: 1px 200%;
-		animation: moveRainbowVertical 5s linear infinite;
-		transition: width 500ms cubic-bezier(.71,.02,.41,1);
+		top: 0;
+		height: 20vh;
+		transition: width var(--duration) cubic-bezier(.71,.02,.41,1);
 
 		.state-body-transition & {
-			width: 100vw;
-			height: 105%;
+			width: 100%;
+			height: 20vh;
+		}
+
+		&[c] {
+			left: 0;
+		}
+		&[c=secondary] {
+			top: 20%;
+		}
+		&[c=active] {
+			top: 40%;
+		}
+		&[c=subdued] {
+			top: 60%;
+		}
+		&[c=extra] {
+			top: 80%;
 		}
 	}
 }
 
+/*
 @keyframes moveRainbowVertical {
 	from {
 		background-position: 0 0;
@@ -59,3 +75,4 @@
 		background-position: 0 -200%;
 	}
 }
+*/
