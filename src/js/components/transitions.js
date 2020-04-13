@@ -13,8 +13,9 @@ export default function() {
 					Components.flush();
 				},
 
-				leave() {
+				leave({ current, next }) {
 					return new Promise(resolve => {
+						Components.broadcast('PAGE_LEAVE', { current, next });
 						document.body.classList.add('state-body-transition');
 						setTimeout(resolve, TRANSITION_DURATION);
 					});
@@ -22,7 +23,7 @@ export default function() {
 				beforeEnter({ current, next }) {
 					document.body.classList.remove('state-body-transition');
 					current.container.style.position = 'absolute';
-					Components.broadcast("PAGE_CHANGE", next.url);
+					Components.broadcast('PAGE_CHANGE', next);
 				},
 				enter({ next }) {
 					return new Promise(resolve => {
@@ -32,6 +33,7 @@ export default function() {
 					});
 				},
 				afterEnter({ next }) {
+					Components.broadcast('PAGE_AFTER_ENTER', next);
 					Components.mountAllInsideContainer(next.container);
 				},
 			} ]

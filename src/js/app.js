@@ -18,11 +18,11 @@ import transitions from './components/transitions';
 
 // auto-mount global components
 Components.autoMount('a11y', a11y);
+Components.autoMount('bleeps', bleeps);
 Components.autoMount('scroll', scroll);
 Components.autoMount('transitions', transitions);
 
 // register components
-Components.register('bleeps', bleeps);
 Components.register('comments', comments);
 Components.register('collapse', collapse);
 Components.register('help', help);
