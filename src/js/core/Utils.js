@@ -1,4 +1,26 @@
+import CONFIG from '../../../config';
+
 const Utils = {
+	config: {
+		raw: CONFIG,
+
+		getConfigFlag(id) {
+			const flag = CONFIG.flags[id];
+
+			return typeof flag !== 'boolean'
+				? false
+				: flag;
+		},
+
+		getLibraryURL(id) {
+			return CONFIG.info.rootPath + '/dist/js/libs/' + id;
+		},
+
+		featureEnabled(id) {
+			return this.getConfigFlag(id);
+		}
+	},
+
 	math: {
 		clamp(min, max, value) {
 			return Math.min(max, Math.max(min, value));
@@ -56,6 +78,18 @@ const Utils = {
 	},
 
 	dom: {
+		loadJS(src) {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement('script');
+				script.src = src;
+				document.head.appendChild(script);
+
+				script.addEventListener('load', () => {
+					resolve();
+				});
+			});
+		},
+
 		shouldDisableShortcuts() {
 			const { tagName } = document.activeElement;
 			return (tagName === 'TEXTAREA' || tagName === 'INPUT');

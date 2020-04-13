@@ -11,6 +11,15 @@ module.exports = {
 		src: srcBasePath,
 		dest: destBasePath,
 	},
+	libs: {
+		src: [srcBasePath + 'js/libs/*.js'],
+		dest: destBasePath + 'js/libs',
+	},
+
+	flags: {
+		// boolean or other variables to toggle features
+	},
+
 	posts: {
 		watch: [
 			'./entries/**/*.md',
@@ -25,6 +34,7 @@ module.exports = {
 		src: './pages/**/*.md',
 		dest: '../main',
 	},
+
 	scss: {
 		watch: [srcBasePath + 'scss/**/*.scss'],
 		src: srcBasePath + 'scss/style.scss',

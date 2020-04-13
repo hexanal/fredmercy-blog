@@ -21,11 +21,18 @@ var replaceTokens = [
 ];
 
 module.exports = {
+	libs: function() {
+		return gulp
+			.src(config.libs.src)
+			.pipe(gulp.dest( config.libs.dest));
+	},
+
 	posts: function() {
 		return gulp
 			.src(config.posts.src)
 			.pipe(through.obj(function (file, enc, cb) {
 				var params = {
+					config,
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
@@ -73,6 +80,7 @@ module.exports = {
 					return post.archive;
 				});
 				var params = {
+					config,
 					pageTitle: config.info.title,
 					description: config.info.description,
 					rootPath: config.info.rootPath,
@@ -107,6 +115,7 @@ module.exports = {
 				});
 
 				var params = {
+					config,
 					pageTitle: pageData.attributes.title,
 					description: pageData.attributes.description,
 					rootPath: config.info.rootPath,

@@ -1,7 +1,9 @@
 // import RafManager from './core/RafManager';
 import Components from './core/Components';
+import Utils from './core/Utils';
 
 import a11y from './components/a11y';
+import bleeps from './components/bleeps';
 import comments from './components/comments';
 import collapse from './components/collapse';
 import help from './components/help';
@@ -10,11 +12,17 @@ import jumpto from './components/jumpto';
 import nav from './components/nav';
 import notes from './components/notes';
 import scroll from './components/scroll';
-import sounds from './components/sounds';
+import sampler from './components/sampler';
 import themes from './components/themes';
 import transitions from './components/transitions';
 
+// auto-mount global components
 Components.autoMount('a11y', a11y);
+Components.autoMount('scroll', scroll);
+Components.autoMount('transitions', transitions);
+
+// register components
+Components.register('bleeps', bleeps);
 Components.register('comments', comments);
 Components.register('collapse', collapse);
 Components.register('help', help);
@@ -22,11 +30,10 @@ Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);
 Components.register('nav', nav);
 Components.register('notes', notes);
-Components.autoMount('scroll', scroll);
-Components.register('sounds', sounds);
+Components.register('sampler', sampler);
 Components.register('themes', themes);
-Components.autoMount('transitions', transitions);
 
-// todo: play with some requestAnimationFrame, baby!
-// RafManager.start(); // start the requestAnimationFrame manager
-Components.hello(); // mount all the components you find
+// mount all the components on the page
+Components.start();
+
+// * RafManager.start(); // start the requestAnimationFrame manager

@@ -3,6 +3,15 @@ const Components = {
 	globals: [],
 	mounted: [],
 
+	broadcast(id, payload) {
+		const allComponents = [...this.globals, ...this.mounted];
+
+		allComponents.map(Component => {
+			if (typeof Component.listen !== "function") return;
+			Component.listen(id, payload);
+		});
+	},
+
 	register(id, Component) {
 		this.library.push({ id, Component });
 	},
@@ -43,26 +52,17 @@ const Components = {
 		return Component;
 	},
 
-	unmountAll() {
+	flush() {
 		this.mounted.map(Component => {
 			if (typeof Component.onUnmount !== "function") return;
 			Component.onUnmount();
 		});
-		this.mounted = []; // flush
+		this.mounted = [];
 	},
 
-	hello() {
+	start() {
 		this.mountAllInsideContainer(document);
 	},
-
-	broadcast(id, payload) {
-		const allComponents = [...this.globals, ...this.mounted];
-
-		allComponents.map(Component => {
-			if (typeof Component.listen !== "function") return;
-			Component.listen(id, payload);
-		});
-	}
 };
 
 export default Components;

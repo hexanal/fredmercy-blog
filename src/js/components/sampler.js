@@ -1,3 +1,5 @@
+import Utils from '../core/Utils';
+
 const HOWLER_CDN_URL = 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js';
 
 export default function() {
@@ -12,6 +14,8 @@ export default function() {
 	};
 
 	this.onMount = function(component, id) {
+		if ( !Utils.config.featureEnabled('useHowler') ) return;
+
 		this.state.enabled = (this.state.storage.getItem('sounds_enabled') > 0);
 		if (this.state.enabled) this.enableSounds();
 
@@ -55,7 +59,7 @@ export default function() {
 	this.init = function() {
 		this.state.loading = true;
 
-		this.installScript()
+		Utils.dom.loadJS(HOWLER_CDN_URL)
 			.then(() => {
 				this.state.loading = false;
 				this.state.loaded = true;
@@ -65,18 +69,6 @@ export default function() {
 				this.hookEvents();
 				this.enable();
 			});
-	}
-
-	this.installScript = function() {
-		return new Promise((resolve, reject) => {
-			const script = document.createElement('script');
-			script.src = HOWLER_CDN_URL;
-			document.head.appendChild(script);
-
-			script.addEventListener('load', () => {
-				resolve();
-			});
-		});
 	}
 
 	this.loadSounds = function() {
