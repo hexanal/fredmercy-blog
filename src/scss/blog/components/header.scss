@@ -185,7 +185,7 @@
 .header__menu-link {
 	display: inline-block;
 	position: relative;
-	padding: 0; // reset button
+	padding: 0;
 	padding-right: 1.75em;
 	font-family: var(--font);
 	font-size: 1rem;
@@ -254,11 +254,13 @@
 	}
 }
 .header__menu-link--up {
-	display: none;
-
 	&:after {
 		content: '☝️';
 	}
+}
+
+.header__menu-item--up {
+	display: none;
 
 	[data-scrolled-past-viewport="true"] & {
 		display: inline-block;

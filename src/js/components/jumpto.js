@@ -1,3 +1,24 @@
+export default function() {
+	this.global = true;
+	this.state = {
+		component: null,
+	};
+
+	this.onMount = function(component, id) {
+		const currentHash = location.hash;
+
+		this.state.component = component;
+		this.state.component.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
+		focusFirstPostFromArchive(currentHash);
+
+		this.state.component.addEventListener('change', (e) => {
+			if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
+			location.hash = e.target.value;
+			focusFirstPostFromArchive(e.target.value);
+		});
+	}
+}
+
 function focusFirstPostFromArchive(hash) {
 	if (hash === '') return;
 
@@ -15,26 +36,4 @@ function focusFirstPostFromArchive(hash) {
 	const postLink = archivePosts.querySelector('[data-js="entry"]');
 
 	postLink.focus({ preventScroll: true });
-}
-
-export default function() {
-	this.global = true;
-	this.state = {
-		component: null,
-	};
-
-	this.onMount = function(component, id) {
-		const currentHash = location.hash;
-
-		this.state.component = component;
-		this.state.component.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
-		focusFirstPostFromArchive(currentHash);
-
-		// event
-		this.state.component.addEventListener('change', (e) => {
-			if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
-			location.hash = e.target.value;
-			focusFirstPostFromArchive(e.target.value);
-		});
-	}
 }

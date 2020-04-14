@@ -1,3 +1,5 @@
+import Components from '../core/Components';
+
 export default function() {
 	this.onMount = function() {
 		const collapse = document.querySelectorAll('.collapse');
@@ -7,6 +9,8 @@ export default function() {
 			collapseContainer.querySelector('button').addEventListener('click', (e) => {
 				e.preventDefault();
 				collapseContainer.classList.toggle('state-collapse-expand');
+
+				Components.broadcast('PLAY_SOUND', 'kree');
 			});
 		});
 	}

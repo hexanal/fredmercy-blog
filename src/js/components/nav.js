@@ -5,6 +5,7 @@ const { getChild } = Utils.dom;
 export default function() {
 	this.global = true;
 	this.state = {
+		open: false,
 		menu: null,
 		toggleBtn: null,
 		firstMenuItem: null,
@@ -51,6 +52,9 @@ export default function() {
 
 	this.toggleMenu = e => {
 		this.state.firstMenuItem.focus();
+		this.state.open = !this.state.open;
+
+		Components.broadcast('MENU_TOGGLED', this.state.open);
 
 		this.state.toggleBtn.classList.toggle('state-menu-active');
 		this.state.menu.classList.toggle('state-menu-active');
@@ -58,6 +62,8 @@ export default function() {
 	}
 
 	this.closeMenu = e => {
+		Components.broadcast('MENU_CLOSED');
+
 		// todo: give back focus to element that had it before the menu was shown
 		this.state.menu.classList.remove('state-menu-active');
 		this.state.toggleBtn.classList.remove('state-menu-active');

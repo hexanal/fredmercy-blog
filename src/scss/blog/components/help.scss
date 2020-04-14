@@ -46,12 +46,13 @@
 
 	@media (min-width: $mq-medium) {
 		top: 50%;
-		height: auto;
 		transform: translate(-50%, -50%);
 	}
 }
 
 .help__scroll {
+	display: flex;
+	flex-direction: column;
 	overflow: auto;
 	overscroll-behavior: contain;
 	padding: 1em;
@@ -59,14 +60,16 @@
 }
 
 .help__separator {
+	flex-shrink: 0;
 	margin: 1.5rem 0;
 	background-color: var(--color-subdued);
 }
 
-.help__section {
-	&:last-child {
-		margin-bottom: 1rem;
-	}
+.help__section--a11y {
+	flex-grow: 1;
+}
+.help__section--bug {
+	padding-bottom: 1.5rem;
 }
 
 .help__heading {

@@ -6,6 +6,7 @@ const DEFAULT_VOLUME = 0.75;
 export default function() {
 	this.global = true;
 	this.state = {
+		container: null,
 		enableSoundsBtn: null,
 		enabled: false,
 		loaded: false,
@@ -16,12 +17,21 @@ export default function() {
 
 	this.listen = (id, payload) => {
 		switch (id) {
+			case 'PLAY_SOUND': // if components know who to call :)
+				this.play(payload);
+				break;
 			case 'PAGE_LEAVE':
-				this.play('woosh');
+				this.play('woaw');
+				this.play('womp');
 				break;
 			case 'PAGE_CHANGE':
 				this.hookEvents(payload.container);
 				break;
+			case 'MENU_TOGGLED':
+				const sound = payload ? 'gnuf' : 'gnaf';
+				setTimeout(() => this.play(sound), 50);
+				setTimeout(() => this.play(sound), 100);
+				setTimeout(() => this.play(sound), 150);
 			default:
 				break;
 		}
@@ -30,13 +40,18 @@ export default function() {
 	this.onMount = function(component) {
 		if ( !Utils.config.featureEnabled('useBleeps') ) return;
 
-		this.state.enabled = (this.state.storage.getItem('sounds_enabled') > 0);
+		this.state.container = component.querySelector('[data-js="bleeps"]');
 		this.state.enableSoundsBtn = component.querySelector('[data-js="enable-sounds"]');
 		this.state.bleepStatus = component.querySelector('[data-js="bleeps-status"]');
 
-		this.hookEvents(component);
+		this.state.enabled = (this.state.storage.getItem('sounds_enabled') > 0);
 
-		// document.addEventListener('click', this.initOnUserInteraction);
+		this.state.enableSoundsBtn.addEventListener('click', () => {
+			if (this.state.loaded) return this.toggleSounds();
+
+			this.hookEvents(component)
+				.then(() => this.enable());
+		});
 	}
 
 	this.initOnUserInteraction = e => {
@@ -46,7 +61,7 @@ export default function() {
 	}
 
 	this.toggleSounds = function() {
-		if (this.state.enabled) {
+		if (!this.state.enabled) {
 			this.enable();
 		} else {
 			this.disable();
@@ -56,30 +71,21 @@ export default function() {
 	this.enable = () => {
 		this.state.enabled = true;
 		this.state.storage.setItem('sounds_enabled', 1);
-		this.state.bleepStatus.classList.add('state-sounds-enabled');
+		this.state.container.classList.add('state-sounds-enabled');
 		Wad.setVolume(DEFAULT_VOLUME);
 	}
 
 	this.disable = () => {
-		this.state.disabled = true;
+		this.state.enabled = false;
 		this.state.storage.setItem('sounds_enabled', 0);
-		this.state.bleepStatus.classList.remove('state-sounds-enabled');
+		this.state.container.classList.remove('state-sounds-enabled');
 		Wad.setVolume(0);
 	}
 
-	// this.init = function() {
-	// 	if (this.state.storage.getItem('sounds_enabled') > 0) ) {
-	// 		this.load()
-	// 			.then(
-
 	this.load = function() {
-		if (this.state.loaded) return Promise.resolve();
+		if (this.state.loaded || this.state.loading) return Promise.resolve();
 
 		this.state.loading = true;
-
-		this.state.enableSoundsBtn.addEventListener('click', () => {
-			this.toggleSounds();
-		});
 
 		return Utils.dom
 			.loadJS(WAD_PATH)
@@ -95,10 +101,11 @@ export default function() {
 	}
 
 	this.hookEvents = function(container) {
-		this.load()
+		return this.load()
 			.then(() => {
 				const links = container.querySelectorAll('a');
 				const buttons = container.querySelectorAll('button');
+				const selects = container.querySelectorAll('select');
 
 				links.forEach(link => {
 					link.addEventListener('mouseover', e => this.play('boop'));
@@ -108,13 +115,24 @@ export default function() {
 					button.addEventListener('mouseover', e => this.play('boop'));
 					button.addEventListener('mousedown', e => this.play('blarp'));
 				});
+				selects.forEach(select => {
+					select.addEventListener('mouseover', e => this.play('select-hover'));
+					select.addEventListener('click', e => this.play('select-click'));
+					select.addEventListener('change', e => this.play('select-change'));
+				});
 			});
 	}
 
 	this.play = soundId => {
-		if (!this.state.enabled) return;
-		console.log('Playing sound:', soundId);
-		this.state.sounds[soundId].play();
+		if (!this.state.enabled || !this.state.sounds) return;
+		const sound = this.state.sounds[soundId];
+
+		if (!sound) {
+			console.warn(`Could not find sound id: "${soundId}"`);
+			return false;
+		}
+
+		return sound.play();
 	}
 }
 
@@ -123,7 +141,7 @@ const SOUND_PRESETS = {
 		attack: 0,
 		decay: 0.05,
 		sustain: 0.2,
-		hold: 0,
+		hold: 0.01,
 		release: 0
 	},
 	mediumEnv: {
@@ -151,45 +169,178 @@ const SOUND_PRESETS = {
 			frequency: 1000,
 			attack: 0.2
 		}
+	},
+	tuna: {
+		Bitcrusher: {
+			bits: 8, //1 to 16
+			normfreq: 0.2, //0 to 1
+			bufferSize: 512 //256 to 16384
+		},
+		Filter: {
+			frequency: 6000, //20 to 22050
+			Q: 1, //0.001 to 100
+			gain: 0, //-40 to 40 (in decibels)
+			filterType: "lowpass", //lowpass, highpass, bandpass, lowshelf, highshelf, peaking, notch, allpass
+			bypass: 0
+		},
+	},
+	lowpassFilter: {
+		frequency: 600,
+		Q: 2,
+		gain: 5,
+		filterType: "lowpass",
+		bypass: 0
 	}
 };
 
 function getWadSoundbank() {
+	const { shortEnv, mediumEnv, quickFilter, midFilter, tuna, lowpassFilter } = SOUND_PRESETS;
+
 	return {
-		boop: new Wad({
-			source : 'triangle',
-			pitch: 'B3',
-			env: SOUND_PRESETS.shortEnv,
-			filter: SOUND_PRESETS.quickFilter,
-		}),
-		blarp: new Wad({
-			source : 'square',
-			pitch: 'D3',
-			env: SOUND_PRESETS.mediumEnv,
-			filter: SOUND_PRESETS.midFilter,
-		}),
-		blink: new Wad({
+		'select-hover': new Wad({
+			tuna,
 			source : 'sawtooth',
-			pitch: 'D4',
-			env: SOUND_PRESETS.mediumEnv,
-			filter: SOUND_PRESETS.midFilter,
+			pitch: 'D#3',
+			env: shortEnv,
 		}),
-		woosh: new Wad({
-			source : 'sine',
-			pitch: 'B1',
+
+		'select-click': new Wad({
+			tuna,
+			source : 'sawtooth',
+			pitch: 'G4',
 			env: {
-				attack: 0.3,
-				decay: 0.3,
-				sustain: 0.5,
-				hold: 0.1,
+				attack: 0,
+				decay: 0,
+				sustain: 1,
+				hold: 0.02,
 				release: 0.1
 			},
-			tremolo : {
-				shape: 'sine',
-				magnitude: 3,
-				speed: 0.2,
-				attack: 0
+			filter: {
+				type: 'lowpass',
+				frequency: 300,
+				q: 2,
+				env: {
+					frequency: 1000,
+					attack: 0.01
+				},
 			},
+		}),
+
+		'select-change': new Wad({
+			tuna,
+			source : 'sawtooth',
+			pitch: 'D#4',
+			env: {
+				attack: 0,
+				decay: 0,
+				sustain: 1,
+				hold: 0.02,
+				release: 0.2
+			},
+			filter: {
+				type: 'lowpass',
+				frequency: 300,
+				q: 2,
+				env: {
+					frequency: 1000,
+					attack: 0.01
+				},
+			},
+		}),
+
+		boop: new Wad({
+			tuna,
+			source : 'triangle',
+			pitch: 'B3',
+			env: shortEnv,
+			filter: quickFilter,
+		}),
+
+		blarp: new Wad({
+			tuna,
+			source : 'square',
+			pitch: 'D3',
+			env: mediumEnv,
+			filter: midFilter,
+		}),
+
+		kree: new Wad.Poly()
+			.add({
+				tuna,
+				source: 'sine',
+				offset: 0.1,
+				pitch: 'F5',
+				env: mediumEnv,
+				filter: midFilter,
+			})
+			.add({
+				tuna,
+				source: 'sine',
+				offset: 0.2,
+				pitch: 'F6',
+				env: shortEnv,
+				filter: midFilter,
+			}),
+
+		gnuf: new Wad({
+			tuna,
+			source : 'sine',
+			pitch: 'G5',
+			env: {
+				attack: 0,
+				decay: 0.04,
+				sustain: 0.02,
+				hold: 0.01,
+				release: 0
+			},
+			filter: quickFilter,
+		}),
+		gnaf: new Wad({
+			tuna,
+			source : 'triangle',
+			pitch: 'G#5',
+			env: {
+				attack: 0,
+				decay: 0.04,
+				sustain: 0.02,
+				hold: 0.01,
+				release: 0
+			},
+			filter: quickFilter,
+		}),
+
+		blink: new Wad({
+			tuna,
+			source : 'sawtooth',
+			pitch: 'D4',
+			env: mediumEnv,
+			filter: midFilter,
+		}),
+
+		woaw: new Wad({
+			tuna,
+			source : 'square',
+			pitch: 'D1',
+			env: {
+				attack: 0.2,
+				decay: 0,
+				sustain: 0.4,
+				hold: 0.01,
+				release: 0
+			}
+		}),
+
+		womp: new Wad({
+			tuna,
+			source : 'sine',
+			pitch: 'A3',
+			env: {
+				attack: 0.4,
+				decay: 0,
+				sustain: 0.3,
+				hold: 0.01,
+				release: 0
+			}
 		})
 	};
 }
