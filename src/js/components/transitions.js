@@ -10,31 +10,34 @@ export default function() {
 
 			transitions: [{
 				before() {
+					Components.broadcast('PLAY_SOUND', 'woaw');
 					Components.flush();
 				},
-
 				leave({ current, next }) {
 					return new Promise(resolve => {
 						Components.broadcast('PAGE_LEAVE', { current, next });
 						document.body.classList.add('state-body-transition');
-						setTimeout(resolve, TRANSITION_DURATION);
+
+						setTimeout(() => {
+							Components.broadcast('PLAY_SOUND', 'womp');
+							resolve();
+						}, TRANSITION_DURATION);
 					});
 				},
-				beforeEnter({ current, next }) {
+				beforeEnter({ current }) {
 					document.body.classList.remove('state-body-transition');
 					current.container.style.position = 'absolute';
-					Components.broadcast('PAGE_CHANGE', next);
 				},
-				enter({ next }) {
+				enter({ current, next }) {
 					return new Promise(resolve => {
 						window.scrollTo(0, 0);
 						next.container.removeAttribute('style'); // prevent weirdness with the transform
 						resolve();
 					});
 				},
-				afterEnter({ next }) {
-					Components.broadcast('PAGE_AFTER_ENTER', next);
+				afterEnter({ current, next }) {
 					Components.mountAllInsideContainer(next.container);
+					Components.broadcast('PAGE_CHANGED', { current, next });
 				},
 			} ]
 		});

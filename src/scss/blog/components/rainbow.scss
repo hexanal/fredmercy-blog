@@ -1,7 +1,7 @@
 // use raf to "accelerate" the scrolling of the rainbows,... on scroll, with smooth out
 .rainbow {
-	--duration: 220ms;
-	--stagger-delay: 42ms;
+	--duration: 130ms;
+	--stagger-delay: 25ms;
 	--color-rainbow: var(--color-primary);
 	position: fixed;
 	z-index: 100;
