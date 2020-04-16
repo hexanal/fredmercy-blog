@@ -26,9 +26,17 @@
 		data-entry-id="{{ date }}"
 	>
 		<label class="leave-comment__field">
-			<span class="leave-comment__label">
+			<div class="leave-comment__label">
 				Comment <i>(1500 characters max.)</i>
-			</span>
+
+				<button
+					type="button"
+					class="leave-comment__speak"
+					data-js="speak-comment"
+				>
+					read
+				</button>
+			</div>
 			<textarea
 				class="leave-comment__textarea"
 				data-js="content"
@@ -39,9 +47,9 @@
 		</label>
 
 		<label class="leave-comment__field">
-			<span class="leave-comment__label">
+			<div class="leave-comment__label">
 				Name <i>(if left blank, “Anonymous” will be used)</i>
-			</span>
+			</div>
 			<input
 				class="leave-comment__input"
 				data-js="author"

@@ -39,6 +39,8 @@ export default function() {
 		this.elements.readCommentAuthor = getChild('comment-author', component);
 		this.elements.readCommentDot = getChild('comment-dot', component);
 
+		this.initSpeechModule();
+
 		this.state.entryId = this.elements.grid.dataset.entryId;
 
 		this.fetchComments();
@@ -182,5 +184,23 @@ export default function() {
 
 	this.showErrorMessage = function(msg) {
 		alert('Woops, something went wrong. Try again?');
+	}
+
+	this.initSpeechModule = function() {
+		this.elements.leaveCommentBody = getChild('content', this.elements.container);
+		this.elements.speakCommentBtn = getChild('speak-comment', this.elements.container);
+
+		const Bot = window.speechSynthesis;
+		const voices = Bot.getVoices();
+		const fredsVoice = voices.filter(voice => voice.name === 'Fred')[0];
+
+		this.elements.speakCommentBtn.addEventListener('click', e => {
+			const utterance = new SpeechSynthesisUtterance(this.elements.leaveCommentBody.value);
+			utterance.voice = fredsVoice;
+			utterance.pitch = 0.75;
+			utterance.rate = 0.8;
+
+			Bot.speak(utterance);
+		});
 	}
 }

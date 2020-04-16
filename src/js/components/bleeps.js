@@ -50,23 +50,10 @@ export default function() {
 		this.state.enableSoundsBtn = document.querySelector('[data-js="enable-sounds"]');
 		this.state.enableSoundsBtn.addEventListener('click', () => this.toggleSounds());
 
-		const onScroll = throttle(e => {
-			const baseFreq = 300;
-			const freqOffset = 200;
-			const ratio = (window.scrollY / document.documentElement.scrollHeight);
-			const freq = (ratio * baseFreq) + freqOffset;
-
-			if (ratio <= 0) return;
-
-			this.play('riil', freq);
-		}, 50);
-
-		document.addEventListener('scroll', onScroll);
-
 		document.addEventListener('keyup', e => {
 			switch (e.code) {
 				case 'Tab':
-					this.play('blarp');
+					this.play('gnaf');
 					break;
 				case 'ArrowUp':
 					this.play('tick', 'F#4');
@@ -77,13 +64,33 @@ export default function() {
 				case 'Escape':
 					this.play('canc');
 					break;
+				case 'Backspace':
+					this.play('blink');
+					break;
+				case 'Space':
+					this.play('tick', 'D2');
+					break;
+				case 'Enter':
+					this.play('tick', 'A2');
+					setTimeout(() => this.play('tick', 'A2'), 30);
+					setTimeout(() => this.play('tick', 'A2'), 60);
+					break;
 				default:
 					break;
 			}
 		});
+
+		document.addEventListener('keyup', e => {
+			const { code } = e;
+			if ( !code.includes('Key') ) return;
+			this.play('blarp');
+		});
+
 		document.addEventListener('dblclick', e => this.play('gong') );
 
 		this.initTone();
+		this.initScroll();
+		this.initResize();
 	}
 
 	this.toggleSounds = function() {
@@ -286,5 +293,40 @@ export default function() {
 			select.addEventListener('click', e => this.play('select-click'));
 			select.addEventListener('change', e => this.play('select-change'));
 		});
+	}
+
+	this.initScroll = function() {
+		const onScroll = throttle(e => {
+			const baseFreq = 300;
+			const freqOffset = 200;
+			const ratio = (window.scrollY / document.documentElement.scrollHeight);
+			const freq = (ratio * baseFreq) + freqOffset;
+
+			if (ratio <= 0) return;
+
+			this.play('riil', freq);
+		}, 50);
+
+		document.addEventListener('scroll', onScroll);
+	}
+
+	this.initResize = function() {
+		const onResize = throttle(e => {
+			const baseFreq = 100;
+			const freqOffset = 300;
+			const ratioFrom = 1000;
+			const ratio = (
+				window.innerWidth / ratioFrom
+				+
+				window.innerHeight / ratioFrom
+			);
+			const freq = (ratio * baseFreq) + freqOffset;
+
+			if (ratio <= 0) return;
+
+			this.play('tick', freq);
+		}, 20);
+
+		window.addEventListener('resize', onResize);
 	}
 }

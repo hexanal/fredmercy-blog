@@ -90,6 +90,23 @@
 	}
 }
 
+.leave-comment__speak {
+	padding: 0;
+	color: var(--color-primary);
+	font-family: var(--font);
+	font-size: 1rem;
+	font-style: italic;
+	background-color: transparent;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		text-decoration: none;
+	}
+}
+
 .leave-comment__textarea,
 .leave-comment__input {
 	appearance: none;
