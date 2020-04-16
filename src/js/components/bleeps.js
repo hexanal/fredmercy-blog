@@ -1,4 +1,4 @@
-import {
+import Tone, {
 	Master,
 	Synth,
 	Compressor,
@@ -8,6 +8,8 @@ import {
 	Filter
 } from 'tone';
 import Utils from '../core/Utils';
+import debounce from 'lodash.debounce';
+import throttle from 'lodash.throttle';
 
 export default function() {
 	this.global = true;
@@ -17,6 +19,8 @@ export default function() {
 		enabled: false,
 		loaded: false,
 		storage: window.localStorage,
+		mouseDown: false,
+		mouseMoveStep: 0,
 	};
 
 	this.listen = (id, payload) => {
@@ -46,6 +50,39 @@ export default function() {
 		this.state.enableSoundsBtn = document.querySelector('[data-js="enable-sounds"]');
 		this.state.enableSoundsBtn.addEventListener('click', () => this.toggleSounds());
 
+		const onScroll = throttle(e => {
+			const baseFreq = 300;
+			const freqOffset = 200;
+			const ratio = (window.scrollY / document.documentElement.scrollHeight);
+			const freq = (ratio * baseFreq) + freqOffset;
+
+			if (ratio <= 0) return;
+
+			this.play('riil', freq);
+		}, 50);
+
+		document.addEventListener('scroll', onScroll);
+
+		document.addEventListener('keyup', e => {
+			switch (e.code) {
+				case 'Tab':
+					this.play('blarp');
+					break;
+				case 'ArrowUp':
+					this.play('tick', 'F#4');
+					break;
+				case 'ArrowDown':
+					this.play('tick', 'C#5');
+					break;
+				case 'Escape':
+					this.play('canc');
+					break;
+				default:
+					break;
+			}
+		});
+		document.addEventListener('dblclick', e => this.play('gong') );
+
 		this.initTone();
 	}
 
@@ -74,30 +111,13 @@ export default function() {
 		Master.mute = true;
 	}
 
-	this.hookEventListeners = function(el) {
-		const links = el.querySelectorAll('a');
-		const buttons = el.querySelectorAll('button');
-		const selects = el.querySelectorAll('select');
-
-		links.forEach(link => {
-			link.addEventListener('mouseover', e => this.play('boop'));
-			link.addEventListener('mousedown', e => this.play('blink') );
-		});
-		buttons.forEach(button => {
-			button.addEventListener('mouseover', e => this.play('boop'));
-			button.addEventListener('mousedown', e => this.play('blarp'));
-		});
-		selects.forEach(select => {
-			select.addEventListener('mouseover', e => this.play('select-hover'));
-			select.addEventListener('click', e => this.play('select-click'));
-			select.addEventListener('change', e => this.play('select-change'));
-		});
-	}
-
-	this.play = soundId => {
+	this.play = (soundId, note = false) => {
 		if (!this.state.enabled || !this.state.sounds) return;
 
-		const sound = this.state.sounds[soundId];
+		const fromBank = this.state.sounds[soundId];
+		const sound = typeof fromBank === 'function' && note
+			? fromBank(note)
+			: fromBank;
 
 		if (!sound) {
 			console.warn(`Could not find sound id: "${soundId}"`);
@@ -107,13 +127,21 @@ export default function() {
 		return this.initTone().then(() => this.bleep(sound));
 	}
 
-	this.bleep = ({ osc, note, duration }) => {
+	this.bleep = (sound) => {
+		const { osc, note, duration } = sound;
 		const synth = this.OSCILLATORS[osc];
+
+		if (!synth) {
+			console.error(`Synth ID: "${osc}" doesn't exist`);
+		}
+
 		synth.triggerAttackRelease(note, duration);
 	}
 
 	this.getSoundBank = function() {
 		return {
+			tick: note => ({ osc: 'filteredSquare', note, duration: 0.02 }),
+
 			boop: { osc: 'triangle', note: 'B3', duration: 0.02 },
 			blarp: { osc: 'triangle', note: 'D3', duration: 0.03 },
 			blink: { osc: 'triangle', note: 'D4', duration: 0.05 },
@@ -124,6 +152,10 @@ export default function() {
 			kree: { osc: 'saw', note: 'A2', duration: 0.1 },
 			gnuf: { osc: 'sine', note: 'G5', duration: 0.012 },
 			gnaf: { osc: 'sine', note: 'G#5', duration: 0.012 },
+
+			gong: { osc: 'gong', note: 'C5', duration: 0.2 },
+			canc: { osc: 'pulse', note: 'F1', duration: 0.02 },
+			riil: note => ({ osc: 'sine', note, duration: 0.02 }),
 
 			'select-hover': { osc: 'sine', note: 'D#3', duration: 0.075 },
 			'select-click': { osc: 'sine', note: 'E3', duration: 0.1 },
@@ -157,8 +189,8 @@ export default function() {
 				attack: 0.5,
 				release: 0.1
 			}),
-			quickFilter: new Filter({ type: 'lowpass', frequency: 7000, rolloff: -12, Q: 3, gain: 0 }),
-			filter: new Filter({ type: 'lowpass', frequency: 150, rolloff: -12, Q: 1, gain: 0 }),
+			quickFilter: new Filter({ type: 'lowpass', frequency: 300, rolloff: -12, Q: 3, gain: 0 }),
+			filter: new Filter({ type: 'lowpass', frequency: 80, rolloff: -12, Q: 1, gain: 0 }),
 			crush: new BitCrusher(8),
 			tremolo: new Tremolo({frequency: 20, depth: 0.7, spread: 0, type: 'square'}).start(),
 			delay: new FeedbackDelay(0.075, 0.25),
@@ -166,41 +198,93 @@ export default function() {
 	}
 
 	this.initOscillators = function() {
+		// # SINE WAVE
+		const sine = new Synth({
+			oscillator : { type : 'sine' },
+			envelope : { attack : 0.005, decay : 0.05, sustain : 0.5, release : 0.01 },
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+
+		// # SINE WITH TREM
+		const sineWithTremolo =  new Synth({
+			oscillator : { type : 'sine' },
+			envelope : { attack : 0.005, decay : 0.05, sustain : 0.5, release : 0.01 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.tremolo, Master);
+
+		const filteredSquare = new Synth({
+			oscillator : { type : 'triangle' },
+			envelope : { attack : 0.002, decay : 0.1, sustain : 1, release : 0.01 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+		filteredSquare.portamento = 0.2;
+
+		// # TRIANGLE
+		const triangle = new Synth({
+			oscillator : { type : 'triangle' },
+			envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+
+		// # GONG
+		const gong = new Synth({
+			oscillator : { type : 'sine' },
+			envelope : { attack : 0.005, decay : 0.05, sustain : 0.3, release : 1.2 }
+		})
+			.chain(this.EFFECTS.crush, Master);
+
+		// # SAWTOOTH
+		const saw = new Synth({
+			oscillator : { type : 'sawtooth' },
+			envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.filter, Master);
+
+		// # SAW WITH TREMOLO
+		const sawWithTremolo = new Synth({
+			oscillator : { type : 'sawtooth' },
+			envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.tremolo, this.EFFECTS.filter, Master);
+
+		const pulse = new Synth({
+			oscillator: { type: 'sine' },
+			envelope : { attack : 0.01, decay : 0.02, sustain : 0.3, release : 0.5 }
+		})
+			.chain(this.EFFECTS.crush, this.EFFECTS.tremolo, Master);
+
 		this.OSCILLATORS = {
-			// # SINE WAVE
-			sine: new Synth({
-				oscillator : { type : 'sine' },
-				envelope : { attack : 0.005, decay : 0.05, sustain : 0.5, release : 0.01 }
-			})
-				.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master),
-
-			// # SINE WITH TREM
-			sineWithTremolo: new Synth({
-				oscillator : { type : 'sine' },
-				envelope : { attack : 0.005, decay : 0.05, sustain : 0.5, release : 0.01 }
-			})
-				.chain(this.EFFECTS.crush, this.EFFECTS.tremolo, Master),
-
-			// # TRIANGLE
-			triangle: new Synth({
-				oscillator : { type : 'triangle' },
-				envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
-			})
-				.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master),
-
-			// # SAWTOOTH
-			saw: new Synth({
-				oscillator : { type : 'sawtooth' },
-				envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
-			})
-				.chain(this.EFFECTS.crush, this.EFFECTS.filter, Master),
-
-			// # SAW WITH TREMOLO
-			sawWithTremolo: new Synth({
-				oscillator : { type : 'sawtooth' },
-				envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
-			})
-				.chain(this.EFFECTS.crush, this.EFFECTS.tremolo, this.EFFECTS.filter, Master)
+			sine,
+			sineWithTremolo,
+			filteredSquare,
+			triangle,
+			gong,
+			saw,
+			sawWithTremolo,
+			pulse,
 		};
+	}
+
+	/**
+	 * * DOM Nodes to target with sounds
+	 */
+	this.hookEventListeners = function(el) {
+		const links = el.querySelectorAll('a');
+		const buttons = el.querySelectorAll('button');
+		const selects = el.querySelectorAll('select');
+
+		links.forEach(link => {
+			link.addEventListener('mouseover', e => this.play('boop'));
+			link.addEventListener('mousedown', e => this.play('blink') );
+		});
+		buttons.forEach(button => {
+			button.addEventListener('mouseover', e => this.play('boop'));
+			button.addEventListener('mousedown', e => this.play('blarp'));
+		});
+		selects.forEach(select => {
+			select.addEventListener('mouseover', e => this.play('select-hover'));
+			select.addEventListener('click', e => this.play('select-click'));
+			select.addEventListener('change', e => this.play('select-change'));
+		});
 	}
 }
