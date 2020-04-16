@@ -25,6 +25,9 @@ export default function() {
 
 	this.listen = (id, payload) => {
 		switch (id) {
+			case 'TOGGLE_BLEEPS':
+				this.toggleSounds();
+				break;
 			case 'PLAY_SOUND': // if components know who to call :)
 				this.play(payload);
 				break;

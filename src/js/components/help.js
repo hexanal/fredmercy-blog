@@ -53,6 +53,9 @@ export default function() {
 		document.addEventListener('keyup', e => {
 			if (Utils.dom.shouldDisableShortcuts()) return;
 
+			if (e.code === 'KeyS') {
+				Components.broadcast('TOGGLE_BLEEPS');
+			}
 			if (e.code === 'Slash') {
 				this.toggleHelp(e);
 			}
@@ -62,7 +65,7 @@ export default function() {
 		});
 	}
 
-	this.listen = function(id) {
+	this.listen = function(id, payload) {
 		if (id === 'SHOW_HELP') {
 			this.toggleHelp();
 		}

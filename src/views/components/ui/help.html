@@ -54,7 +54,7 @@
 					</li>
 
 					{{#if config.flags.useBleeps }}
-					<li class="help__item" data-js="bleeps">
+					<li class="help__item help__item--bleeps" data-js="bleeps">
 						<div class="help__icon" data-js="bleeps-status">
 							🎵
 						</div>
@@ -66,7 +66,10 @@
 									data-js="enable-sounds"
 									type="button">s</button>
 							</strong>
-							to enable/disable bleeps & sounds.
+							to
+							<span class="help__sound-enable">enable</span>
+							<span class="help__sound-disable">disable</span>
+							bleeps & sounds.
 						</div>
 					</li>
 					{{/if}}

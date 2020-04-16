@@ -21,7 +21,6 @@ const Components = {
 		const Instance = new Component;
 		Instance.onMount(document, id);
 		this.globals.push(Instance); // automatically promoted to global
-		this.mounted.push(Instance);
 	},
 
 	mountAllInsideContainer(container) {
