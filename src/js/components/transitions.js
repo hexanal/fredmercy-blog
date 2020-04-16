@@ -8,6 +8,8 @@ export default function() {
 		barba.init({
 			timeout: 10000,
 
+			prevent: ({ el }) => 'disableTransition' in el.dataset,
+
 			transitions: [{
 				before() {
 					Components.broadcast('PLAY_SOUND', 'woaw');
