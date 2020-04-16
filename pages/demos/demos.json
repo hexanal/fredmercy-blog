@@ -20,6 +20,13 @@
 			"label": "Idle Hand",
 			"href": "http://fredmercy.com/demos/idle-hand",
 			"description": "quick proof-of-concept for a “retro” inspired game"
+		},
+		{
+			"id": "lock",
+			"emoji": "🔒",
+			"label": "Android Style Lock Pattern",
+			"href": "http://fredmercy.com/demos/dot-password",
+			"description": "tried to replicate the famous Android “Lock Pattern” mechanism"
 		}
 	]
 }

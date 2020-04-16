@@ -1,3 +1,5 @@
+import Utils from '../core/Utils';
+
 const THEME_LIST = [
 	'june',
 	'high-contrast',
@@ -31,6 +33,8 @@ export default function() {
 	};
 
 	this.onMount = function(component) {
+		if ( !Utils.config.featureEnabled('useThemes') ) return;
+
 		this.state.switchThemeSelect = component.querySelector('[data-js="theme-select"]');
 		this.state.switchThemeSelect.addEventListener('change', e => {
 			const themeId = e.target.value;

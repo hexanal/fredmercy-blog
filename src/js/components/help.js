@@ -30,8 +30,6 @@ export default function() {
 		this.state.fontDecreaseBtn = getChild('help-normal-font', component);
 		this.state.menuBtn = getChild('show-menu', component);
 		this.state.helpBtn = getChild('help-show', component);
-		this.state.themeEditBtn = getChild('theme-edit', component);
-		// this.state.fontSelect = getChild('font-select', component);
 
 		this.state.menuBtn.addEventListener('click', () => {
 			Components.broadcast('TOGGLE_MENU');
@@ -41,14 +39,9 @@ export default function() {
 		this.state.bg.addEventListener('click', this.closeHelp);
 		this.state.fontIncreaseBtn.addEventListener('click', () => this.updateFontSize(1));
 		this.state.fontDecreaseBtn.addEventListener('click', () => this.updateFontSize(0));
-		this.state.themeEditBtn.addEventListener('click', () => {
-			Components.broadcast('CLOSE_MENU');
-			Components.broadcast('CLOSE_HELP');
-			Components.broadcast('OPEN_THEME_EDITOR');
-		});
-		// this.state.fontSelect.addEventListener('change', e => {
-		// 	document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
-		// });
+
+		this.setupThemeFeature();
+		this.setupFontSelectFeature();
 
 		document.addEventListener('keyup', e => {
 			if (Utils.dom.shouldDisableShortcuts()) return;
@@ -65,7 +58,7 @@ export default function() {
 		});
 	}
 
-	this.listen = function(id, payload) {
+	this.listen = function(id) {
 		if (id === 'SHOW_HELP') {
 			this.toggleHelp();
 		}
@@ -84,5 +77,25 @@ export default function() {
 	this.updateFontSize = function(useBig) {
 		this.state.storage.setItem('a11y_use_big_font', useBig);
 		document.documentElement.classList.toggle('state-a11y-big-font', (useBig > 0));
+	}
+
+	this.setupThemeFeature = function() {
+		if ( !Utils.config.featureEnabled('useThemes') ) return;
+
+		this.state.themeEditBtn = getChild('theme-edit', this.state.component);
+		this.state.themeEditBtn.addEventListener('click', () => {
+			Components.broadcast('CLOSE_MENU');
+			Components.broadcast('CLOSE_HELP');
+			Components.broadcast('OPEN_THEME_EDITOR');
+		});
+	}
+
+	this.setupFontSelectFeature = function() {
+		if ( !Utils.config.featureEnabled('useFontSelect') ) return;
+
+		this.state.fontSelect = getChild('font-select', this.state.component);
+		this.state.fontSelect.addEventListener('change', e => {
+			document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
+		});
 	}
 }
