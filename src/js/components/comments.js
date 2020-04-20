@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Mousetrap from 'mousetrap';
+import Components from 'core/Components';
 import DOMHelpers from 'utils/DOMHelpers';
 
 export default function() {
@@ -21,6 +22,7 @@ export default function() {
 	this.state = {
 		entryId: null,
 		entryComments: {},
+		selectedDot: null,
 		selectedComment: null
 	};
 
@@ -45,7 +47,13 @@ export default function() {
 
 		this.fetchComments();
 
-		Mousetrap.bind('escape', this.closeAll);
+		this.state.shortcuts = new Mousetrap(this.elements.grid);
+
+		this.state.shortcuts.bind('escape', this.closeAll);
+		this.state.shortcuts.bind('h', this.moveLeft);
+		this.state.shortcuts.bind('j', this.moveDown);
+		this.state.shortcuts.bind('k', this.moveUp);
+		this.state.shortcuts.bind('l', this.moveRight);
 
 		this.elements.dots.forEach((dot) => {
 			dot.addEventListener('click', (e) => {
@@ -58,6 +66,10 @@ export default function() {
 				}
 			});
 		});
+
+		this.onUmount = function() {
+			this.state.shortcuts.reset();
+		}
 
 		this.elements.leaveCommentForm.addEventListener('submit', (e) => {
 			e.preventDefault();
@@ -151,8 +163,7 @@ export default function() {
 		readCommentPopup.classList.add('state-read-comment-active');
 
 		readCommentDot.innerHTML = dotId;
-		document.querySelector('#comment_' + dotId)
-			.classList.add('state-selected-comment');
+		this.select(dotId);
 	}
 
 	this.showWriteForm = function(dotId) {
@@ -161,17 +172,24 @@ export default function() {
 
 		this.closeAll();
 		leaveCommentPopup.classList.add('state-leave-comment-active');
-
 		leaveCommentDot.innerHTML = this.state.selectedComment;
-		container.querySelector('#comment_' + dotId)
-			.classList.add('state-selected-comment');
+		this.select(dotId);
+
 		container.querySelector('[data-js="content"]').focus();
 	}
 
-	this.closeAll = function() {
+	this.closeAll = () => {
 		this.unselectAllComments();
 		this.elements.readCommentPopup.classList.remove('state-read-comment-active');
 		this.elements.leaveCommentPopup.classList.remove('state-leave-comment-active');
+	}
+
+	this.select = id => {
+		this.elements.dots.forEach(dot => {
+			if (parseInt(dot.dataset.index, 10) === id ) {
+				dot.focus();
+			}
+		});
 	}
 
 	this.unselectAllComments = function() {
@@ -183,6 +201,27 @@ export default function() {
 	this.showErrorMessage = function(msg) {
 		alert('Woops, something went wrong. Try again?');
 	}
+
+	this.moveTo = (inc, e) => {
+		if ( !document.activeElement.dataset.index ) return;
+
+		e.preventDefault();
+		e.stopPropagation();
+
+		const targetDot = parseInt(document.activeElement.dataset.index, 10) + inc;
+		const totalDots = this.elements.dots.length;
+
+		if ( (targetDot < 0) || (targetDot > totalDots) ) {
+			Components.broadcast('PLAY_SOUND', 'canc');
+			return;
+		}
+
+		this.select(targetDot);
+	}
+	this.moveRight = e => this.moveTo(1, e);
+	this.moveLeft = e => this.moveTo(-1, e);
+	this.moveDown = e => this.moveTo(5, e);
+	this.moveUp = e => this.moveTo(-5, e);
 
 	this.initSpeechModule = function() {
 		this.elements.leaveCommentBody = DOMHelpers.getChild('content', this.elements.container);

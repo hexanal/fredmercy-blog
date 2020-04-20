@@ -16,10 +16,7 @@ export default function() {
 		Mousetrap.bind('k', Vim.MOVE_UP );
 		Mousetrap.bind('mod+j', Vim.MOVE_DOWN_FAR );
 		Mousetrap.bind('mod+k', Vim.MOVE_UP_FAR );
-		Mousetrap.bind([
-			'h h',
-			'backspace backspace'
-		], Vim.MOVE_LEFT );
+		Mousetrap.bind('backspace backspace', Vim.MOVE_LEFT);
 		Mousetrap.bind('l', Vim.MOVE_RIGHT );
 
 		Mousetrap.bind('shift+h', Vim.NAVIGATE_TO_HOME );

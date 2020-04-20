@@ -1,11 +1,6 @@
 .comments {
-	width: 100%;
 	margin-right: 3em;
 	flex-shrink: 0;
-
-	@media (min-width: 500px) {
-		width: 10rem;
-	}
 }
 
 .comments__heading {
@@ -21,13 +16,13 @@
 
 .comments__grid {
 	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-
-	@media (min-width: 500px) {
-		justify-content: flex-start;
-	}
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 0;
+	justify-items: center;
+	align-items: center;
+	width: 10rem;
+	margin: 0 auto;
 }
 
 .comments__dot {

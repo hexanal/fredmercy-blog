@@ -1,4 +1,4 @@
-import Components from '../core/Components';
+import Components from 'core/Components';
 
 const MOVE_AMOUNT = 64; // 4em?
 const MOVE_MULTIPLIER = 10;
@@ -26,18 +26,17 @@ const Vim = {
 	MOVE_DOWN_FAR: () => { SCROLL_NAVIGATE.down(MOVE_AMOUNT * MOVE_MULTIPLIER) },
 	MOVE_UP_FAR: () => { SCROLL_NAVIGATE.up(MOVE_AMOUNT * MOVE_MULTIPLIER) },
 	MOVE_LEFT: () => {
-		// maybe show a back button, animated, that suggests that another tap towards the left goes backward?
+		// todo: maybe show a back button, animated, that suggests that another tap towards the left goes backward?
 		window.history.back();
 	},
 	MOVE_RIGHT: () => {
-		// maybe focus the center line post and clicks the links included in this region??!?!?
+		// todo: maybe focus the center line post and clicks the links
 		const { activeElement } = document;
 		const elementId = activeElement.dataset.js;
 
 		if ( elementId === 'entry') {
 			activeElement.click();
 		}
-		console.log('move right');
 	},
 	NAVIGATE_TO_HOME: () => {
 		Components.broadcast('NAVIGATE_TO', { href: '/blog' });
