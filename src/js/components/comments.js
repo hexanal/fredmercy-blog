@@ -1,6 +1,6 @@
 import axios from 'axios';
-import Utils from '../core/Utils';
-const { getChild, getChildren } = Utils.dom;
+import Mousetrap from 'mousetrap';
+import DOMHelpers from 'utils/DOMHelpers';
 
 export default function() {
 	this.elements = {
@@ -26,18 +26,18 @@ export default function() {
 
 	this.onMount = function(component) {
 		this.elements.container = component;
-		this.elements.grid = getChild('grid', component);
-		this.elements.dots = getChildren('dot', component);
-		this.elements.leaveCommentPopup = getChild('leave-comment-popup', component);
-		this.elements.leaveCommentForm = getChild('comment-form', component);
-		this.elements.leaveCommentDot = getChild('selected-dot', component);
-		this.elements.closeCommentPopupBtn = getChildren('close', component);
-		this.elements.commentInputAuthor = getChild('author', component);
-		this.elements.commentInputContent = getChild('content', component);
-		this.elements.readCommentPopup = getChild('read-comment', component);
-		this.elements.readCommentBody = getChild('comment-body', component);
-		this.elements.readCommentAuthor = getChild('comment-author', component);
-		this.elements.readCommentDot = getChild('comment-dot', component);
+		this.elements.grid = DOMHelpers.getChild('grid', component);
+		this.elements.dots = DOMHelpers.getChildren('dot', component);
+		this.elements.leaveCommentPopup = DOMHelpers.getChild('leave-comment-popup', component);
+		this.elements.leaveCommentForm = DOMHelpers.getChild('comment-form', component);
+		this.elements.leaveCommentDot = DOMHelpers.getChild('selected-dot', component);
+		this.elements.closeCommentPopupBtn = DOMHelpers.getChildren('close', component);
+		this.elements.commentInputAuthor = DOMHelpers.getChild('author', component);
+		this.elements.commentInputContent = DOMHelpers.getChild('content', component);
+		this.elements.readCommentPopup = DOMHelpers.getChild('read-comment', component);
+		this.elements.readCommentBody = DOMHelpers.getChild('comment-body', component);
+		this.elements.readCommentAuthor = DOMHelpers.getChild('comment-author', component);
+		this.elements.readCommentDot = DOMHelpers.getChild('comment-dot', component);
 
 		this.initSpeechModule();
 
@@ -45,9 +45,7 @@ export default function() {
 
 		this.fetchComments();
 
-		document.addEventListener('keyup', (e) => {
-			if (e.code === 'Escape') this.closeAll(); // close all the popups on Escape
-		});
+		Mousetrap.bind('escape', this.closeAll);
 
 		this.elements.dots.forEach((dot) => {
 			dot.addEventListener('click', (e) => {
@@ -187,8 +185,8 @@ export default function() {
 	}
 
 	this.initSpeechModule = function() {
-		this.elements.leaveCommentBody = getChild('content', this.elements.container);
-		this.elements.speakCommentBtn = getChild('speak-comment', this.elements.container);
+		this.elements.leaveCommentBody = DOMHelpers.getChild('content', this.elements.container);
+		this.elements.speakCommentBtn = DOMHelpers.getChild('speak-comment', this.elements.container);
 
 		const Bot = window.speechSynthesis;
 		const voices = Bot.getVoices();

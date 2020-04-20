@@ -27,10 +27,16 @@ const Vim = {
 	MOVE_UP_FAR: () => { SCROLL_NAVIGATE.up(MOVE_AMOUNT * MOVE_MULTIPLIER) },
 	MOVE_LEFT: () => {
 		// maybe show a back button, animated, that suggests that another tap towards the left goes backward?
-		console.log('back?');
+		window.history.back();
 	},
 	MOVE_RIGHT: () => {
 		// maybe focus the center line post and clicks the links included in this region??!?!?
+		const { activeElement } = document;
+		const elementId = activeElement.dataset.js;
+
+		if ( elementId === 'entry') {
+			activeElement.click();
+		}
 		console.log('move right');
 	},
 	NAVIGATE_TO_HOME: () => {

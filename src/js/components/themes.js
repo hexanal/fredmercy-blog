@@ -1,4 +1,5 @@
-import Utils from '../core/Utils';
+import Config from 'utils/Config';
+import Storage from 'utils/Storage';
 
 const THEME_LIST = [
 	'june',
@@ -24,7 +25,6 @@ export default function() {
 	this.state = {
 		selectedTheme: DEFAULT_THEME,
 		switchThemeSelect: null,
-		storage: window.localStorage,
 		customColorPanel: null,
 		customColorPanelCloseBtn: null,
 		customColorControls: null,
@@ -33,7 +33,7 @@ export default function() {
 	};
 
 	this.onMount = function(component) {
-		if ( !Utils.config.featureEnabled('useThemes') ) return;
+		if ( !Config.featureEnabled('useThemes') ) return;
 
 		this.state.switchThemeSelect = component.querySelector('[data-js="theme-select"]');
 		this.state.switchThemeSelect.addEventListener('change', e => {
@@ -80,14 +80,14 @@ export default function() {
 
 	this.useTheme = function(themeId) {
 		this.state.selectedTheme = themeId;
-		this.state.storage.setItem('selected_theme', themeId);
+		Storage.set('selected_theme', themeId);
 		document.documentElement.dataset.theme = themeId;
 
 		this.toggleCustomTheme(themeId);
 	}
 
 	this.setupTheme = function() {
-		const stored = this.state.storage.getItem('selected_theme');
+		const stored = Storage.get('selected_theme');
 		const hasSavedTheme = THEME_LIST.includes( stored );
 
 		if (hasSavedTheme) {
@@ -111,7 +111,7 @@ export default function() {
 		const { colorId } = control.dataset;
 		const colorLabel = control.querySelector('[data-js="color-value"]');
 
-		this.state.storage.setItem(`theme_custom_color_${colorId}`, value);
+		Storage.set(`theme_custom_color_${colorId}`, value);
 		document.documentElement.style.setProperty(`--color-${colorId}`, value);
 		colorLabel.innerHTML = value;
 	}
@@ -121,7 +121,7 @@ export default function() {
 
 		pickers.forEach(picker => {
 			const { colorId } = picker.dataset;
-			const stored = storage.getItem(`theme_custom_color_${colorId}`);
+			const stored = Storage.get(`theme_custom_color_${colorId}`);
 			const color = stored ? stored : DEFAULT_CUSTOM_COLORS[colorId];
 
 			picker.value = color;

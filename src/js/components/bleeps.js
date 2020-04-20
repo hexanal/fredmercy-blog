@@ -1,3 +1,4 @@
+import throttle from 'lodash.throttle';
 import Mousetrap from 'mousetrap';
 import {
 	Master,
@@ -8,9 +9,8 @@ import {
 	FeedbackDelay,
 	Filter
 } from 'tone';
-import Utils from '../core/Utils';
-// import debounce from 'lodash.debounce';
-import throttle from 'lodash.throttle';
+import Config from 'utils/Config';
+import Storage from 'utils/Storage';
 
 export default function() {
 	this.global = true;
@@ -19,7 +19,6 @@ export default function() {
 		enableSoundsBtn: null,
 		enabled: false,
 		loaded: false,
-		storage: window.localStorage,
 		mouseDown: false,
 		mouseMoveStep: 0,
 	};
@@ -46,7 +45,7 @@ export default function() {
 	}
 
 	this.onMount = function() {
-		if ( !Utils.config.featureEnabled('useBleeps') ) return;
+		if ( !Config.featureEnabled('useBleeps') ) return;
 
 		this.state.container = document.querySelector('[data-js="bleeps"]');
 		this.state.bleepStatus = document.querySelector('[data-js="bleeps-status"]');
@@ -61,7 +60,7 @@ export default function() {
 		});
 		Mousetrap.bind('up', () => this.play('tick', 'F#4') );
 		Mousetrap.bind('down', () => this.play('tick', 'C#5') );
-		Mousetrap.bind('esc', () => this.play('canc') );
+		Mousetrap.bind('escape', () => this.play('canc') );
 		Mousetrap.bind('backspace', () => this.play('blink') );
 		Mousetrap.bind([
 			'space',
@@ -88,7 +87,7 @@ export default function() {
 
 		this.init()
 			.then(() => {
-				if ( this.state.loaded && (this.state.storage.getItem('sounds_enabled') > 0 ) ) {
+				if ( this.state.loaded && Storage.flag('sounds_enabled') ) {
 					this.enable();
 				} else {
 					this.disable();
@@ -124,17 +123,17 @@ export default function() {
 
 	this.enable = () => {
 		this.state.enabled = true;
-		this.state.storage.setItem('sounds_enabled', 1);
 		this.state.container.classList.add('state-sounds-enabled');
 
+		Storage.set('sounds_enabled', 1);
 		Master.mute = false;
 	}
 
 	this.disable = () => {
 		this.state.enabled = false;
-		this.state.storage.setItem('sounds_enabled', 0);
 		this.state.container.classList.remove('state-sounds-enabled');
 
+		Storage.set('sounds_enabled', 0);
 		Master.mute = true;
 	}
 

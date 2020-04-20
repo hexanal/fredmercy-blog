@@ -1,8 +1,6 @@
 import Mousetrap from 'mousetrap';
 import Vim from '../utils/Vim';
 
-import Components from '../core/Components';
-
 export default function() {
 	this.global = true;
 	this.state = {
@@ -18,7 +16,10 @@ export default function() {
 		Mousetrap.bind('k', Vim.MOVE_UP );
 		Mousetrap.bind('mod+j', Vim.MOVE_DOWN_FAR );
 		Mousetrap.bind('mod+k', Vim.MOVE_UP_FAR );
-		Mousetrap.bind('h', Vim.MOVE_LEFT );
+		Mousetrap.bind([
+			'h h',
+			'backspace backspace'
+		], Vim.MOVE_LEFT );
 		Mousetrap.bind('l', Vim.MOVE_RIGHT );
 
 		Mousetrap.bind('shift+h', Vim.NAVIGATE_TO_HOME );
@@ -26,10 +27,6 @@ export default function() {
 		// Mousetrap.bind('w', Vim.NEXT_WORD );
 		// Mousetrap.bind('b', Vim.PREVIOUS_WORD );
 
-		document.addEventListener('keydown', e => {
-			if (e.keyCode === 13) e.keyCode = 9;
-			// this.setInput('keyboard');
-		});
 		document.addEventListener('keydown', this.setInput('keyboard'));
 		document.addEventListener('click', this.setInput('pointer'));
 		document.addEventListener('mousemove', this.setInput('pointer'));

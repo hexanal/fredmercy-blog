@@ -1,14 +1,14 @@
 import Mousetrap from 'mousetrap';
+import Storage from 'utils/Storage';
 
 export default function() {
 	this.global = true;
 	this.state = {
-		storage: window.localStorage,
 		useBigFont: false
 	};
 
 	this.onMount = function() {
-		this.state.useBigFont = (this.state.storage.getItem('a11y_use_big_font') > 0);
+		this.state.useBigFont = Storage.flag('a11y_use_big_font');
 
 		if (this.state.useBigFont) {
 			document.documentElement.classList.add('state-a11y-big-font');
@@ -21,7 +21,7 @@ export default function() {
 	}
 
 	this.updateFontSize = function(useBig) {
-		this.state.storage.setItem('a11y_use_big_font', useBig);
+		Storage.set('a11y_use_big_font', useBig);
 		document.documentElement.classList.toggle('state-a11y-big-font', (useBig > 0));
 	}
 }

@@ -1,4 +1,4 @@
-import Components from '../core/Components';
+import Components from 'core/Components';
 
 export default function() {
 	this.onMount = function() {

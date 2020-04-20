@@ -1,5 +1,5 @@
-import Components from '../core/Components';
 import barba from '@barba/core';
+import Components from 'core/Components';
 
 const TRANSITION_DURATION = 600;
 

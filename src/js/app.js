@@ -12,7 +12,6 @@ import keyboard from './components/keyboard';
 import nav from './components/nav';
 import notes from './components/notes';
 import scroll from './components/scroll';
-import sampler from './components/sampler';
 import themes from './components/themes';
 import transitions from './components/transitions';
 
@@ -31,7 +30,6 @@ Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);
 Components.register('nav', nav);
 Components.register('notes', notes);
-Components.register('sampler', sampler);
 Components.register('themes', themes);
 
 // mount all the components on the page

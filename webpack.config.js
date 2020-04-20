@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
 		resolve: {
 			extensions: ['.js'],
 			modules: [
-				path.resolve(config.base.src),
+				path.resolve(config.base.src + 'js'),
 				path.resolve('./node_modules')
 			]
 		},

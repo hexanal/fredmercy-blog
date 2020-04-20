@@ -1,6 +1,7 @@
-import Components from '../core/Components';
-import Utils from '../core/Utils';
-const { getChild } = Utils.dom;
+import Mousetrap from 'mousetrap';
+import Components from 'core/Components';
+import Config from 'utils/Config';
+import DOMHelpers from 'utils/DOMHelpers';
 
 const FONT_FAMILY_LIST = {
 	plex: '"IBM Plex Mono", Courier, monospace',
@@ -11,25 +12,24 @@ const FONT_FAMILY_LIST = {
 export default function() {
 	this.global = true;
 	this.state = {
+		active: false,
 		component: null,
 		toggleBtn: null,
 		closeBtn: null,
 		bg: null,
-		storage: null,
 		fontIncreaseBtn: null,
 		fontDecreaseBtn: null,
 		themeEditBtn: null,
 	};
 
 	this.onMount = function(component, id) {
-		this.state.storage = window.localStorage;
 		this.state.component = component;
-		this.state.closeBtn = getChild('help-close', component);
-		this.state.bg = getChild('help-bg', component);
-		this.state.fontIncreaseBtn = getChild('help-big-font', component);
-		this.state.fontDecreaseBtn = getChild('help-normal-font', component);
-		this.state.menuBtn = getChild('show-menu', component);
-		this.state.helpBtn = getChild('help-show', component);
+		this.state.closeBtn = DOMHelpers.getChild('help-close', component);
+		this.state.bg = DOMHelpers.getChild('help-bg', component);
+		this.state.fontIncreaseBtn = DOMHelpers.getChild('help-big-font', component);
+		this.state.fontDecreaseBtn = DOMHelpers.getChild('help-normal-font', component);
+		this.state.menuBtn = DOMHelpers.getChild('show-menu', component);
+		this.state.helpBtn = DOMHelpers.getChild('help-show', component);
 
 		this.state.menuBtn.addEventListener('click', () => {
 			Components.broadcast('TOGGLE_MENU');
@@ -43,19 +43,11 @@ export default function() {
 		this.setupThemeFeature();
 		this.setupFontSelectFeature();
 
-		document.addEventListener('keyup', e => {
-			if (Utils.dom.shouldDisableShortcuts()) return;
+		Mousetrap.bind('s', () => Components.broadcast('TOGGLE_BLEEPS') );
+		Mousetrap.bind('?', this.toggleHelp );
 
-			if (e.code === 'KeyS') {
-				Components.broadcast('TOGGLE_BLEEPS');
-			}
-			if (e.code === 'Slash') {
-				this.toggleHelp(e);
-			}
-			if (e.code === 'Escape') {
-				this.closeHelp();
-			}
-		});
+		Mousetrap(this.state.component)
+			.bind('escape', this.closeHelp);
 	}
 
 	this.listen = function(id) {
@@ -67,22 +59,28 @@ export default function() {
 		}
 	}
 
-	this.toggleHelp = function() {
+	this.toggleHelp = () => {
+		this.state.active = !this.state.active;
 		document.body.classList.toggle('state-help-active');
+
+		if (this.state.active) {
+			DOMHelpers.focusFirstItem(this.state.component);
+		}
 	}
-	this.closeHelp = function() {
+	this.closeHelp = () => {
+		this.state.active = false;
 		document.body.classList.remove('state-help-active');
 	}
 
 	this.updateFontSize = function(useBig) {
-		this.state.storage.setItem('a11y_use_big_font', useBig);
+		Storage.set('a11y_use_big_font', useBig);
 		document.documentElement.classList.toggle('state-a11y-big-font', (useBig > 0));
 	}
 
 	this.setupThemeFeature = function() {
-		if ( !Utils.config.featureEnabled('useThemes') ) return;
+		if ( !Config.featureEnabled('useThemes') ) return;
 
-		this.state.themeEditBtn = getChild('theme-edit', this.state.component);
+		this.state.themeEditBtn = DOMHelpers.getChild('theme-edit', this.state.component);
 		this.state.themeEditBtn.addEventListener('click', () => {
 			Components.broadcast('CLOSE_MENU');
 			Components.broadcast('CLOSE_HELP');
@@ -91,9 +89,9 @@ export default function() {
 	}
 
 	this.setupFontSelectFeature = function() {
-		if ( !Utils.config.featureEnabled('useFontSelect') ) return;
+		if ( !Config.featureEnabled('useFontSelect') ) return;
 
-		this.state.fontSelect = getChild('font-select', this.state.component);
+		this.state.fontSelect = DOMHelpers.getChild('font-select', this.state.component);
 		this.state.fontSelect.addEventListener('change', e => {
 			document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
 		});
