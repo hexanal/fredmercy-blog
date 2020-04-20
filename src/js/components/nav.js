@@ -54,7 +54,6 @@ export default function() {
 	}
 
 	this.closeMenu = () => {
-		console.log('should close menu');
 		this.state.open = false;
 
 		// todo: give back focus to element that had it before the menu was shown

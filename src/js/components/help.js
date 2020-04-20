@@ -37,8 +37,8 @@ export default function() {
 		this.state.helpBtn.addEventListener('click', this.toggleHelp);
 		this.state.closeBtn.addEventListener('click', this.closeHelp);
 		this.state.bg.addEventListener('click', this.closeHelp);
-		this.state.fontIncreaseBtn.addEventListener('click', () => this.updateFontSize(1));
-		this.state.fontDecreaseBtn.addEventListener('click', () => this.updateFontSize(0));
+		this.state.fontIncreaseBtn.addEventListener('click', () => Components.broadcast('A11Y_SET_LARGE_FONT', true));
+		this.state.fontDecreaseBtn.addEventListener('click', () => Components.broadcast('A11Y_SET_LARGE_FONT', false));
 
 		this.setupThemeFeature();
 		this.setupFontSelectFeature();
@@ -60,6 +60,8 @@ export default function() {
 	}
 
 	this.toggleHelp = () => {
+		Components.broadcast('TOGGLE_HELP');
+
 		this.state.active = !this.state.active;
 		document.body.classList.toggle('state-help-active');
 
@@ -70,11 +72,6 @@ export default function() {
 	this.closeHelp = () => {
 		this.state.active = false;
 		document.body.classList.remove('state-help-active');
-	}
-
-	this.updateFontSize = function(useBig) {
-		Storage.set('a11y_use_big_font', useBig);
-		document.documentElement.classList.toggle('state-a11y-big-font', (useBig > 0));
 	}
 
 	this.setupThemeFeature = function() {

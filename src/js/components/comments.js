@@ -47,7 +47,7 @@ export default function() {
 
 		this.fetchComments();
 
-		this.state.shortcuts = new Mousetrap(this.elements.grid);
+		this.state.shortcuts = new Mousetrap(this.elements.container);
 
 		this.state.shortcuts.bind('escape', this.closeAll);
 		this.state.shortcuts.bind('h', this.moveLeft);
@@ -173,7 +173,8 @@ export default function() {
 		this.closeAll();
 		leaveCommentPopup.classList.add('state-leave-comment-active');
 		leaveCommentDot.innerHTML = this.state.selectedComment;
-		this.select(dotId);
+
+		this.setDotActive(dotId);
 
 		container.querySelector('[data-js="content"]').focus();
 	}
@@ -184,12 +185,12 @@ export default function() {
 		this.elements.leaveCommentPopup.classList.remove('state-leave-comment-active');
 	}
 
+	this.setDotActive = function(id) {
+		this.elements.dots[id - 1].classList.add('state-selected-comment');
+	}
+
 	this.select = id => {
-		this.elements.dots.forEach(dot => {
-			if (parseInt(dot.dataset.index, 10) === id ) {
-				dot.focus();
-			}
-		});
+		this.elements.dots[id].focus();
 	}
 
 	this.unselectAllComments = function() {
@@ -208,10 +209,10 @@ export default function() {
 		e.preventDefault();
 		e.stopPropagation();
 
-		const targetDot = parseInt(document.activeElement.dataset.index, 10) + inc;
+		const targetDot = parseInt(document.activeElement.dataset.index, 10) + inc - 1;
 		const totalDots = this.elements.dots.length;
 
-		if ( (targetDot < 0) || (targetDot > totalDots) ) {
+		if ( (targetDot < 0) || (targetDot >= totalDots) ) {
 			Components.broadcast('PLAY_SOUND', 'canc');
 			return;
 		}

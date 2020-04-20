@@ -1,7 +1,7 @@
 const Storage = {
 	switch: id => {
-		const flag = !this.flag(id);
-		this.set(id, flag);
+		const flag = !Storage.flag(id);
+		Storage.set(id, flag);
 
 		return flag;
 	},
@@ -10,7 +10,7 @@ const Storage = {
 
 	set: (id, value) => {
 		const isBool = typeof value === 'boolean';
-		const valueToSet = isBool ? this.boolToBinaryFlag(value) : value;
+		const valueToSet = isBool ? Storage.boolToBinaryFlag(value) : value;
 
 		window.localStorage.setItem(id, valueToSet);
 	},

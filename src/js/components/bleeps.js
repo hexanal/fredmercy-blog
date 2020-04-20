@@ -31,14 +31,26 @@ export default function() {
 			case 'PLAY_SOUND': // if components know who to call :)
 				this.play(payload);
 				break;
+			case 'TOGGLE_HELP':
+				this.playBurst('gong', false, 3, 70);
+				break;
 			case 'PAGE_CHANGED':
 				this.hookEventListeners(payload.next.container);
 				break;
 			case 'MENU_TOGGLED':
 				const sound = payload ? 'gnuf' : 'gnaf';
-				setTimeout(() => this.play(sound), 50);
-				setTimeout(() => this.play(sound), 100);
-				setTimeout(() => this.play(sound), 150);
+				this.playBurst(sound, false, 3, 50, 50);
+				break;
+			case 'A11Y_SET_LARGE_FONT':
+				const notes = payload ? ['C4', 'C#4', 'D4'] : ['D3', 'C#3', 'C3'];
+				const burst = 3;
+				const delay = 40;
+				const delayBetweenBursts = 170;
+
+				notes.map((note, i) => {
+					setTimeout( () => this.playBurst('tick', note, burst, delay), (delayBetweenBursts * (i + 1)) );
+				});
+				break;
 			default:
 				break;
 		}
@@ -156,6 +168,12 @@ export default function() {
 			});
 	}
 
+	this.playBurst = (soundId, note = false, times = 1, delay = 50) => {
+		for (let i = 0; i <= times; i++) {
+			setTimeout( () => this.play(soundId, note), (delay * i) );
+		}
+	}
+
 	this.bleep = (sound) => {
 		const { osc, note, duration } = sound;
 		const synth = this.OSCILLATORS[osc];
@@ -170,6 +188,7 @@ export default function() {
 	this.getSoundBank = function() {
 		return {
 			tick: note => ({ osc: 'filteredSquare', note, duration: 0.02 }),
+			blarpNote: note => ({ osc: 'triangle', note, duration: 0.02 }),
 
 			boop: { osc: 'triangle', note: 'B3', duration: 0.02 },
 			blarp: { osc: 'triangle', note: 'D3', duration: 0.03 },
@@ -182,7 +201,7 @@ export default function() {
 			gnuf: { osc: 'sine', note: 'G5', duration: 0.012 },
 			gnaf: { osc: 'sine', note: 'G#5', duration: 0.012 },
 
-			gong: { osc: 'gong', note: 'C5', duration: 0.2 },
+			gong: { osc: 'gong', note: 'C5', duration: 0.02 },
 			canc: { osc: 'pulse', note: 'F1', duration: 0.02 },
 			riil: note => ({ osc: 'sine', note, duration: 0.02 }),
 
@@ -240,7 +259,7 @@ export default function() {
 		// # GONG
 		const gong = new Synth({
 			oscillator : { type : 'sine' },
-			envelope : { attack : 0.005, decay : 0.05, sustain : 0.3, release : 1.2 }
+			envelope : { attack : 0.007, decay : 0.02, sustain : 0.3, release : 0.04 }
 		})
 			.chain(this.EFFECTS.crush, Master);
 
