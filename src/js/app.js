@@ -1,6 +1,5 @@
 // import RafManager from './core/RafManager';
 import Components from './core/Components';
-import Utils from './core/Utils';
 
 import a11y from './components/a11y';
 import bleeps from './components/bleeps';
@@ -9,6 +8,7 @@ import collapse from './components/collapse';
 import help from './components/help';
 import highlight from './components/highlight';
 import jumpto from './components/jumpto';
+import keyboard from './components/keyboard';
 import nav from './components/nav';
 import notes from './components/notes';
 import scroll from './components/scroll';
@@ -19,6 +19,7 @@ import transitions from './components/transitions';
 // auto-mount global components
 Components.autoMount('a11y', a11y);
 Components.autoMount('bleeps', bleeps);
+Components.autoMount('keyboard', keyboard);
 Components.autoMount('scroll', scroll);
 Components.autoMount('transitions', transitions);
 

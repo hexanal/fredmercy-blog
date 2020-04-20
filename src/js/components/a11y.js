@@ -1,4 +1,4 @@
-import Utils from '../core/Utils';
+import Mousetrap from 'mousetrap';
 
 export default function() {
 	this.global = true;
@@ -16,16 +16,8 @@ export default function() {
 			document.documentElement.classList.remove('state-a11y-big-font');
 		}
 
-		document.addEventListener('keyup', e => {
-			if (Utils.dom.shouldDisableShortcuts()) return;
-
-			if (e.code === 'Equal') {
-				this.updateFontSize(1);
-			}
-			if (e.code === 'Minus') {
-				this.updateFontSize(0);
-			}
-		});
+		Mousetrap.bind('=', () => this.updateFontSize(1) );
+		Mousetrap.bind('-', () => this.updateFontSize(0) );
 	}
 
 	this.updateFontSize = function(useBig) {

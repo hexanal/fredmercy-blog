@@ -4,6 +4,12 @@ import barba from '@barba/core';
 const TRANSITION_DURATION = 600;
 
 export default function() {
+	this.listen = (id, payload) => {
+		if (id === 'NAVIGATE_TO') {
+			barba.go(payload.href);
+		}
+	}
+
 	this.onMount = function() {
 		barba.init({
 			timeout: 10000,

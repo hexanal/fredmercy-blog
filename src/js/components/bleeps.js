@@ -1,4 +1,5 @@
-import Tone, {
+import Mousetrap from 'mousetrap';
+import {
 	Master,
 	Synth,
 	Compressor,
@@ -8,7 +9,7 @@ import Tone, {
 	Filter
 } from 'tone';
 import Utils from '../core/Utils';
-import debounce from 'lodash.debounce';
+// import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
 
 export default function() {
@@ -53,34 +54,30 @@ export default function() {
 		this.state.enableSoundsBtn = document.querySelector('[data-js="enable-sounds"]');
 		this.state.enableSoundsBtn.addEventListener('click', () => this.toggleSounds());
 
-		document.addEventListener('keyup', e => {
-			switch (e.code) {
-				case 'Tab':
-					this.play('gnaf');
-					break;
-				case 'ArrowUp':
-					this.play('tick', 'F#4');
-					break;
-				case 'ArrowDown':
-					this.play('tick', 'C#5');
-					break;
-				case 'Escape':
-					this.play('canc');
-					break;
-				case 'Backspace':
-					this.play('blink');
-					break;
-				case 'Space':
-					this.play('tick', 'D2');
-					break;
-				case 'Enter':
-					this.play('tick', 'A2');
-					setTimeout(() => this.play('tick', 'A2'), 30);
-					setTimeout(() => this.play('tick', 'A2'), 60);
-					break;
-				default:
-					break;
-			}
+		Mousetrap.bind('tab', () => this.play('riil', 'F5') );
+		Mousetrap.bind('shift+tab', () => {
+			this.play('riil', 'G5');
+			setTimeout(() => this.play('riil', 'F#5'), 70);
+		});
+		Mousetrap.bind('up', () => this.play('tick', 'F#4') );
+		Mousetrap.bind('down', () => this.play('tick', 'C#5') );
+		Mousetrap.bind('esc', () => this.play('canc') );
+		Mousetrap.bind('backspace', () => this.play('blink') );
+		Mousetrap.bind([
+			'space',
+		], () => {
+			setTimeout(() => this.play('tick', 'A2'), 30);
+			setTimeout(() => this.play('tick', 'A2'), 90);
+			setTimeout(() => this.play('tick', 'A2'), 150);
+
+			return false;
+		});
+		Mousetrap.bind([
+			'enter',
+		 ], () => {
+			setTimeout(() => this.play('tick', 'A2'), 30);
+			setTimeout(() => this.play('tick', 'A2'), 90);
+			setTimeout(() => this.play('tick', 'A2'), 150);
 		});
 
 		document.addEventListener('keyup', e => {
@@ -89,17 +86,37 @@ export default function() {
 			this.play('blarp');
 		});
 
-		document.addEventListener('dblclick', e => this.play('gong') );
+		this.init()
+			.then(() => {
+				if ( this.state.loaded && (this.state.storage.getItem('sounds_enabled') > 0 ) ) {
+					this.enable();
+				} else {
+					this.disable();
+				}
+			});
+	}
 
-		this.initTone();
-		this.initScroll();
-		this.initResize();
+	this.init = function() {
+		if (this.state.loaded) return Promise.resolve(true); // loaded already
+
+		return new Promise((resolve) => {
+			this.initFX();
+			this.initOscillators();
+			this.initScroll();
+			this.initResize();
+			this.hookEventListeners(document);
+
+			this.state.sounds = this.getSoundBank();
+			this.state.loaded = true;
+
+			resolve(this.state.loaded);
+		});
 	}
 
 	this.toggleSounds = function() {
 		if (!this.state.enabled) {
-			return this.initTone(true)
-				.then(canEnable => canEnable ? this.enable() : false);
+			return this.init()
+				.then(() => this.enable());
 		}
 
 		this.disable();
@@ -124,17 +141,20 @@ export default function() {
 	this.play = (soundId, note = false) => {
 		if (!this.state.enabled || !this.state.sounds) return;
 
-		const fromBank = this.state.sounds[soundId];
-		const sound = typeof fromBank === 'function' && note
-			? fromBank(note)
-			: fromBank;
+		return this.init()
+			.then(() => {
+				const fromBank = this.state.sounds[soundId];
+				const sound = typeof fromBank === 'function' && note
+					? fromBank(note)
+					: fromBank;
 
-		if (!sound) {
-			console.warn(`Could not find sound id: "${soundId}"`);
-			return false;
-		}
+				if (!sound) {
+					console.warn(`Could not find sound id: "${soundId}"`);
+					return false;
+				}
 
-		return this.initTone().then(() => this.bleep(sound));
+				this.bleep(sound);
+			});
 	}
 
 	this.bleep = (sound) => {
@@ -156,8 +176,8 @@ export default function() {
 			blarp: { osc: 'triangle', note: 'D3', duration: 0.03 },
 			blink: { osc: 'triangle', note: 'D4', duration: 0.05 },
 
-			woaw: { osc: 'sawWithTremolo', note: 'C2', duration: 0.18 },
-			womp: { osc: 'sawWithTremolo', note: 'D2', duration: 0.18 },
+			woaw: { osc: 'sine', note: 'C2', duration: 0.18 },
+			womp: { osc: 'sine', note: 'A#1', duration: 0.18 },
 
 			kree: { osc: 'saw', note: 'A2', duration: 0.1 },
 			gnuf: { osc: 'sine', note: 'G5', duration: 0.012 },
@@ -171,24 +191,6 @@ export default function() {
 			'select-click': { osc: 'sine', note: 'E3', duration: 0.1 },
 			'select-change': { osc: 'sineWithTremolo', note: 'G#3', duration: 0.3 },
 		};
-	}
-
-	this.initTone = function(manualEnable = false) {
-		this.state.enabled = (this.state.storage.getItem('sounds_enabled') > 0);
-
-		if (this.state.loaded) return Promise.resolve(true); // loaded already
-		if (!this.state.enabled && !manualEnable) return Promise.resolve(false); // disabled
-
-		return new Promise((resolve) => {
-			this.initFX();
-			this.initOscillators();
-			this.hookEventListeners(document);
-
-			this.state.sounds = this.getSoundBank();
-			this.state.loaded = true;
-
-			resolve(this.state.loaded);
-		});
 	}
 
 	this.initFX = function() {
@@ -213,7 +215,7 @@ export default function() {
 			oscillator : { type : 'sine' },
 			envelope : { attack : 0.005, decay : 0.05, sustain : 0.5, release : 0.01 },
 		})
-			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+			.chain(this.EFFECTS.crush, /* this.EFFECTS.quickFilter, */Master);
 
 		// # SINE WITH TREM
 		const sineWithTremolo =  new Synth({
@@ -226,7 +228,7 @@ export default function() {
 			oscillator : { type : 'triangle' },
 			envelope : { attack : 0.002, decay : 0.1, sustain : 1, release : 0.01 }
 		})
-			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+			.chain(this.EFFECTS.crush, /* this.EFFECTS.quickFilter, */Master);
 		filteredSquare.portamento = 0.2;
 
 		// # TRIANGLE
@@ -234,7 +236,7 @@ export default function() {
 			oscillator : { type : 'triangle' },
 			envelope : { attack : 0.005, decay : 0.02, sustain : 0.5, release : 0.01 }
 		})
-			.chain(this.EFFECTS.crush, this.EFFECTS.quickFilter, Master);
+			.chain(this.EFFECTS.crush, /* this.EFFECTS.quickFilter, */Master);
 
 		// # GONG
 		const gong = new Synth({

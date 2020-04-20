@@ -47,6 +47,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "imagesloaded": "^4.1.4",
+    "mousetrap": "^1.6.5",
     "sanitize-html": "^1.20.0",
     "tone": "^13.8.25"
   }

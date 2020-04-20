@@ -263,7 +263,7 @@
 	display: none;
 
 	[data-scrolled-past-viewport="true"] & {
-		display: inline-block;
+		display: block;
 	}
 }
 

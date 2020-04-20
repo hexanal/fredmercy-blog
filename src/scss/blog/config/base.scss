@@ -52,6 +52,24 @@ html {
 	&.state-a11y-big-font {
 		font-size: 18px;
 	}
+
+	&[data-input-device="keyboard"] {
+		pointer-events: none;
+		user-select: none;
+
+		&[data-scroll-direction="UP"] {
+			cursor: n-resize !important;
+		}
+		&[data-scroll-direction="DOWN"] {
+			cursor: s-resize !important;
+		}
+
+		* {
+			pointer-events: none;
+			user-select: none;
+			// cursor: grab !important;
+		}
+	}
 }
 
 body {

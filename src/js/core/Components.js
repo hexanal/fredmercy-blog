@@ -18,9 +18,11 @@ const Components = {
 
 	autoMount(id, Component) {
 		this.register(id, Component);
-		const Instance = new Component;
+		const AutoMounted = this.withMiddlewares(Component);
+		const Instance = new AutoMounted();
+
 		Instance.onMount(document, id);
-		this.globals.push(Instance); // automatically promoted to global
+		this.globals.push(Instance);
 	},
 
 	mountAllInsideContainer(container) {
@@ -47,7 +49,16 @@ const Components = {
 
 		if (!match) return false;
 
-		const Component = new match.Component();
+		const Component = this.withMiddlewares(match.Component);
+
+		return new Component();
+	},
+
+	withMiddlewares(Component) {
+		// logger
+		Component.prototype._ = function(msg) {
+			return console.debug(`Debugger —— “${msg}”`);
+		};
 
 		return Component;
 	},

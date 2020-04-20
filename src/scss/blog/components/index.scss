@@ -15,7 +15,8 @@
 }
 
 .index__item {
-	white-space: nowrap;
+	display: flex;
+	align-items: center;
 }
 
 .index__item + .index__item {
@@ -23,8 +24,9 @@
 }
 
 .index__meta {
+	flex-shrink: 0;
 	display: inline-block;
-	margin-right: 0.25em;
+	margin-right: 0.75rem;
 	line-height: 1.1;
 	color: var(--color-bg);
 	background-color: var(--color-primary);
