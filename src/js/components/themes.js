@@ -1,4 +1,4 @@
-import Config from 'utils/Config';
+import ConfigManager from 'utils/ConfigManager';
 import Storage from 'utils/Storage';
 
 const THEME_LIST = [
@@ -33,7 +33,7 @@ export default function() {
 	};
 
 	this.onMount = function(component) {
-		if ( !Config.featureEnabled('useThemes') ) return;
+		if ( !ConfigManager.featureEnabled('useThemes') ) return;
 
 		this.state.switchThemeSelect = component.querySelector('[data-js="theme-select"]');
 		this.state.switchThemeSelect.addEventListener('change', e => {

@@ -9,7 +9,7 @@ import {
 	FeedbackDelay,
 	Filter
 } from 'tone';
-import Config from 'utils/Config';
+import ConfigManager from 'utils/ConfigManager';
 import Storage from 'utils/Storage';
 
 export default function() {
@@ -57,7 +57,7 @@ export default function() {
 	}
 
 	this.onMount = function() {
-		if ( !Config.featureEnabled('useBleeps') ) return;
+		if ( !ConfigManager.featureEnabled('useBleeps') ) return;
 
 		this.state.container = document.querySelector('[data-js="bleeps"]');
 		this.state.bleepStatus = document.querySelector('[data-js="bleeps-status"]');

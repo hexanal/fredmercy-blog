@@ -1,7 +1,7 @@
 // import RafManager from './core/RafManager';
 import Components from './core/Components';
 
-import debugUI from './components/debug/ui';
+import debugUI from './components/debug/debug-ui';
 
 import a11y from './components/a11y';
 import bleeps from './components/bleeps';

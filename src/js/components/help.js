@@ -1,6 +1,6 @@
 import Mousetrap from 'mousetrap';
 import Components from 'core/Components';
-import Config from 'utils/Config';
+import ConfigManager from 'utils/ConfigManager';
 import DOMHelpers from 'utils/DOMHelpers';
 
 const FONT_FAMILY_LIST = {
@@ -75,7 +75,7 @@ export default function() {
 	}
 
 	this.setupThemeFeature = function() {
-		if ( !Config.featureEnabled('useThemes') ) return;
+		if ( !ConfigManager.featureEnabled('useThemes') ) return;
 
 		this.state.themeEditBtn = DOMHelpers.getChild('theme-edit', this.state.component);
 		this.state.themeEditBtn.addEventListener('click', () => {
@@ -86,7 +86,7 @@ export default function() {
 	}
 
 	this.setupFontSelectFeature = function() {
-		if ( !Config.featureEnabled('useFontSelect') ) return;
+		if ( !ConfigManager.featureEnabled('useFontSelect') ) return;
 
 		this.state.fontSelect = DOMHelpers.getChild('font-select', this.state.component);
 		this.state.fontSelect.addEventListener('change', e => {

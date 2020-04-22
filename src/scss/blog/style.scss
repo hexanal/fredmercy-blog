@@ -2,7 +2,8 @@
 @import 'config/base';
 @import 'config/themes';
 
-@import 'components/debug/ui';
+@import 'components/debug/debug-ui';
+@import 'components/debug/debug-grid';
 
 @import 'components/body';
 @import 'components/collapse';

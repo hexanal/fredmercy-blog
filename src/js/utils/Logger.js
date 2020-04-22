@@ -1,9 +1,9 @@
-import Config from 'utils/Config';
+import ConfigManager from 'utils/ConfigManager';
 // import Components from 'core/Components';
 
 const Logger = {
 	log: function(msg) {
-		if ( !Config.featureEnabled('logger') ) return;
+		if ( !ConfigManager.featureEnabled('logger') ) return;
 
 		Components.broadcast('LOG', msg);
 
