@@ -1,6 +1,8 @@
 // import RafManager from './core/RafManager';
 import Components from './core/Components';
 
+import debugUI from './components/debug/ui';
+
 import a11y from './components/a11y';
 import bleeps from './components/bleeps';
 import comments from './components/comments';
@@ -15,7 +17,7 @@ import scroll from './components/scroll';
 import themes from './components/themes';
 import transitions from './components/transitions';
 
-// auto-mount global components
+// auto-mount (global) components
 Components.autoMount('a11y', a11y);
 Components.autoMount('bleeps', bleeps);
 Components.autoMount('keyboard', keyboard);
@@ -25,6 +27,7 @@ Components.autoMount('transitions', transitions);
 // register components
 Components.register('comments', comments);
 Components.register('collapse', collapse);
+Components.register('debug-ui', debugUI);
 Components.register('help', help);
 Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);

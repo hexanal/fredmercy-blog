@@ -32,6 +32,9 @@ const Components = {
 
 		mountable.forEach((el, index) => {
 			const Component = this.getComponentForElement(el);
+
+			Component._('yo');
+
 			if (!Component || typeof Component.onMount !== "function") return;
 			Component.onMount(el, index);
 

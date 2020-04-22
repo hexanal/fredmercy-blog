@@ -24,6 +24,25 @@ const DOMHelpers = {
 		return component.querySelectorAll(`[data-js="${id}"]`);
 	},
 
+	getAllChildren(component) {
+		let children = {
+			root: [component]
+		};
+		const childrenNodes = component.querySelectorAll(`[data-js]`);
+
+		childrenNodes.forEach(n => {
+			const { js } = n.dataset;
+
+			if ( Object.keys(children).includes(js) ) {
+				children[js].push(n);
+			} else {
+				children[js] = [n];
+			}
+		});
+
+		return children;
+	},
+
 	focusFirstItem(component) {
 		const items = component.querySelectorAll('a, input, button, textarea, select');
 

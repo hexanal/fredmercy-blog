@@ -1,6 +1,13 @@
 import Mousetrap from 'mousetrap';
 import Vim from '../utils/Vim';
 
+/**
+ * todo: find a way to have different layouts for different "MODES"
+ * - in modal: no moving around, no funny business
+ * - in form: other bindings
+ * - in menu: other useful bindings
+ */
+
 export default function() {
 	this.global = true;
 	this.state = {

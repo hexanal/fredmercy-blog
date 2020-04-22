@@ -9,16 +9,27 @@ const Storage = {
 	flag: id => (window.localStorage.getItem(id) > 0),
 
 	set: (id, value) => {
-		const isBool = typeof value === 'boolean';
-		const valueToSet = isBool ? Storage.boolToBinaryFlag(value) : value;
-
+		const valueToSet = Storage.boolToBinaryFlag(value);
 		window.localStorage.setItem(id, valueToSet);
 	},
 
-	get: id => window.localStorage.getItem(id),
+	get: id => {
+		const item = Storage.binaryToBoolFlag( window.localStorage.getItem(id) );
+		return item;
+	},
+
+	binaryToBoolFlag: val => {
+		const isBinary = val === 1 || val === 0;
+		return isBinary
+			? (val === 1)
+			: val;
+	},
 
 	boolToBinaryFlag: val => {
-		return val ? 1 : 0;
+		const isBool = typeof val === 'boolean';
+		return isBool
+			? (val ? 1 : 0)
+			: val;
 	}
 };
 
