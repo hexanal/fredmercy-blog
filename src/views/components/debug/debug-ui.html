@@ -1,5 +1,31 @@
 <div class="debug-ui" data-component="debug-ui">
-	<div class="debug-ui__container">
-		{{> debug/debug-grid}}
+	<div class="debug-ui__container" data-component="tabs">
+		<nav class="debug-ui__tab-list" data-js="tab-list">
+			<button
+				type="button"
+				class="debug-ui__tab-trigger"
+				data-js="tab-trigger"
+				data-tab-id="grid"
+			>
+				Grid
+			</button>
+			<button
+				type="button"
+				class="debug-ui__tab-trigger"
+				data-js="tab-trigger"
+				data-tab-id="align"
+			>
+				Align
+			</button>
+		</nav>
+
+		<div class="debug-ui__tabs" data-js="tab-sections">
+			<div class="debug-ui__tab" data-tab="grid">
+				{{> debug/debug-grid}}
+			</div>
+			<div class="debug-ui__tab" data-tab="align">
+				{{> debug/debug-align}}
+			</div>
+		</div>
 	</div>
 </div>

@@ -18,7 +18,7 @@ const Components = {
 
 	autoMount(id, Component) {
 		this.register(id, Component);
-		const AutoMounted = this.withMiddlewares(Component);
+		const AutoMounted = Component;
 		const Instance = new AutoMounted();
 
 		Instance.onMount(document, id);
@@ -32,8 +32,6 @@ const Components = {
 
 		mountable.forEach((el, index) => {
 			const Component = this.getComponentForElement(el);
-
-			Component._('yo');
 
 			if (!Component || typeof Component.onMount !== "function") return;
 			Component.onMount(el, index);
@@ -52,18 +50,9 @@ const Components = {
 
 		if (!match) return false;
 
-		const Component = this.withMiddlewares(match.Component);
+		const Component = match.Component;
 
 		return new Component();
-	},
-
-	withMiddlewares(Component) {
-		// logger
-		Component.prototype._ = function(msg) {
-			return console.debug(`Debugger —— “${msg}”`);
-		};
-
-		return Component;
 	},
 
 	flush() {

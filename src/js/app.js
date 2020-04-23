@@ -2,6 +2,7 @@
 import Components from './core/Components';
 
 import debugUI from './components/debug/debug-ui';
+import debugAlign from './components/debug/debug-align';
 
 import a11y from './components/a11y';
 import bleeps from './components/bleeps';
@@ -14,6 +15,7 @@ import keyboard from './components/keyboard';
 import nav from './components/nav';
 import notes from './components/notes';
 import scroll from './components/scroll';
+import tabs from './components/tabs';
 import themes from './components/themes';
 import transitions from './components/transitions';
 
@@ -28,11 +30,13 @@ Components.autoMount('transitions', transitions);
 Components.register('comments', comments);
 Components.register('collapse', collapse);
 Components.register('debug-ui', debugUI);
+Components.register('debug-align', debugAlign);
 Components.register('help', help);
 Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);
 Components.register('nav', nav);
 Components.register('notes', notes);
+Components.register('tabs', tabs);
 Components.register('themes', themes);
 
 // mount all the components on the page

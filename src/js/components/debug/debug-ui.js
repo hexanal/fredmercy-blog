@@ -1,4 +1,5 @@
 import Mousetrap from 'mousetrap';
+import Components from 'core/Components';
 import Storage from 'utils/Storage';
 
 export default function() {
@@ -6,12 +7,12 @@ export default function() {
 	this.state = {
 		active: false,
 	};
-	this.elements = {};
+	this.component = null;
+	this.panels = null;
 
 	this.onMount = function(component, id) {
 		this.component = component;
 		this.panels = component.querySelectorAll('[data-panel]');
-
 		this.panels.forEach(this.installPanel);
 
 		Mousetrap.bind('ctrl+alt+d', e => this.toggleDebug(!this.state.active) );
@@ -63,6 +64,7 @@ export default function() {
 
 		panel.style.setProperty(`--${prop}`, value);
 		Storage.set(`debug_ui_tool_${panelId}_${prop}`, control.value); // store unitless
+		Components.broadcast('DEBUG_SET_PROP', { prop, value, control });
 	}
 
 	this.setToggle = (panel, prop, control) => {
@@ -70,5 +72,6 @@ export default function() {
 
 		panel.classList.toggle(`state-${panelId}-${prop}`, control.checked );
 		Storage.set(`debug_ui_tool_${panelId}_${prop}`, control.checked);
+		Components.broadcast('DEBUG_SET_TOGGLE', { prop, value: control.checked, control });
 	}
 }
