@@ -1,0 +1,27 @@
+:root {
+	--z-bedrock: 10;
+	--z-content: 20;
+	--z-interface: 30;
+	--z-modals: 50;
+	--z-alerts: 60;
+	--z-debug: 70;
+}
+
+[data-z="bedrock"] {
+	z-index: var(--z-bedrock);
+}
+[data-z="content"] {
+	z-index: var(--z-content);
+}
+[data-z="interface"] {
+	z-index: var(--z-interface);
+}
+[data-z="modals"] {
+	z-index: var(--z-modals);
+}
+[data-z="alerts"] {
+	z-index: var(--z-alerts);
+}
+[data-z="debug"] {
+	z-index: var(--z-debug);
+}

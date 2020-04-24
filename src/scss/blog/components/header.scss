@@ -9,6 +9,7 @@
 
 .header__header-extend {
 	position: relative;
+	z-index: var(--z-interface);
 	display: flex;
 	justify-content: space-between;
 	flex-grow: 1;
@@ -50,7 +51,7 @@
 
 .header__toggle-menu {
 	position: fixed;
-	z-index: 100;
+	z-index: var(--z-interface);
 	top: 1rem;
 	right: 1rem;
 	display: inline-block;
@@ -123,7 +124,7 @@
 .header__menu {
 	display: none;
 	position: fixed;
-	z-index: 100;
+	z-index: var(--z-interface);
 	left: 1rem;
 	right: 1.75rem;
 	top: 3rem;
@@ -153,7 +154,7 @@
 .header__menu-bg {
 	display: none;
 	position: fixed;
-	z-index: 90;
+	z-index: 2;
 	top: 0;
 	bottom: 0;
 	left: 0;

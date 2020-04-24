@@ -3,6 +3,7 @@ import Components from './core/Components';
 
 import debugUI from './components/debug/debug-ui';
 import debugAlign from './components/debug/debug-align';
+import debugStack from './components/debug/debug-stack';
 
 import a11y from './components/a11y';
 import bleeps from './components/bleeps';
@@ -26,11 +27,14 @@ Components.autoMount('keyboard', keyboard);
 Components.autoMount('scroll', scroll);
 Components.autoMount('transitions', transitions);
 
+// debuggers
+Components.register('debug-ui', debugUI);
+Components.register('debug-align', debugAlign);
+Components.register('debug-stack', debugStack);
+
 // register components
 Components.register('comments', comments);
 Components.register('collapse', collapse);
-Components.register('debug-ui', debugUI);
-Components.register('debug-align', debugAlign);
 Components.register('help', help);
 Components.register('highlight', highlight);
 Components.register('jumpto', jumpto);

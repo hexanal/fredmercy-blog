@@ -21,17 +21,14 @@
 	display: flex;
 	flex-direction: column;
 
-	@media (min-width: $mq-mobile) {
-		flex-direction: row;
-	}
-
-	@media (min-width: $mq-medium) {
+	@media (min-width: $mq-small) {
 		display: inline-flex;
+		flex-direction: row;
 		vertical-align: top;
-		width: 50rem;
 	}
 	@media (min-width: $mq-desktop) {
 		margin-right: 2em;
+		width: 50rem;
 	}
 }
 

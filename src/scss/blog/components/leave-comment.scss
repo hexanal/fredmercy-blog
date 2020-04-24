@@ -11,7 +11,7 @@
 	padding: 1rem 1rem 5rem;
 	background-color: var(--color-bg);
 
-	@media (min-width: 500px) {
+	@media (min-width: $mq-small) {
 		overflow: visible;
 		flex-grow: 1;
 		position: static;
@@ -32,7 +32,7 @@
 	justify-content: space-between;
 	margin: 0 0 1.5rem;
 
-	@media (min-width: 500px) {
+	@media (min-width: $mq-small) {
 		margin-top: 1.5rem;
 	}
 }

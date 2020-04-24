@@ -1,6 +1,8 @@
 .comments {
-	margin-right: 3em;
-	flex-shrink: 0;
+	@media (min-width: $mq-small) {
+		margin-right: 3em;
+		flex-shrink: 0;
+	}
 }
 
 .comments__heading {
@@ -105,7 +107,7 @@
 		&:before {
 			content: '';
 			position: absolute;
-			z-index: 10;
+			z-index: var(--z-content);
 			top: 0;
 			left: 0;
 			width: 100%;

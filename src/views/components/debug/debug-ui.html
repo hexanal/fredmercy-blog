@@ -17,6 +17,14 @@
 			>
 				Align
 			</button>
+			<button
+				type="button"
+				class="debug-ui__tab-trigger"
+				data-js="tab-trigger"
+				data-tab-id="stack"
+			>
+				Stack
+			</button>
 		</nav>
 
 		<div class="debug-ui__tabs" data-js="tab-sections">
@@ -25,6 +33,9 @@
 			</div>
 			<div class="debug-ui__tab" data-tab="align">
 				{{> debug/debug-align}}
+			</div>
+			<div class="debug-ui__tab" data-tab="stack">
+				{{> debug/debug-stack}}
 			</div>
 		</div>
 	</div>

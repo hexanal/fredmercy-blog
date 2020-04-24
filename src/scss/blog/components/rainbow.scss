@@ -4,7 +4,7 @@
 	--stagger-delay: 25ms;
 	--color-rainbow: var(--color-primary);
 	position: fixed;
-	z-index: 100;
+	z-index: var(--z-interface);
 	bottom: 0;
 	left: 0;
 	width: 20vw;
