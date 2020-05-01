@@ -3,7 +3,7 @@
 	--y: 0;
 	--opacity: 1;
 	--thickness: 1px;
-	--color: black;
+	--color: var(--color-primary);
 }
 
 .debug-align__vertical,
@@ -16,6 +16,22 @@
 	opacity: var(--opacity);
 	pointer-events: none;
 	background-color: var(--color);
+
+	.state-align-displayPosition & {
+		&:before {
+			content: attr(data-position);
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			padding: 0 0.25rem;
+			margin: 2px;
+			font-size: 75%;
+			color: var(--color);
+			background-color: var(--color-bg);
+			border: 1px solid var(--color);
+		}
+	}
 }
 
 .debug-align__vertical {

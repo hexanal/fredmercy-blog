@@ -1,0 +1,27 @@
+html {
+	&[data-input-device="keyboard"] {
+		pointer-events: none;
+		user-select: none;
+
+		&[data-scroll-direction="UP"] {
+			cursor: n-resize !important;
+		}
+		&[data-scroll-direction="DOWN"] {
+			cursor: s-resize !important;
+		}
+
+		* {
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+
+	&[data-hide-cursor] {
+		cursor: none;
+
+		* {
+			user-select: none;
+			cursor: none;
+		}
+	}
+}

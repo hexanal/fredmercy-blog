@@ -1,4 +1,5 @@
 // import Mousetrap from 'mousetrap';
+import Components from 'core/Components';
 
 export default function() {
 	this.global = true;
@@ -13,6 +14,7 @@ export default function() {
 
 	this.onMount = function(component) {
 		this.state.component = component;
+		this.state.componentLabel = component.dataset.componentLabel;
 		this.state.tabList = component.querySelector('[data-js="tab-list"]');
 		this.state.tabTriggers = component.querySelectorAll('[data-js="tab-trigger"]');
 		this.state.tabsContainer = component.querySelector('[data-js="tab-sections"]');
@@ -36,6 +38,14 @@ export default function() {
 			.querySelector(`[data-tab="${tabId}"]`)
 				.classList.add('state-tab-active');
 		target.classList.add('state-tab-active');
+
+		Components.broadcast('TABS_SWITCHED', {
+			origin: {
+				id: this.state.componentLabel,
+				element: this.state.component,
+			},
+			tabId
+		 });
 	}
 
 }

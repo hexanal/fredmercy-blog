@@ -1,4 +1,5 @@
 @import 'config/typography';
+@import 'config/html';
 @import 'config/base';
 @import 'config/themes';
 @import 'config/z-index';
@@ -9,12 +10,12 @@
 @import 'components/debug/debug-align';
 @import 'components/debug/debug-stack';
 
-@import 'components/body';
 @import 'components/collapse';
 @import 'components/comments';
 @import 'components/custom-theme';
 @import 'components/header';
 @import 'components/help';
+@import 'components/hotkey';
 @import 'components/index';
 @import 'components/leave-comment';
 @import 'components/note';

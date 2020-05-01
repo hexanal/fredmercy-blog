@@ -24,6 +24,7 @@ export default function() {
 		this.state.active = active;
 		this.component.classList.toggle('state-debug-active', this.state.active);
 		Storage.set('debug_ui_active', this.state.active);
+		Components.broadcast('DEBUG_UI_TOGGLED', { active });
 	}
 
 	this.installPanel = panel => {
@@ -33,9 +34,15 @@ export default function() {
 
 	this.initControl = (control, panel) => {
 		const panelId = panel.dataset.panel;
-		const { prop, toggle } = control.dataset;
+		const { prop, toggle, hotkey } = control.dataset;
 		const savedValue = Storage.get(`debug_ui_tool_${panelId}_${prop}`);
 
+		if (hotkey) { // todo: only works for toggles (checkboxes)
+			Mousetrap.bind(hotkey, () => {
+				control.checked = !control.checked;
+				this.setControl(control, panel);
+			});
+		}
 		if (savedValue) {
 			if (toggle !== undefined) {
 				control.checked = (parseInt(savedValue, 10) > 0);
@@ -64,7 +71,7 @@ export default function() {
 
 		panel.style.setProperty(`--${prop}`, value);
 		Storage.set(`debug_ui_tool_${panelId}_${prop}`, control.value); // store unitless
-		Components.broadcast('DEBUG_SET_PROP', { prop, value, control });
+		Components.broadcast('DEBUG_PROP_WAS_SET', { prop, value, control });
 	}
 
 	this.setToggle = (panel, prop, control) => {
@@ -72,6 +79,6 @@ export default function() {
 
 		panel.classList.toggle(`state-${panelId}-${prop}`, control.checked );
 		Storage.set(`debug_ui_tool_${panelId}_${prop}`, control.checked);
-		Components.broadcast('DEBUG_SET_TOGGLE', { prop, value: control.checked, control });
+		Components.broadcast('DEBUG_TOGGLE_WAS_SET', { prop, value: control.checked, control });
 	}
 }

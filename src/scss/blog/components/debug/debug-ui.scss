@@ -28,10 +28,11 @@
 .debug-ui__tab-trigger {
 	position: relative;
 	padding: 0;
-	padding-left: 1.75em;
-	margin-right: 1.5rem;
+	padding-left: 2em;
+	margin-right: 1.25rem;
 	font-family: var(--font);
 	font-size: 1rem;
+	line-height: 1.6;
 	color: var(--color-primary);
 	background-color: transparent;
 	text-decoration: underline;
@@ -49,6 +50,7 @@
 		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
+		font-size: 1.5rem;
 	}
 
 	&.state-tab-active {
@@ -65,6 +67,16 @@
 [data-tab-id="align"] {
 	&:after {
 		content: '↔️';
+	}
+}
+[data-tab-id="stack"] {
+	&:after {
+		content: '📚';
+	}
+}
+[data-tab-id="measure"] {
+	&:after {
+		content: '📏';
 	}
 }
 
