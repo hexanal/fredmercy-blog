@@ -18,6 +18,12 @@ module.exports = {
 
 	flags: {
 		// boolean or other variables to toggle features
+		// env: 'dev',
+		// useDebug: false,
+		// useHowler: false,
+		// useBleeps: true,
+		// useThemes: true,
+		// useFontSelect: false,
 	},
 
 	posts: {
