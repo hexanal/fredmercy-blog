@@ -1,3 +1,6 @@
+// todo: this one's more like a full-featured package
+// todo: might try localForage lib to maybe have something sturdier
+
 const Storage = {
 	switch: id => {
 		const flag = !Storage.flag(id);
