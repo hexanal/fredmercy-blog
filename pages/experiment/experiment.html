@@ -1,4 +1,4 @@
-{{#> layouts/page }}
+{{#> layouts/default }}
 
 <div class="experiment" data-component="experiment">
 	<h2 class="experiment__heading" data-ui="heading">
@@ -7,6 +7,8 @@
 
 	<div class="experiment__intro" data-ui="intro">
 		Intro!
+
+		{{>ui/main-nav}}
 
 		<button
 			class="experiment__btn"
@@ -18,4 +20,4 @@
 	</div>
 </div>
 
-{{/layouts/page }}
+{{/layouts/default }}

@@ -1,3 +1,4 @@
+// todo: seems very brittle, being hardcoded like that
 import CONFIG from '../../../config';
 
 export function getConfigFlag(id) {
