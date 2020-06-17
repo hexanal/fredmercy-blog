@@ -15,7 +15,7 @@ export default function() {
 		this.panels = component.querySelectorAll('[data-panel]');
 		this.panels.forEach(this.installPanel);
 
-		Mousetrap.bind('d e b u g', e => this.toggleDebug(!this.state.active) );
+		Mousetrap.bind('ctrl+alt+d', e => this.toggleDebug(!this.state.active) );
 
 		this.toggleDebug( Storage.flag('debug_ui_active') );
 	}

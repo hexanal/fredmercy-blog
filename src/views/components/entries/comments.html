@@ -5,7 +5,7 @@
 
 	<div
 		class="comments__grid"
-		data-js="grid"
+		data-ui="grid"
 		data-entry-id="{{ date }}"
 	>
 	{{#each commentsGrid}}
@@ -13,7 +13,7 @@
 			id="comment_{{ this.index }}"
 			type="button"
 			class="comments__dot"
-			data-js="dot"
+			data-control="dot"
 			data-index="{{ this.index }}"
 			data-id="{{ this.commentId }}"
 			aria-label="Comment slot #{{ this.index }}"
