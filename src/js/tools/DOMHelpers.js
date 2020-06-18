@@ -54,7 +54,7 @@ export function isInView(el, threshold) {
 	if (!el) return false;
 
 	const { top } = el.getBoundingClientRect();
-	const topThreshold = this.distanceFromTopOfViewport(threshold);
+	const topThreshold = distanceFromTopOfViewport(threshold);
 
 	return top <= topThreshold;
 }

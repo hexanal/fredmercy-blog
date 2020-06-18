@@ -71,9 +71,9 @@ module.exports = env => ({
   resolve: {
     extensions: ['.js', '.ts'],
     modules: [
-      path.resolve(ProjectConfig.paths.source),
-      path.resolve(ProjectConfig.paths.appRoot),
-      path.resolve(ProjectConfig.paths.templateSource),
+      path.resolve(ExponentConfig.paths.source),
+      path.resolve(ExponentConfig.paths.appRoot),
+      path.resolve(ExponentConfig.paths.templateSource),
       path.resolve('./node_modules')
     ]
   },
@@ -81,7 +81,7 @@ module.exports = env => ({
   output: {
     filename: `${ExponentConfig.jsBundleFilename}`,
     publicPath: ExponentConfig.publicPath,
-    path: path.resolve(__dirname, ExponentConfig.publicPath)
+    path: path.resolve(__dirname, ExponentConfig.paths.destination)
   },
 
   optimization: {

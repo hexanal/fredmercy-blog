@@ -1,5 +1,4 @@
-import ConfigManager from 'utils/ConfigManager';
-import Storage from 'utils/Storage';
+import Storage from 'tools/Storage';
 
 const THEME_LIST = [
 	'june',
@@ -20,93 +19,41 @@ const DEFAULT_CUSTOM_COLORS = {
 	extra: '#000000'
 };
 
-export default function() {
-	this.global = true;
-	this.state = {
+export default function({control, messaging}) {
+	const state = {
 		selectedTheme: DEFAULT_THEME,
-		switchThemeSelect: null,
-		customColorPanel: null,
-		customColorPanelCloseBtn: null,
-		customColorControls: null,
-		custom: {...DEFAULT_CUSTOM_COLORS},
-		pickers: []
+		custom: {...DEFAULT_CUSTOM_COLORS}, // TODO grab those from the actual CSS
 	};
 
-	this.onMount = function(component) {
-		if ( !ConfigManager.featureEnabled('useThemes') ) return;
-
-		this.state.switchThemeSelect = component.querySelector('[data-js="theme-select"]');
-		this.state.switchThemeSelect.addEventListener('change', e => {
-			const themeId = e.target.value;
-			this.useTheme(themeId);
-		});
-
-		this.state.customColorPanelCloseBtn = document.querySelector('[data-js="custom-theme-close"]');
-		this.state.customColorPanelCloseBtn.addEventListener('click', e => {
-			this.closeThemeEditor();
-		});
-		this.state.customColorPanel = document.querySelector('[data-js="custom-theme-panel"]');
-		this.state.customColorControls = document.querySelectorAll('[data-js="custom-theme-control"]');
-		this.state.customColorControls.forEach(control => {
-			const picker = control.querySelector('[data-js="color-picker"]');
-
-			this.state.pickers.push(picker);
-
-			picker.addEventListener('change', e => {
-				this.changeCustomColor(e.target, control);
-			});
-		});
-
-		this.setupTheme();
-	}
-
-	this.listen = function(id, payload) {
-		if (id === 'SWITCH_THEME') {
-			this.useTheme(payload);
-		}
-		if (id === 'OPEN_THEME_EDITOR') {
-			this.openThemeEditor();
-		}
-	}
-
-	this.openThemeEditor = function() {
-		document.documentElement.classList.add('state-theme-edit');
-		this.state.pickers[0].focus();
-	}
-
-	this.closeThemeEditor = function() {
-		document.documentElement.classList.remove('state-theme-edit');
-	}
-
-	this.useTheme = function(themeId) {
-		this.state.selectedTheme = themeId;
+	const useTheme = function(themeId) {
+		state.selectedTheme = themeId;
 		Storage.set('selected_theme', themeId);
 		document.documentElement.dataset.theme = themeId;
 
-		this.toggleCustomTheme(themeId);
+		toggleCustomTheme(themeId);
 	}
 
-	this.setupTheme = function() {
+	const setupTheme = function() {
 		const stored = Storage.get('selected_theme');
 		const hasSavedTheme = THEME_LIST.includes( stored );
 
 		if (hasSavedTheme) {
-			this.state.switchThemeSelect.value = stored;
-			this.useTheme(stored);
+			messaging.dispatch({ id: 'SET_THEME_VALUE', payload: stored });
+			useTheme(stored);
 		}
 	}
 
-	this.toggleCustomTheme = function(themeId) {
+	const toggleCustomTheme = function(themeId) {
 		if (themeId !== 'custom') {
 			Object.keys(DEFAULT_CUSTOM_COLORS).map(colorId => {
 				document.documentElement.style.removeProperty(`--color-${colorId}`);
 			});
 		} else {
-			this.populateCustomColorFromStorage();
+			populateCustomColorFromStorage();
 		}
 	}
 
-	this.changeCustomColor = (picker, control) => {
+	const changeCustomColor = (picker, control) => {
 		const { value } = picker;
 		const { colorId } = control.dataset;
 		const colorLabel = control.querySelector('[data-js="color-value"]');
@@ -116,17 +63,32 @@ export default function() {
 		colorLabel.innerHTML = value;
 	}
 
-	this.populateCustomColorFromStorage = function() {
-		const { storage, pickers } = this.state;
-
-		pickers.forEach(picker => {
+	const populateCustomColorFromStorage = function() {
+		control['color-picker'].map(picker => {
 			const { colorId } = picker.dataset;
 			const stored = Storage.get(`theme_custom_color_${colorId}`);
 			const color = stored ? stored : DEFAULT_CUSTOM_COLORS[colorId];
 
 			picker.value = color;
-			this.state.custom[colorId] = color;
-			this.changeCustomColor(picker, picker.parentElement.parentElement);
+			state.custom[colorId] = color;
+			changeCustomColor(picker, picker.parentElement.parentElement); // TODO not fond of .parentElement.parentElement here
 		});
 	}
+
+	control['close'].addEventListener('click', () => {
+		document.documentElement.classList.remove('state-theme-edit');
+	});
+	control['color-picker'].map(colorPicker => {
+		colorPicker.addEventListener('change', e => {
+			changeCustomColor(e.target, control);
+		});
+	});
+
+	messaging.subscribe('SWITCH_THEME', useTheme);
+	messaging.subscribe('OPEN_THEME_EDITOR', function() {
+		document.documentElement.classList.add('state-theme-edit');
+		control['color-picker'][0].focus();
+	});
+
+	setupTheme();
 }

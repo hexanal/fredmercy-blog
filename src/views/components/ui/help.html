@@ -18,11 +18,7 @@
 				</h2>
 
 				<ul class="help__list">
-					{{#if config.flags.useThemes }}
-					<li
-						class="help__item"
-						data-component="themes"
-					>
+					<li class="help__item">
 						<div class="help__icon">
 							🎨
 						</div>
@@ -53,11 +49,12 @@
 								</i>
 						</div>
 					</li>
-					{{/if}}
 
-					{{#if config.flags.useBleeps }}
-					<li class="help__item help__item--bleeps" data-ui="bleeps">
-						<div class="help__icon" data-js="bleeps-status">
+					<li
+						class="help__item help__item--bleeps"
+						data-component="bleeps"
+					>
+						<div class="help__icon">
 							🎵
 						</div>
 						<div>
@@ -74,9 +71,7 @@
 							bleeps & sounds.
 						</div>
 					</li>
-					{{/if}}
 
-					{{#if config.flags.useFontSelect }}
 					<li
 						class="help__item"
 					>
@@ -97,7 +92,6 @@
 							</select>
 						</div>
 					</li>
-					{{/if}}
 				</ul>
 			</div>
 

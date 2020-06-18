@@ -7,7 +7,7 @@ const paths = {
   appRoot: './src/js/',
   entryPoint: './src/js/app.js',
   templateSource: './src/views',
-  destination: '../main/' + publicPath,
+  destination: '../main/blog/' + publicPath,
 };
 
 module.exports = {

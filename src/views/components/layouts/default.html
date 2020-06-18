@@ -7,7 +7,7 @@
 	<meta name="description" content="{{ description }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 	<link rel="shortcut icon" href="/blog/dist/images/favicon.png">
-	<link rel="stylesheet" href="/blog/dist/css/style.css">
+	<link rel="stylesheet" href="/blog/dist/styles.css">
 </head>
 
 <body
@@ -19,12 +19,12 @@
 		data-barba="container"
 	>
 		{{> @partial-block }}
+
+		{{> ui/help }}
+		{{> debug/debug-ui }}
 	</div>
 
-	{{> ui/help }}
 	{{> ui/rainbow }}
-
-	{{> debug/debug-ui }}
 
 	<script src="/blog/dist/app.js"></script>
 </body>

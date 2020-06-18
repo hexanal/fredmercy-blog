@@ -26,10 +26,6 @@ export default function(props) {
     if (scrollDirection !== state.scrollDirection) {
       state.scrollDirection = scrollDirection;
 
-      /**
-       * Here, it's using the 'messaging' middleware to dispatch the message
-       * that the scroll direction changed:
-       */
       props.messaging.dispatch({
         id: 'CHANGED_SCROLL_DIR',
         payload: scrollDirection

@@ -1,7 +1,7 @@
-export default contents => {
-  console.group('Just peeking...');
-    console.log( contents );
+export default ({Component, props}) => {
+  console.group('Just taking a peek at the component:');
+    console.log({Component, props});
   console.groupEnd();
 
-  return contents;
+  return props;
 };

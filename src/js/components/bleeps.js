@@ -9,7 +9,6 @@ import {
 	FeedbackDelay,
 	Filter
 } from 'tone';
-import ConfigManager from 'tools/ConfigManager';
 import Storage from 'tools/Storage';
 
 const EFFECTS = {
@@ -26,39 +25,19 @@ const EFFECTS = {
 	delay: new FeedbackDelay(0.075, 0.25),
 };
 
-export default function() {
+let loaded = false;
+
+export default function({ element, control, messaging }) {
+	if (loaded) return; loaded = true;
+
 	const state = {
-		enableSoundsBtn: null,
 		enabled: false,
 		loaded: false,
 		mouseDown: false,
 		mouseMoveStep: 0,
 	};
 
-	messaging.subscribe('TOGGLE_BLEEPS', toggleSounds);
-	messaging.subscribe('PLAY_SOUND', play);
-	messaging.subscribe('TOGGLE_HELP', () => playBurst('gong', false, 3, 70) );
-	messaging.subscribe('PAGE_CHANGED', ({next}) => hookEventListeners(next.container) );
-	messaging.subscribe('MENU_TOGGLED', toggled => {
-		const sound = toggled ? 'gnuf' : 'gnaf';
-		playBurst(sound, false, 3, 50, 50);
-	});
-	messaging.subscribe('A11Y_SET_LARGE_FONT', big => {
-		const notes = big ? ['C4', 'C#4', 'D4'] : ['D3', 'C#3', 'C3'];
-		const burst = 3;
-		const delay = 40;
-		const delayBetweenBursts = 170;
-
-		notes.map((note, i) => {
-			setTimeout( () => playBurst('tick', note, burst, delay), (delayBetweenBursts * (i + 1)) );
-		});
-	});
-
-	if ( !ConfigManager.featureEnabled('useBleeps') ) return;
-
 	const initEvents = function() {
-		control['enable-sounds'].addEventListener('click', toggleSounds);
-
 		Mousetrap.bind('tab', () => play('riil', 'F5') );
 		Mousetrap.bind('shift+tab', () => {
 			play('riil', 'G5');
@@ -91,15 +70,6 @@ export default function() {
 			play('blarp');
 		});
 	};
-
-	init()
-		.then(() => {
-			if ( state.loaded && Storage.flag('sounds_enabled') ) {
-				enable();
-			} else {
-				disable();
-			}
-		});
 
 	const init = function() {
 		if (state.loaded) return Promise.resolve(true); // loaded already
@@ -329,5 +299,33 @@ export default function() {
 		window.addEventListener('resize', onResize);
 	};
 
+	messaging.subscribe('TOGGLE_BLEEPS', toggleSounds);
+	messaging.subscribe('PLAY_SOUND', play);
+	messaging.subscribe('TOGGLE_HELP', () => playBurst('gong', false, 3, 70) );
+	messaging.subscribe('PAGE_CHANGED', ({next}) => hookEventListeners(next.container) );
+	messaging.subscribe('MENU_TOGGLED', toggled => {
+		const sound = toggled ? 'gnuf' : 'gnaf';
+		playBurst(sound, false, 3, 50, 50);
+	});
+	messaging.subscribe('A11Y_SET_LARGE_FONT', big => {
+		const notes = big ? ['C4', 'C#4', 'D4'] : ['D3', 'C#3', 'C3'];
+		const burst = 3;
+		const delay = 40;
+		const delayBetweenBursts = 170;
+
+		notes.map((note, i) => {
+			setTimeout( () => playBurst('tick', note, burst, delay), (delayBetweenBursts * (i + 1)) );
+		});
+	});
+
+
+	// let's go...
+	if ( Storage.flag('sounds_enabled') ) {
+		init()
+			.then(enable);
+	}
+
+	Mousetrap.bind('s', toggleSounds);
+	control['enable-sounds'].addEventListener('click', toggleSounds);
 }
 

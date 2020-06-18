@@ -1,5 +1,5 @@
-import Mousetrap from 'mousetrap';
-import Vim from 'tools/Vim';
+// import Mousetrap from 'mousetrap';
+// import Vim from 'tools/Vim';
 
 /**
  * todo: find a way to have different layouts for different "MODES"
@@ -13,6 +13,7 @@ export default function() {
 		enabled: false
 	};
 
+	/*
 	Mousetrap.bind('g g', Vim.BACK_TO_TOP );
 	Mousetrap.bind('shift+g', Vim.GO_TO_END );
 	Mousetrap.bind('j', Vim.MOVE_DOWN );
@@ -41,4 +42,6 @@ export default function() {
 	// const activate = function() {
 	// 	document.activeElement.click();
 	// };
+
+	*/
 }

@@ -1,29 +1,42 @@
+import 'scss/blog/style.scss';
+
 import Exponent from 'exponent-core';
 import Messaging from 'middlewares/Messaging';
-import JustPeek from 'middlewares/JustPeek';
+// import JustPeek from 'middlewares/JustPeek';
 
-import debugUI from './components/debug/debug-ui';
-import debugAlign from './components/debug/debug-align';
-import debugStack from './components/debug/debug-stack';
+import debugUI from 'components/debug/debug-ui';
+import debugAlign from 'components/debug/debug-align';
+import debugStack from 'components/debug/debug-stack';
 
-import a11y from './components/a11y';
-import bleeps from './components/bleeps';
-import comments from './components/comments';
-import collapse from './components/collapse';
-import help from './components/help';
-import highlight from './components/highlight';
-import jumpto from './components/jumpto';
-import keyboard from './components/keyboard';
-import live from './components/live';
-import nav from './components/nav';
-import notes from './components/notes';
+// autoloaded
+import a11y from 'components/a11y';
 import scroll from 'components/scroll/scroll';
-import tabs from './components/tabs';
-import themes from './components/themes';
-import transitions from './components/transitions';
+import keyboard from 'components/keyboard';
+import transitions from 'components/transitions';
+
+// ui
+import bleeps from 'components/bleeps';
+import comments from 'components/comments';
+import collapse from 'components/collapse';
+import help from 'components/help';
+import highlight from 'components/highlight';
+import jumpto from 'components/jumpto';
+import live from 'components/live';
+import nav from 'components/nav';
+import notes from 'components/notes';
+import tabs from 'components/tabs';
+import themes from 'components/themes';
+
+const container = document.querySelector('[data-barba="container"]');
 
 Exponent
-	.use([ Messaging, JustPeek ])
+	.use([ Messaging ])
+	.autoload([
+		a11y,
+		keyboard,
+		scroll,
+		transitions
+	])
 	.register({
 		'debug-ui': debugUI,
 		'debug-align': debugAlign,
@@ -40,11 +53,4 @@ Exponent
 		'tabs': tabs,
 		'themes': themes,
 	})
-	.autoload([
-		a11y,
-		keyboard,
-		scroll,
-		transitions
-	])
-	.mount(document);
-
+	.mount(container);

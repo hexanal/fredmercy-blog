@@ -28,7 +28,7 @@ export const Messaging = {
   }
 };
 
-const MessagingMiddleware = ({Component, props}) => {
+const MessagingMiddleware = ({props}) => {
   const { subscribe, dispatch } = Messaging;
 
   props.messaging = {

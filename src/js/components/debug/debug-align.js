@@ -1,59 +1,38 @@
 import Mousetrap from 'mousetrap';
 
-export default function() {
-	this.lines = {};
-	this.toggles = {};
-	this.component = null;
-	this.state = {
+export default function({element, ui, control, messaging}) {
+	const state = {
 		enabled: false,
-	}
+	};
 
-	this.listen = (id, payload) => {
-		const isTabSwitch = (id === 'TABS_SWITCHED' && payload.origin.id === 'debug-tabs');
-		const isAlignLineSet = (id === 'DEBUG_TOGGLE_WAS_SET'
-			&& (payload.prop === 'displayVertical' || payload.prop === 'displayHorizontal')
-		);
-
-		if (isTabSwitch) {
-			this.toggleAlign(payload.tabId === 'align');
-			this.hideCursorOnActive();
+	messaging.subscribe('TABS_SWITCHED', ({tabId, origin}) => {
+		if (origin.id === 'debug-tabs') {
+			toggleAlign(tabId === 'align');
+			hideCursorOnActive();
 		}
-
-		if (isAlignLineSet) {
-			this.hideCursorOnActive();
+	});
+	messaging.subscribe('DEBUG_TOGGLE_WAS_SET', ({prop}) => {
+		if (prop === 'displayVertical' || prop === 'displayHorizontal') {
+			hideCursorOnActive();
 		}
-	}
+	});
 
-	this.onMount = function(component) {
-		this.component = component;
-		this.toggles = {
-			vertical: component.querySelector('[data-prop="displayVertical"]'),
-			horizontal: component.querySelector('[data-prop="displayHorizontal"]'),
-		};
-		this.lines = {
-			vertical: component.querySelector('[data-js="line-vertical"]'),
-			horizontal: component.querySelector('[data-js="line-horizontal"]'),
-		};
-		document.addEventListener('mousemove', this.handleMove);
-	}
-
-	this.handleMove = e => {
+	document.addEventListener('mousemove', e => {
 		const { clientX, clientY } = e;
-		this.component.style.setProperty('--x', `translate3d(${clientX}px, 0, 0)`);
-		this.component.style.setProperty('--y', `translate3d(0, ${clientY}px, 0)`);
-		this.lines.vertical.dataset.position = clientX;
-		this.lines.horizontal.dataset.position = clientY;
-	}
+		element.style.setProperty('--x', `translate3d(${clientX}px, 0, 0)`);
+		element.style.setProperty('--y', `translate3d(0, ${clientY}px, 0)`);
+		ui['line-vertical'].dataset.position = clientX;
+		ui['line-vertical'].dataset.position = clientY;
+	});
 
-	this.hideCursorOnActive = () => {
-		const { vertical, horizontal } = this.toggles;
-		const enabled = ( this.state.enabled && this.toggles );
-		const areBothLinesActive = this.toggles && ( vertical.checked && horizontal.checked);
+	const hideCursorOnActive = () => {
+		const enabled = ( state.enabled && control['display-vertical'] && control['display-horizontal'] );
+		const areBothLinesActive = control['display-vertical'].checked && control['display-horizontal'].checked;
 		const shouldHideCursor = ( enabled && areBothLinesActive );
 		document.documentElement.toggleAttribute('data-hide-cursor', shouldHideCursor);
-	}
+	};
 
-	this.toggleAlign = enable => {
-		this.state.enabled = enable;
-	}
+	const toggleAlign = enable => {
+		state.enabled = enable;
+	};
 }

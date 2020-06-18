@@ -1,5 +1,3 @@
-import Components from 'core/Components';
-
 const MOVE_AMOUNT = 64; // 4em?
 const MOVE_MULTIPLIER = 10;
 const SCROLL_NAVIGATE = {
