@@ -2,7 +2,6 @@ import 'scss/blog/style.scss';
 
 import Exponent from 'exponent-core';
 import Messaging from 'middlewares/Messaging';
-// import JustPeek from 'middlewares/JustPeek';
 
 import debugUI from 'components/debug/debug-ui';
 import debugAlign from 'components/debug/debug-align';
@@ -15,7 +14,7 @@ import keyboard from 'components/keyboard';
 import transitions from 'components/transitions';
 
 // ui
-import bleeps from 'components/bleeps';
+// import bleeps from 'components/bleeps';
 import comments from 'components/comments';
 import collapse from 'components/collapse';
 import help from 'components/help';

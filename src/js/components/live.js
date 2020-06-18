@@ -12,8 +12,6 @@ export default function({ui, control}) {
 		players: []
 	};
 
-	control['join-btn'].addEventListener('click', join);
-
 	const join = e => {
 		if (state.ws) {
 			state.ws.onmessage = state.ws.onerror = state.ws.onopen = state.ws.onclose = null;
@@ -99,5 +97,7 @@ export default function({ui, control}) {
 
 		return player;
 	}
+
+	control['join-btn'].addEventListener('click', join);
 }
 

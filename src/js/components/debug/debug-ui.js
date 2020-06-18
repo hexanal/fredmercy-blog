@@ -65,7 +65,7 @@ export default function({element, messaging}) {
 
 		panel.classList.toggle(`state-${panelId}-${control}`, input.checked );
 		Storage.set(`debug_ui_tool_${panelId}_${control}`, input.checked);
-		messaging.dispatch({ id: 'DEBUG_TOGGLE_WAS_SET', payload: { control, value: input.checked, control } });
+		messaging.dispatch({ id: 'DEBUG_TOGGLE_WAS_SET', payload: { control, value: input.checked, input } });
 	}
 
 	// ignition!

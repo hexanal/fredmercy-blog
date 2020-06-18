@@ -1,3 +1,5 @@
+// TODO retire this trusty gulp... with something even WILDER
+
 var gulp = require('gulp');
 
 var content = require('./tasks/content.js');
