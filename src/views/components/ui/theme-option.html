@@ -1,6 +1,6 @@
 <div
 	class="theme-option"
-	data-js="custom-theme-control"
+	data-ui="custom-theme-control"
 	data-color-id="{{ id }}"
 >
 	<div
@@ -9,19 +9,19 @@
 	>
 		<div
 			class="theme-option__value"
-			data-js="color-value"
+			data-ui="color-value"
 		>
 			-
 		</div>
 
 		<div class="theme-option__control-mask">
 			<input
+				title="Choose a custom color for {{ label }}"
 				id="color-{{ id }}"
 				class="theme-option__control"
 				type="color"
+				data-control="color-picker"
 				data-color-id="{{ id }}"
-				data-js="color-picker"
-				title="Choose a custom color for {{ label }}"
 			>
 			<div class="theme-option__focus" aria-hidden="true"></div>
 		</div>

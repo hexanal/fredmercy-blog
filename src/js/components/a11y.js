@@ -1,33 +1,20 @@
 import Mousetrap from 'mousetrap';
-import Storage from 'utils/Storage';
+import Storage from 'tools/Storage';
 
-export default function() {
-	this.global = true;
-	this.state = {
-		useBigFont: false
+export default function({messaging}) {
+	const state = {
+		useBigFont: Storage.flag('a11y_use_big_font'),
 	};
 
-	this.listen = (id, payload) => {
-		if (id === 'A11Y_SET_LARGE_FONT') {
-			this.updateFontSize(payload);
-		}
-	}
+	document.documentElement.classList.toggle('state-a11y-big-font', state.useBigFont);
 
-	this.onMount = function() {
-		this.state.useBigFont = Storage.flag('a11y_use_big_font');
-
-		if (this.state.useBigFont) {
-			document.documentElement.classList.add('state-a11y-big-font');
-		} else {
-			document.documentElement.classList.remove('state-a11y-big-font');
-		}
-
-		Mousetrap.bind('=', () => this.updateFontSize(true) );
-		Mousetrap.bind('-', () => this.updateFontSize(false) );
-	}
-
-	this.updateFontSize = function(useBig) {
+	const updateFontSize = function(useBig) {
 		document.documentElement.classList.toggle('state-a11y-big-font', useBig);
 		Storage.set('a11y_use_big_font', useBig);
-	}
+	};
+
+	messaging.subscribe('A11Y_SET_LARGE_FONT', updateFontSize);
+
+	Mousetrap.bind('=', () => updateFontSize(true) );
+	Mousetrap.bind('-', () => updateFontSize(false) );
 }

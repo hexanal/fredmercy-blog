@@ -1,55 +1,50 @@
 import barba from '@barba/core';
-import Components from 'core/Components';
 
 const TRANSITION_DURATION = 600;
 
-export default function() {
-	this.listen = (id, payload) => {
-		if (id === 'NAVIGATE_TO') {
-			barba.go(payload.href);
-		}
-	}
+export default function({messaging, _exponent}) {
 
-	this.onMount = function() {
-		barba.init({
-			timeout: 10000,
+	messaging.subscribe('NAVIGATE_TO', ({href}) => barba.go(href) );
 
-			prevent: ({ el }) => 'disableTransition' in el.dataset,
+	barba.init({
+		timeout: 10000,
+		// debug: true,
 
-			transitions: [{
-				before() {
-					Components.broadcast('PLAY_SOUND', 'woaw');
-					Components.flush();
-				},
-				leave({ current, next }) {
-					return new Promise(resolve => {
-						Components.broadcast('PAGE_LEAVE', { current, next });
-						document.body.classList.add('state-body-transition');
+		prevent: ({ el }) => 'disableTransition' in el.dataset,
 
-						setTimeout(() => {
-							Components.broadcast('PLAY_SOUND', 'womp');
-							resolve();
-						}, TRANSITION_DURATION);
-					});
-				},
-				beforeEnter({ current }) {
-					document.body.classList.remove('state-body-transition');
-					current.container.style.position = 'absolute';
-				},
-				enter({ current, next }) {
-					return new Promise(resolve => {
-						window.scrollTo(0, 0);
-						next.container.removeAttribute('style'); // prevent weirdness with the transform
+		transitions: [{
+			before() {
+				_exponent.unmount();
+				messaging.dispatch({ id: 'PLAY_SOUND', payload: 'woaw' });
+			},
+			leave({ current, next }) {
+				return new Promise(resolve => {
+					messaging.dispatch({ id: 'PAGE_LEAVE', payload: { current, next } });
+					document.body.classList.add('state-body-transition');
+
+					setTimeout(() => {
+						messaging.dispatch({ id: 'PLAY_SOUND', payload: 'womp' });
 						resolve();
-					});
-				},
-				afterEnter({ current, next }) {
-					Components.mountAllInsideContainer(next.container);
-					Components.broadcast('PAGE_CHANGED', { current, next });
-				},
-			} ]
-		});
-	}
+					}, TRANSITION_DURATION);
+				});
+			},
+			beforeEnter({ current }) {
+				document.body.classList.remove('state-body-transition');
+				current.container.style.position = 'absolute';
+			},
+			enter({ next }) {
+				return new Promise(resolve => {
+					window.scrollTo(0, 0);
+					next.container.removeAttribute('style'); // prevent weirdness with the transform
+					resolve();
+				});
+			},
+			afterEnter({ current, next }) {
+				_exponent.mount(next.container);
+				messaging.dispatch({ id: 'PAGE_CHANGED', payload: { current, next } });
+			},
+		} ]
+	});
 }
 
 // fixme: enable analytics

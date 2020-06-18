@@ -1,146 +1,23 @@
 import axios from 'axios';
 import Mousetrap from 'mousetrap';
-import Components from 'core/Components';
-import DOMHelpers from 'utils/DOMHelpers';
 
-export default function() {
-	this.elements = {
-		container: null,
-		grid: null,
-		dots: null,
-		leaveCommentPopup: null,
-		leaveCommentForm: null,
-		leaveCommentDot: null,
-		closeCommentPopupBtn: null,
-		commentInputAuthor: null,
-		commentInputContent: null,
-		readCommentPopup: null,
-		readCommentBody: null,
-		readCommentAuthor: null,
-		readCommentDot: null,
-	};
-	this.state = {
+export default function({element, ui, control, messaging}) {
+	const state = {
 		entryId: null,
 		entryComments: {},
-		selectedDot: null,
-		selectedComment: null
 	};
 
-	this.onMount = function(component) {
-		this.elements.container = component;
-		this.elements.grid = DOMHelpers.getChild('grid', component);
-		this.elements.dots = DOMHelpers.getChildren('dot', component);
-		this.elements.leaveCommentPopup = DOMHelpers.getChild('leave-comment-popup', component);
-		this.elements.leaveCommentForm = DOMHelpers.getChild('comment-form', component);
-		this.elements.leaveCommentDot = DOMHelpers.getChild('selected-dot', component);
-		this.elements.closeCommentPopupBtn = DOMHelpers.getChildren('close', component);
-		this.elements.commentInputAuthor = DOMHelpers.getChild('author', component);
-		this.elements.commentInputContent = DOMHelpers.getChild('content', component);
-		this.elements.readCommentPopup = DOMHelpers.getChild('read-comment', component);
-		this.elements.readCommentBody = DOMHelpers.getChild('comment-body', component);
-		this.elements.readCommentAuthor = DOMHelpers.getChild('comment-author', component);
-		this.elements.readCommentDot = DOMHelpers.getChild('comment-dot', component);
+	const fetchComments = function() {
+		element.classList.add('state-loading');
 
-		this.initSpeechModule();
+		axios.get('/api/comments/' + state.entryId)
+			.then( ({data}) => {
+				element.classList.remove('state-loading');
+				control['dot'].map(dot => dot.removeAttribute('disabled'));
 
-		this.state.entryId = this.elements.grid.dataset.entryId;
-
-		this.fetchComments();
-
-		this.state.shortcuts = new Mousetrap(this.elements.container);
-
-		this.state.shortcuts.bind('escape', this.closeAll);
-		this.state.shortcuts.bind('h', this.moveLeft);
-		this.state.shortcuts.bind('j', this.moveDown);
-		this.state.shortcuts.bind('k', this.moveUp);
-		this.state.shortcuts.bind('l', this.moveRight);
-
-		this.elements.dots.forEach((dot) => {
-			dot.addEventListener('click', (e) => {
-				const dotId = e.target.dataset.index;
-
-				if (this.state.entryComments[dotId]) {
-					this.showComment(dotId);
-				} else {
-					this.showWriteForm(dotId);
-				}
-			});
-		});
-
-		this.onUmount = function() {
-			this.state.shortcuts.reset();
-		}
-
-		this.elements.leaveCommentForm.addEventListener('submit', (e) => {
-			e.preventDefault();
-
-			const { container, commentInputAuthor, commentInputContent } = this.elements;
-			const { entryId, entryComments, selectedComment } = this.state;
-
-			const author = commentInputAuthor.value.trim() !== ''
-				? commentInputAuthor.value
-				: 'Anonymous';
-			const content = commentInputContent.value.trim() !== ''
-				? commentInputContent.value
-				: false;
-
-			if (!content) {
-				this.showErrorMessage('Be sure to leave a comment before submitting.');
-				commentInputContent.focus();
-
-				return;
-			}
-
-			const data = {
-				author,
-				content,
-				entryId,
-				slot: selectedComment // calling the dot a "slot" on the server
-			};
-
-			axios.post('/api/comment', data)
-				.then(() => {
-					entryComments[selectedComment] = {
-						author,
-						content: content.replace(/\n/g, '<br>')
-					};
-
-					commentInputContent.value = '';
-
-					container.querySelector('#comment_' + selectedComment)
-						.classList.add('state-has-comment');
-
-					this.state.selectedComment = null;
-
-					this.closeAll();
-				})
-				.catch(function (error) {
-					console.error(error);
-				});
-		});
-
-		this.elements.closeCommentPopupBtn.forEach((btn) => {
-			btn.addEventListener('click', (e) => {
-				e.preventDefault();
-				this.closeAll();
-			});
-		});
-	}
-
-	this.fetchComments = function() {
-		const { container, dots } = this.elements;
-
-		container.classList.add('state-comments-loading');
-
-		axios.get('/api/comments/' + this.state.entryId)
-			.then((res) => {
-				const { comments } = res.data;
-
-				container.classList.remove('state-loading');
-				dots.forEach(dot => dot.removeAttribute('disabled'));
-				comments.map((comment) => {
-					const commentDot = container.querySelector(`#comment_${comment.slot}`);
-					this.state.entryComments[comment.slot] = {
+				data.comments.map((comment) => {
+					const commentDot = element.querySelector(`#comment_${comment.slot}`);
+					state.entryComments[comment.slot] = {
 						author: comment.author,
 						content: comment.content.replace(/\n/g, '<br>')
 					};
@@ -152,88 +29,85 @@ export default function() {
 			});
 	}
 
-	this.showComment = function(dotId) {
-		const { author, content } = this.state.entryComments[dotId];
-		const { readCommentDot, readCommentAuthor, readCommentBody, readCommentPopup } = this.elements;
+	const showComment = function(dotId) {
+		const { author, content } = state.entryComments[dotId];
 
-		readCommentAuthor.innerHTML = author;
-		readCommentBody.innerHTML = content;
+		select(dotId);
+		closeAll();
 
-		this.closeAll();
-		readCommentPopup.classList.add('state-read-comment-active');
+		ui['comment-dot'].innerHTML = dotId;
+		ui['comment-body'].innerHTML = author;
+		ui['comment-author'].innerHTML = content;
+		ui['read-comment'].classList.add('state-read-comment-active');
+	};
 
-		readCommentDot.innerHTML = dotId;
-		this.select(dotId);
-	}
+	const showWriteForm = function(dotId) {
+		state.selectedComment = dotId;
 
-	this.showWriteForm = function(dotId) {
-		const { container, leaveCommentPopup, leaveCommentDot } = this.elements;
-		this.state.selectedComment = dotId;
+		closeAll();
+		setDotActive(dotId);
 
-		this.closeAll();
-		leaveCommentPopup.classList.add('state-leave-comment-active');
-		leaveCommentDot.innerHTML = this.state.selectedComment;
+		element.toggleAttribute('data-leaving-comment', true);
+		ui['leave-comment-popup'].classList.add('state-leave-comment-active');
+		ui['selected-dot'].textContent = state.selectedComment;
 
-		this.setDotActive(dotId);
+		control['content'].focus();
+	};
 
-		container.querySelector('[data-js="content"]').focus();
-	}
+	const closeAll = () => {
+		unselectAllComments();
 
-	this.closeAll = () => {
-		this.unselectAllComments();
-		this.elements.readCommentPopup.classList.remove('state-read-comment-active');
-		this.elements.leaveCommentPopup.classList.remove('state-leave-comment-active');
-	}
+		element.toggleAttribute('data-leaving-comment', false);
+		ui['read-comment'].classList.remove('state-read-comment-active');
+		ui['leave-comment-popup'].classList.remove('state-leave-comment-active');
+	};
 
-	this.setDotActive = function(id) {
-		this.elements.dots[id - 1].classList.add('state-selected-comment');
-	}
+	const setDotActive = function(id) {
+		control['dot'][id - 1].classList.add('state-selected-comment');
+	};
 
-	this.select = id => {
-		this.elements.dots[id].focus();
-	}
+	const select = id => {
+		control['dot'][id - 1].focus();
+	};
 
-	this.unselectAllComments = function() {
-		this.elements.dots.forEach(dot => {
+	const unselectAllComments = function() {
+		control['dot'].map(dot => {
 			dot.classList.remove('state-selected-comment');
 		})
-	}
+	};
 
-	this.showErrorMessage = function(msg) {
+	const showErrorMessage = function(msg) {
 		alert('Woops, something went wrong. Try again?');
 	}
 
-	this.moveTo = (inc, e) => {
+	const moveTo = (inc, e) => {
 		if ( !document.activeElement.dataset.index ) return;
 
 		e.preventDefault();
 		e.stopPropagation();
 
 		const targetDot = parseInt(document.activeElement.dataset.index, 10) + inc - 1;
-		const totalDots = this.elements.dots.length;
+		const totalDots = control['dot'].length;
 
 		if ( (targetDot < 0) || (targetDot >= totalDots) ) {
-			Components.broadcast('PLAY_SOUND', 'canc');
-			return;
+			return messaging.dispatch({ id: 'PLAY_SOUND', payload: 'canc' });
 		}
 
-		this.select(targetDot);
+		select(targetDot);
 	}
-	this.moveRight = e => this.moveTo(1, e);
-	this.moveLeft = e => this.moveTo(-1, e);
-	this.moveDown = e => this.moveTo(5, e);
-	this.moveUp = e => this.moveTo(-5, e);
 
-	this.initSpeechModule = function() {
-		this.elements.leaveCommentBody = DOMHelpers.getChild('content', this.elements.container);
-		this.elements.speakCommentBtn = DOMHelpers.getChild('speak-comment', this.elements.container);
+	const moveRight = e => moveTo(1, e);
+	const moveLeft = e => moveTo(-1, e);
+	const moveDown = e => moveTo(5, e);
+	const moveUp = e => moveTo(-5, e);
 
+	const initSpeechModule = function() {
 		const Bot = window.speechSynthesis;
 		const voices = Bot.getVoices();
 		const fredsVoice = voices.filter(voice => voice.name === 'Fred')[0];
 
-		this.elements.speakCommentBtn.addEventListener('click', e => {
-			const utterance = new SpeechSynthesisUtterance(this.elements.leaveCommentBody.value);
+		control['speak-comment'].addEventListener('click', () => {
+			const utterance = new SpeechSynthesisUtterance(control['content'].value);
 			utterance.voice = fredsVoice;
 			utterance.pitch = 0.75;
 			utterance.rate = 0.8;
@@ -241,4 +115,80 @@ export default function() {
 			Bot.speak(utterance);
 		});
 	}
+
+	const readOrEditComment = e => {
+		const dotId = e.target.dataset.index;
+
+		if (state.entryComments[dotId]) {
+			showComment(dotId);
+		} else {
+			showWriteForm(dotId);
+		}
+	};
+
+	const submitComment = e => {
+		e.preventDefault();
+
+		const { entryId, selectedComment } = state;
+
+		const author = control['author'].value.trim() !== ''
+			? control['author'].value
+			: 'Anonymous';
+		const content = control['content'].value.trim() !== ''
+			? control['content'].value
+			: false;
+
+		if (!content) {
+			control['content'].focus();
+			return showErrorMessage('Be sure to leave a comment before submitting.');
+		}
+
+		const data = {
+			author,
+			content,
+			entryId,
+			slot: selectedComment // calling the dot a "slot" on the server
+		};
+
+		axios.post('/api/comment', data)
+			.then(() => {
+				state.entryComments[selectedComment] = {
+					author,
+					content: content.replace(/\n/g, '<br>')
+				};
+
+				control['content'].value = '';
+
+				element.querySelector('#comment_' + selectedComment)
+					.classList.add('state-has-comment');
+
+				state.selectedComment = null;
+
+				closeAll();
+			})
+			.catch(function (error) {
+				console.error(error);
+			});
+	};
+
+	state.entryId = ui['grid'].dataset.entryId;
+
+	state.shortcuts = new Mousetrap(element);
+	state.shortcuts.bind('escape', closeAll);
+	state.shortcuts.bind('h', moveLeft);
+	state.shortcuts.bind('j', moveDown);
+	state.shortcuts.bind('k', moveUp);
+	state.shortcuts.bind('l', moveRight);
+
+	control['dot'].map(dot => dot.addEventListener('click', readOrEditComment) );
+	control['close'].map(btn => {
+		btn.addEventListener('click', e => {
+			e.preventDefault();
+			closeAll();
+		});
+	});
+	control['comment-form'].addEventListener('submit', submitComment);
+
+	fetchComments();
+	initSpeechModule();
 }

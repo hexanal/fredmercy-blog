@@ -1,36 +1,26 @@
 const Z_ATTENUATOR = 10;
 
-export default function() {
-	this.component = null;
-	this.state = {
+export default function({control}) {
+	const state = {
 		enabled: false,
 		enableToggle: null,
 		zLevelFilter: null,
 		zIndexes: null
 	};
 
-	this.onMount = function(component) {
-		this.component = component;
+	toggle = () => {
+		state.enabled = !state.enabled;
+		document.documentElement.dataset.zIndexDebugger = state.enabled ? 'enabled' : 'disabled';
 
-		this.state.enableToggle = component.querySelector('[data-js="enable-stack"]');
-		this.state.enableToggle.addEventListener('click', this.toggle);
+		if (!state.enabled) return;
 
-		this.state.zLevelFilter = component.querySelector('[data-js="filter-level"]');
-		this.state.zLevelFilter.addEventListener('change', e => this.filterLevel(e.target.val) );
+		state.zIndexes = buildZIndexes( document.getElementsByTagName('*') );
+		addDropdownOptions(state.zIndexes);
+		addDataAttributes(state.zIndexes);
 	}
 
-	this.toggle = e => {
-		this.state.enabled = !this.state.enabled;
-		document.documentElement.dataset.zIndexDebugger = this.state.enabled ? 'enabled' : 'disabled';
-
-		if (!this.state.enabled) return;
-
-		this.state.zIndexes = this.buildZIndexes( document.getElementsByTagName('*') );
-		this.addDropdownOptions(this.state.zIndexes);
-		this.addDataAttributes(this.state.zIndexes);
-	}
-
-	this.buildZIndexes = function(elements) {
+	// TODO fix this one...
+	const buildZIndexes = function(elements) {
 		let zs = {};
 
 		for (let i = 0; i <= elements.length; i++) {
@@ -43,7 +33,6 @@ export default function() {
 
 			if (!z || z === 'auto') continue;
 
-
 			if ( !zs[z] ) {
 				zs[z] = [element];
 			} else {
@@ -54,7 +43,7 @@ export default function() {
 		return zs;
 	}
 
-	this.addDataAttributes = indexes => {
+	const addDataAttributes = indexes => {
 		Object.keys(indexes).map(level => {
 			const zed = parseInt(level, 10);
 
@@ -64,31 +53,33 @@ export default function() {
 		});
 	}
 
-	this.addDropdownOptions = indexes => {
+	const addDropdownOptions = indexes => {
 		Object.keys(indexes).map(level => {
-			this.state.zLevelFilter.options.add( new Option(level, parseInt(level, 10) ) );
+			state.zLevelFilter.options.add( new Option(level, parseInt(level, 10) ) );
 		});
 	}
 
-	this.reset = function() {
+	const reset = function() {
 		document.documentElement.classList.remove('state-debug-z-index');
-		Object.keys(this.state.zIndexes)
+		Object.keys(state.zIndexes)
 			.map(z => {
-				this.state.zIndexes[z].map(el => el.classList.remove('state-debug-filter-z') );
+				state.zIndexes[z].map(el => el.classList.remove('state-debug-filter-z') );
 			});
 	}
 
-	this.filterLevel = level => {
+	const filterLevel = level => {
 		document.documentElement.classList.add('state-debug-z-index');
 
-		Object.keys(this.state.zIndexes)
+		Object.keys(state.zIndexes)
 			.map(z => {
-				this.toggleLevel(z, level);
+				toggleLevel(z, level);
 			});
 	}
 
-	this.toggleLevel = (z, level) => {
-		this.state.zIndexes[level].map(el => el.classList.toggle('state-debug-filter-z', (z === level)) );
+	const toggleLevel = (z, level) => {
+		state.zIndexes[level].map(el => el.classList.toggle('state-debug-filter-z', (z === level)) );
 	}
 
+	control['enable-stack'].addEventListener('click', toggle);
+	control['filter-level'].addEventListener('change', e => filterLevel(e.target.val) );
 }

@@ -1,22 +1,15 @@
-export default function() {
-	this.global = true;
-	this.state = {
-		component: null,
-	};
+export default function({element}) {
+	const currentHash = location.hash;
 
-	this.onMount = function(component, id) {
-		const currentHash = location.hash;
+	element.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
 
-		this.state.component = component;
-		this.state.component.value = decodeURIComponent((currentHash+'').replace(/\+/g, '%20'));
-		focusFirstPostFromArchive(currentHash);
+	focusFirstPostFromArchive(currentHash);
 
-		this.state.component.addEventListener('change', (e) => {
-			if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
-			location.hash = e.target.value;
-			focusFirstPostFromArchive(e.target.value);
-		});
-	}
+	element.addEventListener('change', (e) => {
+		if (e.target.value === '') history.pushState('', document.title, window.location.pathname);
+		location.hash = e.target.value;
+		focusFirstPostFromArchive(e.target.value);
+	});
 }
 
 function focusFirstPostFromArchive(hash) {

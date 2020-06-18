@@ -6,7 +6,7 @@
 		<button
 			type="button"
 			class="help__close"
-			data-js="help-close"
+			data-control="help-close"
 		>
 			close<span aria-hidden="true"> ×</span>
 		</button>
@@ -18,11 +18,7 @@
 				</h2>
 
 				<ul class="help__list">
-					{{#if config.flags.useThemes }}
-					<li
-						class="help__item"
-						data-component="themes"
-					>
+					<li class="help__item">
 						<div class="help__icon">
 							🎨
 						</div>
@@ -32,7 +28,7 @@
 							</strong>
 							<select
 								class="help__select"
-								data-js="theme-select"
+								data-control="theme-select"
 							>
 								<option value="june">Default — "June"</option>
 								<option value="high-contrast">High contrast</option>
@@ -45,7 +41,7 @@
 							<button
 								class="help__theme-edit"
 								type="button"
-								data-js="theme-edit"
+								data-control="theme-edit"
 							>
 								edit theme
 								<i aria-hidden="true">
@@ -53,11 +49,13 @@
 								</i>
 						</div>
 					</li>
-					{{/if}}
 
 					<!--
-					<li class="help__item help__item--bleeps" data-js="bleeps">
-						<div class="help__icon" data-js="bleeps-status">
+					<li
+						class="help__item help__item--bleeps"
+						data-component="bleeps"
+					>
+						<div class="help__icon">
 							🎵
 						</div>
 						<div>
@@ -65,7 +63,7 @@
 								Use
 								<button
 									class="hotkey help__key"
-									data-js="enable-sounds"
+									data-control="enable-sounds"
 									type="button">s</button>
 							</strong>
 							to
@@ -76,7 +74,6 @@
 					</li>
 					-->
 
-					{{#if config.flags.useFontSelect }}
 					<li
 						class="help__item"
 					>
@@ -89,7 +86,7 @@
 							</strong>
 							<select
 								class="help__select"
-								data-js="font-select"
+								data-control="font-select"
 							>
 								<option value="plex">IBM Plex</option>
 								<option value="arial">Arial</option>
@@ -97,7 +94,6 @@
 							</select>
 						</div>
 					</li>
-					{{/if}}
 				</ul>
 			</div>
 
@@ -116,9 +112,9 @@
 						<div>
 							<strong class="help__emphasis">
 								Use
-								<button class="hotkey help__key" data-js="help-big-font" type="button">+</button>
+								<button class="hotkey help__key" data-control="help-big-font" type="button">+</button>
 								and
-								<button class="hotkey help__key" data-js="help-normal-font" type="button">-</button>
+								<button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
 							</strong>
 							to increase and decrease the size of the text.
 						</div>
@@ -130,7 +126,7 @@
 						<div>
 							<strong class="help__emphasis">
 								Use
-								<button class="hotkey help__key" data-js="show-menu" type="button">m</button>
+								<button class="hotkey help__key" data-control="show-menu" type="button">m</button>
 							</strong>
 							to toggle the main menu.
 						</div>
@@ -142,7 +138,7 @@
 						<div>
 							<strong class="help__emphasis">
 								Use
-								<button class="hotkey help__key" data-js="help-show" type="button">?</button>
+								<button class="hotkey help__key" data-control="help-show" type="button">?</button>
 							</strong>
 							to toggle this popup.
 						</div>
@@ -175,7 +171,7 @@
 
 	<button
 		class="help__bg"
-		data-js="help-bg"
+		data-control="help-bg"
 		type="button"
 		tabindex="-1"
 	>

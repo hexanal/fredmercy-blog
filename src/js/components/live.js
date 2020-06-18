@@ -1,75 +1,59 @@
-import Components from 'core/Components';
-import ConfigManager from 'utils/ConfigManager';
-import Calculator from 'utils/Calculator';
+import Calculator from 'tools/Calculator';
 
 const WEBSOCKET_LOCATION = location.host;
 
-export default function() {
-	this.state = {
-		fuck: false,
+export default function({ui, control}) {
+	const state = {
+		ws: null,
+		me: {
+			color: 'black',
+			id: '—',
+		},
+		players: []
 	};
-	this.el = {};
-	this.ui = {}; // todo: maybe extract that logic into Class component refactor coming up?
-	this.ws = null;
-	this.me = {
-		color: 'black',
-		id: '—',
-	};
-	this.players = [];
 
-	this.onMount = function(component, id) {
-		this.state.component = component;
-
-		this.ui.intro = component.querySelector('[data-ui="intro"]');
-		this.ui.area = component.querySelector('[data-ui="area"]');
-
-		this.el.idInput = component.querySelector('[data-control="id"]');
-		this.el.joinBtn = component.querySelector('[data-control="join-btn"]');
-		this.el.joinBtn.addEventListener('click', this.join);
-	}
-
-	this.join = e => {
-		if (this.ws) {
-			this.ws.onmessage = this.ws.onerror = this.ws.onopen = this.ws.onclose = null;
-			return this.ws.close();
+	const join = e => {
+		if (state.ws) {
+			state.ws.onmessage = state.ws.onerror = state.ws.onopen = state.ws.onclose = null;
+			return state.ws.close();
 		}
 
-		this.ws = new WebSocket(`ws://${WEBSOCKET_LOCATION}`);
-		this.me.id = this.el.idInput.value;
-		this.me.color = `rgb(${Calculator.getRandomInt(0, 255)}, ${Calculator.getRandomInt(0, 255)}, ${Calculator.getRandomInt(0, 255)})`;
+		state.ws = new WebSocket(`ws://${WEBSOCKET_LOCATION}`);
+		state.me.id = control['id'].value;
+		state.me.color = `rgb(${Calculator.getRandomInt(0, 255)}, ${Calculator.getRandomInt(0, 255)}, ${Calculator.getRandomInt(0, 255)})`;
 
-		this.hookWebSocketEvents();
+		hookWebSocketEvents();
 	}
 
-	this.hookWebSocketEvents = function() {
-		if (!this.ws) return;
+	const hookWebSocketEvents = function() {
+		if (!state.ws) return;
 
-		this.ws.onmessage = e => {
+		state.ws.onmessage = e => {
 			if (!e.data) return;
 			const msg = JSON.parse(e.data);
-			this.moveFriend(msg);
+			moveFriend(msg);
 		};
-		this.ws.onerror = e => {
+		state.ws.onerror = e => {
 			console.error('WebSocket error:', e);
 		};
-		this.ws.onopen = () => {
+		state.ws.onopen = () => {
 			console.info('WebSocket Connection Established.');
-			this.ui.intro.classList.add('state-ws-open');
+			ui.intro.classList.add('state-ws-open');
 		};
-		this.ws.onclose = () => {
+		state.ws.onclose = () => {
 			console.info('WebSocket Connection Closed.');
-			this.ui.intro.classList.remove('state-ws-open');
-			this.ws = null;
+			ui.intro.classList.remove('state-ws-open');
+			state.ws = null;
 		};
 
-		document.addEventListener('mousemove', this.broadcastMove);
+		document.addEventListener('mousemove', broadcastMove);
 	}
 
-	this.broadcastMove = e => {
-		if (!this.ws) return;
+	const broadcastMove = e => {
+		if (!state.ws) return;
 
 		const { clientX, clientY } = e;
-		const { color, id } = this.me;
+		const { color, id } = state.me;
 		const data = JSON.stringify({
 			id,
 			color,
@@ -79,39 +63,41 @@ export default function() {
 			}
 		});
 
-		this.ws.send(data);
+		state.ws.send(data);
 	}
 
-	this.moveFriend = ({color, id, pos}) => {
+	const moveFriend = ({color, id, pos}) => {
 		if (!id) return;
 
-		const reticle = this.getReticleById(id, color);
+		const reticle = getReticleById(id, color);
 
 		reticle.element.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
 	}
 
-	this.getReticleById = function(id, color) {
-		const matches = this.players.filter(player => player.id === id);
+	const getReticleById = function(id, color) {
+		const matches = state.players.filter(player => player.id === id);
 
 		return matches.length
 			? matches[0]
-			: this.addPlayer(id, color);
+			: addPlayer(id, color);
 	}
 
-	this.addPlayer = function(id, color) {
+	const addPlayer = function(id, color) {
 		const reticle = document.createElement('div');
 
 		reticle.classList.add('reticle');
 		reticle.dataset.playerId = id;
 		reticle.style.setProperty('--color-reticle', color);
 
-		this.ui.area.appendChild(reticle);
+		ui['area'].appendChild(reticle);
 
 		const player = {id, element: reticle};
 
-		this.players.push(player);
+		state.players.push(player);
 
 		return player;
-	  }
+	}
+
+	control['join-btn'].addEventListener('click', join);
 }
 

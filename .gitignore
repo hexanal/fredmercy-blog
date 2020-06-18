@@ -9,3 +9,7 @@ config.js
 ./blog/
 *.css.map
 *.js.map
+
+# Ignore those files because I'm working on that at the moment...
+*.bak.*
+_bak

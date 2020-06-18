@@ -1,67 +1,40 @@
 import Mousetrap from 'mousetrap';
-import Components from 'core/Components';
-import DOMHelpers from 'utils/DOMHelpers';
+import DOMHelpers from 'tools/DOMHelpers';
 
-export default function() {
-	this.global = true;
-	this.state = {
+export default function({ui, control, messaging }) {
+	const state = {
 		open: false,
-		menu: null,
-		toggleBtn: null,
-		bg: null,
-		helpToggle: null,
-		toTopBtn: null,
 	};
 
-	this.onMount = function(component) {
-		this.state.menu = DOMHelpers.getChild('menu', component);
-		this.state.toggleBtn = DOMHelpers.getChild('toggle-menu', component);
-		this.state.firstMenuItem = DOMHelpers.getChild('menu-first', component);
-		this.state.bg = DOMHelpers.getChild('menu-bg', component);
-		this.state.helpToggle = DOMHelpers.getChild('help-toggle', component);
-		this.state.toTopBtn = DOMHelpers.getChild('to-top', component);
+	const toggleMenu = () => {
+		state.open = !state.open;
 
-		// events
-		this.state.toggleBtn.addEventListener('click', this.toggleMenu);
-		this.state.bg.addEventListener('click', this.closeMenu);
-		this.state.helpToggle.addEventListener('click', () => Components.broadcast('SHOW_HELP') );
-		this.state.toTopBtn.addEventListener('click', () => window.scrollTo(0, 0));
+		control['toggle-menu'].classList.toggle('state-menu-active');
+		ui['menu'].classList.toggle('state-menu-active');
+		control['menu-bg'].classList.toggle('state-menu-active');
 
-		Mousetrap.bind('m', this.toggleMenu);
-		Mousetrap(this.state.menu)
-			.bind('escape', this.closeMenu);
+		DOMHelpers.focusFirstItem(ui['menu']);
+
+		messaging.dispatch({ id: 'MENU_TOGGLED', payload: state.open });
 	}
 
-	this.listen = function(id) {
-		if (id === 'CLOSE_MENU') {
-			this.closeMenu();
-		}
-		if (id === 'TOGGLE_MENU') {
-			this.toggleMenu();
-		}
+	const closeMenu = () => {
+		state.open = false;
+		ui['menu'].classList.remove('state-menu-active');
+		control['toggle-menu'].classList.remove('state-menu-active');
+		control['menu-bg'].classList.remove('state-menu-active');
+
+		messaging.dispatch({ id: 'MENU_CLOSED' });
 	}
 
-	this.toggleMenu = () => {
-		this.state.open = !this.state.open;
+	control['toggle-menu'].addEventListener('click', toggleMenu);
+	control['menu-bg'].addEventListener('click', closeMenu);
+	control['help-toggle'].addEventListener('click', () => messaging.dispatch({ id: 'SHOW_HELP', payload: true }) );
+	control['to-top'].addEventListener('click', () => window.scrollTo(0, 0));
 
-		this.state.toggleBtn.classList.toggle('state-menu-active');
-		this.state.menu.classList.toggle('state-menu-active');
-		this.state.bg.classList.toggle('state-menu-active');
+	messaging.subscribe('CLOSE_MENU', closeMenu);
+	messaging.subscribe('TOGGLE_MENU', toggleMenu);
 
-		DOMHelpers.focusFirstItem(this.state.menu);
-
-		Components.broadcast('MENU_TOGGLED', this.state.open);
-	}
-
-	this.closeMenu = () => {
-		this.state.open = false;
-
-		// todo: give back focus to element that had it before the menu was shown
-		this.state.menu.classList.remove('state-menu-active');
-		this.state.toggleBtn.classList.remove('state-menu-active');
-		this.state.bg.classList.remove('state-menu-active');
-
-		Components.broadcast('MENU_CLOSED');
-	}
-
+	Mousetrap.bind('m', toggleMenu);
+	Mousetrap(ui['menu']).bind('escape', closeMenu);
 }

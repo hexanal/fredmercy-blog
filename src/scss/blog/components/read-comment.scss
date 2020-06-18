@@ -1,6 +1,7 @@
 .read-comment {
 	display: none;
 	flex-grow: 1;
+	width: 100%;
 	margin: 0 0 5em;
 
 	&.state-read-comment-active {
