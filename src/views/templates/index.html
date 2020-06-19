@@ -1,51 +1,59 @@
 {{#> layouts/default }}
 
 <div class="index index--list">
-	{{> ui/header isHome="true" }}
+	{{> ui/header displayJumpTo="true" isHome="true" }}
 </div>
 
-<!-- `system to output classic styles
-	output minified html+css mixed together
-	what about dynamically fed via ajax??!
-	TODO think
--->
-<style>
-.header__toggle-menu {
-	display: none;
-}
+<ul class="index__list">
+{{#each entries as |entry archive|}}
+	<li class="index__list-header">
+		<h2
+			id="{{ archive }}"
+			class="heading index__month-year"
+			aria-level="2"
+			data-anchor="{{ archive }}"
+			data-js="archive"
+		>
+			{{ archive }}
+		</h2>
+	</li>
 
-.under-maintenance {
-	width: 100%;
-	max-width: 21rem;
-	padding: 2rem;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	font-size: 1rem;
-	font-weight: 400;
-	border: 2px dashed var(--color-secondary);
-}
-@media (min-width: 400px) {
-	.under-maintenance {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -75%);
-	}
-}
+	{{#each entry}}
+		<li class="index__item">
+			<div class="index__meta">
+				<span class="index__date">
+					{{ this.date }}
+				</span>
+				<span class="index__type">
+					[{{ this.type }}]
+				</span>
+			</div>
 
-.under-maintenance em {
-	font-size: 4rem;
-	font-style: normal;
-}
-</style>
-<h2
-	class="under-maintenance"
->
-	<em>🤫</em><br>
-	...the blog is undergoing maintenance for now.<br>
-	Check back later though, some good stuff coming!<br>
-	<i>Sorry, eh</i><br>
-</h2>
+			{{#if this.title}}
+				<a
+					class="index__link"
+					href="{{ this.url }}"
+					title="{{ this.description }}"
+					data-js="entry"
+				>
+					{{this.title}}
+				</a>
+			{{else}}
+				<a
+					class="index__link"
+					href="{{ this.url }}"
+					title="{{ this.description }}"
+					data-js="entry"
+					aria-label='Untitled entry for {{formatDate this.rawDate day="numeric" month="long" year="numeric"}}'
+				>
+					<span aria-hidden="true">
+						<em>Untitled</em><span class="index__extra"> entry for <em>{{formatDate this.rawDate day="numeric" month="long" year="numeric"}}</em></span>
+					</span>
+				</a>
+			{{/if}}
+		</li>
+	{{/each}}
+{{/each}}
+</ul>
 
 {{/layouts/default}}

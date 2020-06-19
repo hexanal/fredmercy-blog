@@ -13,7 +13,6 @@ export default function({ element, control, messaging }) {
 	};
 
 	const toggleHelp = () => {
-		console.log('toggling help?');
 		state.active = !state.active;
 		document.body.classList.toggle('state-help-active');
 

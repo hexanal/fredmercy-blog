@@ -40,7 +40,7 @@ Exponent
 		'debug-ui': debugUI,
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,
-		'bleeps': bleeps,
+		// 'bleeps': bleeps,
 		'comments': comments,
 		'collapse': collapse,
 		'help': help,
@@ -52,4 +52,5 @@ Exponent
 		'tabs': tabs,
 		'themes': themes,
 	})
+
 	.mount(container);
