@@ -5,6 +5,7 @@ node_modules/
 npm-debug.log
 
 config.js
+exponent.config.js
 
 ./blog/
 *.css.map
