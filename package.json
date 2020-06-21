@@ -40,7 +40,7 @@
   "dependencies": {
     "@barba/core": "^2.9.7",
     "axios": "^0.18.1",
-    "exponent-core": "^1.1.0",
+    "exponent-core": "1.2.1",
     "imagesloaded": "^4.1.4",
     "mousetrap": "^1.6.5",
     "sanitize-html": "^1.20.0",
