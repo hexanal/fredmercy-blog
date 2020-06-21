@@ -40,7 +40,6 @@ Exponent
 		'debug-ui': debugUI,
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,
-		// 'bleeps': bleeps,
 		'comments': comments,
 		'collapse': collapse,
 		'help': help,
