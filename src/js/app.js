@@ -1,4 +1,6 @@
 import 'scss/blog/style.scss';
+import 'assets/images/favicon.png';
+import 'assets/images/favicon-big.png';
 
 import Exponent from 'exponent-core';
 import Messaging from 'middlewares/Messaging';
@@ -14,7 +16,6 @@ import keyboard from 'components/keyboard';
 import transitions from 'components/transitions';
 
 // ui
-// import bleeps from 'components/bleeps';
 import comments from 'components/comments';
 import collapse from 'components/collapse';
 import help from 'components/help';
