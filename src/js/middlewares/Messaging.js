@@ -9,6 +9,7 @@ export const Messaging = {
   subscribers: [],
 
   subscribe: (id, cb) => { Messaging.addSubscriber(id, cb); },
+  unsubscribe: (id, cb) => { Messaging.removeSubscriber(id, cb); },
   dispatch: (event) => Messaging.dispatchToSubscribers(event),
 
   addSubscriber: (id, cb) => {
@@ -16,6 +17,10 @@ export const Messaging = {
       id,
       cb,
     })
+  },
+
+  removeSubscriber: (id, cb) => {
+    Messaging.subscribers = Messaging.subscribers.filter(sub => (sub.id !== id && sub.cb !== cb) );
   },
 
   dispatchToSubscribers: (event) => {
@@ -29,10 +34,11 @@ export const Messaging = {
 };
 
 const MessagingMiddleware = ({props}) => {
-  const { subscribe, dispatch } = Messaging;
+  const { subscribe, unsubscribe, dispatch } = Messaging;
 
   props.messaging = {
     subscribe,
+    unsubscribe,
     dispatch,
   };
 

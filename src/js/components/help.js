@@ -26,9 +26,11 @@ export default function({ element, control, messaging }) {
 		document.body.classList.remove('state-help-active');
 	}
 
+	const setTheme = val => control['theme-select'].value = val;
+
 	messaging.subscribe('SHOW_HELP', toggleHelp);
 	messaging.subscribe('CLOSE_HELP', closeHelp);
-	messaging.subscribe('SET_THEME_VALUE', val => { control['theme-select'].value = val; });
+	messaging.subscribe('SET_THEME_VALUE', setTheme);
 
 	control['show-menu'].addEventListener('click', () => messaging.dispatch({ id: 'TOGGLE_MENU' }) );
 	control['help-show'].addEventListener('click', toggleHelp);
@@ -50,4 +52,10 @@ export default function({ element, control, messaging }) {
 
 	Mousetrap(element).bind('escape', closeHelp);
 	Mousetrap.bind('?', toggleHelp );
+
+	return function() {
+		messaging.unsubscribe('SHOW_HELP', toggleHelp);
+		messaging.unsubscribe('CLOSE_HELP', closeHelp);
+		messaging.unsubscribe('SET_THEME_VALUE', setTheme);
+	}
 }

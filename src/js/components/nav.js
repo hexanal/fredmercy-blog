@@ -37,4 +37,9 @@ export default function({ui, control, messaging }) {
 
 	Mousetrap.bind('m', toggleMenu);
 	Mousetrap(ui['menu']).bind('escape', closeMenu);
+
+	return function() {
+		messaging.unsubscribe('CLOSE_MENU', closeMenu);
+		messaging.unsubscribe('TOGGLE_MENU', toggleMenu);
+	}
 }

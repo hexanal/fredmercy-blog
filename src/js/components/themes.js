@@ -73,7 +73,12 @@ export default function({control, messaging}) {
 			state.custom[colorId] = color;
 			changeCustomColor(picker, picker.parentElement.parentElement); // TODO not fond of .parentElement.parentElement here
 		});
-	}
+	};
+
+	const openThemeEditor = function() {
+		document.documentElement.classList.add('state-theme-edit');
+		control['color-picker'][0].focus();
+	};
 
 	control['close'].addEventListener('click', () => {
 		document.documentElement.classList.remove('state-theme-edit');
@@ -85,10 +90,12 @@ export default function({control, messaging}) {
 	});
 
 	messaging.subscribe('SWITCH_THEME', useTheme);
-	messaging.subscribe('OPEN_THEME_EDITOR', function() {
-		document.documentElement.classList.add('state-theme-edit');
-		control['color-picker'][0].focus();
-	});
+	messaging.subscribe('OPEN_THEME_EDITOR', openThemeEditor);
 
 	setupTheme();
+
+	return function() {
+		messaging.unsubscribe('SWITCH_THEME', useTheme);
+		messaging.unsubscribe('OPEN_THEME_EDITOR', openThemeEditor);
+	}
 }

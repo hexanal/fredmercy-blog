@@ -5,17 +5,21 @@ export default function({element, ui, control, messaging}) {
 		enabled: false,
 	};
 
-	messaging.subscribe('TABS_SWITCHED', ({tabId, origin}) => {
+	const onTabsSwitched = ({tabId, origin}) => {
 		if (origin.id === 'debug-tabs') {
 			toggleAlign(tabId === 'align');
 			hideCursorOnActive();
 		}
-	});
-	messaging.subscribe('DEBUG_TOGGLE_WAS_SET', ({prop}) => {
+	};
+
+	const onDebugToggleSet = ({prop}) => {
 		if (prop === 'displayVertical' || prop === 'displayHorizontal') {
 			hideCursorOnActive();
 		}
-	});
+	};
+
+	messaging.subscribe('TABS_SWITCHED', onTabsSwitched);
+	messaging.subscribe('DEBUG_TOGGLE_WAS_SET', onDebugToggleSet);
 
 	document.addEventListener('mousemove', e => {
 		const { clientX, clientY } = e;
@@ -35,4 +39,9 @@ export default function({element, ui, control, messaging}) {
 	const toggleAlign = enable => {
 		state.enabled = enable;
 	};
+
+	return function() {
+		messaging.unsubscribe('TABS_SWITCHED', onTabsSwitched);
+		messaging.unsubscribe('DEBUG_TOGGLE_WAS_SET', onDebugToggleSet);
+	}
 }
