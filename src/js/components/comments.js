@@ -36,8 +36,8 @@ export default function({element, ui, control, messaging}) {
     closeAll();
 
     ui['comment-dot'].innerHTML = dotId;
-    ui['comment-body'].innerHTML = author;
-    ui['comment-author'].innerHTML = content;
+    ui['comment-body'].innerHTML = content;
+    ui['comment-author'].innerHTML = author;
     ui['read-comment'].classList.add('state-read-comment-active');
   };
 

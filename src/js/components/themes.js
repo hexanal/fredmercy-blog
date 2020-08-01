@@ -7,7 +7,7 @@ const THEME_LIST = [
 	'dark-mode',
 	'xmas',
 	'tron',
-	'custom',
+	// 'custom',
 ];
 const DEFAULT_THEME = 'june';
 const DEFAULT_CUSTOM_COLORS = {

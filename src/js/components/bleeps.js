@@ -9,6 +9,7 @@ import {
 	FeedbackDelay,
 	Filter
 } from 'tone';
+
 import Storage from 'tools/Storage';
 
 const EFFECTS = {

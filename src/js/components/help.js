@@ -53,6 +53,8 @@ export default function({ element, control, messaging }) {
 	Mousetrap(element).bind('escape', closeHelp);
 	Mousetrap.bind('?', toggleHelp );
 
+
+
 	return function() {
 		messaging.unsubscribe('SHOW_HELP', toggleHelp);
 		messaging.unsubscribe('CLOSE_HELP', closeHelp);

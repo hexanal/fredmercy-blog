@@ -22,7 +22,7 @@ export default function({element, messaging}) {
 	const initControl = (input, panel) => {
 		const panelId = panel.dataset.panel;
 		const { control, toggle, hotkey } = input.dataset;
-		const savedValue = Storage.get(`debug_ui_tool_${panelId}_${prop}`);
+		const savedValue = Storage.get(`debug_ui_tool_${panelId}_${control}`);
 
 		if (hotkey) { // TODO only works for toggles (checkboxes)
 			Mousetrap.bind(hotkey, () => {
@@ -32,14 +32,14 @@ export default function({element, messaging}) {
 		}
 		if (savedValue) {
 			if (toggle !== undefined) {
-				control.checked = (parseInt(savedValue, 10) > 0);
+				input.checked = (parseInt(savedValue, 10) > 0);
 			} else {
-				control.value = savedValue;
+				input.value = savedValue;
 			}
 			setControl(input, panel);
 		}
 
-		control.addEventListener('change', e => setControl(e.target, panel));
+		input.addEventListener('change', e => setControl(e.target, panel));
 	}
 
 	const setControl = (input, panel) => {
@@ -56,7 +56,7 @@ export default function({element, messaging}) {
 			: input.value;
 
 		panel.style.setProperty(`--${control}`, value);
-		Storage.set(`debug_ui_tool_${panelId}_${prop}`, input.value); // store unitless
+		Storage.set(`debug_ui_tool_${panelId}_${control}`, input.value); // store unitless
 		messaging.dispatch({ id: 'DEBUG_PROP_WAS_SET', payload: { control, value, input } });
 	}
 

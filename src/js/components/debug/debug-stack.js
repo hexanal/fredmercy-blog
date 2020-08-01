@@ -8,7 +8,7 @@ export default function({control}) {
 		zIndexes: null
 	};
 
-	toggle = () => {
+	const toggle = () => {
 		state.enabled = !state.enabled;
 		document.documentElement.dataset.zIndexDebugger = state.enabled ? 'enabled' : 'disabled';
 
@@ -17,7 +17,7 @@ export default function({control}) {
 		state.zIndexes = buildZIndexes( document.getElementsByTagName('*') );
 		addDropdownOptions(state.zIndexes);
 		addDataAttributes(state.zIndexes);
-	}
+	};
 
 	// TODO fix this one...
 	const buildZIndexes = function(elements) {
