@@ -1,11 +1,11 @@
 import Mousetrap from 'mousetrap';
 import DOMHelpers from 'tools/DOMHelpers';
 
-const FONT_FAMILY_LIST = {
-	plex: '"IBM Plex Mono", Courier, monospace',
-	arial: 'Arial, sans-serif',
-	garamond: 'Garamond, Georgia, "Times New Roman", serif',
-};
+// const FONT_FAMILY_LIST = {
+// 	plex: '"IBM Plex Mono", Courier, monospace',
+// 	arial: 'Arial, sans-serif',
+// 	garamond: 'Garamond, Georgia, "Times New Roman", serif',
+// };
 
 export default function({ element, control, messaging }) {
 	const state = {
@@ -46,9 +46,9 @@ export default function({ element, control, messaging }) {
 	control['theme-select'].addEventListener('change', e => {
 		messaging.dispatch({ id: 'SWITCH_THEME', payload: e.target.value });
 	});
-	control['font-select'].addEventListener('change', e => {
-		document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
-	});
+	// control['font-select'].addEventListener('change', e => {
+	// 	document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
+	// });
 
 	Mousetrap(element).bind('escape', closeHelp);
 	Mousetrap.bind('?', toggleHelp );
