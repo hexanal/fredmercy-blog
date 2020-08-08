@@ -56,7 +56,7 @@ export default function({control, messaging}) {
 	const changeCustomColor = (picker, control) => {
 		const { value } = picker;
 		const { colorId } = control.dataset;
-		const colorLabel = control.querySelector('[data-js="color-value"]');
+		const colorLabel = control.querySelector('[data-ui="color-value"]');
 
 		Storage.set(`theme_custom_color_${colorId}`, value);
 		document.documentElement.style.setProperty(`--color-${colorId}`, value);
