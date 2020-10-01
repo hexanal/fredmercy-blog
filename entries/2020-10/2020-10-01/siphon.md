@@ -1,5 +1,5 @@
 ---
-title: Syphon
+title: Siphon
 description: Still at it, sometimes...
 type: update, rant
 ---
