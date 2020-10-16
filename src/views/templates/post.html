@@ -13,32 +13,32 @@
 		<header class="post__heading" role="heading">
 			<div class="post__meta">
 				<time class="post__date">
-					{{ date }}
+					{{ meta.date }}
 				</time>
 				<span class="post__type">
-					[{{ type }}]
+					[{{ meta.type }}]
 				</span>
 			</div>
 
-			{{#if title}}
+			{{#if meta.title}}
 			<h1 class="post__title">
-				{{ title }}
+				{{ meta.title }}
 			</h1>
 			{{/if}}
 		</header>
 
 		<div class="post__body" data-component="notes">
-			{{{ body }}}
+			{{{ content }}}
 		</div>
 
-		{{#if edit}}
+		{{#if meta.edit}}
 		<i class="post__edit-date">
-			(last edited: {{ edit }})
+			(last edited: {{ meta.edit }})
 		</i>
 		{{/if}}
 	</div>
 
-	{{#if commentsGrid}}
+	{{#if meta.commentsGrid}}
 	<div class="post__comments state-loading" data-component="comments">
 		{{> entries/comments}}
 		{{> entries/leave-comment}}

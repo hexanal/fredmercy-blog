@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="shortcut icon" href="/blog/dist/assets/images/favicon.png">
+	<link rel="stylesheet" href="/blog/dist/styles.css">
+</head>
+
+<body
+	class="body"
+	data-barba="wrapper"
+>
+	<div
+		class="body__contents"
+		data-barba="container"
+	>
+		
+		<div class="index index--entry">
+			
+			<aside
+				class="custom-theme"
+				data-component="themes"
+			>
+				<div class="custom-theme__container">
+					<button
+						type="button"
+						class="custom-theme__close"
+						data-control="close"
+					>
+						close<span aria-hidden="true"> ×</span>
+					</button>
+			
+					<div class="custom-theme__options">
+						<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="bg"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="bg"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Background"
+										id="color-bg"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="bg"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-bg" class="theme-option__label">
+								Background
+							</label>
+						</div>			<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="primary"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="primary"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Primary"
+										id="color-primary"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="primary"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-primary" class="theme-option__label">
+								Primary
+							</label>
+						</div>			<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="secondary"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="secondary"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Secondary"
+										id="color-secondary"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="secondary"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-secondary" class="theme-option__label">
+								Secondary
+							</label>
+						</div>			<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="active"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="active"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Active"
+										id="color-active"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="active"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-active" class="theme-option__label">
+								Active
+							</label>
+						</div>			<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="subdued"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="subdued"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Subdued"
+										id="color-subdued"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="subdued"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-subdued" class="theme-option__label">
+								Subdued
+							</label>
+						</div>			<div
+							class="theme-option"
+							data-ui="custom-theme-control"
+							data-color-id="extra"
+						>
+							<div
+								class="theme-option__color"
+								data-color-id="extra"
+							>
+								<div
+									class="theme-option__value"
+									data-ui="color-value"
+								>
+									-
+								</div>
+						
+								<div class="theme-option__control-mask">
+									<input
+										title="Choose a custom color for Extra"
+										id="color-extra"
+										class="theme-option__control"
+										type="color"
+										data-control="color-picker"
+										data-color-id="extra"
+									>
+									<div class="theme-option__focus" aria-hidden="true"></div>
+								</div>
+							</div>
+						
+							<label for="color-extra" class="theme-option__label">
+								Extra
+							</label>
+						</div>		</div>
+				</div>
+			</aside>
+			<header
+				class="header"
+				data-component="nav"
+			>
+				<nav class="header__header-extend">
+						<a href="/blog" class="header__back">
+							to index
+						</a>
+			
+					<button
+						class="header__toggle-menu"
+						type="button"
+						aria-label="Toggle navigation menu"
+						data-control="toggle-menu"
+					>
+						<div class="header__toggle-open">
+							<span>menu</span>
+							<i aria-hidden="true">
+								🔸
+							</i>
+						</div>
+						<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
+					</button>
+			
+					<div class="header__menu" data-ui="menu">
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--blog"
+								href=""
+							>
+								blog
+							</a>
+						</div>
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--bookmarks"
+								href="/blog/bookmarks"
+							>
+								bookmarks
+							</a>
+						</div>
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--demos"
+								href="/blog/demos"
+							>
+								demos
+							</a>
+						</div>
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--bandcamp"
+								href="http://fredmercy.bandcamp.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								bandcamp
+							</a>
+						</div>
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--main"
+								href="/"
+								data-disable-transition
+							>
+								fredmercy.com
+							</a>
+						</div>
+						<hr>
+						<div class="header__menu-item">
+							<button
+								class="header__menu-link header__menu-link--help"
+								data-control="help-toggle"
+								type="button"
+							>
+								help / options
+							</button>
+						</div>
+						<div class="header__menu-item header__menu-item--up">
+							<button
+								class="header__menu-link header__menu-link--up"
+								data-control="to-top"
+								type="button"
+							>
+								top of page
+							</button>
+						</div>
+					</div>
+					<button
+						class="header__menu-bg"
+						data-control="menu-bg"
+						type="button"
+						aria-label="Close navigation menu"
+					></button>
+				</nav>
+			
+			</header>
+		</div>
+		
+		<article class="post" data-component="collapse">
+			<div
+				class="post__window"
+				aria-label="Entry content"
+				data-component="highlight"
+			>
+				<header class="post__heading" role="heading">
+					<div class="post__meta">
+						<time class="post__date">
+							2019-03-11
+						</time>
+						<span class="post__type">
+							[journal]
+						</span>
+					</div>
+		
+					<h1 class="post__title">
+						The Quest Begins
+					</h1>
+				</header>
+		
+				<div class="post__body" data-component="notes">
+					<p><code>7:40am:</code> Sipping on a cup of coffee and staring out the window at the uncharacteristically blue sky; I&#39;m thinking about how hectic the last few weeks have been while at the same time how little I&#39;ve been able to achieve. But, everything in due time, I suppose.</p>
+		<p>Things don&#39;t look half bad right now, and this week is full of promises. I need lords to allow me to slave away all week to make them more prosperous, so that when the gold coins spill over, I can amass them and afford sustenance.</p>
+		<p><code>7:49am:</code> Eventually I will try to incorporate more fun things in this blog. Maybe some day it&#39;ll get to a point where I&#39;m comfortable sharing it to the world! (no it&#39;s not live... haven&#39;t shared the link yet!)</p>
+		<p>Speaking of... here are today&#39;s links!:</p>
+		<ul>
+		<li><a href="https://www.imdb.com/title/tt0102511">Naked Lunch (IMDB)</a>: I&#39;ve had that movie saved for years (!) and finally watched it a couple of days ago. That&#39;s the Cronenberg I know and love! I can&#39;t believe it took me this long to see this one... wait, let me drop another link right now...</li>
+		<li><a href="https://www.imdb.com/title/tt0081455">Scanners (IMDB)</a>: also watched this one not too long ago! The quintessential eighties movie. For a guy who grew up watching <a href="https://www.imdb.com/title/tt0093185">The Hidden</a>, <a href="https://www.imdb.com/title/tt0093870">Robocop</a>, <a href="https://www.imdb.com/title/tt0091064">The Fly</a>, <a href="https://www.imdb.com/title/tt0088247">The Terminator</a>, etc. this one felt like “the one who got away”! I mean, it&#39;s perfect.</li>
+		</ul>
+		<p><code>9:17am:</code> We usually consider devices that try to do more than one thing as being mediocre at all the things they do. But nowadays our cellphones do so many things they ended up replacing our cameras, calendars, newspapers, voice recorders, maps (and GPS), televisions, calculators, etc.</p>
+		<code class="collapse">
+		<button type="button">Show/Hide pseudo-philosophical rant</button>
+		
+		<p>What I think we gain in convenience, practicality, and productivity, we lose in physicality, purposefulness, and mindfulness. At the risk of sounding like an old degenerate, I think having a specific device for each use-case makes the user much more involved with the process. I see this virtualization of our physical devices as a first step towards full acceptance of the coming “virtual reality” revolution: get people used to <em>apps</em>, so that when they&#39;re pulled into an ever more virtual world, the idea of replacing physical objects with their digital counterparts will seem very normal, and commonplace. Why own art, candles, a TV, a guitar?... hell, why even have windows and lightbulbs?! Put on your goggles and slip into a bright new world!</p>
+		<p>The ultimate down-sizing: objects are broken down to bits, and their digital ersatz are fed back to us!</p>
+		<p><em>Ahem.</em> Sorry about that. It&#39;s probably better to refer to authors who have thought longer and harder about all this... I guess what I&#39;m saying is: I&#39;m scared of the future, because of how boring it might be. But as someone keeps telling me: there&#39;s no use in being pessimistic. Being hopeful and ready to face the day is the best attitude to adopt.</p>
+		</code>
+		
+		<p><code>9:56am:</code> Dear Future Reader,</p>
+		<p>If you haven&#39;t noticed already, most of the entries in this blog are the <em>stream-of-consciousness</em> ramblings of a confused nerd. When you see a timestamp next to a paragraph, it means that the content of this new paragraph doesn&#39;t nicely follow the previous one: it&#39;s a new idea, a <em>non-sequitur</em>.</p>
+		<p>Thank you for your understanding.</p>
+		<hr>
+		<p><code>3:57pm:</code> Made it back home, I took the bus for the first time in this city. Since it was the middle of the afternoon, it was almost empty but I assume it gets crowded during the classic commuting hours. We&#39;ll see how it goes! What a beautiful day it was, too! I feel great.</p>
+		
+				</div>
+		
+			</div>
+		
+		</article>
+		
+
+		<aside
+			class="help"
+			data-component="help"
+		>
+			<div class="help__box">
+				<button
+					type="button"
+					class="help__close"
+					data-control="help-close"
+				>
+					close<span aria-hidden="true"> ×</span>
+				</button>
+		
+				<div class="help__scroll">
+					<div class="help__section">
+						<h2 class="help__heading">
+							Interface
+						</h2>
+		
+						<ul class="help__list">
+							<li class="help__item">
+								<div class="help__icon">
+									🎨
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Color theme:
+									</strong>
+									<select
+										class="help__select"
+										data-control="theme-select"
+									>
+										<option value="june">Default — "June"</option>
+										<option value="high-contrast">High contrast</option>
+										<option value="black-and-white">Black & White</option>
+										<option value="dark-mode">Dark mode</option>
+										<option value="xmas">XMas</option>
+										<option value="tron">Tron</option>
+		                <!-- <option value="custom">Custom!</option> -->
+									</select>
+									<button
+										class="help__theme-edit"
+										type="button"
+										data-control="theme-edit"
+									>
+										edit theme
+										<i aria-hidden="true">
+											🖍
+										</i>
+								</div>
+							</li>
+		
+							<!--
+							<li
+								class="help__item help__item--bleeps"
+								data-component="bleeps"
+							>
+								<div class="help__icon">
+									🎵
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Use
+										<button
+											class="hotkey help__key"
+											data-control="enable-sounds"
+											type="button">s</button>
+									</strong>
+									to
+									<span class="help__sound-enable">enable</span>
+									<span class="help__sound-disable">disable</span>
+									bleeps & sounds.
+								</div>
+							</li>
+							-->
+		
+							<!-- <li
+								class="help__item"
+							>
+								<div class="help__icon">
+									🅰️
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Font:
+									</strong>
+									<select
+										class="help__select"
+										data-control="font-select"
+									>
+										<option value="plex">IBM Plex</option>
+										<option value="arial">Arial</option>
+										<option value="garamond">Garamond</option>
+									</select>
+								</div>
+							</li>   -->
+						</ul>
+		      </div>
+		
+					<hr class="help__separator">
+		
+					<div class="help__section help__section--a11y">
+						<h2 class="help__heading">
+							Accessibility shortcuts
+						</h2>
+		
+						<ul class="help__list">
+							<li class="help__item">
+								<div class="help__icon">
+									🔠
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Use
+										<button class="hotkey help__key" data-control="help-big-font" type="button">+</button>
+										and
+										<button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
+									</strong>
+									to increase and decrease the size of the text.
+								</div>
+							</li>
+							<li class="help__item">
+								<div class="help__icon">
+									Ⓜ️
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Use
+										<button class="hotkey help__key" data-control="show-menu" type="button">m</button>
+									</strong>
+									to toggle the main menu.
+								</div>
+							</li>
+							<li class="help__item">
+								<div class="help__icon">
+									⚙️
+								</div>
+								<div>
+									<strong class="help__emphasis">
+										Use
+										<button class="hotkey help__key" data-control="help-show" type="button">?</button>
+									</strong>
+									to toggle this popup.
+								</div>
+							</li>
+						</ul>
+					</div>
+		
+					<hr class="help__separator">
+		
+					<div class="help__section help__section--bug">
+						<div class="help__item">
+							<i class="help__icon">
+								🐛
+							</i>
+							<div>
+								Found a bug?
+								<em>
+									<a
+										href="https://github.com/hexanal/fredmercy-blog/issues"
+										target="_blank"
+										rel="noopener noreferrer"
+									>Open a new issue on Github</a>.
+								</em>
+							</div>
+						</div>
+					</div>
+		
+				</div>
+			</div>
+		
+			<button
+				class="help__bg"
+				data-control="help-bg"
+				type="button"
+				tabindex="-1"
+			>
+			</button>
+		</aside>
+	</div>
+
+	<div class="rainbow" c="primary"></div>
+	<div class="rainbow" c="secondary"></div>
+	<div class="rainbow" c="active"></div>
+	<div class="rainbow" c="subdued"></div>
+	<div class="rainbow" c="extra"></div>
+
+	<script src="/blog/dist/app.js"></script>
+</body>
+</html>

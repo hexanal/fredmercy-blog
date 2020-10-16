@@ -42,13 +42,14 @@
     "@barba/core": "^2.9.7",
     "axios": "^0.18.1",
     "exponent-core": "1.2.1",
+    "glob": "^7.1.6",
     "imagesloaded": "^4.1.4",
-    "mousetrap": "^1.6.5",
-    "sanitize-html": "^1.20.0",
-    "tone": "^13.8.25",
     "lodash.debounce": "^4.0.8",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "mousetrap": "^1.6.5",
+    "sanitize-html": "^1.20.0",
+    "tone": "^13.8.25"
   }
 }
