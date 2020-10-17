@@ -9,7 +9,7 @@ const createDir = function(dir) {
   })
 }
 
-const createHtmlFile = function(dir, html) {
+const writeFile = function(dir, html) {
   return new Promise((resolve, reject) => {
     fs.writeFile(`${dir}/index.html`, html, (err) => {
       if (err) reject(err)
@@ -18,7 +18,14 @@ const createHtmlFile = function(dir, html) {
   })
 }
 
+const writeHTML = function( item ) {
+  console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
+  return createDir( item.meta.destination )
+    .then( dir => writeFile(dir, item.html) )
+}
+
 module.exports = {
   createDir,
-  createHtmlFile
+  writeFile,
+  writeHTML
 }

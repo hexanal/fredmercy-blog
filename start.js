@@ -1,11 +1,6 @@
-const { createDir, createHtmlFile } = require('./tasks/files')
-const { posts } = require('./tasks/posts')
+const { build } = require('./tasks/site')
 
-posts.map( post => {
-  console.log( post.meta )
-})
+const posts = require('./tasks/posts')
+const pages = require('./tasks/pages')
 
-// posts.map( post => {
-//   createDir( post.meta.destination )
-//     .then( dir => createHtmlFile(dir, post.html) )
-// })
+build({ posts, pages })

@@ -3,15 +3,28 @@ const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
 const orderBy = require('lodash.orderby')
+const { build } = require('./files')
 
 const html = require('./html')
 
-const entries = glob.sync('./src/content/entries/**/*.md', {})
-
+// TODO figure out if a "middleware" or "plugin" thing could work here?
+// if I use a gulp-like "pipe"?
 const extractPosts = function() {
-  html.usePartials('./src/views/components')
+  const entries = glob.sync('./src/content/entries/**/*.md', {})
 
-  const withContents = entries.map( entry => {
+  const withContents = applyContent(entries)
+
+  const withOrder = orderBy(withContents, 'meta.date', 'desc')
+
+  const withAdjacentPosts = applyAdjacents(withOrder)
+
+  const withTemplates = applyTemplates(withAdjacentPosts)
+
+  return withTemplates
+}
+
+const applyContent = function(entries) {
+  return entries.map( entry => {
     const file = fs.readFileSync( entry, 'utf8' )
     const { attributes, body } = frontMatter( file.toString() )
     const { title, description, type } = attributes
@@ -29,17 +42,11 @@ const extractPosts = function() {
       content
     }
   })
-
-  const withOrder = orderBy(withContents, 'meta.date', 'desc')
-
-  const withAdjacentPosts = applyAdjacents(withOrder)
-
-  const withTemplates = applyTemplates(withAdjacentPosts)
-
-  return withTemplates
 }
 
 const applyTemplates = function(entries) {
+  html.usePartials('./src/views/components')
+
   const templateFile = fs.readFileSync( 'src/views/templates/post.html', 'utf8' )
   const template = html.compile( templateFile.toString() )
 
@@ -87,5 +94,6 @@ const applyAdjacents = function(entries) {
 const posts = extractPosts()
 
 module.exports = {
-  posts
+  items: posts,
+  applyTemplates
 }

@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
 	<title></title>
-	<meta name="description" content="">
+	<meta name="description" content="Just another one of those days...! Man, there sure are a lot of them this year!">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-	<link rel="shortcut icon" href="/blog/dist/assets/images/favicon.png">
-	<link rel="stylesheet" href="/blog/dist/styles.css">
+	<link rel="shortcut icon" href="/assets/images/favicon.png">
+	<link rel="stylesheet" href="/styles.css">
 </head>
 
 <body
@@ -330,6 +330,18 @@
 			</header>
 		</div>
 		
+		<div>
+			TEST ZONE
+		
+			<a href="/blog/2019-03-25/sun-power">
+				Sun Power
+			</a>
+			<pre>|</pre>
+			<a href="/blog/2019-03-29/photofeed">
+				Photofeed
+			</a>
+		</div>
+		
 		<article class="post" data-component="collapse">
 			<div
 				class="post__window"
@@ -539,6 +551,203 @@
 			>
 			</button>
 		</aside>
+		<div class="debug-ui" data-component="debug-ui">
+			<div
+				class="debug-ui__container"
+				data-component="tabs"
+				data-component-id="debug-tabs"
+			>
+				<nav
+					class="debug-ui__tab-list"
+					data-ui="tab-list"
+				>
+					<button
+						type="button"
+						class="debug-ui__tab-trigger"
+						data-control="tab-trigger"
+						data-tab-id="grid"
+					>
+						Grid
+					</button>
+					<button
+						type="button"
+						class="debug-ui__tab-trigger"
+						data-control="tab-trigger"
+						data-tab-id="align"
+					>
+						Align
+					</button>
+					<button
+						type="button"
+						class="debug-ui__tab-trigger"
+						data-control="tab-trigger"
+						data-tab-id="stack"
+					>
+						Stack
+					</button>
+				</nav>
+		
+				<div class="debug-ui__tabs">
+					<div class="debug-ui__tab" data-ui="tab" data-tab-id="grid">
+						<div
+							class="debug-panel debug-grid"
+							data-panel="grid"
+						>
+							<div class="debug-grid__layer"></div>
+						
+							<div class="debug-panel__area">
+						
+								<div class="debug-panel__control">
+									<label>
+										Grid size:
+										<input
+											type="number"
+											value="2"
+											data-control="size"
+											data-prop-unit="rem"
+											data-toggle
+										>
+									</label>
+								</div>
+						
+								<div class="debug-panel__control">
+									<label>
+										Opacity:
+										<input
+											type="range"
+											min="0.1"
+											max="1"
+											step="0.1"
+											value="0.2"
+											data-control="opacity"
+										>
+									</label>
+								</div>
+						
+								<div class="debug-panel__control debug-panel__toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="vertical"
+											data-toggle
+											checked
+										>
+										Vertical
+									</label>
+								</div>
+						
+								<div class="debug-panel__control debug-panel__toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="horizontal"
+											data-toggle
+											checked
+										>
+										Horizontal
+									</label>
+								</div>
+						
+							</div>
+						</div>
+					</div>
+					<div class="debug-ui__tab" data-ui="tab" data-tab-id="align">
+						<div
+							class="debug-panel debug-align"
+							data-panel="align"
+							data-component="debug-align"
+						>
+							<div
+								class="debug-align__vertical"
+								data-ui="line-vertical"
+							></div>
+							<div
+								class="debug-align__horizontal"
+								data-ui="line-horizontal"
+							></div>
+						
+							<div class="debug-panel__area">
+						
+								<div class="debug-panel__control debug-panel__control--toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="display-vertical"
+											data-hotkey="shift+v"
+											checked
+										>
+										Vertical
+										<span class="hotkey hotkey--wide">shift+v</span>
+									</label>
+								</div>
+						
+								<div class="debug-panel__control debug-panel__control--toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="display-horizontal"
+											data-hotkey="shift+h"
+											checked
+										>
+										Horizontal
+										<span class="hotkey hotkey--wide">shift+h</span>
+									</label>
+								</div>
+						
+								<div class="debug-panel__control debug-panel__control--toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="display-position"
+											data-hotkey="shift+p"
+											checked
+										>
+										Display position
+										<span class="hotkey hotkey--wide">shift+p</span>
+									</label>
+								</div>
+						
+							</div>
+						
+						</div>
+						
+					</div>
+					<div class="debug-ui__tab" data-ui="tab" data-tab-id="stack">
+						<div
+							class="debug-panel debug-stack"
+							data-panel="stack"
+							data-component="debug-stack"
+						>
+							<div class="debug-xxx"></div>
+						
+							<div class="debug-panel__area">
+						
+								<div class="debug-panel__control debug-panel__control--toggle">
+									<label>
+										<input
+											type="checkbox"
+											data-control="enable-stack"
+										>
+										Show stacks
+									</label>
+								</div>
+						
+								<div class="debug-panel__control debug-stack__filter-level">
+									<label>
+										Filter by <i>z-index</i>:
+										<select data-control="filter-level">
+										</select>
+									</label>
+								</div>
+						
+							</div>
+						
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="rainbow" c="primary"></div>
@@ -547,6 +756,6 @@
 	<div class="rainbow" c="subdued"></div>
 	<div class="rainbow" c="extra"></div>
 
-	<script src="/blog/dist/app.js"></script>
+	<script src="/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+{{#> layouts/default }}
+
+<div class="index index--list">
+	{{> ui/header displayJumpTo="true" isHome="true" }}
+</div>
+
+<ul class="index__list">
+{{#each global.posts }}
+	<li class="index__item">
+		<div class="index__meta">
+			<span class="index__date">
+				{{ this.meta.date }}
+			</span>
+			<span class="index__type">
+				[{{ this.meta.type }}]
+			</span>
+		</div>
+
+		{{#if this.meta.title}}
+			<a
+				class="index__link"
+				href="{{ this.meta.url }}"
+				title="{{ this.meta.description }}"
+				data-js="entry"
+			>
+				{{this.meta.title}}
+			</a>
+		{{else}}
+			<a
+				class="index__link"
+				href="{{ this.meta.url }}"
+				title="{{ this.meta.description }}"
+				data-js="entry"
+				aria-label='Untitled entry for {{ this.meta.date }}'
+			>
+				<span aria-hidden="true">
+					<em>Untitled</em><span class="index__extra"> entry for <em>{{ this.meta.date }}</em></span>
+				</span>
+			</a>
+		{{/if}}
+	</li>
+{{/each}}
+</ul>
+
+{{/layouts/default}}

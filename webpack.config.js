@@ -4,8 +4,6 @@ const ClosurePlugin = require('closure-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const ExponentConfig = require('./exponent.config.js');
-
 module.exports = env => ({
   mode: env.NODE_ENV,
   devtool: !env.production && 'source-map',
@@ -33,8 +31,8 @@ module.exports = env => ({
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
-          outputPath: `${ExponentConfig.assetsPublicPath}/fonts`,
-          publicPath: `${ExponentConfig.assetsPublicPath}/fonts`,
+          outputPath: 'assets/fonts',
+          publicPath: 'assets/fonts',
           name: () => '[name].[ext]'
         }
       },
@@ -42,8 +40,8 @@ module.exports = env => ({
         test: /\.(mp3|ogg|wav)$/,
         loader: 'file-loader',
         options: {
-          outputPath: `${ExponentConfig.assetsPublicPath}/audio`,
-          publicPath: `${ExponentConfig.assetsPublicPath}/audio`,
+          outputPath: 'assets/audio',
+          publicPath: 'assets/audio',
           name: () => '[name].[ext]'
         }
       },
@@ -53,8 +51,8 @@ module.exports = env => ({
           {
             loader: 'file-loader',
             options: {
-              outputPath: `${ExponentConfig.assetsPublicPath}/images`,
-              publicPath: `${ExponentConfig.assetsPublicPath}/images`,
+              outputPath: 'assets/images',
+              publicPath: 'assets/images',
               name: () => '[name].[ext]'
             },
           },
@@ -65,23 +63,22 @@ module.exports = env => ({
   },
 
   entry: {
-    [ExponentConfig.jsBundleFilename]: ExponentConfig.paths.entryPoint,
+    'app.js': './src/js/app.js',
   },
 
   resolve: {
     extensions: ['.js', '.ts'],
     modules: [
-      path.resolve(ExponentConfig.paths.source),
-      path.resolve(ExponentConfig.paths.appRoot),
-      path.resolve(ExponentConfig.paths.templateSource),
+      path.resolve('./src'),
+      path.resolve('./src/js'),
       path.resolve('./node_modules')
     ]
   },
 
   output: {
-    filename: `${ExponentConfig.jsBundleFilename}`,
-    publicPath: ExponentConfig.publicPath,
-    path: path.resolve(__dirname, ExponentConfig.paths.destination)
+    filename: 'app.js',
+    publicPath: 'public',
+    path: path.resolve(__dirname, './public')
   },
 
   optimization: {
@@ -89,7 +86,7 @@ module.exports = env => ({
       new ClosurePlugin({
         mode: 'STANDARD',
         output: {
-          filename: `${ExponentConfig.paths.destination}/${ExponentConfig.jsBundleFilename}`,
+          filename: './public/app.js',
         }
       })
     ],
@@ -115,7 +112,7 @@ module.exports = env => ({
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${ExponentConfig.cssStylesFilename}`,
+      filename: 'styles.css',
       hmr: env.NODE_ENV !== 'production'
     }),
     new OptimizeCSSAssetsPlugin({
