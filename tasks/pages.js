@@ -2,21 +2,9 @@ const fs = require('fs')
 const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
-const { build } = require('./files')
 
 const html = require('./html')
-
-const extractPages = function() {
-  const pages = glob.sync('./src/content/pages/**/*.md', {})
-
-  const withContents = applyContent(pages)
-
-  const withRelationships = applyRelationships(withContents)
-
-  const withTemplates = applyTemplates(withRelationships)
-
-  return withTemplates
-}
+const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
 const applyContent = function(pages) {
   return pages.map( page => {
@@ -139,6 +127,15 @@ const applyAdjacents = function(entries) {
   })
 }
 */
+
+const extractPages = function() {
+  const pages = glob.sync('./src/content/pages/**/*.md', {})
+
+  return pipe([
+    applyContent,
+    applyRelationships
+  ])( pages );
+}
 
 const pages = extractPages()
 

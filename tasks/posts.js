@@ -3,25 +3,9 @@ const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
 const orderBy = require('lodash.orderby')
-const { build } = require('./files')
 
 const html = require('./html')
-
-// TODO figure out if a "middleware" or "plugin" thing could work here?
-// if I use a gulp-like "pipe"?
-const extractPosts = function() {
-  const entries = glob.sync('./src/content/entries/**/*.md', {})
-
-  const withContents = applyContent(entries)
-
-  const withOrder = orderBy(withContents, 'meta.date', 'desc')
-
-  const withAdjacentPosts = applyAdjacents(withOrder)
-
-  const withTemplates = applyTemplates(withAdjacentPosts)
-
-  return withTemplates
-}
+const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
 const applyContent = function(entries) {
   return entries.map( entry => {
@@ -89,6 +73,20 @@ const applyAdjacents = function(entries) {
 
     return copy
   })
+}
+
+const applyOrder = function( entries ) {
+  return orderBy(entries, 'meta.date', 'desc')
+}
+
+const extractPosts = function() {
+  const entries = glob.sync('./src/content/entries/**/*.md', {})
+
+  return pipe([
+    applyContent,
+    applyOrder,
+    applyAdjacents
+  ])(entries);
 }
 
 const posts = extractPosts()

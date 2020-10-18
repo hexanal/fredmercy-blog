@@ -49,6 +49,8 @@ Carrying on: I've got the webpack build still working, but now I've replaced all
 
 ## October 17, 2020
 
+`~9:00am:`
+
 This morning the point is to take the output arrays of both content types `entries` and `pages` and combine them. The goal is to have access to a `global` object from any template which will contain information about the whole website. This ideally means that any page can access the data for the whole website: the first need that this change will address is the need for the blog index page to have access to the list of all the entries.
 
 - Let's begin with a `sites.js` file
@@ -57,3 +59,20 @@ This morning the point is to take the output arrays of both content types `entri
 - only after all that will the build step go through the content types and build the HTML for each
 - which means the `withTemplates` processing function inside of the content types' tasks will need to be called after the `site.js` processing is finished
 - ok let's try something out
+
+`4:46pm:`
+
+- I'm very happy about that, now the index works as expected (minus the "by-month" filtering, but I will write a filtering JS component to handle that specifically)
+- Wanted to also add a `delete` task to the scripts, something that clears up the files ready to be built again; that could be step #1 of a "deployEverything" task
+
+`7:36pm:`
+
+- Gonna move the pages around into the "blog" folder, to make space for the main website, which will be something else than the current one, I think. It's gotta be more about... I don't know... organized chaos. This is me.
+- Blog will be fine, hehe! I need to design the previous & next links, but I thought I'd incorporate this into a "navigation" module that styles all that
+- Parent page link works, that's encouraging
+
+So. God willing, if some day next week I have some time, I'll be working on adding:
+
+1. the prev/next nav
+2. the filtering of the posts could also be done pretty easily, I'm sure, but that would require some time playing with some Javascript
+3. gotta figure out if the "comments" part of the post still works
