@@ -73,6 +73,30 @@ This morning the point is to take the output arrays of both content types `entri
 
 So. God willing, if some day next week I have some time, I'll be working on adding:
 
-1. the prev/next nav
-2. the filtering of the posts could also be done pretty easily, I'm sure, but that would require some time playing with some Javascript
+1. the prev/next nav, styled
+2. the filtering of the posts could also be done pretty easily, I'm sure, but that would require some time playing with some Javascript...
 3. gotta figure out if the "comments" part of the post still works
+
+`9:42pm:`
+
+- added "pipe" function for the processing steps for each content type
+- I think I should work to make it as ready as possible to a deployable version, and deploy that bitch right away
+
+Eventually, it's gonna be all about creating that separate app that allows for some CRUD actions on the files, and for building the HTML files as well. That way, it's go time for some editing on my phone and shit. Cool.
+
+Also build some export functions straight in. I gotta save that dumb shit.
+
+## October 18, 2020
+
+- I think I will take some time off real work to make progress on this, otherwise I'll be so far behind I might as well abandon this endeavor altogether.
+- The next goals are:
+
+1. get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)
+2. whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)
+3. make sure the deployment step is easy to do
+4. deploy
+
+Many others will remain after that. But I have to focus on other things as well, and the fact I can have pages like that, is pretty fucking cool.
+I should also try and figure out something about code splitting: embark some script files only on certain pages so as not to bloat the whole thing. However, I have zero knowledge of this space so it'll be interesting to see how I go about achieving that.
+
+

@@ -57,18 +57,19 @@ const getPageMetaData = function(page) {
     .replace('.md', '')
     .split('/')
   const id = route[route.length - 1]
-  const folder = route[route.length - 2]
+  const folder = route[route.length - 2] || 'home' // if there's no folder, it's the homepage (a.k.a. root)
 
   if (id !== folder) {
     console.log('Hey dude, the page filename should match its parent folder... sorry, it’s just a convention')
   }
-
   route.pop() // NOTE: disregard the filename for the route
 
   // TODO why not do the pop before and use join here? because I might want to process the URL some more later?
-  const url = route.reduce( (acc, part, index) => {
-    return acc + '/' + part
-  }, '')
+  const url = route.length
+    ? route.reduce( (acc, part, index) => {
+      return acc + '/' + part
+    }, '')
+    : '/'
 
   const destination = `./public${url}`
 
@@ -129,7 +130,10 @@ const applyAdjacents = function(entries) {
 */
 
 const extractPages = function() {
-  const pages = glob.sync('./src/content/pages/**/*.md', {})
+  const pages = [
+    './src/content/pages/home.md',
+    ...glob.sync('./src/content/pages/**/*.md', {})
+  ]
 
   return pipe([
     applyContent,

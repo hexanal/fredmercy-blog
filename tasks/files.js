@@ -19,7 +19,7 @@ const writeFile = function(dir, html) {
 }
 
 const writeHTML = function( item ) {
-  console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
+  // console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
   return createDir( item.meta.destination )
     .then( dir => writeFile(dir, item.html) )
 }

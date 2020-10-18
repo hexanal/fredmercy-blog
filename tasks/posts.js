@@ -31,7 +31,7 @@ const applyContent = function(entries) {
 const applyTemplates = function(entries) {
   html.usePartials('./src/views/components')
 
-  const templateFile = fs.readFileSync( 'src/views/templates/post.html', 'utf8' )
+  const templateFile = fs.readFileSync( 'src/views/templates/posts.html', 'utf8' )
   const template = html.compile( templateFile.toString() )
 
   return entries.map(entry => {
