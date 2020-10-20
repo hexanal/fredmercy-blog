@@ -1,0 +1,168 @@
+<aside
+	class="help"
+	data-component="help"
+>
+	<div class="help__box">
+		<button
+			type="button"
+			class="help__close"
+			data-control="help-close"
+		>
+			close<span aria-hidden="true"> ×</span>
+		</button>
+
+		<div class="help__scroll">
+			<div class="help__section">
+				<h2 class="help__heading">
+					Interface
+				</h2>
+
+				<ul class="help__list">
+					<li class="help__item">
+						<div class="help__icon">
+							🎨
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Color theme:
+							</strong>
+							<select
+								class="help__select"
+								data-control="theme-select"
+							>
+								<option value="june">Default — "June"</option>
+								<option value="high-contrast">High contrast</option>
+								<option value="black-and-white">Black & White</option>
+								<option value="dark-mode">Dark mode</option>
+								<option value="xmas">XMas</option>
+								<option value="tron">Tron</option>
+							</select>
+					</li>
+
+					<!--
+					<li
+						class="help__item help__item--bleeps"
+						data-component="bleeps"
+					>
+						<div class="help__icon">
+							🎵
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button
+									class="hotkey help__key"
+									data-control="enable-sounds"
+									type="button">s</button>
+							</strong>
+							to
+							<span class="help__sound-enable">enable</span>
+							<span class="help__sound-disable">disable</span>
+							bleeps & sounds.
+						</div>
+					</li>
+					-->
+
+					<!-- <li
+						class="help__item"
+					>
+						<div class="help__icon">
+							🅰️
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Font:
+							</strong>
+							<select
+								class="help__select"
+								data-control="font-select"
+							>
+								<option value="plex">IBM Plex</option>
+								<option value="arial">Arial</option>
+								<option value="garamond">Garamond</option>
+							</select>
+						</div>
+					</li>   -->
+				</ul>
+      </div>
+
+			<hr class="help__separator">
+
+			<div class="help__section help__section--a11y">
+				<h2 class="help__heading">
+					Accessibility shortcuts
+				</h2>
+
+				<ul class="help__list">
+					<li class="help__item">
+						<div class="help__icon">
+							🔠
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="hotkey help__key" data-control="help-big-font" type="button">+</button>
+								and
+								<button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
+							</strong>
+							to increase and decrease the size of the text.
+						</div>
+					</li>
+					<li class="help__item">
+						<div class="help__icon">
+							Ⓜ️
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="hotkey help__key" data-control="show-menu" type="button">m</button>
+							</strong>
+							to toggle the main menu.
+						</div>
+					</li>
+					<li class="help__item">
+						<div class="help__icon">
+							⚙️
+						</div>
+						<div>
+							<strong class="help__emphasis">
+								Use
+								<button class="hotkey help__key" data-control="help-show" type="button">?</button>
+							</strong>
+							to toggle this popup.
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<hr class="help__separator">
+
+			<div class="help__section help__section--bug">
+				<div class="help__item">
+					<i class="help__icon">
+						🐛
+					</i>
+					<div>
+						Found a bug?
+						<em>
+							<a
+								href="https://github.com/hexanal/fredmercy-blog/issues"
+								target="_blank"
+								rel="noopener noreferrer"
+							>Open a new issue on Github</a>.
+						</em>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<button
+		class="help__bg"
+		data-control="help-bg"
+		type="button"
+		tabindex="-1"
+	>
+	</button>
+</aside>

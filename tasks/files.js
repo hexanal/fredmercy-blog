@@ -18,8 +18,9 @@ const writeFile = function(dir, html) {
   })
 }
 
-const writeHTML = function( item ) {
-  // console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
+// FIXME how to handle verbosity here?
+const writeHTML = function( item, verbose = false ) {
+  if ( verbose ) console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
   return createDir( item.meta.destination )
     .then( dir => writeFile(dir, item.html) )
 }

@@ -99,4 +99,40 @@ Also build some export functions straight in. I gotta save that dumb shit.
 Many others will remain after that. But I have to focus on other things as well, and the fact I can have pages like that, is pretty fucking cool.
 I should also try and figure out something about code splitting: embark some script files only on certain pages so as not to bloat the whole thing. However, I have zero knowledge of this space so it'll be interesting to see how I go about achieving that.
 
+## October 19, 2020
+
+- cleaned up the codebase a bit
+- haven't started working on the navigation... still thinking about stuff
+- maybe the "deployment" step should be taken care of before? not necessarily, but sooner rather than later, that's for sure
+- I'm thinking about:
+  - co-locating HTML/JS/CSS for components, in a way that makes sense (like if I'm using some vdom thing that's written in js, then the js imports the sass and we're done)
+  - allowing for something else other that `exponent` + `barba` to handle JS "modules" & page transitions
+    - maybe use web components in some way, but... ughhhhh!
+    - how to not use a vdom implementation?
+      - or maybe resume research into: https://github.com/Polymer/lit-html ?
+    - probably not the use-case for a statically generated website anyway, right?
+  - allowing for middlewares that make sense, for things like:
+    - main menu items
+    - other content that might need to be decoupled from the templates or layouts
+  - the nomenclature for the different parts (i.e. folders in the codebase): `components`, `content`, `templates`, etc.
+  - creating some sort of Bootstrap-y showcase with lots of different components
+    - grid, buttons, notifications, wysiwyg, tables, expand/collapse, etc.
+    - just like I did for `exponent-boilerplate`
+
+Maybe I think this project is gonna be good for any kind of website but... that's not possible. Everything has a use case.
+
+Also... should I implement a "Todo List" with this? Obviously, it'll be shitty.
+
+Granular updates to exactly what we need. Like... the list. It's a list of items. What are the default items? Is it empty by default? It depends on the (logged in) user's data -> so it's not the use case for this project, because we don't assume that you're logged in. Although I could definitely implement something like that, with API calls and all that jazz.
+
+But what about something that I have to do on many *regular* websites: reordering a list of items, or paginate some items. It requires:
+
+- getting the raw data (json) alongside the rendered data (html)
+- using something like... VDOM/JSX.... **OR** using web components
+- then you re-render when user is filtering
+
+I'd need a proof of concept.
+
+
+
 

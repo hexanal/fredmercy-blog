@@ -100,4 +100,3 @@ export default function({ui, control}) {
 
 	control['join-btn'].addEventListener('click', join);
 }
-

@@ -16,6 +16,7 @@ import keyboard from 'components/keyboard';
 import transitions from 'components/transitions';
 
 // ui
+// import bleeps from 'components/bleeps';
 import comments from 'components/comments';
 import collapse from 'components/collapse';
 import help from 'components/help';
@@ -38,6 +39,7 @@ Exponent
 		transitions
 	])
 	.register({
+		// 'bleeps': bleeps,
 		'debug-ui': debugUI,
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,

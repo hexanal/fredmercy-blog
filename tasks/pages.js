@@ -38,10 +38,10 @@ const getJsonData = function(page) {
 }
 
 const applyTemplates = function(pages) {
-  html.usePartials('./src/views/components')
+  html.usePartials('./src/components')
 
   return pages.map(page => {
-    const templateFile = fs.readFileSync( `src/views/templates/${ page.meta.template }.html`, 'utf8' )
+    const templateFile = fs.readFileSync( `src/templates/${ page.meta.template }.html`, 'utf8' )
     const template = html.compile( templateFile.toString() )
 
     return {
