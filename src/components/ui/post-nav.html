@@ -1,0 +1,25 @@
+<div class="post-nav">
+  {{#if meta.previous }}
+	<div class="post-nav__dir post-nav__dir--prev">
+    <a
+      class="post-nav__link"
+      href="{{ meta.previous.meta.url }}"
+      title="{{ meta.previous.meta.title }}"
+    >
+      ← previous
+    </a>
+	</div>
+  {{/if}}
+
+  {{#if meta.next }}
+	<div class="post-nav__dir post-nav__dir--next">
+    <a
+      class="post-nav__link"
+      href="{{ meta.next.meta.url }}"
+      title="{{ meta.next.meta.title }}"
+    >
+      next →
+    </a>
+  </div>
+  {{/if}}
+</div>

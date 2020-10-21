@@ -1,4 +1,4 @@
-import 'scss/blog/style.scss';
+import 'scss/style.scss';
 import 'assets/images/favicon.png';
 import 'assets/images/favicon-big.png';
 

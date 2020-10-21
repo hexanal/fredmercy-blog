@@ -4,17 +4,7 @@
 	{{> ui/header }}
 </div>
 
-<div>
-	TEST ZONE
-
-	<a href="{{ this.meta.previous.meta.url }}">
-		{{ this.meta.previous.meta.title }}
-	</a>
-	<pre>|</pre>
-	<a href="{{ this.meta.next.meta.url }}">
-		{{ this.meta.next.meta.title }}
-	</a>
-</div>
+{{> ui/post-nav }}
 
 <article class="post" data-component="collapse">
 	<div
