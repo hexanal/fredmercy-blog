@@ -1,35 +1,28 @@
-const { pipe } = require('./utils')
-const { writeHTML } = require('./files')
+const { insertData, pipe } = require('./utils')
+const groupBy = require('lodash.groupby')
 
-// FIXME the shape of the data `{ posts: { items: [], build: fn => 'what' }`
-// is not good at all: I need to make it as easy as possible to add stuff to each item so that the template gets the right data
+// TODO think about this: we have items, which is all the items for a contentTypes
+// but each of those is a data object passed to a template
+// ... how to distinguish both, and maybe clarify this middleware application process?
 
+const addPostsByMonth = function(contentTypes) {
+  const posts = contentTypes.find(type => type.id === 'posts').items;
 
-// TODO
-const getPostCategories = function(contentTypes) {
-  return contentTypes.map( type => {
-    return {
-      ...type,
-      items: type.items.map( item => {
-        return {
-          ...item,
-          hey: `what's up`,
-          categories: ['one', 'two']
-        }
-      })
-    }
+  return insertData(contentTypes, {
+    postsByMonth: groupBy(posts, 'meta.archive')
   })
 }
 
+// create an object that lists all the contentTypes with their items, like `{ 'type1': [...], 'type2': [...] }`
+// -> this is to pass it to the data for each item that we want to render as a file, so that it can access everything from the other content types!
 const applyCombinedData = function(contentTypes) {
   const global = contentTypes.reduce( (acc, type) => {
     return {
       ...acc,
-      [type.type]: type.items // TODO type.type, really?
+      [type.id]: type.items
     }
   }, {})
 
-  // TODO explain how that works, or make 'global' into a function (less performance I think but hey...)
   return contentTypes.map( type => {
     return {
       ...type,
@@ -46,16 +39,10 @@ const applyWriteHTML = function(contentTypes) {
   })
 }
 
-
-const applyMiddlewares = function(types, middlewares) {
-  return pipe(middlewares)(types)
-}
-
 const build = function(contentTypes) {
-  const middlewares = [ getPostCategories, applyCombinedData, applyWriteHTML ]
-  const withMiddlewares = applyMiddlewares(contentTypes, middlewares)
+  const middlewares = [ addPostsByMonth, applyCombinedData, applyWriteHTML ]
 
-  return withMiddlewares; // TODO needed?
+  return pipe(middlewares)(contentTypes)
 }
 
 module.exports = {

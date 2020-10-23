@@ -50,10 +50,18 @@ const capitalize = function(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
+const insertData = function(contentTypes, data) {
+  return contentTypes.map( type => ({
+    ...type,
+    items: type.items.map( item => ({ ...item, ...data }) ) // drill down to `items` to add the contents of data
+  }))
+}
+
 const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
 module.exports = {
-  getMonthName,
   capitalize,
+	getMonthName,
+	insertData,
   pipe
 }

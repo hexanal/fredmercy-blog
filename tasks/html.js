@@ -57,8 +57,8 @@ const compile = function( template ) {
   return Handlebars.compile( template )
 }
 
-const render = function( item ) {
-  writeHTML( item )
+const render = function(destination, html ) {
+  writeHTML(destination, html)
 }
 
 const usePartials = function( dir ) {

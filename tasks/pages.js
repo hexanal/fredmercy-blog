@@ -43,11 +43,9 @@ const applyTemplates = function(pages) {
   return pages.map(page => {
     const templateFile = fs.readFileSync( `src/templates/${ page.meta.template }.html`, 'utf8' )
     const template = html.compile( templateFile.toString() )
+    const htmlTemplate = template(page)
 
-    html.render({
-      ...page,
-      html: template(page)
-    })
+    html.render(page.meta.destination, htmlTemplate)
   })
 }
 
@@ -145,12 +143,14 @@ const pages = extractPages()
 
 /**
  * WORK IN PROGRESS
- * A content type exports an object with two things:
+ * A content type exports an object with three things:
  *
- * 1. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
- * 2. the `build` function/processor, which is used to set the `html` value on each item. The html contains the full HTML string of the page to render
+ * 1. the `id` of the conten type
+ * 2. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
+ * 3. the `renderer', which is used to set the `html` value on each item. The html contains the full HTML string of the page to render
  */
 module.exports = {
+  id: 'pages',
   items: pages,
-  build: items => applyTemplates(items)
+  renderer: items => applyTemplates(items)
 }

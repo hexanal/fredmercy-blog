@@ -1,5 +1,6 @@
 const fs = require('fs')
 
+// TODO make it sturdy, catch errors, etc.
 const createDir = function(dir) {
   return new Promise((resolve, reject) => {
     fs.mkdir(dir, { recursive: true }, (err) => {
@@ -18,11 +19,10 @@ const writeFile = function(dir, html) {
   })
 }
 
-// FIXME how to handle verbosity here?
-const writeHTML = function( item, verbose = false ) {
-  // if ( verbose ) console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
-  return createDir( item.meta.destination )
-    .then( dir => writeFile(dir, item.html) )
+const writeHTML = function(destination, htmlTemplate, verbose = false ) {
+  // TODO if ( verbose ) console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
+  return createDir( destination )
+    .then(() => writeFile(destination, htmlTemplate) )
 }
 
 module.exports = {

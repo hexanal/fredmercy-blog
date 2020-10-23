@@ -3,7 +3,6 @@ const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
 const orderBy = require('lodash.orderby')
-const groupBy = require('lodash.groupby')
 
 const html = require('./html')
 const { getMonthName, capitalize, pipe } = require('./utils')
@@ -36,10 +35,9 @@ const applyTemplates = function(entries) {
   const template = html.compile( templateFile.toString() )
 
   return entries.map(entry => {
-    html.render({
-      ...entry,
-      html: template(entry)
-     })
+    const htmlTemplate = template(entry)
+
+    html.render(entry.meta.destination, htmlTemplate)
   })
 }
 
@@ -94,7 +92,9 @@ const extractPosts = function() {
 
 const posts = extractPosts()
 
+// TODO make sure this is sturdy?
 module.exports = {
+  id: 'posts',
   items: posts,
-  build: items => applyTemplates(items)
+  renderer: items => applyTemplates(items)
 }
