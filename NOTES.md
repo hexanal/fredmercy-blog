@@ -273,3 +273,22 @@ I'll post something on the blog about this. Oh my, oh my: I'm so full of angry/d
 
 Starting to doubt my move away from gulp, haha! But fuck it, I'm digging my heels!
 
+## October 23, 2020
+
+Finally achieved feature-parity with my Gulp-powered setup, but now with a completely custom thing. I still use a few packages that are essential for the frontend to be operational, but for all the "generating a static HTML website" side of things, we're all good.
+
+I think I kind of re-invented what [Metalsmith]() does, with this "middleware" thing, which I've been eyeing for a while, but with all this self-doubt about using third-party solutions, I... yeah, I dug my heels in. And if Metalsmith never took off in a major way, I don't see my solution become anything else than a neat personal achievement. But for real, it's been great to work on that and get it to work.
+
+Now, let's review what's been done, and what's left to do:
+
+1. ~~get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)~~
+2. ~~whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)~~
+3. make sure the deployment step is easy to do
+4. deploy
+
+Steps 3 and 4: deploy. Right now, it's all about running `start.js`, but eventually I suppose I'll need something better, something that targets a specific page, or content type, or whatever.
+
+Actually, the way it's setup, I can't really modify something in posts without influencing what happens to pages, since the data that gets passed to any template of a given content type **also contains the data of all the other content types**. The philosophy of a server-less, backend-less, framework-less templating system means that all the content ever needed by a template should be available to it.
+
+Meaning: no function calls, or database calls, unless it's via API call, via JS. Which is what I wanted from the beginning. Maybe I need to think about a neat way to query the API to get individual items? Could be fun.
+
