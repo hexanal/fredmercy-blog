@@ -44,10 +44,10 @@ const applyTemplates = function(pages) {
     const templateFile = fs.readFileSync( `src/templates/${ page.meta.template }.html`, 'utf8' )
     const template = html.compile( templateFile.toString() )
 
-    return {
+    html.render({
       ...page,
       html: template(page)
-    }
+    })
   })
 }
 
@@ -143,7 +143,14 @@ const extractPages = function() {
 
 const pages = extractPages()
 
+/**
+ * WORK IN PROGRESS
+ * A content type exports an object with two things:
+ *
+ * 1. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
+ * 2. the `build` function/processor, which is used to set the `html` value on each item. The html contains the full HTML string of the page to render
+ */
 module.exports = {
   items: pages,
-  applyTemplates
+  build: items => applyTemplates(items)
 }

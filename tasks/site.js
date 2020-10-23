@@ -1,28 +1,61 @@
+const { pipe } = require('./utils')
 const { writeHTML } = require('./files')
 
-const combineData = function( types ) {
-  return Object.keys(types).reduce( (acc, typeId) => {
+// FIXME the shape of the data `{ posts: { items: [], build: fn => 'what' }`
+// is not good at all: I need to make it as easy as possible to add stuff to each item so that the template gets the right data
+
+
+// TODO
+const getPostCategories = function(contentTypes) {
+  return contentTypes.map( type => {
+    return {
+      ...type,
+      items: type.items.map( item => {
+        return {
+          ...item,
+          hey: `what's up`,
+          categories: ['one', 'two']
+        }
+      })
+    }
+  })
+}
+
+const applyCombinedData = function(contentTypes) {
+  const global = contentTypes.reduce( (acc, type) => {
     return {
       ...acc,
-      [typeId]: types[typeId].items
+      [type.type]: type.items // TODO type.type, really?
     }
   }, {})
-}
 
-const applyGlobalData = function( items, global ) {
-  return items.map( item => ({ ...item, global }) )
-}
-
-const build = function(types) {
-  const global = combineData( types )
-
-  Object.keys(types).map( typeId => {
-    const { items, applyTemplates } = types[typeId]
-    const withGlobal = applyGlobalData( items, global )
-    const withTemplate = applyTemplates( withGlobal )
-
-    return withTemplate.map( writeHTML )
+  // TODO explain how that works, or make 'global' into a function (less performance I think but hey...)
+  return contentTypes.map( type => {
+    return {
+      ...type,
+      items: type.items.map( item => ({ ...item, global }) )
+    }
   })
+}
+
+const applyWriteHTML = function(contentTypes) {
+  return contentTypes.map( type => {
+    type.renderer( type.items )
+
+    return type
+  })
+}
+
+
+const applyMiddlewares = function(types, middlewares) {
+  return pipe(middlewares)(types)
+}
+
+const build = function(contentTypes) {
+  const middlewares = [ getPostCategories, applyCombinedData, applyWriteHTML ]
+  const withMiddlewares = applyMiddlewares(contentTypes, middlewares)
+
+  return withMiddlewares; // TODO needed?
 }
 
 module.exports = {

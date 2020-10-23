@@ -3,9 +3,10 @@ const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
 const orderBy = require('lodash.orderby')
+const groupBy = require('lodash.groupby')
 
 const html = require('./html')
-const pipe = fns => x => fns.reduce((v, f) => f(v), x)
+const { getMonthName, capitalize, pipe } = require('./utils')
 
 const applyContent = function(entries) {
   return entries.map( entry => {
@@ -35,10 +36,10 @@ const applyTemplates = function(entries) {
   const template = html.compile( templateFile.toString() )
 
   return entries.map(entry => {
-    return {
+    html.render({
       ...entry,
       html: template(entry)
-    }
+     })
   })
 }
 
@@ -52,6 +53,7 @@ const getPostMetaData = function(entry) {
   const url = `/blog/${date}/${id}`
   const destination = `./public/blog/${date}/${id}`
   const [year, month, day] = date.split('-')
+  const archive = `${capitalize(getMonthName(month))} ${year}`
 
   return {
     destination,
@@ -60,7 +62,8 @@ const getPostMetaData = function(entry) {
     id,
     year,
     month,
-    day
+    day,
+    archive
   }
 }
 
@@ -93,5 +96,5 @@ const posts = extractPosts()
 
 module.exports = {
   items: posts,
-  applyTemplates
+  build: items => applyTemplates(items)
 }

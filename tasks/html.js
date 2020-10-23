@@ -1,6 +1,8 @@
 const fs = require('fs')
 const Handlebars = require('handlebars')
 
+const { writeHTML } = require('./files')
+
 const registerPartialHelper = function() {
   Handlebars.registerHelper('block', function (template, context, opts) {
     const f = Handlebars.partials[template]
@@ -55,6 +57,10 @@ const compile = function( template ) {
   return Handlebars.compile( template )
 }
 
+const render = function( item ) {
+  writeHTML( item )
+}
+
 const usePartials = function( dir ) {
   registerPartials(dir, dir)
   registerPartialHelper()
@@ -62,5 +68,6 @@ const usePartials = function( dir ) {
 
 module.exports = {
   compile,
+  render,
   usePartials
 }

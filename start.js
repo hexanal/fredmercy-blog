@@ -1,6 +1,17 @@
 const { build } = require('./tasks/site')
 
-const posts = require('./tasks/posts')
-const pages = require('./tasks/pages')
+const typePosts = require('./tasks/posts')
+const typePages = require('./tasks/pages')
 
-build({ posts, pages })
+build([
+  {
+    type: 'posts',
+    items: typePosts.items,
+    renderer: typePosts.build
+  },
+  {
+    type: 'pages',
+    items: typePages.items,
+    renderer: typePages.build
+  }
+])

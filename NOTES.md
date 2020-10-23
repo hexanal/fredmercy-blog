@@ -123,7 +123,7 @@ Maybe I think this project is gonna be good for any kind of website but... that'
 
 Also... should I implement a "Todo List" with this? Obviously, it'll be shitty.
 
-Granular updates to exactly what we need. Like... the list. It's a list of items. What are the default items? Is it empty by default? It depends on the (logged in) user's data -> so it's not the use case for this project, because we don't assume that you're logged in. Although I could definitely implement something like that, with API calls and all that jazz.
+Granular updates to exactly do what we need. Like... the list: it's a list of items. What are the default items? Is it empty by default? It depends on the (logged in) user's data -> so it's not the use case for this project, because we don't assume that you're logged in. Although I could definitely implement something like that, with API calls and all that jazz.
 
 But what about something that I have to do on many *regular* websites: reordering a list of items, or paginate some items. It requires:
 
@@ -141,11 +141,11 @@ What to eventually include in the "blog" -> to make it more generic, more powerf
   - how to make that work?!?!?!?
   - important because: it might change the way the data is shown
   - for pages: it's fine, we can use a root folder `es`, `ru`, `jp`
-  - for posts... we might have to program something in that adds a translation and puts it where it makes sense
+  - for posts... we might have to program something in that takes a translation and puts it where it makes sense
     - e.g. `[...]/2019-01-31/planning-dreading.md` -> that's the original, default version; in my case the English version
     - and then `[...]/2019-01-31/計画、恐ろしい.jp.md` for the Japanese version, for instance
     - this gets parsed as having a *sub-extension*, interpreted as an alternative language
-    - the processing *middleware* and/or templating engine see that and places the alternative version in a root folder, corresponding to the alt language
+    - the processing *middleware* and/or templating engine see that and place the alternative version in a root folder, corresponding to the alt language
     - the processing *middleware* also has to provide (in `meta`?) the URL to the alternative language, so we can feed a language switcher module
 - import/export of all the data
   - zipping the `src/content` folder, that's a start
@@ -221,3 +221,55 @@ What to eventually include in the "blog" -> to make it more generic, more powerf
   - help users find shit
 - server-side stuff?
   - modules that we'll need: `search`, `photoshop` (imagemagick)
+
+## October 21, 2020
+
+As a web developer in the year 2020, I feel like my days are counted. Not only because some company backed by mountains of VC money will have invented an easy way for websites to be built, and it'll become the *de facto* way of building the web (ugh! I hope not), but also because the industry as a whole is really becoming homogeneous and frankly: boring. So I have a feeling I'll just quit before I'm obsolete.
+
+Even the designers don't venture to far out from the norm. Have we solved all the UX issues and somehow found **the ONE** solution to our UI/UX needs? I don't believe so.
+
+The tech stack sort of sucks. CSS sucks big time, and engineers are seemingly throwing everything at it to *fix* it. The only way to work on something that feels like it's "software", is to work for product companies: your Spotify, your Shopify, your Netlify, your Notion, etc.
+
+Maybe I'm just jaded, or misguided, or my job sucks (does it?), or I haven't learned enough. With my time eroded so much, I don't have the luxury of spending tons of hours working on tech-related bullshit: I also have to take care of my family, socialize with friends, learn real life skills in order to fix my real life.
+
+I'll post something on the blog about this. Oh my, oh my: I'm so full of angry/dark/sad thoughts, and I probably shouldn't write them out... which is why I *HAVE* to do it.
+
+## October 22, 2020
+
+- I have to look deeper into *security*
+- it's cool to do stuff as a proof of concept, but it's better to think about security first
+  - "safety first", maybe "privacy first"?
+  - I don't want people to be able to hack the system with a tiny script, and to be honest I don't feel confident in my ability to counter this threat... a static website should be super safe, but the moment I have some backend API setup, I might have to beef it up security-wise
+- the way I'm creating the huge data object is a bit flawed in that I also use that to tack on the `html` template, which we don't need to pass to the template itself, only to the "builder"
+
+- solving the extra data problem:
+  - I would to be able to have objects or arrays containing info about the content types, without having to tap *into them*: a separate key, a `global.XXX`
+  - I could replace the `applyGlobalData` with something that applies global middlewares
+  - the `items` data contains all the content types, so I could use it to figure out things about them, and place them in something else under `global`
+
+- right now I:
+  - combine the content types together in a object, with its keys corresponding to the `items` of content types: `{ 'posts': [...], 'pages', [...] }`
+  - go through each content type and add that object to each content type, under `global`
+  - then I apply the templating
+
+- how to separate the templating logic from the actual data?
+  - ok. Ideally, I would love to have something like that:
+    - I add a contenty type. It's blog posts, file: `posts.js`
+    - this targets file in `content/entries/**/*.md`
+    - then I pass all those file paths into *processors* (middlewares)
+    - I end up with an array of object, with each object being a properly formatted *template-data* object, containing all the necessary info for an item of content type `posts`
+    - if I have another content type, say `pages`, I would like to have that available as *template-data* in a `posts` type template as well
+    - why?
+    - because I want to be able to interrogate the site's data for a certain page, and if it exists, print its URL, title, etc.
+  - right now, I pass all that into a `global` object
+    - the `blog` page can them tap into `global.posts` to show the list of posts
+    - I would love to be able to add arbritrary things in there as well
+    - could it be something like...
+      - I go through each item
+      - I apply all the global *processors* (being passed the array of all the content types)
+      - they process the data and dump that data into a `global` (or `site`, or `all`, or `master`, or `root`?) key
+      - ~~I detect whether this item needs to access some other data~~
+      - e.g. an "archive" processor would receive all that, parse the items, fetch all the post items, extract the dates for each, format a new object, and insert that object into the item
+
+Starting to doubt my move away from gulp, haha! But fuck it, I'm digging my heels!
+
