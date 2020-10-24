@@ -1,5 +1,18 @@
 # NOTES
 
+## October 24, 2020
+
+On this beautiful Saturday morning, I've been taking a short window of opportunity to do some extra work on the page navigation. And navigating the site made some other issues apparent:
+
+- comments are not yet re-activated; this will need some thinking, so if I decide to deploy this new version, it will be without support for commenting on the posts. Boo-hoo, who cares.
+- I defaulted to using the current way of displaying posts, by month, with a dropdown shortcut to reach past archives. I like the idea of having only one blog index, so I'll keep it that way for now. But I also want to allow users to filter out all the dumb posts and focus on the "better ones", if there are some. Obviously, since these days I only post about dumb shit, this filtering functionality isn't the priority.
+  - although, I still want to work on that to allow filtering the Bookmarks page (which by the way I have to fill up with new shit!)
+- the "COMING SOON" homepage is good enough, I guess, since I don't need a "main" website for now. But eventually I'll have to think about what I want to put in there. And this will require some intense refactoring of the CSS and JS, most probably... to separate the two spaces? Or I can keep the current setup? It's been a year and I still sort of love it!
+- I have to think about the "themes" and whether I want to keep that feature. Maybe stick with only three themes that I really tweak to perfection?
+  - "june" theme
+  - "dark" theme
+  - "b&w" theme? (most accessible theme)
+
 ## October 23, 2020
 
 Finally achieved feature-parity with my Gulp-powered setup, but now with a completely custom thing. I still use a few packages that are essential for the frontend to be operational, but for all the "generating a static HTML website" side of things, we're all good.
