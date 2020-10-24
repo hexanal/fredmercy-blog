@@ -1,103 +1,88 @@
 # NOTES
 
-## October 10, 2020
+## October 23, 2020
 
-Trying with Recoil, since I went with React, might as well get the latest hotness for the state management.
-I think I can get my head around it. Let's try it tonight, for a little bit.
+Finally achieved feature-parity with my Gulp-powered setup, but now with a completely custom thing. I still use a few packages that are essential for the frontend to be operational, but for all the "generating a static HTML website" side of things, we're all good.
 
-## October 15, 2020
+I think I kind of re-invented what [Metalsmith](https://metalsmith.io/) does, with this "middleware" thing, which I've been eyeing for a while, but with all this self-doubt about using third-party solutions, I... yeah, I dug my heels in. And if Metalsmith never took off in a major way, I don't see my solution become anything else than a neat personal achievement. But for real, it's been great to work on that and get it to work.
 
-- Oh. My. God. I'm back into the weeds. The thing is: what I need is something simple.
-- I will attempt to explain the absolute minimum I need again:
+Now, let's review what's been done, and what's left to do:
 
-1. swap out the gulp build process with something that can be done server-side via an API call
-2. focusing solely on the blog entries, which is the first type of content that I will need to update often
-3. I need something that just grabs all of the files, reads them all and generate some HTML for all those motherfuckers, right?
-4. and I stick that shit into the right template, which is unique, eh? (unless specified otherwise in the front-matter)
-5. I keep an array of all the posts, with their information, sorted by date, as a tree
-6. THEN, I process the data somewhat
-7. I can format the date, fetch some bullshit, etc. etc. and put the fucking "ADJACENT" posts
-8. loop through the array, feed the "handlebars" script with all that bullshit
-
-Let's try to implement that; but let's keep it simple.
-
-## October 16, 2020
-
-Haven't had much time to implement everything, but what I did yesterday evening is an encouraging step forward. I see it as more of an incremental change than a complete overhaul, which is perfect because I finally realized that a full-blown reboot of the whole thing is completely overkill.
-
-What I have today is:
-
-1. a `start.js` file that reads the `content/entries` folder for markdown files
-2. it then extracts the post content from each of the files
-3. I have created a handful of functions that take the `entries` array (the list of files) and process the info to extract content and other interesting information
-4. this object doesn't generate anything, but in my mind, it could be used to generate an "export" of the content, with all the HTML content, the metadata, etc., already formatted
-5. there is a final step that loops through that final array and creates the directories and `index.html` files: the build step
-
-What I don't have:
-
-1. I have nothing that replicates the `watch` task from gulp, but I'm pretty sure it will be an easy addition (e.g. listen to changes on the `src/content/**/*` files, on changes I grab the path, and pass it to my function that rebuilds the website. There's something to watch out for: placing the changed file in context of the whole website, which is why I intend to try and keep the whole content structure of the website in memory, somewhere accessible easily in the code so that I can fetch shit from other pages in a pinch, and figure out where a given page sits in the context of the whole website)
-2. the build step for the straight up "pages" isn't done, but I wanted to clean up the build step for blog post first and see what I could possibly reuse for pages, make it a little more generic
-
-So, let's try to clean up the `start.js` file a bit.
-
-Ok. Let's try to work on **pages** now!
-
-- I'm copy/pasting the `posts.js` file for now, I'll see what the similarities are later, and will try to make it less verbose
-- Going well... Trying to see if I can stuff more "metadata" into the page object, so that a page can figure out its parent page, child page, etc. etc.
-
-Carrying on: I've got the webpack build still working, but now I've replaced all the variables from the `exponent.config.js` with straight strings, because I never really needed that configuration to be generic, or easily modified: if I want to move things around, I'll know to change the strings directly in the `webpack.config.js` instead. Easy.
-
-## October 17, 2020
-
-`~9:00am:`
-
-This morning the point is to take the output arrays of both content types `entries` and `pages` and combine them. The goal is to have access to a `global` object from any template which will contain information about the whole website. This ideally means that any page can access the data for the whole website: the first need that this change will address is the need for the blog index page to have access to the list of all the entries.
-
-- Let's begin with a `sites.js` file
-- This will grab all the content types' arrays and collate them into one big object
-- Then, it will loop through each item of each content type, and insert this object inside a `site` (or `global`? or `app`? or `__`? I don't know yet) property (the `props` if we use React's parlance, although I'm not using React here)
-- only after all that will the build step go through the content types and build the HTML for each
-- which means the `withTemplates` processing function inside of the content types' tasks will need to be called after the `site.js` processing is finished
-- ok let's try something out
-
-`4:46pm:`
-
-- I'm very happy about that, now the index works as expected (minus the "by-month" filtering, but I will write a filtering JS component to handle that specifically)
-- Wanted to also add a `delete` task to the scripts, something that clears up the files ready to be built again; that could be step #1 of a "deployEverything" task
-
-`7:36pm:`
-
-- Gonna move the pages around into the "blog" folder, to make space for the main website, which will be something else than the current one, I think. It's gotta be more about... I don't know... organized chaos. This is me.
-- Blog will be fine, hehe! I need to design the previous & next links, but I thought I'd incorporate this into a "navigation" module that styles all that
-- Parent page link works, that's encouraging
-
-So. God willing, if some day next week I have some time, I'll be working on adding:
-
-1. the prev/next nav, styled
-2. the filtering of the posts could also be done pretty easily, I'm sure, but that would require some time playing with some Javascript...
-3. gotta figure out if the "comments" part of the post still works
-
-`9:42pm:`
-
-- added "pipe" function for the processing steps for each content type
-- I think I should work to make it as ready as possible to a deployable version, and deploy that bitch right away
-
-Eventually, it's gonna be all about creating that separate app that allows for some CRUD actions on the files, and for building the HTML files as well. That way, it's go time for some editing on my phone and shit. Cool.
-
-Also build some export functions straight in. I gotta save that dumb shit.
-
-## October 18, 2020
-
-- I think I will take some time off real work to make progress on this, otherwise I'll be so far behind I might as well abandon this endeavor altogether.
-- The next goals are:
-
-1. get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)
-2. whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)
+1. ~~get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)~~
+2. ~~whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)~~
 3. make sure the deployment step is easy to do
 4. deploy
 
-Many others will remain after that. But I have to focus on other things as well, and the fact I can have pages like that, is pretty fucking cool.
-I should also try and figure out something about code splitting: embark some script files only on certain pages so as not to bloat the whole thing. However, I have zero knowledge of this space so it'll be interesting to see how I go about achieving that.
+Steps 3 and 4: deploy. Right now, it's all about running `start.js`, but eventually I suppose I'll need something better, something that targets a specific page, or content type, or whatever.
+
+Actually, the way it's setup, I can't really modify something in posts without influencing what happens to pages, since the data that gets passed to any template of a given content type **also contains the data of all the other content types**. The philosophy of a server-less, backend-less, framework-less templating system means that all the content ever needed by a template should be available to it.
+
+Meaning: no function calls, or database calls, unless it's via API call, via JS. Which is what I wanted from the beginning. Maybe I need to think about a neat way to query the API to get individual items? Could be fun.
+
+---
+
+Reading the Metalsmith homepage... man, I really did the same exact thing. Even the same kind of philosophy! ugh! I must have been subconsciously ripping off their idea. But to be honest I haven't looked at their source code, and maybe I should! For research purposes. Like: how did I do?
+
+First of all, my project's objective is to be simple. It's not at Metalsmith level yet, but for something I whipped up for a specific use-case in a couple of weeks, I'm happy about it. Clocks in at 489 lines of code so far (that's all the code used to generate the HTML files) which is reasonable.
+
+The objective was also to produce code almost from scratch to really be aware of everything it does. There's no library doing weird shit in the background! At least not yet! Maybe once I have to make it more generic and sturdy, with error handling, logging, import/export, etc. etc. etc.
+
+But that ain't really the aim right now. Everybody and their dog has written a static website generator by now. The goal was to dump the `gulp` dependency and roll my own shit. So here we are.
+
+---
+
+Aaaaaaaaand I just found out my `getParentPages` function doesn't work when there are collisions. Ugh!
+
+## October 22, 2020
+
+- I have to look deeper into *security*
+- it's cool to do stuff as a proof of concept, but it's better to think about security first
+  - "safety first", maybe "privacy first"?
+  - I don't want people to be able to hack the system with a tiny script, and to be honest I don't feel confident in my ability to counter this threat... a static website should be super safe, but the moment I have some backend API setup, I might have to beef it up security-wise
+- the way I'm creating the huge data object is a bit flawed in that I also use that to tack on the `html` template, which we don't need to pass to the template itself, only to the "builder"
+
+- solving the extra data problem:
+  - I would to be able to have objects or arrays containing info about the content types, without having to tap *into them*: a separate key, a `global.XXX`
+  - I could replace the `applyGlobalData` with something that applies global middlewares
+  - the `items` data contains all the content types, so I could use it to figure out things about them, and place them in something else under `global`
+
+- right now I:
+  - combine the content types together in a object, with its keys corresponding to the `items` of content types: `{ 'posts': [...], 'pages', [...] }`
+  - go through each content type and add that object to each content type, under `global`
+  - then I apply the templating
+
+- how to separate the templating logic from the actual data?
+  - ok. Ideally, I would love to have something like that:
+    - I add a contenty type. It's blog posts, file: `posts.js`
+    - this targets file in `content/entries/**/*.md`
+    - then I pass all those file paths into *processors* (middlewares)
+    - I end up with an array of object, with each object being a properly formatted *template-data* object, containing all the necessary info for an item of content type `posts`
+    - if I have another content type, say `pages`, I would like to have that available as *template-data* in a `posts` type template as well
+    - why?
+    - because I want to be able to interrogate the site's data for a certain page, and if it exists, print its URL, title, etc.
+  - right now, I pass all that into a `global` object
+    - the `blog` page can them tap into `global.posts` to show the list of posts
+    - I would love to be able to add arbritrary things in there as well
+    - could it be something like...
+      - I go through each item
+      - I apply all the global *processors* (being passed the array of all the content types)
+      - they process the data and dump that data into a `global` (or `site`, or `all`, or `master`, or `root`?) key
+      - ~~I detect whether this item needs to access some other data~~
+      - e.g. an "archive" processor would receive all that, parse the items, fetch all the post items, extract the dates for each, format a new object, and insert that object into the item
+
+Starting to doubt my move away from gulp, haha! But fuck it, I'm digging my heels!
+
+## October 21, 2020
+
+As a web developer in the year 2020, I feel like my days are counted. Not only because some company backed by mountains of VC money will have invented an easy way for websites to be built, and it'll become the *de facto* way of building the web (ugh! I hope not), but also because the industry as a whole is really becoming homogeneous and frankly: boring. So I have a feeling I'll just quit before I'm obsolete.
+
+Even the designers don't venture to far out from the norm. Have we solved all the UX issues and somehow found **the ONE** solution to our UI/UX needs? I don't believe so.
+
+The tech stack sort of sucks. CSS sucks big time, and engineers are seemingly throwing everything at it to *fix* it. The only way to work on something that feels like it's "software", is to work for product companies: your Spotify, your Shopify, your Netlify, your Notion, etc.
+
+Maybe I'm just jaded, or misguided, or my job sucks (does it?), or I haven't learned enough. With my time eroded so much, I don't have the luxury of spending tons of hours working on tech-related bullshit: I also have to take care of my family, socialize with friends, learn real life skills in order to fix my real life.
+
+I'll post something on the blog about this. Oh my, oh my: I'm so full of angry/dark/sad thoughts, and I probably shouldn't write them out... which is why I *HAVE* to do it.
 
 ## October 19, 2020
 
@@ -222,73 +207,101 @@ What to eventually include in the "blog" -> to make it more generic, more powerf
 - server-side stuff?
   - modules that we'll need: `search`, `photoshop` (imagemagick)
 
-## October 21, 2020
+## October 18, 2020
 
-As a web developer in the year 2020, I feel like my days are counted. Not only because some company backed by mountains of VC money will have invented an easy way for websites to be built, and it'll become the *de facto* way of building the web (ugh! I hope not), but also because the industry as a whole is really becoming homogeneous and frankly: boring. So I have a feeling I'll just quit before I'm obsolete.
+- I think I will take some time off real work to make progress on this, otherwise I'll be so far behind I might as well abandon this endeavor altogether.
+- The next goals are:
 
-Even the designers don't venture to far out from the norm. Have we solved all the UX issues and somehow found **the ONE** solution to our UI/UX needs? I don't believe so.
-
-The tech stack sort of sucks. CSS sucks big time, and engineers are seemingly throwing everything at it to *fix* it. The only way to work on something that feels like it's "software", is to work for product companies: your Spotify, your Shopify, your Netlify, your Notion, etc.
-
-Maybe I'm just jaded, or misguided, or my job sucks (does it?), or I haven't learned enough. With my time eroded so much, I don't have the luxury of spending tons of hours working on tech-related bullshit: I also have to take care of my family, socialize with friends, learn real life skills in order to fix my real life.
-
-I'll post something on the blog about this. Oh my, oh my: I'm so full of angry/dark/sad thoughts, and I probably shouldn't write them out... which is why I *HAVE* to do it.
-
-## October 22, 2020
-
-- I have to look deeper into *security*
-- it's cool to do stuff as a proof of concept, but it's better to think about security first
-  - "safety first", maybe "privacy first"?
-  - I don't want people to be able to hack the system with a tiny script, and to be honest I don't feel confident in my ability to counter this threat... a static website should be super safe, but the moment I have some backend API setup, I might have to beef it up security-wise
-- the way I'm creating the huge data object is a bit flawed in that I also use that to tack on the `html` template, which we don't need to pass to the template itself, only to the "builder"
-
-- solving the extra data problem:
-  - I would to be able to have objects or arrays containing info about the content types, without having to tap *into them*: a separate key, a `global.XXX`
-  - I could replace the `applyGlobalData` with something that applies global middlewares
-  - the `items` data contains all the content types, so I could use it to figure out things about them, and place them in something else under `global`
-
-- right now I:
-  - combine the content types together in a object, with its keys corresponding to the `items` of content types: `{ 'posts': [...], 'pages', [...] }`
-  - go through each content type and add that object to each content type, under `global`
-  - then I apply the templating
-
-- how to separate the templating logic from the actual data?
-  - ok. Ideally, I would love to have something like that:
-    - I add a contenty type. It's blog posts, file: `posts.js`
-    - this targets file in `content/entries/**/*.md`
-    - then I pass all those file paths into *processors* (middlewares)
-    - I end up with an array of object, with each object being a properly formatted *template-data* object, containing all the necessary info for an item of content type `posts`
-    - if I have another content type, say `pages`, I would like to have that available as *template-data* in a `posts` type template as well
-    - why?
-    - because I want to be able to interrogate the site's data for a certain page, and if it exists, print its URL, title, etc.
-  - right now, I pass all that into a `global` object
-    - the `blog` page can them tap into `global.posts` to show the list of posts
-    - I would love to be able to add arbritrary things in there as well
-    - could it be something like...
-      - I go through each item
-      - I apply all the global *processors* (being passed the array of all the content types)
-      - they process the data and dump that data into a `global` (or `site`, or `all`, or `master`, or `root`?) key
-      - ~~I detect whether this item needs to access some other data~~
-      - e.g. an "archive" processor would receive all that, parse the items, fetch all the post items, extract the dates for each, format a new object, and insert that object into the item
-
-Starting to doubt my move away from gulp, haha! But fuck it, I'm digging my heels!
-
-## October 23, 2020
-
-Finally achieved feature-parity with my Gulp-powered setup, but now with a completely custom thing. I still use a few packages that are essential for the frontend to be operational, but for all the "generating a static HTML website" side of things, we're all good.
-
-I think I kind of re-invented what [Metalsmith]() does, with this "middleware" thing, which I've been eyeing for a while, but with all this self-doubt about using third-party solutions, I... yeah, I dug my heels in. And if Metalsmith never took off in a major way, I don't see my solution become anything else than a neat personal achievement. But for real, it's been great to work on that and get it to work.
-
-Now, let's review what's been done, and what's left to do:
-
-1. ~~get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)~~
-2. ~~whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)~~
+1. get the next/previous page module work (minimum: arrows next to the links, make sure the links are easy to use, easy to spot)
+2. whip up a nice, minimal, fun, "work in progress" homepage where the current website lives (so, an index page!)
 3. make sure the deployment step is easy to do
 4. deploy
 
-Steps 3 and 4: deploy. Right now, it's all about running `start.js`, but eventually I suppose I'll need something better, something that targets a specific page, or content type, or whatever.
+Many others will remain after that. But I have to focus on other things as well, and the fact I can have pages like that, is pretty fucking cool.
+I should also try and figure out something about code splitting: embark some script files only on certain pages so as not to bloat the whole thing. However, I have zero knowledge of this space so it'll be interesting to see how I go about achieving that.
 
-Actually, the way it's setup, I can't really modify something in posts without influencing what happens to pages, since the data that gets passed to any template of a given content type **also contains the data of all the other content types**. The philosophy of a server-less, backend-less, framework-less templating system means that all the content ever needed by a template should be available to it.
+## October 17, 2020
 
-Meaning: no function calls, or database calls, unless it's via API call, via JS. Which is what I wanted from the beginning. Maybe I need to think about a neat way to query the API to get individual items? Could be fun.
+`~9:00am:`
 
+This morning the point is to take the output arrays of both content types `entries` and `pages` and combine them. The goal is to have access to a `global` object from any template which will contain information about the whole website. This ideally means that any page can access the data for the whole website: the first need that this change will address is the need for the blog index page to have access to the list of all the entries.
+
+- Let's begin with a `sites.js` file
+- This will grab all the content types' arrays and collate them into one big object
+- Then, it will loop through each item of each content type, and insert this object inside a `site` (or `global`? or `app`? or `__`? I don't know yet) property (the `props` if we use React's parlance, although I'm not using React here)
+- only after all that will the build step go through the content types and build the HTML for each
+- which means the `withTemplates` processing function inside of the content types' tasks will need to be called after the `site.js` processing is finished
+- ok let's try something out
+
+`4:46pm:`
+
+- I'm very happy about that, now the index works as expected (minus the "by-month" filtering, but I will write a filtering JS component to handle that specifically)
+- Wanted to also add a `delete` task to the scripts, something that clears up the files ready to be built again; that could be step #1 of a "deployEverything" task
+
+`7:36pm:`
+
+- Gonna move the pages around into the "blog" folder, to make space for the main website, which will be something else than the current one, I think. It's gotta be more about... I don't know... organized chaos. This is me.
+- Blog will be fine, hehe! I need to design the previous & next links, but I thought I'd incorporate this into a "navigation" module that styles all that
+- Parent page link works, that's encouraging
+
+So. God willing, if some day next week I have some time, I'll be working on adding:
+
+1. the prev/next nav, styled
+2. the filtering of the posts could also be done pretty easily, I'm sure, but that would require some time playing with some Javascript...
+3. gotta figure out if the "comments" part of the post still works
+
+`9:42pm:`
+
+- added "pipe" function for the processing steps for each content type
+- I think I should work to make it as ready as possible to a deployable version, and deploy that bitch right away
+
+Eventually, it's gonna be all about creating that separate app that allows for some CRUD actions on the files, and for building the HTML files as well. That way, it's go time for some editing on my phone and shit. Cool.
+
+Also build some export functions straight in. I gotta save that dumb shit.
+
+## October 16, 2020
+
+Haven't had much time to implement everything, but what I did yesterday evening is an encouraging step forward. I see it as more of an incremental change than a complete overhaul, which is perfect because I finally realized that a full-blown reboot of the whole thing is completely overkill.
+
+What I have today is:
+
+1. a `start.js` file that reads the `content/entries` folder for markdown files
+2. it then extracts the post content from each of the files
+3. I have created a handful of functions that take the `entries` array (the list of files) and process the info to extract content and other interesting information
+4. this object doesn't generate anything, but in my mind, it could be used to generate an "export" of the content, with all the HTML content, the metadata, etc., already formatted
+5. there is a final step that loops through that final array and creates the directories and `index.html` files: the build step
+
+What I don't have:
+
+1. I have nothing that replicates the `watch` task from gulp, but I'm pretty sure it will be an easy addition (e.g. listen to changes on the `src/content/**/*` files, on changes I grab the path, and pass it to my function that rebuilds the website. There's something to watch out for: placing the changed file in context of the whole website, which is why I intend to try and keep the whole content structure of the website in memory, somewhere accessible easily in the code so that I can fetch shit from other pages in a pinch, and figure out where a given page sits in the context of the whole website)
+2. the build step for the straight up "pages" isn't done, but I wanted to clean up the build step for blog post first and see what I could possibly reuse for pages, make it a little more generic
+
+So, let's try to clean up the `start.js` file a bit.
+
+Ok. Let's try to work on **pages** now!
+
+- I'm copy/pasting the `posts.js` file for now, I'll see what the similarities are later, and will try to make it less verbose
+- Going well... Trying to see if I can stuff more "metadata" into the page object, so that a page can figure out its parent page, child page, etc. etc.
+
+Carrying on: I've got the webpack build still working, but now I've replaced all the variables from the `exponent.config.js` with straight strings, because I never really needed that configuration to be generic, or easily modified: if I want to move things around, I'll know to change the strings directly in the `webpack.config.js` instead. Easy.
+
+## October 15, 2020
+
+- Oh. My. God. I'm back into the weeds. The thing is: what I need is something simple.
+- I will attempt to explain the absolute minimum I need again:
+
+1. swap out the gulp build process with something that can be done server-side via an API call
+2. focusing solely on the blog entries, which is the first type of content that I will need to update often
+3. I need something that just grabs all of the files, reads them all and generate some HTML for all those motherfuckers, right?
+4. and I stick that shit into the right template, which is unique, eh? (unless specified otherwise in the front-matter)
+5. I keep an array of all the posts, with their information, sorted by date, as a tree
+6. THEN, I process the data somewhat
+7. I can format the date, fetch some bullshit, etc. etc. and put the fucking "ADJACENT" posts
+8. loop through the array, feed the "handlebars" script with all that bullshit
+
+Let's try to implement that; but let's keep it simple.
+
+## October 10, 2020
+
+Trying with Recoil, since I went with React, might as well get the latest hotness for the state management.
+I think I can get my head around it. Let's try it tonight, for a little bit.
