@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 50rem;
   margin-top: 1.5rem;
 
   @media (min-width: $mq-medium) {
@@ -9,11 +10,15 @@
   }
 }
 
-.post-nav__dir {
-  margin-right: 1rem;
+.post-nav__item {
+  flex-grow: 1;
+
+  + .post-nav__item {
+    margin-left: 1rem;
+  }
 }
 
-.post-nav__dir--next {
+.post-nav__item--adjacent {
   text-align: right;
 }
 
@@ -23,6 +28,10 @@
   color: var(--color-bg);
   background-color: var(--color-subdued);
   text-decoration: none;
+
+  + .post-nav__link {
+    margin-left: 1rem;
+  }
 
   &:hover,
   &:focus {
