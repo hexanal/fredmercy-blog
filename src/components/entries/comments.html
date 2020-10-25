@@ -6,9 +6,9 @@
 	<div
 		class="comments__grid"
 		data-ui="grid"
-		data-entry-id="{{ date }}"
+		data-entry-id="{{ meta.date }}"
 	>
-	{{#each commentsGrid}}
+	{{#each comments}}
 		<button
 			id="comment_{{ this.index }}"
 			type="button"

@@ -65,6 +65,21 @@ const getPostMetaData = function(entry) {
   }
 }
 
+const applyComments = function(entries) {
+  return entries.map( entry => {
+    const entryId = entry.meta.date
+
+    return {
+      ...entry,
+      comments: Array(25).fill(null).map((_, index) => ({
+        entryId,
+        index: index + 1,
+        commentId: entryId + '_' + (index + 1)
+      }))
+    }
+  })
+}
+
 const applyAdjacents = function(entries) {
   return entries.map( (entry, index) => {
     const copy = {...entry}
@@ -85,6 +100,7 @@ const extractPosts = function() {
 
   return pipe([
     applyContent,
+    applyComments,
     applyOrder,
     applyAdjacents
   ])(entries);

@@ -1,5 +1,17 @@
 # NOTES
 
+## October 25, 2020
+
+- doing a quick mix-and-match with the old version(s) of the blog, I managed to put the comments back online, so to speak.
+- I'll deactivate the extra weird colorschemes and fix the dropdown
+- haven't given any thought to the main website's struture; whether to reboot it completely, or just "port" it as is to start with
+  - probably better to port it in order to a) get something up and running that matches what I currently have, b) have a proof of concept for this "new" way of doing things: if it can do what the previous system was doing, then it's great
+- I'll postpone the filtering system I was alluding to for the bookmarks page; keep it for another day
+  - was thinking of trying a bunch of implementations for filtering and sorting
+    - tacking on as many features as possible to make it legit, but keeping it real small, and "modular" whatever that means to me or anybody else...
+    - ...and then I'll see which is the simplest, most straightforward one; maybe a mix of all
+- the post navigation module sort of sucks; I need to move things around
+
 ## October 24, 2020
 
 On this beautiful Saturday morning, I've been taking a short window of opportunity to do some extra work on the page navigation. And navigating the site made some other issues apparent:
