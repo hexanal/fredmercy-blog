@@ -1,5 +1,27 @@
 # NOTES
 
+## October 26, 2020
+
+- lots of useless ideas yesterday!
+  - the comments ideas (having the "database JSONs" co-located with the post they refer to) can be dropped, I think... or I have top operationalize the heck out of it
+- the shortcode idea is not too bad, but again, I need to prototype. It can't become a weird Frankenstein monster version of a "block" system. It needs to be simple, effective, solid.
+- as for the CSS hybrid between BEM and Tailwind needs some researching into as well
+  - a little showcase, a different branch after this one maybe? i dunno
+
+1. still have to fix the colorscheme dropdown
+2. still have to fix the "parent" pages thing
+3. fix the "loading" state redesign
+
+- idea number 4324324: why not have some processing happen at the template level?
+  - grab all the script "middleware" from the template, apply that shit, process the data, feed it to the template
+  - that way I can have shit like main menu, etc. etc.
+    - I need to visually represent this
+
+Future things to add:
+
+1. error handling (better UX, better dialogs)
+2. ? forgot what else, but there's more, for sure
+
 ## October 25, 2020
 
 - doing a quick mix-and-match with the old version(s) of the blog, I managed to put the comments back online, so to speak.
@@ -24,6 +46,8 @@ When I try to think of way to do things differently, I have these wacky images p
 - highdea of the evening: put shorcodes (on steroids) in the content for the "blocks"
   - allow parsing + displaying of that to be almost realtime
   - allow editing live of markdown + parsing & displaying on right side
+  - make a UI that generates the shortcode
+    - see if I can stick some JSON in the shortcodes?!
   - allow saving (and saving copies)
     - boom? (idk, think about it)
 - another: have the barba transition states be a property on the div, so that I can target that in CSS and slap styles on anything I want
