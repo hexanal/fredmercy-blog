@@ -50,8 +50,7 @@ app.post('/api/comment', (req, res) => {
 	new Promise((resolve, reject) => {
 		fs.writeFile(filename, entryJSON, 'utf8', (err) => {
 			if (err) {
-				console.log('errored');
-				console.log(chalk.red(`error while creating comment file: ${err}`));
+				console.log(chalk.red(`Error while creating comment file: ${err}`));
 				reject();
 			}
 
