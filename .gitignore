@@ -7,6 +7,9 @@ public/
 *.css.map
 *.js.map
 
+# Ignore the comments
+src/content/entries/**/*.json
+
 # Ignore those files because I'm working on that at the moment...
 *.bak.*
 *.bak
