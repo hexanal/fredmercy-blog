@@ -11,6 +11,25 @@
     - tacking on as many features as possible to make it legit, but keeping it real small, and "modular" whatever that means to me or anybody else...
     - ...and then I'll see which is the simplest, most straightforward one; maybe a mix of all
 - the post navigation module sort of sucks; I need to move things around
+  - done, I think it's better...
+- I just realized there is nothing built yet to provide *global website* information such as the name of the blog, the default meta tags, menu, etc. etc.
+  - this will be handled by a *site middleware*, I bet! Using a simple JSON, as always.
+- thinking of co-location the content with the "database" stuff, such as the post comments
+  - any comment added to an entry would land in its folder
+  - obviously, I would need to beef up security a bit, although I suppose those files would be public anyway? hmm, I would need to make those files ignored by git... meh
+    - I'll think about it some more, but for right now, I'll keep it separate
+
+When I try to think of way to do things differently, I have these wacky images popping in my head of insane interfaces I could build! Things that probably would be horrible in terms of UX, but just... visually cool. I wish I'll have time to explore those ideas some day.
+
+- highdea of the evening: put shorcodes (on steroids) in the content for the "blocks"
+  - allow parsing + displaying of that to be almost realtime
+  - allow editing live of markdown + parsing & displaying on right side
+  - allow saving (and saving copies)
+    - boom? (idk, think about it)
+- another: have the barba transition states be a property on the div, so that I can target that in CSS and slap styles on anything I want
+- another idea: try to embrace something hybrid between BEM and Tailwind.
+  - anything that can be a component, with reason (-> it's used many times through the website), shall become one.
+  - anything a bit too specific becomes a BEM (which could compose Tailwind-like base classes... I guess)
 
 ## October 24, 2020
 

@@ -25,8 +25,8 @@
 		data-control="comment-form"
 		data-entry-id="{{ date }}"
 	>
-		<label class="leave-comment__field">
-			<div class="leave-comment__label">
+		<div class="leave-comment__field">
+			<label class="leave-comment__label" for="content">
 				Comment <i>(1500 characters max.)</i>
 
 				<button
@@ -36,28 +36,30 @@
 				>
 					read
 				</button>
-			</div>
+			</label>
 			<textarea
 				class="leave-comment__textarea"
 				data-control="content"
+				id="content"
 				name="content"
 				maxlength="1500"
 				required
 			></textarea>
-		</label>
+		</div>
 
-		<label class="leave-comment__field">
-			<div class="leave-comment__label">
+		<div class="leave-comment__field">
+			<label class="leave-comment__label" for="author">
 				Name <i>(if left blank, “Anonymous” will be used)</i>
-			</div>
+			</label>
 			<input
 				class="leave-comment__input"
 				data-control="author"
 				type="text"
+				id="author"
 				name="author"
 				maxlength="100"
 			>
-		</label>
+		</div>
 
 		<button type="submit" class="leave-comment__submit">
 			Done

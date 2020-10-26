@@ -10,12 +10,9 @@ export default function({element, ui, control, messaging}) {
   const fetchComments = function() {
     element.classList.add('state-loading');
 
-    console.log( 'huh?' )
-
     fetch('/api/comments/' + state.entryId, { method: 'GET', })
       .then(response => response.json())
       .then(data => {
-        console.log( data )
         element.classList.remove('state-loading');
         control['dot'].map(dot => dot.removeAttribute('disabled'));
 
