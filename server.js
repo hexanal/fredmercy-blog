@@ -10,6 +10,7 @@ const errorHandler = require('errorhandler');
 const sanitizeHtml = require('sanitize-html');
 const lusca = require('lusca');
 const expressStatusMonitor = require('express-status-monitor');
+const glob = require('glob');
 const WebSocket = require('ws');
 
 const app = express();
@@ -38,7 +39,8 @@ app.use((req, res, next) => {
 });
 
 app.post('/api/comment', (req, res) => {
-	const filename = `./db/comments/_${req.body.entryId}_${req.body.slot}.json`;
+	const pathToEntry = req.body.entryId.replace('_', '/');
+	const filename = `./src/content/entries/${pathToEntry}/${req.body.slot}.json`;
 	const entryJSON = JSON.stringify({
 		slot: req.body.slot,
 		author: sanitizeHtml(req.body.author.substring(0, 100)),
@@ -66,40 +68,31 @@ app.post('/api/comment', (req, res) => {
 });
 
 app.get('/api/comments/:entryId', (req, res) => {
-	const blogPostsFolder = './db/comments/';
+	const pathToEntry = req.params.entryId.replace('_', '/');
+	const pathToComments = glob.sync(`./src/content/entries/${pathToEntry}/*.json`, {});
 	let comments = [];
-	fs.readdir(path.resolve(__dirname, blogPostsFolder), (err, files) => {
-		if(err) {
-			console.log(chalk.red(`Error while fetching comments: ${err}`));
-			return;
-		}
 
-		Promise.all(
-			files.map(file => {
-				if (!file.includes(req.params.entryId)) return Promise.resolve();
+	Promise.all(
+		pathToComments.map( file => {
+			return new Promise((resolve, reject) => {
+				fs.readFile(file, {encoding: 'utf-8'}, (err, content) => {
+					if (err) {
+						console.log(chalk.red(`Error while reading comment file: ${err}`));
+						reject();
+					}
 
-				const filePath = path.resolve(__dirname, `./db/comments/${file}`);
+					comments.push(JSON.parse(content));
 
-				return new Promise((resolve, reject) => {
-					fs.readFile(filePath, {encoding: 'utf-8'}, (err, content) => {
-						if (err) {
-							console.log(chalk.red(`Error while reading comment file: ${err}`));
-							reject();
-						}
-
-						comments.push(JSON.parse(content));
-
-						resolve();
-					});
-				});
-			})
-		)
-			.then(() => {
-				res.send({
-					comments
+					resolve();
 				});
 			});
-	});
+		})
+	)
+		.then(() => {
+			res.send({
+				comments
+			});
+		});
 });
 
 /**
@@ -112,7 +105,6 @@ app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 3155760000
  */
 app.get('*', (req, res) => {
 	res.status(404);
-	res.render('404');
 });
 
 app.use(errorHandler());
