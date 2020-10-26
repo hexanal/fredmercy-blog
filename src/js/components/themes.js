@@ -2,11 +2,8 @@ import Storage from 'tools/Storage';
 
 const THEME_LIST = [
 	'june',
-	'high-contrast',
-	'black-and-white',
-	'dark-mode',
-	'xmas',
-	'tron',
+	'dark',
+	'black-and-white'
 ];
 const DEFAULT_THEME = 'june';
 

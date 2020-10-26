@@ -26,7 +26,9 @@ export default function({ element, control, messaging }) {
 		document.body.classList.remove('state-help-active');
 	}
 
-	const setTheme = val => control['theme-select'].value = val;
+	const setTheme = val => {
+		control['theme-select'].value = val;
+	}
 
 	messaging.subscribe('SHOW_HELP', toggleHelp);
 	messaging.subscribe('CLOSE_HELP', closeHelp);

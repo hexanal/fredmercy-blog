@@ -8,14 +8,13 @@ export default function({messaging, _exponent}) {
 
 	barba.init({
 		timeout: 10000,
-		debug: true,
+		// debug: true,
 
 		prevent: ({ el }) => 'disableTransition' in el.dataset,
 
 		transitions: [{
 			before() {
 				_exponent.unmount();
-				messaging.dispatch({ id: 'PLAY_SOUND', payload: 'woaw' });
 			},
 			leave({ current, next }) {
 				return new Promise(resolve => {
@@ -23,7 +22,6 @@ export default function({messaging, _exponent}) {
 					document.body.classList.add('transition');
 
 					setTimeout(() => {
-						messaging.dispatch({ id: 'PLAY_SOUND', payload: 'womp' });
 						resolve();
 					}, TRANSITION_DURATION);
 				});
@@ -46,9 +44,3 @@ export default function({messaging, _exponent}) {
 		} ]
 	});
 }
-
-// fixme: enable analytics
-// barba.hooks.after(() => {
-// ga('set', 'page', window.location.pathname);
-// ga('send', 'pageview');
-// });

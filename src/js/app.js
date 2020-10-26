@@ -52,7 +52,7 @@ Exponent
 		'nav': nav,
 		'notes': notes,
 		'tabs': tabs,
-		'themes': themes,
+		'themes': themes
 	})
 
 	.mount(container);
