@@ -1,24 +1,33 @@
 {{#> layouts/default }}
 
 <div class="experiment">
-	<h2 class="experiment__heading">
-		This is a heading!
-	</h2>
 
-	<div class="experiment__intro">
-		Intro!
+	<div class="parents">
+		{{#each meta.parents }}
+			<a href="{{ this.meta.url }}" title="{{ this.meta.title }}">
+				🡤 {{ this.meta.title }}
+			</a>
+			<br>
+		{{/each}}
 	</div>
-	<pre>
-		{{ hey }}
-	</pre>
 
-	<ul>
-	{{#each categories}}
-		<li>
-			{{ this }}
-		</li>
-	{{/each}}
-	</ul>
+	<h1>
+		{{ meta.title }}
+	</h1>
+
+	<div class="page">
+		{{{ this.content }}}
+	</div>
+
+	<div class="children">
+		<h2>Children pages</h2>
+		{{#each meta.children }}
+			<a href="{{ this.meta.url }}" title="{{ this.meta.title }}">
+				🡤 {{ this.meta.title }}
+			</a>
+			<br>
+		{{/each}}
+	</div>
 </div>
 
 {{/layouts/default }}

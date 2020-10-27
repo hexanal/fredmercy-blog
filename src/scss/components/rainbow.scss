@@ -33,7 +33,7 @@
 		transition-delay: calc(var(--stagger-delay) * 4);
 	}
 
-	.state-body-transition & {
+	.transition & {
 		height: 100vh;
 	}
 
@@ -43,7 +43,7 @@
 		height: 20vh;
 		transition: width var(--duration) cubic-bezier(.71,.02,.41,1);
 
-		.state-body-transition & {
+		.transition & {
 			width: 100%;
 			height: 20vh;
 		}

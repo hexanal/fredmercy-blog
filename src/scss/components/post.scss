@@ -52,10 +52,6 @@
 	padding: 0.25em;
 	color: var(--color-bg);
 	background-color: var(--color-primary);
-
-	.transition & {
-		color: var(--color-primary);
-	}
 }
 
 .post__type {
@@ -84,10 +80,6 @@
 		font-style: italic;
 		color: var(--color-bg);
 		background-color: var(--color-active);
-
-		.transition & {
-			color: var(--color-active);
-		}
 	}
 
 	ul {
@@ -109,12 +101,6 @@
 				top: 0;
 				left: 0;
 			}
-		}
-	}
-
-	p, ul, ol, blockquote {
-		.transition & {
-			background-color: var(--color-primary);
 		}
 	}
 
@@ -193,8 +179,4 @@
 	display: inline-block;
 	margin: 1.5em 0;
 	color: var(--color-secondary);
-
-	.transition & {
-		background-color: var(--color-secondary);
-	}
 }

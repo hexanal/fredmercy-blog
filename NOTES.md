@@ -1,6 +1,30 @@
 # NOTES
 
+## October 27, 2020
+
+- working hard (with a headache, too!) at solving that `relationship` issue
+  - I think I got it... but it's weird. I feel like I should take some CS courses and really master tree traversal, graphs, and all that
+    - like... it's not a lot of lines of code, but I'm afraid this algorithm's complexity is exponential. I'll have to benchmark that bitch and figure out if some computer science magic can make it FAST
+    - I have a handful of pages so far, and the script runs super fast (then again, I'm on a fairly recent Macbook Pro, so that helps)
+- ok, good enough for now!
+- the idea from yesterday about the middlewares being called from the template:
+  - could be like the `demos.json` thing: instead of `useJSON` in the frontmatter, it could be a generic: `use` key
+    - that key goes through the array, lets say:
+
+```yaml
+use:
+- json
+- whatever
+```
+
+    - it goes through the list of middlewares and applies them to this page
+
+- we'll see how that goes
+
+
 ## October 26, 2020
+
+`~9:00am:`
 
 - lots of useless ideas yesterday!
   - the comments ideas (having the "database JSONs" co-located with the post they refer to) can be dropped, I think... or I have top operationalize the heck out of it
@@ -21,6 +45,19 @@ Future things to add:
 
 1. error handling (better UX, better dialogs)
 2. ? forgot what else, but there's more, for sure
+
+`4:13pm:`
+
+- fuck it: colocated the comments with their entry
+  - I can do a quick job of moving shit around so that older comments match this new structure
+- I gotta fix the colorscheme switcher
+  - done!
+- reverting the transition thing because... my thing doesn't work yet
+
+`5:42pm:`
+
+- found out why the parent pages weren't working: it's the same code as for the children pages... obviously there's something wonky going on in my logic
+- trying out something to fix it
 
 ## October 25, 2020
 

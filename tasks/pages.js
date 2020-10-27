@@ -4,7 +4,13 @@ const frontMatter = require('front-matter')
 const marked = require('marked')
 
 const html = require('./html')
-const pipe = fns => x => fns.reduce((v, f) => f(v), x)
+const { pipe } = require('./utils')
+
+/**
+ * TODO create default page object so that we know what shape that object is gonna be
+ * - I'd rather not use TypeScript
+ * - let it be sort of loose to start with
+ */
 
 const applyContent = function(pages) {
   return pages.map( page => {
@@ -93,20 +99,26 @@ const applyRelationships = function( pages ) {
 }
 
 const getChildrenPages = function( page, index, pages ) {
-  const children = pages.filter( otherPage => {
-    const isSameRoute = otherPage.meta.id === page.meta.id
-    const isSharedRoute = otherPage.meta.route.includes( page.meta.id )
+  if (page.meta.id === 'home') return []; // don't bother finding children for home: it has them all anyway
 
-    return !isSameRoute && isSharedRoute
+  const children = pages.filter( candidatePage => {
+    const isSameRoute = candidatePage.meta.id === page.meta.id
+    const isPartOfRoute = candidatePage.meta.url.includes( page.meta.url )
+    if (isSameRoute || !isPartOfRoute) return false
+
+    return candidatePage.meta.url.replace( page.meta.url, '') // will be falsy if it leaves "leftover" routes
   })
 
   return children
 }
 
 const getParentPages = function( page, index, pages ) {
-  const parents = pages.filter( otherPage => {
-    const isSameRoute = otherPage.meta.id === page.meta.id
-    const isSharedRoute = page.meta.route.includes( otherPage.meta.id )
+  if (page.meta.id === 'home') return []; // don't bother finding parents for home: it has none
+
+  const parents = pages.filter( possibleParentPage => {
+    if (possibleParentPage.meta.id === 'home') return false // nope
+    const isSameRoute = possibleParentPage.meta.id === page.meta.id
+    const isSharedRoute = page.meta.url.includes( possibleParentPage.meta.url )
 
     return !isSameRoute && isSharedRoute
   })
@@ -114,7 +126,13 @@ const getParentPages = function( page, index, pages ) {
   return parents
 }
 
+// const getPageByURL = function( url, pages ) {
+//   return pages.find( page => page.meta.url === url )
+// }
+
 /*
+ * TODO: get "siblings" pages
+
 const applyAdjacents = function(entries) {
   return entries.map( (entry, index) => {
     const copy = {...entry}
@@ -147,7 +165,7 @@ const pages = extractPages()
  *
  * 1. the `id` of the conten type
  * 2. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
- * 3. the `renderer', which is used to set the `html` value on each item. The html contains the full HTML string of the page to render
+ * 3. the `renderer', which is a function that uses whatever templating engine you want and feeds the HTML to the `html.render` function (from my `html` library!)
  */
 module.exports = {
   id: 'pages',

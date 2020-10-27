@@ -24,10 +24,6 @@
 	font-style: italic;
 	color: var(--color-bg);
 	background-color: var(--color-active);
-
-	.transition & {
-		color: var(--color-active);
-	}
 }
 
 .header__back {
