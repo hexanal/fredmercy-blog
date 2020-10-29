@@ -1,6 +1,19 @@
 # NOTES
 
+## October 29, 2020
+
+`9:10am:`
+
+- Probably won't be working too hard on this today. Pretty busy with actual work.
+- maybe I should push all of that right now, just so I feel like I'm making progress
+- then I will feel more inclined to experiment on other aspects of the project
+- I'll go ahead and copy the long-ass roadmap-y thing I wrote earlier, and dump it into a ROADMAP.md file to keep track of my progress
+
+
+
 ## October 27, 2020
+
+`~9:00am:`
 
 - working hard (with a headache, too!) at solving that `relationship` issue
   - I think I got it... but it's weird. I feel like I should take some CS courses and really master tree traversal, graphs, and all that
@@ -20,6 +33,26 @@ use:
     - it goes through the list of middlewares and applies them to this page
 
 - we'll see how that goes
+
+`3:29pm:`
+
+- wishing for programming to become less painful in the future... these days it's worse than ever
+- will try to take it easy on the blog project now that I have something that's not half bad
+- I don't know what the fuck I'm doing, but I'm doing it; no fucking around this time
+- what's left to do now before I can launch?
+  - let's start with a list of things I've done recently:
+
+1. the colorscheme dropdown is fixed and it works
+2. the parent/child pages functionality is baked in; not too shabby
+3. reverted to the old "rainbow" page transition while I incubate the next bright idea (low priority!)
+
+What to do next?
+
+1. deploy step, something that webpacks everything and builds the HTML for the whole thang
+2. maybe try to integrate the current website into this new framework
+
+- deploy step is primordial because that's the key to getting it up online
+- it's the worst for me because I want to focus on frontend issues, but instead I have to dive into the server side of things!
 
 
 ## October 26, 2020
