@@ -167,8 +167,8 @@ const pages = extractPages()
  * 2. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
  * 3. the `renderer', which is a function that uses whatever templating engine you want and feeds the HTML to the `html.render` function (from my `html` library!)
  */
-module.exports = {
+module.exports = () => ({
   id: 'pages',
-  items: pages,
+  items: extractPages(),
   renderer: items => applyTemplates(items)
-}
+})

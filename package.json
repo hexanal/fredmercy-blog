@@ -5,6 +5,7 @@
   "author": "hexanal",
   "scripts": {
     "html": "node start.js",
+    "dev": "node dev.js",
     "start": "./node_modules/webpack/bin/webpack.js --env.NODE_ENV=development --env.development --watch",
     "build": "./node_modules/webpack/bin/webpack.js --env.NODE_ENV=production --env.production && node start.js"
   },
@@ -32,6 +33,7 @@
     "axios": "^0.18.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
+    "chokidar": "^3.4.3",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",

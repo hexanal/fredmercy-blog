@@ -1,5 +1,17 @@
 # NOTES
 
+## October 30, 2020
+
+`5:39pm:`
+
+- couldn't get to work yesterday evening, so I'll try again tonight
+- time to deploy!
+- I would love to have some password-protected HTML page that features two buttons:
+  - one for compiling the HTML templates
+  - one for rebuilding the assets (css,js,media)
+  - ...but this is probably for another time (the "backend" project)
+- also, if I have time: transfer the rest of the website to the "new way" (résumé)
+
 ## October 29, 2020
 
 `9:10am:`
@@ -9,7 +21,9 @@
 - then I will feel more inclined to experiment on other aspects of the project
 - I'll go ahead and copy the long-ass roadmap-y thing I wrote earlier, and dump it into a ROADMAP.md file to keep track of my progress
 
+`4:53pm:`
 
+- Tonight, I'll try to deploy my new website! haha
 
 ## October 27, 2020
 

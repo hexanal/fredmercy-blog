@@ -1,9 +1,11 @@
 const { insertData, pipe } = require('./utils')
 const groupBy = require('lodash.groupby')
 
-// TODO think about this: we have items, which is all the items for a contentTypes
-// but each of those is a data object passed to a template
-// ... how to distinguish both, and maybe clarify this middleware application process?
+// TODO think about this... we have:
+// - `items`, which is all the items for a contentTypes
+// ... but we loop through all of these, and pass it to a template
+// ... how to distinguish both?, and maybe clarify this middleware application process?
+// could have a middlewares folder or something, or straight up in an array?
 
 const addPostsByMonth = function(contentTypes) {
   const posts = contentTypes.find(type => type.id === 'posts').items;

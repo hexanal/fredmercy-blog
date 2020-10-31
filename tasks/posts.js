@@ -109,8 +109,8 @@ const extractPosts = function() {
 const posts = extractPosts()
 
 // TODO make sure this is sturdy?
-module.exports = {
+module.exports = () => ({
   id: 'posts',
-  items: posts,
+  items: extractPosts(),
   renderer: items => applyTemplates(items)
-}
+})
