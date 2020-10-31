@@ -12,6 +12,36 @@
   - ...but this is probably for another time (the "backend" project)
 - also, if I have time: transfer the rest of the website to the "new way" (résumé)
 
+`8:41pm:`
+
+- added a "watch" thing, just for kicks... it works! and so far, I'm quite pleased with how sturdy it is:
+  - keeps watching files despite choking on some Handlebars errors
+  - watches for new files, and doesn't overdo it...
+    - it's good because if it works well enough now, hopefully it will be easier to manage future improvements
+- I'm migrating the "resume" page from my current website:
+  - it's not a painless process, but it's not quite frustrating: it does make the limitations of my *CMS* very apparent!
+  - I guess I will have to implement the notion of dynamic "blocks" pretty soon (thankfully, I have something that seemingly works, somewhere in another version of this website reboot)
+  - it's not done yet because I would have to slap on some more styles on top of it... and I realize I need to add stuff to the menu
+- this page is also a good candidate for the "shortcode" project!
+
+```markdown
+BLah blah
+
+[resume-section]
+{
+  "what": {
+    "hey": "cool"
+  }
+}
+[/resume-section]
+```
+
+- would something like that work? meh, I'm too tired to think about that now!
+- bye!
+
+- ugh... did **NOT** deploy tonight!
+- you know what? tomorrow I'm gonna work on a breadcrumbs middleware + module! hahahahaha
+
 ## October 29, 2020
 
 `9:10am:`

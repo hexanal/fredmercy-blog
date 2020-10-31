@@ -1,0 +1,39 @@
+{{#> layouts/page }}
+
+<div class="resume">
+	<h2 class="resume__heading">
+		{{ meta.jsonData.experience.heading }}
+	</h2>
+
+	<div class="resume__items">
+		{{#each meta.jsonData.experience.items }}
+			{{> resume/experience this }}
+		{{/each}}
+	</div>
+</div>
+
+<div class="resume">
+	<h2 class="resume__heading">
+		{{ meta.jsonData.skills.heading }}
+	</h2>
+
+	<div class="resume__items">
+		{{#each meta.jsonData.skills.items }}
+			{{> resume/resume-section this }}
+		{{/each}}
+	</div>
+</div>
+
+<div class="resume">
+	<h2 class="resume__heading">
+		{{ meta.jsonData.education.heading }}
+	</h2>
+
+	<div class="resume__items">
+		{{#each meta.jsonData.education.items }}
+			{{> resume/resume-section this }}
+		{{/each}}
+	</div>
+</div>
+
+{{/layouts/page }}
