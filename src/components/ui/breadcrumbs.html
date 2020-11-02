@@ -1,16 +1,20 @@
-{{ meta.title }}
+<div class="breadcrumbs">
+  <div class="breadcrumbs__current">
+    {{ meta.title }}
+  </div>
 
-{{#if meta.parents }}
-  {{#each meta.parents }}
-  /
-  <a href="{{ this.meta.url }}">
-    {{ this.meta.title }}
-  </a>
-  {{/each}}
-{{/if}}
+  {{#if meta.parents }}
+    {{#each meta.parents }}
+    <a class="breadcrumbs__parent" href="{{ this.meta.url }}">
+      🡤 {{ this.meta.title }}
+    </a>
+    {{/each}}
+  {{/if}}
 
-/
-
-<a href="">
-  Fred Mercy
-</a>
+  {{#if meta.isHome }}
+  {{else}}
+    <a class="breadcrumbs__root" href="/">
+      🡤 Home
+    </a>
+  {{/if}}
+</div>

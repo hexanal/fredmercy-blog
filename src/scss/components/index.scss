@@ -2,7 +2,7 @@
 	max-width: none;
 
 	@media (min-width: $mq-medium) {
-		max-width: 50rem;
+		max-width: $site-width;
 	}
 }
 

@@ -12,6 +12,7 @@
 
 // sizes
 $max-width: 1200px;
+$max-width: 1200px;
 $responsive-width: 90%;
 
 // media queries
@@ -22,6 +23,8 @@ $mq-desktop : 1280px;
 
 $mq-small: 42rem;
 $mq-medium: 50rem;
+
+$site-width: 60rem;
 
 // mixins
 @mixin container($width: $max-width) {

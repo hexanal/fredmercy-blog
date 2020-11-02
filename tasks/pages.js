@@ -65,6 +65,7 @@ const getPageMetaData = function(page) {
     .split('/')
   const id = route[route.length - 1]
   const folder = route[route.length - 2] || 'home' // if there's no folder, it's the homepage (a.k.a. root)
+  const isHome = folder === 'home' || folder === 'fr' // TODO figure out the root of the i18n paths (this is not yet done)
 
   if (id !== folder) {
     console.log('Hey dude, the page filename should match its parent folder... sorry, it’s just a convention')
@@ -84,7 +85,8 @@ const getPageMetaData = function(page) {
     destination,
     id,
     url,
-    route
+    route,
+    isHome
   }
 }
 

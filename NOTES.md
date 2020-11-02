@@ -1,5 +1,29 @@
 # NOTES
 
+## November 2, 2020
+
+`8:45am:`
+
+- not hoping for this day to be a better day, but I feel more relazed this morning so that's cool...!
+- I was thinking about co-locating the HTML, CSS and JS components together, and reviewing the whole structure to see if it makes sense for this kind of project
+  - now that I have a tighter grip on how HandlebarsJS works (or at least, on how I'm wiring everything up in my project) I think using the component as a basic unit is feasible
+  - there's no *one-way data flow* or any *vdom* implementation yet, but I believe with the way I've set up things it would be trivial to swap out the HandlebarsJS html implementation with something else (Elm? VueJS? lit? who cares)
+- we're looking in [Parcel](https://parceljs.org/) for our bundler at work, and I thought of trying it out in another branch of this repo
+  - a bit too much hidden magic for my taste, but if it keeps everything clean, I'm for it
+  - also it provides many cool things out of the box that I don't think I'm quite ready to tackle yet?
+    - code-splitting
+    - Hot Module Replacement
+  - maybe I could implement those in my webpack config, but I will get messy...
+
+- anyway, this morning I'm fixing the breadcrumbs and maybe I'll deploy right after?!?!?!
+
+`9:48am:`
+
+- gotta add back support for `dotenv` and set it up on the server before deploy (ugh!)
+- gotta review the npm scripts so that `dev` (or `start`?) runs the server + watches the files & rebuilds using webpack
+  - the `build` or `prod` script will build the website's HTML and run the webpack production build
+
+
 ## November 1, 2020
 
 - url shortener:

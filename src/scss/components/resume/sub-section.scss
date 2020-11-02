@@ -12,7 +12,16 @@
 
 .sub-section__title {
   margin-bottom: 1.5rem;
-  text-align: left;
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.35;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+  }
 
   @media (min-width: 700px) {
     flex-shrink: 0;
@@ -22,7 +31,7 @@
 }
 
 .sub-section__details {
-  padding-left: 2rem;
+  padding-left: 5rem;
 
   p {
     margin: 0;
