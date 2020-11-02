@@ -1,0 +1,16 @@
+{{ meta.title }}
+
+{{#if meta.parents }}
+  {{#each meta.parents }}
+  /
+  <a href="{{ this.meta.url }}">
+    {{ this.meta.title }}
+  </a>
+  {{/each}}
+{{/if}}
+
+/
+
+<a href="">
+  Fred Mercy
+</a>

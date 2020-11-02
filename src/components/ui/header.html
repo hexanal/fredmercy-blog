@@ -4,11 +4,7 @@
 >
 	<nav class="header__header-extend">
 		<h1 class="header__heading" aria-level="1">
-		{{#if meta.title }}
-			{{ meta.title }}
-		{{else}}
-			Blog / Fred Mercy
-		{{/if}}
+			{{> ui/breadcrumbs }}
 		</h1>
 
 		<button

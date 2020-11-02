@@ -1,6 +1,5 @@
 ---
-title: Blog / Fred Mercy
+title: Blog
 description: Random Thoughts or whatever
 template: blog
-uses: posts, archives
 ---

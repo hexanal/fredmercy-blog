@@ -16,7 +16,7 @@ Horrible fucking day today!
 
 But I managed to finalize the resume page... just gotta link to it real quick.
 
-
+Ok...homepage almost ready. Resume done. Gotta fix the breadcrumbs and I should be ready to deploy the first version.
 
 ## October 31, 2020
 
