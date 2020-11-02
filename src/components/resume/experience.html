@@ -9,14 +9,17 @@
         {{ company }}
       </a>
     {{else}}
-      <div class="experience__company">
-        {{ company }}
-      </div>
+      {{ company }}
     {{/if}}
 
-    <p>{{ location }}</p>
+    <p class="experience__location">{{ location }}</p>
 
-    <div class="experience__extras">
+    <div
+      class="experience__extras"
+      {{#if extra}}
+        data-component="extra"
+      {{/if}}
+    >
       <p>
         {{description}}
         {{#if extra}}
@@ -25,7 +28,8 @@
             type="button"
             data-control="more"
           >
-            <span>+</span>
+            <span data-plus>(+)</span>
+            <span data-minus>(-)</span>
           </button>
         {{/if}}
       </p>

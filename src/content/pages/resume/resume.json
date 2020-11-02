@@ -1,5 +1,6 @@
-{
-  "experience": {
+[
+  {
+    "component": "resume/experience",
     "heading": "EXPERIENCE",
     "items": [
       {
@@ -8,7 +9,10 @@
         "company": "Cossette",
         "location": "Montreal, Canada",
         "url": "https://cossette.com",
-        "description": "Creative development"
+        "description": "Frontend web development",
+        "extra": [
+          "https://amnistie.ca"
+        ]
       },
       {
         "id": "ed",
@@ -106,16 +110,17 @@
     ]
   },
 
-  "skills": {
+  {
+    "component": "resume/sub-section",
     "heading": "SKILLS",
     "items": [
       {
         "id": "tech",
         "title": "TECHNICAL",
         "lines": [
-          "Proficient with most of the popular creative tools (Photoshop, Illustrator, Audition, Premiere, Sketch, etc.)",
-          "Extensive knowledge of most web development tools (Gulp, Webpack, Git, Vagrant, etc.), techniques (BEM, OOCSS, web accessibility, etc.) and libraries (React/Redux, ThreeJS, lodash, VueJS, etc.)",
-          "Knowledge of popular frameworks and CMS (Laravel, Ruby on Rails, Wordpress, Craft, Drupal, etc.)",
+          "Proficient with most of the popular creative tools (Sketch, Photoshop, Illustrator, Audition, Premiere, etc.)",
+          "Extensive knowledge of most web development tools (Webpack, Git, etc.), techniques (BEM, OOCSS, web accessibility, etc.) and libraries (React/Redux, ThreeJS, lodash, VueJS, etc.)",
+          "Knowledge of popular frameworks and CMS (Wordpress, Craft, Drupal, etc.)",
           "Knowledge of most programming design patterns and best practices.",
           "Experience with most management tools and platforms (Jira, Basecamp, Asana, Notion, Slack, etc.)"
         ]
@@ -137,15 +142,14 @@
         "title": "LANGUAGES",
         "lines": [
           "FRENCH (native)",
-          "ENGLISH (fluent)",
-          "GERMAN (basic)",
-          "SPANISH (basic)"
+          "ENGLISH (fluent)"
         ]
       }
     ]
   },
 
-  "education": {
+  {
+    "component": "resume/sub-section",
     "heading": "EDUCATION",
     "items": [
       {
@@ -173,4 +177,4 @@
       }
     ]
   }
-}
+]

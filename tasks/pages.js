@@ -18,18 +18,21 @@ const applyContent = function(pages) {
     const { attributes, body } = frontMatter( file.toString() )
     const { title, description, template, useJSON } = attributes
     const content = marked(body)
-    const jsonData = useJSON ? getJsonData( page ) : null
+    // TODO maybe try to implement the thing about middlewares for augmenting the page
+    // like `use: json | location | whatever`
+    // to indicate that the page needs to have access to this type of data
+    const json = useJSON ? getJsonData( page ) : null
 
     const meta = {
       title,
       description,
       template,
-      jsonData,
       ...getPageMetaData(page)
     }
 
     return {
       meta,
+      json,
       content
     }
   })

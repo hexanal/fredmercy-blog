@@ -7,14 +7,12 @@ const registerPartialHelper = function() {
   Handlebars.registerHelper('block', function (template, context, opts) {
     const f = Handlebars.partials[template]
 
-    if (!f) {
-      return "Partial not loaded"
-    }
+    if (!f) return '[...]'
+
     const block = Handlebars.compile( f )
 
     return new Handlebars.SafeString( block(context) )
   })
-
 }
 
 const isDir = function (filename) {

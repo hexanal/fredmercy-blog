@@ -1,0 +1,13 @@
+<div class="sub-section" data-type="{{ id }}">
+  <div class="sub-section__title">
+    {{ title }}
+  </div>
+
+  <div class="sub-section__details">
+    {{#each lines }}
+      <p class="sub-section__more-item">
+        {{this}}
+      </p>
+    {{/each}}
+  </div>
+</div>

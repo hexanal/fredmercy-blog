@@ -1,5 +1,44 @@
 # NOTES
 
+## November 1, 2020
+
+- url shortener:
+  - if post has `shortpermalink` in frontmatter
+  - export the page twice:
+    - the usual URL based on the folder structure, and file name
+    - and if we need a permalink, the link based on the param
+      - e.g. `shortpermalink: abc` would export to `https://fredmercy.ca/read/abc`
+      - `https://fredmer.cy/abc` ?
+
+`8:06pm:`
+
+Horrible fucking day today!
+
+But I managed to finalize the resume page... just gotta link to it real quick.
+
+
+
+## October 31, 2020
+
+- took shrooms, so I don't know how valid my notes are gonna be
+- I thought about that "shortcode" idea, and... if you're a dev, or if you know HTML, or, sorry...if you know HandlebarsJS, can you just drop handlebars helpers into that shit?!
+
+```markdown
+
+Hi, this is my markdown whatever
+
+{{> some/component {
+  "can": ["I", "pass", "context", "that", "way", "?"]
+} }}
+
+The rest of my little speech.
+
+```
+
+- does this work?
+- meh. I'm on some dumb shit
+  - playing "Anaconda" just because
+
 ## October 30, 2020
 
 `5:39pm:`

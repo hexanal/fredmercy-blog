@@ -4,8 +4,12 @@ description: My website
 template: pages
 ---
 
-I'm a dude who builds things. Mostly websites and applications. But I try to make them the best they can be.
+Welcome,
 
-I like to build, tinker with, and imagine new things; I live to pleasantly surprise and stimulate people, mostly by creating innovative and pleasant interactions.
+I'm a dude who builds things, mostly websites and applications. This is my homepage.
 
-My programming style is loose and flexible and I try to code in whatever I can code in, you know? This is my website [(and web log)](/blog), and it's a window into [this dude](/this-dude)'s mind.
+I like to play with new ideas and make them come alive with code; I love to surprise and stimulate people by coming up with innovative and friendly interactions.
+
+Right now, I work as a developer at [Cossette](https://cossette.com), in beautiful Montréal. You can also check out my [résumé](/resume).
+
+My programming style is loose and flexible and I try to code in whatever I can code in, you know? This is my personal website [and blog](/blog), and it's a window into [my mind](/this-dude).

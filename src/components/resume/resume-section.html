@@ -1,15 +1,13 @@
 <div class="resume-section">
-  <div class="resume-section__title">
-    {{ title }}
+  <div>
+    <h2 class="resume-section__heading">
+      {{ heading }}
+    </h2>
   </div>
 
-  <div class="resume-section__details">
-    <ul class="resume-section__more">
-      {{#each lines }}
-        <li class="resume-section__more-item">
-          {{this}}
-        </li>
-      {{/each}}
-    </ul>
+  <div class="resume-section__content">
+    {{#each items }}
+      {{block ../component this }}
+    {{/each}}
   </div>
 </div>

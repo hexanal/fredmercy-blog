@@ -28,6 +28,8 @@ import notes from 'components/notes';
 import tabs from 'components/tabs';
 import themes from 'components/themes';
 
+import extra from 'components/resume/extra';
+
 const container = document.querySelector('[data-barba="container"]');
 
 Exponent
@@ -44,7 +46,8 @@ Exponent
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,
 		'comments': comments,
-		'collapse': collapse,
+		'collapse':  collapse,
+		'extra': extra,
 		'help': help,
 		'highlight': highlight,
 		'jumpto': jumpto,

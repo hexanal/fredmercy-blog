@@ -4,7 +4,7 @@ description: Short bio
 template: pages
 ---
 
-Just your average dude:
+Just your average nerd:
 
 - web developer,
 - musician (pshhhyeah! *right*),
