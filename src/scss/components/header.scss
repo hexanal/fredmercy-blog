@@ -109,10 +109,11 @@
 
 	@media (min-width: $mq-medium) {
 		right: auto;
-		left: 40rem;
+		// TODO fix those magic numbers with something sturdier please :)
+		left: 49.6rem;
 
 		.index--list & {
-			left: 29rem;
+			left: 38.7rem;
 		}
 	}
 }

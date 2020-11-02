@@ -118,4 +118,13 @@
   - build a page in particular (still needs to build everything else)
 - get "graph" of pages and posts?
 
+## Caching
+
+- every time I compile, I export the data for each content type
+  - as JSON of course
+  - in a `/caches` folder?
+  - and depending on whether I modify this or that content type, I fetch the one content types' JSONs instead of rebuilding the whole shebang
+    - that would happen every time it detects a change and recompiles
+    - gotta figure out a nice and stupid way to manage cache invalidation... I know, “it's the hardest problem in programming..” yadda yadda yadda
+
 

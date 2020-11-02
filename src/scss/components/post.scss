@@ -36,20 +36,21 @@
 		max-width: $site-width;
 	}
 	@media (min-width: $mq-desktop) {
-		margin-right: 2em;
+		margin-right: 2rem;
 		width: $site-width;
 	}
 }
 
 .post__heading {
-	margin: 1.5em 0 0;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.5rem 0;
 }
 
 .post__meta {
 	display: inline-block;
-	margin-right: 0.25em;
-	margin-bottom: 1.5em;
-	padding: 0.25em;
+	margin-right: 0.25rem;
+	padding: 0.25rem;
 	color: var(--color-bg);
 	background-color: var(--color-primary);
 }

@@ -1,4 +1,4 @@
-const { insertData, pipe } = require('./utils')
+const { getPageByURL, insertData, insertMetaForContentType, pipe } = require('./utils')
 const groupBy = require('lodash.groupby')
 
 // TODO think about this... we have:
@@ -8,10 +8,19 @@ const groupBy = require('lodash.groupby')
 // could have a middlewares folder or something, or straight up in an array?
 
 const addPostsByMonth = function(contentTypes) {
-  const posts = contentTypes.find(type => type.id === 'posts').items;
+  const posts = contentTypes.find(type => type.id === 'posts').items
 
   return insertData(contentTypes, {
     postsByMonth: groupBy(posts, 'meta.archive')
+  })
+}
+
+const addPostIndexAsParent = function(contentTypes) {
+  const pages = contentTypes.find(({id}) => id === 'pages').items
+  const blogIndex = getPageByURL('/blog', pages)
+
+  return insertMetaForContentType(contentTypes, 'posts', {
+    parents: [ blogIndex ]
   })
 }
 
@@ -25,12 +34,7 @@ const applyCombinedData = function(contentTypes) {
     }
   }, {})
 
-  return contentTypes.map( type => {
-    return {
-      ...type,
-      items: type.items.map( item => ({ ...item, global }) )
-    }
-  })
+  return insertData(contentTypes, { global })
 }
 
 const applyWriteHTML = function(contentTypes) {
@@ -42,7 +46,7 @@ const applyWriteHTML = function(contentTypes) {
 }
 
 const build = function(contentTypes) {
-  const middlewares = [ addPostsByMonth, applyCombinedData, applyWriteHTML ]
+  const middlewares = [ addPostsByMonth, addPostIndexAsParent, applyCombinedData, applyWriteHTML ]
 
   return pipe(middlewares)(contentTypes)
 }

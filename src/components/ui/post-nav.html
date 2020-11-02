@@ -1,29 +1,21 @@
 <div class="post-nav">
-	<div class="post-nav__item">
-    <a href="/blog" class="post-nav__link">
-      ← index
+  {{#if meta.previous }}
+    <a
+      class="post-nav__link"
+      href="{{ meta.previous.meta.url }}"
+      title="{{ meta.previous.meta.title }}"
+    >
+      ↓ <span class="post-nav__label">previous</span>
     </a>
-  </div>
+  {{/if}}
 
-	<div class="post-nav__item post-nav__item--adjacent">
-    {{#if meta.previous }}
-      <a
-        class="post-nav__link"
-        href="{{ meta.previous.meta.url }}"
-        title="{{ meta.previous.meta.title }}"
-      >
-        ↓ previous
-      </a>
-    {{/if}}
-
-    {{#if meta.next }}
-      <a
-        class="post-nav__link"
-        href="{{ meta.next.meta.url }}"
-        title="{{ meta.next.meta.title }}"
-      >
-        ↑ next
-      </a>
-    {{/if}}
-  </div>
+  {{#if meta.next }}
+    <a
+      class="post-nav__link"
+      href="{{ meta.next.meta.url }}"
+      title="{{ meta.next.meta.title }}"
+    >
+      ↑ <span class="post-nav__label">next</span>
+    </a>
+  {{/if}}
 </div>

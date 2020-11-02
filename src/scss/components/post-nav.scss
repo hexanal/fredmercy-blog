@@ -1,13 +1,6 @@
 .post-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: $site-width;
-  margin-top: 1.5rem;
-
-  @media (min-width: $mq-medium) {
-    justify-content: start;
-  }
+  justify-content: stretch;
 }
 
 .post-nav__item {
@@ -18,13 +11,8 @@
   }
 }
 
-.post-nav__item--adjacent {
-  text-align: right;
-}
-
 .post-nav__link {
-  display: inline-block;
-  padding: 0.25rem;
+  padding: 0.25rem 0.75rem;
   color: var(--color-bg);
   background-color: var(--color-subdued);
   text-decoration: none;
@@ -36,5 +24,17 @@
   &:hover,
   &:focus {
     background-color: var(--color-secondary);
+  }
+
+  @media (min-width: $mq-mobile) {
+    padding: 0.25rem;
+  }
+}
+
+.post-nav__label {
+  display: none;
+
+  @media (min-width: $mq-mobile) {
+    display: inline;
   }
 }

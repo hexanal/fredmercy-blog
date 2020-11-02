@@ -131,10 +131,6 @@ const getParentPages = function( page, index, pages ) {
   return parents
 }
 
-// const getPageByURL = function( url, pages ) {
-//   return pages.find( page => page.meta.url === url )
-// }
-
 /*
  * TODO: get "siblings" pages
 

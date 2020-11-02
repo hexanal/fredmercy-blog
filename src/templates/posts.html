@@ -4,8 +4,6 @@
 	{{> ui/header }}
 </div>
 
-{{> ui/post-nav }}
-
 <article class="post" data-component="collapse">
 	<div
 		class="post__window"
@@ -21,6 +19,8 @@
 					[{{ meta.type }}]
 				</span>
 			</div>
+
+			{{> ui/post-nav }}
 		</header>
 
 		<div class="post__body" data-component="notes">

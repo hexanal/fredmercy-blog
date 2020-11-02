@@ -1,5 +1,5 @@
 ---
-title: Fred Mercy / Bookmarks
+title: Bookmarks
 description: Long list of anything I found interesting
 template: bookmarks
 ---

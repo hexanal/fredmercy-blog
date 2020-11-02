@@ -23,6 +23,10 @@
 - gotta review the npm scripts so that `dev` (or `start`?) runs the server + watches the files & rebuilds using webpack
   - the `build` or `prod` script will build the website's HTML and run the webpack production build
 
+`3:50pm:`
+
+- man I've been doing a BUNCH of things... and it sort of works!!
+- I can see myself publishing this website sometime soon!
 
 ## November 1, 2020
 
