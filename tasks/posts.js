@@ -106,8 +106,6 @@ const extractPosts = function() {
   ])(entries);
 }
 
-const posts = extractPosts()
-
 // TODO make sure this is sturdy?
 module.exports = () => ({
   id: 'posts',

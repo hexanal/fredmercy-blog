@@ -158,8 +158,6 @@ const extractPages = function() {
   ])( pages );
 }
 
-const pages = extractPages()
-
 /**
  * WORK IN PROGRESS
  * A content type exports an object with three things:
