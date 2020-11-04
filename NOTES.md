@@ -1,5 +1,120 @@
 # NOTES
 
+## November 3, 2020
+
+- continuing from yesterday's last bulletpoint, about the component system:
+  - I had already tried something using React, that uses components to build a static version of the website
+  - and then attempts to *hydrate* the app with some other state, if there is such a thing
+  - I abandoned it because... let me think about that; yeah, I had issues with trying to pile up too many layers of technology
+    - React, with Recoil for state management, and then I needed some sort of router functionality...
+    - with the current setup, I have HTML views, with the bare essentials, and BarbaJS works for me to make transitions look good
+    - maybe if I can think about it deeper, it will make sense
+      - maybe if I mount a React "app" on every "component", passing the necessary data
+      - linking all those to a state management singleton?
+
+- none of those improvements (using React, or Vue, or a state management lib) would fix the main issue of **content entry**
+  - I need (or anybody who writes content for a website) to have a very simple, easy to understand, minimalist way of adding content
+  - I want to write some text in a markdown file, following very basic formatting rules (which I think should become some sort of standard, if it's not already; not sure whether "normal" people use it every day, but perhaps one day they will, haha)
+  - I want to be able to **add modules** that enhance the page I'm editing:
+    - I want to be able to do that **easily**
+    - I wish for it to be **text-based** also, and easily **exportable**
+    - it would probably have to plug into whatever component implementation I'll have chosen:
+
+```markdown
+Lorem ispum
+
+{{> ui/experiment/test }}
+{
+  "some": ["json", "object", "for", "data"]
+}
+
+Dolor sit amet
+```
+
+- this uses HandlebarsJS style partials, and I would grab what follows it immediately and use that data
+- or I could go full custom, and in a middleware, use that syntax to plug it into whatever framework I want:
+
+```markdown
+Lorem ipsum
+
+[[blocks/leaflet-map
+  latitude: 75.342423432
+  longitude: 80.98234983
+  zoom: 12.123123
+]]
+
+Dolor sit amet
+```
+
+- in this case, I would
+  - detect that `[[` means the start of a **block component**, and ends with `]]`
+  - isolate the name of the component `blocks/leaflet-map`, and its data
+    - the data here is formatted as `yaml` -> this is to match the frontmatter (a syntax that the editor must know a little bit about already)
+    - format that data as JSON (just like the frontmatter)
+  - grab whatever component is in `block/leaflet-map` and pass it the data
+  - render it as HTML and insert it into the markdown
+  - render the markdown (rendered HTML should be used as-is)
+- see if I can hook into the `marked` parser and lexer, and add a `component` token, that matches:
+
+```
+[[some-path
+some-yaml: hello
+]]
+```
+
+- if the markdown parser gets that and then runs some sort of middleware that does the component magic (using whatever... VueJS, lit-html, React, preact, Elm, who cares)
+  - then we're in business
+- I'll have to take that into some other project anyway... maybe another branch, or another repo altogether
+
+`9:41am:`
+
+- been toying about websocket earlier this year, and it was pretty good, but now I'm thinking about digging a little deeper in there
+  - thinking about making the comments a little more... ephemeral, maybe a chatbox... I don't know, dude, I'm all over the place
+- for the blog, and pages, I also need to set more metadata:
+  - created on
+  - modified on (timestamp)
+  - status (by default 'published', but also 'draft')
+
+`12:12pm:`
+
+- seriously need to work on colocating the files... html+css+js, to see more clearly what it entails
+  - I feel like the disconnect between how each of those files are compiled is the problem
+  - the CSS-in-JS (and HTML-in-JS of modern frameworks) solution means that the JS is the true master
+  - I could go back to using that... which means working on yesterday's `7:08pm` idea:
+    - components are HTML templates handled by a JS framework
+    - they import their logic AND styles
+    - they're fed page data
+    - if they're "dynamic", then provide something to *hydrate* them with up-to-date data
+      - could be handled by a VueJS `mounted` function?
+      - fetch the data then?
+      - think about the comments section of a post: how could that work?
+      - think about how NextJS/Gatsby does it:
+        - first it goes through the compiler: needs data coming from the builder (the `taskis/posts.js` file?)
+        - then in the browser, it needs to rely on data fetching
+      - it would not use `exponent` anymore, but straight up VueJS
+      - the HTML is static, BarbaJS fetches the necessary HTML file by URL
+      - then, just like we'd refresh the components on route change, we can re-enable whatever component is on the page, based on VueJS? or React?
+      - in barba's function, use something like `ReactDOM.hydrate(<MainComponent />, mountDiv)`
+        - the data passed to `<MainComponent />` has got to come from somewhere; might as well pass that data via... the whole JSON in the html?!
+        - or I gotta write something like BarbaJS, but for my use case:
+          - based on the URL, fetch the necessary `template` + data by AJAX
+          - or let the template change depending on the data (that's from the frontmatter anyway, and the shortcode, if there's any)
+          - inject the data, let the app figure out what to display
+          - with a cool script, update the `<head>` and we're golden
+        - basically, the root component takes the data, and conditionally displays a template
+        - that template is the markdown wysiwyg thing, but would also be augmented with something that grab components from the content?
+
+`1:37pm:`
+
+- glob pages, posts, extract data + URL (url is fundamental, id is too, but for other reasons)
+- go through each url, and feed it to the **root component**, along with **data**
+- render that into the html **layout**
+- when loading that page, you get all the data
+  - the extra data needs to be fetched, if it's supposed to be dynamic
+  - only fetch when you're in the browser environment
+    - that's in the `data` object, under `env`
+- I'll try to describe if in more details, and maybe whip up a prototype... I would like to try VueJS with this.
+
 ## November 2, 2020
 
 `8:45am:`
@@ -27,6 +142,21 @@
 
 - man I've been doing a BUNCH of things... and it sort of works!!
 - I can see myself publishing this website sometime soon!
+
+`7:08pm:`
+
+- I'm thinking maybe using something like VueJS for the component layer might be more flexible, especially once I'll try my hand at that "block" feature
+  - I wanted to have something that would allow some easy *plugging in* of components inside of the markdown
+  - it could be that "shortcode" idea I had, but it would require some sort of pre-parsing of the markdown, and I don't like that
+  - it could be something like... custom views, Vue components with props and shit, but it would probably bother the Markdown parser also...
+  - the point was to be able to have a markdown file as long as I want straight-up text, with minimal markup, and then augment with a sprinke of custom components I could drop in at any place, like:
+    - a map component
+    - a form component
+    - an iframe to some experiment elsewhere on the website
+    - an expand collapse section?
+    - audio player for music, spotify, embed something
+    - anything else that requires special markup, and that could be passed parameters and data
+  - ...
 
 ## November 1, 2020
 

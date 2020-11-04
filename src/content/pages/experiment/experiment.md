@@ -1,5 +1,5 @@
 ---
-title: Fred Mercy / Experiment
+title: Experiment
 description: Trying new things
 template: experiment
 ---
@@ -8,8 +8,6 @@ Hey, this is an experiment page. Would love to be able to use components straigh
 
 But... is that even relevant?
 
-{
-  "can": ["I", "pass", "context", "that", "way", "?"]
-}
+<some-weird-component props="this" or-maybe="this"></some-weird-component>
 
 Ok. Maybe it ain't gonna work.

@@ -46,7 +46,7 @@ Exponent
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,
 		'comments': comments,
-		'collapse':  collapse,
+		'collapse': collapse,
 		'extra': extra,
 		'help': help,
 		'highlight': highlight,
