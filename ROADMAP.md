@@ -33,7 +33,11 @@
   - tracking platform (maybe something open source that's not shitty)
   - A/B testing?
 - generate a cool `sitemap.xml`?
--
+
+## PWA
+
+- `manifest.json`
+- making it PWA-ready, run some tests
 
 ## Security
 

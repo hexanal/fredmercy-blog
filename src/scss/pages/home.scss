@@ -1,0 +1,96 @@
+.page--home {
+  padding-bottom: 10rem;
+}
+
+.home__section {
+  position: relative;
+  width: 80%;
+  padding: 1rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 3rem;
+    width: 0.5rem;
+    height: 3rem;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 3.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: translate(-97%, -50%) translate(1rem, 3rem);
+  }
+
+  + .home__section {
+    margin-top: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &[data-what=yeah] {
+    left: 15%;
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+
+    &:before,
+    &:after {
+      background-color: var(--color-primary);
+    }
+  }
+  &[data-what=ugh] {
+    left: 10%;
+    color: var(--color-bg);
+    background-color: var(--color-secondary);
+
+    &:before,
+    &:after {
+      background-color: var(--color-secondary);
+    }
+  }
+  &[data-what=thats-right] {
+    left: 5%;
+    color: var(--color-bg);
+    background-color: var(--color-active);
+
+    &:before,
+    &:after {
+      background-color: var(--color-active);
+    }
+
+    a {
+      color: var(--color-bg);
+      background-color: var(--color-active);
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+  &[data-what=come-on-now] {
+    color: var(--color-bg);
+    background-color: var(--color-subdued);
+
+    &:before,
+    &:after {
+      background-color: var(--color-subdued);
+    }
+
+    a {
+      color: var(--color-bg);
+      background-color: var(--color-subdued);
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ const fs = require('fs')
 const glob = require('glob')
 const frontMatter = require('front-matter')
 const marked = require('marked')
+const jsyaml = require('js-yaml')
 
 const html = require('./html')
 const { pipe } = require('./utils')
@@ -17,7 +18,7 @@ const applyContent = function(pages) {
     const file = fs.readFileSync( page, 'utf8' )
     const { attributes, body } = frontMatter( file.toString() )
     const { title, description, template, useJSON } = attributes
-    const content = marked(body)
+    const content = marked( experiment(body) )
     // TODO maybe try to implement the thing about middlewares for augmenting the page
     // like `use: json | location | whatever`
     // to indicate that the page needs to have access to this type of data
@@ -36,6 +37,33 @@ const applyContent = function(pages) {
       content
     }
   })
+}
+
+/**
+ * this extracts the components with their yaml data
+ */
+const experiment = function( body ) {
+  const blocks = body.match(/[^\[\[]+(?=\]\])/g)
+
+  if (!blocks) return body
+
+  html.usePartials('./src/components')
+
+  const components = blocks.map(block => {
+    const split = block.split('\n')
+    const component = `{{>${split[0]} data }}`;
+    const yaml = split.join('\n').replace(split[0], '')
+    const template = html.compile( component )
+    const templateWithData = template({ data: jsyaml.load(yaml) })
+
+    return templateWithData
+  })
+
+  const bodyWithComponents = blocks.reduce( (acc, blockString, index) => {
+    return acc.replace(`[[${blockString}]]`, components[index] )
+  }, body)
+
+  return bodyWithComponents
 }
 
 const getJsonData = function(page) {
