@@ -15,21 +15,19 @@ export default function({messaging, _exponent}) {
 		transitions: [{
 			before() {
 				_exponent.unmount();
-				messaging.dispatch({ id: 'PLAY_SOUND', payload: 'woaw' });
 			},
 			leave({ current, next }) {
 				return new Promise(resolve => {
 					messaging.dispatch({ id: 'PAGE_LEAVE', payload: { current, next } });
-					document.body.classList.add('state-body-transition');
+					document.body.classList.add('transition');
 
 					setTimeout(() => {
-						messaging.dispatch({ id: 'PLAY_SOUND', payload: 'womp' });
 						resolve();
 					}, TRANSITION_DURATION);
 				});
 			},
 			beforeEnter({ current }) {
-				document.body.classList.remove('state-body-transition');
+				document.body.classList.remove('transition');
 				current.container.style.position = 'absolute';
 			},
 			enter({ next }) {
@@ -46,9 +44,3 @@ export default function({messaging, _exponent}) {
 		} ]
 	});
 }
-
-// fixme: enable analytics
-// barba.hooks.after(() => {
-// ga('set', 'page', window.location.pathname);
-// ga('send', 'pageview');
-// });

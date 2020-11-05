@@ -1,0 +1,33 @@
+{{#> layouts/page }}
+
+<div class="experiment">
+
+	<div class="parents">
+		{{#each meta.parents }}
+			<a href="{{ this.meta.url }}" title="{{ this.meta.title }}">
+				🡤 {{ this.meta.title }}
+			</a>
+			<br>
+		{{/each}}
+	</div>
+
+	<h1>
+		{{ meta.title }}
+	</h1>
+
+	<div class="page">
+		{{{ this.content }}}
+	</div>
+
+	<div class="children">
+		<h2>Children pages</h2>
+		{{#each meta.children }}
+			<a href="{{ this.meta.url }}" title="{{ this.meta.title }}">
+				🡤 {{ this.meta.title }}
+			</a>
+			<br>
+		{{/each}}
+	</div>
+</div>
+
+{{/layouts/page }}

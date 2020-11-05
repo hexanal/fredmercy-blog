@@ -1,0 +1,44 @@
+{{#> layouts/default }}
+
+<div class="index index--entry">
+	{{> ui/header }}
+</div>
+
+<article class="post" data-component="collapse">
+	<div
+		class="post__window"
+		aria-label="{{ meta.title }}"
+		data-component="highlight"
+	>
+		<header class="post__heading">
+			<div class="post__meta">
+				<time class="post__date">
+					{{ meta.date }}
+				</time>
+				<span class="post__type">
+					[{{ meta.type }}]
+				</span>
+			</div>
+
+			{{> ui/post-nav }}
+		</header>
+
+		<div class="post__body" data-component="notes">
+			{{{ content }}}
+		</div>
+
+		{{#if meta.edit}}
+		<i class="post__edit-date">
+			(last edited: {{ meta.edit }})
+		</i>
+		{{/if}}
+	</div>
+
+	<div class="post__comments state-loading" data-component="comments">
+		{{> entries/comments}}
+		{{> entries/leave-comment}}
+		{{> entries/read-comment}}
+	</div>
+</article>
+
+{{/layouts/default}}

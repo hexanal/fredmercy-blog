@@ -1,4 +1,4 @@
-import 'scss/blog/style.scss';
+import 'scss/style.scss';
 import 'assets/images/favicon.png';
 import 'assets/images/favicon-big.png';
 
@@ -16,6 +16,7 @@ import keyboard from 'components/keyboard';
 import transitions from 'components/transitions';
 
 // ui
+// import bleeps from 'components/bleeps';
 import comments from 'components/comments';
 import collapse from 'components/collapse';
 import help from 'components/help';
@@ -26,6 +27,8 @@ import nav from 'components/nav';
 import notes from 'components/notes';
 import tabs from 'components/tabs';
 import themes from 'components/themes';
+
+import extra from 'components/resume/extra';
 
 const container = document.querySelector('[data-barba="container"]');
 
@@ -38,11 +41,13 @@ Exponent
 		transitions
 	])
 	.register({
+		// 'bleeps': bleeps,
 		'debug-ui': debugUI,
 		'debug-align': debugAlign,
 		'debug-stack': debugStack,
 		'comments': comments,
 		'collapse': collapse,
+		'extra': extra,
 		'help': help,
 		'highlight': highlight,
 		'jumpto': jumpto,
@@ -50,7 +55,7 @@ Exponent
 		'nav': nav,
 		'notes': notes,
 		'tabs': tabs,
-		'themes': themes,
+		'themes': themes
 	})
 
 	.mount(container);

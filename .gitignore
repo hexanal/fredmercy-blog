@@ -1,16 +1,16 @@
 .DS_Store
 
-__archive
 node_modules/
 npm-debug.log
 
-config.js
-exponent.config.js
-
-./blog/
+public/
 *.css.map
 *.js.map
 
+# Ignore the comments
+src/content/entries/**/*.json
+
 # Ignore those files because I'm working on that at the moment...
 *.bak.*
+*.bak
 _bak

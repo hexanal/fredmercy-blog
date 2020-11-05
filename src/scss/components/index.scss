@@ -1,0 +1,50 @@
+.index {
+	max-width: none;
+
+	@media (min-width: $mq-medium) {
+		max-width: $site-width;
+	}
+}
+
+.index__list {
+	overflow: hidden;
+	list-style: none;
+	padding-left: 0;
+	margin: 0 0 5em;
+	line-height: 1.4;
+}
+
+.index__item {
+	display: flex;
+	align-items: center;
+}
+
+.index__item + .index__item {
+	margin-top: 0.8em;
+}
+
+.index__meta {
+	flex-shrink: 0;
+	display: inline-block;
+	margin-right: 0.75rem;
+	line-height: 1.1;
+	color: var(--color-bg);
+	background-color: var(--color-primary);
+}
+
+.index__type {
+	display: none;
+	font-style: italic;
+
+	@media (min-width: $mq-mobile) {
+		display: inline;
+	}
+}
+
+.index__extra {
+	display: none;
+
+	@media (min-width: 500px) {
+		display: inline;
+	}
+}

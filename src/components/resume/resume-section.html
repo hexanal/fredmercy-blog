@@ -1,0 +1,13 @@
+<div class="resume-section">
+  <div>
+    <h2 class="resume-section__heading">
+      {{ heading }}
+    </h2>
+  </div>
+
+  <div class="resume-section__content">
+    {{#each items }}
+      {{block ../component this }}
+    {{/each}}
+  </div>
+</div>

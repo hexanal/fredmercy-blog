@@ -1,0 +1,40 @@
+.post-nav {
+  display: flex;
+  justify-content: stretch;
+}
+
+.post-nav__item {
+  flex-grow: 1;
+
+  + .post-nav__item {
+    margin-left: 1rem;
+  }
+}
+
+.post-nav__link {
+  padding: 0.25rem 0.75rem;
+  color: var(--color-bg);
+  background-color: var(--color-subdued);
+  text-decoration: none;
+
+  + .post-nav__link {
+    margin-left: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-secondary);
+  }
+
+  @media (min-width: $mq-mobile) {
+    padding: 0.25rem;
+  }
+}
+
+.post-nav__label {
+  display: none;
+
+  @media (min-width: $mq-mobile) {
+    display: inline;
+  }
+}

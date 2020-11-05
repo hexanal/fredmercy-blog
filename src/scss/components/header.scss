@@ -1,0 +1,257 @@
+.header {
+	@media (min-width: $mq-medium) {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.header__header-extend {
+	position: relative;
+	z-index: var(--z-interface);
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.header__toggle-menu {
+	position: fixed;
+	z-index: var(--z-interface);
+	top: 1rem;
+	right: 1rem;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	font-family: var(--font);
+	font-size: 1em;
+	text-decoration: underline;
+	color: var(--color-primary);
+	background-color: transparent;
+
+	&.state-menu-active {
+		.header__toggle-open {
+			display: none;
+		}
+		.header__toggle-close {
+			display: inline;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		text-decoration: none;
+
+		span {
+			text-decoration: none; // in toggle-open
+		}
+	}
+
+	@media (min-width: $mq-medium) {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+}
+
+.header__toggle-open {
+	display: inline-block;
+	line-height: 1;
+	text-decoration: none;
+
+	span {
+		text-decoration: underline;
+	}
+
+	i {
+		display: inline-block;
+		position: relative;
+		top: 0.1rem;
+		left: -0.15rem;
+		width: 1rem;
+		font-size: 1rem;
+		font-style: normal;
+		line-height: 1;
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		i {
+			font-size: 1.15rem;
+		}
+	}
+}
+
+.header__toggle-close {
+	display: none;
+}
+
+.header__menu {
+	display: none;
+	position: fixed;
+	z-index: var(--z-interface);
+	left: 1rem;
+	right: 1.75rem;
+	top: 3rem;
+	padding: 1em;
+	border: 2px solid currentColor;
+	background-color: var(--color-bg);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
+
+	hr {
+		margin: 1rem 0;
+	}
+
+	&.state-menu-active {
+		display: block;
+	}
+
+	@media (min-width: $mq-medium) {
+		right: auto;
+		// TODO fix those magic numbers with something sturdier please :)
+		left: 49.6rem;
+
+		.index--list & {
+			left: 38.7rem;
+		}
+	}
+}
+
+.header__menu-bg {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 0;
+	background-color: var(--color-bg);
+	opacity: 0.8;
+
+	&.state-menu-active {
+		display: block;
+	}
+}
+
+.header__menu-item {
+	display: block;
+	text-align: right;
+
+	+ .header__menu-item {
+		margin-top: 0.75em;
+	}
+
+	@media (min-width: $mq-medium) {
+		text-align: left;
+		margin: 0 1em 0 0;
+	}
+}
+
+.header__menu-link {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	padding-right: 1.75em;
+	font-family: var(--font);
+	font-size: 1rem;
+	color: var(--color-primary);
+	background-color: transparent;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		text-decoration: none;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	@media (min-width: $mq-medium) {
+		padding-left: 1.75em;
+		padding-right: 0;
+
+		&:after {
+			left: 0;
+			right: auto;
+		}
+	}
+}
+.header__menu-link--blog {
+	&:after {
+		content: '📓';
+	}
+}
+.header__menu-link--bookmarks {
+	&:after {
+		content: '🔖';
+	}
+}
+.header__menu-link--demos {
+	&:after {
+		content: '🧪';
+	}
+}
+.header__menu-link--bandcamp {
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 1.15em;
+		height: 1.15em;
+		background-image: url('~assets/images/bandcamp.png');
+		background-size: contain;
+	}
+}
+.header__menu-link--main {
+	&:after {
+		content: '🌀';
+	}
+}
+.header__menu-link--help {
+	&:after {
+		content: '🆘';
+	}
+}
+.header__menu-link--up {
+	&:after {
+		content: '☝️';
+	}
+}
+
+.header__menu-item--up {
+	display: none;
+
+	[data-scrolled-past-viewport="true"] & {
+		display: block;
+	}
+}
+
+.header__menu-link--sounds {
+	&:after {
+		content: '🔇';
+	}
+	&.state-sounds-enabled {
+		&:after {
+			content: '🔈';
+		}
+	}
+}
+
+.header__jump-to {
+	width: 100%;
+	margin: 1em 0 0;
+
+	@media (min-width: $mq-medium) {
+		width: 10rem;
+		margin: 0 0 0 1em;
+	}
+}

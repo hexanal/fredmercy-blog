@@ -26,11 +26,7 @@ const EFFECTS = {
 	delay: new FeedbackDelay(0.075, 0.25),
 };
 
-let loaded = false;
-
-export default function({ element, control, messaging }) {
-	if (loaded) return; loaded = true;
-
+export default function({ element, messaging }) {
 	const state = {
 		enabled: false,
 		loaded: false,
@@ -327,6 +323,4 @@ export default function({ element, control, messaging }) {
 	}
 
 	Mousetrap.bind('s', toggleSounds);
-	control['enable-sounds'].addEventListener('click', toggleSounds);
 }
-
