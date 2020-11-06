@@ -216,6 +216,16 @@
 		content: '🌀';
 	}
 }
+.header__menu-link--github {
+	&:after {
+		content: '⌨️';
+	}
+}
+.header__menu-link--twitter {
+	&:after {
+		content: '🐦';
+	}
+}
 .header__menu-link--help {
 	&:after {
 		content: '🆘';

@@ -1,5 +1,33 @@
 # NOTES
 
+## November 6, 2020
+
+- will try to implement the missing things listed in yesterday's entry
+- also... gotta import all the comments from the "old" site
+
+## November 5, 2020
+
+- super cool. it's live.
+- things to do next:
+  - in menu, add:
+    - github
+    - ...twitter?
+    - other?
+  - in help, add:
+    - website policy
+      - As sole webmaster, I expect the comments left on this website to follow good manners. Any content that I deem offensive will be moderated.
+      - Don't expect your comments to be kept online forever. Think of them as a post-it note you leave on that page. If you write something that need to be kept online forever: write it on your blog, then link it here. It's easy.
+      - privacy policy
+        - this is how you will leave data on my website (data that I can identify as being *yours*):
+          - posting a comment with your real name
+          - ...that's it! I'm not tracking you in anyway. All the data that I "keep" is sitting comfortably on your harddrive. It's not "the cloud" or anything, but it's clever enough.
+
+    - github source for the website
+    - also add a position-fixed help button on bottom right?
+  - extract all the "music" links into a music page
+  - extract the last few links I've posted into the bookmarks page
+  -
+
 ## November 4, 2020
 
 `11:58am:`
