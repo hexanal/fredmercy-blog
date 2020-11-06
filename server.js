@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
 	resave: true,
 	saveUninitialized: true,
-	secret: 'hahahaha',
+	secret: process.env.SESSION_SECRET,
 	cookie: { maxAge: 1209600000 }
 }));
 app.use(lusca.xframe('SAMEORIGIN'));
