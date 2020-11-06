@@ -11,19 +11,19 @@
     content: '';
     position: absolute;
     top: 100%;
-    left: 3rem;
-    width: 0.5rem;
+    right: 3rem;
+    width: 0.25rem;
     height: 3rem;
   }
   &:after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 3.25rem;
-    width: 2rem;
-    height: 2rem;
+    right: 3rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
-    transform: translate(-97%, -50%) translate(1rem, 3rem);
+    transform: translate(-24%,-50%) translate(1rem,3rem);
   }
 
   + .home__section {
@@ -35,7 +35,6 @@
   }
 
   &[data-what=yeah] {
-    left: 15%;
     color: var(--color-bg);
     background-color: var(--color-primary);
 
@@ -45,7 +44,7 @@
     }
   }
   &[data-what=ugh] {
-    left: 10%;
+    left: 5%;
     color: var(--color-bg);
     background-color: var(--color-secondary);
 
@@ -55,7 +54,7 @@
     }
   }
   &[data-what=thats-right] {
-    left: 5%;
+    left: 10%;
     color: var(--color-bg);
     background-color: var(--color-active);
 
@@ -75,6 +74,7 @@
     }
   }
   &[data-what=come-on-now] {
+    left: 15%;
     color: var(--color-bg);
     background-color: var(--color-subdued);
 
