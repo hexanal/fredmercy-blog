@@ -7,6 +7,25 @@
 - still doing some experimentin' and I don't know if I should embark on that for now
 - I have other things to worry about :)
 
+`9:04am:`
+
+- I'm a maniac.. I'm questioning every practice, I'm thinking about weird roundabout ways of doing things, and I'm loving it.
+  - you know what I hate? having to install packages via npm for my frontend app after pulling from a repo
+  - and then having to figure out which version of node/npm I need
+  - and then blah blah blah
+    - if you know what you need, can't you just install it and track it in git?
+    - that way if it changes, you know who the fuck updated it, you know WHAT was updated
+    - and, you don't need to install any fucking thing: it's just sitting there
+    - and you do the version management on your own, in a markdown file? anyway, the lib always has the version written on top, right? so you know where you at
+  - how would that work? why the fuck are we using npm for anyway? tracking the version? ease of use? what?
+- should focus on other things...
+
+`11:16am:`
+
+- work **SUCKS**, dude
+  - not sure I need that shit in my life
+
+
 ## November 8, 2020
 
 `~8am:`
@@ -258,8 +277,6 @@ $[]({
   - looks like it should **not** work, you know?
   - it's... the solution to a non-problem, but at the same time... there's a certain charm to it
 - ok... will I deploy tonight? haha
--
-
 
 ## November 3, 2020
 
@@ -376,6 +393,7 @@ some-yaml: hello
     - that's in the `data` object, under `env`
 - I'll try to describe if in more details, and maybe whip up a prototype... I would like to try VueJS with this.
 
+
 ## November 2, 2020
 
 `8:45am:`
@@ -419,6 +437,7 @@ some-yaml: hello
     - anything else that requires special markup, and that could be passed parameters and data
   - ...
 
+
 ## November 1, 2020
 
 - url shortener:
@@ -436,6 +455,7 @@ Horrible fucking day today!
 But I managed to finalize the resume page... just gotta link to it real quick.
 
 Ok...homepage almost ready. Resume done. Gotta fix the breadcrumbs and I should be ready to deploy the first version.
+
 
 ## October 31, 2020
 
@@ -457,6 +477,7 @@ The rest of my little speech.
 - does this work?
 - meh. I'm on some dumb shit
   - playing "Anaconda" just because
+
 
 ## October 30, 2020
 
@@ -500,6 +521,7 @@ BLah blah
 - ugh... did **NOT** deploy tonight!
 - you know what? tomorrow I'm gonna work on a breadcrumbs middleware + module! hahahahaha
 
+
 ## October 29, 2020
 
 `9:10am:`
@@ -512,6 +534,7 @@ BLah blah
 `4:53pm:`
 
 - Tonight, I'll try to deploy my new website! haha
+
 
 ## October 27, 2020
 
@@ -593,6 +616,7 @@ Future things to add:
 
 - found out why the parent pages weren't working: it's the same code as for the children pages... obviously there's something wonky going on in my logic
 - trying out something to fix it
+
 
 ## October 25, 2020
 
