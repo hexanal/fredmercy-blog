@@ -22,3 +22,20 @@ hello:
 ]]
 
 Ok. Maybe it ain't gonna work.
+
+[[blocks/test2
+left: |
+
+  ## whatever
+
+  This is pretty cool... hum, if it indeed works?
+
+  Ok, and this works?!
+
+right: |
+
+  ![ugh](/files/photos/cat-person.jpg)
+
+  This is me and my cat!
+
+]]

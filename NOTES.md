@@ -1,9 +1,109 @@
 # NOTES
 
+## November 9, 2020
+
+`8:39am:`
+
+- still doing some experimentin' and I don't know if I should embark on that for now
+- I have other things to worry about :)
+
+## November 8, 2020
+
+`~8am:`
+
+- for content, what about doing something like... put everything in the hierarchy
+  - with a combo of `content-type` and `template`, I define what kind of content it is?
+  - or maybe... yeah, that would work?
+  - maybe the type is the only thing I need, and I can infer the `template` in the code?
+  - `experiment` -> uses template `experiment.html` but uses the data for `page` content type?
+  - this is something for a future version
+
+`8:51am:`
+
+- ok. so this is my own little *CMS*; but there are other options being uses out there
+  - [11ty](https://www.11ty.dev/) looks nice
+  - [Toast]() i've just heard about this one and it sounds good
+
+`11:21am:`
+
+- the `live` page doesn't work on production, I'll have to investigate that sometime
+- fixing the issue with the files folder; I'll try to whip up something that exports some shit
+  - got a proof of concept thing working; it's cool.
+
+`12:50pm:`
+
+- probably will deploy tonight; I'm getting very good at whipping it my server
+  - it's nimble and I've moved it to another user's home directory on my server with almost no frustration during the process, which is crazy... doing server configuration used to be my *bête noire* but these days I'm focusing a bit of my energy on it so that I regain control of my Universe (the web)
+- on top of all the 404/500 error handling I have to figure out, I'll modify how transitions are handled so that a timeout redirects to a 404, with the option to try loading the requested page again
+  - I guess since BarbaJS makes us stay on the current page when the request times out, I can hook onto a "loading failed" event and display an error message (instead of nothing, and instead of landing on some specific 404 page)
+  - the specific 404 page is when loading a non-existent page from the server returns nothing...
+  - hmmm, if I configure the server so that it returns some 404 html file, I'll have to see if BarbaJS can get the response code, and if it's 404, I manage that error then?
+
+`7:02pm:`
+
+- coming back to `use: json`;
+  - maybe that could be used to store info for "components"
+
+```markdown
+Lorem ispum
+
+[something
+  data: this-is-the-data-we-want.json
+  other-property: Hey, this is cool
+]
+
+Dolor sir amet
+```
+
+
+## November 7, 2020
+
+`9am:`
+
+- did some work but I still have to deploy
+- server-side work is daunting... tried to set up an FTP access for me to upload files easily, but configuring the server is a bee-eye-tee-see-aytch!
+- okay so... I've discover I'm clearly not alone in this endeavor, and plenty of like-minded people are out there still building personal websites! I'll link 'em all on the website. I'll try to connect with some of them, if they deem me worthy of joining their network of high-achievers... maybe there's a free spot in there for a tech-savvy stoner hippie motherfucker like me?
+  - https://datagubbe.se/subversive/ <- !!!
+- I'm thinking of a slight redesign, it only for the content part of the blog posts, so that it's a little more legible, just easier to parse and read
+  - I could test-drive that "shortcode" idea a little deeper, to help with foot/sidenotes, expand/collapse, etc.
+- it's good enough for now, I can rest easy if I don't push new shit on the blog before long...
+
+`3:16pm:`
+
+- weird issues with WiFi on my iphone; guess I'm ready to be a system admnistrator
+  - growing increasingly paranoid of what kind of data is circulating on my network, and how "encrypted" it is, if at all...
+  - done! only had to reboot the router... it's BEGINNER LEVEL SHIT, BRO! GIVE ME A HARDER THING TO TROUBLESHOOT!
+- officially gone from instagram; next up is twitter!
+
+`7:05pm:`
+
+- looks like I don't handle 404 errors (any errors, in fact... I think)
+  - this is gosh darn CRITICAL PRIORITY, man
+- anyways, this should be handled by... nginx? it's straight up HTML, unless we're talking about the API, but that's gonna be on another port, perhaps
+  - https://www.cyberciti.biz/faq/howto-nginx-customizing-404-403-error-page/
+  - also interesting to plug in: https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
+
+
+
 ## November 6, 2020
 
+`~5pm:`
+
 - will try to implement the missing things listed in yesterday's entry
-- also... gotta import all the comments from the "old" site
+- ~~also... gotta import all the comments from the "old" site~~
+- I need something to zip shit with on the server (db exports, and other)
+- I need to parse CSVs
+- I need to think about eventually... ugh... moving toward some preact-generated website?
+
+`8:57pm:`
+
+- those breadcrumbs are weird, I'm not a fan of the previous/next button placement, I don't like the rigidity of the design, and that HTML menu needs to go... I need a better menu.
+- ...
+- I need to chill, too
+
+`9:55pm:`
+
+- for sure, add some console.log in there... I'm kept in the dark when the build completes
 
 ## November 5, 2020
 

@@ -96,10 +96,8 @@ app.get('/api/comments/:entryId', (req, res) => {
 		});
 });
 
-/**
- * Redirect from root path to default language homepage (EN)
- */
 app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use('/files/', express.static(path.join(__dirname, 'files'), { maxAge: 31557600000 }));
 
 /**
  * Catch other routes and serve a 404 ???
@@ -116,6 +114,7 @@ const server = app.listen(app.get('port'), () => {
 	console.log(chalk.blue(`➤ URL: http://${app.get('host')}:${app.get('port')}`));
 	console.log(chalk.blue('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
 });
+
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', function(ws) {

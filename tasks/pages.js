@@ -43,9 +43,18 @@ const applyContent = function(pages) {
  * this extracts the components with their yaml data
  */
 const experiment = function( body ) {
-  const blocks = body.match(/[^\[\[]+(?=\]\])/g)
+  const split = body.split('[[');
 
-  if (!blocks) return body
+  if (!split) return body
+
+  const blocks = split
+    .filter(item => item.includes(']]') )
+    .map(item => {
+      const parts = item.split(']]');
+      return parts[0];
+    })
+
+  if (!blocks.length) return body
 
   html.usePartials('./src/components')
 

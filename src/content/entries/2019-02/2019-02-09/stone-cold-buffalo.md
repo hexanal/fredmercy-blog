@@ -10,41 +10,4 @@ Also check out one of the guest bands [The Naked High (Bandcamp)](https://thenak
 
 This stuff's trippy.
 
-`10:32am:` Here's a couple of very old boring songs from when I had just acquired some recording gear:
-
-[Infinity Times Infinity](/files/music/infinity-times-infinity.mp3) _(July 1, 2017)_
-
-<code class="collapse">
-<button type="button">Show/Hide Lyrics</button>
-<em>
-
-Win some and lose some
-Lose some and then some
-Tie up those loose ends
-
-Thirty orbits around
-Happiness still unfound
-Let's see what you got
-
-Bitterly I comply
-On bended knees I cry
-Fall in line one last time
-
-Yes I do smile sometimes
-Who knows why I do?
-Only human after all...
-
-</em>
-</code>
-
-[It's an honor](/files/music/its-an-honor.mp3) _(December 20, 2017)_
-
-<code class="collapse">
-<button type="button">Show/Hide Lyrics</button>
-<em>
-
-It's an honor
-To be here
-
-</em>
-</code>
+[content removed] *(sorry!)*

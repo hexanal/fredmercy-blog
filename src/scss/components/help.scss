@@ -64,7 +64,7 @@
 	@media (min-width: $mq-medium) {
 		top: 50%;
 		left: 50%;
-		max-width: 42rem;
+		max-width: $site-width;
 		transform: translate(-50%, -50%);
 	}
 }
@@ -78,17 +78,18 @@
 	height: 100%;
 }
 
+.help__section {
+	padding: 0 0 1.5rem;
+}
+
 .help__separator {
 	flex-shrink: 0;
-	margin: 1.5rem 0;
+	margin: 0 0 1.5rem;
 	background-color: var(--color-subdued);
 }
 
-.help__section--a11y {
-	flex-grow: 1;
-}
 .help__section--bug {
-	padding-bottom: 0.5rem;
+	padding-bottom: 2rem;
 }
 
 .help__heading {

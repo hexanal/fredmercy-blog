@@ -8,6 +8,9 @@ public/
 *.css.map
 *.js.map
 
+# FTP-uploaded media files
+files/
+
 # Ignore the comments
 src/content/entries/**/*.json
 
