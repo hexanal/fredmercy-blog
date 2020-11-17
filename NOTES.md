@@ -1,5 +1,34 @@
 # NOTES
 
+## November 15, 2020
+
+`2:37pm:`
+
+- not a lot of energy this week and even this weekend... I'm resting :)
+- I thought about my website's design and I will have to change a few things
+  - more legible body font
+  - center the content...?
+- thinking about "discoverable" or "explorable" websites
+  - make the visit interesting with hidden things, micro-interactions(?)
+  - what lets you know where you can/should go? the menu? main navigation?
+    - elements on the page?
+    - sitemap? a menu that looks more like a diagram, with hierarchies, colors
+    - "you are here" dot for active menu item
+- i need to write blog posts now!!
+  - one about living a hypocritical life:
+    - thinking you're green but you're consuming like a maniac
+      - meat! wasting food! having a child!
+    - thinking you're successful but you're riding the advertising money wave
+      - fuck ads; but they gave me a career...
+      - advertising is coersion, it's manipulation, it's hypnosis, it's misdirection, etc.
+    - thinking you're a good person but involuntarily do "bad" things to other people or animals
+  - one about the promise of web design and development
+    - and how it got hijacked by... apps, social media, ads, "silos"
+    - we now have "virtual strip malls", with big companies pushing their products and choking the competition
+    - we can do better, and we should do better
+
+
+
 ## November 9, 2020
 
 `8:39am:`
