@@ -1,5 +1,60 @@
 # NOTES
 
+## November 17, 2020
+
+`1:10pm:`
+
+- other post ideas:
+  - one about **quitting Facebook**
+    - my story, the why I quit, what after?
+    - what do I miss? why it matters that I quit?
+    - why I feel crazy for it, but some other times, I feel like everybody else is crazy to stay on it
+  - one about **note taking**
+    - how it's constantly being reinvented
+      - bloggers like me giving their thoughts about it
+    - how it helps staying focused, staying open-minded
+    - how it helps the scientific mind, how it helps with "rubber ducking"
+    - how it builds a knowledge archive that's invaluable when — in the future — dealing with similar problems
+
+`1:14pm:`
+
+- by the way, about that note taking thing:
+  - it's wonderful... and I'm going to try and use extensive note taking habits to document everything I do during my work
+  - builds an archive of what I'm struggling with, how I've solved it, how I could have avoided it, etc. etc.
+  - it's invaluable!!!
+
+`1:26pm:`
+
+- found out about the MDX project a while back and I'm intrigued because that's pretty much what I was attempting to build on my own
+  - BUT!... there's something I don't like about it...
+  - my system is clearly inferior in many ways; but attempts to be much more minimalistic and aimed at making content editors more comfortable with "components"
+  - perhaps it's not the way to go, and a GUI is the best move
+    - so a GUI that outputs a JSON, and associates it with a component?
+    - that's the promise of a parser that "reverses" it: shows the GUI from the markdown, ready for editing
+    - edit stuff, hit "preview"
+    - see the component with all the good stuff
+    - isn't that what Project Gutenberg was trying to be?
+    - I need to delve deeper into that, I guess... but fucking Wordpress, dude!
+
+- the ideas are:
+  - developers are shitting on Wordpress, and Drupal, and any CMS
+  - whipping up your own CMS is a long project, and pretty much doomed to fail
+  - **if trying to make it into a behemoth** -> making it fully managed through a GUI (dashboard)
+  - most companies will have to hire **specialized** people, or at least give them a long formation to teach them how to edit the content (probably given by whoever's building the website)
+  - why not provide an environment that's just enough to let tech-savvy people enter content easily
+  - maybe just **expose** some pages to a fully-fledged GUI so that a non-tech-inclined person can make corrections here and there, but not more
+  - ... I'll go back to that thought, but it's a start
+
+Going through the "utils" on the blog, and on my boilerplate for Exponent...
+Here are some ideas that pop up:
+
+- a `onDismiss(someDOMNode, cb)` util
+  - if the user clicks outside `someDOMNode` or presses the `Escape` key
+  - then fire `cb()`
+    - which should contain some logic like a `someDOMNode.classList.remove('state-active')` or something like that
+
+
+
 ## November 15, 2020
 
 `2:37pm:`
@@ -15,14 +70,14 @@
     - sitemap? a menu that looks more like a diagram, with hierarchies, colors
     - "you are here" dot for active menu item
 - i need to write blog posts now!!
-  - one about living a hypocritical life:
+  - one about living **a hypocritical life**:
     - thinking you're green but you're consuming like a maniac
       - meat! wasting food! having a child!
     - thinking you're successful but you're riding the advertising money wave
       - fuck ads; but they gave me a career...
       - advertising is coersion, it's manipulation, it's hypnosis, it's misdirection, etc.
     - thinking you're a good person but involuntarily do "bad" things to other people or animals
-  - one about the promise of web design and development
+  - one about **the promise of web design and web development**
     - and how it got hijacked by... apps, social media, ads, "silos"
     - we now have "virtual strip malls", with big companies pushing their products and choking the competition
     - we can do better, and we should do better
