@@ -6,6 +6,18 @@ template: experiment
 
 Hey, this is an experiment page. Would love to be able to use components straight from the markdown.
 
+[[blocks/drawer
+label: Something
+content: |
+
+  Ok, this is heavy.
+
+  ## This is super cool yeah!!
+
+  not... really?
+
+]]
+
 [[blocks/audio
 src: /files/jam.mp4
 ]]
