@@ -3,7 +3,9 @@
 	data-component="nav"
 >
 	<nav class="header__header-extend">
-		{{> ui/breadcrumbs }}
+		<h1 class="header__title">
+			{{ meta.title }}
+		</h1>
 
 		<button
 			class="header__toggle-menu"
@@ -45,14 +47,14 @@
 					bookmarks
 				</a>
 			</div>
-			<div class="header__menu-item">
+			<!-- <div class="header__menu-item">
 				<a
 					class="header__menu-link header__menu-link--demos"
 					href="/blog/demos"
 				>
 					demos
 				</a>
-			</div>
+			</div> -->
 
 			<hr>
 

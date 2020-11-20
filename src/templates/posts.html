@@ -4,6 +4,8 @@
 	{{> ui/header }}
 </div>
 
+{{> ui/breadcrumbs }}
+
 <article class="post" data-component="collapse">
 	<div
 		class="post__window"
@@ -16,16 +18,14 @@
 					{{ meta.date }}
 				</time>
 				<span class="post__type">
-					[{{ meta.type }}]
+					tags: {{ meta.type }}
 				</span>
 			</div>
 
 			{{> ui/post-nav }}
 		</header>
 
-		<div class="post__body" data-component="notes">
-			{{{ content }}}
-		</div>
+		{{> ui/content }}
 
 		{{#if meta.edit}}
 		<i class="post__edit-date">

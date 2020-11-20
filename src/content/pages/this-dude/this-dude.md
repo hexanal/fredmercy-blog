@@ -1,10 +1,10 @@
 ---
-title: Bio / Fred Mercy
+title: Who?
 description: Short bio
 template: pages
 ---
 
-Just your average nerd:
+This dude's just your average nerd, you know:
 
 - [web developer](https://github.com/hexanal),
 - musician (pshhhyeah! *right*),

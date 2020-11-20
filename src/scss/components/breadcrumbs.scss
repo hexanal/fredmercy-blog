@@ -1,22 +1,14 @@
 .breadcrumbs {
   display: flex;
+  margin-top: 1rem;
+
+  span {
+    margin: 0 0.5rem;
+  }
 }
 
-.breadcrumbs__current,
 .breadcrumbs__parent,
 .breadcrumbs__root {
-	margin: 0 1rem 0 0;
-  padding: 0.25rem;
 	font-size: 1em;
-	line-height: 1.35;
 	font-weight: 400;
-	font-style: normal;
-	color: var(--color-bg);
-  background-color: var(--color-subdued);
-  text-decoration: none;
-}
-
-.breadcrumbs__current {
-  font-style: italic;
-  background-color: var(--color-active);
 }

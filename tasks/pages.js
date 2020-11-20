@@ -119,6 +119,7 @@ const getPageMetaData = function(page) {
   const destination = `./public${url}`
 
   return {
+    type: 'page',
     destination,
     id,
     url,
@@ -135,6 +136,7 @@ const applyRelationships = function( pages ) {
     // TODO can we not mutate here? does it matter?
     page.meta.children = children
     page.meta.parents = parents
+    page.meta.breadcrumbs = parents.reverse()
 
     return page
   })
@@ -163,7 +165,7 @@ const getParentPages = function( page, index, pages ) {
     const isSharedRoute = page.meta.url.includes( possibleParentPage.meta.url )
 
     return !isSameRoute && isSharedRoute
-  })
+  }).reverse()
 
   return parents
 }

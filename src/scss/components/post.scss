@@ -47,17 +47,18 @@
 	margin: 1.5rem 0;
 }
 
-.post__meta {
+.post__date,
+.post__type {
 	display: inline-block;
 	margin-right: 0.25rem;
 	padding: 0.25rem;
+}
+.post__date {
 	color: var(--color-bg);
 	background-color: var(--color-primary);
 }
-
 .post__type {
 	font-style: italic;
-	margin-bottom: 1.5em;
 }
 
 .post__body {

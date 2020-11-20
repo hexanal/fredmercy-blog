@@ -34,8 +34,27 @@
     margin: 0;
   }
 
-  &[data-what=yeah] {
+  a {
+    display: inline-block;
+    padding: 0 0.25rem;
+    color: var(--homelink-color, var(--color-active));
+    background-color: var(--color-bg);
+    outline: 2px solid var(--color-bg);
+    border: 2px solid var(--homelink-color);
+    text-decoration: none;
+
+    &:hover, &:focus {
+      --homelink-color: var(--color-secondary);
+    }
+  }
+
+  &[data-what] {
     color: var(--color-bg);
+
+    a { color: var(--homelink-color); }
+  }
+
+  &[data-what=yeah] {
     background-color: var(--color-primary);
 
     &:before,
@@ -45,7 +64,6 @@
   }
   &[data-what=ugh] {
     left: 5%;
-    color: var(--color-bg);
     background-color: var(--color-secondary);
 
     &:before,
@@ -54,43 +72,23 @@
     }
   }
   &[data-what=thats-right] {
+    --homelink-color: var(--color-active);
     left: 10%;
-    color: var(--color-bg);
     background-color: var(--color-active);
 
     &:before,
     &:after {
       background-color: var(--color-active);
     }
-
-    a {
-      color: var(--color-bg);
-      background-color: var(--color-active);
-
-      &:hover,
-      &:focus {
-        background-color: var(--color-secondary);
-      }
-    }
   }
   &[data-what=come-on-now] {
+    --homelink-color: var(--color-subdued);
     left: 15%;
-    color: var(--color-bg);
     background-color: var(--color-subdued);
 
     &:before,
     &:after {
       background-color: var(--color-subdued);
-    }
-
-    a {
-      color: var(--color-bg);
-      background-color: var(--color-subdued);
-
-      &:hover,
-      &:focus {
-        background-color: var(--color-secondary);
-      }
     }
   }
 }

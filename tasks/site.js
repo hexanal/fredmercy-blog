@@ -20,7 +20,8 @@ const addPostIndexAsParent = function(contentTypes) {
   const blogIndex = getPageByURL('/blog', pages)
 
   return insertMetaForContentType(contentTypes, 'posts', {
-    parents: [ blogIndex ]
+    parents: [ blogIndex ],
+    breadcrumbs: [ blogIndex ]
   })
 }
 
