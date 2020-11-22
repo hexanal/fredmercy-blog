@@ -1,8 +1,10 @@
 {{#> layouts/default }}
 
 <div class="index index--list">
-	{{> ui/header displayJumpTo="true" isHome="true" }}
+	{{> ui/header }}
 </div>
+
+{{> ui/jump-to }}
 
 <ul class="index__list">
 
@@ -25,9 +27,6 @@
 			<div class="index__meta">
 				<span class="index__date">
 					{{ this.meta.date }}
-				</span>
-				<span class="index__type">
-					[{{ this.meta.type }}]
 				</span>
 			</div>
 

@@ -22,88 +22,90 @@
 			<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
 		</button>
 
-		<div class="header__menu" data-ui="menu">
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--main"
-					href="/"
-				>
-					home
-				</a>
-			</div>
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--blog"
-					href="/blog"
-				>
-					blog
-				</a>
-			</div>
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--bookmarks"
-					href="/blog/bookmarks"
-				>
-					bookmarks
-				</a>
-			</div>
-			<!-- <div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--demos"
-					href="/blog/demos"
-				>
-					demos
-				</a>
-			</div> -->
+		<div class="header__menu-wrap" data-ui="menu">
+			<div class="header__menu">
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--main"
+						href="/"
+					>
+						home
+					</a>
+				</div>
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--blog"
+						href="/blog"
+					>
+						blog
+					</a>
+				</div>
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--bookmarks"
+						href="/blog/bookmarks"
+					>
+						bookmarks
+					</a>
+				</div>
+				<!-- <div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--demos"
+						href="/blog/demos"
+					>
+						demos
+					</a>
+				</div> -->
 
-			<hr>
+				<hr>
 
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--github"
-					href="http://github.com/hexanal"
-				>
-					github
-				</a>
-			</div>
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--twitter"
-					href="http://twitter.com/hexanal"
-				>
-					twitter
-				</a>
-			</div>
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--bandcamp"
-					href="http://fredmercy.bandcamp.com/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					bandcamp
-				</a>
-			</div>
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--github"
+						href="http://github.com/hexanal"
+					>
+						github
+					</a>
+				</div>
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--twitter"
+						href="http://twitter.com/hexanal"
+					>
+						twitter
+					</a>
+				</div>
+				<div class="header__menu-item">
+					<a
+						class="header__menu-link header__menu-link--bandcamp"
+						href="http://fredmercy.bandcamp.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						bandcamp
+					</a>
+				</div>
 
-			<hr>
+				<hr>
 
-			<div class="header__menu-item">
-				<button
-					class="header__menu-link header__menu-link--help"
-					data-control="help-toggle"
-					type="button"
-				>
-					help / options
-				</button>
-			</div>
-			<div class="header__menu-item header__menu-item--up">
-				<button
-					class="header__menu-link header__menu-link--up"
-					data-control="to-top"
-					type="button"
-				>
-					top of page
-				</button>
+				<div class="header__menu-item">
+					<button
+						class="header__menu-link header__menu-link--help"
+						data-control="help-toggle"
+						type="button"
+					>
+						help / options
+					</button>
+				</div>
+				<div class="header__menu-item header__menu-item--up">
+					<button
+						class="header__menu-link header__menu-link--up"
+						data-control="to-top"
+						type="button"
+					>
+						top of page
+					</button>
+				</div>
 			</div>
 		</div>
 		<button
@@ -113,20 +115,4 @@
 			aria-label="Close navigation menu"
 		></button>
 	</nav>
-
-	{{#if displayJumpTo}}
-	<select
-		type="button"
-		class="header__jump-to"
-		data-component="jumpto"
-		aria-label="Archives"
-	>
-		<option value="">Jump to...</option>
-		{{#each postsByMonth as |entry index|}}
-			<option class="header__jump-to-month" value="#{{ index }}">
-				{{ index }}
-			</option>
-		{{/each}}
-	</select>
-	{{/if}}
 </header>

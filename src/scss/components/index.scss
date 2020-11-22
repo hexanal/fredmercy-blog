@@ -6,6 +6,11 @@
 	}
 }
 
+.index__month-year {
+	position: sticky;
+	top: 0;
+}
+
 .index__list {
 	overflow: hidden;
 	list-style: none;
@@ -16,17 +21,23 @@
 
 .index__item {
 	display: flex;
-	align-items: center;
 }
 
 .index__item + .index__item {
-	margin-top: 0.8em;
+	margin-top: 0.25rem;
+}
+
+.index__link {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .index__meta {
 	flex-shrink: 0;
 	display: inline-block;
-	margin-right: 0.75rem;
+	padding: 0.25rem;
+	margin-right: 1rem;
 	line-height: 1.1;
 	color: var(--color-bg);
 	background-color: var(--color-primary);

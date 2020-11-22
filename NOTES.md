@@ -1,5 +1,31 @@
 # NOTES
 
+## November 22, 2020
+
+`8:15am:`
+
+- Capitalist America is basically a money-making labor camp, right?
+  - make money to survive... or else
+- sometimes I take stupid notes... don't know where to write it, so... here it is
+- I tend to spend a lot of energy on this here website, which is cool; but I don't fill my monthly playlists as much as I used to!!
+
+`10:40am:`
+
+- got a minute: I will review my notes before taking more!
+- so... what's next? most pressing things to fix before moving on:
+  - error page handling: 404, 402, 403 whatever, 500, 502 etc.
+  - offset menu on some viewport sizes... ouch!
+  - I'm ready for a slight redesign but that's a big refactoring session and I'm not gonna do that now
+    - would be nice because I could move the files around and figure out the best file structure as I progress!
+    - for instance, take the content out of "src" I think
+    - and co-locate js,css,html as much as possible
+
+`2:13pm:`
+
+- gone fishing for buggies!
+  - did a little redesign of the blog index just to tidy shit up a bit
+-
+
 ## November 17, 2020
 
 `1:10pm:`
@@ -125,7 +151,7 @@ Here are some ideas that pop up:
 
 - ok. so this is my own little *CMS*; but there are other options being uses out there
   - [11ty](https://www.11ty.dev/) looks nice
-  - [Toast]() i've just heard about this one and it sounds good
+  - [Toast](https://toast.dev) i've just heard about this one and it sounds good
 
 `11:21am:`
 
