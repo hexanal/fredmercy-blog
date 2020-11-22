@@ -6,22 +6,21 @@
 
 {{> ui/jump-to }}
 
-<ul class="index__list">
+<div class="index__list">
 
 {{#each postsByMonth as |entries archive| }}
 
-	<li class="index__list-header">
-		<h2
-			id="{{ archive }}"
-			class="heading index__month-year"
-			aria-level="2"
-			data-anchor="{{ archive }}"
-			data-js="archive"
-		>
-			{{ archive }}
-		</h2>
-	</li>
+	<h2
+		id="{{ archive }}"
+		class="heading index__month-year"
+		aria-level="2"
+		data-anchor="{{ archive }}"
+		data-js="archive"
+	>
+		{{ archive }}
+	</h2>
 
+	<ul class="index__month-posts">
 	{{#each entries}}
 		<li class="index__item">
 			<div class="index__meta">
@@ -54,7 +53,8 @@
 			{{/if}}
 		</li>
 	{{/each}}
+	</ul>
 {{/each}}
-</ul>
+</div>
 
 {{/layouts/default}}

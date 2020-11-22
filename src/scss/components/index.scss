@@ -6,21 +6,15 @@
 	}
 }
 
-.index__month-year {
-	position: sticky;
-	top: 0;
-}
-
 .index__list {
-	overflow: hidden;
-	list-style: none;
-	padding-left: 0;
 	margin: 0 0 5em;
 	line-height: 1.4;
 }
 
-.index__item {
-	display: flex;
+.index__month-posts {
+	padding-left: 0;
+	margin: 0;
+	list-style: none;
 }
 
 .index__item + .index__item {
@@ -37,19 +31,10 @@
 	flex-shrink: 0;
 	display: inline-block;
 	padding: 0.25rem;
-	margin-right: 1rem;
+	margin-right: 0.25rem;
 	line-height: 1.1;
 	color: var(--color-bg);
 	background-color: var(--color-primary);
-}
-
-.index__type {
-	display: none;
-	font-style: italic;
-
-	@media (min-width: $mq-mobile) {
-		display: inline;
-	}
 }
 
 .index__extra {
