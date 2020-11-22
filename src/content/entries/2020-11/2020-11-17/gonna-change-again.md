@@ -17,7 +17,7 @@ This reboot will be great. We're gonna work on:
 - fingers crossed: a fully-fledged music section WITH ACTUAL SONGS
 - a *geekin' out* section where I'll put my repositories and others experiments and what not
 
-I'll have to adding features to this blog at some point anyway, because if this pandemic ends one day, I'll want to hang out with my friends and family, leave this city to enjoy the outdoors with my daughter, go to a crowded concert and dive into that mosh pit, jam with my proto-band, skateboard, breathe the fresh air of this beautiful planet, enjoy the company of my colleagues while I'm physically at work.
+I'll have to stop adding features to this blog at some point anyway, because if this pandemic ends one day, I'll want to hang out with my friends and family, leave this city to enjoy the outdoors with my daughter, go to a crowded concert and dive into that mosh pit, jam with my proto-band, skateboard, breathe the fresh air of this beautiful planet, enjoy the company of my colleagues while I'm physically at work.
 
 Only after all of these *wants* are satisfied will I devote time to the Web. Even though I love you Web.
 
