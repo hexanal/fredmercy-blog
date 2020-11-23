@@ -8,7 +8,7 @@ type: journal
 
 When I was younger, it was like a hobby of mine to try and see what kind of mental disorder(s) I might have. As it turns out, I think the answer is as easy as: depends on the _weather_, dude! Nothing fancy.
 
-By the way, the title of this entry is based on track 4 from [Morgan Delt](https://www.last.fm/music/Morgan+Delt)'s album [_Phase Zero_](https://morgandelt.bandcamp.com/album/phase-zero).<sup title="I've been meaning to buy that LP for ages, but with all the traveling and the “not having a record player at home” thing, I still haven't commited. But it's a really good album, very mellow, very psychedelic.">[1]</sup>
+By the way, the title of this entry is based on track 4 from [Morgan Delt](https://www.last.fm/music/Morgan+Delt)'s album [_Phase Zero_](https://morgandelt.bandcamp.com/album/phase-zero).<sup data-note="I've been meaning to buy that LP for ages, but with all the traveling and the “not having a record player at home” thing, I still haven't commited. But it's a really good album, very mellow, very psychedelic.">[1]</sup>
 
 `4:33pm:` And speaking of sun, man, today was a wonderful day! Pure bliss.
 

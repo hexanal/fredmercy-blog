@@ -14,8 +14,6 @@ Over the next few days/weeks, my posts will surely contain more (awfully bad) ph
 
 `9:32am:` Ready for some nerdy description of how I manage this blog? Read on, then!
 
-<br>
-
 <code class="collapse">
 <button type="button">Toggle the nerd talk 🤓</button>
 

@@ -1,6 +1,14 @@
 .content {
 	line-height: 1.5em;
 
+	@media (min-width: $mq-medium) {
+		position: relative;
+		padding-right: 10rem;
+	}
+	@media (min-width: $mq-large) {
+		padding-right: 15rem;
+	}
+
 	> * {
 		margin: 0;
 		line-height: 1.5;
@@ -22,23 +30,24 @@
 	}
 
 	ul {
-		padding-left: 1.5em;
-		margin: 1.5em 0 2em;
+		padding-left: 0.5rem;
+		margin: 1.5rem 0 2rem;
 		list-style: none;
 
 		ul {
-			margin-top: 0.25em;
-			padding-left: 0;
+			margin-top: 0.25rem;
+			margin-bottom: 1rem;
 		}
 
 		li {
-			padding-left: 1em;
+			padding-left: 1.5rem;
 
 			&:before {
-				content: '_ ';
+				content: '● ';
 				position: absolute;
 				top: 0;
 				left: 0;
+				color: var(--color-secondary);
 			}
 		}
 	}
@@ -51,14 +60,40 @@
 		margin-top: 0.25em;
 	}
 
-	sup[title] {
-		position: relative;
+	sup[data-note] {
+		display: none;
+		color: var(--color-subdued);
 		cursor: pointer;
+
+		&:after {
+			content: attr(data-note);
+			display: none;
+			position: absolute;
+			right: 0;
+			width: 9rem;
+			padding-left: 1rem;
+			margin: -1rem 0 3rem;
+			border-left: 2px solid currentColor;
+		}
 
 		&:hover,
 		&:focus {
 			color: var(--color-bg);
-			background-color: var(--color-primary);
+			background-color: var(--color-subdued);
+
+			&:after {
+				display: block;
+				color: var(--color-subdued);
+			}
+		}
+		@media (min-width: $mq-medium) {
+			display: inline;
+		}
+
+		@media (min-width: $mq-large) {
+			&:after {
+				width: 14rem;
+			}
 		}
 	}
 
@@ -76,6 +111,19 @@
 		height: 30px;
 		background-color: var(--color-primary);
 		border: 2px solid var(--color-primary);
+	}
+
+	ins {
+		display: inline-block;
+		padding: 0 0.25rem;
+		text-decoration: none;
+		transform: scale(1.5);
+		transition: transform 500ms cubic-bezier(.33,.97,.08,1.41);
+		cursor: default;
+
+		&:hover {
+			transform: scale(5);
+		}
 	}
 }
 

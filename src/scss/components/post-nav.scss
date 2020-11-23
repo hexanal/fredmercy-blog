@@ -1,21 +1,14 @@
 .post-nav {
   display: flex;
-  justify-content: stretch;
-}
-
-.post-nav__item {
-  flex-grow: 1;
-
-  + .post-nav__item {
-    margin-left: 1rem;
-  }
+	margin: 2rem 0;
 }
 
 .post-nav__link {
   padding: 0.25rem 0.75rem;
+  font-style: normal;
+  text-decoration: none;
   color: var(--color-bg);
   background-color: var(--color-subdued);
-  text-decoration: none;
 
   + .post-nav__link {
     margin-left: 1rem;
@@ -23,6 +16,8 @@
 
   &:hover,
   &:focus {
+    color: var(--color-bg);
+    text-decoration: none;
     background-color: var(--color-secondary);
   }
 
@@ -30,11 +25,13 @@
     padding: 0.25rem;
   }
 }
+.post-nav__link--index {
+  color: var(--color-primary);
+  font-style: italic;
+  background-color: transparent;
 
-.post-nav__label {
-  display: none;
-
-  @media (min-width: $mq-mobile) {
-    display: inline;
+  &:hover,
+  &:focus {
+    color: var(--color-bg);
   }
 }

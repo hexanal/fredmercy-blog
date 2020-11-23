@@ -51,7 +51,9 @@ const getPostMetaData = function(entry) {
   const url = `/blog/${date}/${id}`
   const destination = `./public/blog/${date}/${id}`
   const [year, month, day] = date.split('-')
-  const archive = `${capitalize(getMonthName(month))} ${year}`
+  const monthName = capitalize(getMonthName(month))
+  const prettyDate = `${monthName} ${day}, ${year}`
+  const archive = `${monthName} ${year}`
 
   return {
     destination,
@@ -61,6 +63,7 @@ const getPostMetaData = function(entry) {
     year,
     month,
     day,
+    prettyDate,
     archive
   }
 }

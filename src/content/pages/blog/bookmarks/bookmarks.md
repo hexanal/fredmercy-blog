@@ -4,6 +4,12 @@ description: Long list of anything I found interesting
 template: bookmarks
 ---
 
+- `tv` [Star Trek: The Next Generation (imdb.com)](https://www.imdb.com/title/tt0092455/reference)
+- `game` [The Last Of Us: Part II (Wikipedia)](https://en.wikipedia.org/wiki/The_Last_of_Us_Part_II)
+- `nerd` [JuliaMono (official website)](https://juliamono.netlify.app)
+- `philosophy` [Wikipedia article for the Slow Movement](https://www.slowmovement.com/)
+- `philosophy` [Dérive ("drifting"; wikipedia article)](https://en.wikipedia.org/wiki/D%C3%A9rive)
+- `tv` [The Midnight Gospel (IMDb)](https://www.imdb.com/title/tt11639414/reference)
 - `movie` [_The Neon Demon_ (IMDb)](https://www.imdb.com/title/tt1974419)
 - `movie` [_Akira_ (IMDb)](https://www.imdb.com/title/tt0094625)
 - `movie, music, art` [_Interface_, u m a m i (YouTube)](https://www.youtube.com/watch?v=b_V-VJQT6pM)

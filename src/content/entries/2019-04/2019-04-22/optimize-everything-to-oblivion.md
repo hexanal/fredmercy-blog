@@ -4,7 +4,7 @@ description: Free up my time; I need to waste more of time!
 type: rant
 ---
 
-`9:35am:` It's sort of refreshing to read something like this article on Medium, that I found on [Hacker News](https://news.ycombinator.com)<sup title="This is my go-to when I feel sick of mindlessly browsing Reddit but I still need to waste some time reading about anything at all. It's a bit more stimulating to the mind also, and gets me riled up enough to write something in here! So that's cool, that's what I want, that's what feels right.">[1]</sup>, entitled “[The Efficiency Delusion](https://onezero.medium.com/the-efficiency-delusion-f6a97241e1e1)”.
+`9:35am:` It's sort of refreshing to read something like this article on Medium, that I found on [Hacker News](https://news.ycombinator.com)<sup data-note="This is my go-to when I feel sick of mindlessly browsing Reddit but I still need to waste some time reading about anything at all. It's a bit more stimulating to the mind also, and gets me riled up enough to write something in here! So that's cool, that's what I want, that's what feels right.">[1]</sup>, entitled “[The Efficiency Delusion](https://onezero.medium.com/the-efficiency-delusion-f6a97241e1e1)”.
 
 These days I sort of struggle with this idea of plugging in technology — often in the form of an app, a website, a service, a subcription — to try and make life _easier_, more _efficient_... more _streamlined_, whatever that means? And the problem is mentioned in the article: it's that this little bit of efficiency boost is used to get us to “do more real work”, and more often, for longer... which basically means making life more difficult, right?
 

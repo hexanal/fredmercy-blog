@@ -4,7 +4,7 @@ description: Rode the wave, got the washing-machine tumble treatment, got put th
 type: journal
 ---
 
-`1:10pm:` Currently recuperating from what felt like a full day of dealing with administrative bullshit<sup title="I know I said this was a self-censored, curseword-free blog in an earlier post, but fuck that" data-more="... I mean, this blog is supposed to be about free expression, free speech, a place where I can write whatever I want; and self-censorship is sort of a slap in the face of free speech, in my opinion.">[1]</sup> yesterday, chasing after information and fixing other people's mistakes. So I need to rest a little...
+`1:10pm:` Currently recuperating from what felt like a full day of dealing with administrative bullshit<sup data-note="I know I said this was a self-censored, curseword-free blog in an earlier post, but fuck that" data-more="... I mean, this blog is supposed to be about free expression, free speech, a place where I can write whatever I want; and self-censorship is sort of a slap in the face of free speech, in my opinion.">[1]</sup> yesterday, chasing after information and fixing other people's mistakes. So I need to rest a little...
 
 `1:40pm:` Gonna be a nice afternoon full of reading.
 

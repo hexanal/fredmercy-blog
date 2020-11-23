@@ -15,14 +15,12 @@
 		<header class="post__heading">
 			<div class="post__meta">
 				<time class="post__date">
-					{{ meta.date }}
+					{{ meta.prettyDate }}
 				</time>
 				<span class="post__type">
 					tags: {{ meta.type }}
 				</span>
 			</div>
-
-			{{> ui/post-nav }}
 		</header>
 
 		{{> ui/content }}
@@ -32,6 +30,8 @@
 			(last edited: {{ meta.edit }})
 		</i>
 		{{/if}}
+
+		{{> ui/post-nav }}
 	</div>
 
 	<div class="post__comments state-loading" data-component="comments">
@@ -40,5 +40,6 @@
 		{{> entries/read-comment}}
 	</div>
 </article>
+
 
 {{/layouts/default}}

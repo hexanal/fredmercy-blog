@@ -6,7 +6,7 @@ type: journal
 
 `6:48pm:` Oh wow, so first off, I finished a hard day's work, the sun is setting, clothes are drying, everything is great. And second: oh my, oh my, there is so much new stuff I've discovered lately, and I love when that happens.
 
-I checked out [httpster](http://httpster.net) for some website inspiration and, following some _“website by”_ link in some website's footer, I ended up on some guy's website... and this guy probably never sleeps. Probably lives and breathes _creative code_. Anyway, here's [their website](https://wiki.xxiivv.com/#home)<sup title="I use the “their” pronoun here because that's what they use on the website, so, I don't know, maybe they're gender fluid, prefer this pronoun, or it's a group of people... I don't know">[1]</sup> and it's pretty crazy.
+I checked out [httpster](http://httpster.net) for some website inspiration and, following some _“website by”_ link in some website's footer, I ended up on some guy's website... and this guy probably never sleeps. Probably lives and breathes _creative code_. Anyway, here's [their website](https://wiki.xxiivv.com/#home)<sup data-note="I use the “their” pronoun here because that's what they use on the website, so, I don't know, maybe they're gender fluid, prefer this pronoun, or it's a group of people... I don't know">[1]</sup> and it's pretty crazy.
 
 So there's a lot of stuff in there. Mostly a ton of tiny app/program available on Github, but also links to what they use everyday, software, hardware and other accessories. That's cool.
 

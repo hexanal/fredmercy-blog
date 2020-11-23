@@ -24,7 +24,13 @@
 
 - gone fishing for buggies!
   - did a little redesign of the blog index just to tidy shit up a bit
--
+
+`8:05pm:`
+
+- it's my time! gonna upload all of this tonight I think
+- can't figure out the 404 just yet because that's server-side, and things are a little different once on the live server. I can't dive into that tonight but it's definitely something to tackle sooner rather than later.
+
+
 
 ## November 17, 2020
 

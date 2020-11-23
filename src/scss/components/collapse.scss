@@ -1,24 +1,22 @@
-.collapse {
+.content code.collapse {
 	position: relative;
 	overflow: hidden;
-	height: 1.25em;
-	padding-left: 2.5em;
-	margin-top: 0;
-
-	&:before {
-		content: '_ ';
-		position: absolute;
-		top: 0;
-		left: 1.5em;
-	}
+	height: 3.25em;
+	padding: 0 0 0 1.5em;
+	margin: 1rem 0;
+	color: var(--color-primary);
+	background-color: transparent;
+	border-left: 2px solid transparent;
 
 	&.state-collapse-expand {
 		height: auto;
+		margin-bottom: 2rem;
+		border-left: 2px solid var(--color-secondary);
 	}
 
 	button {
-		margin-bottom: 1.5em;
-		padding: 0;
+		margin-bottom: 0.5rem;
+		padding: 0.25rem 0;
 		font-family: var(--font);
 		font-size: 1em;
 		line-height: 1;
@@ -32,15 +30,6 @@
 			color: var(--color-bg);
 			background-color: var(--color-secondary);
 		}
-	}
-
-	.post__body & { // override the styles from "post"
-		margin: 0.5em 0 1.5em 0;
-		padding: 0 0 0.5em 2.5em;
-		line-height: 1.5;
-		color: var(--color-subdued);
-		background-color: transparent;
-		font-style: initial;
 	}
 
 	p {

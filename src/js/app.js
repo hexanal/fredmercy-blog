@@ -24,7 +24,7 @@ import highlight from 'components/highlight';
 import jumpto from 'components/jumpto';
 import live from 'components/live';
 import nav from 'components/nav';
-import notes from 'components/notes';
+// import notes from 'components/notes';
 import tabs from 'components/tabs';
 import themes from 'components/themes';
 
@@ -53,7 +53,7 @@ Exponent
 		'jumpto': jumpto,
 		'live': live,
 		'nav': nav,
-		'notes': notes,
+		// 'notes': notes,
 		'tabs': tabs,
 		'themes': themes
 	})

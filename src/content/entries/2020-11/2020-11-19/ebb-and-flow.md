@@ -8,4 +8,4 @@ type: status update
 
 But I'm getting there, slowly but surely. This website will hopefully get more and more updates, as my energy ebbs and flows, between moments of crippling self-doubt and long stretches of being distracted by *other things*.
 
-Stay tuned, or don't! doesn't matter; still appreciate the visit ✌️
+Stay tuned, or don't! doesn't matter; still appreciate the visit <ins>🤙</ins>️
