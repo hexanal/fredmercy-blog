@@ -16,7 +16,7 @@
 }
 
 .header__title {
-	margin: 0;
+	margin: 2.5rem 0 0;
   padding: 0.25rem;
 	font-size: 1em;
 	line-height: 1.35;
@@ -24,22 +24,25 @@
 	font-style: normal;
 	color: var(--color-bg);
   background-color: var(--color-active);
-  text-decoration: none;
+	text-decoration: none;
+
+	@media (min-width: $mq-xsmall) {
+		margin: 0;
+	}
 }
 
 .header__toggle-menu {
 	position: fixed;
 	z-index: var(--z-interface);
 	top: 1rem;
-	right: 1rem;
+	right: 2rem;
 	display: inline-block;
-	padding: 0;
+	padding: 0.25rem;
 	margin: 0;
 	font-family: var(--font);
 	font-size: 1em;
-	text-decoration: underline;
-	color: var(--color-primary);
-	background-color: transparent;
+	color: var(--color-bg);
+	background-color: var(--color-subdued);
 
 	&.state-menu-active {
 		.header__toggle-open {
@@ -52,47 +55,14 @@
 
 	&:hover,
 	&:focus {
-		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;
-
-		span {
-			text-decoration: none; // in toggle-open
-		}
-	}
-
-	@media (min-width: $mq-medium) {
-		position: relative;
-		top: auto;
-		right: auto;
 	}
 }
 
 .header__toggle-open {
 	display: inline-block;
 	line-height: 1;
-	text-decoration: none;
-
-	span {
-		text-decoration: underline;
-	}
-
-	i {
-		display: inline-block;
-		position: relative;
-		top: 0.1rem;
-		left: -0.15rem;
-		width: 1rem;
-		font-size: 1rem;
-		font-style: normal;
-		line-height: 1;
-	}
-
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		i {
-			font-size: 1.15rem;
-		}
-	}
 }
 
 .header__toggle-close {
@@ -103,27 +73,21 @@
 	display: none;
 	position: fixed;
 	z-index: var(--z-interface);
-	width: calc(100vw - 2rem);
+	width: calc(100vw - 5rem);
 	height: 0;
-	max-width: $site-width;
 	top: 3rem;
-	left: 1rem;
+	left: 3rem;
 	bottom: 3rem;
 
 	&.state-menu-active {
 		display: block;
-	}
-
-	@media (min-width: $mq-medium) {
-		width: calc(100vw - 6rem);
-		left: 3rem;
 	}
 }
 
 .header__menu {
 	position: absolute;
 	z-index: var(--z-interface);
-	top: 0.25rem;
+	top: 0.75rem;
 	right: 0;
 	padding: 1em;
 	border: 2px solid currentColor;
