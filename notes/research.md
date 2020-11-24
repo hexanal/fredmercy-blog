@@ -82,3 +82,13 @@ const contentTypes = [
   - have a "root" for the server pre-build (static markup generation)
   - have a "root" for the client "hydrate" (app hydration)
 
+## Refactoring the build step
+
+- glob all the `.md`
+- extract frontmatter, and body
+- sort/filter by frontmatter's `type`
+- for each `type`, apply the necessary middlewares
+  - get ready to have a defaut type.... it's `page`
+- stitch all the data back?
+  - `contentTypes.page`, `contentTypes.post`, etc.
+- follow the folder structure to figure out the URLs

@@ -14,8 +14,7 @@
 	border-radius: 0.3rem;
 	background-color: transparent;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 	}

@@ -14,8 +14,7 @@
     margin-left: 1rem;
   }
 
-  &:hover,
-  &:focus {
+	@include hover-focus {
     color: var(--color-bg);
     text-decoration: none;
     background-color: var(--color-secondary);
@@ -30,8 +29,7 @@
   font-style: italic;
   background-color: transparent;
 
-  &:hover,
-  &:focus {
+	@include hover-focus {
     color: var(--color-bg);
   }
 }

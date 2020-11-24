@@ -43,8 +43,7 @@
 	color: var(--color-primary);
 	background-color: transparent;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		text-decoration: none;
 		color: var(--color-bg);
 		background-color: var(--color-secondary);

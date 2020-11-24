@@ -36,8 +36,7 @@
 	background-color: var(--color-subdued);
 	text-decoration: none;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		background-color: var(--color-secondary);
 	}
 }

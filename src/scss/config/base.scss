@@ -48,6 +48,22 @@ $site-width: 60rem;
 	}
 }
 
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+@mixin hover-focus {
+	@include hover {
+		@content;
+	}
+	&:focus {
+		@content;
+	}
+}
+
 html {
 	box-sizing: border-box;
 	font-family: var(--font);
@@ -98,8 +114,7 @@ a {
 	outline: none;
 	user-select: none;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;

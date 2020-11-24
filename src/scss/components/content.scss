@@ -22,6 +22,22 @@
 		}
 	}
 
+	:first-child {
+		margin-top: 0;
+	}
+
+	h2 {
+		display: inline-block;
+		margin-top: 3rem;
+		padding: 0.25rem;
+		font-family: var(--font);
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 1.4;
+		color: var(--color-bg);
+		background-color: var(--color-primary);
+	}
+
 	code {
 		display: inline-block;
 		padding: 0 0.15em;
@@ -80,8 +96,7 @@
 			border-left: 2px solid currentColor;
 		}
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			color: var(--color-bg);
 			background-color: var(--color-subdued);
 
@@ -122,30 +137,11 @@
 		padding: 0 0.25rem;
 		text-decoration: none;
 		transform: scale(1.5);
-		transition: transform 500ms cubic-bezier(.33,.97,.08,1.41);
+		transition: transform 300ms cubic-bezier(.46,.82,.08,1.04);
 		cursor: default;
 
-		&:hover {
+		@include hover {
 			transform: scale(5);
 		}
 	}
 }
-
-/**
-	ul {
-		padding-left: 0;
-
-		li {
-			padding-left: 0;
-
-			&:before {
-				content: '';
-			}
-		}
-	}
-
-	li + li {
-		margin-top: 0.5em;
-	}
-}
-*/

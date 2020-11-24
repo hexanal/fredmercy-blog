@@ -44,7 +44,7 @@
     border: 2px solid var(--homelink-color);
     text-decoration: none;
 
-    &:hover, &:focus {
+    @include hover-focus {
       --homelink-color: var(--color-secondary);
     }
   }

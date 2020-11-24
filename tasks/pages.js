@@ -14,6 +14,7 @@ const { pipe } = require('./utils')
  */
 
 const applyContent = function(pages) {
+  console.log(`[info] found ${pages.length} pages`);
   return pages.map( page => {
     const file = fs.readFileSync( page, 'utf8' )
     const { attributes, body } = frontMatter( file.toString() )
@@ -87,7 +88,8 @@ const applyTemplates = function(pages) {
   html.usePartials('./src/components')
 
   return pages.map(page => {
-    const templateFile = fs.readFileSync( `src/templates/${ page.meta.template }.html`, 'utf8' )
+    const templateName = page.meta.template || 'pages';
+    const templateFile = fs.readFileSync( `src/templates/${ templateName }.html`, 'utf8' )
     const template = html.compile( templateFile.toString() )
     const htmlTemplate = template(page)
 
@@ -201,7 +203,7 @@ const extractPages = function() {
  * WORK IN PROGRESS
  * A content type exports an object with three things:
  *
- * 1. the `id` of the conten type
+ * 1. the `id` of the content type
  * 2. the `items`, which is an array of items, and each item is an object containing data for that page -> I have to define the schema for this object
  * 3. the `renderer', which is a function that uses whatever templating engine you want and feeds the HTML to the `html.render` function (from my `html` library!)
  */

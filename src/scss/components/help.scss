@@ -24,8 +24,7 @@
 	line-height: 1;
 	text-decoration: none;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 	}
@@ -203,8 +202,7 @@
 		}
 	}
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;

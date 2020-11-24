@@ -1,15 +1,20 @@
 .content code.collapse {
 	position: relative;
 	overflow: hidden;
-	height: 3.25em;
-	padding: 0 0 0 1.5em;
+	height: 1.5em;
+	padding: 0;
 	margin: 1rem 0;
 	color: var(--color-primary);
 	background-color: transparent;
 	border-left: 2px solid transparent;
+	transition:
+		border 300ms cubic-bezier(.46,.82,.08,1.04),
+		margin 300ms cubic-bezier(.46,.82,.08,1.04),
+		padding 300ms cubic-bezier(.46,.82,.08,1.04);
 
 	&.state-collapse-expand {
 		height: auto;
+		padding: 0 0 0 1.5em;
 		margin-bottom: 2rem;
 		border-left: 2px solid var(--color-secondary);
 	}
@@ -24,8 +29,7 @@
 		color: var(--color-primary);
 		background-color: transparent;
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			text-decoration: none;
 			color: var(--color-bg);
 			background-color: var(--color-secondary);

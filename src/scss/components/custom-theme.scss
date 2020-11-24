@@ -26,8 +26,7 @@
 	font-size: 1em;
 	text-decoration: none;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 	}

@@ -98,6 +98,7 @@ app.get('/api/comments/:entryId', (req, res) => {
 
 app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 app.use('/files/', express.static(path.join(__dirname, 'files'), { maxAge: 31557600000 }));
+app.use('/demos/', express.static(path.join(__dirname, 'demos'), { maxAge: 31557600000 }));
 
 /**
  * Catch other routes and serve a 404 ???

@@ -51,8 +51,7 @@
 		border: 3px solid currentColor;
 	}
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 	}
@@ -60,8 +59,7 @@
 	&.state-selected-comment {
 		color: var(--color-active);
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			color: var(--color-bg);
 			background-color: var(--color-secondary);
 
@@ -78,8 +76,7 @@
 			background-color: currentColor;
 		}
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			color: var(--color-bg);
 			background-color: var(--color-active);
 
@@ -93,8 +90,7 @@
 		cursor: not-allowed;
 		color: var(--color-subdued);
 
-		&:hover,
-		&:focus {
+		@include hover-focus {
 			color: var(--color-subdued);
 			background-color: transparent;
 		}

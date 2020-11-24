@@ -9,6 +9,7 @@ const groupBy = require('lodash.groupby')
 
 const addPostsByMonth = function(contentTypes) {
   const posts = contentTypes.find(type => type.id === 'posts').items
+  console.log(`[info] found ${posts.length} posts`);
 
   return insertData(contentTypes, {
     postsByMonth: groupBy(posts, 'meta.archive')

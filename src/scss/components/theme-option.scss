@@ -47,13 +47,12 @@
 	border: none;
 	cursor: pointer;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		~ .theme-option__focus {
 			display: block;
 		}
 	}
-	&:hover {
+	@include hover {
 		~ .theme-option__focus {
 			opacity: 0.5;
 		}

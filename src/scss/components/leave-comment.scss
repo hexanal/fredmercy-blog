@@ -68,8 +68,7 @@
 	text-decoration: underline;
 	background-color: transparent;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;
@@ -98,8 +97,7 @@
 	background-color: transparent;
 	text-decoration: underline;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;
@@ -139,8 +137,7 @@
 	background-color: transparent;
 	text-decoration: underline;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;
@@ -151,8 +148,7 @@
 	margin-left: 1rem;
 	color: var(--color-subdued);
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 	}
 }

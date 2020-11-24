@@ -13,10 +13,11 @@
 	display: flex;
 	justify-content: space-between;
 	flex-grow: 1;
+	padding-right: 8rem;
 }
 
 .header__title {
-	margin: 2.5rem 0 0;
+	margin: 0;
   padding: 0.25rem;
 	font-size: 1em;
 	line-height: 1.35;
@@ -25,10 +26,6 @@
 	color: var(--color-bg);
   background-color: var(--color-active);
 	text-decoration: none;
-
-	@media (min-width: $mq-xsmall) {
-		margin: 0;
-	}
 }
 
 .header__toggle-menu {
@@ -53,8 +50,7 @@
 		}
 	}
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		background-color: var(--color-secondary);
 		text-decoration: none;
 	}
@@ -142,8 +138,7 @@
 	background-color: transparent;
 	text-decoration: underline;
 
-	&:hover,
-	&:focus {
+	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-secondary);
 		text-decoration: none;

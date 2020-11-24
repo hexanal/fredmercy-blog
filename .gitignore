@@ -10,6 +10,8 @@ public/
 
 # FTP-uploaded media files
 files/
+# FTP-uploaded demos
+demos/
 
 # Ignore the comments
 src/content/entries/**/*.json
