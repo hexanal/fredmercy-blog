@@ -7,22 +7,25 @@
 const fs = require('fs')
 const frontMatter = require('front-matter')
 const glob = require('glob')
+const { pipe } = require('./tasks/utils')
 
 const middlewares = {
   'adjacent': require('./tasks/middlewares/adjacents'),
   'comments': require('./tasks/middlewares/comments'),
   'order': require('./tasks/middlewares/order'),
+  'page-meta': require('./tasks/middlewares/page-meta'),
+  'post-meta': require('./tasks/middlewares/post-meta'),
   'relationship': require('./tasks/middlewares/relationship'),
 }
 const contentFiles = glob.sync('./content/**/*.md', {})
 const contentTypes = [
   {
     id: 'post',
-    middlewares: ['comments', 'order', 'adjacent']
+    middlewares: ['post-meta', 'comments', 'order', 'adjacent']
   },
   {
     id: 'page',
-    middlewares: ['relationship']
+    middlewares: ['page-meta', 'relationship']
   }
 ]
 
@@ -77,14 +80,14 @@ const splitByTypes = function( items ) {
   return byTypes
 }
 
+/**
+ * - go through the predefined types of content
+ * - apply the necessary middlewares to the items of each type
+ */
 const applyMiddlewares = function( byTypes ) {
   return contentTypes.map( type => { // map through the possible content types defined in this file
-    return type.middlewares.map( id => { // map through the middlewares for the current type of content
-      // TODO add function check?
-      console.log( id, middlewares[id] )
-      const middleware = middlewares[id] // grab the right middleware from the imported list
-      return middleware( byTypes[type.id] ) // apply each middleware to the items (they're sorted by types)
-    })
+    const middlewaresForType = type.middlewares.map( id => middlewares[id] )
+    return pipe( middlewaresForType )( byTypes[type.id] ) // apply each middleware to the items (they're sorted by types)
   })
 }
 
@@ -93,5 +96,3 @@ const byTypes = splitByTypes( getBasicMeta( contentFiles ) )
 const withMiddlewares = applyMiddlewares( byTypes )
 
 console.log( withMiddlewares )
-
-// console.log( processed )

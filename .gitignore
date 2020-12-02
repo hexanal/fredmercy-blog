@@ -4,14 +4,14 @@
 node_modules/
 npm-debug.log
 
-public/
+/public
 *.css.map
 *.js.map
 
 # FTP-uploaded media files
-files/
+/files
 # FTP-uploaded demos
-demos/
+/demos
 
 # Ignore the comments
 src/content/entries/**/*.json

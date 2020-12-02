@@ -1,5 +1,7 @@
 const applyRelationships = function( pages ) {
   return pages.map( (page, index) => {
+    // console.log( page.meta )
+
     const children = getChildrenPages( page, index, pages )
     const parents = getParentPages( page, index, pages )
 
