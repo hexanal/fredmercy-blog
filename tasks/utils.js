@@ -51,54 +51,43 @@ const capitalize = function(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const insertData = function(contentTypes, data) {
-  return contentTypes.map( type => addToAllItems(data, type) )
+const insertMeta = function(items, insertedMeta) {
+  return items.map( item => ({
+    ...item,
+    meta: {
+      ...item.meta,
+      ...insertedMeta
+    }
+  }))
 }
 
-const insertDataForContentType = function(contentTypes, typeId, data) {
-  return contentTypes.map( type => {
-    if ( type.id !== typeId ) return type
-
-    return addToAllItems( data, type)
-  })
+const insertData = function(items, data) {
+  return items.map( item => ({ ...item, ...data }) )
 }
 
-const insertMetaForContentType = function(contentTypes, typeId, metadata) {
-  return contentTypes.map( type => {
-    if ( type.id !== typeId ) return type
+const insertDataByURL = (items, data, url) => {
+  return items.map( item => {
+    if ( item.meta.url !== url ) return item
 
     return {
-      ...type,
-      items: type.items.map( item => ({
-        ...item,
-        meta: {
-          ...item.meta,
-          ...metadata
-        }
-      }))
+      ...item,
+      ...data
     }
   })
 }
 
-const addToAllItems = function(data, type) {
-  return {
-    ...type,
-    items: type.items.map( item => ({ ...item, ...data }) )
-  }
-}
-
 const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
-const getPageByURL = function( url, pages ) {
-  return pages.find( page => page.meta.url === url )
+const getItemByURL = function(items, url) {
+  return items.find( item => item.meta.url === url )
 }
 
 module.exports = {
   capitalize,
   getMonthName,
-  getPageByURL,
+  getItemByURL,
   insertData,
-  insertDataForContentType,
-  insertMetaForContentType,
+  insertDataByURL,
+  insertMeta,
   pipe
 }

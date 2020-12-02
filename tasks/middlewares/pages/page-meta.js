@@ -17,8 +17,8 @@ const getPageMetaData = function( item ) {
     .split('/')
   const id = route[route.length - 1]
   const folder = route[route.length - 2]
-  // TODO maybe i18n can be handle via a different middleware
-  // TODO maybe "homepageness" can be handle via a middleware, too!!
+  // TODO maybe i18n can be handled via a different middleware
+  // TODO maybe "homepageness" can be handled via a middleware, too!!
   const isHome = id === 'home' || folder === 'fr' // TODO figure out the root of the i18n paths (this is not yet done)
 
   const url = route.length
@@ -26,8 +26,6 @@ const getPageMetaData = function( item ) {
       return acc + '/' + part
     }, '')
     : '/'
-
-  // console.log( url )
 
   const destination = `./public${url}`
 

@@ -2,7 +2,6 @@
 title: First Post
 description: First post on this here blog
 tags: journal
-comments: 0
 type: post
 ---
 

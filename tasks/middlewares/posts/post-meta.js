@@ -1,13 +1,13 @@
-const { getMonthName, capitalize, pipe } = require('../utils')
+const { getMonthName, capitalize } = require('../../utils')
 
 const applyPostMeta = function( items ) {
   return items.map( item => {
     return {
+      ...item,
       meta: {
         ...item.meta,
         ...getPostMetaData(item)
-      },
-      ...item
+      }
     }
   })
 }

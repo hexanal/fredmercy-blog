@@ -1,7 +1,7 @@
 const fs = require('fs')
 const Handlebars = require('handlebars')
 
-const { writeHTML } = require('./files')
+const { write } = require('./files')
 
 const registerPartialHelper = function() {
   Handlebars.registerHelper('block', function (template, context, opts) {
@@ -56,7 +56,7 @@ const compile = function( template ) {
 }
 
 const render = function(destination, html ) {
-  writeHTML(destination, html)
+  write(destination, 'index.html', html)
 }
 
 const usePartials = function( dir ) {

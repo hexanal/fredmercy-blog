@@ -10,23 +10,22 @@ const createDir = function(dir) {
   })
 }
 
-const writeFile = function(dir, html) {
+const writeFile = function(dir, contents) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(`${dir}/index.html`, html, (err) => {
+    fs.writeFile(dir, contents, (err) => {
       if (err) reject(err)
-      resolve({ dir, html })
+      resolve({ dir, contents })
     })
   })
 }
 
-const writeHTML = function(destination, htmlTemplate, verbose = false ) {
-  // TODO if ( verbose ) console.log(`[writeHTML] creating HTML for content item "${item.meta.title}", at "${item.meta.destination}"`)
+const write = function(destination, fileName, contents, verbose = false ) {
   return createDir( destination )
-    .then(() => writeFile(destination, htmlTemplate) )
+    .then(() => writeFile(`${destination}/${fileName}`, contents) )
 }
 
 module.exports = {
   createDir,
   writeFile,
-  writeHTML
+  write
 }
