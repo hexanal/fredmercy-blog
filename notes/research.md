@@ -38,7 +38,7 @@ Hello dolly.
 So there...
 
 [button
-  type: primary
+  tags: primary
   url: /files/repos/exponent-core/bin/exponent-core.js
   label: download exponent
 ]

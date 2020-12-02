@@ -1,3 +1,4 @@
+// TODO really? a switch statement for this? why?
 const getMonthName = function(number) {
   let month
 
