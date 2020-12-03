@@ -6,7 +6,7 @@ type: page
 
 Here's a list of notes:
 
-`November 2020:`
+## Thoughts about life
 
 - [About the Internet](/notes/about-the-internet)
-- [On Quitting Facebook (draft)](/notes/drafts/quitting-facebook)
+- [On Quitting Facebook (draft)](/notes/quitting-facebook)

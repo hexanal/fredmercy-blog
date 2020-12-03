@@ -37,6 +37,32 @@ As for new features:
   - also: update "exponent-boilerplate" with the new way of doing things
 - still gotta do that "watch" task thing for development purposes...
   - I'll wire up webpack with that shit as well... all it due time though
+- actually it's ridiculous to use webpack for how small this project is
+  - I could wire up a `sass` task, a js minify with `esbuild` probably
+  - an `assets` task that copies that folder over, fuck it
+  - that shit could be wired up inside the server, as well
+  - that server could probably do some stupid magic with "hot module replacement" or something
+
+`3:29pm:`
+
+- just realized that my "a page that lists all the subpages" thing exists already
+  - simply create a page with a template that lists the `meta.children` pages
+
+- gotta write more stuff, haha!
+  - on **reasoning from first principles** (presumptuous)
+  - on **note taking as an external memory** (meh?)
+  - on **burnout culture** (getting ready for one of my own)
+
+- I keep ending up on those awesome websites by frontend devs... wish that somehow I could navigate in their circles, but I would no longer be a renegade developer.
+- I need to do some research, skim all those posts about people trying their hand at the perfect "homepage"... and then update mine with their insights, I guess
+- fucking hate my work right now because it feels... antiquated. Just fucking dated.. huge Drupal codebase maintained by canon-fodder junior developers, and the tiniest budgets ever, and then clients are disappointed when it costs them thousands of dollars
+  --> nobody explained to them how never maintaining nor documenting nor QA-testing the codebase compounds over time, and makes even the tiniest fixes feel like hard work
+- woooh! I'm gonna be ok. I think.
+
+`4:38pm:`
+
+- taking a nap
+
 
 ## December 2, 2020
 
