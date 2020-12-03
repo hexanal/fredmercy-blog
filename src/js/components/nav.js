@@ -13,6 +13,8 @@ export default function({ui, control, messaging }) {
 		ui['menu'].classList.toggle('state-menu-active');
 		control['menu-bg'].classList.toggle('state-menu-active');
 
+		if (state.open) control['toggle-menu'].focus();
+
 		messaging.dispatch({ id: 'MENU_TOGGLED', payload: state.open });
 	}
 
