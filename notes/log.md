@@ -1,3 +1,43 @@
+## December 3, 2020
+
+`~9am:`
+
+- finally named the folder `zorg`, just so it appears last in the folder list
+  - I was thinking of maybe moving that into `src/app/`, as it is—after all—what builds the whole damn thing
+
+I've been moving fast and shuffled things around quite dramatically. I need a moment to sit and reflect on that and to figure out where all of this is going.
+The direction it's taking is good, but I don't want to complicate things. However, the ease with which I was able to refactor the build step is encouraging.
+
+With the support for what I call *JSON companion files*, I think we've finally reached feature parity.
+
+As for new features:
+
+- I would love to implement something that grabs all the JSONs from a directory and tacks them onto the object *pre-build*
+  - don't need to keep it inside each and every item that's exported by `export-to-json`, so adding it pre-build is probably a good idea?
+  - not sure whether it's possible with the current implementation...
+  - hmm, I think if I add it after `export-to-json`, it will work!
+  - where to put the json files? maybe a `_data` folder under `content`?
+    - I'm afraid this would complicate everything, in terms of file structure
+  - my idea for a JSON object is to implement a "dynamic" menu, but it would not be dynamic at all :)
+    - a main menu function could be a *middleware*, too
+    - now I'm afraid this "everything is a middleware" will complicate everything as well
+
+- weird idea: add a key `_appliedMiddlewares` to each item with a list of all the middlewares that it went through
+  - keep a record of what happened to the file
+  - those extra keys could keep a record of other things, like a build timestamp for example (though I have no other idea right now...)
+
+- weird idea 2: add more keyboard shortcuts, especially when in the blog:
+  - `o` to navigate to an "older" post
+  - `n` to navigate to a "newer" post
+  - `i` to navigate to the blog index
+
+`9:55am:`
+
+- I need to update the exponent-core repo with a README at the very least!
+  - also: update "exponent-boilerplate" with the new way of doing things
+- still gotta do that "watch" task thing for development purposes...
+  - I'll wire up webpack with that shit as well... all it due time though
+
 ## December 2, 2020
 
 `~9am:`
