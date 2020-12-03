@@ -2,7 +2,6 @@
 title: Notes & Thoughts
 description: Feel free to browse
 type: page
-template: pages
 ---
 
 Here's a list of notes:

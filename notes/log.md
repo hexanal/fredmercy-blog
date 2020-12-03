@@ -1,5 +1,3 @@
-# December 2020
-
 ## December 2, 2020
 
 `~9am:`
@@ -30,6 +28,26 @@ That way it's easy to add a post type that's a copy of another one but with a di
 - refactoring is going well enough, so far
 - I like this idea of middleware, because I might be able to use it to wire up everything, even the "export" step, and the "build" step
   - I need to distinguish the `contentTypes` middlewares from the global ones :)
+
+`7:58pm:`
+
+- the refactoring session is going well, I think most of it was "translated"
+- I still have to add a middleware for handling the JSON *companion files*
+
+- wondering what could be a replacement name for *tasks*?
+  - I'm not a fan of *tasks* because it... reminds me of `gulp` which I've broken up with! :broken-heart:
+  - `core`
+  - `system`
+  - `builder`
+  - `scaffold`
+  - `processor`
+  - `heart`
+  - `brain` ?
+  - `x`
+  - `zap`
+  - `zing`
+  - `zorglub`, a nod to `gulp` a little bit?
+
 
 ## December 1, 2020
 

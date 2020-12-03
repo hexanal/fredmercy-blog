@@ -2,7 +2,7 @@
 title: Bookmarks
 description: Long list of anything I found interesting
 type: page
-template: bookmarks
+template: templates/bookmarks
 ---
 
 - `tv` [Star Trek: The Next Generation (imdb.com)](https://www.imdb.com/title/tt0092455/reference)

@@ -1,32 +1,38 @@
 const fs = require('fs')
 const frontMatter = require('front-matter')
 const glob = require('glob')
-const { pipe } = require('./tasks/utils')
+const { pipe } = require('./zorg/utils')
 
 const middlewares = {
-  'adjacents': require('./tasks/middlewares/posts/adjacents'),
-  'comments': require('./tasks/middlewares/posts/comments'),
-  'order': require('./tasks/middlewares/posts/order'),
-  'post-meta': require('./tasks/middlewares/posts/post-meta'),
+  'content': require('./zorg/middlewares/global/content'),
+  'html': require('./zorg/middlewares/global/html'),
 
-  'page-meta': require('./tasks/middlewares/pages/page-meta'),
-  'relationship': require('./tasks/middlewares/pages/relationship'),
+  'adjacents': require('./zorg/middlewares/posts/adjacents'),
+  'comments': require('./zorg/middlewares/posts/comments'),
+  'order': require('./zorg/middlewares/posts/order'),
+  'post-meta': require('./zorg/middlewares/posts/post-meta'),
+
+  'page-meta': require('./zorg/middlewares/pages/page-meta'),
+  'relationship': require('./zorg/middlewares/pages/relationship'),
 }
 const contentFiles = glob.sync('./content/**/*.md', {})
 const contentTypes = [
   {
     id: 'post',
-    middlewares: ['post-meta', 'comments', 'order', 'adjacents']
+    html: 'templates/post',
+    middlewares: ['post-meta', 'content', 'comments', 'order', 'adjacents']
   },
   {
     id: 'page',
-    middlewares: ['page-meta', 'relationship']
+    html: 'templates/page',
+    middlewares: ['page-meta', 'content', 'relationship']
   }
 ]
 const globalMiddlewares = [
-  // require('./tasks/middlewares/global/post-index-as-parent'),
-  require('./tasks/middlewares/global/posts-by-months'),
-  require('./tasks/middlewares/global/export-to-json'),
+  require('./zorg/middlewares/global/post-index-as-parent'),
+  require('./zorg/middlewares/global/posts-by-months'),
+  require('./zorg/middlewares/global/export-to-json'),
+  require('./zorg/middlewares/global/html'),
 ]
 
 
@@ -44,14 +50,14 @@ const getBasicMeta = function( contentFiles ) {
   return contentFiles.map( item => {
     const file = fs.readFileSync(item, 'utf8')
     const { attributes, body } = frontMatter( file.toString() )
-    // const { title, description, type, template, useJSON, use } = attributes
 
     return {
-      _filePath: item, // provide the path to the file, just in case we'd want to use it (e.g. in "post-meta")
-      meta: { // rename attributes to "meta"
+      _filePath: item,
+      _html: getDefaultHTMLForType( attributes.type ),
+      meta: {
         ...attributes
       },
-      content: body // rename body to "content"
+      content: body
     }
   })
 }
@@ -77,6 +83,17 @@ const splitByType = function( items ) {
 }
 
 /**
+ * - a content type can have a "default" HTML template
+ * - useful when creating a `page` that should simply use the `templates/page.html` template, for example
+ */
+const getDefaultHTMLForType = function( contentType ) {
+  const type = contentTypes.find(t => t.id === contentType)
+  if (!type) return console.log(`[error] type “${contentType}” isn't defined`)
+
+  return type.html
+}
+
+/**
  * - go through the predefined types of content
  * - apply the necessary middlewares to the items of each type
  */
@@ -93,13 +110,22 @@ const applyMiddlewares = function( itemsByType ) {
 
   return byType
 }
+
+/**
+ * - apply the global middlewares to the global contentTypes object
+ */
 const applyGlobalMiddlewares = function( itemsByType ) {
   return pipe( globalMiddlewares )( itemsByType )
 }
 
+/**
+ * - collating all the data:
+ *   - extracting the necessary base metadata
+ *   - splitting by `type`
+ *   - applying the middlewares of each content type
+ *   - applying the global middlewares
+ */
 const byTypes = splitByType( getBasicMeta( contentFiles ) )
-
 const withMiddlewares = applyMiddlewares( byTypes )
 const withGlobalMiddlewares = applyGlobalMiddlewares( withMiddlewares )
 
-// console.log( withGlobalMiddlewares )

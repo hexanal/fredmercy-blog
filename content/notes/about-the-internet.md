@@ -2,7 +2,6 @@
 title: About the Internet...
 description: Random thoughts about it
 type: page
-template: pages
 ---
 
 > In this page: I talk about how the Internet I knew and loved got hijacked by "geniuses".

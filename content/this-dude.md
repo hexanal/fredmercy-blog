@@ -2,7 +2,6 @@
 title: Who?
 description: Short bio
 type: page
-template: pages
 ---
 
 This dude's just your average nerd, you know:

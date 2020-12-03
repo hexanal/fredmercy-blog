@@ -4,35 +4,33 @@
 @import 'config/themes';
 @import 'config/z-index';
 
-@import 'components/debug/debug-ui';
-@import 'components/debug/debug-panel';
-@import 'components/debug/debug-grid';
-@import 'components/debug/debug-align';
-@import 'components/debug/debug-stack';
+@import '../components/entries/comments';
+@import '../components/entries/leave-comment';
+@import '../components/entries/read-comment';
 
-@import 'components/breadcrumbs';
-@import 'components/collapse';
-@import 'components/content';
-@import 'components/comments';
+@import '../components/ui/breadcrumbs';
+@import '../components/ui/content';
+
+@import '../components/ui/header';
+@import '../components/ui/help';
+@import '../components/ui/jump-to';
+@import '../components/ui/post-nav';
+@import '../components/ui/rainbow';
+
+@import '../components/layouts/page';
+@import '../components/templates/post';
+
+@import '../components/resume/experience';
+@import '../components/resume/resume-section';
+@import '../components/resume/sub-section';
+
 @import 'components/custom-theme';
-@import 'components/header';
-@import 'components/help';
+@import 'components/collapse';
 @import 'components/hotkey';
 @import 'components/index';
-@import 'components/jump-to';
-@import 'components/leave-comment';
 @import 'components/note';
-@import 'components/page';
-@import 'components/post';
-@import 'components/post-nav';
-@import 'components/rainbow';
-@import 'components/read-comment';
 @import 'components/symbol';
 @import 'components/theme-option';
-
-@import 'components/resume/experience';
-@import 'components/resume/resume-section';
-@import 'components/resume/sub-section';
 
 @import 'pages/demos';
 @import 'pages/home';

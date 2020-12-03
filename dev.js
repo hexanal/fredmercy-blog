@@ -1,7 +1,7 @@
 const chokidar = require('chokidar')
-const { build } = require('./tasks/site')
-const posts = require('./tasks/posts')
-const pages = require('./tasks/pages')
+const { build } = require('./zorg/site')
+const posts = require('./zorg/posts')
+const pages = require('./zorg/pages')
 
 const watcher = chokidar.watch('./src/**/*.(md|html|json)', {
   ignored: /(^|[\/\\])\../, // ignore dotfiles

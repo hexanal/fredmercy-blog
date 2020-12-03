@@ -2,7 +2,6 @@
 title: Fred Mercy
 description: My website
 type: page
-template: pages
 ---
 
 *Welcome,*

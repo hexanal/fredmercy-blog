@@ -20,17 +20,14 @@ const getPageMetaData = function( item ) {
   // TODO maybe i18n can be handled via a different middleware
   // TODO maybe "homepageness" can be handled via a middleware, too!!
   const isHome = id === 'home' || folder === 'fr' // TODO figure out the root of the i18n paths (this is not yet done)
-
-  const url = route.length
+  const formattedURL = route.length
     ? route.reduce( (acc, part, index) => {
       return acc + '/' + part
     }, '')
     : '/'
-
-  const destination = `./public${url}`
+  const url = id === 'home' ? '/' : formattedURL
 
   return {
-    destination,
     id,
     url,
     route,

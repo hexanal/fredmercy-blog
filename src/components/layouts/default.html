@@ -7,7 +7,7 @@
 	<title>{{ meta.title }}{{#if meta.isHome }}{{else}} / Fred Mercy{{/if}}</title>
 	<meta name="description" content="{{ meta.description }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="manifest" href="/assets/manifest.webmanifest">
 	<link rel="shortcut icon" href="/assets/images/favicon.png">
 	<link rel="stylesheet" href="/styles.css">
 </head>
@@ -23,7 +23,6 @@
 		{{> @partial-block }}
 
 		{{> ui/help }}
-		{{> debug/debug-ui }}
 	</div>
 
 	{{> ui/rainbow }}

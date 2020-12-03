@@ -1,13 +1,10 @@
 import 'scss/style.scss';
 import 'assets/images/favicon.png';
 import 'assets/images/favicon-big.png';
+import 'assets/manifest.webmanifest';
 
 import Exponent from 'exponent-core';
 import Messaging from 'middlewares/Messaging';
-
-import debugUI from 'components/debug/debug-ui';
-import debugAlign from 'components/debug/debug-align';
-import debugStack from 'components/debug/debug-stack';
 
 // autoloaded
 import a11y from 'components/a11y';
@@ -42,9 +39,6 @@ Exponent
 	])
 	.register({
 		// 'bleeps': bleeps,
-		'debug-ui': debugUI,
-		'debug-align': debugAlign,
-		'debug-stack': debugStack,
 		'comments': comments,
 		'collapse': collapse,
 		'extra': extra,

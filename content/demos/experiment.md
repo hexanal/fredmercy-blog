@@ -1,5 +1,6 @@
 ---
 title: Experiment, but under Demos
 description: Woah!
-template: demos
+type: page
+template: templates/demos
 ---

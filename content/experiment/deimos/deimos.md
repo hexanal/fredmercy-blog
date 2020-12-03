@@ -2,7 +2,7 @@
 title: Fred Mercy / Deimos
 description: This is a sub page
 type: page
-template: experiment
+template: templates/experiment
 ---
 
 This is the Deimos page.

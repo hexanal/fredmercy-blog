@@ -28,6 +28,15 @@ module.exports = env => ({
         ]
       },
       {
+        test: /\.webmanifest(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'assets',
+          publicPath: 'assets',
+          name: () => '[name].[ext]'
+        }
+      },
+      {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {

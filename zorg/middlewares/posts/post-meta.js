@@ -27,12 +27,10 @@ const getPostMetaData = function( item ) {
   const monthName = capitalize(getMonthName(month))
   const prettyDate = `${monthName} ${day}, ${year}`
 
-  const url = `/blog/${date}/${id}`
-  const destination = `./public/blog/${date}/${id}`
+  const url = `/blog/${year}/${month}/${day}/${id}`
   const archive = `${monthName} ${year}`
 
   return {
-    destination,
     url,
     date,
     id,
