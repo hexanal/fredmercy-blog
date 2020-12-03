@@ -14,6 +14,7 @@ const middlewares = {
 
   'page-meta': require('./zorg/middlewares/pages/page-meta'),
   'relationship': require('./zorg/middlewares/pages/relationship'),
+  'json': require('./zorg/middlewares/pages/json'),
 }
 const contentFiles = glob.sync('./content/**/*.md', {})
 const contentTypes = [
@@ -25,7 +26,7 @@ const contentTypes = [
   {
     id: 'page',
     html: 'templates/page',
-    middlewares: ['page-meta', 'content', 'relationship']
+    middlewares: ['page-meta', 'content', 'json', 'relationship']
   }
 ]
 const globalMiddlewares = [
