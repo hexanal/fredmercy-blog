@@ -12,6 +12,8 @@ npm-debug.log
 /files
 # FTP-uploaded demos
 /demos
+# generated exports
+/exports
 
 # Ignore the comments
 src/content/entries/**/*.json
