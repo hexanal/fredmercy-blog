@@ -3,6 +3,8 @@ const frontMatter = require('front-matter')
 const glob = require('glob')
 const { pipe } = require('./zorg/utils')
 
+const start = Date.now()
+
 const middlewares = {
   'content': require('./zorg/middlewares/global/content'),
   'html': require('./zorg/middlewares/global/html'),
@@ -130,3 +132,7 @@ const byTypes = splitByType( getBasicMeta( contentFiles ) )
 const withMiddlewares = applyMiddlewares( byTypes )
 const withGlobalMiddlewares = applyGlobalMiddlewares( withMiddlewares )
 
+const end = Date.now()
+const timeDiff = (end - start) / 1000
+
+console.log(`[info] done (in ${timeDiff} seconds)`)
