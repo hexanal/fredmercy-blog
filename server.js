@@ -41,8 +41,8 @@ app.use((req, res, next) => {
 });
 
 app.post('/api/comment', (req, res) => {
-	const pathToEntry = req.body.entryId.replace('_', '/');
-	const filename = `./src/content/entries/${pathToEntry}/${req.body.slot}.json`;
+	const pathToEntry = req.body.entryId.replace(/_/g, '/');
+	const filename = `./content/${pathToEntry}/${req.body.slot}.json`;
 	const entryJSON = JSON.stringify({
 		slot: req.body.slot,
 		author: sanitizeHtml(req.body.author.substring(0, 100)),
@@ -69,8 +69,8 @@ app.post('/api/comment', (req, res) => {
 });
 
 app.get('/api/comments/:entryId', (req, res) => {
-	const pathToEntry = req.params.entryId.replace('_', '/');
-	const pathToComments = glob.sync(`./src/content/entries/${pathToEntry}/*.json`, {});
+	const pathToEntry = req.params.entryId.replace(/_/g, '/');
+	const pathToComments = glob.sync(`./content/${pathToEntry}/*.json`, {});
 	let comments = [];
 
 	Promise.all(

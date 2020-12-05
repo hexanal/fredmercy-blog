@@ -16,7 +16,7 @@ npm-debug.log
 /exports
 
 # Ignore the comments
-src/content/entries/**/*.json
+content/blog/**/*.json
 
 # Ignore those files because I'm working on that at the moment...
 *.bak.*
