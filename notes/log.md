@@ -56,12 +56,19 @@ As for new features:
 - I keep ending up on those awesome websites by frontend devs... wish that somehow I could navigate in their circles, but I would no longer be a renegade developer.
 - I need to do some research, skim all those posts about people trying their hand at the perfect "homepage"... and then update mine with their insights, I guess
 - fucking hate my work right now because it feels... antiquated. Just fucking dated.. huge Drupal codebase maintained by canon-fodder junior developers, and the tiniest budgets ever, and then clients are disappointed when it costs them thousands of dollars
-  --> nobody explained to them how never maintaining nor documenting nor QA-testing the codebase compounds over time, and makes even the tiniest fixes feel like hard work
+  - nobody explained to them how never maintaining nor documenting nor QA-testing the codebase compounds over time, and makes even the tiniest fixes feel like hard work
 - woooh! I'm gonna be ok. I think.
 
 `4:38pm:`
 
 - taking a nap
+
+`8:78pm:`
+
+I will survive.
+
+- not at all done because the comments are broken
+  - gotta fix the paths
 
 
 ## December 2, 2020
