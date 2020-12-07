@@ -8,6 +8,7 @@ const formatContent = function( contentTypes ) {
 
   types.map( type => {
     console.log(`[info] building ${contentTypes[type].length} items of type: “${type}”...`);
+
     return contentTypes[type].map( item => {
       const destination = `./public${item.meta.url}`
       const templateName = item.meta.template || item._html

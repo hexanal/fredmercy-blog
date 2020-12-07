@@ -1,4 +1,16 @@
-## December 4, 2002
+## December 7, 2020
+
+`8:46am:`
+
+- timestamped the previous entry `2002`, man that was way back
+- I will have to revert to a better way to show the notes, perhaps leverage a middleware to make it easier to include in a page
+  - something like a markdown plugin would be awesome...!
+- again I'm in the middle of a big refactoring session, not knowing whether it was a good idea, and I'm torn between two branches
+  - can't really write and deploy with ease (although totally doable)
+  - little fixes accumulate on the new branch and I'm losing focus sometimes... ugh!
+
+
+## December 4, 2020
 
 `7:30pm:`
 

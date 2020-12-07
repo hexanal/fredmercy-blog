@@ -12,4 +12,4 @@ What I wanted to write about today is probably something I shouldn't write about
 
 So I'm about to quit. Again.
 
-Working on this website is keeping me busy. Writing blog posts is amusing to me.<sup title="Meanwhile, I fail to connect with my friends because I'm fighting against the social media behemoths by refusing to use their ad-peddling services.">[*]</sup> I will do what I can.
+Working on this website is keeping me busy. Writing blog posts is amusing to me.<sup data-note="Meanwhile, I fail to connect with my friends because I'm fighting against the social media behemoths by refusing to use their ad-peddling services.">[*]</sup> I will do what I can.
