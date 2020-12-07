@@ -1,3 +1,18 @@
+## December 4, 2002
+
+`7:30pm:`
+
+- far gone are the questions of building a backend from this blog... yeeeeeeah...
+- I fixed the comments for the new version
+- ... wondering what the next steps are...?
+- ah, the "watch" step
+  - extract to a real "build" function
+  - call that on file change
+  - also stick that in the server.js file
+  - also think about the webpack build!
+- get some rest, you look tired
+
+
 ## December 3, 2020
 
 `~9am:`
