@@ -8,7 +8,7 @@ Hi guys! It sure has been a shitty year for the whole World, hasn't been? I was 
 
 Fast forward to now: when I thought my lifelong battle with depression had finally ended, these past few days I've caught it trying to sneak past my defenses again. It knows I hate Christmas; it knows I hate my birthday; it knows I hate when it gets grey and gloomy outside; it knows I'm a prime target when things aren't going great at work.
 
-What I wanted to write about today is probably something I shouldn't write about, but I don't give a fuck: somehow, with the path I have chosen, I always end up working for shameless advertising. And I sort of hate advertisement, I do everything I can to avoid it in my daily life, I think it's a menace to society, a nuisance. How I do end up working for ad agencies, when their goals aren't aligned with mine?
+What I wanted to write about today is probably something I shouldn't write about, but I don't give a fuck: with the career path I have seemingly chosen, I always end up working for shameless advertising. And I sort of hate advertisement, I do everything I can to avoid it in my daily life, I think it's a menace to society, a nuisance. How I do end up working for ad agencies, when their goals aren't aligned with mine? Surely my skills as a web developer can be put to better use.
 
 So I'm about to quit. Again.
 

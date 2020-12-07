@@ -1,3 +1,27 @@
+const addRelationship = function( contentTypes ) {
+  const withRelationship = {}
+  const types = Object.keys( contentTypes )
+
+  types.map( type => {
+    if ( type !== 'page' ) withRelationship[type] = contentTypes[type] // TODO improve this part, I guess
+
+    const items = contentTypes[type]
+
+    withRelationship[type] = items.map( (item, index) => {
+      const children = getChildrenItems( item, index, items )
+      const parents = getParentItems( item, index, items )
+
+      item.meta.children = children
+      item.meta.parents = parents.reverse()
+      item.meta.breadcrumbs = parents
+
+      return item
+    })
+  })
+
+  return withRelationship
+}
+
 const extractBasicMeta = items => {
   return items.map( item => {
     const { title, url, description } = item.meta
@@ -9,19 +33,6 @@ const extractBasicMeta = items => {
         description
       }
     }
-  })
-}
-
-const applyRelationships = function( items ) {
-  return items.map( (item, index) => {
-    const children = getChildrenItems( item, index, items )
-    const parents = getParentItems( item, index, items )
-
-    item.meta.children = children
-    item.meta.parents = parents.reverse()
-    item.meta.breadcrumbs = parents
-
-    return item
   })
 }
 
@@ -53,4 +64,4 @@ const getParentItems = function( item, index, items ) {
   return extractBasicMeta( parents )
 }
 
-module.exports = applyRelationships
+module.exports = addRelationship

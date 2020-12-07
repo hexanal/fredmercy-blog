@@ -11,7 +11,8 @@ const formatContent = function( contentTypes ) {
 
     return contentTypes[type].map( item => {
       const destination = `./public${item.meta.url}`
-      const templateName = item.meta.template || item._html
+      const defaultTemplate = `templates/${type}`
+      const templateName = item.meta.template || defaultTemplate
       const templateFile = fs.readFileSync( `src/components/${ templateName }.html`, 'utf8' )
       const template = templater.compile( templateFile.toString() )
       const htmlTemplate = template(item)

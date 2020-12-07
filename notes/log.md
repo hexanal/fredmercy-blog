@@ -8,6 +8,16 @@
 - again I'm in the middle of a big refactoring session, not knowing whether it was a good idea, and I'm torn between two branches
   - can't really write and deploy with ease (although totally doable)
   - little fixes accumulate on the new branch and I'm losing focus sometimes... ugh!
+- I'm thinking about only using "global" middlewares (just middlewares) and have each middleware figure out with "type" it needs to affect
+  - and content types can be inferred from what we found, so...
+    - instead of having to specify a content type object, it could just be inferred from the data
+    - no more object; the default template will be `templates/${typeID}` by convention, and the middlewares are all "global" ones
+- for now I'll just try to extract the build logic to another file and have it be a little cleaner
+  - oof! made it!
+  - watch step is still working, build step is working... site is building in well under a second
+- I want to wire the webpack build inside of the chokidar watch...:
+  - if I stick the webpack watch at the same level, I'm pretty sure NodeJS will handle that nicely? haha, you wish!
+  - we'll see! this is what's next
 
 
 ## December 4, 2020

@@ -10,7 +10,7 @@ This dude's just your average nerd, you know:
 - musician (pshhhyeah! *right*),
 - cook,
 - professional Tony Hawk Pro Skater player,
-- physics and space (and all of physics) enthusiast
-- [blogger](/blog), I guess?
+- science enthusiast,
+- [blogger](/blog)
 
 *Might wanna go back to the [homepage](/) now.*

@@ -1,14 +1,21 @@
 const marked = require('marked')
 
-const formatContent = function(items) {
-  return items.map( item => {
-    const content = marked( item.content )
+const formatContent = function( contentTypes ) {
+  const withContent = {}
+  const types = Object.keys( contentTypes )
 
-    return {
-      ...item,
-      content
-    }
+  types.map( type => {
+    withContent[type] = contentTypes[type].map( item => {
+      const content = marked( item.content )
+
+      return {
+        ...item,
+        content
+      }
+    })
   })
+
+  return withContent
 }
 
 module.exports = formatContent

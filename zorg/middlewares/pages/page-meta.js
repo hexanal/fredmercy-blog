@@ -1,13 +1,22 @@
-const applyPageMeta = function( items ) {
-  return items.map( item => {
-    return {
-      ...item,
-      meta: {
-        ...item.meta,
-        ...getPageMetaData(item)
-      },
-    }
+const addPageMeta = function( contentTypes ) {
+  const withPageMeta = {}
+  const types = Object.keys( contentTypes )
+
+  types.map( type => {
+    if ( type !== 'page' ) withPageMeta[type] = contentTypes[type] // TODO improve this part, I guess
+
+    withPageMeta[type] = contentTypes[type].map( item => {
+      return {
+        ...item,
+        meta: {
+          ...item.meta,
+          ...getPageMetaData(item)
+        },
+      }
+    })
   })
+
+  return withPageMeta
 }
 
 const getPageMetaData = function( item ) {
@@ -35,4 +44,4 @@ const getPageMetaData = function( item ) {
   }
 }
 
-module.exports = applyPageMeta
+module.exports = addPageMeta

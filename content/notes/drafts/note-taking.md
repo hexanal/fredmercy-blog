@@ -6,7 +6,7 @@ type: page
 
 ## what is it?
 
-Technically, *this* is a note. To me, note taking is: 
+Technically, *this* is a note. To me, note taking is:
 
 - writing spontaneously;
 - sort of freely;
@@ -34,6 +34,4 @@ Writing a lot of notes is like doing a brain-dump; saving your progress and writ
 - most of the random notes, the “brain dump” notes, etc. are written in list form: because I like to **indent sub-ideas** for easier parsing (when revisiting them)
 - don't bother with good grammar: the note should represent your idea as you envision it, as you feel it. Even if it's with vulgar slang, written as a metaphor, in another language, using emojis, in ALL CAPS... I don't give a shit how, just write it down, you fuck!
 - it's rarely on paper, unless it's a drawing or a diagram
-- I built a static website generator to allow these markdown files to be web-ready
-
-
+- I built a static website generator to allow these markdown files to be web-ready (I've named it *zorg* for the time being but uhhhh... it's not final!)
