@@ -19,6 +19,18 @@
   - if I stick the webpack watch at the same level, I'm pretty sure NodeJS will handle that nicely? haha, you wish!
   - we'll see! this is what's next
 
+`9:25pm:`
+
+- really shouldn't be working on this shit so late in the day, but heck...
+  - webpack watch is now inside `watch.js` and behind `npm start`
+- I realize I have to trim the fat off that javascript
+- maybe... just maybe, I could say goodbye to webpack and instead just wire everything myself
+  - `esbuild` for js
+  - good old `sass` for css
+  - copy task to move assets?
+  - basically... going back to gulp?!?! shiiiiiiiiiit
+
+
 
 ## December 4, 2020
 

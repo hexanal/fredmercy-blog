@@ -78,9 +78,9 @@ module.exports = env => ({
   resolve: {
     extensions: ['.js', '.ts'],
     modules: [
-      path.resolve('./src'),
-      path.resolve('./src/js'),
-      path.resolve('./node_modules')
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './src/js'),
+      path.resolve(__dirname, './node_modules')
     ]
   },
 
