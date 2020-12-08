@@ -5,11 +5,11 @@ website.use({
   'order': require('./zorg/middlewares/posts/order'),
   'adjacents': require('./zorg/middlewares/posts/adjacents'),
   'comments': require('./zorg/middlewares/posts/comments'),
-  'post-index-as-parent': require('./zorg/middlewares/global/post-index-as-parent'),
 
   'page-meta': require('./zorg/middlewares/pages/page-meta'),
   'relationship': require('./zorg/middlewares/pages/relationship'),
 
+  'post-index-as-parent': require('./zorg/middlewares/global/post-index-as-parent'),
   'posts-by-months': require('./zorg/middlewares/global/posts-by-months'),
   'content': require('./zorg/middlewares/global/content'),
   'json': require('./zorg/middlewares/global/json'),
