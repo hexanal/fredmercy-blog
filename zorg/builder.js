@@ -28,8 +28,7 @@ const getBasicMeta = function( contentFiles ) {
 /**
  * - given all the items
  * - categorize by the meta `type`
- * - return an object which keys are each `type` of content we've found, and
- *   which values are arrays of items
+ * - return an object which keys are each `type` of content we've found, and whose values is an array of items of that type
  */
 const splitByType = function( items ) {
   return items.reduce( (acc, item) => {
@@ -46,7 +45,7 @@ const splitByType = function( items ) {
 }
 
 /**
- * - apply the global middlewares to the global contentTypes object
+ * - apply the middlewares to the content types object
  */
 const applyMiddlewares = function( itemsByType, middlewares ) {
   return pipe( Object.values( middlewares ) )( itemsByType )
@@ -69,6 +68,7 @@ const generate = function( middlewares ) {
   const timeDiff = (end - start) / 1000
 
   console.log(`[info] done (in ${timeDiff} seconds)`)
+  console.log('———————')
 }
 
 
