@@ -13,7 +13,7 @@ website.use({
   'posts-by-months': require('./zorg/middlewares/global/posts-by-months'),
   'content': require('./zorg/middlewares/global/content'),
   'json': require('./zorg/middlewares/global/json'),
-  'export-to-json': require('./zorg/middlewares/global/export-to-json'),
+  // 'export-to-json': require('./zorg/middlewares/global/export-to-json'),
   'html': require('./zorg/middlewares/global/html')
 })
 
