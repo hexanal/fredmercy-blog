@@ -1,3 +1,28 @@
+## December 9, 2020
+
+`7:09pm:`
+
+- did some code trimming in the middlewares and now it looks pretty consistent
+- haven't had time to do what I wanted with the webpack config:
+  - basically, figuring out a way to combine:
+    1. building of website
+    2. minification of Javascript and styles assets
+    3. copying/processing of other assets (images, fonts, etc.)
+- to be honest... if gulp is the best candidate, why not, but at that point I think I can figure it out on my own
+
+- right now, I'm thinking about why I'm co-locating the styles with the markup
+  - with React, it makes sense because you can import the styles via the JS component file
+  - here, I still have to manage all of that through `style.css`
+  - the JS could be co-located also, and import the styles, but not all of the components have a companion Javascript file, so that's not really a good reason
+  - brings me back all the way around to using some virtual dom implentation of some sort... hmmm
+- could be a good test of the structure if I decided to swap out HandlebarsJS for something else
+  - maybe if I do an off-shoot project, less components, less content
+  - using something like VueJS, so I could co-locate all that bullshit, and maybe have all that asset pipeline figured out
+    - the webpack wiring would live alongside the building of the website
+    - or the other way around, which I was thinking about: have the JS components orchestrate the build
+      - the webpack watch task could trigger a rebuild when markdown files change?
+      - something to toy with, for sure
+
 ## December 7, 2020
 
 `8:46am:`
@@ -29,7 +54,6 @@
   - good old `sass` for css
   - copy task to move assets?
   - basically... going back to gulp?!?! shiiiiiiiiiit
-
 
 
 ## December 4, 2020
