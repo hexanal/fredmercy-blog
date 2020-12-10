@@ -1,24 +1,16 @@
 const { getMonthName, capitalize } = require('../../utils')
 
 const addPostMeta = function( contentTypes ) {
-  const withPostMeta = {}
-  const types = Object.keys( contentTypes )
-
-  types.map( type => {
-    if ( type !== 'post' ) withPostMeta[type] = contentTypes[type] // TODO improve this part, I guess
-
-    withPostMeta[type] = contentTypes[type].map( item => {
-      return {
-        ...item,
-        meta: {
-          ...item.meta,
-          ...getPostMetaData(item)
-        }
+  return {
+    ...contentTypes,
+    post: contentTypes.post.map( item => ({
+      ...item,
+      meta: {
+        ...item.meta,
+        ...getPostMetaData(item)
       }
-    })
-  })
-
-  return withPostMeta
+    }) )
+  }
 }
 
 const getPostMetaData = function( item ) {

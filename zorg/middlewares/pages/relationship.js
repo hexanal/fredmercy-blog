@@ -1,13 +1,9 @@
 const addRelationship = function( contentTypes ) {
-  const withRelationship = {}
-  const types = Object.keys( contentTypes )
+  const items = contentTypes.page
 
-  types.map( type => {
-    if ( type !== 'page' ) withRelationship[type] = contentTypes[type] // TODO improve this part, I guess
-
-    const items = contentTypes[type]
-
-    withRelationship[type] = items.map( (item, index) => {
+  return {
+    ...contentTypes,
+    page: items.map( (item, index) => {
       const children = getChildrenItems( item, index, items )
       const parents = getParentItems( item, index, items )
 
@@ -17,9 +13,7 @@ const addRelationship = function( contentTypes ) {
 
       return item
     })
-  })
-
-  return withRelationship
+  }
 }
 
 const extractBasicMeta = items => {

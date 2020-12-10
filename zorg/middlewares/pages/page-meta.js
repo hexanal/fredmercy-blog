@@ -1,22 +1,14 @@
 const addPageMeta = function( contentTypes ) {
-  const withPageMeta = {}
-  const types = Object.keys( contentTypes )
-
-  types.map( type => {
-    if ( type !== 'page' ) withPageMeta[type] = contentTypes[type] // TODO improve this part, I guess
-
-    withPageMeta[type] = contentTypes[type].map( item => {
-      return {
-        ...item,
-        meta: {
-          ...item.meta,
-          ...getPageMetaData(item)
-        },
-      }
-    })
-  })
-
-  return withPageMeta
+  return {
+    ...contentTypes,
+    page: contentTypes.page.map( item => ({
+      ...item,
+      meta: {
+        ...item.meta,
+        ...getPageMetaData(item)
+      },
+    }) )
+  }
 }
 
 const getPageMetaData = function( item ) {

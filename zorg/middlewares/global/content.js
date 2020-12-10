@@ -2,9 +2,8 @@ const marked = require('marked')
 
 const formatContent = function( contentTypes ) {
   const withContent = {}
-  const types = Object.keys( contentTypes )
 
-  types.map( type => {
+  Object.keys( contentTypes ).map( type => {
     withContent[type] = contentTypes[type].map( item => {
       const content = marked( item.content )
 

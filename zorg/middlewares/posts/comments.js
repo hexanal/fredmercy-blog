@@ -1,11 +1,9 @@
 const addComments = function( contentTypes ) {
-  const withComments = {}
-  const types = Object.keys( contentTypes )
+  const items = contentTypes.post
 
-  types.map( type => {
-    if ( type !== 'post' ) withComments[type] = contentTypes[type] // TODO improve this part, I guess
-
-    withComments[type] = contentTypes[type].map( item => {
+  return {
+    ...contentTypes,
+    post: items.map( item => {
       const entryId = item.meta.date
 
       return {
@@ -17,9 +15,7 @@ const addComments = function( contentTypes ) {
         }))
       }
     })
-  })
-
-  return withComments
+  }
 }
 
 module.exports = addComments
