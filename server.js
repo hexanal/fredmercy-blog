@@ -100,14 +100,22 @@ app.use('/', express.static(path.join(__dirname, 'public')) );
 app.use('/files/', express.static(path.join(__dirname, 'files')) );
 app.use('/demos/', express.static(path.join(__dirname, 'demos')) );
 
-/**
- * Catch other routes and serve a 404 ???
- */
-app.get('*', (req, res) => {
-	res.status(404);
+app.use(function(req, res) {
+	const html = fs.readFileSync('./public/404/index.html', 'utf8')
+
+	res.status(404)
+	res.send(html)
+});
+app.use(function(error, req, res, next) {
+	const html = fs.readFileSync('./public/500/index.html', 'utf8')
+
+	res.status(500)
+	res.send(html)
 });
 
-app.use(errorHandler());
+if ( process.env.NODE_ENV === 'development' ) {
+	app.use(errorHandler());
+}
 
 const server = app.listen(app.get('port'), () => {
 	console.log(chalk.blue('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
@@ -116,6 +124,9 @@ const server = app.listen(app.get('port'), () => {
 	console.log(chalk.blue('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
 });
 
+/**
+ * BEGIN Websocket business
+ */
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', function(ws) {
@@ -131,5 +142,8 @@ wss.on('connection', function(ws) {
 		console.log('close ws connection');
 	});
 });
+/**
+ * END Websocket business
+ */
 
 module.exports = app;
