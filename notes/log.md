@@ -1,8 +1,64 @@
+## December 14, 2020
+
+`8:57am:`
+
+Lately I've been thinking about search. In a static-HTML, flat-file website, or however kids call it these days, everything is right there in the files.
+
+With NodeJS, I'm pretty sure I can communicate with the server to search through files any way I want. For my use case, maybe that would be enough to whip up a search engine.
+
+I can feel the real programmers out there shuddering at the idea; in terms of security and performance, it's probably super bad practice to implement a search on the file system like that.
+But I'm thinking: I gotta try something *homemade*
+
+- api get search terms
+- node server passes that to a function
+- searches through `/content` with the search terms
+- from the file path, infer the `url`, and `type` (and everything else)
+- shoot the necessary info back to the frontend via JSON
+- and we're live?
+
+`9:09am:`
+
+- also: comments are files; could search through comments as well? meh.
+- btw, maybe using a database wouldn't be too bad to handle comments and other user-generated content?
+- created a `NEXTUP.md` file to keep track of all the things I have to improve on this website
+
+`10:18am:`
+
+- this website is becoming my life, now, haha! meh, it's not so bad; I like it
+  - keeps me busy working on something I can see some (personal) value in, keeps me writing some Javascript, keeps me thinking about the web, accessiblity, UX and all that jazz
+  - makes me write more, and express myself to the world... friends can leave comments (I gotta rethink the whole commenting business though)
+- I was just thinking of trying to better organize my projects on Github, and on my machine
+  - have a little ecosystem of tools I can leverage to work more efficiently
+  - try to figure out what "costs" me the most time, and maybe devise a few strategies to shave off some of that time burden
+  - it's cool that I took some time to work on `reefer`, but I need to use it extensively to test it out
+  - I want to have a showcase of the things I can build with my tools, you know?
+
+`11:26am:`
+
+- in the `NEXTUP.md` file, there's nothing about porting the codebase over to something like React or VueJS, because that shit really isn't important right now:
+  - I'm focusing on the content entry issues right now:
+    - infrastructure issues: have the website be easily maintainable on the server:
+      - easy import/exports of data, easy building of the website
+      - documenting my progress and making sure it's sturdy enough
+      - and generally just road-testing the setup for a while
+  - the frontend framework `exponent` is quite simple, barebone
+  - I'm thinking about doing something... with HandlebarsJS maybe? like:
+    - splitting the codebase into really small HTML chunks
+    - have some sort of API that allows for building these chunks on the server:
+      - pass some data, and have the chunk of HTML be rendered and passed along in the response
+      - e.g. `/api/render` with `{ component: 'ui/post-nav', data: { whatever: 'dude' } }`
+      - fetches `./src/components/ui/post-nav.html` and passes the `data` object
+      - compiles the template
+      - sends it as the response
+      - frontend just has to hot-swap the component
+- obviously low priority :)
+
+
 ## December 13, 2020
 
 `5:12pm:`
 
-- a moment of quiet; and of course I use to think about what to do next
+- a moment of quiet; and of course I use it to think about what to do next
 - in terms of the effort, I can distinguish several types of "work" to be done:
   1. what I'd call "infrastructure" work: the invisible codebase that builds the website and gives me good developer experience
   2. the UI/UX of the frontend, design, microinteractions, bugfixes, etc.
