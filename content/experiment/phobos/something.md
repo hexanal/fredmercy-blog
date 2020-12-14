@@ -1,5 +1,5 @@
 ---
-title: Fred Mercy / Phobos / Experiment
+title: Experiment
 description: Sub...subpage
 type: page
 template: templates/experiment
