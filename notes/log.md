@@ -1,3 +1,38 @@
+## December 13, 2020
+
+`5:12pm:`
+
+- a moment of quiet; and of course I use to think about what to do next
+- in terms of the effort, I can distinguish several types of "work" to be done:
+  1. what I'd call "infrastructure" work: the invisible codebase that builds the website and gives me good developer experience
+  2. the UI/UX of the frontend, design, microinteractions, bugfixes, etc.
+  3. writing and add good content to the website
+- lately there's been a lot of 1 and 2, not so much 3
+  - having a nicer way to add content (other than doing a deploy by logging onto the server via ssh) would help me a lot with adding content
+  - this requires having a pretty solid system in place
+  - right now, it's not super solid
+- that's why I'm thinking of building a UI that allows for easy import of
+    markdown, and which saves as a properly formatted *content type item*
+  - then this UI could also compile the website again, on "publish"
+  - I could probably have the content be editable online that way
+  - I would need something that does the reverse: exporting the data, backing it up regularly, so I can transfer all that online-editing back to my local install
+  - I treate Markdown content files as the ultimate basic unit of what this website is: the UI is just something to make it easier to read and navigate, but someone would just wanted to read the content could show up on github and read the source code haha
+
+I've got this `json` middleware, which grabs a *companion JSON file*
+
+This could, in theory, contain any kind of information I want. I just need to figure out some sort of modular way to structure the data, and set up a module system in this hypothetical backend UI.
+
+Then the frontend modules take care of displaying the data. That's the idea.
+
+But this is not particularly easy to implement... there will be a lot of tries and a ton of errors.
+
+`5:35pm:`
+
+- I'm not handling 404 pages right now and it's kind of a bummer!
+- this is some server-side "infrastructure" shit again...
+
+- I'm thinking about setting up an RSS feed; man, that's a throwback
+
 ## December 9, 2020
 
 `7:09pm:`
