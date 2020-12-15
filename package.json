@@ -7,7 +7,7 @@
     "clean": "rm -rf public",
     "start": "node server.js",
     "webpack": "webpack --env=production",
-    "build": "npm run clean && NODE_ENV=production node build.js"
+    "build": "NODE_ENV=production node zorg/build.js"
   },
   "devDependencies": {
     "front-matter": "^3.0.1",

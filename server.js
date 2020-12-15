@@ -17,7 +17,7 @@ const WebSocket = require('ws');
 
 const app = express();
 
-const watch = require('./watch');
+const watch = require('./zorg/watch');
 
 /**
  * Setting up Express with all sorts of goodies

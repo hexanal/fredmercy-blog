@@ -1,6 +1,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
-const templater = require('../../templater')
+const templater = require('../../helpers/templater')
 
 const formatContent = function( contentTypes ) {
   templater.usePartials('./src/components')

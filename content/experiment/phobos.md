@@ -5,4 +5,22 @@ type: page
 template: templates/experiment
 ---
 
-This is the Phobos page.
+Hello!
+
+[audio](/files/music/langsam.mp3)
+
+Enjoy that shit.
+
+This is the Phobos[*](I *don't* really give a damn!) page.
+
+[test]({
+  "heading": "dude",
+  "fuck": [
+    "this", "that", "you", "me"
+  ]
+})
+
+Normal markdown something.
+
+[children-pages]()
+

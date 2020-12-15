@@ -3,6 +3,9 @@
 @import 'config/base';
 @import 'config/themes';
 
+@import '../components/blocks/drawer';
+@import '../components/blocks/side-note';
+
 @import '../components/entries/comments';
 @import '../components/entries/leave-comment';
 @import '../components/entries/read-comment';
@@ -24,10 +27,8 @@
 @import '../components/resume/sub-section';
 
 @import 'components/custom-theme';
-@import 'components/collapse';
 @import 'components/hotkey';
 @import 'components/index';
-@import 'components/note';
 @import 'components/symbol';
 @import 'components/theme-option';
 

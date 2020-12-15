@@ -1,4 +1,4 @@
-const { write } = require('../../files')
+const { write } = require('../../helpers/files')
 
 const exportToJson = function( contentTypes ) {
   const types = Object.keys( contentTypes )

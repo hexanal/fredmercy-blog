@@ -18,16 +18,15 @@ Speaking of... here are today's links!:
 
 `9:17am:` We usually consider devices that try to do more than one thing as being mediocre at all the things they do. But nowadays our cellphones do so many things they ended up replacing our cameras, calendars, newspapers, voice recorders, maps (and GPS), televisions, calculators, etc.
 
-<code class="collapse">
-<button type="button">Show/Hide pseudo-philosophical rant</button>
+[drawer](
 
 What I think we gain in convenience, practicality, and productivity, we lose in physicality, purposefulness, and mindfulness. At the risk of sounding like an old degenerate, I think having a specific device for each use-case makes the user much more involved with the process. I see this virtualization of our physical devices as a first step towards full acceptance of the coming “virtual reality” revolution: get people used to _apps_, so that when they're pulled into an ever more virtual world, the idea of replacing physical objects with their digital counterparts will seem very normal, and commonplace. Why own art, candles, a TV, a guitar?... hell, why even have windows and lightbulbs?! Put on your goggles and slip into a bright new world!
 
 The ultimate down-sizing: objects are broken down to bits, and their digital ersatz are fed back to us!
 
-_Ahem._ Sorry about that. It's probably better to refer to authors who have thought longer and harder about all this... I guess what I'm saying is: I'm scared of the future, because of how boring it might be. But as someone keeps telling me: there's no use in being pessimistic. Being hopeful and ready to face the day is the best attitude to adopt.
+_Ahem._ Sorry about that. It's probably better to refer to authors who have thought longer and harder about all this... I guess what I'm saying is: I'm scared of the future, because of how boring it might be. But as someone keeps telling me: there's no use in being pessimistic. Being hopeful and ready to face the day is the best attitude to adopt."
 
-</code>
+)
 
 `9:56am:` Dear Future Reader,
 

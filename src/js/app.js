@@ -15,13 +15,13 @@ import transitions from 'components/transitions';
 // ui
 // import bleeps from 'components/bleeps';
 import comments from 'components/comments';
-import collapse from 'components/collapse';
+import drawer from 'components/drawer';
 import help from 'components/help';
 import highlight from 'components/highlight';
 import jumpto from 'components/jumpto';
 import live from 'components/live';
 import nav from 'components/nav';
-// import notes from 'components/notes';
+import sideNote from 'components/side-note';
 import tabs from 'components/tabs';
 import themes from 'components/themes';
 
@@ -40,14 +40,14 @@ Exponent
 	.register({
 		// 'bleeps': bleeps,
 		'comments': comments,
-		'collapse': collapse,
+		'drawer': drawer,
 		'extra': extra,
 		'help': help,
 		'highlight': highlight,
 		'jumpto': jumpto,
 		'live': live,
 		'nav': nav,
-		// 'notes': notes,
+		'side-note': sideNote,
 		'tabs': tabs,
 		'themes': themes
 	})

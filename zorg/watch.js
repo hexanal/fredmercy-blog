@@ -1,10 +1,10 @@
 const chokidar = require('chokidar')
 const chalk = require('chalk')
 const webpack = require('webpack');
-const webpackConfigurator = require('./webpack.config.js')
+const webpackConfigurator = require('../webpack.config.js')
 const bundler = webpack( webpackConfigurator('development') )
 
-const website = require('./config')
+const website = require('../config')
 
 const watchThis = function() {
   const watcher = chokidar.watch([

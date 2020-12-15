@@ -1,7 +1,7 @@
 const chalk = require('chalk')
-const website = require('./config')
+const website = require('../config')
 const webpack = require('webpack')
-const webpackConfigurator = require('./webpack.config.js')
+const webpackConfigurator = require('../webpack.config.js')
 const bundler = webpack( webpackConfigurator('development') )
 
 website.build()

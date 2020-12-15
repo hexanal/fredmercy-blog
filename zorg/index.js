@@ -2,7 +2,7 @@ const fs = require('fs')
 const chalk = require('chalk')
 const frontMatter = require('front-matter')
 const glob = require('glob')
-const { pipe } = require('./utils')
+const { pipe } = require('./helpers/utils')
 
 /**
  * - go through `contentFiles`

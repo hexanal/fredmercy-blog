@@ -26,6 +26,22 @@
   - unless I go crazy and decide to go VueJS or some bullshit, but nah... I'll wait it out some more
 - adding it to the NEXTUP file
 
+`10:40am:`
+
+- moved a bunch of files to make it cleaner... not bad!
+- yeah, so all the build pipeline bullshit is a necessary evil, but I'd rather be doing something else
+like... write some bullshit
+
+`3:25pm:`
+
+- been working on some quirky "component" thing that meshes with the way I write Markdown
+  - basically: it's some BULLSHIT javascript ninja hack that allows for creating "shortcodes" like in Wordpress
+  - mostly it will be used to fetch a HandlebarsJS component, but since it's a middleware in my Zorg business, it can output straight-up fresh HTML if I want
+- I haven't the heart to benchmark my crap, so for now I'll be using it... sparingly?
+- if I see the build time creep up to stupid levels (like, 2 seconds), I'll review the way I build the website when developing, keeping the "full" build for deployments
+- still not eager to move to a modern-JS solution for my pages, haha, damn
+
+
 ## December 14, 2020
 
 `8:57am:`

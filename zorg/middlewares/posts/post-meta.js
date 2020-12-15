@@ -1,4 +1,25 @@
-const { getMonthName, capitalize } = require('../../utils')
+const getMonthName = function(number) {
+  const months = {
+    '01': 'january',
+    '02': 'february',
+    '03': 'march',
+    '04': 'april',
+    '05': 'may',
+    '06': 'june',
+    '07': 'july',
+    '08': 'august',
+    '09': 'september',
+    '10': 'october',
+    '11': 'november',
+    '12': 'december',
+  }
+
+  return months[number]
+}
+
+const capitalize = function(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 
 const addPostMeta = function( contentTypes ) {
   return {

@@ -1,4 +1,4 @@
-.content code.collapse {
+.drawer {
 	position: relative;
 	overflow: hidden;
 	height: 1.5em;
@@ -12,7 +12,7 @@
 		margin 300ms cubic-bezier(.46,.82,.08,1.04),
 		padding 300ms cubic-bezier(.46,.82,.08,1.04);
 
-	&.state-collapse-expand {
+	&.state-drawer-expand {
 		height: auto;
 		padding: 0 0 0 1.5em;
 		margin-bottom: 2rem;
@@ -40,9 +40,5 @@
 		+ p {
 			margin-top: 1.5em;
 		}
-	}
-
-	+ p {
-		margin-top: 0;
 	}
 }

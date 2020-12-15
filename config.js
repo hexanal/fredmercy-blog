@@ -1,4 +1,5 @@
-const website = require('./zorg/builder')()
+const zorg = require('./zorg')
+const website = zorg()
 
 website.use({
   'post-meta': require('./zorg/middlewares/posts/post-meta'),
@@ -11,6 +12,7 @@ website.use({
 
   'post-index-as-parent': require('./zorg/middlewares/global/post-index-as-parent'),
   'posts-by-months': require('./zorg/middlewares/global/posts-by-months'),
+  'shortcodes': require('./zorg/middlewares/global/shortcodes'),
   'content': require('./zorg/middlewares/global/content'),
   'ui-data': require('./zorg/middlewares/global/ui-data'),
   'json': require('./zorg/middlewares/global/json'),
