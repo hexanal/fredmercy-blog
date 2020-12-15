@@ -53,6 +53,20 @@ But I'm thinking: I gotta try something *homemade*
       - frontend just has to hot-swap the component
 - obviously low priority :)
 
+`8:35pm:`
+
+- I want to fix that *watch* development step so that the DX is... hmmm, wonderful, you know?!
+- when developing, what you want to do is just launch `npm start` and start doing shit
+  - frontend source files are watched by webpack
+  - content files are watched by chokidar, old school
+  - and the server is Express
+- my first test didn't work out
+- so how the fuck do I do this shit?
+- ok... I managed. But it's kind of slow :)
+...
+BUT I MANAGED!
+
+
 
 ## December 13, 2020
 
