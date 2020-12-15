@@ -18,68 +18,26 @@
 		</button>
 
 		<div class="header__menu-wrap" data-ui="menu">
-			<div class="header__menu">
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--main"
-						href="/"
-					>
-						home
-					</a>
-				</div>
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--blog"
-						href="/blog"
-					>
-						blog
-					</a>
-				</div>
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--bookmarks"
-						href="/bookmarks"
-					>
-						bookmarks
-					</a>
-				</div>
-				<!-- <div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--demos"
-						href="/demos"
-					>
-						demos
-					</a>
-				</div> -->
-
-				<hr>
-
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--github"
-						href="http://github.com/hexanal"
-					>
-						github
-					</a>
-				</div>
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--twitter"
-						href="http://twitter.com/hexanal"
-					>
-						twitter
-					</a>
-				</div>
-				<div class="header__menu-item">
-					<a
-						class="header__menu-link header__menu-link--bandcamp"
-						href="http://fredmercy.bandcamp.com/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						bandcamp
-					</a>
-				</div>
+			<div class="header__menu" role="navigation">
+				{{#each ui.mainNav }}
+					{{#if this.href }}
+						<div class="header__menu-item">
+							<a
+								class="header__menu-link header__menu-link--{{ this.id }}"
+								href="{{ this.href }}"
+								{{#each this.attr }}
+									{{#each this }}
+										{{@key}}="{{this}}"
+									{{/each}}
+								{{/each}}
+							>
+								{{ this.label }}
+							</a>
+						</div>
+					{{else}}
+						<hr>
+					{{/if}}
+				{{/each}}
 
 				<hr>
 

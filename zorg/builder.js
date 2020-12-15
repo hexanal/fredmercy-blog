@@ -69,7 +69,6 @@ const generate = function( middlewares ) {
   const timeDiff = (end - start) / 1000
 
   console.log( chalk.green(`[info] done (in ${timeDiff} seconds)`) )
-  console.log( chalk.green('———————') )
 }
 
 

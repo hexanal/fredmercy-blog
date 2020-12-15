@@ -4,9 +4,9 @@
   "description": "hexanal.blog",
   "author": "hexanal",
   "scripts": {
-    "clean": "rm -r public",
-    "start": "node watch.js",
-    "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --env.NODE_ENV=production --env.production && node build.js"
+    "clean": "rm -rf public",
+    "start": "node server.js",
+    "build": "npm run clean && NODE_ENV=production node build.js"
   },
   "devDependencies": {
     "front-matter": "^3.0.1",

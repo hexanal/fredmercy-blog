@@ -1,3 +1,23 @@
+## December 15, 2020
+
+`8:30am:`
+
+- today: write!
+- also maybe:
+  - fix a few things on the website (what things?!)
+  - include *notes* in the main menu
+  - maybe also make the main menu visible by default for larger screens
+    - at least `blog`, `notes`, `about`, `links`
+
+- NEXTUP has: doing the links filtering system, and a better homepage
+  - filtering the bookmarks implies refactoring the way I'm adding them to the website which isn't something I'm willing to do just yet :P
+  - improving the homepage would be nice
+    - less quirkiness, or more?!
+    - more links, more obvious, less talk
+
+- I want to timestamp the build console logs
+
+
 ## December 14, 2020
 
 `8:57am:`
