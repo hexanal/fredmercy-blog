@@ -17,6 +17,4 @@ website.use({
   'html': require('./zorg/middlewares/global/html')
 })
 
-website.build()
-
 module.exports = website

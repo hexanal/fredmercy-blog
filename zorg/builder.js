@@ -1,4 +1,5 @@
 const fs = require('fs')
+const chalk = require('chalk')
 const frontMatter = require('front-matter')
 const glob = require('glob')
 const { pipe } = require('./utils')
@@ -67,8 +68,8 @@ const generate = function( middlewares ) {
   const end = Date.now()
   const timeDiff = (end - start) / 1000
 
-  console.log(`[info] done (in ${timeDiff} seconds)`)
-  console.log('———————')
+  console.log( chalk.green(`[info] done (in ${timeDiff} seconds)`) )
+  console.log( chalk.green('———————') )
 }
 
 

@@ -8,7 +8,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const chalk = require('chalk');
-const errorHandler = require('errorhandler');
+// const errorHandler = require('errorhandler');
 const sanitizeHtml = require('sanitize-html');
 const lusca = require('lusca');
 const expressStatusMonitor = require('express-status-monitor');
@@ -16,6 +16,8 @@ const glob = require('glob');
 const WebSocket = require('ws');
 
 const app = express();
+
+const watch = require('./watch');
 
 /**
  * Setting up Express with all sorts of goodies
@@ -113,15 +115,13 @@ app.use(function(error, req, res, next) {
 	res.send(html)
 });
 
-if ( process.env.NODE_ENV === 'development' ) {
-	app.use(errorHandler());
-}
+// app.use(errorHandler())
 
 const server = app.listen(app.get('port'), () => {
-	console.log(chalk.blue('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
-	console.log(chalk.blue(`➤ ENV: ${app.get('env')}`));
-	console.log(chalk.blue(`➤ URL: http://${app.get('host')}:${app.get('port')}`));
-	console.log(chalk.blue('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'));
+	console.log(chalk.blue(`[server] [env: ${app.get('env')}]`));
+	console.log(chalk.blue(`[server] [url: http://${app.get('host')}:${app.get('port')} ]`));
+
+	if ( app.get('env') === 'development' ) watch()
 });
 
 /**

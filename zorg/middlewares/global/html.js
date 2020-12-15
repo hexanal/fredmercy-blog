@@ -1,4 +1,5 @@
 const fs = require('fs')
+const chalk = require('chalk')
 const templater = require('../../templater')
 
 const formatContent = function( contentTypes ) {
@@ -7,7 +8,7 @@ const formatContent = function( contentTypes ) {
   const types = Object.keys( contentTypes )
 
   types.map( type => {
-    console.log(`[info] building ${contentTypes[type].length} items of type: “${type}”...`);
+    console.log( chalk.yellow(`[info] building ${contentTypes[type].length} items of type: “${type}”...`) );
 
     return contentTypes[type].map( item => {
       const destination = `./public${item.meta.url}`
