@@ -3,7 +3,7 @@
 	--z-bg: 1;
 	display: none;
 	position: relative;
-	z-index: var(--z-modals);
+	z-index: 3;
 
 	.state-help-active & {
 		display: block;

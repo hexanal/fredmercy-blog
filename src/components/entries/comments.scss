@@ -103,7 +103,7 @@
 		&:before {
 			content: '';
 			position: absolute;
-			z-index: var(--z-content);
+			z-index: 3;
 			top: 0;
 			left: 0;
 			width: 100%;

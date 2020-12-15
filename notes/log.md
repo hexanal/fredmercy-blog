@@ -17,6 +17,14 @@
 
 - I want to timestamp the build console logs
 
+`10:22am:`
+
+- really going off the deep end this morning... I gotta slow down some
+  - homepage revisit, another middleware to handle what I call *UI data*, some CSS clean-up, etc. A LOT OF STUFF WAS DONE!
+- there's an issue with showing webpack errors
+- honestly, I hate webpack... for this website, I'll go back to using a very easy-going setup... very soon haha
+  - unless I go crazy and decide to go VueJS or some bullshit, but nah... I'll wait it out some more
+- adding it to the NEXTUP file
 
 ## December 14, 2020
 

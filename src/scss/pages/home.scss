@@ -8,27 +8,8 @@
   padding: 1.5rem 2.5rem;
   border-radius: 0 3.5rem 0 3.5rem;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    right: 3rem;
-    width: 0.25rem;
-    height: 3rem;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    right: 3rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    transform: translate(-24%,-50%) translate(1rem,3rem);
-  }
-
   + .home__section {
-    margin-top: 1.5rem;
+    margin-top: -0.05rem;
   }
 
   p {
@@ -49,47 +30,29 @@
     }
   }
 
+  // color sections
   &[data-what] {
     color: var(--color-bg);
 
     a { color: var(--homelink-color); }
   }
 
+  // declinations
   &[data-what=yeah] {
+    --homelink-color: var(--color-primary);
     background-color: var(--color-primary);
-
-    &:before,
-    &:after {
-      background-color: var(--color-primary);
-    }
   }
   &[data-what=ugh] {
     left: 5%;
     background-color: var(--color-secondary);
-
-    &:before,
-    &:after {
-      background-color: var(--color-secondary);
-    }
   }
   &[data-what=thats-right] {
     --homelink-color: var(--color-active);
     left: 10%;
     background-color: var(--color-active);
-
-    &:before,
-    &:after {
-      background-color: var(--color-active);
-    }
   }
   &[data-what=come-on-now] {
-    --homelink-color: var(--color-subdued);
     left: 15%;
     background-color: var(--color-subdued);
-
-    &:before,
-    &:after {
-      background-color: var(--color-subdued);
-    }
   }
 }

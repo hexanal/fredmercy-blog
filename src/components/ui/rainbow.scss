@@ -4,7 +4,7 @@
 	--stagger-delay: 25ms;
 	--color-rainbow: var(--color-primary);
 	position: fixed;
-	z-index: var(--z-interface);
+	z-index: 4;
 	bottom: 0;
 	left: 0;
 	width: 20vw;
@@ -12,22 +12,22 @@
 	transition: height var(--duration) cubic-bezier(.71,.02,.41,1);
 	background-color: var(--color-rainbow);
 
-	&[c=secondary] {
+	&:nth-child(2) {
 		--color-rainbow: var(--color-secondary);
 		left: 20%;
 		transition-delay: var(--stagger-delay);
 	}
-	&[c=active] {
+	&:nth-child(3) {
 		--color-rainbow: var(--color-active);
 		left: 40%;
 		transition-delay: calc(var(--stagger-delay) * 2);
 	}
-	&[c=subdued] {
+	&:nth-child(4) {
 		--color-rainbow: var(--color-subdued);
 		left: 60%;
 		transition-delay: calc(var(--stagger-delay) * 3);
 	}
-	&[c=extra] {
+	&:nth-child(5) {
 		--color-rainbow: var(--color-extra);
 		left: 80%;
 		transition-delay: calc(var(--stagger-delay) * 4);
@@ -48,19 +48,22 @@
 			height: 20vh;
 		}
 
-		&[c] {
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4),
+		&:nth-child(5) {
 			left: 0;
 		}
-		&[c=secondary] {
+		&:nth-child(2) {
 			top: 20%;
 		}
-		&[c=active] {
+		&:nth-child(3) {
 			top: 40%;
 		}
-		&[c=subdued] {
+		&:nth-child(4) {
 			top: 60%;
 		}
-		&[c=extra] {
+		&:nth-child(5) {
 			top: 80%;
 		}
 	}
