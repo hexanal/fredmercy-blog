@@ -1,4 +1,4 @@
-import Storage from 'tools/Storage';
+import Storage from '../tools/Storage';
 
 const THEME_LIST = [
 	'june',
