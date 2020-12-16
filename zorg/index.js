@@ -68,7 +68,7 @@ const generate = function( middlewares ) {
   const end = Date.now()
   const timeDiff = (end - start) / 1000
 
-  console.log( chalk.green(`[build] done (in ${timeDiff} seconds)`) )
+  console.log( chalk.magenta(`[build] [content] built website HTML (in ${timeDiff} seconds)`) )
 }
 
 

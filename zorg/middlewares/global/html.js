@@ -8,7 +8,7 @@ const formatContent = function( contentTypes ) {
   const types = Object.keys( contentTypes )
 
   types.map( type => {
-    console.log( chalk.yellow(`[build] [building] ${contentTypes[type].length} “${type}” items`) );
+    console.log( chalk.yellow(`[build] [content] ${contentTypes[type].length} “${type}” items`) );
 
     return contentTypes[type].map( item => {
       const destination = `./public${item.meta.url}`

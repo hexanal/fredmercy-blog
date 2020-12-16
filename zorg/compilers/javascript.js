@@ -17,6 +17,6 @@ module.exports = function() {
   })
 
   if (!js.warnings.length) {
-    console.log( chalk.green(`[build] [js] [./public/app.js] built js`) )
+    console.log( chalk.magenta(`[build] [js] built javascript file`) )
   }
 }

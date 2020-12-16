@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const website = require('../config')
 const compilerJS = require('./compilers/javascript')
 const compilerSass = require('./compilers/sass')
+const compilerAssets = require('./compilers/assets')
 
 const addWatcher = function({ glob, type, callback }) {
   const watcher = chokidar.watch(glob, {
@@ -40,7 +41,6 @@ const watchJavascript = function() {
   })
 }
 
-
 const watchSass = function() {
   addWatcher({
     glob: [
@@ -51,11 +51,22 @@ const watchSass = function() {
   })
 }
 
+const watchAssets = function() {
+  addWatcher({
+    glob: [
+      './src/assets/**/*'
+    ],
+    type: 'assts',
+    callback: compilerAssets
+  })
+}
+
 
 const watchAll = function() {
   watchContent()
   watchJavascript()
   watchSass()
+  watchAssets()
 }
 
 module.exports = watchAll

@@ -16,7 +16,7 @@ module.exports = function() {
   const cssTimeElapsed = compiledCSS.stats.duration / 1000
 
   return write('./public', 'styles.css', compiledCSS.css)
-    .then(({dir}) => {
-      console.log( chalk.green(`[build] [sass] [${dir}] built css in ${cssTimeElapsed} seconds`) )
+    .then( () => {
+      console.log( chalk.magenta(`[build] [sass] built css (in ${cssTimeElapsed} seconds)`) )
     })
 }

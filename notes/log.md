@@ -1,3 +1,71 @@
+## December 16, 2020
+
+`8:39am:`
+
+Alright, hello and welcome to *Refactoring Wednesday*!
+Today we'll be looking at our first item in `NEXTUP.md`, which is about the build pipeline.
+Ahhhhh, that same old thing every frontend web developer has been trying to get right for, what, a decade now?!
+
+Yes, yes indeed. Today we'll try to:
+
+- swap out `webpack` for `esbuild` for the JS transpilation step;
+- we'll be using `node-sass` and nothing else to get our CSS;
+- we'll be using a simple copy script to place `/assets` inside `/public/assets`
+
+Creating a new branch. `pipeline`? yeah?
+
+Now.
+- Let's jump on esbuild's website. Ok, installing the package.
+- Adding a `js` npm script
+  - ` "js": "esbuild ./src/js/app.js --bundle --outfile=./public/app.js", `
+- running the script, straight up
+  - of course, it's hanging up on the all the weird `import` statements,  normally handled by webpack loaders
+  - let's rewrite some
+  - hmm, ok so.. I'll need to write a build script
+  - ok... trying something
+  - looks like I'm hitting a road-block because I rely on resolve path for `./src/js/`
+  - ain't looking too good... basically, that feature is one of the reasons why I'm using webpack, haha!
+
+Alright kids... Here's what I need:
+
+1. javascript files
+2. being able to import files from elsewhere
+3. using a custom resolve path, the source being `./src/js`
+4. is it a deal breaker?
+5. let's see...
+
+Looks like... it works?
+
+Damn, it's fast. It's minifying like crazy, and it just works.
+
+`10:26am:`
+
+Two hours later, I've got something that seems to work ok :)
+
+I still have to write the thing that copies the assets to `public`!
+
+`11:45am:`
+
+Wonderful morning of straight-up *hacking it!*
+
+I think my watcher thing works okay. I've rewritten a cool `README.md` file just because I wanted to celebrate.
+
+Bye-bye Webpack. It was good while it lasted.
+
+To me, the codebase looks sane enough. I like the fact that there's not much going on at the root apart from an unconspicuous `config.js` file, and a classic `server.js` file. The `config.js` file could also easily live in the `zorg` folder.
+
+Hmm. I need to change that name. I could call it `website`? Or... I don't know... `yo` ? `yes` ? Haha, I just want that folder to be the last one, for some reason.
+
+`zarb`, `zap`, `zwicky`, `zpherical`, `zoop`, `zesh`, `zest` ?
+
+`11:55am:`
+
+Time to eat empanadas, my friends.
+
+
+---
+
+
 ## December 15, 2020
 
 `8:30am:`
