@@ -56,14 +56,39 @@ To me, the codebase looks sane enough. I like the fact that there's not much goi
 
 Hmm. I need to change that name. I could call it `website`? Or... I don't know... `yo` ? `yes` ? Haha, I just want that folder to be the last one, for some reason.
 
-`zarb`, `zap`, `zwicky`, `zpherical`, `zoop`, `zesh`, `zest` ?
+`zarb`, `zap`, `zwicky`, `zpherical`, `zoop`, `zesh`, `zest`, `zebulba` ?
 
 `11:55am:`
 
 Time to eat empanadas, my friends.
 
+`12:45pm:`
 
----
+Ok! So we've seen how Webpack could be replaced with other "lower-level" tools and a sprinkle of Javascript. We're building a dead simple website, but trying to keep it relatively future-proof and, dare I say, *modern*.
+
+This whole website, with everything in it, is “3.2 MB on disk”.
+
+`4:20pm:`
+
+Ok. Wrote a little something. Not sure about it: felt inspired, might delete later.
+
+Now it's gonna be time to dive back into the design of that blog. How?!
+
+- keep the color palette, keep the "blockiness" of it all
+- add more motion, quirky animations -> keep 'em tight and UX-friendly
+- fix the main menu -> display an expanded menu if there's enough space
+- add that `tag` filtering thing, for any content type
+- better transitions
+
+But it's not urgent. Writing will come first. And experimenting, too.
+
+Maybe setting this website for "experimentation" would be nice, like:
+
+- empty, stripped-down boilerplate template
+- ability to extend template with custom scripts
+- add other JS and CSS entry points?
+  - incorporate whatever you want in there
+  - don't add to the bulk
 
 
 ## December 15, 2020

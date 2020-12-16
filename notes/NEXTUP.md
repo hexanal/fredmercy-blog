@@ -1,11 +1,7 @@
 # What's next?
 
-1. improve build pipeline
-  - esbuild JS
-  - straight node-sass for CSS
-  - straight copying of assets, I don't give a fuck
+1. better homepage (just links, and more obvious links)
 2. filtering of *bookmarks* by `tag` (and then, posts, pages, etc. anything)
-3. better homepage (just links, and more obvious links)
 
 # Nice-to-haves, but boring to implement (imo)
 

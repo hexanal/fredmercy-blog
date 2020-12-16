@@ -20,7 +20,7 @@ Is it new to me? To be honest, yes! I mean, I've always kept notes, sometimes I'
 
 Keeping track of what was done and how: it's crucial to document everything we can get away with when working as a developer. After ten years, you'd think I would have learned that fact many meteor showers ago! Only now am I discovering how powerful of a tool *writing* is, especially when developing ideas, thinking about stuff, and... for research! My girlfriend being a researcher, my interest for the scientific method and love for anything sciencey has been supercharged: now I see how it's really made. Writing is **the way**.
 
-As developers we often say ”I'm writing code“, which is okay to say I guess. Though, without pointing any fingers, I've met plenty of devs who either couldn't write for shit, or just didn't really care about writing in a regular old language, and who considered documentation-writing to be a chore and a bore.<sup data-note="they would all agree that writing very good documentation is primordial in this business! just don't ask them to write it">[*]</sup>
+As developers we often say ”I'm writing code“, which is okay to say I guess. Though, without pointing any fingers, I've met plenty of devs who either couldn't write for shit, or just didn't really care about writing in a regular old language, and who considered documentation-writing to be a chore and a bore.[*](they would all agree that writing very good documentation is primordial in this business! just don't ask them to write it)
 
 ## it's a brain add-on
 

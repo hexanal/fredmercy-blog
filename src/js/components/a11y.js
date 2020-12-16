@@ -7,8 +7,6 @@ export default function({messaging}) {
 		useZoom: Storage.flag('a11y_use_zoom'),
 	};
 
-	console.log('accessibility! fuck yeah!')
-
 	document.documentElement.classList.toggle('state-a11y-big-font', state.useBigFont);
 
 	const updateFontSize = function(useBig) {

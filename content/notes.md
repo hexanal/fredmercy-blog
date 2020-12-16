@@ -6,5 +6,7 @@ type: page
 
 ## Thoughts about anything
 
+- [Hypocrite](/notes/hypocrite)
+- [On “note taking”](/notes/note-taking)
 - [About the Internet](/notes/about-the-internet)
-- [On Quitting Facebook (draft)](/notes/quitting-facebook)
+- [On Quitting Facebook](/notes/quitting-facebook)
