@@ -97,6 +97,33 @@ But I'm thinking: I gotta try something *homemade*
       - frontend just has to hot-swap the component
 - obviously low priority :)
 
+`12:20pm:`
+
+- split off bookmarks into a JSON?
+- use special component?
+- all good
+
+```json
+{
+  "bookmarks": [
+    {
+      "added_on": "2019-10-09",
+      "label": "_Cyboogie_, by King Gizzard & the Lizard Wizard",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=_un9PYsE1_g",
+      "tags": ["music", "video"]
+    }
+  ]
+}
+```
+
+This way of adding bookmarks will be made infinitely easier by the "backend UI" idea I described yesterday.o
+
+`3:37pm:`
+
+- tomorrow I'll be flying high
+
+
 `8:35pm:`
 
 - I want to fix that *watch* development step so that the DX is... hmmm, wonderful, you know?!
@@ -109,7 +136,6 @@ But I'm thinking: I gotta try something *homemade*
 - ok... I managed. But it's kind of slow :)
 ...
 BUT I MANAGED!
-
 
 
 ## December 13, 2020
