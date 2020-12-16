@@ -1,6 +1,3 @@
-// todo: this one's more like a full-featured package
-// todo: might try localForage lib to maybe have something sturdier
-
 const Storage = {
   switch: id => {
     const flag = !Storage.flag(id);
@@ -18,7 +15,7 @@ const Storage = {
 
   get: (id, fallback = null) => {
     const stored = window.localStorage.getItem(id);
-    if (!stored && typeof fallback !== 'null' && fallback !== 'undefined') return fallback;
+    if (!stored && fallback != 'null' && fallback !== 'undefined') return fallback;
     const item = Storage.binaryToBoolFlag( window.localStorage.getItem(id) );
     return item;
   },
