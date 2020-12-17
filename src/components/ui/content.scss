@@ -41,6 +41,11 @@
 		background-color: var(--color-primary);
 	}
 
+	strong {
+		font-weight: normal;
+		background-color: var(--color-extra);
+	}
+
 	code {
 		display: inline-block;
 		padding: 0 0.15em;
