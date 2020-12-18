@@ -1,3 +1,36 @@
+## December 17, 2020
+
+`8:45am:`
+
+- doing some tests for the JSON-builder form UI thing I was thinking about
+- going with hyperapp
+- makes me think of what this Montrealer was doing.. Alex Lotte? wait..
+  - https://alexlotte.ca/
+  - if I continue down that hyperapp route, I might try to connect with the dude, he might have some tips & tricks for me :)
+
+`11:29am:`
+
+- did some work on that component builder UI... it's encouraging. I could have spent more time scratching my head but in the end, it's kind of doing the job!
+- I'll give it a minute to settle in my mind
+- I have to jump on the **orbiter** project haha
+
+
+## December 16, 2020
+
+`7:58pm:`
+
+Was at the dentist today and tought about some crazy shit for my blog redesign.
+
+Basically what I was thinking about is making the UI all "orbit" visually about the center axis...
+Now, hear me out dude. The crazy thing is: it's all 2D, but it "orbits" around the axis. In fact, the center of the *screen*... guys. It's a black hole. But it sucks pure love.
+
+So. The center of the viewport is where it's at. Center of attention, black hole sucking you in. Yeah? You dig?
+
+Pink balls of pure love in the center of the website. Then, elements sort of -> orbit around this gravity well. It's the sun. It's not a black hole guys.
+
+The website will be build using the center of the viewport as our focus point. Our root. The sun. Glowing with energy that moves us all, friends. And understand I'm high as fuck right now. But I'm feeling it.
+
+
 ## December 16, 2020
 
 `8:39am:`
