@@ -18,7 +18,9 @@
 1. search functionality
 2. page content builder using JSON modules
 3. a visual sitemap/graph, interactive, funky, beautiful, fun, and... useful!?
-4. a good way to nagivate using keyboard shortcurts
+4. accessibility audit
+5. performance audit
+6. a good way to nagivate using keyboard shortcurts
   - arrows, or `hjkl` vim-like
   - good nav also for mobile?
 

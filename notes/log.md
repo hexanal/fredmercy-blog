@@ -25,6 +25,13 @@ Just have a history also? I don't know. It's pretty much what BarbaJS is doing, 
 - I'll give it a minute to settle in my mind
 - I have to jump on the **orbiter** project haha
 
+`3:44pm:`
+
+- as expected, the **orbiter** project is kicking my ass because I wanted to use `canvas`, and its API is an atrocity
+- I would love *not* having to use any external library for canvas manipulation, but... ah... don't think I can
+- trying [SpriteJS](https://github.com/spritejs/spritejs/) real quick
+  - nah... ain't got the patience right now...
+
 
 ## December 16, 2020
 
