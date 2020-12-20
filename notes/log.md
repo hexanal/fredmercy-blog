@@ -1,3 +1,14 @@
+## December 19, 2020
+
+`10:05pm:`
+
+Quoting my past self, regarding the way I could wire up specific transitions, and JS-based transitions, and "hot swapping" of area using a backend API mixed with static-generation:
+
+> at that point, we AJAX retrieve the JSON for the next page, database-like, and change our `data` object accordingly?
+> if we use some sort of *one big object* that contains the whole data
+
+Just have a history also? I don't know. It's pretty much what BarbaJS is doing, but I could roll my own.
+
 ## December 17, 2020
 
 `8:45am:`
