@@ -6,6 +6,7 @@ website.use({
   'order': require('./zorg/middlewares/posts/order'),
   'adjacents': require('./zorg/middlewares/posts/adjacents'),
   'comments': require('./zorg/middlewares/posts/comments'),
+  'rss-feed': require('./zorg/middlewares/posts/rss-feed'),
 
   'page-meta': require('./zorg/middlewares/pages/page-meta'),
   'relationship': require('./zorg/middlewares/pages/relationship'),

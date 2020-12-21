@@ -27,6 +27,7 @@ const getPageMetaData = function( item ) {
     }, '')
     : '/'
   const url = id === 'home' ? '/' : formattedURL
+  const permalink = `https://fredmercy.ca${url}` // TODO?
 
   return {
     id,
