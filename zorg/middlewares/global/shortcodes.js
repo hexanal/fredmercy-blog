@@ -16,7 +16,7 @@ const useBlockWithData = function(blockId, data) {
 const shortcodes = [
   {
     tag: '*',
-    processor: function(props, item) {
+    processor: function({ props, item, contentTypes }) {
       // const content = marked(props)
 
       return useBlockWithData('side-note', { content: props })
@@ -24,7 +24,7 @@ const shortcodes = [
   },
   {
     tag: 'drawer',
-    processor: function(props, item) {
+    processor: function({ props, item, contentTypes }) {
       // const json = JSON.parse(props)
       const content = marked(props)
 
@@ -33,22 +33,28 @@ const shortcodes = [
   },
   {
     tag: 'children-pages',
-    processor: function(props, item) {
+    processor: function({ props, item, contentTypes }) {
       return useBlockWithData('children-pages', item)
     }
   },
   {
     tag: 'test',
-    processor: function(props, item) {
+    processor: function({ props, item, contentTypes }) {
       const params = JSON.parse(props)
 
       return useBlockWithData('test', params)
     }
   },
+  // {
+  //   tag: 'devlog-nav',
+  //   processor: function({ props, item, contentTypes }) {
+  //     return useBlockWithData('devlog-nav',
+  //   }
+  // },
   {
     tag: 'audio',
-    processor: function(src, item) {
-      return useBlockWithData('audio', { src })
+    processor: function({ props }) {
+      return useBlockWithData('audio', { src: props })
     }
   },
 ]
@@ -60,14 +66,14 @@ const addShortcodes = function( contentTypes ) {
 
   types.map( type => {
     withShortcodes[type] = contentTypes[type].map( item => {
-      return applyShortcodes( item )
+      return applyShortcodes( item, contentTypes ) // passing along the whole data array
     })
   });
 
   return withShortcodes
 }
 
-const applyShortcodes = function( item ) {
+const applyShortcodes = function( item, contentTypes ) {
   const content = shortcodes.reduce( (accContent, shortcode) => {
     const tag = `[${shortcode.tag}](`
     const firstSplit = item.content.split( tag )
@@ -77,7 +83,11 @@ const applyShortcodes = function( item ) {
 
     const content = exploded.reduce( (acc, props) => {
       const replaceString = `${tag}${props})`
-      const module = shortcode.processor( props.trim(), item )
+      const module = shortcode.processor({
+        props: props.trim(),
+        item,
+        contentTypes,
+      })
 
       return acc.replace(replaceString, module)
     }, accContent)

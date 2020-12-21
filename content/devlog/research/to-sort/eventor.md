@@ -5,12 +5,12 @@ Eventor can send 'signals' to other components.
 ```html
 <button
   type="button"
-	class="wow"
-	data-component="eventor"
-	data-target="some-component:whaddup"
-	data-signal="close"
+  class="wow"
+  data-component="eventor"
+  data-target="some-component:whaddup"
+  data-signal="close"
 >
-	yeah
+  yeah
 </button>
 
 <div class="hello" data-component="some-component:whaddup">

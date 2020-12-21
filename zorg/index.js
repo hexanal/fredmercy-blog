@@ -2,7 +2,7 @@ const fs = require('fs')
 const chalk = require('chalk')
 const frontMatter = require('front-matter')
 const glob = require('glob')
-const { pipe } = require('./helpers/utils')
+const { getFilenameFromPath, pipe } = require('./helpers/utils')
 
 /**
  * - go through `contentFiles`
@@ -15,16 +15,34 @@ const getBasicMeta = function( contentFiles ) {
   return contentFiles.map( item => {
     const file = fs.readFileSync(item, 'utf8')
     const { attributes, body } = frontMatter( file.toString() )
+    const defaultAttributes = getDefaultAttributes( attributes, item )
 
     return {
       _filePath: item,
       meta: {
+        ...defaultAttributes,
         ...attributes
       },
       content: body
     }
   })
 }
+
+/**
+ * - given the front-matter attributes from a Markdown content page
+ * - extract what we can
+ * - set up sensible default when data is missing
+ */
+const getDefaultAttributes = function( attributes, item ) {
+  const { type, title, description } = attributes
+
+  return {
+    type: type || 'page',
+    title: title || getFilenameFromPath( item ).replace('.md', ''),
+    description: description || ''
+  }
+}
+
 
 /**
  * - given all the items

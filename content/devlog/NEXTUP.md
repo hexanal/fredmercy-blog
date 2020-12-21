@@ -1,19 +1,20 @@
 # What's next?
 
-1. think about JSON-maker thing
-  - research online
-  - research in `research.md`
-2. organize notes, from previous google drive, into cool folders, weird "note" template (obvious, drillable, collapsible breadcrumbs/path navigator) -> children pages, etc.
-  - just add the necessary type
-    - like page but with a different way to handle things: no need for frontmatter?!
+## Soon
 
-# Nice-to-haves, but boring to implement (imo)
+1. think about JSON-maker thing
+  - what about just referring to blocks which are markdown files
+  - import the snippet?... I don't know man
+
+## Nice-to-haves, but boring to implement (imo)
 
 1. RSS feed
 2. sitemap.xml generator?
 3. filtering of *bookmarks* by `tag` (and then, posts, pages, etc. anything)
+4. better breadcrumbs, maybe a cool middleware that organizes the "devlog" sub-pages into a neat tree,
+5. maybe slap a different default template for those?
 
-# Dreamzone / Experimental / Spicy Ideas
+## Dreamzone / Experimental / Spicy Ideas
 
 1. search functionality
 2. page content builder using JSON modules
