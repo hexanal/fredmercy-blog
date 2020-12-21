@@ -32,6 +32,7 @@ const getPageMetaData = function( item ) {
   return {
     id,
     url,
+    permalink,
     route,
     isHome
   }
