@@ -1,6 +1,6 @@
 # What's next?
 
-- [project list](/devlog/projects-list)
+- [project list](/devlog/project-list)
 
 ## Soon
 
