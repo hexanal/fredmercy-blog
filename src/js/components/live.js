@@ -1,4 +1,4 @@
-import Calculator from 'tools/Calculator';
+import Calculator from '../tools/Calculator';
 
 const WEBSOCKET_LOCATION = location.host;
 

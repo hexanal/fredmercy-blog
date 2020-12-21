@@ -1,5 +1,28 @@
 # Some research on things...
 
+## New ideas
+
+Something like:
+
+[something what="cool"]
+
+That's a goddamn short code.[* ok, this could be like that too?] Or maybe not?
+
+Go full shortcode[* note="Holy shit, can I write markdown in there too?!"]
+
+[audio src="/files/music/langsam.mp3" label="whatever"]
+
+How to make them nestable, though?
+
+Lisp idea:
+
+(columns
+  (column1 (markdown (someting-else)) )
+  (column2 This is something(* something else entirely))
+)
+
+Meh.
+
 ## This is an example:
 
 ```markdown
@@ -92,3 +115,4 @@ const contentTypes = [
 - stitch all the data back?
   - `contentTypes.page`, `contentTypes.post`, etc.
 - follow the folder structure to figure out the URLs
+

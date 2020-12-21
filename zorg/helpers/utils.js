@@ -1,13 +1,14 @@
+const getFilenameFromPath = function( filepath ) {
+  const route = filepath
+    .replace('./content/', '')
+    .split('/')
+  const filename = route[route.length - 1]
 
+  return filename
+}
 
-const insertMeta = function(items, insertedMeta) {
-  return items.map( item => ({
-    ...item,
-    meta: {
-      ...item.meta,
-      ...insertedMeta
-    }
-  }))
+const getItemByURL = function(items, url) {
+  return items.find( item => item.meta.url === url )
 }
 
 const insertData = function(items, data) {
@@ -25,13 +26,19 @@ const insertDataByURL = (items, data, url) => {
   })
 }
 
-const pipe = fns => x => fns.reduce((v, f) => f(v), x)
-
-const getItemByURL = function(items, url) {
-  return items.find( item => item.meta.url === url )
+const insertMeta = function(items, insertedMeta) { return items.map( item => ({
+    ...item,
+    meta: {
+      ...item.meta,
+      ...insertedMeta
+    }
+  }))
 }
 
+const pipe = fns => x => fns.reduce((v, f) => f(v), x)
+
 module.exports = {
+  getFilenameFromPath,
   getItemByURL,
   insertData,
   insertDataByURL,

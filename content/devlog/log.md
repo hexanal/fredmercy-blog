@@ -1,3 +1,147 @@
+## December 19, 2020
+
+`10:05pm:`
+
+Quoting my past self, regarding the way I could wire up specific transitions, and JS-based transitions, and "hot swapping" of area using a backend API mixed with static-generation:
+
+> at that point, we AJAX retrieve the JSON for the next page, database-like, and change our `data` object accordingly?
+> if we use some sort of *one big object* that contains the whole data
+
+Just have a history also? I don't know. It's pretty much what BarbaJS is doing, but I could roll my own.
+
+## December 17, 2020
+
+`8:45am:`
+
+- doing some tests for the JSON-builder form UI thing I was thinking about
+- going with hyperapp
+- makes me think of what this Montrealer was doing.. Alex Lotte? wait..
+  - https://alexlotte.ca/
+  - if I continue down that hyperapp route, I might try to connect with the dude, he might have some tips & tricks for me :)
+
+`11:29am:`
+
+- did some work on that component builder UI... it's encouraging. I could have spent more time scratching my head but in the end, it's kind of doing the job!
+- I'll give it a minute to settle in my mind
+- I have to jump on the **orbiter** project haha
+
+`3:44pm:`
+
+- as expected, the **orbiter** project is kicking my ass because I wanted to use `canvas`, and its API is an atrocity
+- I would love *not* having to use any external library for canvas manipulation, but... ah... don't think I can
+- trying [SpriteJS](https://github.com/spritejs/spritejs/) real quick
+  - nah... ain't got the patience right now...
+
+
+## December 16, 2020
+
+`7:58pm:`
+
+Was at the dentist today and tought about some crazy shit for my blog redesign.
+
+Basically what I was thinking about is making the UI all "orbit" visually about the center axis...
+Now, hear me out dude. The crazy thing is: it's all 2D, but it "orbits" around the axis. In fact, the center of the *screen*... guys. It's a black hole. But it sucks pure love.
+
+So. The center of the viewport is where it's at. Center of attention, black hole sucking you in. Yeah? You dig?
+
+Pink balls of pure love in the center of the website. Then, elements sort of -> orbit around this gravity well. It's the sun. It's not a black hole guys.
+
+The website will be build using the center of the viewport as our focus point. Our root. The sun. Glowing with energy that moves us all, friends. And understand I'm high as fuck right now. But I'm feeling it.
+
+
+## December 16, 2020
+
+`8:39am:`
+
+Alright, hello and welcome to *Refactoring Wednesday*!
+Today we'll be looking at our first item in `NEXTUP.md`, which is about the build pipeline.
+Ahhhhh, that same old thing every frontend web developer has been trying to get right for, what, a decade now?!
+
+Yes, yes indeed. Today we'll try to:
+
+- swap out `webpack` for `esbuild` for the JS transpilation step;
+- we'll be using `node-sass` and nothing else to get our CSS;
+- we'll be using a simple copy script to place `/assets` inside `/public/assets`
+
+Creating a new branch. `pipeline`? yeah?
+
+Now.
+- Let's jump on esbuild's website. Ok, installing the package.
+- Adding a `js` npm script
+  - ` "js": "esbuild ./src/js/app.js --bundle --outfile=./public/app.js", `
+- running the script, straight up
+  - of course, it's hanging up on the all the weird `import` statements,  normally handled by webpack loaders
+  - let's rewrite some
+  - hmm, ok so.. I'll need to write a build script
+  - ok... trying something
+  - looks like I'm hitting a road-block because I rely on resolve path for `./src/js/`
+  - ain't looking too good... basically, that feature is one of the reasons why I'm using webpack, haha!
+
+Alright kids... Here's what I need:
+
+1. javascript files
+2. being able to import files from elsewhere
+3. using a custom resolve path, the source being `./src/js`
+4. is it a deal breaker?
+5. let's see...
+
+Looks like... it works?
+
+Damn, it's fast. It's minifying like crazy, and it just works.
+
+`10:26am:`
+
+Two hours later, I've got something that seems to work ok :)
+
+I still have to write the thing that copies the assets to `public`!
+
+`11:45am:`
+
+Wonderful morning of straight-up *hacking it!*
+
+I think my watcher thing works okay. I've rewritten a cool `README.md` file just because I wanted to celebrate.
+
+Bye-bye Webpack. It was good while it lasted.
+
+To me, the codebase looks sane enough. I like the fact that there's not much going on at the root apart from an unconspicuous `config.js` file, and a classic `server.js` file. The `config.js` file could also easily live in the `zorg` folder.
+
+Hmm. I need to change that name. I could call it `website`? Or... I don't know... `yo` ? `yes` ? Haha, I just want that folder to be the last one, for some reason.
+
+`zarb`, `zap`, `zwicky`, `zpherical`, `zoop`, `zesh`, `zest`, `zebulba` ?
+
+`11:55am:`
+
+Time to eat empanadas, my friends.
+
+`12:45pm:`
+
+Ok! So we've seen how Webpack could be replaced with other "lower-level" tools and a sprinkle of Javascript. We're building a dead simple website, but trying to keep it relatively future-proof and, dare I say, *modern*.
+
+This whole website, with everything in it, is “3.2 MB on disk”.
+
+`4:20pm:`
+
+Ok. Wrote a little something. Not sure about it: felt inspired, might delete later.
+
+Now it's gonna be time to dive back into the design of that blog. How?!
+
+- keep the color palette, keep the "blockiness" of it all
+- add more motion, quirky animations -> keep 'em tight and UX-friendly
+- fix the main menu -> display an expanded menu if there's enough space
+- add that `tag` filtering thing, for any content type
+- better transitions
+
+But it's not urgent. Writing will come first. And experimenting, too.
+
+Maybe setting this website for "experimentation" would be nice, like:
+
+- empty, stripped-down boilerplate template
+- ability to extend template with custom scripts
+- add other JS and CSS entry points?
+  - incorporate whatever you want in there
+  - don't add to the bulk
+
+
 ## December 15, 2020
 
 `8:30am:`

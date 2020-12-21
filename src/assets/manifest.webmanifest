@@ -6,7 +6,7 @@
   "background_color": "#f9eaea",
   "description": "My Personal Website",
   "icons": [{
-    "src": "public/assets/images/favicon-big.png",
+    "src": "/assets/images/favicon-big.png",
     "sizes": "180x180",
     "type": "image/png"
   }]

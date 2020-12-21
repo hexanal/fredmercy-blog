@@ -50,10 +50,12 @@ const getPostMetaData = function( item ) {
   const prettyDate = `${monthName} ${day}, ${year}`
 
   const url = `/blog/${year}/${month}/${day}/${id}`
+  const permalink = `https://fredmercy.ca${url}` // TODO?
   const archive = `${monthName} ${year}`
 
   return {
     url,
+    permalink,
     date,
     id,
     year,

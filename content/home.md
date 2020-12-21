@@ -4,29 +4,16 @@ description: My website
 type: page
 ---
 
-*Welcome,*
+## welcome
 
-<div class="home__section" data-what="yeah">
+I'm a dude who builds things, mostly websites and applications. This is my personal website.
 
-I'm a dude who builds things, mostly websites and applications. This is my website on which I host [my blog](/blog), [my notes](/notes), and [a few bookmarks](/bookmarks)
+My joy in found in playing with new ideas and in making them come alive with code; and it's especially gratifying when they surprise and stimulate people. For this I try to maximize the *friendliness* of what I build.
 
-</div>
+Right now, I work as a developer at [Cossette](https://cossette.com), in beautiful Montréal. You can also check out my [résumé](/resume).
 
-<div class="home__section" data-what="ugh">
+## some links
 
-I like to play with new ideas and make them come alive with code; I love to surprise and stimulate people by coming up with innovative and friendly interactions.
-
-</div>
-
-<div class="home__section" data-what="thats-right">
-
-Right now, I work as a developer at [Cossette](https://cossette.com), in beautiful Montréal.
-You can also check out my [résumé](/resume).
-
-</div>
-
-<div class="home__section" data-what="come-on-now">
-
-My programming style is loose and flexible and I try to code in whatever I can code in, you know?
-
-</div>
+- [blog](/blog)
+- [bookmarks](/bookmarks)
+- [notes](/notes)

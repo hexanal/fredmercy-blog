@@ -1,5 +1,5 @@
 import Mousetrap from 'mousetrap';
-import DOMHelpers from 'tools/DOMHelpers';
+import DOMHelpers from '../tools/DOMHelpers';
 
 // const FONT_FAMILY_LIST = {
 // 	plex: '"IBM Plex Mono", Courier, monospace',

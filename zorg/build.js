@@ -1,16 +1,9 @@
-const chalk = require('chalk')
 const website = require('../config')
-const webpack = require('webpack')
-const webpackConfigurator = require('../webpack.config.js')
-const bundler = webpack( webpackConfigurator('development') )
+const compilerJS = require('./compilers/javascript')
+const compilerSass = require('./compilers/sass')
+const compilerAssets = require('./compilers/assets')
 
 website.build()
-
-bundler.run( (err, stats) => {
-  if (err) {
-    console.error(err)
-    return
-  }
-
-  console.log( chalk.yellow('[webpack] [built assets]') )
-})
+compilerJS()
+compilerSass()
+compilerAssets()

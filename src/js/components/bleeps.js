@@ -10,7 +10,7 @@ import {
 	Filter
 } from 'tone';
 
-import Storage from 'tools/Storage';
+import Storage from '../tools/Storage';
 
 const EFFECTS = {
 	compressor: new Compressor({

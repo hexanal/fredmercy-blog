@@ -29,16 +29,28 @@
 		margin-top: 0;
 	}
 
+	h1,
 	h2 {
-		display: inline-block;
-		margin-top: 3rem;
+		margin-top: 2rem;
 		padding: 0.25rem;
 		font-family: var(--font);
 		font-size: 1em;
 		font-weight: 400;
 		line-height: 1.4;
 		color: var(--color-bg);
+		background-color: var(--color-secondary);
+	}
+	h2 {
+		display: inline-block;
 		background-color: var(--color-primary);
+	}
+	h1 + h2 {
+		margin-top: 1.5rem;
+	}
+
+	strong {
+		font-weight: normal;
+		background-color: var(--color-extra);
 	}
 
 	code {
@@ -54,7 +66,7 @@
 
 	ul {
 		padding-left: 0.5rem;
-		margin: 1.5rem 0 2rem;
+		margin: 1.5rem 0;
 		list-style: none;
 
 		ul {

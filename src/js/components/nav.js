@@ -1,5 +1,4 @@
 import Mousetrap from 'mousetrap';
-import DOMHelpers from 'tools/DOMHelpers';
 
 export default function({ui, control, messaging }) {
 	const state = {
