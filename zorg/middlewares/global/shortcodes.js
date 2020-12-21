@@ -45,12 +45,6 @@ const shortcodes = [
       return useBlockWithData('test', params)
     }
   },
-  // {
-  //   tag: 'devlog-nav',
-  //   processor: function({ props, item, contentTypes }) {
-  //     return useBlockWithData('devlog-nav',
-  //   }
-  // },
   {
     tag: 'audio',
     processor: function({ props }) {
