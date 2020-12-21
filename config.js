@@ -17,7 +17,7 @@ website.use({
   'content': require('./zorg/middlewares/global/content'),
   'ui-data': require('./zorg/middlewares/global/ui-data'),
   'json': require('./zorg/middlewares/global/json'),
-  // 'export-to-json': require('./zorg/middlewares/global/export-to-json'),
+
   'sitemap-xml': require('./zorg/middlewares/global/sitemap-xml'),
   'html': require('./zorg/middlewares/global/html')
 })

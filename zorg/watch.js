@@ -2,9 +2,9 @@ const chokidar = require('chokidar')
 const chalk = require('chalk')
 
 const website = require('../config')
-const compilerJS = require('./compilers/javascript')
-const compilerSass = require('./compilers/sass')
-const compilerAssets = require('./compilers/assets')
+const compileJS = require('./compilers/javascript')
+const compileSass = require('./compilers/sass')
+const compileAssets = require('./compilers/assets')
 
 const addWatcher = function({ glob, type, callback }) {
   const watcher = chokidar.watch(glob, {
@@ -13,7 +13,7 @@ const addWatcher = function({ glob, type, callback }) {
   })
 
   return watcher
-    .on('ready', () => console.log( chalk.yellow(`[watch] [${type}] [watching]`)) )
+    .on('ready', () => console.log( chalk.yellow(`[watch] [${type}]`)) )
     .on('change', path => {
       console.log( chalk.yellow(`[watch] [${type}] ${path}`) )
       callback()
@@ -37,7 +37,7 @@ const watchJavascript = function() {
       './src/js/**/*.js'
     ],
     type: 'js',
-    callback: compilerJS
+    callback: compileJS
   })
 }
 
@@ -47,7 +47,7 @@ const watchSass = function() {
       './src/scss/**/*.scss'
     ],
     type: 'sass',
-    callback: compilerSass
+    callback: compileSass
   })
 }
 
@@ -57,7 +57,7 @@ const watchAssets = function() {
       './src/assets/**/*'
     ],
     type: 'assts',
-    callback: compilerAssets
+    callback: compileAssets
   })
 }
 
