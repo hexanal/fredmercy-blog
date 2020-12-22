@@ -13,6 +13,8 @@
 1. filtering of *bookmarks* by `tag` (and then, posts, pages, etc. anything)
 2. better breadcrumbs, maybe a cool middleware that organizes the "devlog" sub-pages into a neat tree,
   - maybe slap a different default template for those?
+3. a better dark theme, please... ugh!!!
+  - and remove the "black and white"; replace with a "high contrast" theme
 
 ## Dreamzone / Experimental / Spicy Ideas
 
