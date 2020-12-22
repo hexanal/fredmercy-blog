@@ -24,4 +24,5 @@
 6. a good way to nagivate using keyboard shortcurts
   - arrows, or `hjkl` vim-like
   - good nav also for mobile?
+7. opt-in "tracking" -> ask for feedback on a page?
 

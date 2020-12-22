@@ -17,3 +17,4 @@ Right now, I work as a developer at [Cossette](https://cossette.com), in beautif
 - [blog](/blog)
 - [bookmarks](/bookmarks)
 - [notes](/notes)
+- [about](/about)

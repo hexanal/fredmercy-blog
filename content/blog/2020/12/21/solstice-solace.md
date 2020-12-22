@@ -26,7 +26,7 @@ Right now however, is time for a mid-pandemic, end-of-year, oh-my-god-i-can't-de
 
 ## web development
 
-- I have bigger ideas, but time is lacking; which is why I'm going the *slowly but surely* route. Once I know I can realize my vision, I will dig through my notes and I will be prevail.
+- I have bigger ideas, but time is lacking; which is why I'm going the *slowly but surely* route. Once I know I can realize my vision, I will dig through my notes and I will prevail.
 
 ## music making
 

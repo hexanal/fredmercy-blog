@@ -25,7 +25,7 @@ This command will run an Express server at [localhost:8042](http://localhost:804
 
 ## why
 
-The goal was to have this whole website be tailor-made, built from scratch. I tried to write the least amount of crazy code as I could in order to keep it manageable. Obviously, seasoned developers who look at this codebase will roll their eyes at most of it. Howver the other, more personal goal of this endeavour is to learn. To experiment, to try things.
+The goal was to have this whole website be tailor-made, built from scratch. I tried to write the least amount of crazy code as I could in order to keep it manageable. Obviously, seasoned developers who look at this codebase will roll their eyes at most of it. However the other, more personal goal of this endeavour is to learn, to experiment, to try things.
 
 ## going deeper
 
@@ -41,9 +41,9 @@ So, the way I've set it up is thusly:
 
 - Zorg goes through all the Markdown files in `/content`
 - it looks at their [frontmatter](https://www.npmjs.com/package/front-matter) for a `type`
-- it divides all the content into thoses types, to create a big old object of this shape (for example):
+- it divides all the content into thoses types, to create a big old Javascript object of this shape:
 
-```json
+```js
 {
   "page": [
     {
@@ -70,15 +70,20 @@ So, the way I've set it up is thusly:
 }
 ```
 
+Here, we've got two pages:
+
+1. one `hello-world.md` page at the root, of type `page`
+2. one `toke-up-brother` page, nested deep in folders, of type `post`
+
 ### what's the deal with middlewares?
 
-I stole that concept from [metalsmith](https://metalsmith.io/): even though I haven't really used Metalsmith, I reached the realization that I needed a similar idea  which are functions that would take all that content and modify it (I wanted to call them `processors` instead of middlewares).
+I stole that concept from [Metalsmith](https://metalsmith.io/): even though I haven't really used Metalsmith, I reached the realization that I needed a similar idea which are functions take all the content and modify it (I wanted to call them `processors` instead of middlewares).
 
 A bunch of those functions would each add bits and pieces to mold the data into what I wanted to use in templates.
 
 Look into `./zorg/middlewares/`. If you open, say, `pages/relationship.js`, you'll see that it exports a function that expects to receive the `contentTypes` object (see JSON above). This function then goes through all the items in `contentTypes.page` and tacks on extra keys to each *item*.
 
-Why did I do it this way? I don't know. I felt right at the time, and it's building my website fine. Works for me.
+Why did I do it this way? I don't know. It felt right at the time, and it's building my website fine. Works for me.
 
 ### templating
 
@@ -86,7 +91,7 @@ By default, a content type will be matched with a Handlebars template of the sam
 
 You can add a `template: template/whatever/path` to the front matter, which specifies a custom component to use for the entry (an example of that is my `./content/resume.md` page)
 
-Handlebars is pretty cool, I think. It's minimal approach suits my needs, and so far I've managed to make it do whatever I needed.
+Handlebars is pretty cool, I think. Its minimal approach suits my needs, and so far I've managed to make it do whatever I needed.
 
 ### compilers
 
