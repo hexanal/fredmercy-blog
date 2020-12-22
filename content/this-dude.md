@@ -4,13 +4,13 @@ description: Short bio
 type: page
 ---
 
-This dude's just your average nerd, you know:
+Fred Mercy. Defined by interest, ordered by intensity:
 
-- [web developer](https://github.com/hexanal),
-- musician (pshhhyeah! *right*),
-- cook,
-- professional Tony Hawk Pro Skater player,
-- science enthusiast,
-- [blogger](/blog)
+- [programming](https://github.com/hexanal),
+- science
+- [music](https://fredmercy.bandcamp.com)
+- [blogging](/blog)
+- art
+- skateboarding
 
-*Might wanna go back to the [homepage](/) now.*
+*Might want to go back to the [homepage](/) now.*
