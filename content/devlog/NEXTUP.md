@@ -4,9 +4,7 @@
 
 ## Soon
 
-1. think about JSON-maker thing
-  - what about just referring to blocks which are markdown files
-  - import the snippet?... I don't know man
+1. experiment on cool shit
 
 ## Nice-to-haves, but boring to implement (imo)
 
@@ -24,4 +22,7 @@
 6. a good way to nagivate using keyboard shortcurts
   - arrows, or `hjkl` vim-like
   - good nav also for mobile?
+7. think about JSON-maker thing
+  - what about just referring to blocks which are markdown files
+  - import the snippet?... I don't know man
 
