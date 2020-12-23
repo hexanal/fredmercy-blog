@@ -1,0 +1,27 @@
+.button {
+  padding: 0.25rem 0.75rem;
+  font-style: normal;
+  text-decoration: none;
+  color: var(--color-bg);
+  background-color: var(--color-subdued);
+
+	@include hover-focus {
+    color: var(--color-bg);
+    text-decoration: none;
+    background-color: var(--color-secondary);
+  }
+
+  @media (min-width: $mq-xsmall) {
+    padding: 0.25rem;
+  }
+}
+
+.button--light {
+  color: var(--color-primary);
+  font-style: italic;
+  background-color: transparent;
+
+	@include hover-focus {
+    color: var(--color-bg);
+  }
+}

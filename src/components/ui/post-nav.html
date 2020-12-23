@@ -1,6 +1,6 @@
 <div class="post-nav">
   <a
-    class="post-nav__link post-nav__link--index"
+    class="post-nav__link button button--light"
     href="{{ meta.parents.0.meta.url }}"
     title="back to {{ meta.parents.0.meta.title }}"
   >
@@ -9,7 +9,7 @@
 
   {{#if meta.previous }}
     <a
-      class="post-nav__link"
+      class="post-nav__link button"
       href="{{ meta.previous.meta.url }}"
       title="{{ meta.previous.meta.title }}"
     >
@@ -19,7 +19,7 @@
 
   {{#if meta.next }}
     <a
-      class="post-nav__link"
+      class="post-nav__link button"
       href="{{ meta.next.meta.url }}"
       title="{{ meta.next.meta.title }}"
     >
