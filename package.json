@@ -6,6 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production node zorg/build.js",
     "clean": "rm -rf public",
+    "export:comments": "node export-comments.js",
     "serve": "NODE_ENV=production node server.js",
     "start": "NODE_ENV=development node server.js",
     "watch": "NODE_ENV=development node zorg/watch.js"
