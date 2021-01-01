@@ -34,6 +34,12 @@ const addPostMeta = function( contentTypes ) {
   }
 }
 
+const removeLeadingZero = day => {
+  console.log({ day, charAt: day.charAt(0) })
+  if ( day.charAt(0) === '0' ) return day[1]
+  return day
+}
+
 const getPostMetaData = function( item ) {
   const urlParts = item._filePath // grab special key "_filePath" which contains the path to the markdown file
     .replace('./content/blog/', '')
@@ -43,11 +49,12 @@ const getPostMetaData = function( item ) {
   const year = urlParts[0]
   const month = urlParts[1]
   const day = urlParts[2]
+  const dayNoZero = removeLeadingZero( day )
   const id = urlParts[3]
   const date = `${year}-${month}-${day}`
 
   const monthName = capitalize(getMonthName(month))
-  const prettyDate = `${monthName} ${day}, ${year}`
+  const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
   const url = `/blog/${year}/${month}/${day}/${id}`
   const permalink = `https://fredmercy.ca${url}` // TODO?
@@ -60,7 +67,9 @@ const getPostMetaData = function( item ) {
     id,
     year,
     month,
+    monthName,
     day,
+    dayNoZero,
     prettyDate,
     archive
   }
