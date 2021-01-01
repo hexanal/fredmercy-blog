@@ -6,8 +6,6 @@
 
 {{> ui/breadcrumbs }}
 
-{{> ui/jump-to }}
-
 <div class="index__list">
 
 {{#each postsByMonth as |entries archive| }}
@@ -28,7 +26,7 @@
 			<li class="index__item">
 				<div class="index__meta">
 					<span class="index__date">
-						{{ this.meta.day }}
+						{{ this.meta.monthName }} {{ this.meta.dayNoZero }}
 					</span>
 				</div>
 

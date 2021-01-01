@@ -18,6 +18,8 @@ website.use({
   'ui-data': require('./zorg/middlewares/global/ui-data'),
   'json': require('./zorg/middlewares/global/json'),
 
+  'global-data': require('./zorg/middlewares/global/global-data'),
+
   'sitemap-xml': require('./zorg/middlewares/global/sitemap-xml'),
   'html': require('./zorg/middlewares/global/html')
 })

@@ -17,15 +17,12 @@ const shortcodes = [
   {
     tag: '*',
     processor: function({ props, item, contentTypes }) {
-      // const content = marked(props)
-
       return useBlockWithData('side-note', { content: props })
     }
   },
   {
     tag: 'drawer',
     processor: function({ props, item, contentTypes }) {
-      // const json = JSON.parse(props)
       const content = marked(props)
 
       return useBlockWithData('drawer', { content })
@@ -35,6 +32,12 @@ const shortcodes = [
     tag: 'children-pages',
     processor: function({ props, item, contentTypes }) {
       return useBlockWithData('children-pages', item)
+    }
+  },
+  {
+    tag: 'latest-post',
+    processor: function({ props, item, contentTypes }) {
+      return useBlockWithData('latest-post', { latest: contentTypes.post[0] })
     }
   },
   {
