@@ -4,7 +4,7 @@ description: Dig your heels, or abandon all hope?
 type: post
 ---
 
-## programming vs. programming
+### programming vs. programming
 
 Programming is cool, because:
 
@@ -21,7 +21,7 @@ Programming sucks, because:
 
 _Just kidding_
 
-## a rant on programming in 2020
+### a rant on programming in 2020
 
 My biggest problem with programming is with the whole "system administration" aspect of it all.
 
@@ -35,7 +35,7 @@ Ugh. I'm too tired to read the manual. Nobody fucking reads, dude! NOBODY! We wa
 
 I'm trying to learn [Rust](https://rust-lang.org)
 
-## Hacker News Read List
+### Hacker News Read List
 
 What the fuck is “The Great Stagnation”
 
