@@ -44,4 +44,4 @@ Me, **Fred Mercy**, Defined by interests, in order of intensity:
 
 - if I did any tracking, which I *don't* right now, it would be to tell how many people visited which page, etc. etc. the regular old visits counter we know and love from the Web 1.0
 
-<a href="/homepage" class="button">← back to homepage</a>
+<a href="/" class="button">← back to homepage</a>
