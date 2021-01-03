@@ -1,4 +1,5 @@
 const { write } = require('../../helpers/files')
+const sanitizeHtml = require('sanitize-html')
 
 const rssTemplate = items => (`<rss version="2.0">
   <channel>
@@ -17,8 +18,8 @@ const buildRSSFeed = function( contentTypes ) {
 
       return `
     <item>
-      <title>${ item.meta.title }</title>
-      <description>${ item.meta.description }</description>
+      <title>${ sanitizeHtml( item.meta.title ) }</title>
+      <description>${ sanitizeHtml( item.meta.description ) }</description>
       <link>${ item.meta.permalink }</link>
       <pubDate>${ pubDate }</pubDate>
     </item>
