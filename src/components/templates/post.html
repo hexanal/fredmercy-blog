@@ -17,9 +17,11 @@
 				<time class="post__date">
 					{{ meta.prettyDate }}
 				</time>
+				{{#if meta.tags }}
 				<span class="post__type">
 					tags: {{ meta.tags }}
 				</span>
+				{{/if}}
 			</div>
 		</header>
 
@@ -40,6 +42,5 @@
 		{{> entries/read-comment}}
 	</div>
 </article>
-
 
 {{/layouts/default}}
