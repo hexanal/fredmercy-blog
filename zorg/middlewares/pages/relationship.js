@@ -35,7 +35,7 @@ const getChildrenItems = function( item, index, items ) {
 
   const children = items.filter( candidateItem => {
     const isSameRoute = candidateItem.meta.id === item.meta.id
-    const isPartOfRoute = candidateItem.meta.url.includes( item.meta.url )
+    const isPartOfRoute = candidateItem.meta.url.includes( item.meta.url + '/' )
     if (isSameRoute || !isPartOfRoute) return false
 
     return candidateItem.meta.url.replace( item.meta.url, '') // will be falsy if it leaves "leftover" routes
@@ -49,8 +49,9 @@ const getParentItems = function( item, index, items ) {
 
   const parents = items.filter( candidateItem => {
     if (candidateItem.meta.isHome) return false // nope
+    const candidateUrl = candidateItem.meta.url + '/'
     const isSameRoute = candidateItem.meta.id === item.meta.id
-    const isSharedRoute = item.meta.url.includes( candidateItem.meta.url )
+    const isSharedRoute = item.meta.url.includes( candidateUrl )
 
     return !isSameRoute && isSharedRoute
   })

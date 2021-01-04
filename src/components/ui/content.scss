@@ -30,7 +30,8 @@
 	}
 
 	h1,
-	h2 {
+	h2,
+	h3 {
 		margin-top: 2rem;
 		padding: 0.25rem;
 		font-family: var(--font);
@@ -53,6 +54,7 @@
 		background-color: var(--color-extra);
 	}
 
+	h3,
 	code {
 		display: inline-block;
 		padding: 0 0.15em;
@@ -62,6 +64,9 @@
 		font-style: italic;
 		color: var(--color-bg);
 		background-color: var(--color-active);
+	}
+	h2 + h3 {
+		margin-top: 1.5rem;
 	}
 
 	ul {
