@@ -35,7 +35,6 @@ const addPostMeta = function( contentTypes ) {
 }
 
 const removeLeadingZero = day => {
-  console.log({ day, charAt: day.charAt(0) })
   if ( day.charAt(0) === '0' ) return day[1]
   return day
 }
