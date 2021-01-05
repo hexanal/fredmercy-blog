@@ -1,0 +1,16 @@
+{{#> layouts/page}}
+
+{{> ui/breadcrumbs }}
+
+<div class="page page--deimos">
+  <div class="content">
+    {{#each ui.movies }}
+    <p>
+      <code>{{ this.year }}</code> {{ this.title }}
+    </p>
+    {{/each}}
+    </ul>
+  </div>
+</div>
+
+{{/layouts/page}}
