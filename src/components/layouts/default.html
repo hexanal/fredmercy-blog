@@ -20,7 +20,9 @@
 		class="body__contents"
 		data-barba="container"
 	>
-		{{> @partial-block }}
+		<div data-transition="main">
+			{{> @partial-block }}
+		</div>
 
 		{{> ui/help }}
 	</div>

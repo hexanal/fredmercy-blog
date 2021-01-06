@@ -3,8 +3,9 @@ import Messaging from './middlewares/Messaging';
 
 // autoloaded
 import a11y from './components/a11y';
-import scroll from './components/scroll/scroll';
 import keyboard from './components/keyboard';
+import rainbow from './components/rainbow';
+import scroll from './components/scroll/scroll';
 import transitions from './components/transitions';
 
 // ui
@@ -29,6 +30,7 @@ Exponent
 	.autoload([
 		a11y,
 		keyboard,
+		rainbow,
 		scroll,
 		transitions
 	])

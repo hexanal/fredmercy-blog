@@ -1,6 +1,7 @@
 import barba from '@barba/core';
 
-const TRANSITION_DURATION = 600;
+// const TRANSITION_DURATION = 600;
+const TRANSITION_DURATION = 1000;
 
 export default function({messaging, _exponent}) {
 
@@ -19,7 +20,7 @@ export default function({messaging, _exponent}) {
 			leave({ current, next }) {
 				return new Promise(resolve => {
 					messaging.dispatch({ id: 'PAGE_LEAVE', payload: { current, next } });
-					document.body.classList.add('transition');
+					// document.body.classList.add('transition');
 
 					setTimeout(() => {
 						resolve();
@@ -27,19 +28,19 @@ export default function({messaging, _exponent}) {
 				});
 			},
 			beforeEnter({ current }) {
-				document.body.classList.remove('transition');
+				// document.body.classList.remove('transition');
 				current.container.style.position = 'absolute';
 			},
 			enter({ next }) {
 				return new Promise(resolve => {
 					window.scrollTo(0, 0);
-					next.container.removeAttribute('style'); // prevent weirdness with the transform
 					resolve();
 				});
 			},
 			afterEnter({ current, next }) {
 				_exponent.mount(next.container);
 				messaging.dispatch({ id: 'PAGE_CHANGED', payload: { current, next } });
+				// next.container.removeAttribute('style'); // prevent weirdness with the transform
 			},
 		} ]
 	});
