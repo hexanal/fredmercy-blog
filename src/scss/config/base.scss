@@ -52,6 +52,10 @@ html {
 	margin: 1rem;
 	font-size: 1rem;
 
+	&.transition {
+		cursor: wait;
+	}
+
 	@media (min-width: $mq-medium) {
 		margin: 1rem 3rem;
 	}

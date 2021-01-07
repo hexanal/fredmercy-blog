@@ -1,10 +1,14 @@
 import debounce from 'lodash.debounce'
 import reefer from '../tools/reefer/reefer'
 
-// const DELAY_MULTIPLIER = 70 // milliseconds
 const TRANSLATE_MULTIPLIER = 32 // pixels
 const TOTAL_FRAMES = 100
 const FRAME_MULTIPLIER = 0.75
+const COLORS = [
+	'--color-primary',
+	'--color-secondary',
+	'--color-subdued'
+]
 
 export default function({ messaging }) {
 	const rainbows = document.body.querySelector('#rainbow')
@@ -15,7 +19,8 @@ export default function({ messaging }) {
 		reef: null,
 		transitioning: false,
 		frame: 0,
-		direction: 'X'
+		direction: 'X',
+		color: COLORS[0]
 	}
 
 	state.reef = reefer({
@@ -34,18 +39,26 @@ export default function({ messaging }) {
 		state.direction = direction
 	}
 
+	function getRandomInt(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min) + min);
+	}
+
+	const getRandomColor = function() {
+		return COLORS[ getRandomInt(0, COLORS.length) ]
+	}
+
 	window.addEventListener('resize', debounce( setDirectionFromBreakpoint, 500 ) )
 	setDirectionFromBreakpoint()
 
 	document.addEventListener('mousemove', e => {
-		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 250, damping: 15 })
+		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 350, damping: 15 })
 	})
-	// document.addEventListener('touchstart', e => {
-	// 	state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 250, damping: 15 })
-	// })
-	// document.addEventListener('touchmove', e => {
-	// 	state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 250, damping: 15 })
-	// })
+	document.addEventListener('touchstart', e => {
+		console.log( e )
+		state.reef.instantSet({ pointerX: e.clientX, pointerY: e.clientY })
+	})
 
 	state.reef.onFrame( ({ translate, opacity, transition, pointerX, pointerY, ball }) => {
 		state.container.style.transform = `translateY(${ translate * TRANSLATE_MULTIPLIER }px)`
@@ -56,11 +69,12 @@ export default function({ messaging }) {
 			: 0
 
 		rainbows.style.transform = `translate${state.direction}(-${ state.frame }%)`
-		// TODO random color
 		transitionBall.style.transform = `translate(-50%, -50%) translate3d(${pointerX}px, ${pointerY}px, 0) scale(${ ball })`
+		transitionBall.style.backgroundColor = `var(${ state.color })`
 	})
 
 	messaging.subscribe('PAGE_LEAVE', page => {
+		state.color = getRandomColor()
 		state.container = page.current.container
 		state.transitioning = true
 		reefOut()
@@ -73,12 +87,13 @@ export default function({ messaging }) {
 
 	const reefOut = function() {
 		state.reef.set({ translate: -2 }, { stiffness: 50, damping: 40 })
-		state.reef.set({ opacity: 0, transition: 1, ball: 1 }, { stiffness: 200, damping: 14 })
+		state.reef.set({ ball: 1 }, { stiffness: 200, damping: 25 })
+		state.reef.set({ opacity: 0, transition: 1 }, { stiffness: 200, damping: 14 })
 	}
 
 	const reefIn = function() {
 		state.reef.set({ translate: 0, opacity: 1 }, { stiffness: 400, damping: 18 })
-		state.reef.set({ ball: 0 }, { stiffness: 200, damping: 20 })
+		state.reef.set({ ball: 0 }, { stiffness: 200, damping: 25 })
 		state.reef.set({ transition: 0 }, { stiffness: 100, damping: 25 })
 	}
 }
