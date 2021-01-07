@@ -55,9 +55,8 @@ export default function({ messaging }) {
 	document.addEventListener('mousemove', e => {
 		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 350, damping: 15 })
 	})
-	document.addEventListener('touchstart', e => {
-		console.log( e )
-		state.reef.instantSet({ pointerX: e.clientX, pointerY: e.clientY })
+	document.addEventListener('click', e => {
+		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 500, damping: 25 })
 	})
 
 	state.reef.onFrame( ({ translate, opacity, transition, pointerX, pointerY, ball }) => {
