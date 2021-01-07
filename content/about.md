@@ -6,7 +6,7 @@ type: page
 
 ## about me
 
-Me, **Fred Mercy**, Defined by interests, in order of intensity:
+I'm interested in:
 
 - [programming](https://github.com/hexanal)
 - science
@@ -14,6 +14,7 @@ Me, **Fred Mercy**, Defined by interests, in order of intensity:
 - [blogging](/blog)
 - art
 - skateboarding
+- having fun
 
 ## about this website
 
