@@ -56,6 +56,9 @@ html {
 		margin: 1rem 3rem;
 	}
 }
+.body__contents {
+	transform-origin: top center;
+}
 
 ::-moz-selection {
 	color: var(--color-bg);

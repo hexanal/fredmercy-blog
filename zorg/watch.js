@@ -44,7 +44,7 @@ const watchJavascript = function() {
 const watchSass = function() {
   addWatcher({
     glob: [
-      './src/scss/**/*.scss'
+      './src/**/*.scss' // anywhere there's scss!!
     ],
     type: 'sass',
     callback: compileSass

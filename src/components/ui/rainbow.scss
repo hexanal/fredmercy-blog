@@ -85,3 +85,16 @@
 		}
 	}
 }
+
+.rainbow__ball {
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 200vw;
+	height: 200vw;
+	border-radius: 50%;
+	background-color: var(--color-primary);
+	transform: scale(0);
+	pointer-events: none;
+}
