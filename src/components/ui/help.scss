@@ -15,19 +15,20 @@
 	z-index: var(--z-box);
 	top: -2rem;
 	right: -1rem;
-	display: inline-block;
-	padding: 0;
-	color: var(--color-bg);
-	background-color: var(--color-subdued);
+	padding: 0.25rem;
+	// display: inline-block;
+	// padding: 0;
+	// color: var(--color-bg);
+	// background-color: var(--color-subdued);
 	font-family: var(--font);
 	font-size: 1em;
 	line-height: 1;
-	text-decoration: none;
+	// text-decoration: none;
 
-	@include hover-focus {
-		color: var(--color-bg);
-		background-color: var(--color-secondary);
-	}
+	// @include hover-focus {
+	// 	color: var(--color-bg);
+	// 	background-color: var(--color-secondary);
+	// }
 
 	@media (min-width: $mq-medium) {
 		right: 0;
