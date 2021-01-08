@@ -13,6 +13,7 @@ import transitions from './components/transitions';
 import bulge from './components/bulge';
 import comments from './components/comments';
 import drawer from './components/drawer';
+import filterBookmarks from './components/bookmarks/filter-bookmarks';
 import help from './components/help';
 import highlight from './components/highlight';
 import jumpto from './components/jumpto';
@@ -40,6 +41,7 @@ Exponent
 		'comments': comments,
 		'drawer': drawer,
 		'extra': extra,
+		'filter-bookmarks': filterBookmarks,
 		'help': help,
 		'highlight': highlight,
 		'jumpto': jumpto,
