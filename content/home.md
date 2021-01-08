@@ -20,5 +20,6 @@ You can also check out my [resume](/resume).
 
 ### more links
 
+- [blog](/blog)
 - [bookmarks](/bookmarks)
 - [about](/about)
