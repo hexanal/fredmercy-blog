@@ -1,0 +1,53 @@
+.bookmarks__wrapper {
+  display: block;
+  width: 100%;
+
+  .content {
+    padding-right: 0;
+  }
+}
+
+.bookmarks__filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+
+.bookmarks__filter-item {
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.bookmarks__filter-btn {
+  &::after {
+    content: '[ ]';
+    margin-left: 0.5rem;
+  }
+
+  &[data-active=true] {
+    &::after {
+      content: '[x]';
+      color: var(--color-bg);
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
+.bookmarks__list {
+  code {
+    display: none;
+  }
+
+  // WEIRD SHIT!
+  > ul > li {
+    display: none;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--color-secondary);
+
+    &[data-filtered=true] {
+      display: block;
+    }
+  }
+
+}
