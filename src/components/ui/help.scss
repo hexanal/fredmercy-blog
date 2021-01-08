@@ -13,26 +13,9 @@
 .help__close {
 	position: absolute;
 	z-index: var(--z-box);
-	top: -2rem;
-	right: -1rem;
-	padding: 0.25rem;
-	// display: inline-block;
-	// padding: 0;
-	// color: var(--color-bg);
-	// background-color: var(--color-subdued);
-	font-family: var(--font);
-	font-size: 1em;
-	line-height: 1;
-	// text-decoration: none;
-
-	// @include hover-focus {
-	// 	color: var(--color-bg);
-	// 	background-color: var(--color-secondary);
-	// }
-
-	@media (min-width: $mq-medium) {
-		right: 0;
-	}
+	top: -2.5rem;
+	right: 0;
+	transform: translate(2px, -2px);
 }
 
 .help__bg {
@@ -51,10 +34,11 @@
 .help__box {
 	position: fixed;
 	z-index: var(--z-box);
-	top: 3rem;
-	left: 1rem;
-	width: calc(100% - 2.8rem);
-	height: calc(100% - 6rem);
+	top: 2.5rem;
+	left: 0;
+	height: 100%;
+	max-width: $site-width;
+	max-height: calc(100vh - 10rem);
 	line-height: 1.4;
 	color: var(--color-subdued);
 	border: 2px solid currentColor;
@@ -62,11 +46,14 @@
 	box-shadow: 0.8em 0.8em 0 0 var(--color-subdued);
 
 	@media (min-width: $mq-medium) {
-		top: 50%;
-		left: 50%;
-		max-width: $site-width;
-		transform: translate(-50%, -50%);
+		// top: 50%;
+		// left: 50%;
 	}
+}
+
+.help__wrap {
+	overflow: hidden;
+	height: 100%;
 }
 
 .help__scroll {

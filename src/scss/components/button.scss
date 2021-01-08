@@ -1,6 +1,9 @@
 .button {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem;
+	font-size: 1rem;
+	line-height: 1.4;
   font-style: normal;
+	font-family: var(--font);
   text-decoration: none;
   color: var(--color-bg);
   background-color: var(--color-subdued);
@@ -9,10 +12,6 @@
     color: var(--color-bg);
     text-decoration: none;
     background-color: var(--color-secondary);
-  }
-
-  @media (min-width: $mq-xsmall) {
-    padding: 0.25rem;
   }
 }
 
