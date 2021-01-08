@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce'
-import reefer from '../tools/reefer/reefer'
+import reefer from '../tools/reefer'
 
 const TRANSLATE_MULTIPLIER = 32 // pixels
 const TOTAL_FRAMES = 100

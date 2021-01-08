@@ -10,7 +10,6 @@ import transitions from './components/transitions';
 
 // ui
 // import bleeps from 'components/bleeps';
-import bulge from './components/bulge';
 import comments from './components/comments';
 import drawer from './components/drawer';
 import filterBookmarks from './components/bookmarks/filter-bookmarks';
@@ -37,7 +36,6 @@ Exponent
 		transitions
 	])
 	.register({
-		'bulge': bulge,
 		'comments': comments,
 		'drawer': drawer,
 		'extra': extra,
