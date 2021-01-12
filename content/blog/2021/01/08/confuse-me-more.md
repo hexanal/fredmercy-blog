@@ -12,7 +12,8 @@ These motherfuckers better get a grip, and soon. I can't believe these dumbasses
 
 ## movies!
 
-Been on a sci-fi binge for the past few days: <small>(all the links are Wikipedia articles)</small>
+Been on a sci-fi binge for the past few days:\
+_<small>(all the links are Wikipedia articles)</small>_
 
 - [The Midnight Sky](https://en.wikipedia.org/wiki/The_Midnight_Sky)
   - The new Netflix show; it was available and I felt like watching a space movie
