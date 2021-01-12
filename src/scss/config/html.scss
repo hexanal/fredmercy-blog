@@ -26,6 +26,10 @@ html {
 	}
 
 	&.state-a11y-big-font {
-		font-size: 20px;
+		font-size: 24px;
+
+		@media (min-width: $mq-small) {
+			font-size: 28px;
+		}
 	}
 }

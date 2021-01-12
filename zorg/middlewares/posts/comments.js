@@ -6,13 +6,22 @@ const addComments = function( contentTypes ) {
     post: items.map( item => {
       const entryId = item.meta.date
 
+      const comments = []
+
+      // FIXME
+      if ( item.meta.comments !== false ) {
+        for (let i = 1; i <= 25; i++) {
+          comments.push({
+            entryId,
+            index: i,
+            commentId: `${entryId}_${i}`
+          })
+        }
+      }
+
       return {
         ...item,
-        comments: Array(25).fill(null).map((_, index) => ({
-          entryId,
-          index: index + 1,
-          commentId: entryId + '_' + (index + 1)
-        }))
+        comments
       }
     })
   }

@@ -13,6 +13,8 @@ export default function({element, ui, control, messaging}) {
     fetch('/api/comments/' + state.entryId, { method: 'GET', })
       .then(response => response.json())
       .then(data => {
+        initializeDots()
+
         element.classList.remove('state-loading');
         control['dot'].map(dot => dot.removeAttribute('disabled'));
 
@@ -172,23 +174,25 @@ export default function({element, ui, control, messaging}) {
       });
   };
 
-  state.entryId = ui['grid'].dataset.entryId;
+  const initializeDots = function() {
+    state.entryId = ui['grid'].dataset.entryId;
 
-  state.shortcuts = new Mousetrap(element);
-  state.shortcuts.bind('escape', closeAll);
-  state.shortcuts.bind('h', moveLeft);
-  state.shortcuts.bind('j', moveDown);
-  state.shortcuts.bind('k', moveUp);
-  state.shortcuts.bind('l', moveRight);
+    state.shortcuts = new Mousetrap(element);
+    state.shortcuts.bind('escape', closeAll);
+    state.shortcuts.bind('h', moveLeft);
+    state.shortcuts.bind('j', moveDown);
+    state.shortcuts.bind('k', moveUp);
+    state.shortcuts.bind('l', moveRight);
 
-  control['dot'].map(dot => dot.addEventListener('click', readOrEditComment) );
-  control['close'].map(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      closeAll();
+    control['dot'].map(dot => dot.addEventListener('click', readOrEditComment) );
+    control['close'].map(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        closeAll();
+      });
     });
-  });
-  control['comment-form'].addEventListener('submit', submitComment);
+    control['comment-form'].addEventListener('submit', submitComment);
+  }
 
   fetchComments();
   initSpeechModule();

@@ -8,7 +8,7 @@ export default function({messaging, _exponent}) {
 
 	barba.init({
 		timeout: 10000,
-		// debug: true,
+		debug: false,
 
 		prevent: ({ el }) => 'disableTransition' in el.dataset,
 
