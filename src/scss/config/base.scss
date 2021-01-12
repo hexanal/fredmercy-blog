@@ -7,7 +7,8 @@
 	--color-subdued: #65b25e; // Bud Green
 	--color-extra: #ffdd21; // Banana Yellow
 
-	--font: 'IBM Plex Mono', Courier, monospace;
+	// --font: 'IBM Plex Mono', Courier, monospace;
+	--font: 'Fantasque Sans Mono', Courier, monospace;
 }
 
 // sizes
@@ -42,15 +43,16 @@ $site-width: 60rem;
 html {
 	box-sizing: border-box;
 	font-family: var(--font);
-	font-size: 16px;
+	font-size: 18px;
 	color: var(--color-primary);
 	background-color: var(--color-bg);
-
 }
 
-.body {
+body {
 	margin: 1rem;
-	font-size: 1rem;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	&.transition {
 		cursor: wait;
@@ -60,6 +62,7 @@ html {
 		margin: 1rem 3rem;
 	}
 }
+
 .body__contents {
 	transform-origin: top center;
 }

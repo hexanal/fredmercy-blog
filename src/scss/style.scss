@@ -1,4 +1,6 @@
-@import 'config/typography';
+// @import 'config/font-plex';
+@import 'config/font-fantasque';
+
 @import 'config/html';
 @import 'config/base';
 @import 'config/themes';
@@ -29,6 +31,7 @@
 
 @import 'components/button';
 @import 'components/custom-theme';
+@import 'components/heading';
 @import 'components/hotkey';
 @import 'components/index';
 @import 'components/symbol';
