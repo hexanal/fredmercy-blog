@@ -5,6 +5,9 @@ type: page
 template: templates/bookmarks
 ---
 
+- `nerd` [Electronic Frontier Foundation's Privacy page](https://www.eff.org/issues/privacy)
+  - if you need to learn more about privacy on the Internet
+
 - `tv` [Star Trek: The Next Generation (imdb.com)](https://www.imdb.com/title/tt0092455/reference)
   - As a science enthusiast, it took me a long time before diving head-first into Star Trek!
   - I was not disappointed by the constant quality of show, the weirdness of it all, the old-schoolness of it (the ’90s!), the humanism of it all
