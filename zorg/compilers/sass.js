@@ -1,6 +1,3 @@
-/**
- * Scss Shit
- */
 const sass = require('sass')
 const chalk = require('chalk')
 const { write } = require('../helpers/files')

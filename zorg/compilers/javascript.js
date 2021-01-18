@@ -1,6 +1,3 @@
-/**
- * Javascript Shit
- */
 const esbuild = require('esbuild')
 const chalk = require('chalk')
 

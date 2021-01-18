@@ -1,6 +1,3 @@
-/**
- * Assets shite
- */
 const fse = require('fs-extra')
 const chalk = require('chalk')
 
@@ -10,7 +7,7 @@ module.exports = function() {
       console.log( chalk.magenta(`[build] [assets] assets folder updated`) )
     })
     .catch(err => {
-      console.log( chalk.red(`[error] [assets] Zorg fucked up the copying of the assets folder again!`) )
+      console.log( chalk.red(`[error] [assets] ouch! Something messed up while copying the assets, somehow!`) )
       console.error( err )
     })
 }
