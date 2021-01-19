@@ -1,25 +1,12 @@
 <div class="comments">
-	<h2 class="comments__heading" aria-level="2">
-		Comment dots
+	<h2 class="heading" aria-level="2">
+		Comments
 	</h2>
 
 	<div
 		class="comments__grid"
 		data-ui="grid"
-		data-entry-id="blog_{{ meta.year }}_{{ meta.month }}_{{ meta.day }}"
+		data-url="{{ meta.url }}"
 	>
-	{{#each comments}}
-		<button
-			id="comment_{{ this.index }}"
-			type="button"
-			class="comments__dot"
-			data-control="dot"
-			data-index="{{ this.index }}"
-			data-id="{{ this.commentId }}"
-			aria-label="Comment slot #{{ this.index }}"
-			disabled
-		>
-		</button>
-	{{/each}}
 	</div>
 </div>

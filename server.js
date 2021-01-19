@@ -14,9 +14,11 @@ const lusca = require('lusca');
 const expressStatusMonitor = require('express-status-monitor');
 const glob = require('glob');
 const WebSocket = require('ws');
+const sqlite3 = require('sqlite3');
+
+const db = new sqlite3.Database('./fredmercy.db');
 
 const app = express();
-
 const watch = require('./zorg/watch');
 
 /**
@@ -43,32 +45,31 @@ app.use((req, res, next) => {
 });
 
 app.post('/api/comment', (req, res) => {
-	const pathToEntry = req.body.entryId.replace(/_/g, '/');
-	const filename = `./content/${pathToEntry}/${req.body.slot}.json`;
-	const entryJSON = JSON.stringify({
-		slot: req.body.slot,
-		author: sanitizeHtml(req.body.author.substring(0, 100)),
-		content: sanitizeHtml(req.body.content.substring(0, 1500))
-	});
+	db.run(`INSERT INTO comments (timestamp, url, author, comment) VALUES(?, ?, ?, ?)`, [
+		req.body.timestamp,
+		req.body.url,
+		sanitizeHtml(req.body.author.substring(0, 100)),
+		sanitizeHtml( req.body.comment.substring(0, 1500) )
+	], (error, rows) => {
+		if ( error ) res.send( error )
 
-	new Promise((resolve, reject) => {
-		fs.writeFile(filename, entryJSON, 'utf8', (err) => {
-			if (err) {
-				console.log(chalk.red(`Error while creating comment file: ${err}`));
-				reject();
-			}
-
-			resolve();
-		})
+		res.send({
+			success: true,
+		});
 	})
-		.then(() => {
-			res.send({
-				success: true,
-				slot: req.body.slot
-			});
-		})
-
 });
+
+app.post('/api/comments/byUrl', (req, res) => {
+	const { url } = req.body
+
+	db.all(
+		`SELECT * FROM comments WHERE url="${url}" ORDER BY timestamp ASC`,
+		{},
+		(error, rows) => {
+			if ( error ) res.send( error )
+			res.send( JSON.stringify( rows ) )
+	})
+})
 
 app.get('/api/comments/:entryId', (req, res) => {
 	const pathToEntry = req.params.entryId.replace(/_/g, '/');

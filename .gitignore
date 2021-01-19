@@ -8,6 +8,8 @@ npm-debug.log
 *.css.map
 *.js.map
 
+# Database
+fredmercy.db
 # FTP-uploaded media files
 /files
 # FTP-uploaded demos

@@ -16,9 +16,9 @@
 }
 
 .post__comments {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: flex-start;
 
 	@media (max-width: $mq-small - 0.1rem) {
 		&[data-leaving-comment] {
@@ -27,15 +27,18 @@
 	}
 
 	@media (min-width: $mq-small) {
-		display: inline-flex;
-		flex-direction: row;
-		vertical-align: top;
-		width: 100%;
+		// display: inline-flex;
+		// flex-grow: 1;
+		// flex-direction: row;
+		height: 100%;
+    flex-grow: 1;
 		max-width: $site-width;
+		// vertical-align: top;
+		// width: 100%;
 	}
 	@media (min-width: $mq-large) {
-		margin-right: 2rem;
-		width: $site-width;
+		// margin-right: 2rem;
+		// width: $site-width;
 	}
 }
 
