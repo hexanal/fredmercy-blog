@@ -55,6 +55,10 @@
 		background-color: var(--color-secondary);
 		text-decoration: none;
 	}
+
+	@media print {
+		display: none;
+	}
 }
 
 .header__toggle-open {

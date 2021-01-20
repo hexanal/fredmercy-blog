@@ -29,6 +29,10 @@
 			left: 0;
 		}
 	}
+
+	@media print {
+		display: none;
+	}
 }
 
 .rainbow__ray {

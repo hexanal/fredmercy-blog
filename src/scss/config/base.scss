@@ -46,6 +46,10 @@ html {
 	font-size: 18px;
 	color: var(--color-primary);
 	background-color: var(--color-bg);
+
+	@media print {
+		background-color: transparent;
+	}
 }
 
 body {
