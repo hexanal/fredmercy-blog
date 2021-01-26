@@ -12,6 +12,8 @@ export default function({ element, control, messaging }) {
 		active: false,
 	};
 
+	console.log( control )
+
 	const toggleHelp = () => {
 		state.active = !state.active;
 		document.body.classList.toggle('state-help-active');
@@ -30,19 +32,19 @@ export default function({ element, control, messaging }) {
 		control['theme-select'].value = val;
 	}
 
-	messaging.subscribe('SHOW_HELP', toggleHelp);
-	messaging.subscribe('CLOSE_HELP', closeHelp);
-	messaging.subscribe('SET_THEME_VALUE', setTheme);
+	// const showHelpMessaging = messaging.subscribe('SHOW_HELP', toggleHelp);
+	// const closeHelpMessaging = messaging.subscribe('CLOSE_HELP', closeHelp);
+  const setThemeMessaging =	messaging.subscribe('SET_THEME_VALUE', setTheme);
 
-	control['show-menu'].addEventListener('click', () => messaging.dispatch({ id: 'TOGGLE_MENU' }) );
-	control['help-show'].addEventListener('click', toggleHelp);
-	control['help-close'].addEventListener('click', closeHelp);
-	control['help-bg'].addEventListener('click', closeHelp);
+	// control['show-menu'].addEventListener('click', () => messaging.dispatch({ id: 'TOGGLE_MENU' }) );
+	// control['help-show'].addEventListener('click', toggleHelp);
+	// control['help-close'].addEventListener('click', closeHelp);
+	// control['help-bg'].addEventListener('click', closeHelp);
 	control['help-big-font'].addEventListener('click', () => messaging.dispatch({ id: 'A11Y_SET_LARGE_FONT', payload: true}) );
 	control['help-normal-font'].addEventListener('click', () => messaging.dispatch({ id: 'A11Y_SET_LARGE_FONT', payload: false}) );
-	control['theme-select'].addEventListener('change', e => {
-		messaging.dispatch({ id: 'SWITCH_THEME', payload: e.target.value });
-	});
+	// control['theme-select'].addEventListener('change', e => {
+	// 	messaging.dispatch({ id: 'SWITCH_THEME', payload: e.target.value });
+	// });
 	// control['font-select'].addEventListener('change', e => {
 	// 	document.documentElement.style.setProperty('--font', FONT_FAMILY_LIST[e.target.value]);
 	// });
@@ -51,8 +53,8 @@ export default function({ element, control, messaging }) {
 	Mousetrap.bind('?', toggleHelp );
 
 	return function() {
-		messaging.unsubscribe('SHOW_HELP', toggleHelp);
-		messaging.unsubscribe('CLOSE_HELP', closeHelp);
-		messaging.unsubscribe('SET_THEME_VALUE', setTheme);
+		showHelpMessaging();
+		closeHelpMessaging();
+		setThemeMessaging();
 	}
 }

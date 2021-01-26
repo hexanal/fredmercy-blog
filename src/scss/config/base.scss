@@ -21,7 +21,7 @@ $mq-small: 42rem;
 $mq-medium: 50rem;
 $mq-large: 60rem;
 
-$site-width: 60rem;
+$site-width: 50rem;
 
 // mixins
 @mixin hover {
@@ -54,6 +54,7 @@ html {
 
 body {
 	margin: 1rem;
+	padding-top: 3rem;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -65,10 +66,6 @@ body {
 	@media (min-width: $mq-medium) {
 		margin: 1rem 3rem;
 	}
-}
-
-.body__contents {
-	transform-origin: top center;
 }
 
 ::-moz-selection {

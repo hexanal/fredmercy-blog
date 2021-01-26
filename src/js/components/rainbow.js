@@ -14,8 +14,9 @@ export default function({ messaging }) {
 	const rainbows = document.body.querySelector('#rainbow')
 	const transitionBall = document.body.querySelector('#rainbow-ball')
 
+
 	const state = {
-		container: document.body.querySelector('[data-barba="container"]'),
+		container: document.body.querySelector('[data-barba="inside"]'),
 		reef: null,
 		transitioning: false,
 		frame: 0,
@@ -74,12 +75,12 @@ export default function({ messaging }) {
 
 	messaging.subscribe('PAGE_LEAVE', page => {
 		state.color = getRandomColor()
-		state.container = page.current.container
+		state.container = page.current.container.querySelector('[data-barba="inside"]')
 		state.transitioning = true
 		reefOut()
 	})
 	messaging.subscribe('PAGE_CHANGED', page => {
-		state.container = page.next.container
+		state.container = page.next.container.querySelector('[data-barba="inside"]')
 		state.transitioning = false
 		reefIn()
 	})

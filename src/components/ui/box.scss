@@ -1,0 +1,67 @@
+.box {
+	--z-box: 2;
+	--z-bg: 1;
+	display: none;
+	position: relative;
+	z-index: 3;
+
+	.state-box-active & {
+		display: block;
+	}
+}
+
+.box__close {
+	position: absolute;
+	z-index: var(--z-box);
+	top: -2.5rem;
+	right: 0;
+	transform: translate(2px, -2px);
+}
+
+.box__bg {
+	position: fixed;
+	z-index: var(--z-bg);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 0;
+	background-color: var(--color-bg);
+	opacity: 0.75;
+}
+
+.box__frame {
+	position: fixed;
+	z-index: var(--z-box);
+	top: 3.5rem;
+	left: 1rem;
+	right: 1rem;
+	height: 100%;
+	max-width: $site-width;
+	max-height: calc(100vh - 10rem);
+	line-height: 1.4;
+	border: 2px solid currentColor;
+	background-color: var(--color-bg);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
+
+	@media (min-width: $mq-medium) {
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+	}
+}
+
+.box__wrap {
+	overflow: hidden;
+	height: 100%;
+}
+
+.box__scroll {
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	overscroll-behavior: contain;
+	padding: 1rem;
+	height: 100%;
+}

@@ -1,6 +1,5 @@
 .breadcrumbs {
   display: flex;
-  margin-top: 1rem;
 
   span {
     margin: 0 0.5rem;
@@ -11,8 +10,12 @@
   }
 }
 
-.breadcrumbs__parent,
+.breadcrumbs__node,
 .breadcrumbs__root {
 	font-size: 1em;
 	font-weight: 400;
+}
+
+.breadcrumbs__leaf {
+  background-color: var(--color-extra);
 }

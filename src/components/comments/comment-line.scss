@@ -1,0 +1,30 @@
+.comment-line {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	+ .comment-line {
+		margin-top: 2rem;
+	}
+}
+
+.comment-line__author {
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	padding: 0.25rem;
+	color: var(--color-bg);
+	background-color: var(--color-primary);
+}
+
+.comment-line__time {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	font-style: italic;
+	color: var(--color-secondary);
+}
+
+.comment-line__message {
+	flex-grow: 1;
+	width: 100%;
+}

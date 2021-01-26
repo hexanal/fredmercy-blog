@@ -8,12 +8,12 @@
 @import '../components/blocks/drawer';
 @import '../components/blocks/side-note';
 
-@import '../components/entries/comments';
-@import '../components/entries/leave-comment';
+@import '../components/comments/comment-line';
+@import '../components/comments/comments';
 
+@import '../components/ui/box';
 @import '../components/ui/breadcrumbs';
 @import '../components/ui/content';
-
 @import '../components/ui/header';
 @import '../components/ui/help';
 @import '../components/ui/jump-to';

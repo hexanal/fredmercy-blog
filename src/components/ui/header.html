@@ -4,18 +4,29 @@
 >
 	<nav class="header__header-extend">
 		<h1 class="header__title">
-			{{ meta.title }}
+			Fred<span> Mercy</span>
 		</h1>
 
-		<button
-			class="header__toggle-menu"
-			type="button"
-			aria-label="Toggle navigation menu"
-			data-control="toggle-menu"
-		>
-			<div class="header__toggle-open">menu</div>
-			<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
-		</button>
+		<div class="header__commands">
+			<button
+				class="button button--light"
+				type="button"
+				aria-label="Toggle comments"
+				data-control="toggle-comments"
+			>
+				comments
+			</button>
+
+			<button
+				class="button header__toggle-menu"
+				type="button"
+				aria-label="Toggle navigation menu"
+				data-control="toggle-menu"
+			>
+				<div class="header__toggle-open">menu</div>
+				<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
+			</button>
+		</div>
 
 		<div class="header__menu-wrap" data-ui="menu">
 			<div class="header__menu" role="navigation">

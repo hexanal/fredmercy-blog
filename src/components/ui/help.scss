@@ -34,20 +34,21 @@
 .help__box {
 	position: fixed;
 	z-index: var(--z-box);
-	top: 2.5rem;
-	left: 0;
+	top: 3.5rem;
+	left: 1rem;
+	right: 1rem;
 	height: 100%;
 	max-width: $site-width;
 	max-height: calc(100vh - 10rem);
 	line-height: 1.4;
-	color: var(--color-subdued);
 	border: 2px solid currentColor;
 	background-color: var(--color-bg);
-	box-shadow: 0.8em 0.8em 0 0 var(--color-subdued);
+	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
 
 	@media (min-width: $mq-medium) {
-		// top: 50%;
-		// left: 50%;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
 	}
 }
 
@@ -72,7 +73,7 @@
 .help__separator {
 	flex-shrink: 0;
 	margin: 0 0 1.5rem;
-	background-color: var(--color-subdued);
+	// background-color: var(--color-subdued);
 }
 
 .help__section--bug {
