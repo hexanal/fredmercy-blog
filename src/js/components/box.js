@@ -6,27 +6,31 @@ export default function({ element, control, messaging }) {
 
 	const toggle = () => {
 		state.active = !state.active;
-		document.body.classList.toggle('state-box-active');
+		element.classList.toggle('state-box-active');
 
 		if (state.active) {
 			DOMHelpers.focusFirstItem(element);
 		}
 	}
 
-	const close = () => {
-		state.active = false;
-		document.body.classList.remove('state-box-active');
+	const open = () => {
+		state.active = true;
+		element.classList.add('state-box-active');
 	}
 
-	const eventToggle = messaging.subscribe('SHOW_BOX', id => { if (id === state.id) toggle() } )
-	const eventShow = messaging.subscribe('SHOW_BOX', id => { if (id === state.id) toggle() } )
-	const eventClose = messaging.subscribe('CLOSE_BOX', id => { if (id === state.id) close() } )
+	const close = () => {
+		state.active = false;
+		element.classList.remove('state-box-active');
+	}
+
+	const eventToggle = messaging.subscribe(`TOGGLE_BOX_${state.id.toUpperCase()}`, toggle)
+	const eventShow = messaging.subscribe(`SHOW_BOX_${state.id.toUpperCase()}`, open)
+	const eventClose = messaging.subscribe(`CLOSE_BOX_${state.id.toUpperCase()}`, close)
 
 	control['close'].addEventListener('click', close);
-	control['help-bg'].addEventListener('click', close);
+	control['bg'].addEventListener('click', close);
 
-	// TODO?
-	// Mousetrap(element).bind('escape', closeHelp);
+	Mousetrap(element).bind('escape', close);
 
 	return function() {
 		eventToggle();

@@ -1,38 +1,40 @@
-<div
-	class="comments state-loading"
-	data-component="comments"
-	data-url="{{ meta.url }}"
->
-	<form
-		class="comments__write"
-		data-control="comment-box"
-	>
-		<input
-			class="comments__input"
-			data-control="author"
-			type="text"
-			id="author"
-			name="author"
-			maxlength="100"
-			placeholder="your display name"
-		>
-
-		<input
-			class="comments__input"
-			data-control="message"
-			type="text"
-			id="content"
-			name="content"
-			maxlength="1000"
-			placeholder="say something"
-			required
-		>
-	</form>
-
+{{#> ui/box id="comments" }}
 	<div
-		class="comments__convo"
-		data-ui="convo"
+		class="comments state-loading"
+		data-component="comments"
+		data-url="{{ meta.url }}"
 	>
-	</div>
+		<form
+			class="comments__write"
+			data-control="comment-box"
+		>
+			<input
+				class="comments__input comments__author"
+				data-control="author"
+				type="text"
+				id="author"
+				name="author"
+				maxlength="100"
+				placeholder="your display name"
+			>
 
-</div>
+			<input
+				class="comments__input"
+				data-control="message"
+				type="text"
+				id="content"
+				name="content"
+				maxlength="1000"
+				placeholder="say something"
+				required
+			>
+		</form>
+
+		<div
+			class="comments__convo"
+			data-ui="convo"
+		>
+		</div>
+
+	</div>
+{{/ui/box }}

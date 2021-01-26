@@ -1,42 +1,15 @@
-.comments {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 80vh;
-  overflow: auto;
-  padding: 1rem;
-  border-top: 2px solid;
-  background-color: var(--color-bg);
-  transform: translateY(100%);
-  transition: transform 500ms ease-in-out;
-
-  &.state-show-comments {
-    transform: translateY(0);
-  }
-
-  @media (min-width: $mq-small) {
-    height: 50vh;
-    padding: 2rem 3rem;
-  }
-}
-
-.comments__write {
-  max-width: 50rem;
-}
-
 .comments__input {
   position: relative;
   z-index: 1;
   appearance: none;
   width: 100%;
-  margin-bottom: -2px; // collapse border
   padding: 0.5rem;
   font-family: var(--font);
   font-size: 1rem;
   color: var(--color-primary);
   background-color: var(--color-bg);
-  border: 2px solid var(--color-primary);
+  border: none;
+  border-bottom: 2px solid;
   border-radius: 0;
   outline: none;
 
@@ -46,11 +19,14 @@
   }
 }
 
+.comments__author {
+  font-style: italic;
+}
+
 .comments__convo {
   overflow: auto;
   position: relative;
-  max-width: 50rem;
-  padding: 2rem 0;
+  padding: 1rem;
 }
 
 .state-loading {
