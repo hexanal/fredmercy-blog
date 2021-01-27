@@ -1,4 +1,5 @@
 import ago from 's-ago'
+import marked from 'marked'
 import orderBy from 'lodash.orderby'
 
 export default function({element, ui, control, messaging}) {
@@ -61,7 +62,7 @@ export default function({element, ui, control, messaging}) {
 
       $author.textContent = `${ author }`
       $timestamp.textContent = getFormattedTimestamp(timestamp)
-      $content.textContent = comment
+      $content.innerHTML = marked(comment)
 
       $commentLine.appendChild($author)
       $commentLine.appendChild($timestamp)

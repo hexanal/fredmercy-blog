@@ -4,12 +4,11 @@
 	align-items: center;
 
 	+ .comment-line {
-		margin-top: 2rem;
+		margin-top: 0.5rem;
 	}
 }
 
 .comment-line__author {
-	margin-bottom: 1rem;
 	margin-right: 1rem;
 	padding: 0.25rem;
 	color: var(--color-bg);
@@ -17,7 +16,6 @@
 }
 
 .comment-line__time {
-	margin-bottom: 1rem;
 	font-size: 1rem;
 	line-height: 1.5;
 	font-style: italic;
