@@ -1,4 +1,5 @@
-.heading {
+.heading,
+.heading-alt {
 	display: inline-block;
 	padding: 0.25rem;
 	margin: 0 0 1rem;
@@ -7,4 +8,8 @@
 	line-height: 1.2;
 	color: var(--color-bg);
 	background-color: var(--color-active);
+}
+
+.heading-alt {
+	background-color: var(--color-primary);
 }
