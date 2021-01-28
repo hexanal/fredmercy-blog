@@ -26,11 +26,9 @@ export default function({ui, control, messaging }) {
 		messaging.dispatch({ id: 'MENU_CLOSED' });
 	}
 
-	// control['toggle-comments'].addEventListener('click', () => messaging.dispatch({ id: 'TOGGLE_COMMENTS' }) );
-
 	control['toggle-menu'].addEventListener('click', toggleMenu);
 	control['menu-bg'].addEventListener('click', closeMenu);
-	control['help-toggle'].addEventListener('click', () => messaging.dispatch({ id: 'SHOW_BOX_HELP' }) );
+	// control['help-toggle'].addEventListener('click', () => messaging.dispatch({ id: 'SHOW_BOX_HELP' }) );
 	control['to-top'].addEventListener('click', () => window.scrollTo(0, 0));
 
 	messaging.subscribe('CLOSE_MENU', closeMenu);

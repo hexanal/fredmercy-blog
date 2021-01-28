@@ -14,12 +14,10 @@ export default function({ element, control }) {
 	const toggle = function() {
 		state.visible = !state.visible
 		element.classList.toggle('state-side-note-visible', state.visible)
-		console.log('hey')
 	}
 
 	const dismiss = function() {
 		toggle()
-		console.log('doofus')
 		document.removeEventListener('click', dismiss)
 	}
 }
