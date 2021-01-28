@@ -7,6 +7,8 @@ export default function({element, ui, control, messaging}) {
     show: false
   }
 
+  const commentCount = document.getElementById('comments-count')
+
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
@@ -46,6 +48,8 @@ export default function({element, ui, control, messaging}) {
     ui['convo'].innerHTML = '' // FLUSH!!
 
     element.classList.remove('state-loading')
+
+    commentCount.textContent = `(${comments.length})`
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
 
@@ -154,7 +158,7 @@ export default function({element, ui, control, messaging}) {
   }
 
   const init = function() {
-    fetchComments() // fetch the comments from the database!
+    fetchComments()
     setupCommentBox()
     setupEventListeners()
     setupMessaging()

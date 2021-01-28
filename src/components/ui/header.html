@@ -15,8 +15,8 @@
 				data-component="emit"
 				data-event="SHOW_BOX_COMMENTS"
 			>
-				<!-- data-control="toggle-comments" -->
 				comments
+				<span id="comments-count"></span>
 			</button>
 
 			<button
@@ -57,8 +57,9 @@
 				<div class="header__menu-item">
 					<button
 						class="header__menu-link header__menu-link--help"
-						data-control="help-toggle"
 						type="button"
+						data-component="emit"
+						data-event="SHOW_BOX_HELP"
 					>
 						help / options
 					</button>
