@@ -32,6 +32,7 @@
 }
 
 .box__frame {
+	@include box;
 	position: fixed;
 	z-index: var(--z-box);
 	top: 3.5rem;
@@ -41,9 +42,6 @@
 	max-width: $site-width;
 	max-height: calc(100vh - 6.5rem);
 	line-height: 1.4;
-	border: 2px solid currentColor;
-	background-color: var(--color-bg);
-	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
 
 	@media (min-width: $mq-medium) {
 		left: 50%;

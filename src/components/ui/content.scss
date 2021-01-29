@@ -98,42 +98,6 @@
 		margin-top: 0.25em;
 	}
 
-	sup[data-note] {
-		display: none;
-		color: var(--color-subdued);
-		cursor: pointer;
-
-		&:after {
-			content: attr(data-note);
-			display: none;
-			position: absolute;
-			right: 0;
-			width: 9rem;
-			padding-left: 1rem;
-			margin: -1rem 0 3rem;
-			border-left: 2px solid currentColor;
-		}
-
-		@include hover-focus {
-			color: var(--color-bg);
-			background-color: var(--color-subdued);
-
-			&:after {
-				display: block;
-				color: var(--color-subdued);
-			}
-		}
-		@media (min-width: $mq-medium) {
-			display: inline;
-		}
-
-		@media (min-width: $mq-large) {
-			&:after {
-				width: 14rem;
-			}
-		}
-	}
-
 	iframe {
 		width: 100%;
 		height: 200px;

@@ -1,4 +1,4 @@
-export default function({ element, control }) {
+export default function({ element }) {
 	const state = {
 		visible: false
 	}
@@ -13,7 +13,7 @@ export default function({ element, control }) {
 
 	const toggle = function() {
 		state.visible = !state.visible
-		element.classList.toggle('state-side-note-visible', state.visible)
+		element.classList.toggle('state-note-visible', state.visible)
 	}
 
 	const dismiss = function() {

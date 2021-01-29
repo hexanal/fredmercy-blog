@@ -1,66 +1,32 @@
 .side-note {
-	display: none;
+	padding: 0;
 	color: var(--color-subdued);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	background-color: transparent;
 	cursor: pointer;
 
 	&:after {
 		content: attr(data-note);
+		@include box( var(--color-subdued) );
 		display: none;
 		position: absolute;
+		z-index: 3;
 		right: 0;
-		width: 9rem;
-		padding-left: 1rem;
-		margin: -1rem 0 3rem;
-		border-left: 2px solid currentColor;
+		max-width: calc( 100vh - 2rem);
+		padding: 1rem;
+		margin: 0 0 3rem;
+		font-size: 0.9rem;
+	}
+
+	&.state-note-visible {
+		&:after {
+			display: block;
+		}
 	}
 
 	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-subdued);
-
-		&:after {
-			display: block;
-			color: var(--color-subdued);
-		}
-	}
-	@media (min-width: $mq-medium) {
-		display: inline;
-	}
-
-	@media (min-width: $mq-large) {
-		&:after {
-			width: 14rem;
-		}
 	}
 }
-/**
-
-.side-note {
-	display: inline;
-
-	sup {
-		color: var(--color-subdued);
-		cursor: pointer;
-
-		@include hover-focus {
-			color: var(--color-bg);
-			background-color: var(--color-subdued);
-		}
-
-		@media (min-width: $mq-medium) {
-		}
-	}
-
-	aside {
-		display: none;
-		position: fixed;
-		color: var(--color-subdued);
-	}
-
-	&.state-side-note-visible {
-		aside {
-			display: block;
-		}
-	}
-}
-*/
