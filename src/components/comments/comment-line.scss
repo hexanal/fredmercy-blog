@@ -20,6 +20,16 @@
 	line-height: 1.5;
 	font-style: italic;
 	color: var(--color-secondary);
+
+	span {
+		display: none;
+	}
+
+	@media (min-width: $mq-small) {
+		span {
+			display: inline;
+		}
+	}
 }
 
 .comment-line__message {

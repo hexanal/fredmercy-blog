@@ -2,7 +2,7 @@ import ago from 's-ago'
 import marked from 'marked'
 import orderBy from 'lodash.orderby'
 
-export default function({element, ui, control, messaging}) {
+export default function({element, ui, control, messaging }) {
   const state = {
     show: false
   }
@@ -38,7 +38,7 @@ export default function({element, ui, control, messaging}) {
     const time = getAmPmTime( date )
     const timeAgo = ago( new Date( timestamp ) )
 
-    return `${time}, ${day} ${month} ${year} (${timeAgo})`
+    return `${time}<span>, ${day} ${month} ${year}</span> (${timeAgo})`
   }
 
   /**
@@ -65,7 +65,7 @@ export default function({element, ui, control, messaging}) {
         $content.classList.add('comment-line__message')
 
       $author.textContent = `${ author }`
-      $timestamp.textContent = getFormattedTimestamp(timestamp)
+      $timestamp.innerHTML = getFormattedTimestamp(timestamp)
       $content.innerHTML = marked(comment)
 
       $commentLine.appendChild($author)
@@ -166,7 +166,7 @@ export default function({element, ui, control, messaging}) {
 
   init()
 
-  return function() {
+  return function onUnmount() {
     state.messages.map( m => m.call() )
   }
 }
@@ -184,9 +184,9 @@ const withLeadingZero = number => {
 
 const getAmPmTime = date => {
   const originalHours = date.getHours()
-  const in12 = originalHours > 12 ? originalHours - 12 : originalHours
+  const hoursIn12format = originalHours > 12 ? originalHours - 12 : originalHours
 
-  const hours = in12 === 0 ? 12 : in12
+  const hours = hoursIn12format === 0 ? 12 : hoursIn12format
   const minutes = withLeadingZero( date.getMinutes() )
   const suffix = originalHours >= 12 ? 'pm' : 'am'
 

@@ -1,5 +1,6 @@
 import Exponent from 'exponent-core'
 import Messaging from './middlewares/Messaging'
+// import State from './middlewares/State'
 
 // autoloaded
 import a11y from './components/a11y'

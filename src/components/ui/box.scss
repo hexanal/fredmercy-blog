@@ -1,12 +1,12 @@
 .box {
 	--z-box: 2;
 	--z-bg: 1;
-	display: none;
 	position: relative;
 	z-index: 3;
+	pointer-events: none;
 
 	&.state-box-active {
-		display: block;
+		pointer-events: auto;
 	}
 }
 
@@ -28,7 +28,7 @@
 	width: 100%;
 	padding: 0;
 	background-color: var(--color-bg);
-	opacity: 0.9;
+	opacity: 0;
 }
 
 .box__frame {
@@ -42,6 +42,8 @@
 	max-width: $site-width;
 	max-height: calc(100vh - 6.5rem);
 	line-height: 1.4;
+	transform-origin: top right;
+	opacity: 0;
 
 	@media (min-width: $mq-medium) {
 		left: 50%;

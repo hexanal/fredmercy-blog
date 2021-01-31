@@ -30,6 +30,20 @@ export default function({ element, messaging }) {
 		color: COLORS[0]
 	}
 
+	state.reef
+		.onFrame( ({ translate, opacity, transition, pointerX, pointerY, ball }) => {
+			state.container.style.transform = `translateY(${ translate * TRANSLATE_MULTIPLIER }px)`
+			state.container.style.opacity = opacity
+
+			state.frame = state.frame < TOTAL_FRAMES
+				? state.frame + (FRAME_MULTIPLIER * transition)
+				: 0
+
+			rainbows.style.transform = `translate${state.direction}(-${ state.frame }%)`
+			transitionBall.style.transform = `translate(-50%, -50%) translate3d(${pointerX}px, ${pointerY}px, 0) scale(${ ball })`
+			transitionBall.style.backgroundColor = `var(${ state.color })`
+		})
+
 	const setDirectionFromBreakpoint = () => {
 		const { innerWidth } = window
 		const direction = innerWidth <= 800 ? 'X' : 'Y'
@@ -51,23 +65,10 @@ export default function({ element, messaging }) {
 	setDirectionFromBreakpoint()
 
 	document.addEventListener('mousemove', e => {
-		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 350, damping: 15 })
+		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 500, damping: 15 })
 	})
 	document.addEventListener('click', e => {
-		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 500, damping: 25 })
-	})
-
-	state.reef.onFrame( ({ translate, opacity, transition, pointerX, pointerY, ball }) => {
-		state.container.style.transform = `translateY(${ translate * TRANSLATE_MULTIPLIER }px)`
-		state.container.style.opacity = opacity
-
-		state.frame = state.frame < TOTAL_FRAMES
-			? state.frame + (FRAME_MULTIPLIER * transition)
-			: 0
-
-		rainbows.style.transform = `translate${state.direction}(-${ state.frame }%)`
-		transitionBall.style.transform = `translate(-50%, -50%) translate3d(${pointerX}px, ${pointerY}px, 0) scale(${ ball })`
-		transitionBall.style.backgroundColor = `var(${ state.color })`
+		state.reef.set({ pointerX: e.clientX, pointerY: e.clientY }, { stiffness: 330, damping: 15 })
 	})
 
 	messaging.subscribe('PAGE_LEAVE', page => {
