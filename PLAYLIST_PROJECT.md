@@ -1,21 +1,5 @@
 # 2020
 
-## Chill
-
-- Key to Love - Jonah Yano, BADBADNOTGOOD
-- Texas Sun - Khruangbin, Leon Bridges
-- Sei Still - Otto
-- Wedding of a friend - Brigid Mae Power
-- Evergreen - Leah Senior (bought vinyl)
-- With Or Without Me - Leah Senior
-- Bug In A Bath - Leah Senior
-- Lady Red - Travis Bretzer
-- Green Magic - Monster Rally
-- Caught Lookin' - Young Guv
-- Speed of the Sound of Loneliness - Kurt Vile
-- Rare Air - Mildlife
-- I Like it (Don't Stop) - Maxwell Udoh
-
 ## Fred's Tastes™
 
 - Ummon - SLIFT (bought vinyl)
@@ -80,7 +64,23 @@
 - Pinned to the cross - Rick Ross
 - Main Attraction - Junglepussy
 
-## Electronic + Others
+## Chill
+
+- Key to Love - Jonah Yano, BADBADNOTGOOD
+- Texas Sun - Khruangbin, Leon Bridges
+- Sei Still - Otto
+- Wedding of a friend - Brigid Mae Power
+- Evergreen - Leah Senior (bought vinyl)
+- With Or Without Me - Leah Senior
+- Bug In A Bath - Leah Senior
+- Lady Red - Travis Bretzer
+- Green Magic - Monster Rally
+- Caught Lookin' - Young Guv
+- Speed of the Sound of Loneliness - Kurt Vile
+- Rare Air - Mildlife
+- I Like it (Don't Stop) - Maxwell Udoh
+
+## “Other”
 
 - Levitate - Liquid Soul
 - Transient - Forming The Void
