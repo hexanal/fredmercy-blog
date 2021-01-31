@@ -7,13 +7,19 @@
 	max-width: $site-width;
 	padding: 1rem;
 	background-color: var(--color-bg);
+	border-bottom: 2px solid transparent;
+
+	[data-scrolled="true"] & {
+		border-color: var(--color-secondary);
+	}
 
 	@media (min-width: $mq-medium) {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		left: 2rem;
+		padding: 1rem 0;
+		left: 3rem;
 	}
 }
 
