@@ -10,28 +10,25 @@ const COLORS = [
 	'--color-subdued'
 ]
 
-export default function({ messaging }) {
+export default function({ element, messaging }) {
 	const rainbows = document.body.querySelector('#rainbow')
 	const transitionBall = document.body.querySelector('#rainbow-ball')
 
-
 	const state = {
 		container: document.body.querySelector('[data-barba="inside"]'),
-		reef: null,
+		reef: reefer({
+			translate: 0,
+			opacity: 1,
+			ball: 0,
+			pointerX: 0,
+			pointerY: 0,
+			transition: 0 // test
+		}),
 		transitioning: false,
 		frame: 0,
 		direction: 'X',
 		color: COLORS[0]
 	}
-
-	state.reef = reefer({
-		translate: 0,
-		opacity: 1,
-		ball: 0,
-		pointerX: 0,
-		pointerY: 0,
-		transition: 0 // test
-	})
 
 	const setDirectionFromBreakpoint = () => {
 		const { innerWidth } = window
