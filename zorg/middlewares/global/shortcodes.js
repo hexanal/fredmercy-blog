@@ -41,6 +41,23 @@ const shortcodes = [
     }
   },
   {
+    tag: 'external',
+    processor: function({ props }) {
+      try {
+
+        const params = JSON.parse(props)
+        return useBlockWithData('external-link', params)
+
+      } catch(err) {
+
+        console.log('Error with these props:', props)
+        console.log( err )
+        return ''
+
+      }
+    }
+  },
+  {
     tag: 'test',
     processor: function({ props, item, contentTypes }) {
       const params = JSON.parse(props)
