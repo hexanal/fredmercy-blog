@@ -1,5 +1,11 @@
 <div class="box" data-component="box" data-box-id="{{ this.id }}">
   <div class="box__frame" data-ui="frame">
+    {{#if title }}
+    <h2 class="box__title heading">
+      {{ title }}
+    </h2>
+    {{/if}}
+
     <button
       type="button"
       class="box__close button"

@@ -3,10 +3,10 @@
 	--z-bg: 1;
 	position: relative;
 	z-index: 3;
-	pointer-events: none;
+	display: none;
 
 	&.state-box-active {
-		pointer-events: auto;
+		display: block;
 	}
 }
 
@@ -28,7 +28,18 @@
 	width: 100%;
 	padding: 0;
 	background-color: var(--color-bg);
-	opacity: 0;
+	opacity: 0.9;
+}
+
+.box__title {
+	position: absolute;
+	top: -2.5rem;
+	left: 0;
+	transform: translate(-2px, -2px);
+
+	&.heading { // TODO override!
+		line-height: 1.4;
+	}
 }
 
 .box__frame {
@@ -43,7 +54,6 @@
 	max-height: calc(100vh - 6.5rem);
 	line-height: 1.4;
 	transform-origin: top right;
-	opacity: 0;
 
 	@media (min-width: $mq-medium) {
 		left: 50%;

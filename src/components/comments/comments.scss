@@ -1,3 +1,10 @@
+.comments {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .comments__input {
   position: relative;
   z-index: 1;
@@ -27,6 +34,7 @@
   overflow: auto;
   position: relative;
   padding: 1rem;
+  overscroll-behavior: contain;
 }
 
 .state-loading {
