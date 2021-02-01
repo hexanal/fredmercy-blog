@@ -1,4 +1,4 @@
-export default function({ element }) {
+export default function({ element, ui }) {
 	const state = {
 		visible: false
 	}
@@ -8,7 +8,7 @@ export default function({ element }) {
 
 		toggle()
 
-		if (state.visible) document.addEventListener('click', dismiss)
+		// if (state.visible) document.addEventListener('click', dismiss)
 	})
 
 	const toggle = function() {
@@ -16,8 +16,8 @@ export default function({ element }) {
 		element.classList.toggle('state-note-visible', state.visible)
 	}
 
-	const dismiss = function() {
-		toggle()
-		document.removeEventListener('click', dismiss)
-	}
+	// const dismiss = function() {
+	// 	toggle()
+	// 	document.removeEventListener('click', dismiss)
+	// }
 }

@@ -7,21 +7,24 @@
 	background-color: transparent;
 	cursor: pointer;
 
-	&:after {
-		content: attr(data-note);
+	> div {
 		@include box( var(--color-subdued) );
 		display: none;
 		position: absolute;
 		z-index: 3;
-		right: 0;
-		max-width: calc( 100vh - 2rem);
+		left: 0;
+		width: calc( 100vw - 2rem);
 		padding: 1rem;
 		margin: 0 0 3rem;
 		font-size: 0.9rem;
+		transform: translateY(2rem);
 	}
 
 	&.state-note-visible {
-		&:after {
+		color: var(--color-bg);
+		background-color: var(--color-subdued);
+
+		> div {
 			display: block;
 		}
 	}
@@ -29,5 +32,15 @@
 	@include hover-focus {
 		color: var(--color-bg);
 		background-color: var(--color-subdued);
+	}
+
+	@media (min-width: $mq-small) {
+		position: relative;
+
+		> div {
+			width: 20rem;
+			top: 100%;
+			transform: none;
+		}
 	}
 }

@@ -1,5 +1,5 @@
-const fs = require('fs')
-const chalk = require('chalk')
+// const fs = require('fs')
+// const chalk = require('chalk')
 const marked = require('marked')
 const templater = require('../../helpers/templater')
 
@@ -17,7 +17,7 @@ const shortcodes = [
   {
     tag: '*',
     processor: function({ props, item, contentTypes }) {
-      return useBlockWithData('side-note', { content: props })
+      return useBlockWithData('side-note', { content: marked(props) })
     }
   },
   {
