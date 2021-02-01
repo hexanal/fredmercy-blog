@@ -48,7 +48,12 @@
 	@media (min-width: $mq-medium) {
 		left: 50%;
 		right: auto;
+		width: calc(100% - 6rem);
 		transform: translateX(-50%);
+	}
+
+	@media (min-width: $mq-large) {
+		width: 100%;
 	}
 }
 

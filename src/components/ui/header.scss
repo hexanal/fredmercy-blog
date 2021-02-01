@@ -14,7 +14,7 @@
 	}
 
 	@media (min-width: $mq-medium) {
-		width: 100%;
+		width: calc(100% - 6rem);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
