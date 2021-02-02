@@ -1,7 +1,7 @@
 // const fs = require('fs')
-// const chalk = require('chalk')
 const marked = require('marked')
 const templater = require('../../bin/templater')
+const { debugLog } = require('../../bin/utils')
 
 const useBlockWithData = function(blockId, data) {
   const component = `{{>blocks/${blockId} data }}`;
@@ -9,6 +9,8 @@ const useBlockWithData = function(blockId, data) {
   const templateWithData = template({ data })
   // const yaml = split.join('\n').replace(split[0], '')
   // const templateWithData = template({ data: jsyaml.load(yaml) })
+
+  debugLog(`templating block “${blockId}”`)
 
   return templateWithData
 }
@@ -95,6 +97,8 @@ const applyShortcodes = function( item, contentTypes ) {
 
     exploded.shift()
 
+    if ( !exploded.length ) return accContent // no shortcode
+
     const content = exploded.reduce( (acc, props) => {
       const replaceString = `${tag}${props})`
       const module = shortcode.processor({
@@ -102,6 +106,8 @@ const applyShortcodes = function( item, contentTypes ) {
         item,
         contentTypes,
       })
+
+      debugLog(`processing shortcode “${shortcode.tag}” (in page: “${item.meta.title}”)`)
 
       return acc.replace(replaceString, module)
     }, accContent)

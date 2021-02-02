@@ -20,7 +20,7 @@ const addUIData = function( contentTypes ) {
   const withUIData = {}
   const types = Object.keys( contentTypes )
 
-  // could reduce... meh
+  // TODO could use a cool reduce func here but... meh
   types.map( type => {
     withUIData[type] = contentTypes[type].map( item => {
       return {
