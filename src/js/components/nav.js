@@ -28,8 +28,7 @@ export default function({ui, control, messaging }) {
 
 	control['toggle-menu'].addEventListener('click', toggleMenu);
 	control['menu-bg'].addEventListener('click', closeMenu);
-	// control['help-toggle'].addEventListener('click', () => messaging.dispatch({ id: 'SHOW_BOX_HELP' }) );
-	control['to-top'].addEventListener('click', () => window.scrollTo(0, 0));
+	control['to-top'].addEventListener('click', () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }));
 
 	messaging.subscribe('CLOSE_MENU', closeMenu);
 	messaging.subscribe('TOGGLE_MENU', toggleMenu);

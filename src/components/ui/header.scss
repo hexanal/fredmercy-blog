@@ -23,6 +23,32 @@
 	}
 }
 
+.header__back-to-top {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	top: 100%;
+	right: 1rem;
+	width: 2.5rem;
+	border-radius: 0 0 0.75rem 0.75rem;
+
+	&.button {
+		background-color: var(--color-secondary);
+
+		@include hover-focus {
+			background-color: var(--color-active);
+		}
+	}
+
+	[data-scrolled-past-viewport="true"] & {
+		display: block;
+	}
+
+	@media (min-width: $mq-medium) {
+		right: 0;
+	}
+}
+
 .header__header-extend {
 	position: relative;
 	z-index: 2;
@@ -230,19 +256,6 @@
 .header__menu-link--help {
 	&:after {
 		content: '🆘';
-	}
-}
-.header__menu-link--up {
-	&:after {
-		content: '☝️';
-	}
-}
-
-.header__menu-item--up {
-	display: none;
-
-	[data-scrolled-past-viewport="true"] & {
-		display: block;
 	}
 }
 
