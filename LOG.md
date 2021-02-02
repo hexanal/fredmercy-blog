@@ -6,3 +6,7 @@
 * reefer + stater
 * change a staterized value with reefer?
     - everything in `.changed()` will get called, dude
+
+* add svg symbols support
+    - gotta design them
+    - for header icons and others (replace arrows, etc.)

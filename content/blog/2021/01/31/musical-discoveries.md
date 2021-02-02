@@ -1,5 +1,5 @@
 ---
-title: My 2020 Music Discoveries
+title: Music Discoveries, 2020 Edition
 description: Straight from my monthly Spotify playlists
 type: post
 ---
