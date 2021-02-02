@@ -1,19 +1,38 @@
 const sass = require('sass')
 const chalk = require('chalk')
-const { write } = require('../helpers/files')
+// const importer = require('node-sass-glob-importer')
+const { write } = require('../bin/files')
+const watcher = require('../bin/watcher')
 
-module.exports = function() {
+const WATCH_GLOB = [
+  './src/**/*.scss',
+]
+const SRC = './src/scss/style.scss'
+const DEST_PATH = './public'
+const DEST_FILENAME = 'styles.css'
+const DEST = `${DEST_PATH}/${DEST_FILENAME}`
+
+const build = function() {
   const compiledCSS = sass.renderSync({
-    file: './src/scss/style.scss',
+    // importer: importer(),
+    file: SRC,
     outputStyle: 'compressed',
-    sourceMap: process.env === 'development',
-    outFile: './public/styles.css'
+    sourceMap: process.NODE_ENV === 'development',
+    outFile: DEST
   })
 
   const cssTimeElapsed = compiledCSS.stats.duration / 1000
 
-  return write('./public', 'styles.css', compiledCSS.css)
+  return write(DEST_PATH, DEST_FILENAME, compiledCSS.css)
     .then( () => {
-      console.log( chalk.magenta(`[build] [sass] built css (in ${cssTimeElapsed} seconds)`) )
+      console.log( chalk.magenta(`[compiler] [sass] built in ${cssTimeElapsed} seconds`) )
     })
 }
+
+const watch = watcher({
+  glob: WATCH_GLOB,
+  type: 'styles',
+  callback: build
+})
+
+module.exports = { build, watch }

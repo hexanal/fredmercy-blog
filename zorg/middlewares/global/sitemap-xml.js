@@ -1,4 +1,4 @@
-const { write } = require('../../helpers/files')
+const { write } = require('../../bin/files')
 
 // TODO write up some logic to set higher priorities, and different "changefreq" values
 

@@ -1,4 +1,4 @@
-const { insertMeta, getItemByURL } = require('../../helpers/utils')
+const { insertMeta, getItemByURL } = require('../../bin/utils')
 
 const addPostIndexAsParent = function(contentTypes) {
   const blogIndex = getItemByURL( contentTypes.page, '/blog' )

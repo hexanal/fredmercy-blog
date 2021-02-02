@@ -1,19 +1,32 @@
 const esbuild = require('esbuild')
 const chalk = require('chalk')
+const watcher = require('../bin/watcher')
 
-module.exports = function() {
+const WATCH_GLOB = [
+  './src/js/**/*.js',
+]
+const SRC = ['./src/js/app.js']
+const DEST = './public/app.js'
+
+const build = function() {
   const js = esbuild.buildSync({
-    entryPoints: [
-      './src/js/app.js'
-    ],
+    entryPoints: SRC,
     bundle: true,
     target: 'es2018',
-    minify: process.env === 'production',
-    sourcemap: process.env === 'development',
-    outfile: './public/app.js'
+    minify: process.NODE_ENV === 'production',
+    sourcemap: process.NODE_ENV === 'development',
+    outfile: DEST
   })
 
   if (!js.warnings.length) {
-    console.log( chalk.magenta(`[build] [js] built javascript file`) )
+    console.log( chalk.magenta(`[compiler] [js]`) )
   }
 }
+
+const watch = watcher({
+  glob: WATCH_GLOB,
+  type: 'js',
+  callback: build
+})
+
+module.exports = { build, watch }

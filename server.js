@@ -19,7 +19,7 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./fredmercy.db');
 
 const app = express();
-const watch = require('./zorg/watch');
+const { build, watch } = require('./zorg');
 
 /**
  * Setting up Express with all sorts of goodies
@@ -122,7 +122,8 @@ const server = app.listen(app.get('port'), () => {
 	console.log(chalk.blue(`[server] [env: ${app.get('env')}]`));
 	console.log(chalk.blue(`[server] [url: http://${app.get('host')}:${app.get('port')} ]`));
 
-	if ( app.get('env') === 'development' ) watch()
+	build() // compile the necessary stuff
+	if ( app.get('env') === 'development' ) watch() // watch for changes
 });
 
 /**

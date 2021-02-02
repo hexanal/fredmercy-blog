@@ -1,7 +1,7 @@
 // const fs = require('fs')
 // const chalk = require('chalk')
 const marked = require('marked')
-const templater = require('../../helpers/templater')
+const templater = require('../../bin/templater')
 
 const useBlockWithData = function(blockId, data) {
   const component = `{{>blocks/${blockId} data }}`;
