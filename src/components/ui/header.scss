@@ -186,6 +186,11 @@
 		content: '🔖';
 	}
 }
+.header__menu-link--about {
+	&:after {
+		content: '🤔';
+	}
+}
 .header__menu-link--demos {
 	&:after {
 		content: '🧪';

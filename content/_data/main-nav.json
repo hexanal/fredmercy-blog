@@ -16,6 +16,11 @@
       "label": "bookmarks"
     },
     {
+      "id": "about",
+      "href": "/about",
+      "label": "about"
+    },
+    {
       "id": "separator"
     },
     {
