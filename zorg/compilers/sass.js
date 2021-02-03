@@ -1,6 +1,6 @@
 const sass = require('sass')
 const chalk = require('chalk')
-// const importer = require('node-sass-glob-importer')
+const importer = require('node-sass-glob-importer')
 const { write } = require('../bin/files')
 const watcher = require('../bin/watcher')
 
@@ -14,7 +14,7 @@ const DEST = `${DEST_PATH}/${DEST_FILENAME}`
 
 const build = function() {
   const compiledCSS = sass.renderSync({
-    // importer: importer(),
+    importer: importer(),
     file: SRC,
     outputStyle: 'compressed',
     sourceMap: process.NODE_ENV === 'development',
@@ -31,7 +31,7 @@ const build = function() {
 
 const watch = watcher({
   glob: WATCH_GLOB,
-  type: 'styles',
+  type: 'sass',
   callback: build
 })
 

@@ -1,31 +1,10 @@
-// @import 'config/font-plex';
 @import 'config/font-fantasque';
 
 @import 'config/base';
 @import 'config/html';
 @import 'config/themes';
 
-@import '../components/blocks/drawer';
-@import '../components/blocks/side-note';
-
-@import '../components/comments/comment-line';
-@import '../components/comments/comments';
-
-@import '../components/ui/box';
-@import '../components/ui/breadcrumbs';
-@import '../components/ui/content';
-@import '../components/ui/header';
-@import '../components/ui/help';
-@import '../components/ui/post-nav';
-@import '../components/ui/rainbow';
-
-@import '../components/layouts/page';
-@import '../components/templates/bookmarks';
-@import '../components/templates/post';
-
-@import '../components/resume/experience';
-@import '../components/resume/resume-section';
-@import '../components/resume/sub-section';
+@import '../components/**/*.scss';
 
 @import 'components/a11y';
 @import 'components/button';
