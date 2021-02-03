@@ -53,9 +53,7 @@ app.post('/api/comment', (req, res) => {
 	], (error, rows) => {
 		if ( error ) res.send( error )
 
-		res.send({
-			success: true,
-		});
+		res.send({ success: true })
 	})
 });
 
@@ -67,37 +65,10 @@ app.post('/api/comments/byUrl', (req, res) => {
 		{},
 		(error, rows) => {
 			if ( error ) res.send( error )
-			res.send( JSON.stringify( rows ) )
+
+			res.send( rows )
 	})
 })
-
-app.get('/api/comments/:entryId', (req, res) => {
-	const pathToEntry = req.params.entryId.replace(/_/g, '/');
-	const pathToComments = glob.sync(`./content/${pathToEntry}/*.json`, {});
-	let comments = [];
-
-	Promise.all(
-		pathToComments.map( file => {
-			return new Promise((resolve, reject) => {
-				fs.readFile(file, {encoding: 'utf-8'}, (err, content) => {
-					if (err) {
-						console.log(chalk.red(`Error while reading comment file: ${err}`));
-						reject();
-					}
-
-					comments.push(JSON.parse(content));
-
-					resolve();
-				});
-			});
-		})
-	)
-		.then(() => {
-			res.send({
-				comments
-			});
-		});
-});
 
 app.use('/', express.static(path.join(__dirname, 'public')) );
 app.use('/files/', express.static(path.join(__dirname, 'files')) );
