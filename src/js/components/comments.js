@@ -32,13 +32,14 @@ export default function({element, ui, control, messaging }) {
   const getFormattedTimestamp = timestamp => {
     const date = new Date( timestamp )
     const day = date.getUTCDate()
-    const month = months[ date.getUTCMonth() ]
+    const monthIndex = date.getUTCMonth()
+    const month = months[monthIndex]
     const year = date.getUTCFullYear()
 
     const time = getAmPmTime( date )
     const timeAgo = ago( new Date( timestamp ) )
 
-    return `${time}<span>, ${day} ${month} ${year}</span> (${timeAgo})`
+    return `${timeAgo} (${time}, ${day} ${month} ${year})`
   }
 
   /**
@@ -56,21 +57,21 @@ export default function({element, ui, control, messaging }) {
     withChronologicalOrder.map( ({comment, author, timestamp}) => {
       const $commentLine = document.createElement('div')
         const $timestamp = document.createElement('time')
-        const $author = document.createElement('div')
-        const $content = document.createElement('div')
+        const $author = document.createElement('span')
+        const $content = document.createElement('span')
 
       $commentLine.classList.add('comment-line')
         $author.classList.add('comment-line__author')
-        $timestamp.classList.add('comment-line__time')
         $content.classList.add('comment-line__message')
+        $timestamp.classList.add('comment-line__time')
 
       $author.textContent = `${ author }`
-      $timestamp.innerHTML = getFormattedTimestamp(timestamp)
       $content.innerHTML = marked(comment)
+      $timestamp.innerHTML = getFormattedTimestamp(timestamp)
 
       $commentLine.appendChild($author)
-      $commentLine.appendChild($timestamp)
       $commentLine.appendChild($content)
+      $commentLine.appendChild($timestamp)
 
       ui['convo'].appendChild($commentLine)
     })

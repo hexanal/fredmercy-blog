@@ -1,38 +1,27 @@
 .comment-line {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-
-	+ .comment-line {
-		margin-top: 0.5rem;
-	}
+	margin: 0.25rem 0;
 }
 
 .comment-line__author {
-	margin-right: 1rem;
-	padding: 0.25rem;
-	color: var(--color-bg);
-	background-color: var(--color-primary);
+	margin-right: 0.75rem;
+	background-color: var(--color-extra);
 }
 
 .comment-line__time {
-	font-size: 1rem;
-	line-height: 1.5;
+	// display: block;
+	font-size: 0.75rem;
+	line-height: 1.4;
 	font-style: italic;
 	color: var(--color-secondary);
-
-	span {
-		display: none;
-	}
-
-	@media (min-width: $mq-small) {
-		span {
-			display: inline;
-		}
-	}
+	white-space: nowrap;
 }
 
 .comment-line__message {
-	flex-grow: 1;
 	width: 100%;
+
+	p {
+		display: inline;
+		margin: 0.75rem 0;
+		line-height: 1.4;
+	}
 }

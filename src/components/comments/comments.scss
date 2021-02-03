@@ -3,6 +3,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: var(--color-primary);
+}
+
+.comments__write {
+  @media (min-width: $mq-small) {
+    display: flex;
+  }
 }
 
 .comments__input {
@@ -11,30 +18,57 @@
   appearance: none;
   width: 100%;
   padding: 0.5rem;
+  margin-top: -2px;
   font-family: var(--font);
   font-size: 1rem;
   color: var(--color-primary);
   background-color: var(--color-bg);
-  border: none;
-  border-bottom: 2px solid;
+  border: 2px solid;
   border-radius: 0;
   outline: none;
 
+  &::-webkit-input-placeholder {
+    color: var(--color-secondary);
+  }
+
   &:focus {
     z-index: 2;
-    border-color: var(--color-active);
+    color: var(--color-active);
+
+    &::-webkit-input-placeholder {
+      color: var(--color-active);
+    }
   }
 }
 
 .comments__author {
   font-style: italic;
+
+  @media (min-width: $mq-small) {
+    width: 20%;
+    transition: width 200ms ease-in-out;
+
+    &:focus {
+      width: 100%;
+    }
+  }
+}
+
+.comments__message {
+  @media (min-width: $mq-small) {
+    margin-left: -2px;
+  }
 }
 
 .comments__convo {
   overflow: auto;
-  position: relative;
-  padding: 1rem;
   overscroll-behavior: contain;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 2px; // TODO border trick...
+  padding: 0.5rem;
+  background-color: var(--color-bg);
 }
 
 .state-loading {

@@ -6,7 +6,6 @@ const middlewares = [
   require('../middlewares/posts/post-meta'),
   require('../middlewares/posts/order'),
   require('../middlewares/posts/adjacents'),
-  require('../middlewares/posts/comments'),
   require('../middlewares/posts/rss-feed'),
   require('../middlewares/pages/page-meta'),
   require('../middlewares/pages/relationship'),

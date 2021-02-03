@@ -4,6 +4,11 @@
 		data-component="comments"
 		data-url="{{ meta.url }}"
 	>
+		<div
+			class="comments__convo"
+			data-ui="convo"
+		></div>
+
 		<form
 			class="comments__write"
 			data-control="comment-box"
@@ -17,7 +22,7 @@
 				type="text"
 				id="author"
 				name="author"
-				maxlength="100"
+				maxlength="32"
 				placeholder="your display name"
 			>
 
@@ -25,22 +30,15 @@
 				message
 			</label>
 			<input
-				class="comments__input"
+				class="comments__input comments__message"
 				data-control="message"
 				type="text"
 				id="content"
 				name="content"
 				maxlength="1000"
-				placeholder="say something"
+				placeholder="say something!"
 				required
 			>
 		</form>
-
-		<div
-			class="comments__convo"
-			data-ui="convo"
-		>
-		</div>
-
 	</div>
 {{/ui/box }}
