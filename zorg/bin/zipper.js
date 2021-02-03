@@ -1,6 +1,6 @@
 const { exec } = require('child_process')
 
-function exportFiles(filename, pathToZip) {
+function zipper(filename, pathToZip) {
   const command = `tar -cjvf ${filename} ${pathToZip}`
 
   exec(command, (error, stdout, stderr) => {
@@ -18,4 +18,4 @@ function exportFiles(filename, pathToZip) {
   return filename
 }
 
-module.exports = exportFiles
+module.exports = zipper
