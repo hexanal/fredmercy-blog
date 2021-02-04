@@ -5,9 +5,9 @@ export default state => {
   const staterized = {
     update: () => {
       const all = staterized.get();
-      Object.keys( staterized.get() )
+      Object.keys( all )
         .map(key => {
-          if ( !all[key]._onchanges ) return;
+          if ( !all[key] || !all[key]._onchanges ) return;
           staterized.get(current)._onchanges.map(call);
         });
     },

@@ -1,52 +1,61 @@
-// import reefer from '../tools/reefer'
+import Mousetrap from 'mousetrap'
+import stater from '../tools/stater'
+import reefer from '../tools/reefer'
 
 export default function({ element, ui, control, messaging }) {
-	const state = {
-		id: element.dataset.boxId,
+	const state = stater({
+		id: element.dataset.boxId || '',
+		x: element.dataset.boxX || '-50%',
+		shortcut: element.dataset.boxShortcut || false,
 		active: false,
-	};
+	})
 
-	// state.reef = reefer({
-	// 	translate: 0,
-	// 	opacity: 0,
-	// })
-	// 	.onFrame( ({ translate, opacity, transition, pointerX, pointerY, ball }) => {
-	// 		ui['wrap'].style.transform = `translateY(${ (1 - translate) * 2 }rem)`
-	// 		ui['frame'].style.opacity = opacity * 0.9
-	// 		ui['bg'].style.opacity = opacity * 0.9
-	// 		element.classList.toggle('state-box-active', translate === 1);
-	// 	})
+	const render = ({ y, opacity }) => {
+		element.style.display = opacity > 0.001 ? 'block' : 'none'
+		ui['frame'].style.opacity = opacity
+		ui['frame'].style.transform = `translate(${state.get().x}, ${y * 2}rem)`
+		ui['bg'].style.opacity = opacity * 0.9
+	}
+	const animations = reefer({
+		y: 2,
+		opacity: 0
+	})
+		.onFrame( render )
+
+	state.active.changed( active => {
+		element.classList.toggle('state-box-active', active)
+
+		Mousetrap[active ? 'bind' : 'unbind']('escape', close)
+
+		const y = active ? 0 : 1
+		const opacity = active ? 1 : 0
+		const stiffness = active ? 350 : 420
+
+		animations.set({ y }, { stiffness, damping: 12 })
+		animations.set({ opacity }, { stiffness, damping: 20 })
+	})
 
 	const toggle = () => {
-		state.active = !state.active;
-		element.classList.toggle('state-box-active');
-		// state.reef.set({ translate: 1, opacity: 1 }, { stiffness: 320, damping: 14 })
+		const { active } = state.get()
+		state.active.set(!active)
 	}
+	const open = () => state.active.set(true)
+	const close = () => state.active.set(false)
 
-	const open = () => {
-		state.active = true;
-		element.classList.add('state-box-active');
-		// state.reef.set({ translate: 1, opacity: 1 }, { stiffness: 320, damping: 13 })
-	}
+	const eventToggle = messaging.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
+	const eventShow = messaging.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
+	const eventClose = messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
 
-	const close = () => {
-		// state.reef.set({ translate: 0, opacity: 0 }, { stiffness: 200, damping: 17 })
-		state.active = false;
-		element.classList.remove('state-box-active');
-	}
+	control['close'].addEventListener('click', close)
+	control['bg'].addEventListener('click', close)
 
-	const eventToggle = messaging.subscribe(`TOGGLE_BOX_${state.id.toUpperCase()}`, toggle)
-	const eventShow = messaging.subscribe(`SHOW_BOX_${state.id.toUpperCase()}`, open)
-	const eventClose = messaging.subscribe(`CLOSE_BOX_${state.id.toUpperCase()}`, close)
+	if ( state.get().shortcut ) Mousetrap.bind( state.get().shortcut, toggle )
 
-	control['close'].addEventListener('click', close);
-	control['bg'].addEventListener('click', close);
-
-	Mousetrap(element).bind('escape', close);
+	state.update()
 
 	return function() {
-		eventToggle();
-		eventShow();
-		eventClose();
+		eventToggle()
+		eventShow()
+		eventClose()
 	}
 }

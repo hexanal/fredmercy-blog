@@ -13,13 +13,13 @@ const build = function() {
     entryPoints: SRC,
     bundle: true,
     target: 'es2018',
-    minify: process.NODE_ENV === 'production',
-    sourcemap: process.NODE_ENV === 'development',
+    minify: process.env.NODE_ENV === 'production',
+    sourcemap: process.env.NODE_ENV === 'development',
     outfile: DEST
   })
 
   if (!js.warnings.length) {
-    console.log( chalk.magenta(`[compiler] [js]`) )
+    console.log( chalk.magenta(`[compiler] [js] [env: ${process.env.NODE_ENV}]`) )
   }
 }
 

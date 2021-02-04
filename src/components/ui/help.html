@@ -1,9 +1,9 @@
-{{#> ui/box id="help" title="help / options" }}
+{{#> ui/box id="help" title="help / options" shortcut="?" }}
 	<aside
 		class="help"
 		data-component="help, themes"
 	>
-		<div class="help__section">
+		<!-- <div class="help__section">
 			<h2 class="heading-alt">
 				Interface
 			</h2>
@@ -28,7 +28,7 @@
 					</div>
 				</li>
 
-				<!--
+
 				<li
 					class="help__item help__item--bleeps"
 					data-component="bleeps"
@@ -50,32 +50,11 @@
 						bleeps & sounds.
 					</div>
 				</li>
-				-->
 
-				<!-- <li
-					class="help__item"
-				>
-					<div class="help__icon">
-						🅰️
-					</div>
-					<div>
-						<strong class="help__emphasis">
-							Font:
-						</strong>
-						<select
-							class="help__select"
-							data-control="font-select"
-						>
-							<option value="plex">IBM Plex</option>
-							<option value="arial">Arial</option>
-							<option value="garamond">Garamond</option>
-						</select>
-					</div>
-				</li>   -->
 			</ul>
 		</div>
 
-		<hr class="help__separator">
+		<hr class="help__separator"> -->
 
 		<div class="help__section help__section--a11y">
 			<h2 class="heading-alt">
@@ -104,7 +83,7 @@
 					<div>
 						<strong class="help__emphasis">
 							Use
-							<button class="hotkey help__key" data-control="show-menu" type="button">m</button>
+							<button class="hotkey help__key" data-component="emit" data-event="TOGGLE_BOX_MENU" type="button">m</button>
 						</strong>
 						to toggle the main menu.
 					</div>
@@ -116,7 +95,7 @@
 					<div>
 						<strong class="help__emphasis">
 							Use
-							<button class="hotkey help__key" data-control="help-show" type="button">?</button>
+							<button class="hotkey help__key" data-component="emit" data-event="CLOSE_BOX_HELP" type="button">?</button>
 						</strong>
 						to toggle this popup.
 					</div>

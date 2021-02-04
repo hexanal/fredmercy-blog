@@ -5,9 +5,9 @@
 	z-index: 3;
 	display: none;
 
-	&.state-box-active {
-		display: block;
-	}
+	// &.state-box-active {
+	// 	display: block;
+	// }
 }
 
 .box__close {
@@ -15,7 +15,6 @@
 	z-index: var(--z-box);
 	top: -2.5rem;
 	right: 0;
-	transform: translate(2px, -2px);
 }
 
 .box__bg {
@@ -35,9 +34,8 @@
 	position: absolute;
 	top: -2.5rem;
 	left: 0;
-	transform: translate(-2px, -2px);
 
-	&.heading { // TODO override!
+	&.heading {
 		line-height: 1.4;
 	}
 }

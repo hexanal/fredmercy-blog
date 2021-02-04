@@ -1,8 +1,16 @@
-<div class="box" data-component="box" data-box-id="{{ this.id }}">
+<div
+  class="box"
+  data-component="box"
+  data-box-id="{{ this.id }}"
+  data-box-x="{{#if this.x }}{{ this.x }}{{else}}-50%{{/if}}"
+  {{#if this.shortcut }}
+    data-box-shortcut="{{ this.shortcut }}"
+  {{/if}}
+>
   <div class="box__frame" data-ui="frame">
-    {{#if title }}
+    {{#if this.title }}
     <h2 class="box__title heading">
-      {{ title }}
+      {{ this.title }}
     </h2>
     {{/if}}
 

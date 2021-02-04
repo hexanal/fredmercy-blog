@@ -1,7 +1,4 @@
-<header
-	class="header"
-	data-component="nav"
->
+<header class="header">
 	<nav class="header__header-extend">
 		<h1 class="header__title">
 			<a href="/" class="header__home-btn button">
@@ -25,64 +22,57 @@
 				class="button header__toggle-menu"
 				type="button"
 				aria-label="Toggle navigation menu"
-				data-control="toggle-menu"
+				data-component="emit"
+				data-event="SHOW_BOX_MENU"
 			>
-				<div class="header__toggle-open">menu</div>
-				<span class="header__toggle-close">close<span aria-hidden="true"> ×</span></span>
+				menu
 			</button>
 		</div>
-
-		<div class="header__menu-wrap" data-ui="menu">
-			<div class="header__menu" role="navigation">
-				{{#each ui.mainNav }}
-					{{#if this.href }}
-						<div class="header__menu-item">
-							<a
-								class="header__menu-link header__menu-link--{{ this.id }}"
-								href="{{ this.href }}"
-								{{#each this.attr }}
-									{{#each this }}
-										{{@key}}="{{this}}"
-									{{/each}}
-								{{/each}}
-							>
-								{{ this.label }}
-							</a>
-						</div>
-					{{else}}
-						<hr>
-					{{/if}}
-				{{/each}}
-
-				<hr>
-
-				<div class="header__menu-item">
-					<button
-						class="header__menu-link header__menu-link--help"
-						type="button"
-						data-component="emit"
-						data-event="SHOW_BOX_HELP"
-					>
-						help / options
-					</button>
-				</div>
-			</div>
-		</div>
-
-		<button
-			class="header__menu-bg"
-			data-control="menu-bg"
-			type="button"
-			aria-label="Close navigation menu"
-		></button>
 	</nav>
 
 	<button
 		class="header__back-to-top button"
-		data-control="to-top"
+		data-component="to-top"
 		type="button"
 	>
 		<span aria-hidden="true">↑</span>
 		<span class="visually-hidden">top</span>
 	</button>
 </header>
+
+{{#> ui/box id="menu" x="-100%" shortcut="m" }}
+<div class="header__menu" role="navigation">
+	{{#each ui.mainNav }}
+		{{#if this.href }}
+			<div class="header__menu-item">
+				<a
+					class="header__menu-link header__menu-link--{{ this.id }}"
+					href="{{ this.href }}"
+					{{#each this.attr }}
+						{{#each this }}
+							{{@key}}="{{this}}"
+						{{/each}}
+					{{/each}}
+				>
+					{{ this.label }}
+				</a>
+			</div>
+		{{else}}
+			<hr>
+		{{/if}}
+	{{/each}}
+
+	<hr>
+
+	<div class="header__menu-item">
+		<button
+			class="header__menu-link header__menu-link--help"
+			type="button"
+			data-component="emit"
+			data-event="SHOW_BOX_HELP"
+		>
+			help / options
+		</button>
+	</div>
+</div>
+{{/ui/box }}

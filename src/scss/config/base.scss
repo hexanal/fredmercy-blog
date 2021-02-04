@@ -59,6 +59,11 @@ html {
 	}
 }
 
+// TODO!
+* {
+	transition: font-size 200ms cubic-bezier(.75,.05,.25,.95);
+}
+
 body {
 	margin: 1rem;
 	padding-top: 3.25rem; // TODO

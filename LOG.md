@@ -1,16 +1,40 @@
-* remove theme selector before fixing them...
-    - better dark mode
-* fix issue with "Escape key to dismiss modal" functionality
 * fix vertical alignment of comments box
     * box: onresize
         - calculate height of contained div
         - resize frame to match?
         - allow box to sit smack in the middle
+* add shortcut prop to box component
 
+* maybe work with services?
+    - shortcut service
+    - event service (state service?)
+    - viewport service? -> where in the page, how big, media, etc.
+    - loader service?
+        - to determine when all the components on the page are loaded and ready,
+        - toggle a loading animation/state
+    - storage service -> localStorage / indexedDB
+
+* exponent
+    - only one "child" selector (combine ui/control)
+        - get dataset from all?
+    - children ( data-child="something" )
+        - then can destructure in component
+```
+export default ({ children }) => {
+    const { something } = children
+
+    console.log( something.dataset )
+})
+```
 
 * reefer + stater
 * change a staterized value with reefer?
     - everything in `.changed()` will get called, dude
+    - pass... a staterized state PLUGGED with the messaging middleware
+    - that way you have a redux-like thing
+        - an event calls a "reducer" function
+        - the reducer updates `stater` keys
+        - whatever's hooked in `stater.changed` is updated?
 
 * add svg symbols support
     - gotta design them

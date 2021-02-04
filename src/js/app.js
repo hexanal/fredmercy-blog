@@ -20,10 +20,10 @@ import help from './components/help'
 import highlight from './components/highlight'
 import jumpto from './components/jumpto'
 import live from './components/live'
-import nav from './components/nav'
 import sideNote from './components/side-note'
 import tabs from './components/tabs'
 import themes from './components/themes'
+import toTop from './components/to-top'
 
 import extra from './components/resume/extra'
 
@@ -49,9 +49,9 @@ Exponent
 		'highlight': highlight,
 		'jumpto': jumpto,
 		'live': live,
-		'nav': nav,
 		'side-note': sideNote,
 		'tabs': tabs,
-		'themes': themes
+		'themes': themes,
+		'to-top': toTop,
 	})
 	.mount(container)

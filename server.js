@@ -12,7 +12,6 @@ const chalk = require('chalk');
 const sanitizeHtml = require('sanitize-html');
 const lusca = require('lusca');
 const expressStatusMonitor = require('express-status-monitor');
-const glob = require('glob');
 const WebSocket = require('ws');
 const sqlite3 = require('sqlite3');
 
@@ -21,9 +20,6 @@ const db = new sqlite3.Database('./fredmercy.db');
 const app = express();
 const { build, watch } = require('./zorg');
 
-/**
- * Setting up Express with all sorts of goodies
- */
 app.set('host', process.env.HOST || '0.0.0.0');
 app.set('port', process.env.PORT || 8042);
 app.use(expressStatusMonitor());
