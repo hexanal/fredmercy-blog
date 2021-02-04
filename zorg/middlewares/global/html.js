@@ -11,6 +11,8 @@ const formatContent = function( contentTypes ) {
     console.log( chalk.yellow(`[middleware] [html] ${contentTypes[type].length} “${type}” items`) );
 
     return contentTypes[type].map( item => {
+      if ( !item.meta.url ) return
+
       const destination = `./public${item.meta.url}`
       const defaultTemplate = `templates/${type}`
       const templateName = item.meta.template || defaultTemplate

@@ -12,6 +12,7 @@ export default function({ element, ui, control, messaging }) {
 
 	const render = ({ y, opacity }) => {
 		element.style.display = opacity > 0.001 ? 'block' : 'none'
+		element.style.pointerEvents = opacity > 0.75 ? 'auto' : 'none'
 		ui['frame'].style.opacity = opacity
 		ui['frame'].style.transform = `translate(${state.get().x}, ${y * 2}rem)`
 		ui['bg'].style.opacity = opacity * 0.9
@@ -29,9 +30,9 @@ export default function({ element, ui, control, messaging }) {
 
 		const y = active ? 0 : 1
 		const opacity = active ? 1 : 0
-		const stiffness = active ? 350 : 420
+		const stiffness = active ? 350 : 500
 
-		animations.set({ y }, { stiffness, damping: 12 })
+		animations.set({ y }, { stiffness, damping: 14 })
 		animations.set({ opacity }, { stiffness, damping: 20 })
 	})
 

@@ -12,21 +12,31 @@ export default function({element, ui, control, messaging }) {
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
+    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+
     return fetch('/api/comments/byUrl', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url })
     })
-      .then( r => r.json() )
+      .then( r => {
+        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        return r.json()
+      })
   }
 
   const insertCommentIntoDB = function( comment ) {
+    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+
     return fetch('/api/comment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify( comment )
     })
-      .then( r => r.json() )
+      .then( r => {
+        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        return r.json()
+      })
   }
 
   const getFormattedTimestamp = timestamp => {

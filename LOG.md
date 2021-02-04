@@ -3,7 +3,10 @@
         - calculate height of contained div
         - resize frame to match?
         - allow box to sit smack in the middle
-* add shortcut prop to box component
+
+* don't move "rainbow ball" with cursor
+    - locate cursor on click only?
+    - random location? (locations?!)
 
 * maybe work with services?
     - shortcut service

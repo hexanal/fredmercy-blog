@@ -82,6 +82,13 @@ export default function({ element, messaging }) {
 		state.transitioning = false
 		reefIn()
 	})
+	messaging.subscribe('SET_LOADING', loading => {
+		if ( loading ) {
+			state.reef.set({ transition: 1 }, { stiffness: 200, damping: 14 })
+		} else {
+			state.reef.set({ transition: 0 }, { stiffness: 100, damping: 25 })
+		}
+	})
 
 	const reefOut = function() {
 		state.reef.set({ translate: -2 }, { stiffness: 50, damping: 40 })
