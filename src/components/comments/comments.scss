@@ -27,15 +27,18 @@
   outline: none;
 
   &::-webkit-input-placeholder {
-    color: var(--color-secondary);
+    font-style: italic;
+    color: var(--color-primary);
+    opacity: 0.5;
   }
 
   &:focus {
     z-index: 2;
-    color: var(--color-active);
+    border-color: var(--color-active);
 
     &::-webkit-input-placeholder {
       color: var(--color-active);
+      opacity: 1;
     }
   }
 }

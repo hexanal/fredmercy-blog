@@ -23,7 +23,6 @@
 }
 
 .header__back-to-top {
-	display: none;
 	position: absolute;
 	z-index: 1;
 	top: 100%;
@@ -32,15 +31,16 @@
 	border-radius: 0 0 0.75rem 0.75rem;
 
 	&.button {
+		display: none;
 		background-color: var(--color-secondary);
 
 		@include hover-focus {
 			background-color: var(--color-active);
 		}
-	}
 
-	[data-scrolled-past-viewport="true"] & {
-		display: block;
+		[data-scrolled-past-viewport="true"] & {
+			display: inline-block;
+		}
 	}
 
 	@media (min-width: $mq-medium) {

@@ -1,7 +1,12 @@
-* fix vertical alignment of comments box
-* fix issue with "Escape key to dismiss modal" functionality
 * remove theme selector before fixing them...
     - better dark mode
+* fix issue with "Escape key to dismiss modal" functionality
+* fix vertical alignment of comments box
+    * box: onresize
+        - calculate height of contained div
+        - resize frame to match?
+        - allow box to sit smack in the middle
+
 
 * reefer + stater
 * change a staterized value with reefer?
