@@ -19,7 +19,7 @@ const shortcodes = [
   {
     tag: '*',
     processor: function({ props, item, contentTypes }) {
-      return useBlockWithData('side-note', { content: marked(props) })
+      return useBlockWithData('side-note', { content: marked( props ) })
     }
   },
   {
@@ -106,6 +106,8 @@ const applyShortcodes = function( item, contentTypes ) {
         item,
         contentTypes,
       })
+        .replace('\n', '')
+        .replace('\r', '')
 
       debugLog(`processing shortcode “${shortcode.tag}” (in page: “${item.meta.title}”)`)
 
