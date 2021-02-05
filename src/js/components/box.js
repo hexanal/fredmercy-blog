@@ -14,6 +14,8 @@ export default function({ element, ui, control, messaging }) {
 		element.style.pointerEvents = opacity > 0.75 ? 'auto' : 'none'
 		ui['frame'].style.opacity = opacity
 		ui['wrap'].style.transform = `translateY(${y * 2}rem)`
+		if (ui['title']) { ui['title'].style.transform = `translateY(${y * -2}rem)` }
+		control['close'].style.transform = `translateY(${y * -0.5}rem)`
 		ui['bg'].style.opacity = opacity * 0.9
 	}
 	const animations = reefer({

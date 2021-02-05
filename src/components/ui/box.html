@@ -9,7 +9,7 @@
   <div class="box__positioner">
     <div class="box__frame" data-ui="frame">
       {{#if this.title }}
-      <h2 class="box__title heading">
+      <h2 class="box__title heading" data-ui="title">
         {{ this.title }}
       </h2>
       {{/if}}
@@ -28,14 +28,14 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <button
-      class="box__bg"
-      data-control="bg"
-      type="button"
-      tabindex="-1"
-      data-ui="bg"
-    >
-  </button>
+    <button
+        class="box__bg"
+        data-control="bg"
+        type="button"
+        tabindex="-1"
+        data-ui="bg"
+      >
+    </button>
+  </div>
 </div>
