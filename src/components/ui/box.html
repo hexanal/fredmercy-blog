@@ -2,32 +2,34 @@
   class="box"
   data-component="box"
   data-box-id="{{ this.id }}"
-  data-box-x="{{#if this.x }}{{ this.x }}{{else}}-50%{{/if}}"
   {{#if this.shortcut }}
     data-box-shortcut="{{ this.shortcut }}"
   {{/if}}
 >
-  <div class="box__frame" data-ui="frame">
-    {{#if this.title }}
-    <h2 class="box__title heading">
-      {{ this.title }}
-    </h2>
-    {{/if}}
+  <div class="box__positioner">
+    <div class="box__frame" data-ui="frame">
+      {{#if this.title }}
+      <h2 class="box__title heading">
+        {{ this.title }}
+      </h2>
+      {{/if}}
 
-    <button
-      type="button"
-      class="box__close button"
-      data-control="close"
-    >
-      close<span aria-hidden="true"> ×</span>
-    </button>
+      <button
+        type="button"
+        class="box__close button"
+        data-control="close"
+      >
+        close<span aria-hidden="true"> ×</span>
+      </button>
 
-    <div class="box__wrap" data-ui="wrap">
-      <div class="box__scroll">
-        {{> @partial-block }}
+      <div class="box__wrap" data-ui="wrap">
+        <div class="box__scroll">
+          {{> @partial-block }}
+        </div>
       </div>
     </div>
   </div>
+
   <button
       class="box__bg"
       data-control="bg"

@@ -165,11 +165,6 @@
 	+ .header__menu-item {
 		margin-top: 0.75em;
 	}
-
-	@media (min-width: $mq-medium) {
-		text-align: left;
-		margin: 0 1em 0 0;
-	}
 }
 
 .header__menu-link {
@@ -195,16 +190,6 @@
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
-	}
-
-	@media (min-width: $mq-medium) {
-		padding-left: 1.75em;
-		padding-right: 0;
-
-		&:after {
-			left: 0;
-			right: auto;
-		}
 	}
 }
 .header__menu-link--blog {
@@ -271,8 +256,12 @@
 
 [data-box-id="menu"] {
 	.box__frame {
-		// width: 16rem;
-    height: auto;
-		// left: 50rem;
+		height: auto;
+
+		@media (min-width: $mq-medium) {
+			width: 16rem;
+			left: auto;
+			right: 0;
+		}
 	}
 }
