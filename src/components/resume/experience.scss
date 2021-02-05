@@ -45,6 +45,25 @@
   }
 }
 
+.experience__company {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.experience__link {
+  display: inline-block;
+  margin-top: -0.25rem; // counter-act button's padding
+  text-decoration: underline;
+  white-space: nowrap;
+
+	@include hover-focus {
+    text-decoration: none;
+    color: var(--color-bg);
+    background-color: var(--color-secondary);
+  }
+}
+
 .experience__location,
 .experience__extras {
   margin-top: 1rem;
@@ -80,9 +99,7 @@
 .experience__more {
   display: none;
   overflow: hidden;
-  margin: 0 -2rem 0 -0.5rem;
-  list-style: none;
-  padding: 1px;
+  padding: 0;
 
   .state-collapse-expand & {
     display: block;
@@ -90,19 +107,17 @@
 }
 
 .experience__more-item {
-  white-space: nowrap;
+  &:before {
+    content: '- ';
+  }
 
   + .experience__more-item {
     margin-top: 0.25rem;
   }
-}
 
-.experience__link {
-  text-decoration: underline;
-
-	@include hover-focus {
-    text-decoration: none;
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
+  small {
+    display: block;
+    padding-left: 1rem;
+    color: var(--color-secondary);
   }
 }
