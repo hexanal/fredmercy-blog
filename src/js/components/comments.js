@@ -7,8 +7,6 @@ export default function({element, ui, control, messaging }) {
     show: false
   }
 
-  const commentCount = document.getElementById('comments-count')
-
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
@@ -60,7 +58,7 @@ export default function({element, ui, control, messaging }) {
 
     element.classList.remove('state-loading')
 
-    commentCount.textContent = `(${comments.length})`
+    document.getElementById('comments-count').textContent = `(${comments.length})`
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
 
