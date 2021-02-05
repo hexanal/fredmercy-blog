@@ -13,7 +13,7 @@ const middlewares = [
   require('../middlewares/global/posts-by-months'),
   require('../middlewares/global/shortcodes'),
   require('../middlewares/global/content'),
-  require('../middlewares/global/ui-data'),
+  require('../middlewares/global/extra-data'),
   require('../middlewares/global/json'),
   require('../middlewares/global/global-data'),
   require('../middlewares/global/sitemap-xml'),
