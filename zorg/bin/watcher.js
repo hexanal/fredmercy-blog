@@ -11,7 +11,7 @@ module.exports = function({ glob, type, callback }) {
     return watcher
       .on('ready', () => console.log( chalk.yellow(`[watch] [${type}]`)) )
       .on('change', path => {
-        console.log( chalk.yellow(`[watch] [${type}] ${path}`) )
+        console.log( chalk.yellow(`[watch] [changed!] `) + chalk.dim(`[${type}] ${path}`) )
         callback()
       })
   }
