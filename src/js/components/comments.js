@@ -146,22 +146,15 @@ export default function({element, ui, control, messaging }) {
       window.localStorage.setItem('comments_message', e.currentTarget.value)
 
       if ( e.key === 'Enter' && !e.shiftKey ) submitComment(e)
+      if ( e.key === 'Escape' ) messaging.dispatch({ id: 'CLOSE_BOX_COMMENTS' })
     })
   }
 
   const setupMessaging = function() {
     state.messages = [
-      messaging.subscribe('SHOW_COMMENTS', () => {
-        state.show = true
-        element.classList.toggle('state-show-comments', state.show)
-      }),
-      messaging.subscribe('HIDE_COMMENTS', () => {
-        state.show = false
-        element.classList.toggle('state-show-comments', state.show)
-      }),
-      messaging.subscribe('TOGGLE_COMMENTS', () => {
-        state.show = !state.show
-        element.classList.toggle('state-show-comments', state.show)
+      messaging.subscribe('SHOW_BOX_COMMENTS', () => {
+        // focus the comment box on show
+        setTimeout( () => control['message'].focus(), 50 )
       })
     ]
   }
