@@ -11,6 +11,7 @@ import transitions from './components/transitions'
 
 // ui
 // import bleeps from './components/bleeps'
+import ball from './components/ball'
 import box from './components/box'
 import comments from './components/comments'
 import drawer from './components/drawer'
@@ -33,6 +34,7 @@ Exponent
 	.use([ Messaging ])
 	.autoload([
 		a11y,
+		ball,
 		keyboard,
 		rainbow,
 		scroll,

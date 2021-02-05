@@ -4,8 +4,6 @@
         - resize frame to match?
         - allow box to sit smack in the middle
 
----
-
 * maybe work with services?
     - shortcut service
     - event service (state service?)
@@ -15,11 +13,6 @@
         - toggle a loading animation/state
     - storage service -> localStorage / indexedDB
 
-* reefer + stater
-    * don't move "rainbow ball" with cursor
-        - locate cursor on click only?
-        - random location? (locations?!)
-        - reefer sucks, haha! `instantSet` doesn't work
 * change a staterized value with reefer?
     - everything in `.changed()` will get called, dude
     - pass... a staterized state PLUGGED with the messaging middleware
@@ -27,6 +20,10 @@
         - an event calls a "reducer" function
         - the reducer updates `stater` keys
         - whatever's hooked in `stater.changed` is updated?
+    * reefer only one value
+    * can dynamically set spring
+    * try with set() / get() functions?
+        - could be the key haha
 
 * add svg symbols support
     - gotta design them
