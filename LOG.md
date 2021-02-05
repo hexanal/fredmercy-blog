@@ -1,10 +1,18 @@
+* add svg symbols support
+    - **hopefull sooner rather than later, boy**
+    - gotta design them
+    - for header icons and others (replace arrows, etc.)
+
 * fix vertical alignment of comments box
+    * **when I've got some time**
+    * ResizeObserver ?
     * box: onresize
         - calculate height of contained div
         - resize frame to match?
         - allow box to sit smack in the middle
 
 * maybe work with services?
+    * **when I'm building something new, ----> LATER**
     - shortcut service
     - event service (state service?)
     - viewport service? -> where in the page, how big, media, etc.
@@ -14,6 +22,7 @@
     - storage service -> localStorage / indexedDB
 
 * change a staterized value with reefer?
+    - **HOLD FOR NOW -> thing might change when using a vdom implementation**
     - everything in `.changed()` will get called, dude
     - pass... a staterized state PLUGGED with the messaging middleware
     - that way you have a redux-like thing
@@ -25,11 +34,8 @@
     * try with set() / get() functions?
         - could be the key haha
 
-* add svg symbols support
-    - gotta design them
-    - for header icons and others (replace arrows, etc.)
-
 * add some sort of GUI page... to rebuild pages?
+    - **this is a bit far out...**
     - how to make it... secure?
     - or only build that page when developing?
     - but it would be nice to have it online too

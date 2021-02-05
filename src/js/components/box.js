@@ -34,7 +34,7 @@ export default function({ element, ui, control, messaging }) {
 		const stiffness = active ? 350 : 500
 
 		animations.set({ y }, { stiffness, damping: 14 })
-		animations.set({ opacity }, { stiffness, damping: 20 })
+		animations.set({ opacity }, { stiffness: 350, damping: 20 })
 	})
 
 	const toggle = () => {
