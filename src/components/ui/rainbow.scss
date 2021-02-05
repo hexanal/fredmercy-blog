@@ -29,6 +29,10 @@
 			left: 0;
 		}
 	}
+
+	@media print {
+		display: none;
+	}
 }
 
 .rainbow__ray {
@@ -83,26 +87,5 @@
 		&:nth-child(5) {
 			top: 80%;
 		}
-	}
-}
-
-.rainbow__ball {
-	position: fixed;
-	z-index: 3;
-	top: 0;
-	left: 0;
-	border-radius: 50%;
-	background-color: var(--color-primary);
-	transform: scale(0);
-	pointer-events: none;
-
-	@media (orientation: landscape) {
-		width: 250vw;
-		height: 250vw;
-	}
-
-	@media (orientation: portrait) {
-		width: 250vh;
-		height: 250vh;
 	}
 }

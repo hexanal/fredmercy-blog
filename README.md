@@ -1,11 +1,11 @@
 # Fred Mercy's Website
 
-## what
+## what is it?
 
-- *handmade*, with a little help from my friends (real and imaginary)
-- browsable at [https://fredmercy.ca](https://fredmercy.ca)
+* *handmade*, *minimal*, *work-in-progress*
+* browsable at [https://fredmercy.ca](https://fredmercy.ca)
 
-## how
+## how?
 
 If you want to see how the sausage was made, here's the recipe:
 
@@ -23,7 +23,7 @@ This command will run an Express server at [localhost:8042](http://localhost:804
   - **javascript** files; they get compiled using [esbuild](https://esbuild.github.io)
   - **sass** files; they get compiled using [Sass](https://sass-lang.com/dart-sass) (Dart Sass)
 
-## why
+## why?
 
 The goal was to have this whole website be tailor-made, built from scratch. I tried to write the least amount of crazy code as I could in order to keep it manageable. Obviously, seasoned developers who look at this codebase will roll their eyes at most of it. However the other, more personal goal of this endeavour is to learn, to experiment, to try things.
 
@@ -95,6 +95,6 @@ Handlebars is pretty cool, I think. Its minimal approach suits my needs, and so 
 
 ### compilers
 
-In `./zorg/compiler`, you will find the files that handle all the frontend compilation stuff. Tap into that if you want to use something else than straight-up Sass, or another JS bundler.
+In `./zorg/compilers`, you will find the script files that handle all the frontend compilation stuff. Tap into that if you want to use something else than straight-up Sass, or another JS bundler.
 
 I ditched [Webpack](https://webpack.js.org/) because, let's face it, what I'm building here is a tiny personal website: I don't need code-splitting, hot module replacement, blah blah. I need something to manage my CSS, a little bit of Javascript, and something to dump the contents of `./src/assets/` into `/public`.

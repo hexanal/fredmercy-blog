@@ -1,37 +1,19 @@
-/**
- * This "component" isn't really linked to a DOM element, and acts on its own.
- * It's a function that called by Exponent's "autoload" function.
- *
- * It gets passed the middlewares, so you can still plug into the whole Exponent
- * structure if you so desire.
- */
+const HAS_SCROLLED_THRESHOLD = 5; // pixels scrolled before slapping on the `scrolled` data attribute
 
 export default function(props) {
   const state = {
     scrollY: 0,
-    scrollDirection: 'DOWN',
     scrollPastViewport: false,
   };
 
   const onScroll = e => {
     const { scrollY, innerHeight } = window;
 
-    const scrollDirection = scrollY > state.scrollY ? 'DOWN' : 'UP';
     state.scrollY = scrollY;
     state.scrollPastViewport = scrollY >= innerHeight;
 
-    document.documentElement.dataset.scrollDirection = state.scrollDirection;
+    document.documentElement.dataset.scrolled = state.scrollY > HAS_SCROLLED_THRESHOLD;
     document.documentElement.dataset.scrolledPastViewport = state.scrollPastViewport;
-
-    if (scrollDirection !== state.scrollDirection) {
-      state.scrollDirection = scrollDirection;
-
-      props.messaging.dispatch({
-        id: 'CHANGED_SCROLL_DIR',
-        payload: scrollDirection
-      });
-
-    }
   }
 
   document.addEventListener('scroll', onScroll);

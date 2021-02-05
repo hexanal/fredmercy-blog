@@ -1,3 +1,9 @@
+const chalk = require('chalk')
+
+const debugLog = msg => {
+  if ( process.argv.includes('--verbose') ) console.log( chalk.green(`[debug] ${msg}`) )
+}
+
 const getFilenameFromPath = function( filepath ) {
   const route = filepath
     .replace('./content/', '')
@@ -38,6 +44,7 @@ const insertMeta = function(items, insertedMeta) { return items.map( item => ({
 const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
 module.exports = {
+  debugLog,
   getFilenameFromPath,
   getItemByURL,
   insertData,

@@ -8,7 +8,10 @@
 export const Messaging = {
   subscribers: [],
 
-  subscribe: (id, cb) => { Messaging.addSubscriber(id, cb); },
+  subscribe: (id, cb) => {
+    Messaging.addSubscriber(id, cb);
+    return () => Messaging.removeSubscriber(id, cb); // call to remove?
+  },
   unsubscribe: (id, cb) => { Messaging.removeSubscriber(id, cb); },
   dispatch: (event) => Messaging.dispatchToSubscribers(event),
 

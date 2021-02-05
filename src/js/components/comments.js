@@ -1,199 +1,213 @@
-import axios from 'axios';
-import Mousetrap from 'mousetrap';
+import ago from 's-ago'
+import marked from 'marked'
+import orderBy from 'lodash.orderby'
+import reefer from '../tools/reefer'
 
-export default function({element, ui, control, messaging}) {
+export default function({element, ui, control, messaging }) {
   const state = {
-    entryId: null,
-    entryComments: {},
-  };
+    show: false
+  }
+
+  const animated = reefer({ y: 0, opacity: 0 })
+    .onFrame( ({ y, opacity }) => {
+      ui['convo'].style.transform = `translateY(${ y * 2 }rem)`
+      ui['convo'].style.opacity = opacity
+    })
+
+  const getCommentsFromDB = function() {
+    const url = element.dataset.url
+
+    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+    animated.set({ y: 1, opacity: 0.25 }, { stiffness: 250, damping: 15 })
+
+    return fetch('/api/comments/byUrl', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url })
+    })
+      .then( r => {
+        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        animated.set({ y: 0 }, { stiffness: 350, damping: 13 })
+        animated.set({ opacity: 1 }, { stiffness: 200, damping: 18 })
+        return r.json()
+      })
+  }
+
+  const insertCommentIntoDB = function( comment ) {
+    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+    animated.set({ y: 1, opacity: 0.25 }, { stiffness: 250, damping: 15 })
+
+    return fetch('/api/comment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify( comment )
+    })
+      .then( r => {
+        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        animated.set({ y: 0 }, { stiffness: 350, damping: 13 })
+        animated.set({ opacity: 1 }, { stiffness: 200, damping: 18 })
+
+        return r.json()
+      })
+  }
+
+  const getFormattedTimestamp = timestamp => {
+    const date = new Date( timestamp )
+    const day = date.getUTCDate()
+    const monthIndex = date.getUTCMonth()
+    const month = months[monthIndex]
+    const year = date.getUTCFullYear()
+
+    const time = getAmPmTime( date )
+    const timeAgo = ago( new Date( timestamp ) )
+
+    return `${timeAgo} (${time}, ${day} ${month} ${year})`
+  }
+
+  /**
+   * refresh the "convo" screen :)
+   */
+  const displayConversation = comments => {
+    ui['convo'].innerHTML = '' // FLUSH!!
+
+    document.getElementById('comments-count').textContent = `(${comments.length})`
+
+    const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
+
+    withChronologicalOrder.map( ({comment, author, timestamp}) => {
+      const $commentLine = document.createElement('div')
+        const $timestamp = document.createElement('time')
+        const $author = document.createElement('span')
+        const $content = document.createElement('span')
+
+      $commentLine.classList.add('comment-line')
+        $author.classList.add('comment-line__author')
+        $content.classList.add('comment-line__message')
+        $timestamp.classList.add('comment-line__time')
+
+      $author.textContent = `${ author }`
+      $content.innerHTML = marked(comment)
+      $timestamp.innerHTML = getFormattedTimestamp(timestamp)
+
+      $commentLine.appendChild($author)
+      $commentLine.appendChild($content)
+      $commentLine.appendChild($timestamp)
+
+      ui['convo'].appendChild($commentLine)
+    })
+  }
+
+  const getMessageDataFromUI = function() {
+    const author = control['author'].value.trim() !== '' ? control['author'].value : '(anonymous)'
+    const comment = control['message'].value.trim() !== '' ? control['message'].value : false
+    const url = element.dataset.url
+    const timestamp= Date.now()
+
+    return { author, comment, url, timestamp }
+  }
 
   const fetchComments = function() {
-    element.classList.add('state-loading');
-
-    fetch('/api/comments/' + state.entryId, { method: 'GET', })
-      .then(response => response.json())
-      .then(data => {
-        initializeDots()
-
-        element.classList.remove('state-loading');
-        control['dot'].map(dot => dot.removeAttribute('disabled'));
-
-        data.comments.map((comment) => {
-          const commentDot = element.querySelector(`#comment_${comment.slot}`);
-          state.entryComments[comment.slot] = {
-            author: comment.author,
-            content: comment.content.replace(/\n/g, '<br>')
-          };
-          commentDot.classList.add('state-has-comment');
-        });
-      })
+    getCommentsFromDB()
+      .then( displayConversation )
       .catch(function (error) {
         console.error(error);
       });
   }
-
-  const showComment = function(dotId) {
-    const { author, content } = state.entryComments[dotId];
-
-    select(dotId);
-    closeAll();
-
-    ui['comment-dot'].innerHTML = dotId;
-    ui['comment-body'].innerHTML = content;
-    ui['comment-author'].innerHTML = author;
-    ui['read-comment'].classList.add('state-read-comment-active');
-  };
-
-  const showWriteForm = function(dotId) {
-    state.selectedComment = dotId;
-
-    closeAll();
-    setDotActive(dotId);
-
-    element.toggleAttribute('data-leaving-comment', true);
-    ui['leave-comment-popup'].classList.add('state-leave-comment-active');
-    ui['selected-dot'].textContent = state.selectedComment;
-
-    control['content'].focus();
-  };
-
-  const closeAll = () => {
-    unselectAllComments();
-
-    element.toggleAttribute('data-leaving-comment', false);
-    ui['read-comment'].classList.remove('state-read-comment-active');
-    ui['leave-comment-popup'].classList.remove('state-leave-comment-active');
-  };
-
-  const setDotActive = function(id) {
-    control['dot'][id - 1].classList.add('state-selected-comment');
-  };
-
-  const select = id => {
-    control['dot'][id - 1].focus();
-  };
-
-  const unselectAllComments = function() {
-    control['dot'].map(dot => {
-      dot.classList.remove('state-selected-comment');
-    })
-  };
-
-  const showErrorMessage = function(msg) {
-    alert('Woops, something went wrong. Try again?');
-  }
-
-  const moveTo = (inc, e) => {
-    if ( !document.activeElement.dataset.index ) return;
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    const targetDot = parseInt(document.activeElement.dataset.index, 10) + inc - 1;
-    const totalDots = control['dot'].length;
-
-    if ( (targetDot < 0) || (targetDot >= totalDots) ) {
-      return messaging.dispatch({ id: 'PLAY_SOUND', payload: 'canc' });
-    }
-
-    select(targetDot);
-  }
-
-  const moveRight = e => moveTo(1, e);
-  const moveLeft = e => moveTo(-1, e);
-  const moveDown = e => moveTo(5, e);
-  const moveUp = e => moveTo(-5, e);
-
-  const initSpeechModule = function() {
-    const Bot = window.speechSynthesis;
-    const voices = Bot.getVoices();
-    const fredsVoice = voices.filter(voice => voice.name === 'Fred')[0];
-
-    control['speak-comment'].addEventListener('click', () => {
-      const utterance = new SpeechSynthesisUtterance(control['content'].value);
-      utterance.voice = fredsVoice;
-      utterance.pitch = 0.75;
-      utterance.rate = 0.8;
-
-      Bot.speak(utterance);
-    });
-  }
-
-  const readOrEditComment = e => {
-    const dotId = e.target.dataset.index;
-
-    if (state.entryComments[dotId]) {
-      showComment(dotId);
-    } else {
-      showWriteForm(dotId);
-    }
-  };
 
   const submitComment = e => {
     e.preventDefault();
 
-    const { entryId, selectedComment } = state;
+    const data = getMessageDataFromUI()
 
-    const author = control['author'].value.trim() !== ''
-      ? control['author'].value
-      : 'Anonymous';
-    const content = control['content'].value.trim() !== ''
-      ? control['content'].value
-      : false;
-
-    if (!content) {
-      control['content'].focus();
-      return showErrorMessage('Be sure to leave a comment before submitting.');
+    if ( !data.comment ) {
+      control['message'].focus();
+      return alert('Be sure to leave a comment before submitting.'); // TODO better error handling
     }
 
-    const data = {
-      author,
-      content,
-      entryId,
-      slot: selectedComment // calling the dot a "slot" on the server
-    };
-
-    axios.post('/api/comment', data)
-      .then(() => {
-        state.entryComments[selectedComment] = {
-          author,
-          content: content.replace(/\n/g, '<br>')
-        };
-
-        control['content'].value = '';
-
-        element.querySelector('#comment_' + selectedComment)
-          .classList.add('state-has-comment');
-
-        state.selectedComment = null;
-
-        closeAll();
+    insertCommentIntoDB( data )
+      .then( () => {
+        clearMessage()
+        fetchComments()
       })
       .catch(function (error) {
         console.error(error);
       });
   };
 
-  const initializeDots = function() {
-    state.entryId = ui['grid'].dataset.entryId;
-
-    state.shortcuts = new Mousetrap(element);
-    state.shortcuts.bind('escape', closeAll);
-    state.shortcuts.bind('h', moveLeft);
-    state.shortcuts.bind('j', moveDown);
-    state.shortcuts.bind('k', moveUp);
-    state.shortcuts.bind('l', moveRight);
-
-    control['dot'].map(dot => dot.addEventListener('click', readOrEditComment) );
-    control['close'].map(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        closeAll();
-      });
-    });
-    control['comment-form'].addEventListener('submit', submitComment);
+  const clearMessage = function() {
+    control['message'].value = '';
+    window.localStorage.removeItem('comments_message')
   }
 
-  fetchComments();
-  initSpeechModule();
+  const setupCommentBox = function() {
+    const author = window.localStorage.getItem('comments_author')
+    const message = window.localStorage.getItem('comments_message')
+
+    if ( author ) control['author'].value = author
+    if ( message ) control['message'].value = message
+  }
+
+  const setupEventListeners = function() {
+    control['comment-box'].addEventListener('submit', submitComment)
+    control['author'].addEventListener('keyup', e => {
+      window.localStorage.setItem('comments_author', e.currentTarget.value)
+    })
+    control['message'].addEventListener('keyup', e => {
+      window.localStorage.setItem('comments_message', e.currentTarget.value)
+
+      if ( e.key === 'Enter' && !e.shiftKey ) submitComment(e)
+      if ( e.key === 'Escape' ) messaging.dispatch({ id: 'CLOSE_BOX_COMMENTS' })
+    })
+  }
+
+  const setupMessaging = function() {
+    state.messages = [
+      messaging.subscribe('SHOW_BOX_COMMENTS', () => {
+        // focus the comment box on show
+        setTimeout( () => control['message'].focus(), 50 )
+      })
+    ]
+  }
+
+  const init = function() {
+    fetchComments()
+    setupCommentBox()
+    setupEventListeners()
+    setupMessaging()
+  }
+
+  init()
+
+  return function onUnmount() {
+    state.messages.map( m => m.call() )
+  }
 }
+
+/**
+ * Utility functions
+ */
+const withLeadingZero = number => {
+  const n = number.toString()
+
+  return n.length < 2 // single digit number
+    ? '0' + n
+    : n
+}
+
+const getAmPmTime = date => {
+  const originalHours = date.getHours()
+  const hoursIn12format = originalHours > 12 ? originalHours - 12 : originalHours
+
+  const hours = hoursIn12format === 0 ? 12 : hoursIn12format
+  const minutes = withLeadingZero( date.getMinutes() )
+  const suffix = originalHours >= 12 ? 'pm' : 'am'
+
+  return `${hours}:${minutes}${suffix}`
+}
+
+const months = [
+  'jan', 'feb', 'mar',
+  'apr', 'may', 'jun',
+  'jul', 'aug', 'sep',
+  'oct', 'nov', 'dec'
+]

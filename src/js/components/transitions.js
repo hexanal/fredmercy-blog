@@ -1,6 +1,6 @@
 import barba from '@barba/core';
 
-const TRANSITION_DURATION = 400;
+const TRANSITION_DURATION = 300;
 
 export default function({messaging, _exponent}) {
 

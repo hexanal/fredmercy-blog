@@ -48,6 +48,9 @@ const getPostMetaData = function( item ) {
   const year = urlParts[0]
   const month = urlParts[1]
   const day = urlParts[2]
+
+  if ( !day ) return {}
+
   const dayNoZero = removeLeadingZero( day )
   const id = urlParts[3]
   const date = `${year}-${month}-${day}`

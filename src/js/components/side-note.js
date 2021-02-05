@@ -1,4 +1,4 @@
-export default function({ element, control }) {
+export default function({ element, ui }) {
 	const state = {
 		visible: false
 	}
@@ -7,19 +7,10 @@ export default function({ element, control }) {
 		e.stopPropagation()
 
 		toggle()
-
-		if (state.visible) document.addEventListener('click', dismiss)
 	})
 
 	const toggle = function() {
 		state.visible = !state.visible
-		element.classList.toggle('state-side-note-visible', state.visible)
-		console.log('hey')
-	}
-
-	const dismiss = function() {
-		toggle()
-		console.log('doofus')
-		document.removeEventListener('click', dismiss)
+		element.classList.toggle('state-note-visible', state.visible)
 	}
 }

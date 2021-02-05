@@ -5,11 +5,11 @@
 
   <div class="experience__details">
     {{#if url }}
-      <a class="experience__link button" href="{{ url }}">
+      <a class="experience__link button" href="{{ url }}" target="_blank" rel="noopener noreferrer">
         {{ company }}
       </a>
     {{else}}
-      {{ company }}
+      <div class="experience__company">{{ company }}</div>
     {{/if}}
 
     <p class="experience__location">{{ location }}</p>
@@ -24,7 +24,7 @@
         {{description}}
         {{#if extra}}
           <button
-            class="experience__toggle-more"
+            class="button button--light experience__toggle-more"
             type="button"
             data-control="more"
           >
@@ -38,9 +38,14 @@
         <ul class="experience__more">
           {{#each extra }}
             <li class="experience__more-item">
-              - <a class="experience__link" href="{{this}}">
-                {{this}}
+              <a class="experience__link" href="{{this.href}}" target="_blank" rel="noopener noreferrer">
+                {{this.label}}
               </a>
+              {{#if this.description }}
+              <small>
+                {{ this.description }}
+              </small>
+              {{/if}}
             </li>
           {{/each}}
         </ul>

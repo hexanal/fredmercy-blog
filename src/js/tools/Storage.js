@@ -13,6 +13,10 @@ const Storage = {
     window.localStorage.setItem(id, valueToSet);
   },
 
+  delete: (id) => {
+    window.localStorage.removeItem( id );
+  },
+
   get: (id, fallback = null) => {
     const stored = window.localStorage.getItem(id);
     if (!stored && fallback != 'null' && fallback !== 'undefined') return fallback;

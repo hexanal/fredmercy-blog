@@ -1,0 +1,69 @@
+.comments {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.comments__input {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: -2px;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 2px solid;
+  border-radius: 0;
+  outline: none;
+
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    color: var(--color-primary);
+    opacity: 0.5;
+  }
+
+  &:focus {
+    z-index: 2;
+    border-color: var(--color-active);
+
+    &::-webkit-input-placeholder {
+      color: var(--color-active);
+      opacity: 1;
+    }
+  }
+}
+
+.comments__author {
+  font-style: italic;
+}
+
+.comments__convo {
+  overflow: auto;
+  overscroll-behavior: contain;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  margin: 2px; // TODO border trick...
+  padding: 0.5rem;
+}
+
+.state-loading {
+  .comments__convo {
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-primary);
+    }
+  }
+}
+

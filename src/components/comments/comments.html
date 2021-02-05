@@ -1,0 +1,45 @@
+{{#> ui/box id="comments" title="Comments" shortcut="c" }}
+	<div
+		class="comments"
+		data-component="comments"
+		data-url="{{ meta.url }}"
+	>
+		<div
+			class="comments__convo"
+			data-ui="convo"
+		>
+		</div>
+
+		<form
+			class="comments__write"
+			data-control="comment-box"
+		>
+			<label class="visually-hidden" for="author">
+				nickname
+			</label>
+			<input
+				class="comments__input comments__author"
+				data-control="author"
+				type="text"
+				id="author"
+				name="author"
+				maxlength="32"
+				placeholder="your display name"
+			>
+
+			<label class="visually-hidden" for="message">
+				message
+			</label>
+			<input
+				class="comments__input comments__message"
+				data-control="message"
+				type="text"
+				id="content"
+				name="content"
+				maxlength="1000"
+				placeholder="say something!"
+				required
+			>
+		</form>
+	</div>
+{{/ui/box }}

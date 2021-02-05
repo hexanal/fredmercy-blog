@@ -1,14 +1,8 @@
-const { write } = require('../../helpers/files')
-
-// TODO write up some logic to set higher priorities, and different "changefreq" values
+const { write } = require('../../bin/files')
 
 const sitemapTemplate = urls => (`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${ urls }
 </urlset>`)
-
-// <changefreq>monthly</changefreq>
-// <priority>0.8</priority>
-// <lastmod>${ item.meta.date }</lastmod>
 
 const buildSitemap = function( contentTypes ) {
   const types = Object.keys(contentTypes)

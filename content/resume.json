@@ -11,7 +11,16 @@
         "url": "https://cossette.com",
         "description": "Frontend web development",
         "extra": [
-          "https://amnistie.ca"
+          {
+            "label": "amnistie.ca",
+            "href": "https://amnistie.ca",
+            "description": "as principal frontend developer"
+          },
+          {
+            "label": "alloprof.qc.ca",
+            "href": "https://alloprof.qc.ca",
+            "description": "homepage splash animation"
+          }
         ]
       },
       {
@@ -22,12 +31,12 @@
         "url": "https://ed.com.au",
         "description": "Frontend web development",
         "extra": [
-          "http://ed.com.au",
-          "http://co-partnership.com",
-          "https://breakingthrough.moadoph.gov.au",
-          "https://storyation.com",
-          "https://universitiesaustralia.edu.au",
-          "https://sportrition.com.au"
+          { "label": "ed.com.au", "href": "https://ed.com.au" },
+          { "label": "co-partnership.com", "href": "http://co-partnership.com" },
+          { "label": "breakingthrough.moadoph.gov.au", "href": "https://breakingthrough.moadoph.gov.au" },
+          { "label": "storyation.com", "href": "https://storyation.com" },
+          { "label": "universitiesaustralia.edu.au", "href": "https://universitiesaustralia.edu.au" },
+          { "label": "sportrition.com.au", "href": "https://sportrition.com.au" }
         ]
       },
       {
@@ -54,7 +63,11 @@
         "url": "http://dpt.co",
         "description": "Frontend web development. HTML, CSS, JS (NodeJS, React, ThreeJS), PHP",
         "extra": [
-          "http://toutgarni.com"
+          {
+            "label": "toutgarni.com",
+            "href": "https://toutgarni.com",
+            "description": "main website, and first two episodes"
+          }
         ]
       },
       {
@@ -62,10 +75,14 @@
         "title": "SEP. 2015 — JUNE 2016",
         "company": "KFFEIN",
         "location": "Montreal, Canada",
-        "url": "http://kffein.com",
+        "url": "https://kffein.com",
         "description": "Fullstack web development. HTML, CSS, JS, PHP (Wordpress, Craft CMS, Laravel, Lumen)",
         "extra": [
-          "http://www.momentfactory.com"
+          {
+            "label": "momentfactory.com",
+            "href": "https://www.momentfactory.com",
+            "description": "mainly Wordpress backend setup and UI"
+          }
         ]
       },
       {
@@ -75,8 +92,8 @@
         "location": "Montreal, Canada",
         "description": "Frontend web development",
         "extra": [
-          "http://cliffordantonefoundation.org",
-          "http://endlesssummerproductions.com"
+          { "label": "cliffordantonefoundation.org", "href": "https://cliffordantonefoundation.org" },
+          { "label": "endlesssummerproductions.com", "href": "https://endlesssummerproductions.com" }
         ]
       },
       {
@@ -85,12 +102,7 @@
         "location": "Montreal, Canada",
         "company": "TP1 (now Havas Canada)",
         "url": "http://tp1.ca",
-        "description": "Frontend web development. Accessible, responsive websites. Wordpress, Drupal. Agile team.",
-        "extra": [
-          "http://www.raymondchabot.com",
-          "http://www.iavaleursmobilieres.com",
-          "http://www.stingray.com"
-        ]
+        "description": "Frontend web development. Accessible, responsive websites. Wordpress, Drupal. Agile team."
       },
       {
         "id": "lesite",

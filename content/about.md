@@ -36,10 +36,9 @@ I'm interested in:
 **Privacy**
 
 - I don't use cookies to track you, but I do use a browser feature called [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) which helps this website remember your preferences, mostly for accessibility features (font style, font size, high contrast color scheme, etc.)
-- you can leave comments on the posts
-  - there's a limit of 25 comments per post
-  - you can spam the comments, but please don't do it because it's not nice
-  - you can use your real name, but you could also use any name: there is absolutely nothing I could do to tell who posted what
+- you can leave comments on any page of this website
+  - you can spam the comments, but please don't do it because **it's not nice**
+  - you can use your real name, but you could also use any name: there is currently no support for user accounts
 
 **Tracking**
 

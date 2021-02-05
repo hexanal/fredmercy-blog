@@ -4,12 +4,12 @@
   "description": "hexanal.blog",
   "author": "hexanal",
   "scripts": {
-    "build": "NODE_ENV=production node zorg/build.js",
-    "clean": "rm -rf public",
-    "export:comments": "node export-comments.js",
-    "serve": "NODE_ENV=production node server.js",
     "start": "NODE_ENV=development node server.js",
-    "watch": "NODE_ENV=development node zorg/watch.js"
+    "build": "NODE_ENV=production node zorg --build",
+    "debug": "NODE_ENV=production node zorg --build --verbose",
+    "watch": "NODE_ENV=development node zorg --watch",
+    "serve": "NODE_ENV=production node server.js",
+    "clean": "rm -rf public"
   },
   "devDependencies": {
     "esbuild": "^0.8.23",
@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "axios": "^0.18.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
     "chokidar": "^3.4.3",
@@ -45,7 +44,10 @@
     "lusca": "^1.6.1",
     "morgan": "^1.10.0",
     "mousetrap": "^1.6.5",
+    "node-sass-glob-importer": "^5.3.2",
+    "s-ago": "^2.2.0",
     "sanitize-html": "^1.27.5",
+    "sqlite3": "^5.0.1",
     "tone": "^13.8.25",
     "ws": "^7.3.1"
   }

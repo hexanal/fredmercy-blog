@@ -26,7 +26,12 @@ const EFFECTS = {
 	delay: new FeedbackDelay(0.075, 0.25),
 };
 
-export default function({ element, messaging }) {
+let INIT = false
+
+export default function({ element, control, messaging }) {
+	if ( INIT ) return
+	INIT = true
+
 	const state = {
 		enabled: false,
 		loaded: false,
@@ -315,6 +320,9 @@ export default function({ element, messaging }) {
 		});
 	});
 
+	control['enable-sounds'].addEventListener('click', e => {
+		toggleSounds()
+	})
 
 	// let's go...
 	if ( Storage.flag('sounds_enabled') ) {

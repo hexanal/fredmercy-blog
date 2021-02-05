@@ -1,6 +1,6 @@
 const fs = require('fs')
-const chalk = require('chalk')
-const templater = require('../../helpers/templater')
+const templater = require('../../bin/templater')
+const { debugLog } = require('../../bin/utils')
 
 const formatContent = function( contentTypes ) {
   templater.usePartials('./src/components')
@@ -8,9 +8,11 @@ const formatContent = function( contentTypes ) {
   const types = Object.keys( contentTypes )
 
   types.map( type => {
-    console.log( chalk.yellow(`[build] [content] ${contentTypes[type].length} “${type}” items`) );
+    debugLog( `[middleware] [html] ${contentTypes[type].length} “${type}” items` )
 
     return contentTypes[type].map( item => {
+      if ( !item.meta.url ) return
+
       const destination = `./public${item.meta.url}`
       const defaultTemplate = `templates/${type}`
       const templateName = item.meta.template || defaultTemplate

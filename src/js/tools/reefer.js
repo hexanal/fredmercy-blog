@@ -52,7 +52,7 @@ export default function reefer(initialProps, initialSpring = { stiffness: 250, d
         return;
       }
 
-      springPerProp[key].restStack = []; // reset the rest stack...
+      // springPerProp[key].restStack = []; // reset the rest stack...
 
       if ( spring ) {
         springPerProp[key].stiffness = spring.stiffness; // set new spring config
@@ -72,9 +72,12 @@ export default function reefer(initialProps, initialSpring = { stiffness: 250, d
 
     getInterpolated: () => interpolated,
 
-    instantSet: props => {
-      Object.keys(props).forEach(key => {
-        interpolated[key] = props[key];
+    instantSet: newProps => {
+      Object.keys(newProps).forEach(key => {
+        // console.log( newProps[key] )
+        // console.log( props[key] )
+        // console.log( interpolated[key] )
+        props[key] = interpolated[key] = newProps[key];
       });
     },
 

@@ -11,7 +11,7 @@
 }
 
 .experience__period {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 
   h2 {
     display: inline-block;
@@ -19,7 +19,7 @@
     font-size: 1em;
     line-height: 1.35;
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
     text-align: left;
   }
 
@@ -31,45 +31,53 @@
 }
 
 .experience__details {
-  padding-left: 5rem;
+  margin-bottom: 5rem;
 
   @media (min-width: 700px) {
     flex-shrink: 0;
     width: 70%;
+    margin-bottom: 0;
+    padding-left: 2rem;
+  }
+
+  @media (min-width: $mq-large) {
+    padding-left: 5rem;
   }
 }
 
-.experience__location,
-.experience__extras {
-  margin-top: 1.5rem;
+.experience__company {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-.experience__toggle-more {
-  padding: 0;
-  font: var(--font);
-  color: var(--color-subdued);
-  background-color: transparent;
-  outline: none;
-  border: 0;
+.experience__link {
+  display: inline-block;
+  margin-top: -0.25rem; // counter-act button's padding
+  text-decoration: underline;
+  white-space: nowrap;
 
 	@include hover-focus {
+    text-decoration: none;
     color: var(--color-bg);
     background-color: var(--color-secondary);
   }
 }
 
-.experience__more {
-  display: none;
-  overflow: hidden;
-  margin: 0 -2rem 0 -0.5rem;
-  list-style: none;
-  padding: 1px;
+.experience__location,
+.experience__extras {
+  margin-top: 1rem;
+  line-height: 1.5;
 
-  .state-collapse-expand & {
-    display: block;
+  @media (min-width: 700px) {
+    margin-top: 1.5rem;
   }
 }
-.experience__toggle-more {
+
+.button.experience__toggle-more {
+  padding: 0;
+  color: var(--color-subdued);
+
   span[data-minus] {
     display: none;
   }
@@ -82,22 +90,34 @@
       display: inline;
     }
   }
+
+  @media print {
+    display: none;
+  }
+}
+
+.experience__more {
+  display: none;
+  overflow: hidden;
+  padding: 0;
+
+  .state-collapse-expand & {
+    display: block;
+  }
 }
 
 .experience__more-item {
-  white-space: nowrap;
+  &:before {
+    content: '- ';
+  }
 
   + .experience__more-item {
     margin-top: 0.25rem;
   }
-}
 
-.experience__link {
-  text-decoration: underline;
-
-	@include hover-focus {
-    text-decoration: none;
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
+  small {
+    display: block;
+    padding-left: 1rem;
+    color: var(--color-secondary);
   }
 }

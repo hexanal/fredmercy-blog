@@ -1,0 +1,9 @@
+{
+  "config": {
+    "interface": {
+      "enabled": false,
+      "useThemes": false,
+      "useBleeps": false
+    }
+  }
+}

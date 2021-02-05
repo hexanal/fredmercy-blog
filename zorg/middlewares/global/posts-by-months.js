@@ -1,4 +1,4 @@
-const { insertDataByURL } = require('../../helpers/utils')
+const { insertDataByURL } = require('../../bin/utils')
 const groupBy = require('lodash.groupby')
 
 const addPostsByMonth = function(contentTypes) {
