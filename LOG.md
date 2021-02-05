@@ -4,9 +4,7 @@
         - resize frame to match?
         - allow box to sit smack in the middle
 
-* don't move "rainbow ball" with cursor
-    - locate cursor on click only?
-    - random location? (locations?!)
+---
 
 * maybe work with services?
     - shortcut service
@@ -17,20 +15,11 @@
         - toggle a loading animation/state
     - storage service -> localStorage / indexedDB
 
-* exponent
-    - only one "child" selector (combine ui/control)
-        - get dataset from all?
-    - children ( data-child="something" )
-        - then can destructure in component
-```
-export default ({ children }) => {
-    const { something } = children
-
-    console.log( something.dataset )
-})
-```
-
 * reefer + stater
+    * don't move "rainbow ball" with cursor
+        - locate cursor on click only?
+        - random location? (locations?!)
+        - reefer sucks, haha! `instantSet` doesn't work
 * change a staterized value with reefer?
     - everything in `.changed()` will get called, dude
     - pass... a staterized state PLUGGED with the messaging middleware
@@ -65,3 +54,17 @@ export default ({ children }) => {
     - https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js/8003291#8003291
       - old? https://stackoverflow.com/questions/12276046/nodejs-express-how-to-secure-a-url
     - https://github.com/kelektiv/node.bcrypt.js -> use sqlite? idk...
+
+
+* exponent
+    - only one "child" selector (combine ui/control)
+        - get dataset from all?
+    - children ( data-child="something" )
+        - then can destructure in component
+```
+export default ({ children }) => {
+    const { something } = children
+
+    console.log( something.dataset )
+})
+```
