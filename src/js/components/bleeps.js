@@ -29,8 +29,6 @@ const EFFECTS = {
 let INIT = false
 
 export default function({ element, control, messaging }) {
-	return 'not right now!'
-
 	if ( INIT ) return
 	INIT = true
 

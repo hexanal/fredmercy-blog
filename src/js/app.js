@@ -10,7 +10,7 @@ import scroll from './components/scroll/scroll'
 import transitions from './components/transitions'
 
 // ui
-import bleeps from './components/bleeps'
+// import bleeps from './components/bleeps'
 import box from './components/box'
 import comments from './components/comments'
 import drawer from './components/drawer'
@@ -39,7 +39,7 @@ Exponent
 		transitions
 	])
 	.register({
-		'bleeps': bleeps,
+		// 'bleeps': bleeps,
 		'box': box,
 		'comments': comments,
 		'drawer': drawer,
