@@ -14,7 +14,7 @@
   "devDependencies": {
     "esbuild": "^0.8.23",
     "front-matter": "^3.0.1",
-    "handlebars": "^4.2.0",
+    "handlebars": "^4.5.3",
     "handlebars-intl": "^1.1.2",
     "marked": "1.2.2",
     "sass": "1.30.0"
