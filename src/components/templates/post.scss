@@ -1,27 +1,9 @@
 .post {
 	margin-bottom: 5rem;
-
-	@media (min-width: 1600px) {
-		display: flex;
-	}
 }
 
 .post__window {
 	max-width: $site-width;
-
-	@media (min-width: 1600px) {
-		margin-right: 5rem;
-	}
-}
-
-.post__comments {
-	margin-bottom: 3rem;
-
-	@media (min-width: $mq-small) {
-		height: 100%;
-		flex-grow: 1;
-		max-width: $site-width;
-	}
 }
 
 .post__heading {
