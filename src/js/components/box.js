@@ -13,9 +13,9 @@ export default function({ element, ui, control, messaging }) {
 		element.style.display = opacity > 0.001 ? 'block' : 'none'
 		element.style.pointerEvents = opacity > 0.75 ? 'auto' : 'none'
 		ui['frame'].style.opacity = opacity
-		ui['wrap'].style.transform = `translateY(${y * 2}rem)`
-		if (ui['title']) { ui['title'].style.transform = `translateY(${y * -2}rem)` }
-		control['close'].style.transform = `translateY(${y * -0.5}rem)`
+		ui['wrap'].style.transform = `translateY(${y * 1.5}rem)`
+		if (ui['title']) { ui['title'].style.transform = `translateY(${y * 0.5}rem)` }
+		control['close'].style.transform = `translateY(${y * 0.5}rem)`
 		ui['bg'].style.opacity = opacity * 0.9
 	}
 	const animations = reefer({
@@ -31,9 +31,9 @@ export default function({ element, ui, control, messaging }) {
 
 		const y = active ? 0 : 1
 		const opacity = active ? 1 : 0
-		const stiffness = active ? 350 : 500
+		const stiffness = active ? 350 : 550
 
-		animations.set({ y }, { stiffness, damping: 14 })
+		animations.set({ y }, { stiffness, damping: 13 })
 		animations.set({ opacity }, { stiffness: 350, damping: 20 })
 	})
 
