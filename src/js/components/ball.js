@@ -11,5 +11,5 @@ export default function({ messaging }) {
 	})
 
 	messaging.subscribe('PAGE_LEAVE', () => animated.set({ scale: 1 }, { stiffness: 200, damping: 25 }) )
-	messaging.subscribe('PAGE_CHANGED', () => animated.set({ scale: MIN_SCALE }, { stiffness: 200, damping: 25 }) )
+	messaging.subscribe('PAGE_CHANGED', () => animated.set({ scale: 0 }, { stiffness: 200, damping: 25 }) )
 }

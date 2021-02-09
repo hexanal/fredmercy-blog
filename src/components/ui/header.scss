@@ -38,7 +38,7 @@
 			background-color: var(--color-active);
 		}
 
-		[data-scrolled-past-viewport="true"] & {
+		[data-scrolled="true"] & {
 			display: inline-block;
 		}
 	}
