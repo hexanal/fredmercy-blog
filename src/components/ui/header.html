@@ -1,34 +1,43 @@
 <header class="header">
-	<nav class="header__header-extend">
+	<div class="header__section">
 		<h1 class="header__title">
 			<a href="/" class="header__home-btn button">
 				Fred<span> Mercy</span>
 			</a>
 		</h1>
 
-		<div class="header__commands">
-			<button
-				class="button button--light"
-				type="button"
-				aria-label="Toggle comments"
-				data-component="emit"
-				data-event="SHOW_BOX_COMMENTS"
-			>
-				discussion
-				<small id="comments-count"></small>
-			</button>
+		<button
+			class="button button--light header__button"
+			type="button"
+			aria-label="Toggle comments"
+			data-component="emit"
+			data-event="SHOW_BOX_COMMENTS"
+		>
+			<span id="comments-count"></span>
+		</button>
+	</div>
 
-			<button
-				class="button header__toggle-menu"
-				type="button"
-				aria-label="Toggle navigation menu"
-				data-component="emit"
-				data-event="SHOW_BOX_MENU"
-			>
-				menu
-			</button>
-		</div>
-	</nav>
+	<div class="header__section">
+		<button
+			class="button button--light header__button"
+			type="button"
+			aria-label="Toggle help"
+			data-component="emit"
+			data-event="SHOW_BOX_HELP"
+		>
+			?
+		</button>
+
+		<button
+			class="button header__button"
+			type="button"
+			aria-label="Toggle navigation menu"
+			data-component="emit"
+			data-event="SHOW_BOX_MENU"
+		>
+			menu
+		</button>
+	</div>
 
 	<button
 		class="header__back-to-top button"
@@ -39,40 +48,3 @@
 		<span class="visually-hidden">top</span>
 	</button>
 </header>
-
-{{#> ui/box id="menu" shortcut="m" }}
-<div class="header__menu" role="navigation">
-	{{#each mainNav }}
-		{{#if this.href }}
-			<div class="header__menu-item">
-				<a
-					class="header__menu-link header__menu-link--{{ this.id }}"
-					href="{{ this.href }}"
-					{{#each this.attr }}
-						{{#each this }}
-							{{@key}}="{{this}}"
-						{{/each}}
-					{{/each}}
-				>
-					{{ this.label }}
-				</a>
-			</div>
-		{{else}}
-			<hr>
-		{{/if}}
-	{{/each}}
-
-	<hr>
-
-	<div class="header__menu-item">
-		<button
-			class="header__menu-link header__menu-link--help"
-			type="button"
-			data-component="emit"
-			data-event="SHOW_BOX_HELP"
-		>
-			help / options
-		</button>
-	</div>
-</div>
-{{/ui/box }}

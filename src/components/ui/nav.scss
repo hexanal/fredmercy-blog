@@ -1,0 +1,111 @@
+.nav {
+	padding: 1em;
+
+	hr {
+		margin: 1rem 0;
+	}
+}
+
+.nav__item {
+	display: block;
+	text-align: right;
+
+	+ .nav__item {
+		margin-top: 0.75em;
+	}
+}
+
+.nav__link {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	padding-right: 1.75em;
+	font-family: var(--font);
+	font-size: 1rem;
+	color: var(--color-primary);
+	background-color: transparent;
+	text-decoration: underline;
+
+	@include hover-focus {
+		color: var(--color-bg);
+		background-color: var(--color-secondary);
+		text-decoration: none;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+// TODO this sort of sucks... -> will change when using SVG symbols all around
+.nav__link--blog {
+	&:after {
+		content: '📓';
+	}
+}
+.nav__link--bookmarks {
+	&:after {
+		content: '🔖';
+	}
+}
+.nav__link--about {
+	&:after {
+		content: '🤔';
+	}
+}
+.nav__link--demos {
+	&:after {
+		content: '🧪';
+	}
+}
+.nav__link--bandcamp {
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 1.15em;
+		height: 1.15em;
+		background-image: url('/assets/images/bandcamp.png');
+		background-size: contain;
+	}
+}
+.nav__link--home {
+	&:after {
+		content: '🌀';
+	}
+}
+.nav__link--github {
+	&:after {
+		content: '⌨️';
+	}
+}
+.nav__link--twitter {
+	&:after {
+		content: '🐦';
+	}
+}
+
+.nav__link--sounds {
+	&:after {
+		content: '🔇';
+	}
+	&.state-sounds-enabled {
+		&:after {
+			content: '🔈';
+		}
+	}
+}
+
+[data-box-id="menu"] {
+	.box__frame {
+		height: auto;
+
+		@media (min-width: $mq-medium) {
+			width: 16rem;
+			left: auto;
+			right: 0;
+		}
+	}
+}

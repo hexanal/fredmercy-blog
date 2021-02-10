@@ -3,6 +3,9 @@
 	top: 0;
 	left: 1rem;
 	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: calc(100% - 2rem);
 	max-width: $site-width;
 	padding: 1rem 0;
@@ -15,10 +18,51 @@
 
 	@media (min-width: $mq-medium) {
 		width: calc(100% - 6rem);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		left: 3rem;
+	}
+}
+
+.header__title {
+	margin: 0;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.button.header__home-btn {
+	display: block;
+	line-height: 1.4;
+	background-color: var(--color-active);
+
+	@include hover-focus {
+		background-color: var(--color-secondary);
+	}
+
+	span {
+		display: none;
+	}
+
+	@media (min-width: 420px) {
+		span {
+			display: inline;
+		}
+	}
+}
+
+.header__section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+}
+
+.button.header__button {
+	display: block;
+	min-width: 2rem;
+	margin-left: 0.25rem;
+	font-style: normal;
+
+	@media print {
+		display: none;
 	}
 }
 
@@ -45,223 +89,5 @@
 
 	@media (min-width: $mq-medium) {
 		right: 0;
-	}
-}
-
-.header__header-extend {
-	position: relative;
-	z-index: 2;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-grow: 1;
-}
-
-.header__title {
-	flex-shrink: 1;
-	overflow: hidden;
-	margin: 0;
-	font-weight: normal;
-	white-space: nowrap;
-}
-
-.header__home-btn {
-	display: inline-block;
-
-	&.button {
-		line-height: 1.4;
-		background-color: var(--color-active);
-
-		@include hover-focus {
-			background-color: var(--color-secondary);
-		}
-	}
-
-	span {
-		display: none;
-	}
-
-	@media (min-width: 420px) {
-		span {
-			display: inline;
-		}
-	}
-}
-
-.header__toggle-menu {
-	position: relative;
-	z-index: 3;
-	margin: 0 0 0 0.5rem;
-
-	&.state-menu-active {
-		.header__toggle-open {
-			display: none;
-		}
-		.header__toggle-close {
-			display: inline;
-		}
-	}
-
-	@media print {
-		display: none;
-	}
-}
-
-.header__toggle-open {
-	display: inline-block;
-	line-height: 1;
-}
-
-.header__toggle-close {
-	display: none;
-}
-
-.header__menu-wrap {
-	display: none;
-	overflow: hidden;
-	position: absolute;
-	z-index: 3;
-	top: 2.5rem;
-	right: 0;
-	border: 2px solid currentColor;
-	background-color: var(--color-bg);
-	box-shadow: 0.8em 0.8em 0 0 var(--color-primary);
-
-	&.state-menu-active {
-		display: block;
-	}
-}
-
-.header__menu {
-	padding: 1em;
-
-	hr {
-		margin: 1rem 0;
-	}
-}
-
-.header__menu-bg {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	top: -1rem;
-	bottom: 0;
-	left: -3rem;
-	right: 0;
-	width: 100vw;
-	padding: 0;
-	background-color: var(--color-bg);
-	opacity: 0.8;
-
-	&.state-menu-active {
-		display: block;
-	}
-}
-
-.header__menu-item {
-	display: block;
-	text-align: right;
-
-	+ .header__menu-item {
-		margin-top: 0.75em;
-	}
-}
-
-.header__menu-link {
-	display: inline-block;
-	position: relative;
-	padding: 0;
-	padding-right: 1.75em;
-	font-family: var(--font);
-	font-size: 1rem;
-	color: var(--color-primary);
-	background-color: transparent;
-	text-decoration: underline;
-
-	@include hover-focus {
-		color: var(--color-bg);
-		background-color: var(--color-secondary);
-		text-decoration: none;
-	}
-
-	&:after {
-		content: '';
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-.header__menu-link--blog {
-	&:after {
-		content: '📓';
-	}
-}
-.header__menu-link--bookmarks {
-	&:after {
-		content: '🔖';
-	}
-}
-.header__menu-link--about {
-	&:after {
-		content: '🤔';
-	}
-}
-.header__menu-link--demos {
-	&:after {
-		content: '🧪';
-	}
-}
-.header__menu-link--bandcamp {
-	&:after {
-		content: '';
-		display: inline-block;
-		width: 1.15em;
-		height: 1.15em;
-		background-image: url('/assets/images/bandcamp.png');
-		background-size: contain;
-	}
-}
-.header__menu-link--home {
-	&:after {
-		content: '🌀';
-	}
-}
-.header__menu-link--github {
-	&:after {
-		content: '⌨️';
-	}
-}
-.header__menu-link--twitter {
-	&:after {
-		content: '🐦';
-	}
-}
-.header__menu-link--help {
-	&:after {
-		content: '🆘';
-	}
-}
-
-.header__menu-link--sounds {
-	&:after {
-		content: '🔇';
-	}
-	&.state-sounds-enabled {
-		&:after {
-			content: '🔈';
-		}
-	}
-}
-
-[data-box-id="menu"] {
-	.box__frame {
-		height: auto;
-
-		@media (min-width: $mq-medium) {
-			width: 16rem;
-			left: auto;
-			right: 0;
-		}
 	}
 }
