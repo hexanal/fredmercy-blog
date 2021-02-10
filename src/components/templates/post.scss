@@ -1,148 +1,148 @@
 .post {
-	margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
 .post__window {
-	max-width: $site-width;
+  max-width: $site-width;
 }
 
 .post__heading {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
 .post__date,
 .post__type {
-	display: inline-block;
-	margin-right: 0.25rem;
-	padding: 0.25rem;
+  display: inline-block;
+  margin-right: 0.25rem;
+  padding: 0.25rem;
 }
 .post__date {
-	color: var(--color-bg);
-	background-color: var(--color-primary);
+  color: var(--color-bg);
+  background-color: var(--color-primary);
 }
 .post__type {
-	font-style: italic;
+  font-style: italic;
 }
 
 .post__body {
-	line-height: 1.5em;
+  line-height: 1.5em;
 
-	> * {
-		margin: 0;
-		line-height: 1.5;
+  > * {
+    margin: 0;
+    line-height: 1.5;
 
-		+ * {
-			margin-top: 1.25em;
-		}
-	}
+    + * {
+      margin-top: 1.25em;
+    }
+  }
 
-	code {
-		display: inline-block;
-		padding: 0 0.15em;
-		font-family: var(--font);
-		font-size: 1em;
-		line-height: 1.4;
-		font-style: italic;
-		color: var(--color-bg);
-		background-color: var(--color-active);
-	}
+  code {
+    display: inline-block;
+    padding: 0 0.15em;
+    font-family: var(--font);
+    font-size: 1em;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--color-bg);
+    background-color: var(--color-active);
+  }
 
-	ul {
-		padding-left: 1.5em;
-		margin: 1.5em 0 2em;
-		list-style: none;
+  ul {
+    padding-left: 1.5em;
+    margin: 1.5em 0 2em;
+    list-style: none;
 
-		ul {
-			margin-top: 0.25em;
-			padding-left: 0;
-		}
+    ul {
+      margin-top: 0.25em;
+      padding-left: 0;
+    }
 
-		li {
-			padding-left: 1em;
+    li {
+      padding-left: 1em;
 
-			&:before {
-				content: '_ ';
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-		}
-	}
+      &:before {
+        content: '_ ';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 
-	li {
-		position: relative;
-	}
+  li {
+    position: relative;
+  }
 
-	li + li {
-		margin-top: 0.25em;
-	}
+  li + li {
+    margin-top: 0.25em;
+  }
 
-	sup[title] {
-		position: relative;
-		cursor: pointer;
+  sup[title] {
+    position: relative;
+    cursor: pointer;
 
-		@include hover-focus {
-			color: var(--color-bg);
-			background-color: var(--color-primary);
-		}
-	}
+    @include hover-focus {
+      color: var(--color-bg);
+      background-color: var(--color-primary);
+    }
+  }
 
-	iframe {
-		width: 100%;
-		height: 200px;
+  iframe {
+    width: 100%;
+    height: 200px;
 
-		@media (min-width: $mq-xsmall) {
-			height: 394px; // best ratio when video is full-width (700px wide)
-		}
-	}
+    @media (min-width: $mq-xsmall) {
+      height: 394px; // best ratio when video is full-width (700px wide)
+    }
+  }
 
-	audio {
-		width: 100%;
-		height: 30px;
-		background-color: var(--color-primary);
-		border: 2px solid var(--color-primary);
-	}
+  audio {
+    width: 100%;
+    height: 30px;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
 }
 
 .state-paragraph-focused {
-	background-color: rgba(var(--color-secondary), 0.3);
-	animation: fadeOutFocus 2s 2s ease-out forwards;
+  background-color: rgba(var(--color-secondary), 0.3);
+  animation: fadeOutFocus 2s 2s ease-out forwards;
 }
 @keyframes fadeOutFocus {
-	from {
-		background-color: rgba(var(--color-secondary), 0.3);
-	}
-	to {
-		background-color: rgba(var(--color-secondary), 0);
-	}
+  from {
+    background-color: rgba(var(--color-secondary), 0.3);
+  }
+  to {
+    background-color: rgba(var(--color-secondary), 0);
+  }
 }
 
 .post__body--bookmarks {
-	code {
-		background-color: var(--color-subdued);
-	}
+  code {
+    background-color: var(--color-subdued);
+  }
 
-	ul {
-		padding-left: 0;
+  ul {
+    padding-left: 0;
 
-		li {
-			padding-left: 0;
+    li {
+      padding-left: 0;
 
-			&:before {
-				content: '';
-			}
-		}
-	}
+      &:before {
+        content: '';
+      }
+    }
+  }
 
-	li + li {
-		margin-top: 0.5em;
-	}
+  li + li {
+    margin-top: 0.5em;
+  }
 }
 
 .post__edit-date {
-	display: inline-block;
-	margin: 1.5em 0;
-	color: var(--color-secondary);
+  display: inline-block;
+  margin: 1.5em 0;
+  color: var(--color-secondary);
 }

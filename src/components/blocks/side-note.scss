@@ -1,46 +1,46 @@
 .side-note {
-	padding: 0;
-	color: var(--color-subdued);
-	font-family: var(--font-body);
-	font-size: 1rem;
-	text-align: left;
-	background-color: transparent;
-	cursor: pointer;
+  padding: 0;
+  color: var(--color-subdued);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
 
-	> div {
-		@include box( var(--color-subdued) );
-		display: none;
-		position: absolute;
-		z-index: 3;
-		left: 0;
-		width: calc( 100vw - 2rem);
-		padding: 1rem;
-		margin: 0 0 3rem;
-		font-size: 0.9rem;
-		transform: translateY(2rem);
-	}
+  > div {
+    @include box( var(--color-subdued) );
+    display: none;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    width: calc( 100vw - 2rem);
+    padding: 1rem;
+    margin: 0 0 3rem;
+    font-size: 0.9rem;
+    transform: translateY(2rem);
+  }
 
-	&.state-note-visible {
-		color: var(--color-bg);
-		background-color: var(--color-subdued);
+  &.state-note-visible {
+    color: var(--color-bg);
+    background-color: var(--color-subdued);
 
-		> div {
-			display: block;
-		}
-	}
+    > div {
+      display: block;
+    }
+  }
 
-	@include hover-focus {
-		color: var(--color-bg);
-		background-color: var(--color-subdued);
-	}
+  @include hover-focus {
+    color: var(--color-bg);
+    background-color: var(--color-subdued);
+  }
 
-	@media (min-width: $mq-small) {
-		position: relative;
+  @media (min-width: $mq-small) {
+    position: relative;
 
-		> div {
-			width: 20rem;
-			top: 100%;
-			transform: none;
-		}
-	}
+    > div {
+      width: 20rem;
+      top: 100%;
+      transform: none;
+    }
+  }
 }

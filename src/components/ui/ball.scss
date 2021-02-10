@@ -1,25 +1,25 @@
 .ball {
-	--ball-size: 175vw;
-	position: fixed;
-	z-index: 3;
-	top: -5rem;
-	left: 50%;
-	width: var(--ball-size);
-	height: var(--ball-size);
-	border-radius: 50%;
-	background-color: var(--color-secondary);
-	transform: scale(0);
-	pointer-events: none;
+  --ball-size: 175vw;
+  position: fixed;
+  z-index: 3;
+  top: -5rem;
+  left: 50%;
+  width: var(--ball-size);
+  height: var(--ball-size);
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  transform: scale(0);
+  pointer-events: none;
 
-	@media (orientation: landscape) {
-		--ball-size: 200vw;
-	}
-	@media (orientation: portrait) {
-		--ball-size: 200vh;
-	}
+  @media (orientation: landscape) {
+    --ball-size: 200vw;
+  }
+  @media (orientation: portrait) {
+    --ball-size: 200vh;
+  }
 
-	@media (min-width: $mq-large) {
-		top: 1.5rem;
-		left: 3rem;
-	}
+  @media (min-width: $mq-large) {
+    top: 1.5rem;
+    left: 3rem;
+  }
 }

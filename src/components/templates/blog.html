@@ -6,52 +6,52 @@
 
 {{#each postsByMonth as |entries archive| }}
 
-	<div class="index__month-archive">
-		<h2
-			id="{{ archive }}"
-			class="heading index__month-year"
-			aria-level="2"
-			data-anchor="{{ archive }}"
-			data-js="archive"
-		>
-			{{ archive }}
-		</h2>
+  <div class="index__month-archive">
+    <h2
+      id="{{ archive }}"
+      class="heading index__month-year"
+      aria-level="2"
+      data-anchor="{{ archive }}"
+      data-js="archive"
+    >
+      {{ archive }}
+    </h2>
 
-		<ul class="index__month-posts">
-		{{#each entries}}
-			<li class="index__item">
-				<div class="index__meta">
-					<span class="index__date">
-						{{ this.meta.month }}/{{ this.meta.day }}
-					</span>
-				</div>
+    <ul class="index__month-posts">
+    {{#each entries}}
+      <li class="index__item">
+        <div class="index__meta">
+          <span class="index__date">
+            {{ this.meta.month }}/{{ this.meta.day }}
+          </span>
+        </div>
 
-				{{#if this.meta.title}}
-					<a
-						class="index__link"
-						href="{{ this.meta.url }}"
-						title="{{ this.meta.description }}"
-						data-js="entry"
-					>
-						{{this.meta.title}}
-					</a>
-				{{else}}
-					<a
-						class="index__link"
-						href="{{ this.meta.url }}"
-						title="{{ this.meta.description }}"
-						data-js="entry"
-						aria-label='Untitled entry for {{ this.meta.date }}'
-					>
-						<span aria-hidden="true">
-							<em>Untitled</em><span class="index__extra"> entry for <em>{{ this.meta.date }}</em></span>
-						</span>
-					</a>
-				{{/if}}
-			</li>
-		{{/each}}
-		</ul>
-	</div>
+        {{#if this.meta.title}}
+          <a
+            class="index__link"
+            href="{{ this.meta.url }}"
+            title="{{ this.meta.description }}"
+            data-js="entry"
+          >
+            {{this.meta.title}}
+          </a>
+        {{else}}
+          <a
+            class="index__link"
+            href="{{ this.meta.url }}"
+            title="{{ this.meta.description }}"
+            data-js="entry"
+            aria-label='Untitled entry for {{ this.meta.date }}'
+          >
+            <span aria-hidden="true">
+              <em>Untitled</em><span class="index__extra"> entry for <em>{{ this.meta.date }}</em></span>
+            </span>
+          </a>
+        {{/if}}
+      </li>
+    {{/each}}
+    </ul>
+  </div>
 
 {{/each}}
 </div>

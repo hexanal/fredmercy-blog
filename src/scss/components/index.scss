@@ -1,61 +1,55 @@
+// TODO clean up
 .index {
-	max-width: none;
+  max-width: none;
 
-	@media (min-width: $mq-medium) {
-		max-width: $site-width;
-	}
+  @media (min-width: $mq-medium) {
+    max-width: $site-width;
+  }
 }
-
-.index__page {
-	// transform-origin: top center;
-}
-// .page {
-// 	padding: 2rem 0 5rem;
-// }
 
 .index__list {
-	margin: 0 0 5em;
-	line-height: 1.4;
+  margin: 0 0 5em;
+  line-height: 1.4;
 }
 
 .index__month-archive {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .index__month-posts {
-	padding-left: 0;
-	margin: 0;
-	list-style: none;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .index__item {
-	display: flex;
+  display: flex;
 }
 
 .index__item + .index__item {
-	margin-top: 0.25rem;
+  margin-top: 0.25rem;
 }
 
 .index__link {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .index__meta {
-	flex-shrink: 0;
-	display: inline-block;
-	padding: 0.25rem;
-	margin-right: 0.5rem;
-	line-height: 1.1;
-	color: var(--color-bg);
-	background-color: var(--color-primary);
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 0.25rem;
+  margin-right: 0.5rem;
+  line-height: 1.1;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
 }
 
 .index__extra {
-	display: none;
+  display: none;
 
-	@media (min-width: 500px) {
-		display: inline;
-	}
+  @media (min-width: 500px) {
+    display: inline;
+  }
 }

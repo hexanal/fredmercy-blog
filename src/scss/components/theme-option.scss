@@ -1,71 +1,71 @@
 .theme-option {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .theme-option__label {
-	display: inline-block;
-	margin-left: 1.5rem;
-	font-weight: bold;
-	cursor: pointer;
-	user-select: none;
+  display: inline-block;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
 }
 
 .theme-option__color {
-	overflow: hidden;
-	position: relative;
-	display: flex;
-	align-items: center;
-	padding: 0;
-	color: var(--color-primary);
-	background-color: transparent;
-	border: 2px solid var(--color-primary);
-	border-radius: 0.3rem;
-	cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .theme-option__value {
-	padding: 0.25rem 1rem;
+  padding: 0.25rem 1rem;
 }
 
 .theme-option__control-mask {
-	overflow: hidden;
-	position: relative;
-	width: 3rem;
-	height: 2rem;
-	border-left: 2px solid var(--color-primary);
-	cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 3rem;
+  height: 2rem;
+  border-left: 2px solid var(--color-primary);
+  cursor: pointer;
 }
 
 .theme-option__control {
-	position: absolute;
-	transform: translate(-25%,-25%);
-	appearance: none;
-	width: 200%;
-	height: 200%;
-	border: none;
-	cursor: pointer;
+  position: absolute;
+  transform: translate(-25%,-25%);
+  appearance: none;
+  width: 200%;
+  height: 200%;
+  border: none;
+  cursor: pointer;
 
-	@include hover-focus {
-		~ .theme-option__focus {
-			display: block;
-		}
-	}
-	@include hover {
-		~ .theme-option__focus {
-			opacity: 0.5;
-		}
-	}
+  @include hover-focus {
+    ~ .theme-option__focus {
+      display: block;
+    }
+  }
+  @include hover {
+    ~ .theme-option__focus {
+      opacity: 0.5;
+    }
+  }
 }
 
 .theme-option__focus {
-	position: absolute;
-	display: none;
-	width: calc(100% - 4px);
-	height: calc(100% - 4px);
-	margin: 2px;
-	border: 2px solid var(--color-primary);
-	border-radius: 0.3rem;
-	pointer-events: none;
+  position: absolute;
+  display: none;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  margin: 2px;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.3rem;
+  pointer-events: none;
 }

@@ -1,14 +1,14 @@
 // "June" colorscheme crafted with: https://coolors.co/ff6c23-a46bea-f9eaea-ffdd21-65b25e
 :root {
-	--color-bg: #f9eaea; // Linen
-	--color-primary: #a46bea; // Rich Lavender
-	--color-active: #ff6c23; // Pumpkin
-	--color-secondary: #ea8fcd; // Kobi
-	--color-subdued: #65b25e; // Bud Green
-	--color-extra: #ffdd21; // Banana Yellow
+  --color-bg: #f9eaea; // Linen
+  --color-primary: #a46bea; // Rich Lavender
+  --color-active: #ff6c23; // Pumpkin
+  --color-secondary: #ea8fcd; // Kobi
+  --color-subdued: #65b25e; // Bud Green
+  --color-extra: #ffdd21; // Banana Yellow
 
-	// --font: 'IBM Plex Mono', Courier, monospace;
-	--font: 'Fantasque Sans Mono', Courier, monospace;
+  // --font: 'IBM Plex Mono', Courier, monospace;
+  --font: 'Fantasque Sans Mono', Courier, monospace;
 }
 
 // sizes
@@ -25,141 +25,141 @@ $site-width: 50rem;
 
 // mixins
 @mixin hover {
-	@media (hover: hover) {
-		&:hover {
-			@content;
-		}
-	}
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
 }
 @mixin hover-focus {
-	@include hover {
-		@content;
-	}
-	&:focus {
-		@content;
-	}
+  @include hover {
+    @content;
+  }
+  &:focus {
+    @content;
+  }
 }
 // box with border and drop shadow
 @mixin box($color: var(--color-primary), $bg: var(--color-bg) ) {
-	color: $color;
-	border: 2px solid $color;
-	background-color: $bg;
-	box-shadow: 0.8em 0.8em 0 0 $color;
+  color: $color;
+  border: 2px solid $color;
+  background-color: $bg;
+  box-shadow: 0.8em 0.8em 0 0 $color;
 }
 
 html {
-	box-sizing: border-box;
-	font-family: var(--font);
-	font-size: 18px;
-	color: var(--color-primary);
-	background-color: var(--color-bg);
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 18px;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
 
-	@media print {
-		background-color: transparent;
-	}
+  @media print {
+    background-color: transparent;
+  }
 }
 
 body {
-	margin: 1rem;
-	padding-top: 3.25rem; // TODO
-	font-smooth: always;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 1rem;
+  padding-top: 3.25rem; // TODO
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
-	&.transition {
-		cursor: wait;
-	}
+  &.transition {
+    cursor: wait;
+  }
 
-	@media (min-width: $mq-medium) {
-		margin: 1rem 3rem;
-	}
+  @media (min-width: $mq-medium) {
+    margin: 1rem 3rem;
+  }
 }
 
 ::-moz-selection {
-	color: var(--color-bg);
-	background: var(--color-subdued);
+  color: var(--color-bg);
+  background: var(--color-subdued);
 }
 ::selection {
-	color: var(--color-bg);
-	background: var(--color-subdued);
+  color: var(--color-bg);
+  background: var(--color-subdued);
 }
 
 *, *:before, *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 img {
-	max-width: 100%;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
-	-webkit-user-drag: none;
-	user-drag: none;
+  max-width: 100%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 a {
-	color: var(--color-primary);
-	outline: none;
-	user-select: none;
+  color: var(--color-primary);
+  outline: none;
+  user-select: none;
 
-	@include hover-focus {
-		color: var(--color-bg);
-		background-color: var(--color-secondary);
-		text-decoration: none;
-	}
+  @include hover-focus {
+    color: var(--color-bg);
+    background-color: var(--color-secondary);
+    text-decoration: none;
+  }
 }
 
 button {
-	border: 0;
-	outline: none;
-	cursor: pointer;
-	user-select: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 hr {
-	height: 2px;
-	margin: 2.5em 0;
-	background-color: var(--color-primary);
-	border: none;
+  height: 2px;
+  margin: 2.5em 0;
+  background-color: var(--color-primary);
+  border: none;
 }
 
 del {
-	background-color: var(--color-primary);
-	opacity: 0.5;
+  background-color: var(--color-primary);
+  opacity: 0.5;
 
-	a {
-		color: var(--color-bg);
-		background-color: var(--color-primary);
-		text-decoration: none;
+  a {
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    text-decoration: none;
 
-		&:hover,
-		&:focus {
-			color: var(--color-bg);
-			background-color: var(--color-primary);
-			cursor: not-allowed;
-		}
-	}
+    &:hover,
+    &:focus {
+      color: var(--color-bg);
+      background-color: var(--color-primary);
+      cursor: not-allowed;
+    }
+  }
 }
 
 select {
-	padding: 0.1rem;
-	font-size: 0.9rem;
-	line-height: 1.2;
-	font-family: var(--font);
-	font-style: normal;
-	color: var(--color-secondary);
-	border: 1px solid currentColor;
-	background-color: var(--color-bg);
-	border-radius: 0.25rem;
-	cursor: pointer;
+  padding: 0.1rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-family: var(--font);
+  font-style: normal;
+  color: var(--color-secondary);
+  border: 1px solid currentColor;
+  background-color: var(--color-bg);
+  border-radius: 0.25rem;
+  cursor: pointer;
 
-	&:hover,
-	&:focus {
-		color: var(--color-bg);
-		background-color: var(--color-secondary);
-		border-color: var(--color-secondary);
-	}
+  &:hover,
+  &:focus {
+    color: var(--color-bg);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
 }

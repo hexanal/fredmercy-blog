@@ -1,23 +1,23 @@
 {{#> ui/box id="menu" shortcut="m" }}
 <div class="nav" role="navigation">
-	{{#each mainNav }}
-		{{#if this.href }}
-			<div class="nav__item">
-				<a
-					class="nav__link nav__link--{{ this.id }}"
-					href="{{ this.href }}"
-					{{#each this.attr }}
-						{{#each this }}
-							{{@key}}="{{this}}"
-						{{/each}}
-					{{/each}}
-				>
-					{{ this.label }}
-				</a>
-			</div>
-		{{else}}
-			<hr>
-		{{/if}}
-	{{/each}}
+  {{#each mainNav }}
+    {{#if this.href }}
+      <div class="nav__item">
+        <a
+          class="nav__link nav__link--{{ this.id }}"
+          href="{{ this.href }}"
+          {{#each this.attr }}
+            {{#each this }}
+              {{@key}}="{{this}}"
+            {{/each}}
+          {{/each}}
+        >
+          {{ this.label }}
+        </a>
+      </div>
+    {{else}}
+      <hr>
+    {{/if}}
+  {{/each}}
 </div>
 {{/ui/box }}

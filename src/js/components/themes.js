@@ -1,38 +1,38 @@
 import Storage from '../tools/Storage';
 
 const THEME_LIST = [
-	'june',
-	'dark',
-	'black-and-white'
+  'june',
+  'dark',
+  'black-and-white'
 ];
 const DEFAULT_THEME = 'june';
 
 export default function({messaging}) {
-	const state = {
-		selectedTheme: DEFAULT_THEME
-	};
+  const state = {
+    selectedTheme: DEFAULT_THEME
+  };
 
-	const useTheme = function(themeId) {
-		state.selectedTheme = themeId;
-		Storage.set('selected_theme', themeId);
-		document.documentElement.dataset.theme = themeId;
-	}
+  const useTheme = function(themeId) {
+    state.selectedTheme = themeId;
+    Storage.set('selected_theme', themeId);
+    document.documentElement.dataset.theme = themeId;
+  }
 
-	const setupTheme = function() {
-		const stored = Storage.get('selected_theme');
-		const hasSavedTheme = THEME_LIST.includes( stored );
+  const setupTheme = function() {
+    const stored = Storage.get('selected_theme');
+    const hasSavedTheme = THEME_LIST.includes( stored );
 
-		if (hasSavedTheme) {
-			messaging.dispatch({ id: 'SET_THEME_VALUE', payload: stored });
-			useTheme(stored);
-		}
-	}
+    if (hasSavedTheme) {
+      messaging.dispatch({ id: 'SET_THEME_VALUE', payload: stored });
+      useTheme(stored);
+    }
+  }
 
-	messaging.subscribe('SWITCH_THEME', useTheme);
+  messaging.subscribe('SWITCH_THEME', useTheme);
 
-	setupTheme();
+  setupTheme();
 
-	return function() {
-		messaging.unsubscribe('SWITCH_THEME', useTheme);
-	}
+  return function() {
+    messaging.unsubscribe('SWITCH_THEME', useTheme);
+  }
 }

@@ -1,15 +1,15 @@
 .button {
   display: inline-block;
   padding: 0.25rem;
-	font-size: 1rem;
-	line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.4;
   font-style: normal;
-	font-family: var(--font);
+  font-family: var(--font);
   text-decoration: none;
   color: var(--color-bg);
   background-color: var(--color-subdued);
 
-	@include hover-focus {
+  @include hover-focus {
     color: var(--color-bg);
     text-decoration: none;
     background-color: var(--color-secondary);
@@ -21,7 +21,7 @@
   font-style: italic;
   background-color: transparent;
 
-	@include hover-focus {
+  @include hover-focus {
     color: var(--color-bg);
   }
 }

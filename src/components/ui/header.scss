@@ -1,93 +1,93 @@
 .header {
-	position: fixed;
-	top: 0;
-	left: 1rem;
-	z-index: 2;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: calc(100% - 2rem);
-	max-width: $site-width;
-	padding: 1rem 0;
-	background-color: var(--color-bg);
-	border-bottom: 2px solid transparent;
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+  max-width: $site-width;
+  padding: 1rem 0;
+  background-color: var(--color-bg);
+  border-bottom: 2px solid transparent;
 
-	[data-scrolled="true"] & {
-		border-color: var(--color-secondary);
-	}
+  [data-scrolled="true"] & {
+    border-color: var(--color-secondary);
+  }
 
-	@media (min-width: $mq-medium) {
-		width: calc(100% - 6rem);
-		left: 3rem;
-	}
+  @media (min-width: $mq-medium) {
+    width: calc(100% - 6rem);
+    left: 3rem;
+  }
 }
 
 .header__title {
-	margin: 0;
-	font-weight: normal;
-	white-space: nowrap;
+  margin: 0;
+  font-weight: normal;
+  white-space: nowrap;
 }
 
 .button.header__home-btn {
-	display: block;
-	line-height: 1.4;
-	background-color: var(--color-active);
+  display: block;
+  line-height: 1.4;
+  background-color: var(--color-active);
 
-	@include hover-focus {
-		background-color: var(--color-secondary);
-	}
+  @include hover-focus {
+    background-color: var(--color-secondary);
+  }
 
-	span {
-		display: none;
-	}
+  span {
+    display: none;
+  }
 
-	@media (min-width: 420px) {
-		span {
-			display: inline;
-		}
-	}
+  @media (min-width: 420px) {
+    span {
+      display: inline;
+    }
+  }
 }
 
 .header__section {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 1;
 }
 
 .button.header__button {
-	display: block;
-	min-width: 2rem;
-	margin-left: 0.25rem;
-	font-style: normal;
+  display: block;
+  min-width: 2rem;
+  margin-left: 0.25rem;
+  font-style: normal;
 
-	@media print {
-		display: none;
-	}
+  @media print {
+    display: none;
+  }
 }
 
 .header__back-to-top {
-	position: absolute;
-	z-index: 1;
-	top: 100%;
-	right: 0;
-	width: 2.5rem;
-	border-radius: 0 0 0.75rem 0.75rem;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  width: 2.5rem;
+  border-radius: 0 0 0.75rem 0.75rem;
 
-	&.button {
-		display: none;
-		background-color: var(--color-secondary);
+  &.button {
+    display: none;
+    background-color: var(--color-secondary);
 
-		@include hover-focus {
-			background-color: var(--color-active);
-		}
+    @include hover-focus {
+      background-color: var(--color-active);
+    }
 
-		[data-scrolled="true"] & {
-			display: inline-block;
-		}
-	}
+    [data-scrolled="true"] & {
+      display: inline-block;
+    }
+  }
 
-	@media (min-width: $mq-medium) {
-		right: 0;
-	}
+  @media (min-width: $mq-medium) {
+    right: 0;
+  }
 }
