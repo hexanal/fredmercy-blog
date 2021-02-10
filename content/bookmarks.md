@@ -5,6 +5,9 @@ type: page
 template: templates/bookmarks
 ---
 
+- `music` [Celebrating 25 Years of Legendary Electronic Label Planet Mu (bandcamp.com)](https://daily.bandcamp.com/label-profile/planet-mu-25th-anniversary-guide)
+  - I loved that label when I was a teen... still do!
+
 - `nerd` [Electronic Frontier Foundation's Privacy page](https://www.eff.org/issues/privacy)
   - if you need to learn more about privacy on the Internet
 
