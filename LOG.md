@@ -1,8 +1,3 @@
-* add svg symbols support
-    - **hopefull sooner rather than later, boy**
-    - gotta design them
-    - for header icons and others (replace arrows, etc.)
-
 * fix vertical alignment of comments box
     * **when I've got some time**
     * ResizeObserver ?
@@ -20,6 +15,10 @@
         - to determine when all the components on the page are loaded and ready,
         - toggle a loading animation/state
     - storage service -> localStorage / indexedDB
+
+* add svg symbols support
+    - **postponing until redesign**
+    - for header icons and others (replace arrows, etc.)
 
 * change a staterized value with reefer?
     - **HOLD FOR NOW -> thing might change when using a vdom implementation**
