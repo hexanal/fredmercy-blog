@@ -6,12 +6,15 @@
 }
 
 .comments__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: relative;
   z-index: 1;
   appearance: none;
   width: 100%;
+  margin: 0;
   padding: 0.5rem;
-  margin-top: -2px;
   font-family: var(--font);
   font-size: 1rem;
   color: var(--color-primary);
@@ -19,6 +22,7 @@
   border: 2px solid;
   border-radius: 0;
   outline: none;
+  box-shadow: none;
 
   &::-webkit-input-placeholder {
     font-style: italic;
@@ -41,12 +45,18 @@
   font-style: italic;
 }
 
+.comments__message {
+  top: -2px; // overlap the previous field for a cool, "stacked" effect ;)
+}
+
 .comments__convo {
-  overflow: auto;
+  @include scrollbars;
+  overflow-y: auto;
+  overflow-x: hidden;
   overscroll-behavior: contain;
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-grow: 1;
   margin: 2px; // TODO border trick...
   padding: 0.5rem;

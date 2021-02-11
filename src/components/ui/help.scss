@@ -30,10 +30,10 @@
 .help__item {
   display: flex;
   align-items: flex-start;
-  line-height: 2;
+  line-height: 1.5;
 
   + .help__item {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
   }
 }
 

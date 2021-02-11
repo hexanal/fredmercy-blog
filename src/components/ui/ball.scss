@@ -12,10 +12,10 @@
   pointer-events: none;
 
   @media (orientation: landscape) {
-    --ball-size: 200vw;
+    --ball-size: 220vw;
   }
   @media (orientation: portrait) {
-    --ball-size: 200vh;
+    --ball-size: 220vh;
   }
 
   @media (min-width: $mq-large) {

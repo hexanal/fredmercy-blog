@@ -5,30 +5,33 @@
         Fred<span> Mercy</span>
       </a>
     </h1>
+  </div>
 
+  <div class="header__section">
     <button
+      title="Read and participate to the discussion about this page!"
       class="button button--light header__button"
       type="button"
       aria-label="Toggle comments"
       data-component="emit"
       data-event="SHOW_BOX_COMMENTS"
     >
-      <span id="comments-count"></span>
+      <span id="comments-label"></span><small id="comments-count"></small>
     </button>
-  </div>
 
-  <div class="header__section">
     <button
+      title="Show the “help & options” panel"
       class="button button--light header__button"
       type="button"
       aria-label="Toggle help"
       data-component="emit"
       data-event="SHOW_BOX_HELP"
     >
-      ?
+      help
     </button>
 
     <button
+      title="Show the main navigation menu"
       class="button header__button"
       type="button"
       aria-label="Toggle navigation menu"

@@ -70,7 +70,11 @@ export default function({element, ui, control, messaging }) {
   const displayConversation = comments => {
     ui['convo'].innerHTML = '' // FLUSH!!
 
-    document.getElementById('comments-count').textContent = `(${comments.length})`
+    // that's the header button
+    const commentsLabel = comments.length ? 'comments' : 'comment!'
+    const commentsCount = comments.length ? `(${comments.length})` : ''
+    document.getElementById('comments-label').textContent = commentsLabel
+    document.getElementById('comments-count').textContent = commentsCount
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
 

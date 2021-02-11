@@ -58,8 +58,11 @@
 .button.header__button {
   display: block;
   min-width: 2rem;
-  margin-left: 0.25rem;
-  font-style: normal;
+  margin-left: 0.5rem;
+
+  &.button--light {
+    text-decoration: underline;
+  }
 
   @media print {
     display: none;

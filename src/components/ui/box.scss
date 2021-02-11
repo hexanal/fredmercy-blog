@@ -75,9 +75,11 @@
 }
 
 .box__scroll {
+  @include scrollbars;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   overscroll-behavior: contain;
   height: 100%;
 }
