@@ -1,26 +1,65 @@
 html { // specify that we're dealing with the documentElement
-  &[data-theme="high-contrast"] {
-    --color-bg: #f9f9f9;
-    --color-primary: #0059ff;
-    --color-secondary: #0059ff;
-    --color-active: #38e06d;
-    --color-subdued: #a0b4bf;
-    --color-extra: #ff5400;
+
+  &[data-theme="the-greys"] {
+    --color-bg: #262125;
+    --color-primary: #f7f7f7;
+    --color-active: #b9b9b9;
+    --color-secondary: #ccc;
+    --color-subdued: #dbdbdb;
+    --color-extra: #444;
   }
-  &[data-theme="black-and-white"] {
-    --color-bg: #ffffff;
-    --color-primary: #000000;
-    --color-secondary: #000000;
-    --color-active: #000000;
-    --color-subdued: #000000;
-    --color-extra: #000000;
+
+  &[data-theme="bioluminesce"] {
+    --color-bg: #262125;
+    --color-primary: #ebdbff;
+    --color-active: #81ffac;
+    --color-secondary: #ddeee4;
+    --color-subdued: #838db3;
+    --color-extra: #4f496a;
   }
-  &[data-theme="dark"] {
-    --color-bg: #1d1542;
-    --color-primary: #e7d9f7;
-    --color-secondary: #ffc4ec;
-    --color-active: #ff9763;
-    --color-subdued: #9dd698;
-    --color-extra: #ffe44f;
+
+  &[data-theme="night-fire"] {
+    --color-bg: #221f1c;
+    --color-primary: #fff;
+    --color-active: #ffa700;
+    --color-secondary: #e14f08;
+    --color-subdued: #878ef9;
+    --color-extra: #004668;
+  }
+
+  &[data-theme="pink-slime"] {
+    --color-bg: #eaeaea;
+    --color-primary: #3e3939;
+    --color-active: #444040;
+    --color-secondary: #d95bb9;
+    --color-subdued: #000;
+    --color-extra: #d9d9d9;
+  }
+
+  &[data-theme="frigid-cold"] {
+    --color-bg: #fafbff;
+    --color-primary: #3e3939;
+    --color-active: #444040;
+    --color-secondary: #5b86d9;
+    --color-subdued: #000;
+    --color-extra: #d9d9d9;
+  }
+
+  &[data-theme="forestry"] {
+    --color-bg: #161c0d;
+    --color-primary: #d0ffd3;
+    --color-active: #7bae64;
+    --color-secondary: #22a65c;
+    --color-subdued: #94e8c5;
+    --color-extra: #46311b;
+  }
+
+  &[data-theme="mondrian"] {
+    --color-bg: #fff;
+    --color-primary: #00f;
+    --color-active: #00f;
+    --color-secondary: #f00;
+    --color-subdued: #00f;
+    --color-extra: #ff0;
   }
 }

@@ -1,38 +1,44 @@
-import Storage from '../tools/Storage';
+import Storage from '../tools/Storage'
 
+// FIXME: use config.interface.themes to build HTML straight up, and then figure out the available themes from that
 const THEME_LIST = [
   'june',
-  'dark',
-  'black-and-white'
-];
-const DEFAULT_THEME = 'june';
+  'the-greys',
+  'bioluminesce',
+  'night-fire',
+  'pink-slime',
+  'frigid-cold',
+  'mondrian',
+  'forestry',
+]
 
-export default function({messaging}) {
-  const state = {
-    selectedTheme: DEFAULT_THEME
-  };
-
+export default function({element, messaging}) {
   const useTheme = function(themeId) {
-    state.selectedTheme = themeId;
-    Storage.set('selected_theme', themeId);
-    document.documentElement.dataset.theme = themeId;
+    Storage.set('selected_theme', themeId)
+    document.documentElement.dataset.theme = themeId
+    element.value = themeId
   }
 
-  const setupTheme = function() {
-    const stored = Storage.get('selected_theme');
-    const hasSavedTheme = THEME_LIST.includes( stored );
+  const initThemes = function() {
+    THEME_LIST.map( theme => { // setup the dropdown
+      const option = document.createElement('option')
+      option.value = theme
+      option.textContent = theme
 
-    if (hasSavedTheme) {
-      messaging.dispatch({ id: 'SET_THEME_VALUE', payload: stored });
-      useTheme(stored);
-    }
+      element.appendChild( option )
+    })
+
+    element.addEventListener('change', e => useTheme( e.target.value ) )
+
+    const stored = Storage.get('selected_theme') // manage "saved" theme, in localstorage
+    if ( THEME_LIST.includes( stored ) ) useTheme(stored)
   }
 
-  messaging.subscribe('SWITCH_THEME', useTheme);
+  initThemes()
 
-  setupTheme();
+  messaging.subscribe('SET_THEME', useTheme)
 
   return function() {
-    messaging.unsubscribe('SWITCH_THEME', useTheme);
+    messaging.unsubscribe('SET_THEME', useTheme)
   }
 }

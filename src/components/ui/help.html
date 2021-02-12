@@ -9,10 +9,7 @@
 
       <ul class="help__list">
         {{#if config.interface.useThemes }}
-        <li
-          class="help__item"
-          data-component="themes"
-        >
+        <li class="help__item">
           <div class="help__icon">
             🎨
           </div>
@@ -22,12 +19,9 @@
             </strong>
             <select
               class="help__select"
-              data-control="theme-select"
+              data-component="themes"
             >
-              <option value="june">June (default)</option>
-              <option value="dark">Dark</option>
-              <option value="black-and-white">Black & White</option>
-            </select>
+          </select>
           </div>
         </li>
         {{/if}}
