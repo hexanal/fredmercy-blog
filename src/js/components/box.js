@@ -1,6 +1,6 @@
 import Mousetrap from 'mousetrap'
 import stater from '../tools/stater'
-import reefer from '../tools/reefer'
+import reefer, { onReef } from '../tools/reefer'
 
 export default function({ element, ui, control, messaging }) {
   const state = stater({
@@ -8,21 +8,25 @@ export default function({ element, ui, control, messaging }) {
     shortcut: element.dataset.boxShortcut || false,
     active: false,
   })
+  const animation = {
+    y: reefer(2),
+    opacity: reefer(0)
+  }
 
-  const render = ({ y, opacity }) => {
+  onReef( function() {
+    const opacity = animation.opacity.get()
+    const y = animation.y.get()
+
     element.style.display = opacity > 0.001 ? 'block' : 'none'
     element.style.pointerEvents = opacity > 0.75 ? 'auto' : 'none'
     ui['frame'].style.opacity = opacity
+    ui['bg'].style.opacity = opacity * 0.9
+
     ui['wrap'].style.transform = `translateY(${y * 1.5}rem)`
+
     if (ui['title']) { ui['title'].style.transform = `translateY(${y * 0.5}rem)` }
     control['close'].style.transform = `translateY(${y * 0.5}rem)`
-    ui['bg'].style.opacity = opacity * 0.9
-  }
-  const animations = reefer({
-    y: 2,
-    opacity: 0
   })
-    .onFrame( render )
 
   state.active.changed( active => {
     element.classList.toggle('state-box-active', active)
@@ -33,8 +37,8 @@ export default function({ element, ui, control, messaging }) {
     const opacity = active ? 1 : 0
     const stiffness = active ? 350 : 550
 
-    animations.set({ y }, { stiffness, damping: 13 })
-    animations.set({ opacity }, { stiffness: 350, damping: 20 })
+    animation.y.set( y, { stiffness, damping: 13 })
+    animation.opacity.set( opacity, { stiffness: 350, damping: 20 })
   })
 
   const toggle = () => {

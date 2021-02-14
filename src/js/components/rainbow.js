@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce'
-import reefer from '../tools/reefer'
+import reefer, { onReef } from '../tools/reefer'
 
 const TRANSLATE_MULTIPLIER = 3 // rem
 const TOTAL_FRAMES = 100
@@ -10,27 +10,28 @@ export default function({ messaging }) {
 
   const state = {
     container: document.body.querySelector('[data-barba="inside"]'),
-    reef: reefer({
-      translate: 0,
-      opacity: 1,
-      transition: 0
-    }),
+    animation: {
+      translate: reefer(0),
+      opacity: reefer(1),
+      transition: reefer(0)
+    },
     transitioning: false,
     frame: 0,
     direction: 'X',
   }
 
-  state.reef
-    .onFrame( ({ translate, opacity, transition }) => {
-      state.container.style.transform = `translateY(${ translate * TRANSLATE_MULTIPLIER }rem)`
-      state.container.style.opacity = opacity
+  onReef( function() {
+    const { translate, opacity, transition } = state.animation
 
-      state.frame = state.frame < TOTAL_FRAMES
-        ? state.frame + (FRAME_MULTIPLIER * transition)
-        : 0
+    state.container.style.transform = `translateY(${ translate.get() * TRANSLATE_MULTIPLIER }rem)`
+    state.container.style.opacity = opacity.get()
 
-      rainbows.style.transform = `translate${state.direction}(-${ state.frame }%)`
-    })
+    state.frame = state.frame < TOTAL_FRAMES
+      ? state.frame + (FRAME_MULTIPLIER * transition.get() )
+      : 0
+
+    rainbows.style.transform = `translate${state.direction}(-${ state.frame }%)`
+  })
 
   const setDirectionFromBreakpoint = () => {
     const { innerWidth } = window
@@ -45,20 +46,22 @@ export default function({ messaging }) {
   messaging.subscribe('PAGE_LEAVE', page => {
     state.container = page.current.container.querySelector('[data-barba="inside"]')
     state.transitioning = true
-    state.reef.set({ translate: -2 }, { stiffness: 50, damping: 40 })
-    state.reef.set({ opacity: 0, transition: 1 }, { stiffness: 200, damping: 14 })
+    state.animation.translate.set( -2, { stiffness: 50, damping: 40 })
+    state.animation.opacity.set( 0, { stiffness: 200, damping: 14 })
+    state.animation.transition.set( 1, { stiffness: 200, damping: 14 })
   })
   messaging.subscribe('PAGE_CHANGED', page => {
     state.container = page.next.container.querySelector('[data-barba="inside"]')
     state.transitioning = false
-    state.reef.set({ translate: 0, opacity: 1 }, { stiffness: 400, damping: 15 })
-    state.reef.set({ transition: 0 }, { stiffness: 175, damping: 25 })
+    state.animation.translate.set( 0, { stiffness: 400, damping: 15 })
+    state.animation.opacity.set( 1, { stiffness: 400, damping: 15 })
+    state.animation.transition.set( 0, { stiffness: 175, damping: 25 })
   })
   messaging.subscribe('SET_LOADING', loading => {
     if ( loading ) {
-      state.reef.set({ transition: 1 }, { stiffness: 200, damping: 14 })
+      state.animation.transition.set( 1, { stiffness: 200, damping: 14 })
     } else {
-      state.reef.set({ transition: 0 }, { stiffness: 100, damping: 25 })
+      state.animation.transition.set( 0, { stiffness: 100, damping: 25 })
     }
   })
 }

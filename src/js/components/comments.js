@@ -1,24 +1,28 @@
 import ago from 's-ago'
 import marked from 'marked'
 import orderBy from 'lodash.orderby'
-import reefer from '../tools/reefer'
+import reefer, { onReef } from '../tools/reefer'
 
 export default function({element, ui, control, messaging }) {
   const state = {
-    show: false
+    show: false,
+    animation: {
+      y: reefer(0),
+      opacity: reefer(0)
+    }
   }
 
-  const animated = reefer({ y: 0, opacity: 0 })
-    .onFrame( ({ y, opacity }) => {
-      ui['convo'].style.transform = `translateY(${ y * 2 }rem)`
-      ui['convo'].style.opacity = opacity
-    })
+  onReef( function() {
+    ui['convo'].style.transform = `translateY(${ state.animation.y * 2 }rem)`
+    ui['convo'].style.opacity = state.animation.opacity.get()
+  })
 
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
     messaging.dispatch({ id: 'SET_LOADING', payload: true })
-    animated.set({ y: 1, opacity: 0.25 }, { stiffness: 250, damping: 15 })
+    state.animation.y.set( 1, { stiffness: 250, damping: 15 })
+    state.animation.opacity.set( 0.25, { stiffness: 250, damping: 15 })
 
     return fetch('/api/comments/byUrl', {
       method: 'POST',
@@ -27,15 +31,16 @@ export default function({element, ui, control, messaging }) {
     })
       .then( r => {
         messaging.dispatch({ id: 'SET_LOADING', payload: false })
-        animated.set({ y: 0 }, { stiffness: 350, damping: 13 })
-        animated.set({ opacity: 1 }, { stiffness: 200, damping: 18 })
+        state.animation.y.set( 0, { stiffness: 350, damping: 13 })
+        state.animation.opacity.set( 1, { stiffness: 200, damping: 18 })
         return r.json()
       })
   }
 
   const insertCommentIntoDB = function( comment ) {
     messaging.dispatch({ id: 'SET_LOADING', payload: true })
-    animated.set({ y: 1, opacity: 0.25 }, { stiffness: 250, damping: 15 })
+    state.animation.y.set( 1, { stiffness: 250, damping: 15 })
+    state.animation.opacity.set( 0.25, { stiffness: 250, damping: 15 })
 
     return fetch('/api/comment', {
       method: 'POST',
@@ -44,8 +49,8 @@ export default function({element, ui, control, messaging }) {
     })
       .then( r => {
         messaging.dispatch({ id: 'SET_LOADING', payload: false })
-        animated.set({ y: 0 }, { stiffness: 350, damping: 13 })
-        animated.set({ opacity: 1 }, { stiffness: 200, damping: 18 })
+        state.animation.y.set( 0, { stiffness: 350, damping: 13 })
+        state.animation.opacity.set( 1, { stiffness: 200, damping: 18 })
 
         return r.json()
       })

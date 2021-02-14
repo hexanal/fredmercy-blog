@@ -4,6 +4,7 @@
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
     * Fix: add the list of theme straight into the HTML on build / update JS
     * Fix: re-arrange help panel to group interface/a11y thing in a more general "settings"
+    * Fix: color of low-opacity background in custom scrollbars...
 
 * fix vertical alignment of comments box
     * **when I've got some time**
@@ -15,8 +16,8 @@
 
 * maybe work with services?
     * **when I'm building something new, ----> LATER**
-    - shortcut service
-    - event service (state service?)
+    - keyboard shortcut service
+    - event service (with state service -> like a reducer?)
     - viewport service? -> where in the page, how big, media, etc.
     - loader service?
         - to determine when all the components on the page are loaded and ready,
