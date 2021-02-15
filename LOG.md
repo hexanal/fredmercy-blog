@@ -1,9 +1,7 @@
 * TODO
-    * Add: reduced-motion thingy option / css / kill animations
     * Fix: drawer component styles
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
     * Fix: add the list of theme straight into the HTML on build / update JS
-    * Fix: re-arrange help panel to group interface/a11y thing in a more general "settings"
     * Fix: color of low-opacity background in custom scrollbars...
 
 * fix vertical alignment of comments box
