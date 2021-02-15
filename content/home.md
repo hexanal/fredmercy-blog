@@ -4,15 +4,13 @@ description: My website
 type: page
 ---
 
-## welcome
+## welcome!
 
-I'm a dude who builds things, mostly websites and applications. This is my personal website.
-
-What I love: coming up with weird ideas and then making them come alive *with code*. The goal is to surprise and stimulate people; for this I strive to maximize the *friendliness* of what I create.
+I builds stuff, mostly websites like this one. This is my personal website.
 
 These days, I work as a developer at
 <a href="https://cossette.com" target="_blank" rel="noopener noreferrer">Cossette</a>, in beautiful <a href="https://www.openstreetmap.org/#map=19/45.49977/-73.57726&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.\
-You can also check out my [resume](/resume).
+You can also check out my [resume](/resume) and the [about](/about) page.
 
 ### latest blog post
 
@@ -22,4 +20,3 @@ You can also check out my [resume](/resume).
 
 - [blog](/blog)
 - [bookmarks](/bookmarks)
-- [about](/about)
