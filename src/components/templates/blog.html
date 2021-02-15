@@ -2,14 +2,14 @@
 
 {{> ui/breadcrumbs }}
 
-<div class="index__list">
+<div class="blog">
 
 {{#each postsByMonth as |entries archive| }}
 
-  <div class="index__month-archive">
+  <div class="blog__month-archive">
     <h2
       id="{{ archive }}"
-      class="heading index__month-year"
+      class="heading blog__month-year"
       aria-level="2"
       data-anchor="{{ archive }}"
       data-js="archive"
@@ -17,18 +17,18 @@
       {{ archive }}
     </h2>
 
-    <ul class="index__month-posts">
+    <ul class="blog__month-posts">
     {{#each entries}}
-      <li class="index__item">
-        <div class="index__meta">
-          <span class="index__date">
+      <li class="blog__item">
+        <div class="blog__meta">
+          <span class="blog__date">
             {{ this.meta.month }}/{{ this.meta.day }}
           </span>
         </div>
 
         {{#if this.meta.title}}
           <a
-            class="index__link"
+            class="blog__link"
             href="{{ this.meta.url }}"
             title="{{ this.meta.description }}"
             data-js="entry"
@@ -37,14 +37,14 @@
           </a>
         {{else}}
           <a
-            class="index__link"
+            class="blog__link"
             href="{{ this.meta.url }}"
             title="{{ this.meta.description }}"
             data-js="entry"
             aria-label='Untitled entry for {{ this.meta.date }}'
           >
             <span aria-hidden="true">
-              <em>Untitled</em><span class="index__extra"> entry for <em>{{ this.meta.date }}</em></span>
+              <em>Untitled</em><span class="blog__extra"> entry for <em>{{ this.meta.date }}</em></span>
             </span>
           </a>
         {{/if}}

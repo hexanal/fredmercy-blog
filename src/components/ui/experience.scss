@@ -54,14 +54,7 @@
 .experience__link {
   display: inline-block;
   margin-top: -0.25rem; // counter-act button's padding
-  text-decoration: underline;
   white-space: nowrap;
-
-	@include hover-focus {
-    text-decoration: none;
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
-  }
 }
 
 .experience__location,

@@ -1,6 +1,39 @@
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
     * Fix: add the list of theme straight into the HTML on build / update JS
+        * should the `config` JSON be a more "low-level" config file? in JS?
+        * could make use of `.env` file configuration, too
+    * Fix: allow "autoloaded" components to be hooked to a DOM element?
+        * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
+
+* TOTHINK
+    * is the better source of truth for content the Markdown, or the JSON?
+        * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
+        * minimal JSON
+        * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
+
+```json
+{
+    "meta": {
+        "title": "Bookmarks",
+        "description": "Let's say this is a description",
+        "type": "page"
+    },
+    "blocks": [
+        {
+            "component": "blocks/markdown",
+            "file": "/content/bookmarks.md"
+        },
+        {
+            "component": "blocks/newsletter"
+        },
+        {
+            "component": "blocks/markdown",
+            "file": "/content/bookmarks.footer.md"
+        }
+    ]
+}
+```
 
 * fix vertical alignment of comments box
     * **when I've got some time**
@@ -8,7 +41,7 @@
     * box: onresize
         - calculate height of contained div
         - resize frame to match?
-        - allow box to sit smack in the middle
+        - allow box to sit smack in the middle?
 
 * maybe work with services?
     * **when I'm building something new, ----> LATER**
@@ -32,10 +65,7 @@
         - an event calls a "reducer" function
         - the reducer updates `stater` keys
         - whatever's hooked in `stater.changed` is updated?
-    * reefer only one value
     * can dynamically set spring
-    * try with set() / get() functions?
-        - could be the key haha
 
 * add some sort of GUI page... to rebuild pages?
     - **this is a bit far out...**

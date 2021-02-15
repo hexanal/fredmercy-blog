@@ -1,18 +1,16 @@
-@import 'config/font-fantasque';
-
+// configuration css - global styles, assets, themes, etc.
+@import 'config/mixins';
+@import 'config/variables';
+@import 'config/fonts';
 @import 'config/base';
-@import 'config/html';
 @import 'config/themes';
 
+// utility-css, not linked to specific markup
+@import 'utilities/a11y';
+@import 'utilities/button';
+@import 'utilities/heading';
+@import 'utilities/hotkey';
+@import 'utilities/symbol';
+
+// the rest is co-located with HTML "components"
 @import '../components/**/*.scss';
-
-@import 'components/a11y';
-@import 'components/button';
-@import 'components/custom-theme';
-@import 'components/heading';
-@import 'components/hotkey';
-@import 'components/index';
-@import 'components/symbol';
-@import 'components/theme-option';
-
-@import 'pages/home';

@@ -1,6 +1,6 @@
 [
   {
-    "component": "resume/experience",
+    "component": "ui/experience",
     "heading": "EXPERIENCE",
     "items": [
       {
@@ -123,7 +123,7 @@
   },
 
   {
-    "component": "resume/sub-section",
+    "component": "ui/sub-section",
     "heading": "SKILLS",
     "items": [
       {
@@ -161,7 +161,7 @@
   },
 
   {
-    "component": "resume/sub-section",
+    "component": "ui/sub-section",
     "heading": "EDUCATION",
     "items": [
       {
