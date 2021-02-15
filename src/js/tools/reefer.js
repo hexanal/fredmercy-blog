@@ -1,6 +1,12 @@
 import stepper from './stepper.js'
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+// TODO - what to export here?
+export const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+export const SPRING_SNAP = { stiffness: 420, damping: 20 }
+export const SPRING_TIGHT = { stiffness: 380, damping: 15 }
+export const SPRING_LOOSE = { stiffness: 400, damping: 12 }
+export const SPRING_SOFT = { stiffness: 180, damping: 20 }
 
 // TODO how to dispose of the callbacks?
 export function onFrame(fn, timestamp = 0) {

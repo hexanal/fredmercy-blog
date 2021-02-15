@@ -16,8 +16,7 @@ type: post
 
 `9:32am:` Ready for some nerdy description of how I manage this blog? Read on, then!
 
-<code class="collapse">
-<button type="button">Toggle the nerd talk 🤓</button>
+<div data-component="drawer">
 
 Currently, I have to write this shit in a [markdown](https://en.wikipedia.org/wiki/Markdown) file and place it in a properly named folder (from where I infer the date and final URL), then I have to rebuild the whole website using [Gulp](https://gulpjs.com/) from the command line. It's cool, it works. But it's sort of clunky, and slow: that's my fault for having something that rebuilds the whole website every time and there's a very easy fix for that. I should probably look into it.
 
@@ -31,7 +30,7 @@ However, I still like it. I like the *slowness* of it, the intentionality of it.
 
 Pfew!
 
-</code>
+</div>
 
 I had an idea yesterday regarding my blog and the way I will manage its updates. I thought of simply *editing HTML directly on the server*.
 
