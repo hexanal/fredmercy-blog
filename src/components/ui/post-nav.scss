@@ -1,6 +1,10 @@
 .post-nav {
   display: flex;
 	margin: 2rem 0;
+
+  @media print {
+    display: none;
+  }
 }
 
 .post-nav__link {

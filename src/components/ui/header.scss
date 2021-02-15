@@ -20,6 +20,12 @@
     width: calc(100% - 6rem);
     left: 3rem;
   }
+
+  @media print {
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent !important; // it's ok, we're priting
+  }
 }
 
 .header__title {
@@ -92,5 +98,9 @@
 
   @media (min-width: $mq-medium) {
     right: 0;
+  }
+
+  @media print {
+    display: none !important;
   }
 }
