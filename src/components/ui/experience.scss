@@ -70,6 +70,7 @@
 .button.experience__toggle-more {
   padding: 0;
   color: var(--color-subdued);
+  font-style: normal;
 
   span[data-minus] {
     display: none;
@@ -82,6 +83,10 @@
     span[data-minus] {
       display: inline;
     }
+  }
+
+  @include hover-focus {
+    color: var(--color-bg);
   }
 
   @media print {
