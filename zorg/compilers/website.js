@@ -14,7 +14,6 @@ const middlewares = [
   require('../middlewares/global/shortcodes'),
   require('../middlewares/global/content'),
   require('../middlewares/global/extra-data'),
-  require('../middlewares/global/json'),
   require('../middlewares/global/global-data'),
   require('../middlewares/global/sitemap-xml'),
   require('../middlewares/global/html'),

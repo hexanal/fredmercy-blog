@@ -2,7 +2,7 @@ const fs = require('fs')
 const glob = require('glob')
 
 const getExtraData = function() {
-  const extraDataFiles = glob.sync('./content/_data/**/*.json', {})
+  const extraDataFiles = glob.sync('./content/**/*.json', {})
 
   return extraDataFiles.reduce( (acc, filePath) => {
     const jsonFile = fs.readFileSync( filePath, 'utf8' )
