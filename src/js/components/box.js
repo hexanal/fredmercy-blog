@@ -48,9 +48,9 @@ export default function({ element, ui, control, messaging }) {
   const open = () => state.active.set(true)
   const close = () => state.active.set(false)
 
-  const eventToggle = messaging.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
-  const eventShow = messaging.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
-  const eventClose = messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
+  messaging.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
+  messaging.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
+  messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
 
   control['close'].addEventListener('click', close)
   control['bg'].addEventListener('click', close)
@@ -60,8 +60,8 @@ export default function({ element, ui, control, messaging }) {
   state.update()
 
   return function() {
-    eventToggle()
-    eventShow()
-    eventClose()
+    messaging.unsubscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
+    messaging.unsubscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
+    messaging.unsubscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
   }
 }
