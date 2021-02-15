@@ -6,6 +6,35 @@
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
         * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
 
+* TOTHINK
+    * is the better source of truth for content the Markdown, or the JSON?
+        * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
+        * minimal JSON
+        * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
+
+```json
+{
+    "meta": {
+        "title": "Bookmarks",
+        "description": "Let's say this is a description",
+        "type": "page"
+    },
+    "blocks": [
+        {
+            "component": "blocks/markdown",
+            "file": "/content/bookmarks.md"
+        },
+        {
+            "component": "blocks/newsletter"
+        },
+        {
+            "component": "blocks/markdown",
+            "file": "/content/bookmarks.footer.md"
+        }
+    ]
+}
+```
+
 * fix vertical alignment of comments box
     * **when I've got some time**
     * ResizeObserver ?
