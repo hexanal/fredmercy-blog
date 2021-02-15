@@ -1,42 +1,33 @@
-// TODO clean up
-.index {
-  max-width: none;
-
-  @media (min-width: $mq-medium) {
-    max-width: $site-width;
-  }
-}
-
-.index__list {
+.blog {
   margin: 0 0 5em;
   line-height: 1.4;
 }
 
-.index__month-archive {
+.blog__month-archive {
   margin-top: 1rem;
 }
 
-.index__month-posts {
+.blog__month-posts {
   padding-left: 0;
   margin: 0;
   list-style: none;
 }
 
-.index__item {
+.blog__item {
   display: flex;
 }
 
-.index__item + .index__item {
+.blog__item + .blog__item {
   margin-top: 0.25rem;
 }
 
-.index__link {
+.blog__link {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.index__meta {
+.blog__meta {
   flex-shrink: 0;
   display: inline-block;
   padding: 0.25rem;
@@ -46,7 +37,7 @@
   background-color: var(--color-primary);
 }
 
-.index__extra {
+.blog__extra {
   display: none;
 
   @media (min-width: 500px) {
