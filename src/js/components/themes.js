@@ -1,37 +1,22 @@
 import Storage from '../tools/Storage'
 
-// FIXME: use config.interface.themes to build HTML straight up, and then figure out the available themes from that
-const THEME_LIST = [
-  'june',
-  'the-greys',
-  'bioluminesce',
-  'night-fire',
-  'pink-slime',
-  'frigid-cold',
-  'mondrian',
-  'forestry',
-]
+const DEFAULT_THEME = 'june'
 
 export default function({element, messaging}) {
-  const useTheme = function(themeId) {
+  const availableThemes = []
+
+  const useTheme = function( id ) {
+    const themeId = !availableThemes.includes( id ) ? DEFAULT_THEME : id
+
     Storage.set('selected_theme', themeId)
     document.documentElement.dataset.theme = themeId
     element.value = themeId
   }
 
   const initThemes = function() {
-    THEME_LIST.map( theme => { // setup the dropdown
-      const option = document.createElement('option')
-      option.value = theme
-      option.textContent = theme
-
-      element.appendChild( option )
-    })
-
+    element.querySelectorAll('option').forEach( opt => availableThemes.push( opt.value ) )
     element.addEventListener('change', e => useTheme( e.target.value ) )
-
-    const stored = Storage.get('selected_theme') // manage "saved" theme, in localstorage
-    if ( THEME_LIST.includes( stored ) ) useTheme(stored)
+    useTheme( Storage.get('selected_theme') ) // manage "saved" theme, in localstorage
   }
 
   initThemes()
