@@ -146,13 +146,13 @@ del {
 }
 
 select {
-  padding: 0.1rem;
+  padding: 0.25rem;
   font-size: 0.9rem;
   line-height: 1.2;
   font-family: var(--font);
   font-style: normal;
   color: var(--color-secondary);
-  border: 1px solid currentColor;
+  border: 2px solid currentColor;
   background-color: var(--color-bg);
   border-radius: 0.25rem;
   cursor: pointer;
