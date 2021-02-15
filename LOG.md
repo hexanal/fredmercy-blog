@@ -1,8 +1,6 @@
 * TODO
-    * Fix: drawer component styles
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
     * Fix: add the list of theme straight into the HTML on build / update JS
-    * Fix: color of low-opacity background in custom scrollbars...
 
 * fix vertical alignment of comments box
     * **when I've got some time**
