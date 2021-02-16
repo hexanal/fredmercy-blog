@@ -1,12 +1,10 @@
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
-    * Fix: add the list of theme straight into the HTML on build / update JS
-        * should the `config` JSON be a more "low-level" config file? in JS?
-        * could make use of `.env` file configuration, too
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
         * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
 
 * TOTHINK
+    * extract settings.json to some... settings.js file instead, that's injected via a middleware at compile time?
     * is the better source of truth for content the Markdown, or the JSON?
         * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
         * minimal JSON
