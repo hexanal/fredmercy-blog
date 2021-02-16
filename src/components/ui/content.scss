@@ -98,6 +98,16 @@
     margin-top: 0.25em;
   }
 
+  blockquote {
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--color-secondary);
+    font-style: italic;
+
+    em, i {
+      font-style: normal;
+    }
+  }
+
   iframe {
     width: 100%;
     height: 200px;
