@@ -3,8 +3,8 @@ import debounce from 'lodash.debounce'
 
 const MIN_OPACITY = 0.25
 const MIN_HEIGHT = 0
-const LABEL_INACTIVE = 'expand (+)'
-const LABEL_ACTIVE = 'hide (-)'
+const LABEL_INACTIVE = 'read more (+)'
+const LABEL_ACTIVE = 'less (-)'
 
 export default function({ element }) {
   const state = {
