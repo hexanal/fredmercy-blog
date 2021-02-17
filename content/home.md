@@ -19,4 +19,5 @@ You can also check out my [resume](/resume) and the [about](/about) page.
 ### more links
 
 - [blog](/blog)
+- [ramblings](/ramblings)
 - [bookmarks](/bookmarks)
