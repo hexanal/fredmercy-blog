@@ -4,6 +4,8 @@ description: What to communicate with/through?
 type: page
 ---
 
+## talking
+
 I wish to talk to my friends. I also want to talk to people who “aren't good with computers.”
 
 Let's talk about communication. As humans, we love to communicate, to bond with one another, to share thoughts and ideas, make plans, etc.
