@@ -3,12 +3,13 @@ import debounce from 'lodash.debounce'
 
 const MIN_OPACITY = 0.25
 const MIN_HEIGHT = 0
-const LABEL_INACTIVE = 'read more (+)'
-const LABEL_ACTIVE = 'less (-)'
+const DEFAULT_LABEL = 'read more (+)'
+const DEFAULT_LABEL_CLOSE = 'less (-)'
 
 export default function({ element }) {
   const state = {
     expanded: false,
+    label: element.dataset.label || DEFAULT_LABEL,
     animation: {
       height: reefer(MIN_HEIGHT),
       y: reefer(1.5),
@@ -65,10 +66,10 @@ export default function({ element }) {
   const getToggler = function() {
     const toggler = document.createElement('button')
 
+    toggler.setAttribute('type', 'button')
+    toggler.textContent = state.label
     toggler.classList.add('drawer__btn')
     toggler.classList.add('button')
-    toggler.setAttribute('type', 'button')
-    toggler.textContent = LABEL_INACTIVE
 
     toggler.addEventListener('click', expand)
 
@@ -78,7 +79,7 @@ export default function({ element }) {
   const expand = (e) => {
     state.expanded = !state.expanded
 
-    state.toggler.textContent = state.expanded ? LABEL_ACTIVE : LABEL_INACTIVE
+    state.toggler.textContent = state.expanded ? DEFAULT_LABEL_CLOSE : state.label
     element.classList.toggle('state-drawer-expand', state.expanded)
 
     const newHeight = state.expanded ? state.wrap.offsetHeight : MIN_HEIGHT

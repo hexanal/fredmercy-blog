@@ -1,7 +1,8 @@
-.drawer {
-}
-
 .drawer__btn {
+  .state-drawer-expand & {
+    position: sticky;
+    bottom: 0;
+  }
 }
 
 .drawer__container {
