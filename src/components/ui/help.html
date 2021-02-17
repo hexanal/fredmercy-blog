@@ -7,7 +7,7 @@
       </h2>
 
       <ul class="help__list">
-        {{#if settings.interface.useThemes }}
+        {{#if SETTINGS.USE_THEMES }}
         <li class="help__item">
           <div class="help__icon">
             🎨
@@ -20,7 +20,7 @@
               class="help__select"
               data-component="themes"
             >
-            {{#each settings.themes }}
+            {{#each themes }}
               <option value="{{ this.id }}">{{ this.label }}</option>
             {{/each}}
           </select>
@@ -28,7 +28,7 @@
         </li>
         {{/if}}
 
-        {{#if settings.interface.useBleeps }}
+        {{#if SETTINGS.USE_BLEEPS }}
         <li
           class="help__item help__item--bleeps"
           data-component="bleeps"

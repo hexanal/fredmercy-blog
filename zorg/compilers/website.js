@@ -1,3 +1,5 @@
+require('dotenv').config() // get those sweet environment settings
+
 const chalk = require('chalk')
 const zorg = require('../bin/zorg')
 const watcher = require('../bin/watcher')
@@ -14,7 +16,7 @@ const middlewares = [
   require('../middlewares/global/shortcodes'),
   require('../middlewares/global/content'),
   require('../middlewares/global/extra-data'),
-  require('../middlewares/global/global-data'),
+  require('../middlewares/global/settings'),
   require('../middlewares/global/sitemap-xml'),
   require('../middlewares/global/html'),
 ]

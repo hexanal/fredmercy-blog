@@ -1,14 +1,25 @@
 * TODO
-    * Fix: accessibility audit of themes / fix contrasts / create a11y specific theme
+    * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
         * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
 
 * TOTHINK
-    * extract settings.json to some... settings.js file instead, that's injected via a middleware at compile time?
-    * is the better source of truth for content the Markdown, or the JSON?
-        * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
-        * minimal JSON
-        * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
+    * look into implementing [microformats](https://microformats.io/)
+    * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
+
+
+* try editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
+    - with preview
+    - ..?
+
+* try search powered by: https://stork-search.net/docs/config-ref/
+    - yeah?
+    - dunno...
+
+* is the better source of truth for content the Markdown, or the JSON?
+    * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
+    * minimal JSON
+    * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
 
 ```json
 {
@@ -76,13 +87,6 @@
     - or the preact project?... I don't know dude
 
 * test `storeon`
-
-* editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
-    - with preview
-    - ..?
-
-* search powered by: https://stork-search.net/docs/config-ref/
-    - yeah?
 
 * pass protect?
     - https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js/8003291#8003291
