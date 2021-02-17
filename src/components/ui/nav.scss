@@ -1,5 +1,16 @@
-.nav {
-  padding: 1em;
+[data-box-id="menu"] {
+  .box__frame {
+    height: auto;
+
+    @media (min-width: $mq-medium) {
+      width: 16rem;
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.nav { padding: 1em;
 
   hr {
     margin: 1rem 0;
@@ -33,34 +44,14 @@
   }
 
   &:after {
-    content: '';
+    content: attr( data-icon );
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 }
-// TODO this sort of sucks... -> will change when using SVG symbols all around
-.nav__link--blog {
-  &:after {
-    content: '📓';
-  }
-}
-.nav__link--bookmarks {
-  &:after {
-    content: '🔖';
-  }
-}
-.nav__link--about {
-  &:after {
-    content: '🤔';
-  }
-}
-.nav__link--demos {
-  &:after {
-    content: '🧪';
-  }
-}
+
 .nav__link--bandcamp {
   &:after {
     content: '';
@@ -71,41 +62,20 @@
     background-size: contain;
   }
 }
-.nav__link--home {
-  &:after {
-    content: '🌀';
-  }
-}
-.nav__link--github {
-  &:after {
-    content: '⌨️';
-  }
-}
-.nav__link--twitter {
-  &:after {
-    content: '🐦';
-  }
-}
 
-.nav__link--sounds {
-  &:after {
-    content: '🔇';
-  }
-  &.state-sounds-enabled {
-    &:after {
-      content: '🔈';
-    }
-  }
-}
-
-[data-box-id="menu"] {
-  .box__frame {
-    height: auto;
-
-    @media (min-width: $mq-medium) {
-      width: 16rem;
-      left: auto;
-      right: 0;
-    }
-  }
-}
+// TODO: these are saved
+// .nav__link--demos {
+//   &:after {
+//     content: '🧪';
+//   }
+// }
+// .nav__link--sounds {
+//   &:after {
+//     content: '🔇';
+//   }
+//   &.state-sounds-enabled {
+//     &:after {
+//       content: '🔈';
+//     }
+//   }
+// }
