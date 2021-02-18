@@ -12,44 +12,27 @@
       <div class="experience__company">{{ company }}</div>
     {{/if}}
 
-    <p class="experience__location">{{ location }}</p>
-
-    <div
-      class="experience__extras"
-      {{#if extra}}
-        data-component="extra"
-      {{/if}}
-    >
-      <p>
-        {{description}}
-        {{#if extra}}
-          <button
-            class="button button--light experience__toggle-more"
-            type="button"
-            data-control="more"
-          >
-            <span data-plus>(+)</span>
-            <span data-minus>(-)</span>
-          </button>
-        {{/if}}
-      </p>
+    <div class="experience__description content">
+      <p>{{ location }}</p>
+      <p>{{ description }}</p>
 
       {{#if extra}}
-        <ul class="experience__more">
-          {{#each extra }}
-            <li class="experience__more-item">
-              <a class="experience__link" href="{{this.href}}" target="_blank" rel="noopener noreferrer">
-                {{this.label}}
-              </a>
-              {{#if this.description }}
-              <small>
-                {{ this.description }}
-              </small>
-              {{/if}}
-            </li>
-          {{/each}}
-        </ul>
+      <ul class="experience__more">
+        {{#each extra }}
+          <li class="experience__website">
+            <a class="experience__link" href="{{this.href}}" target="_blank" rel="noopener noreferrer">
+              {{this.label}}
+            </a>
+            {{#if this.description }}
+            <small>
+              {{ this.description }}
+            </small>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
       {{/if}}
     </div>
+
   </div>
 </div>

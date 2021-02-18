@@ -45,10 +45,8 @@
   }
 }
 
-.experience__company {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4;
+.experience__description {
+  margin-top: 1rem;
 }
 
 .experience__link {
@@ -57,65 +55,22 @@
   white-space: nowrap;
 }
 
-.experience__location,
-.experience__extras {
+.content .experience__more {
+  list-style: none;
   margin-top: 1rem;
-  line-height: 1.5;
-
-  @media (min-width: 700px) {
-    margin-top: 1.5rem;
-  }
 }
 
-.button.experience__toggle-more {
-  padding: 0;
-  color: var(--color-subdued);
-  font-style: normal;
-
-  span[data-minus] {
-    display: none;
-  }
-
-  .state-collapse-expand & {
-    span[data-plus] {
-      display: none;
-    }
-    span[data-minus] {
-      display: inline;
-    }
-  }
-
-  @include hover-focus {
-    color: var(--color-bg);
-  }
-
-  @media print {
-    display: none;
-  }
-}
-
-.experience__more {
-  display: none;
-  overflow: hidden;
-  padding: 0;
-
-  .state-collapse-expand & {
-    display: block;
-  }
-}
-
-.experience__more-item {
+.experience__website {
   &:before {
     content: '- ';
   }
 
-  + .experience__more-item {
+  + .experience__website {
     margin-top: 0.25rem;
   }
 
   small {
     display: block;
-    padding-left: 1rem;
     color: var(--color-secondary);
   }
 }

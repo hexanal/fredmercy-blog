@@ -20,8 +20,6 @@ import sideNote from './components/side-note'
 import themes from './components/themes'
 import toTop from './components/to-top'
 
-import extra from './components/resume/extra'
-
 const container = document.querySelector('[data-barba="container"]')
 
 Exponent
@@ -38,7 +36,6 @@ Exponent
     'comments': comments,
     'drawer': drawer,
     'emit': emit,
-    'extra': extra,
     'filter-bookmarks': filterBookmarks,
     'help': help,
     'highlight': highlight,
