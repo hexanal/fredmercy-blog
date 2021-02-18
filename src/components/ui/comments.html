@@ -4,6 +4,12 @@
     data-component="comments"
     data-url="{{ meta.url }}"
   >
+    <div
+      class="comments__convo"
+      data-ui="convo"
+    >
+    </div>
+
     <form
       class="comments__write"
       data-control="comment-box"
@@ -35,11 +41,5 @@
         required
       >
     </form>
-
-    <div
-      class="comments__convo"
-      data-ui="convo"
-    >
-    </div>
   </div>
 {{/ui/box }}

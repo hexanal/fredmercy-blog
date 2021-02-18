@@ -5,6 +5,19 @@
   height: 100%;
 }
 
+.comments__convo {
+  @include scrollbars;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  margin: 2px; // TODO border trick...
+  padding: 0.5rem;
+}
+
 .comments__input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -43,37 +56,5 @@
 
 .comments__author {
   font-style: italic;
+  bottom: -2px; // overlap the previous field for a cool, "stacked" effect ;)
 }
-
-.comments__message {
-  top: -2px; // overlap the previous field for a cool, "stacked" effect ;)
-}
-
-.comments__convo {
-  @include scrollbars;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 2px; // TODO border trick...
-  padding: 0.5rem;
-}
-
-.state-loading {
-  .comments__convo {
-    &:before {
-      content: '';
-      position: absolute;
-      z-index: 3;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--color-primary);
-    }
-  }
-}
-
