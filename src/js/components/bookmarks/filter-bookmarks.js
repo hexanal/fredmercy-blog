@@ -1,7 +1,3 @@
-const unique = (value, index, self) => {
-  return self.indexOf(value) === index
-}
-
 export default function({ ui, control }) {
   const state = {
     filters: []
@@ -14,7 +10,7 @@ export default function({ ui, control }) {
       const codeTag = bookmark.querySelector('code')
       return codeTag.textContent.replaceAll(' ', '').split(',') // remove spaces, then split (why not do a trim? meh)
     })
-    .filter(unique)
+    .filter( (value, index, self) => self.indexOf(value) === index ) // filter unique
 
   const filterButtons = tags.map( tag => {
     const clone = ui['filter-item'].content.cloneNode(true)

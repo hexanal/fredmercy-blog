@@ -99,6 +99,7 @@
         - get dataset from all?
     - children ( data-child="something" )
         - then can destructure in component
+
 ```
 export default ({ children }) => {
     const { something } = children
