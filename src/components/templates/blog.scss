@@ -23,10 +23,23 @@
   margin-top: 0.25rem;
 }
 
-.blog__link {
+.blog__title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-decoration: none;
+
+  &:hover {
+    background-color: transparent;
+
+    div {
+      background-color: var(--color-secondary);
+    }
+  }
+
+  small {
+    color: var(--color-secondary);
+  }
 }
 
 .blog__meta {

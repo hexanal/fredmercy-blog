@@ -19,3 +19,14 @@
   width: 100%;
   padding-left: 2rem;
 }
+
+.content {
+  .drawer__wrap {
+    blockquote {
+      padding-left: 0;
+      margin-left: 0;
+      border-left: 0;
+    }
+  }
+}
+

@@ -27,26 +27,19 @@
         </div>
 
         {{#if this.meta.title}}
-          <a
-            class="blog__link"
-            href="{{ this.meta.url }}"
-            title="{{ this.meta.description }}"
-            data-js="entry"
-          >
-            {{this.meta.title}}
-          </a>
+          <div class="blog__title">
+            <a
+              class="button"
+              href="{{ this.meta.url }}"
+              title="{{ this.meta.description }}"
+              data-js="entry"
+            >
+              {{this.meta.title}}
+            </a>
+            <small>{{this.meta.description}}</small>
+          </div>
         {{else}}
-          <a
-            class="blog__link"
-            href="{{ this.meta.url }}"
-            title="{{ this.meta.description }}"
-            data-js="entry"
-            aria-label='Untitled entry for {{ this.meta.date }}'
-          >
-            <span aria-hidden="true">
-              <em>Untitled</em><span class="blog__extra"> entry for <em>{{ this.meta.date }}</em></span>
-            </span>
-          </a>
+          missing title...
         {{/if}}
       </li>
     {{/each}}
