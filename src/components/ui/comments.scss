@@ -8,6 +8,13 @@
 .comments__title {
   padding: 0.5rem;
   border: 2px solid;
+
+  small {
+    padding: 0.25rem;
+    color: var(--color-secondary);
+    border-radius: 0.25rem;
+    border: 2px solid;
+  }
 }
 
 .comments__convo {
