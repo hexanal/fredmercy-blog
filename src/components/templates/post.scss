@@ -7,21 +7,23 @@
 }
 
 .post__heading {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 1.5rem;
 }
 
-.post__date,
-.post__type {
+.post__description {
+  color: var(--color-secondary);
+}
+
+.post__date {
   display: inline-block;
-  margin-right: 0.25rem;
   padding: 0.25rem;
 }
+
 .post__date {
   color: var(--color-bg);
   background-color: var(--color-primary);
 }
+
 .post__type {
   font-style: italic;
 }

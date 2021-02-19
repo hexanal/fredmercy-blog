@@ -5,6 +5,11 @@
   height: 100%;
 }
 
+.comments__title {
+  padding: 0.5rem;
+  border: 2px solid;
+}
+
 .comments__convo {
   @include scrollbars;
   overflow-y: auto;

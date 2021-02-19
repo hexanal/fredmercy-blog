@@ -2,9 +2,10 @@
 title: Outlet
 description: these posts are like shouts in outer space
 type: post
+tags: personal, weird, with soundtrack
 ---
 
-<a href="https://projektrecords.bandcamp.com/track/pod-01" target="_blank">song that goes with the post</a>
+<a href="https://projektrecords.bandcamp.com/track/pod-01" target="_blank">🎵 song that goes with the post</a>
 
 `6:56pm:` Turns out, I love to write. I like to read a lot, too. Ok, let me think about what I usually read, and how I find out about it...
 

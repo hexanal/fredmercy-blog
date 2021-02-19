@@ -13,10 +13,13 @@
         <time class="post__date">
           {{ meta.prettyDate }}
         </time>
+
+        {{#if meta.description }}
+        <small class="post__description">{{ meta.description }}</small>
+        {{/if}}
+
         {{#if meta.tags }}
-        <span class="post__type">
-          tags: {{ meta.tags }}
-        </span>
+        <small class="post__type">(tagged: {{ meta.tags }})</small>
         {{/if}}
       </div>
     </header>
