@@ -8,7 +8,7 @@ export default function({ messaging }) {
   const scale = reefer( MIN_SCALE )
 
   onReef( function() {
-    element.style.zIndex = scale.get() > MIN_SCALE ? ACTIVE_Z_INDEX : -1
+    element.style.zIndex = scale.get() >= MIN_SCALE ? ACTIVE_Z_INDEX : -1
     element.style.transform = `translate(-50%, -50%) scale(${ scale.get() })`
   })
 
