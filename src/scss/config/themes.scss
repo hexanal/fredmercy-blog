@@ -1,4 +1,5 @@
 html { // specify that we're dealing with the documentElement
+  --icon-filter: none;
 
   &[data-theme="the-greys"] {
     --color-bg: #262125;
@@ -7,6 +8,7 @@ html { // specify that we're dealing with the documentElement
     --color-secondary: #ccc;
     --color-subdued: #dbdbdb;
     --color-extra: #444;
+    --icon-filter: invert() grayscale(1) brightness(3) contrast(3);
   }
 
   &[data-theme="bioluminesce"] {
@@ -54,12 +56,52 @@ html { // specify that we're dealing with the documentElement
     --color-extra: #46311b;
   }
 
-  &[data-theme="mondrian"] {
+  &[data-theme="cmyk"] {
     --color-bg: #fff;
     --color-primary: #000;
-    --color-active: #00f;
-    --color-secondary: #f00;
-    --color-subdued: #00f;
+    --color-active: #000;
+    --color-secondary: #f0f;
+    --color-subdued: #0ff;
     --color-extra: #ff0;
+    --icon-filter: grayscale(1) brightness(0.75) contrast(3.5);
+  }
+
+  &[data-theme="ice"] {
+    --color-bg: #f7f4ff;
+    --color-primary: #000516;
+    --color-secondary: #e55255;
+    --color-active: #e89500;
+    --color-subdued: #514572;
+    --color-extra: #d4e8ea;
+  }
+
+  &[data-theme="jungle"] {
+    --color-bg: #051600;
+    --color-primary: #f4fff7;
+    --color-secondary: #ffdc00;
+    --color-active: #5255e5;
+    --color-subdued: #19d37a;
+    --color-extra: #194962;
+  }
+
+  // OLD SCHOOL COOL CPU
+  &[data-theme="cpu"] {
+    --color-bg: #001616;
+    --color-primary: #f4fbff;
+    --color-secondary: #ff00c3;
+    --color-active: #00ff1d;
+    --color-subdued: #36a3a6;
+    --color-extra: #00f;
+    --icon-filter: saturate(10) brightness(1.5) contrast(1.5);
+  }
+
+  &[data-theme="frost"] {
+    --color-bg: #0d0026;
+    --color-primary: #f6f4ff;
+    --color-secondary: #f877d1;
+    --color-active: #24a4ff;
+    --color-subdued: #a295f4;
+    --color-extra: #4e2a85;
+    --icon-filter: hue-rotate(75deg);
   }
 }

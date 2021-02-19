@@ -1,3 +1,5 @@
+* can't use a "Mondrian" theme... Slack already thought of this one; *sigh*
+
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
@@ -6,7 +8,6 @@
 * TOTHINK
     * look into implementing [microformats](https://microformats.io/)
     * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
-
 
 * try editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
     - with preview

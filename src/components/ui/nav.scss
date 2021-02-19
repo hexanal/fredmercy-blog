@@ -10,7 +10,8 @@
   }
 }
 
-.nav { padding: 1em;
+.nav {
+  padding: 1rem;
 
   hr {
     margin: 1rem 0;
@@ -49,6 +50,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    filter: var(--icon-filter);
   }
 }
 

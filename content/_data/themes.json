@@ -1,11 +1,15 @@
 {
   "themes": [
     { "id": "june", "label": "june (light)" },
-    { "id": "the-greys", "label": "The Greys (dark)" },
-    { "id": "bioluminesce", "label": "Bioluminesce (dark)" },
     { "id": "frigid-cold", "label": "Frigid Cold (light)" },
     { "id": "pink-slime", "label": "Pink Slime (light)" },
-    { "id": "mondrian", "label": "Mondrian (light)" },
+    { "id": "cmyk", "label": "CMYK (light)" },
+    { "id": "ice", "label": "ICE (light)" },
+    { "id": "cpu", "label": "CPU (light)" },
+    { "id": "frost", "label": "Frost (dark?)" },
+    { "id": "the-greys", "label": "The Greys (dark)" },
+    { "id": "jungle", "label": "Jungle (dark)" },
+    { "id": "bioluminesce", "label": "Bioluminesce (dark)" },
     { "id": "swamp", "label": "Swamp (dark)" },
     { "id": "night-fire", "label": "Night Fire (dark)" }
   ]
