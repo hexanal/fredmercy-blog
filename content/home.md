@@ -21,4 +21,4 @@ You can also check out my [resume](/resume) and the [about](/about) page.
 - [blog](/blog)
 - [ramblings](/ramblings)
 - [bookmarks](/bookmarks)
-- <button title="Show the “help & options” panel" type="button" aria-label="Toggle help" data-component="emit" data-event="SHOW_BOX_HELP">help / info / site settings</button>
+- <button title="Show the “help & options” panel" class="link" type="button" aria-label="Toggle help" data-component="emit" data-event="SHOW_BOX_HELP">help / site settings</button>
