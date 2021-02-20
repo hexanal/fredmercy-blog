@@ -20,9 +20,16 @@
               class="help__select"
               data-component="themes"
             >
-            {{#each themes }}
-              <option value="{{ this.id }}">{{ this.label }}</option>
-            {{/each}}
+              <optgroup label="Light">
+                {{#each themes.light }}
+                  <option value="{{ this.id }}">{{ this.label }}</option>
+                {{/each}}
+              </optgroup>
+              <optgroup label="Dark">
+                {{#each themes.dark }}
+                  <option value="{{ this.id }}">{{ this.label }}</option>
+                {{/each}}
+              </optgroup>
           </select>
           </div>
         </li>

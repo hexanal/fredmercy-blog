@@ -1,32 +1,23 @@
 html { // specify that we're dealing with the documentElement
   --icon-filter: none;
 
-  &[data-theme="the-greys"] {
-    --color-bg: #262125;
-    --color-primary: #f7f7f7;
-    --color-active: #b9b9b9;
-    --color-secondary: #ccc;
-    --color-subdued: #dbdbdb;
-    --color-extra: #444;
-    --icon-filter: invert() grayscale(1) brightness(3) contrast(3);
+  &[data-theme="paper"] {
+    --color-bg: #fffefc;
+    --color-primary: #00b288;
+    --color-active: #f72762;
+    --color-secondary: #3c449e;
+    --color-subdued: #b8adbc;
+    --color-extra: #ffe400;
   }
 
-  &[data-theme="bioluminesce"] {
-    --color-bg: #262125;
-    --color-primary: #ebdbff;
-    --color-active: #81ffac;
-    --color-secondary: #ddeee4;
-    --color-subdued: #838db3;
-    --color-extra: #4f496a;
-  }
-
-  &[data-theme="night-fire"] {
-    --color-bg: #221f1c;
-    --color-primary: #fff;
-    --color-active: #ffa700;
-    --color-secondary: #e14f08;
-    --color-subdued: #878ef9;
-    --color-extra: #004668;
+  &[data-theme="cmyk"] {
+    --color-bg: #fff;
+    --color-primary: #000;
+    --color-active: #000;
+    --color-secondary: #f0f;
+    --color-subdued: #0ff;
+    --color-extra: #ff0;
+    --icon-filter: grayscale(1) brightness(0.75) contrast(3.5);
   }
 
   &[data-theme="pink-slime"] {
@@ -47,26 +38,7 @@ html { // specify that we're dealing with the documentElement
     --color-extra: #d9d9d9;
   }
 
-  &[data-theme="swamp"] {
-    --color-bg: #161c0d;
-    --color-primary: #d0ffd3;
-    --color-active: #7bae64;
-    --color-secondary: #22a65c;
-    --color-subdued: #94e8c5;
-    --color-extra: #46311b;
-  }
-
-  &[data-theme="cmyk"] {
-    --color-bg: #fff;
-    --color-primary: #000;
-    --color-active: #000;
-    --color-secondary: #f0f;
-    --color-subdued: #0ff;
-    --color-extra: #ff0;
-    --icon-filter: grayscale(1) brightness(0.75) contrast(3.5);
-  }
-
-  &[data-theme="ice"] {
+  &[data-theme="camper-van"] {
     --color-bg: #f7f4ff;
     --color-primary: #000516;
     --color-secondary: #e55255;
@@ -84,17 +56,6 @@ html { // specify that we're dealing with the documentElement
     --color-extra: #194962;
   }
 
-  // OLD SCHOOL COOL CPU
-  &[data-theme="cpu"] {
-    --color-bg: #001616;
-    --color-primary: #f4fbff;
-    --color-secondary: #ff00c3;
-    --color-active: #00ff1d;
-    --color-subdued: #36a3a6;
-    --color-extra: #00f;
-    --icon-filter: saturate(10) brightness(1.5) contrast(1.5);
-  }
-
   &[data-theme="frost"] {
     --color-bg: #0d0026;
     --color-primary: #f6f4ff;
@@ -103,5 +64,35 @@ html { // specify that we're dealing with the documentElement
     --color-subdued: #a295f4;
     --color-extra: #4e2a85;
     --icon-filter: hue-rotate(75deg);
+  }
+
+  &[data-theme="the-greys"] {
+    --color-bg: #262125;
+    --color-primary: #f7f7f7;
+    --color-active: #b9b9b9;
+    --color-secondary: #ccc;
+    --color-subdued: #dbdbdb;
+    --color-extra: #444;
+    --icon-filter: invert() grayscale(1) brightness(3) contrast(3);
+  }
+
+  &[data-theme="bioluminesce"] {
+    --color-bg: #262125;
+    --color-primary: #ebdbff;
+    --color-active: #81ffac;
+    --color-secondary: #ddeee4;
+    --color-subdued: #838db3;
+    --color-extra: #4f496a;
+    --icon-filter: saturate(0.25) brightness(1.5);
+  }
+
+  &[data-theme="cpu"] {
+    --color-bg: #001616;
+    --color-primary: #f4fbff;
+    --color-secondary: #ff00c3;
+    --color-active: #00ff1d;
+    --color-subdued: #36a3a6;
+    --color-extra: #00f;
+    --icon-filter: saturate(10) brightness(1.5) contrast(1.5);
   }
 }
