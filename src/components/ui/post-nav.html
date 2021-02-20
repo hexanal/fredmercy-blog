@@ -7,16 +7,6 @@
     ← index
   </a>
 
-  {{#if meta.previous }}
-    <a
-      class="post-nav__link button"
-      href="{{ meta.previous.meta.url }}"
-      title="{{ meta.previous.meta.title }}"
-    >
-      ↓ older
-    </a>
-  {{/if}}
-
   {{#if meta.next }}
     <a
       class="post-nav__link button"
@@ -24,6 +14,16 @@
       title="{{ meta.next.meta.title }}"
     >
       ↑ newer
+    </a>
+  {{/if}}
+
+  {{#if meta.previous }}
+    <a
+      class="post-nav__link button"
+      href="{{ meta.previous.meta.url }}"
+      title="{{ meta.previous.meta.title }}"
+    >
+      ↓ older
     </a>
   {{/if}}
 </div>
