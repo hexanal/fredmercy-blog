@@ -2,6 +2,9 @@
 title: Fred Mercy
 description: My website
 type: page
+isHome: true
+i18n:
+  fr: '/fr'
 ---
 
 ## welcome!

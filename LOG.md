@@ -1,3 +1,7 @@
+* i18n
+    - looks like I'll have to include the current lang in the page object
+    - add a helper for translating theme strings like `{{t "header.nav.help.label" }}` ?
+
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?

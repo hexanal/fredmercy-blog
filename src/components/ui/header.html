@@ -8,6 +8,10 @@
   </div>
 
   <div class="header__section">
+    {{#each meta.i18n as |url lang|}}
+      <a class="button button--light header__button" href="{{ url }}">{{ lang }}</a>
+    {{/each}}
+
     <button
       title="Read and participate to the discussion about this page!"
       class="button button--light header__button"

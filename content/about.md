@@ -2,6 +2,8 @@
 title: About
 description: What is this all about?
 type: page
+i18n:
+  fr: '/fr/a-propos'
 ---
 
 ## about me
