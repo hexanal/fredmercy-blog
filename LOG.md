@@ -1,5 +1,3 @@
-* can't use a "Mondrian" theme... Slack already thought of this one; *sigh*
-
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?

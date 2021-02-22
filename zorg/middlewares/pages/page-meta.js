@@ -11,28 +11,39 @@ const addPageMeta = function( contentTypes ) {
   }
 }
 
+// TODO!!
+const LOCALES = ['en', 'fr']
+
 const getPageMetaData = function( item ) {
   const route = item._filePath
     .replace('./content/', '')
     .replace('.md', '')
     .split('/')
   const id = route[route.length - 1]
-  const folder = route[route.length - 2]
+  const lang = LOCALES.includes( route[0] )
+    ? route[0]    // use the folder as the "lang"
+    : LOCALES[0]  // use the default locale
+
   // TODO maybe i18n can be handled via a different middleware
   // TODO maybe "homepageness" can be handled via a middleware, too!!
-  const isHome = id === 'home' || folder === 'fr' // TODO figure out the root of the i18n paths (this is not yet done)
+
+  const isHome = id === 'home'
   const formattedURL = route.length
-    ? route.reduce( (acc, part, index) => {
+    ? route.reduce( (acc, part) => {
       return acc + '/' + part
     }, '')
     : '/'
-  const url = id === 'home' ? '/' : formattedURL
+  const localeUrl = lang !== LOCALES[0] && lang
+  const url = id === 'home'
+    ? `/${ localeUrl }`
+    : formattedURL
   const permalink = `https://fredmercy.ca${url}` // TODO?
 
   return {
     id,
     url,
     permalink,
+    lang,
     route,
     isHome
   }
