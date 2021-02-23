@@ -1,4 +1,4 @@
-{{#> ui/box id="comments" title="Comments" shortcut="c" }}
+{{#> ui/box id="comments" title=i18n.comments.modalTitle shortcut="c" }}
   <div
     class="comments"
     data-component="comments"
@@ -19,7 +19,7 @@
       data-control="comment-box"
     >
       <label class="visually-hidden" for="author">
-        nickname
+        {{ i18n.comments.nicknameLabel }}
       </label>
       <input
         class="comments__input comments__author"
@@ -28,11 +28,11 @@
         id="author"
         name="author"
         maxlength="32"
-        placeholder="your display name"
+        placeholder="{{ i18n.comments.nicknamePlaceholder }}"
       >
 
       <label class="visually-hidden" for="message">
-        message
+        {{ i18n.comments.messageLabel }}
       </label>
       <input
         class="comments__input comments__message"
@@ -41,7 +41,7 @@
         id="content"
         name="content"
         maxlength="1000"
-        placeholder="say something!"
+        placeholder="{{ i18n.comments.messagePlaceholder }}"
         required
       >
     </form>

@@ -10,7 +10,7 @@ const { getFilenameFromPath, pipe } = require('./utils')
  * - rename to match our nomenclature
  * - return { meta, content }
  */
-const getBasicMeta = function( contentFiles ) {
+const getBasicMeta = function( contentFiles, lang ) {
   return contentFiles.map( item => {
     const file = fs.readFileSync(item, 'utf8')
     const { attributes, body } = frontMatter( file.toString() )
@@ -19,6 +19,7 @@ const getBasicMeta = function( contentFiles ) {
     return {
       _filePath: item,
       meta: {
+        lang,
         ...defaultAttributes,
         ...attributes
       },
@@ -62,30 +63,27 @@ const splitByType = function( items ) {
   }, {})
 }
 
-/**
- * - apply the middlewares to the content types object
- */
-const applyMiddlewares = function( itemsByType, middlewares ) {
-  return pipe( middlewares )( itemsByType )
-}
-
-const zorg = function( middlewares ) {
+const zorg = function( locales, middlewares ) {
   const start = Date.now()
-  const contentFiles = glob.sync('./content/**/*.md', {})
-  /**
-   * - collating all the data:
-   *   - extracting the necessary base metadata
-   *   - splitting by `type`
-   *   - applying the middlewares of each content type
-   *   - applying the global middlewares
-   */
-  const byTypes = splitByType( getBasicMeta( contentFiles ) )
-  const generated = applyMiddlewares( byTypes, middlewares )
+
+  const websites = locales.map( lang => {
+    const contentFiles = glob.sync(`./content/${lang}/**/*.md`, {})
+    /**
+     * - collating all the data:
+     *   - extracting the necessary base metadata
+     *   - splitting by `type`
+     *   - applying the middlewares of each content type
+     *   - applying the global middlewares
+     */
+    const contentTypes = splitByType( getBasicMeta( contentFiles, lang ) )
+
+    return pipe( middlewares )( contentTypes )
+  })
 
   const end = Date.now()
-  const timeDiff = (end - start) / 1000
+  const time = (end - start) / 1000
 
-  return { generated, timeDiff }
+  return { websites, time }
 }
 
 module.exports = zorg

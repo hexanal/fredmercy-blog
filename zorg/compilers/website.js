@@ -22,9 +22,13 @@ const middlewares = [
 ]
 
 const build = () => {
-  const { timeDiff } = zorg( middlewares )
+  // const en = zorg('./content/en/**/*.md', middlewares )
+  // const fr = zorg('./content/fr/**/*.md', middlewares )
+  const { time } = zorg(['en', 'fr'], middlewares )
 
-  console.log( chalk.magenta(`[compiler] [website/html] built in ${timeDiff} seconds`) )
+  // console.log( chalk.magenta(`[compiler] [website/html] EN website built in ${en.timeDiff} seconds`) )
+  // console.log( chalk.magenta(`[compiler] [website/html] FR website built in ${fr.timeDiff} seconds`) )
+  console.log( chalk.magenta(`[compiler] [website/html] built in ${time} seconds`) )
 }
 
 const watch = watcher({

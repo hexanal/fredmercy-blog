@@ -2,6 +2,14 @@
     - looks like I'll have to include the current lang in the page object
     - add a helper for translating theme strings like `{{t "header.nav.help.label" }}` ?
 
+    - let's go splitting the website into huge trunks
+        - `content/en/**/*`
+        - `content/fr/**/*`
+    - that way... we can only rebuild what we need
+    - gotta watch out for things like... does a website version need to know anything about the other?
+    - should the "linking" be hand-made all the time?
+        - a two-way relationship, with a `i18n` key in the frontmatter?
+
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?

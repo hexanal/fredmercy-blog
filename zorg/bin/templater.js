@@ -13,6 +13,18 @@ const registerPartialHelper = function() {
 
     return new Handlebars.SafeString( block(context) )
   })
+
+  Handlebars.registerHelper('t', function (template, context, opts) {
+    console.log({ template, context, opts })
+    // const f = Handlebars.partials[template]
+
+    // if (!f) return '[...]'
+
+    // const block = Handlebars.compile( f )
+
+    return new Handlebars.SafeString( 'hello world!' )
+  })
+
 }
 
 const isDir = function (filename) {

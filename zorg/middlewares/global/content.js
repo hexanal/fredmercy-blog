@@ -1,6 +1,6 @@
 const marked = require('marked')
 
-const formatContent = function( contentTypes ) {
+const formatContent = function({ contentTypes }) {
   const withContent = {}
 
   Object.keys( contentTypes ).map( type => {

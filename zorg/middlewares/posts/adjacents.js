@@ -1,4 +1,6 @@
 const addAdjacents = function( contentTypes ) {
+  if ( !contentTypes.post ) return contentTypes // if no blog post yet
+
   const items = contentTypes.post
 
   return {

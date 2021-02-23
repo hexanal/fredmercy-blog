@@ -13,6 +13,8 @@ const rssTemplate = items => (`<rss version="2.0">
 </rss>`)
 
 const buildRSSFeed = function( contentTypes ) {
+  if ( !contentTypes.post ) return contentTypes // if no blog post yet
+
   const items = contentTypes.post.map( item => {
       const pubDate = new Date( item.meta.date )
 

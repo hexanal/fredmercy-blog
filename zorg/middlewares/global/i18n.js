@@ -1,3 +1,5 @@
+import en from '../../../src/locales/en'
+import fr from '../../../src/locales/fr'
 
 const addI18nMeta = function( contentTypes ) {
   return {

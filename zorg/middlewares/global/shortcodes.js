@@ -39,6 +39,7 @@ const shortcodes = [
   {
     tag: 'latest-post',
     processor: function({ props, item, contentTypes }) {
+      if ( !contentTypes.post ) return '' // no latest post
       return useBlockWithData('latest-post', { latest: contentTypes.post[0] })
     }
   },
@@ -75,20 +76,6 @@ const shortcodes = [
   },
 ]
 
-const addShortcodes = function( contentTypes ) {
-  const withShortcodes = {}
-  const types = Object.keys( contentTypes )
-  templater.usePartials('./src/components')
-
-  types.map( type => {
-    withShortcodes[type] = contentTypes[type].map( item => {
-      return applyShortcodes( item, contentTypes ) // passing along the whole data array
-    })
-  });
-
-  return withShortcodes
-}
-
 const applyShortcodes = function( item, contentTypes ) {
   const content = shortcodes.reduce( (accContent, shortcode) => {
     const tag = `[${shortcode.tag}](`
@@ -121,6 +108,20 @@ const applyShortcodes = function( item, contentTypes ) {
     ...item,
     content
   }
+}
+
+const addShortcodes = function( contentTypes ) {
+  const withShortcodes = {}
+  const types = Object.keys( contentTypes )
+  templater.usePartials('./src/components')
+
+  types.map( type => {
+    withShortcodes[type] = contentTypes[type].map( item => {
+      return applyShortcodes( item, contentTypes ) // passing along the whole data array
+    })
+  });
+
+  return withShortcodes
 }
 
 module.exports = addShortcodes

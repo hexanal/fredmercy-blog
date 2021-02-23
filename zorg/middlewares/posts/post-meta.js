@@ -21,19 +21,6 @@ const capitalize = function(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const addPostMeta = function( contentTypes ) {
-  return {
-    ...contentTypes,
-    post: contentTypes.post.map( item => ({
-      ...item,
-      meta: {
-        ...item.meta,
-        ...getPostMetaData(item)
-      }
-    }) )
-  }
-}
-
 const removeLeadingZero = day => {
   if ( day.charAt(0) === '0' ) return day[1]
   return day
@@ -41,25 +28,24 @@ const removeLeadingZero = day => {
 
 const getPostMetaData = function( item ) {
   const urlParts = item._filePath // grab special key "_filePath" which contains the path to the markdown file
-    .replace('./content/blog/', '')
+    .replace(`./content/${item.meta.lang}/`, '')
     .replace('.md', '')
     .split('/')
+    .reverse()
 
-  const year = urlParts[0]
-  const month = urlParts[1]
-  const day = urlParts[2]
+  const [id, day, month, year, blog] = urlParts
 
   if ( !day ) return {}
 
   const dayNoZero = removeLeadingZero( day )
-  const id = urlParts[3]
   const date = `${year}-${month}-${day}`
 
-  const monthName = capitalize(getMonthName(month))
+  const monthName = capitalize(getMonthName(month, item.meta.lang))
   const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
-  const url = `/blog/${year}/${month}/${day}/${id}`
-  const permalink = `https://fredmercy.ca${url}` // TODO?
+  const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}`
+  const url = `${urlLocalePrefix}/${blog}/${year}/${month}/${day}/${id}`
+  const permalink = `https://fredmercy.ca${url}`
   const archive = `${monthName} ${year}`
 
   return {
@@ -74,6 +60,21 @@ const getPostMetaData = function( item ) {
     dayNoZero,
     prettyDate,
     archive
+  }
+}
+
+const addPostMeta = function( contentTypes ) {
+  if ( !contentTypes.post ) return contentTypes // if no blog post yet
+
+  return {
+    ...contentTypes,
+    post: contentTypes.post.map( item => ({
+      ...item,
+      meta: {
+        ...item.meta,
+        ...getPostMetaData(item)
+      }
+    }) )
   }
 }
 
