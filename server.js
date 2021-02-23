@@ -8,10 +8,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const chalk = require('chalk');
-// const errorHandler = require('errorhandler');
 const sanitizeHtml = require('sanitize-html');
 const lusca = require('lusca');
-const expressStatusMonitor = require('express-status-monitor');
 const WebSocket = require('ws');
 const sqlite3 = require('sqlite3');
 
@@ -22,7 +20,6 @@ const { build, watch } = require('./zorg');
 
 app.set('host', process.env.HOST || '0.0.0.0');
 app.set('port', process.env.PORT || 8042);
-app.use(expressStatusMonitor());
 app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
