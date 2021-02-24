@@ -13,7 +13,7 @@ const addPageMeta = function( contentTypes ) {
 
 const getPageMetaData = function( item ) {
   const route = item._filePath
-    .replace(`./content/${item.meta.lang}/`, '')
+    .replace(`./src/content/${item.meta.lang}/`, '')
     .replace('.md', '')
     .split('/')
   const id = route[route.length - 1]

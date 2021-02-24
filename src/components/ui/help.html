@@ -1,9 +1,9 @@
-{{#> ui/box id="help" title="help / options" shortcut="?" }}
+{{#> ui/box id="help" title=t.help.boxTitle shortcut="?" }}
 
   <aside class="help" data-component="help">
     <div class="help__section">
       <h2 class="heading-alt">
-        Settings
+        {{ t.help.settings.title }}
       </h2>
 
       <ul class="help__list">
@@ -14,7 +14,7 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              Theme
+              {{ t.help.settings.theme }}
             </strong>
             <select
               class="help__select"
@@ -45,16 +45,16 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              Use
+              {{ t.use }}
               <button
                 class="hotkey help__key"
                 data-control="enable-sounds"
                 type="button">s</button>
             </strong>
             to
-            <span class="help__sound-enable">enable</span>
-            <span class="help__sound-disable">disable</span>
-            bleeps & sounds.
+            <span class="help__sound-enable">{{ t.enable }}</span>
+            <span class="help__sound-disable">{{ t.disable }}</span>
+            {{ t.help.settings.bleepsAnSounds }}
           </div>
         </li>
         {{/if}}
@@ -65,12 +65,12 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              Use
+              {{ t.use }}
               <button class="hotkey help__key" data-control="help-big-font" type="button">+</button>
-              and
+              {{ t.and }}
               <button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
             </strong>
-            to increase and decrease the size of the text.
+            {{ t.help.settings.fontSizeDescription }}
           </div>
         </li>
         <li class="help__item">
@@ -79,10 +79,10 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              Use
+              {{ t.use }}
               <button class="hotkey help__key" data-component="emit" data-event="TOGGLE_BOX_MENU" type="button">m</button>
             </strong>
-            to toggle the main menu.
+            {{ t.help.settings.toggleMenuDescription }}
           </div>
         </li>
         <li class="help__item">
@@ -91,10 +91,10 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              Use
+              {{ t.use }}
               <button class="hotkey help__key" data-component="emit" data-event="CLOSE_BOX_HELP" type="button">?</button>
             </strong>
-            to toggle this popup.
+            {{ t.help.settings.toggleHelpDescription }}
           </div>
         </li>
       </ul>
@@ -131,7 +131,7 @@
 
     <div class="help__section help__section--privacy">
       <h2 class="heading-alt">
-        Privacy
+        {{ t.privacy }}
       </h2>
 
       <ul class="help__list">

@@ -67,7 +67,7 @@ const zorg = function( locales, middlewares ) {
   const start = Date.now()
 
   const websites = locales.map( lang => {
-    const contentFiles = glob.sync(`./content/${lang}/**/*.md`, {})
+    const contentFiles = glob.sync(`./src/content/${lang}/**/*.md`, {})
     /**
      * - collating all the data:
      *   - extracting the necessary base metadata

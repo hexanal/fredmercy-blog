@@ -32,7 +32,7 @@ const build = () => {
 }
 
 const watch = watcher({
-  glob: ['./content/**/*.(md|json)', './src/**/*.html'],
+  glob: ['./src/content/**/*.md', './src/**/*.html'],
   type: 'website/html',
   callback: build
 })

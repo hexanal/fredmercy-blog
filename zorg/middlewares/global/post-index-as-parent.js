@@ -1,16 +1,23 @@
-const { insertMeta, getItemByURL } = require('../../bin/utils')
+const { getItemByURL } = require('../../bin/utils')
 
 const addPostIndexAsParent = function( contentTypes ) {
-  const blogIndex = getItemByURL( contentTypes.page, '/blog' )
+  const indexes = {
+    en: getItemByURL( contentTypes.page, '/blog' ),
+    fr: getItemByURL( contentTypes.page, '/fr/blogue' )
+  }
 
-  if (!blogIndex) return contentTypes
+  if (!indexes.en && !indexes.fr) return contentTypes
 
   return {
     ...contentTypes,
-    post: insertMeta(contentTypes.post, {
-      parents: [ blogIndex ],
-      breadcrumbs: [ blogIndex ]
-    })
+    post: contentTypes.post.map( item => ({
+      ...item,
+      meta: {
+        ...item.meta,
+        parents: [ indexes[item.meta.lang] ],
+        breadcrumbs: [ indexes[item.meta.lang] ]
+      }
+    }) )
   }
 }
 

@@ -5,11 +5,11 @@ const { write } = require('../bin/files')
 const watcher = require('../bin/watcher')
 
 const WATCH_GLOB = [
-  './src/**/*.scss',
+  './src/assets/**/*.scss',
 ]
-const SRC = './src/scss/style.scss'
+const SRC = './src/assets/scss/fredmercy.scss'
 const DEST_PATH = './public'
-const DEST_FILENAME = 'styles.css'
+const DEST_FILENAME = 'fredmercy.css'
 const DEST = `${DEST_PATH}/${DEST_FILENAME}`
 
 const build = function() {

@@ -23,4 +23,4 @@ content/blog/**/*.json
 # Ignore those files because I'm working on that at the moment...
 *.bak.*
 *.bak
-_bak
+.bak

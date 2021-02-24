@@ -2,23 +2,43 @@ const fse = require('fs-extra')
 const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
-const WATCH_GLOB = ['./src/assets/**/*']
-const SRC = './src/assets'
-const DEST = './public/assets'
+const WATCH = [
+  './src/assets/images',
+  './src/assets/fonts'
+]
+const assets = [
+  {
+    id: 'manifest',
+    src: './src/assets/manifest.webmanifest',
+    dest: './public/assets/manifest.webmanifest',
+  },
+  {
+    id: 'images',
+    src: './src/assets/images',
+    dest: './public/assets/images',
+  },
+  {
+    id: 'fonts',
+    src: './src/assets/fonts',
+    dest: './public/assets/fonts'
+  }
+]
 
 const build = function() {
-  return fse.copy(SRC, DEST)
+  const copy = ({id, src, dest}) => fse.copy(src, dest)
     .then(() => {
-      console.log( chalk.magenta(`[compiler] [assets]`) )
+      console.log( chalk.magenta(`[compiler] [assets/${id}]`) )
     })
     .catch(err => {
-      console.log( chalk.red(`[compiler] [assets] [error] something broke while copying the assets folder...!`) )
+      console.log( chalk.red(`[compiler] [assets/${id}] [error] something broke while copying the assets...`) )
       console.error( err )
     })
+
+  return assets.map( copy )
 }
 
 const watch = watcher({
-  glob: WATCH_GLOB,
+  glob: WATCH,
   type: 'assets',
   callback: build
 })

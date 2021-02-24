@@ -1,25 +1,27 @@
-const fs = require('fs')
-const glob = require('glob')
+const requireLocale = locale => {
+  return {
+    t: require(`../../../src/content/${locale}/_data/locales`),
+    nav: require(`../../../src/content/${locale}/_data/nav`),
+    themes: require(`../../../src/content/${locale}/_data/themes`),
+  }
+}
 
-const getExtraData = function() {
-  const extraDataFiles = glob.sync('./content/**/*.json', {})
-
-  return extraDataFiles.reduce( (acc, filePath) => {
-    const jsonFile = fs.readFileSync( filePath, 'utf8' )
-    const json = JSON.parse( jsonFile )
-
-    return { ...acc, ...json }
-  }, {})
+const locales = {
+  en: requireLocale('en'),
+  fr: requireLocale('fr'),
 }
 
 const addExtraData = function( contentTypes ) {
-  const extraData = getExtraData()
   const withExtraData = {}
   const types = Object.keys( contentTypes )
 
   // TODO could use a cool reduce func here but... meh
   types.map( type => {
-    withExtraData[type] = contentTypes[type].map( item => ({ ...item, ...extraData }) )
+    withExtraData[type] = contentTypes[type].map( item => {
+      const extraData = locales[item.meta.lang]
+
+      return { ...item, ...extraData }
+    })
   })
 
   return withExtraData

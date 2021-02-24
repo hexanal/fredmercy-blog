@@ -1,21 +1,32 @@
 * i18n
-    - looks like I'll have to include the current lang in the page object
-    - add a helper for translating theme strings like `{{t "header.nav.help.label" }}` ?
-
-    - let's go splitting the website into huge trunks
-        - `content/en/**/*`
-        - `content/fr/**/*`
-    - that way... we can only rebuild what we need
-    - gotta watch out for things like... does a website version need to know anything about the other?
-    - should the "linking" be hand-made all the time?
-        - a two-way relationship, with a `i18n` key in the frontmatter?
+    - I'll attempt to regroup everything in /src
+    - gotta figure out the nature of the "extra data" -> localized data to feed the "components"
+        - which is different from actual... "content" ?
+    - rename middlewares... into something that sounds better
+    - try shit out
 
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
         * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
 
+* MANIFEST
+
+I want to be able to freely express myself through making websites. Do them well, so that they're lean and mean, minimal but visceral.
+And I get that sucker ANYWHERE that runs a browser: which means I can be anywhere. Anywhere I want.
+A website like that, is like a virus, bro. I now can linger on the internet and be displayed on any fucking screen.
+
+That's the power of the web. The New Web Era.
+
 * TOTHINK
+    * ability to stamp out HTML components from handlebarsjs
+    * have something that just juggles all those references
+    * then inject data into that shit
+    * rebuild a "tree" of dependencies
+    * HTML into HTML + swell it up with data + data the lifeblood of a website
+    * the sap, running through the tree
+    * **sève**
+
     * look into implementing [microformats](https://microformats.io/)
     * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 

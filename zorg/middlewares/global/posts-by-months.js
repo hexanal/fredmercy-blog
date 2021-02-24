@@ -1,12 +1,19 @@
-const { insertDataByURL } = require('../../bin/utils')
 const groupBy = require('lodash.groupby')
 
 const addPostsByMonth = function( contentTypes ) {
-  const postsByMonth = groupBy(contentTypes.post, 'meta.archive')
 
   return {
     ...contentTypes,
-    page: insertDataByURL(contentTypes.page, { postsByMonth }, '/blog')
+    page: contentTypes.page.map( page => {
+      if ( page.meta.url === '/blog' || page.meta.url === '/fr/blogue' ) {
+        const posts = contentTypes.post.filter( post => post.meta.lang === page.meta.lang )
+        const postsByMonth = groupBy(posts, 'meta.archive')
+
+        return { ...page, postsByMonth }
+      }
+
+      return page
+    })
   }
 }
 

@@ -16,6 +16,9 @@ const getFilenameFromPath = function( filepath ) {
 const getItemByURL = function(items, url) {
   return items.find( item => item.meta.url === url )
 }
+const getItemsByURL = function(items, urls) {
+  return items.filter( item => urls.includes(item.meta.url) )
+}
 
 const insertData = function(items, data) {
   return items.map( item => ({ ...item, ...data }) )
@@ -47,6 +50,7 @@ module.exports = {
   debugLog,
   getFilenameFromPath,
   getItemByURL,
+  getItemsByURL,
   insertData,
   insertDataByURL,
   insertMeta,

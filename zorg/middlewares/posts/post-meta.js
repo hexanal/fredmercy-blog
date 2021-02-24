@@ -28,7 +28,7 @@ const removeLeadingZero = day => {
 
 const getPostMetaData = function( item ) {
   const urlParts = item._filePath // grab special key "_filePath" which contains the path to the markdown file
-    .replace(`./content/${item.meta.lang}/`, '')
+    .replace(`./src/content/${item.meta.lang}/`, '')
     .replace('.md', '')
     .split('/')
     .reverse()
@@ -43,8 +43,8 @@ const getPostMetaData = function( item ) {
   const monthName = capitalize(getMonthName(month, item.meta.lang))
   const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
-  const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}`
-  const url = `${urlLocalePrefix}/${blog}/${year}/${month}/${day}/${id}`
+  const urlLocalePrefix = item.meta.lang === 'en' && item.meta.lang
+  const url = `/${urlLocalePrefix}/${blog}/${year}/${month}/${day}/${id}`
   const permalink = `https://fredmercy.ca${url}`
   const archive = `${monthName} ${year}`
 

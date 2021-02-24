@@ -3,10 +3,10 @@ const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
 const WATCH_GLOB = [
-  './src/js/**/*.js',
+  './src/assets/js/**/*.js',
 ]
-const SRC = ['./src/js/app.js']
-const DEST = './public/app.js'
+const SRC = ['./src/assets/js/fredmercy.js']
+const DEST = './public/fredmercy.js'
 
 const build = function() {
   const js = esbuild.buildSync({

@@ -1,0 +1,17 @@
+// configuration css - global styles, assets, themes, etc.
+@import 'config/mixins';
+@import 'config/variables';
+@import 'config/fonts';
+@import 'config/base';
+@import 'config/themes';
+
+// utility-css, not linked to specific markup
+@import 'utilities/a11y';
+@import 'utilities/button';
+@import 'utilities/heading';
+@import 'utilities/hotkey';
+@import 'utilities/no-print';
+@import 'utilities/symbol';
+
+// the rest is co-located with HTML "components"
+@import '../../components/**/*.scss';
