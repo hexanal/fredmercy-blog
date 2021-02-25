@@ -80,8 +80,6 @@ app.use(function(error, req, res, next) {
 	res.send(html)
 });
 
-// app.use(errorHandler())
-
 const server = app.listen(app.get('port'), () => {
 	console.log(chalk.blue(`[server] [env: ${app.get('env')}]`));
 	console.log(chalk.blue(`[server] [url: http://${app.get('host')}:${app.get('port')} ]`));

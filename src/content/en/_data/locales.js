@@ -1,10 +1,13 @@
 module.exports = {
 
+  breadcrumbsRoot: 'Home',
   and: 'and',
   use: 'use',
   enable: 'enable',
   disable: 'disable',
   privacy: 'privacy',
+
+  printIt: 'print it!',
 
   help: {
     boxTitle: 'help / options',

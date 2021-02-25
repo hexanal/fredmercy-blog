@@ -3,6 +3,8 @@ const frontMatter = require('front-matter')
 const glob = require('glob')
 const { getFilenameFromPath, pipe } = require('./utils')
 
+const DEFAULT_LOCALE = 'en'
+
 /**
  * - go through `contentFiles`
  * - read file for each path
@@ -19,6 +21,7 @@ const getBasicMeta = function( contentFiles, lang ) {
     return {
       _filePath: item,
       meta: {
+        root: lang === DEFAULT_LOCALE ? '/' : `/${ lang }`,
         lang,
         ...defaultAttributes,
         ...attributes
@@ -63,7 +66,7 @@ const splitByType = function( items ) {
   }, {})
 }
 
-const zorg = function( locales, middlewares ) {
+const zorg = function( locales, plugins ) {
   const start = Date.now()
 
   const websites = locales.map( lang => {
@@ -72,12 +75,12 @@ const zorg = function( locales, middlewares ) {
      * - collating all the data:
      *   - extracting the necessary base metadata
      *   - splitting by `type`
-     *   - applying the middlewares of each content type
-     *   - applying the global middlewares
+     *   - applying the plugins of each content type
+     *   - applying the global plugins
      */
     const contentTypes = splitByType( getBasicMeta( contentFiles, lang ) )
 
-    return pipe( middlewares )( contentTypes )
+    return pipe( plugins )( contentTypes )
   })
 
   const end = Date.now()

@@ -43,8 +43,8 @@ const getPostMetaData = function( item ) {
   const monthName = capitalize(getMonthName(month, item.meta.lang))
   const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
-  const urlLocalePrefix = item.meta.lang === 'en' && item.meta.lang
-  const url = `/${urlLocalePrefix}/${blog}/${year}/${month}/${day}/${id}`
+  const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}/`
+  const url = `${urlLocalePrefix}${blog}/${year}/${month}/${day}/${id}`
   const permalink = `https://fredmercy.ca${url}`
   const archive = `${monthName} ${year}`
 

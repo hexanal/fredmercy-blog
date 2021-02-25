@@ -2,6 +2,8 @@
 title: Ramblings
 description: My malformed thoughts
 type: page
+i18n:
+  fr: '/fr/baragouinages'
 ---
 
 ## incoherent verbiage

@@ -1,14 +1,6 @@
-const requireLocale = locale => {
-  return {
-    t: require(`../../../src/content/${locale}/_data/locales`),
-    nav: require(`../../../src/content/${locale}/_data/nav`),
-    themes: require(`../../../src/content/${locale}/_data/themes`),
-  }
-}
-
 const locales = {
-  en: requireLocale('en'),
-  fr: requireLocale('fr'),
+  en: require('../../../src/content/en/_data'),
+  fr: require('../../../src/content/fr/_data'),
 }
 
 const addExtraData = function( contentTypes ) {

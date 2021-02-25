@@ -3,6 +3,8 @@ title: Bookmarks
 description: Long list of anything I found interesting
 type: page
 template: templates/bookmarks
+i18n:
+  fr: '/fr/signets'
 ---
 
 - `music` [Celebrating 25 Years of Legendary Electronic Label Planet Mu (bandcamp.com)](https://daily.bandcamp.com/label-profile/planet-mu-25th-anniversary-guide)

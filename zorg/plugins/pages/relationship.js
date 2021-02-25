@@ -1,3 +1,5 @@
+const { extractBasicMeta } = require('../../bin/utils')
+
 const addRelationship = function( contentTypes ) {
   const items = contentTypes.page
 
@@ -14,20 +16,6 @@ const addRelationship = function( contentTypes ) {
       return item
     })
   }
-}
-
-const extractBasicMeta = items => {
-  return items.map( item => {
-    const { title, url, description } = item.meta
-
-    return {
-      meta: {
-        title,
-        url,
-        description
-      }
-    }
-  })
 }
 
 const getChildrenItems = function( item, index, items ) {

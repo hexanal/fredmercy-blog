@@ -21,11 +21,8 @@ const getPageMetaData = function( item ) {
 
   if (isHome) route.pop()
 
-  const rebuiltUrl = route.length
-    ? route.reduce( (acc, part) => (acc + '/' + part), '')
-    : '/'
-  // FIXME have this i18n business be more...
-  const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}`
+  const rebuiltUrl = route.length ? route.reduce( (acc, part) => (acc + '/' + part), '') : '/'
+  const urlLocalePrefix = item.meta.lang === 'en' ? '' : `/${item.meta.lang}`
   const url = urlLocalePrefix + rebuiltUrl
   const permalink = `https://fredmercy.ca${url}`
 

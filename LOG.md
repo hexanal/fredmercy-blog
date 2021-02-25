@@ -1,34 +1,49 @@
-* i18n
-    - I'll attempt to regroup everything in /src
-    - gotta figure out the nature of the "extra data" -> localized data to feed the "components"
-        - which is different from actual... "content" ?
-    - rename middlewares... into something that sounds better
-    - try shit out
+##  i18n & big refactoring session
+
+- can we just... use a page "id" as the link between the languages?
+    - name your page the same, and it'll be linked
+    - i18n middleware could do:
+        - fetch the versions of the pages
+        - stick in `meta.translations`
+        - other plugins need to hook onto the i18n-enabled stuff
+            - `languages.length`
+- add server folder, stick the `server.js` file in it
+    - clean up server
+    - split up API routes
+    - split up websocket business
+    - split up server setup and middlewares
+- should the folder structure define the final URL, or can the URL be specified in the front-matter?
+- then we could use the `blog.en.md` and `blog.fr.md` trick?
 
 * TODO
     * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     * Fix: allow "autoloaded" components to be hooked to a DOM element?
         * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
 
-* MANIFEST
+## put your thinking cap on
 
-I want to be able to freely express myself through making websites. Do them well, so that they're lean and mean, minimal but visceral.
-And I get that sucker ANYWHERE that runs a browser: which means I can be anywhere. Anywhere I want.
-A website like that, is like a virus, bro. I now can linger on the internet and be displayed on any fucking screen.
+* ability to stamp out HTML components from handlebarsjs
+* have something that just juggles all those references
+* then inject data into that shit
+* rebuild a "tree" of dependencies
+* HTML into HTML + swell it up with data + data the lifeblood of a website
+* the sap, running through the tree
+* **sève**
 
-That's the power of the web. The New Web Era.
+* look into implementing [microformats](https://microformats.io/)
+* look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
-* TOTHINK
-    * ability to stamp out HTML components from handlebarsjs
-    * have something that just juggles all those references
-    * then inject data into that shit
-    * rebuild a "tree" of dependencies
-    * HTML into HTML + swell it up with data + data the lifeblood of a website
-    * the sap, running through the tree
-    * **sève**
 
-    * look into implementing [microformats](https://microformats.io/)
-    * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
+## 11ty
+
+- why not use eleventy?
+- get i18n to work
+- get all the shortcodes to work
+- use Nunjucks templating?
+- I think it's where I am at, maybe... to try something that's mainstream, maintained
+- looks like it works very similarly to my solution
+
+## future...
 
 * try editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
     - with preview
@@ -155,11 +170,26 @@ export default ({ children }) => {
         - js... more like, ecmascript2018?! with babel?!? that's weird as fuck
 
 * zorg-based websites?
-    * a web-based, bookmarkable, "timer"
-        - pomodoro
-        - kitchen timing shit
-        - reminders?
     * a web-based unit converter that's made for mobile/tablet
         - kitchen utility
     * a web-based recipe repository
 
+## discussion about zorg
+
+The zorg "middleware" thing is super unwieldy. And it makes me yearn so much for a templating structure that's much much closer tied to the data, somehow.
+
+Ok. The point is to have a way to manage data in the simplest form possible. Format it in a way that's good enough for editing, and good enough for parsing it and sticking it inside templates.
+
+In my setup, I miss the ability to do some processing close to the template. The data needs to be massaged a bit before going into the template.
+
+For example, the blog index needs to have the list of all posts, grouped by month. This happens in a middleware, but probably could, and should happens at the template level. Using JS templating would solve that issue because the massaging would occur at or before the rendering of the HTML.
+
+There's a lot in there. It means... I need something that follows the structure of the data, but at the same time _transforms_ it to match what needs to be displayed in the browser. Something like a render-tree, vdom React-style thing, that takes some data input and renders the HTML.
+
+## MANIFEST
+
+I want to be able to freely express myself through making websites. Do them well, so that they're lean and mean, minimal but visceral.
+And I get that sucker ANYWHERE that runs a browser: which means I can be anywhere. Anywhere I want.
+A website like that, is like a virus, bro. I now can linger on the internet and be displayed on any fucking screen.
+
+That's the power of the web. The New Web Era.

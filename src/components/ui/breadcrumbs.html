@@ -1,8 +1,8 @@
 {{#if meta.isHome }}
 {{else}}
 <div class="breadcrumbs">
-  <a class="breadcrumbs__root" href="/">
-    Home
+  <a class="breadcrumbs__root" href="{{ meta.root }}">
+    {{ t.breadcrumbsRoot }}
   </a>
 
   {{#if meta.breadcrumbs }}

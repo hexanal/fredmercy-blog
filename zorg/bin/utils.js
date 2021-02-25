@@ -4,6 +4,20 @@ const debugLog = msg => {
   if ( process.argv.includes('--verbose') ) console.log( chalk.green(`[debug] ${msg}`) )
 }
 
+const extractBasicMeta = items => {
+  return items.map( item => {
+    const { title, url, description } = item.meta
+
+    return {
+      meta: {
+        title,
+        url,
+        description
+      }
+    }
+  })
+}
+
 const getFilenameFromPath = function( filepath ) {
   const route = filepath
     .replace('./content/', '')
@@ -48,6 +62,7 @@ const pipe = fns => x => fns.reduce((v, f) => f(v), x)
 
 module.exports = {
   debugLog,
+  extractBasicMeta,
   getFilenameFromPath,
   getItemByURL,
   getItemsByURL,
