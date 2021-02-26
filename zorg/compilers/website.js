@@ -27,8 +27,10 @@ const build = () => {
   console.log( chalk.magenta(`[compiler] [website/html] built in ${time} seconds`) )
 }
 
+const GLOB = ['./src/content/**/*.(md|js)', './src/**/*.html']
+
 const watch = watcher({
-  glob: ['./src/content/**/*.md', './src/**/*.html'],
+  glob: GLOB,
   type: 'website/html',
   callback: build
 })

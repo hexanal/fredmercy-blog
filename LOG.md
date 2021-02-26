@@ -186,6 +186,15 @@ export default ({ children }) => {
     - so that links on other websites that were pointing to that URL aren't landing nowhere
     - maybe that's an obvious thing that's being done by Wordpress out of the box? I don't know?
 
+* a dynamic folder-creating/ route-creating / cypher chatroom creator?
+    - that's just a tree...
+    - continent
+    - country
+    - city
+    - ... etc?
+    - chatroom as a graph, then?
+        - I need to learn about fucking graphs
+
 ## discussion about zorg
 
 The zorg "middleware" thing is super unwieldy. And it makes me yearn so much for a templating structure that's much much closer tied to the data, somehow.

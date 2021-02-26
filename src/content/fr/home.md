@@ -22,6 +22,6 @@ Vous pouvez aussi parcourir mon [CV](/fr/cv) et la page [à propos](/fr/a-propos
 ### plus de liens
 
 - [blogue](/fr/blogue)
-- [baragouinages](/fr/baragouinages)
 - [signets](/fr/signets)
 - <button title="Afficher l'aide du site" class="link" type="button" data-component="emit" data-event="SHOW_BOX_HELP">aide / paramètres du site</button>
+- [en anglais](/)

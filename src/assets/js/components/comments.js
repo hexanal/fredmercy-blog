@@ -1,6 +1,7 @@
 import ago from 's-ago'
 import marked from 'marked'
 import orderBy from 'lodash.orderby'
+import { t, months } from './i18n'
 import reefer, { onReef } from '../tools/reefer'
 
 export default function({element, ui, control, messaging }) {
@@ -76,7 +77,9 @@ export default function({element, ui, control, messaging }) {
     ui['convo'].innerHTML = '' // FLUSH!!
 
     // that's the header button
-    const commentsLabel = comments.length ? 'comments' : 'comment!'
+    const commentsLabel = comments.length
+      ? t({en: 'comments', fr: 'commentaires'})
+      : t({en: 'comment!', fr: 'commenter!'})
     const commentsCount = comments.length ? `(${comments.length})` : ''
     document.getElementById('comments-label').textContent = commentsLabel
     document.getElementById('comments-count').textContent = commentsCount
@@ -107,7 +110,7 @@ export default function({element, ui, control, messaging }) {
   }
 
   const getMessageDataFromUI = function() {
-    const author = control['author'].value.trim() !== '' ? control['author'].value : '(anonymous)'
+    const author = control['author'].value.trim() !== '' ? control['author'].value : t({en: '(anonymous)', fr: '(anonyme)'})
     const comment = control['message'].value.trim() !== '' ? control['message'].value : false
     const url = element.dataset.url
     const timestamp= Date.now()
@@ -128,10 +131,7 @@ export default function({element, ui, control, messaging }) {
 
     const data = getMessageDataFromUI()
 
-    if ( !data.comment ) {
-      control['message'].focus();
-      return alert('Be sure to leave a comment before submitting.'); // TODO better error handling
-    }
+    if ( !data.comment ) return control['message'].focus()
 
     insertCommentIntoDB( data )
       .then( () => {
@@ -139,7 +139,7 @@ export default function({element, ui, control, messaging }) {
         fetchComments()
       })
       .catch(function (error) {
-        console.error(error);
+        console.error(error)
       });
   };
 
@@ -213,10 +213,3 @@ const getAmPmTime = date => {
 
   return `${hours}:${minutes}${suffix}`
 }
-
-const months = [
-  'jan', 'feb', 'mar',
-  'apr', 'may', 'jun',
-  'jul', 'aug', 'sep',
-  'oct', 'nov', 'dec'
-]

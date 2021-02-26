@@ -1,24 +1,20 @@
-const getMonthName = function(number) {
+const getMonthName = function(number, lang) {
   const months = {
-    '01': 'january',
-    '02': 'february',
-    '03': 'march',
-    '04': 'april',
-    '05': 'may',
-    '06': 'june',
-    '07': 'july',
-    '08': 'august',
-    '09': 'september',
-    '10': 'october',
-    '11': 'november',
-    '12': 'december',
+    '01': { en: 'january', fr: 'janvier' },
+    '02': { en: 'february', fr: 'février', },
+    '03': { en: 'march', fr: 'mars', },
+    '04': { en: 'april', fr: 'avril' },
+    '05': { en: 'may', fr: 'mai' },
+    '06': { en: 'june', fr: 'juin' },
+    '07': { en: 'july', fr: 'juillet' },
+    '08': { en: 'august', fr: 'août' },
+    '09': { en: 'september', fr: 'septembre' },
+    '10': { en: 'october', fr: 'octobre' },
+    '11': { en: 'november', fr: 'novembre' },
+    '12': { en: 'december', fr: 'décembre' },
   }
 
-  return months[number]
-}
-
-const capitalize = function(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
+  return months[number][lang]
 }
 
 const removeLeadingZero = day => {
@@ -40,7 +36,7 @@ const getPostMetaData = function( item ) {
   const dayNoZero = removeLeadingZero( day )
   const date = `${year}-${month}-${day}`
 
-  const monthName = capitalize(getMonthName(month, item.meta.lang))
+  const monthName = getMonthName(month, item.meta.lang)
   const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
   const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}/`

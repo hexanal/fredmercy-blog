@@ -6,6 +6,7 @@ const watcher = require('../bin/watcher')
 
 const WATCH_GLOB = [
   './src/assets/**/*.scss',
+  './src/components/**/*.scss',
 ]
 const SRC = './src/assets/scss/fredmercy.scss'
 const DEST_PATH = './public'

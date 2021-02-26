@@ -19,7 +19,7 @@
         class="box__close button"
         data-control="close"
       >
-        close<span aria-hidden="true"> ×</span>
+        {{ t.close }}<span aria-hidden="true"> ×</span>
       </button>
 
       <div class="box__wrap" data-ui="wrap">
@@ -35,6 +35,7 @@
         type="button"
         tabindex="-1"
         data-ui="bg"
+        title="{{ t.clickToClose }}"
       >
     </button>
   </div>

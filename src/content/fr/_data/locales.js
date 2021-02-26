@@ -7,8 +7,14 @@ module.exports = {
   menuBtnTitle: 'Afficher le menu de navigation principal',
   top: 'retour en haut',
 
-  newer: 'newer',
-  older: 'older',
+  newer: 'suivant',
+  older: 'précédent',
+
+  // bookmarks
+  byTags: 'taggés:',
+  show: 'afficher',
+  all: 'tous',
+  none: 'aucun',
 
   breadcrumbsRoot: 'Accueil',
   and: 'et',
@@ -18,6 +24,9 @@ module.exports = {
   privacy: 'vie privée',
 
   printIt: 'imprimer!',
+
+  close: 'fermer',
+  clickToClose: 'cliquer pour fermer!',
 
   helpWindow: {
     boxTitle: 'aide / options',

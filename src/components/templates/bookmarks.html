@@ -11,10 +11,10 @@
   </template>
 
   <div class="bookmarks__filters">
-    <h2 class="heading-alt">by tags</h2>
-    show:
-    <button class="button button--light" data-control="all">all</button>
-    <button class="button button--light" data-control="none">none</button>
+    <h2 class="heading-alt">{{ t.byTags }}</h2>
+    {{ t.show }}:
+    <button class="button button--light" data-control="all">{{ t.all }}</button>
+    <button class="button button--light" data-control="none">{{ t.none }}</button>
   </div>
 
   <ul class="bookmarks__filter-list" data-ui="filters-list">

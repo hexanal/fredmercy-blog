@@ -7,8 +7,14 @@ module.exports = {
   menuBtnTitle: 'Show the main navigation menu',
   top: 'top',
 
-  newer: 'suivant',
-  older: 'précédent',
+  newer: 'newer',
+  older: 'older',
+
+  // bookmarks
+  byTags: 'by tags',
+  show: 'show',
+  all: 'all',
+  none: 'none',
 
   breadcrumbsRoot: 'Home',
   and: 'and',
@@ -18,6 +24,9 @@ module.exports = {
   privacy: 'privacy',
 
   printIt: 'print it!',
+
+  close: 'close',
+  clickToClose: 'click to close!',
 
   helpWindow: {
     boxTitle: 'help / options',

@@ -3,12 +3,13 @@ import Messaging from './tools/Messaging'
 
 // autoloaded
 import a11y from './components/a11y'
+import ball from './components/ball'
+import i18n from './components/i18n'
 import rainbow from './components/rainbow'
 import scroll from './components/scroll/scroll'
 import transitions from './components/transitions'
 
 // ui
-import ball from './components/ball'
 import box from './components/box'
 import comments from './components/comments'
 import drawer from './components/drawer'
@@ -27,6 +28,7 @@ Exponent
   .autoload([
     a11y,
     ball,
+    i18n,
     rainbow,
     scroll,
     transitions

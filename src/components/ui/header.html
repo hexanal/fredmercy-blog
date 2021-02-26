@@ -1,17 +1,13 @@
 <header class="header">
   <div class="header__section">
     <h1 class="header__title">
-      <a href="/" class="header__home-btn button">
+      <a href="{{ meta.root }}" class="header__home-btn button">
         Fred<span> Mercy</span>
       </a>
     </h1>
   </div>
 
   <div class="header__section">
-    {{#each meta.i18n as |url lang|}}
-      <a class="button button--light header__button" href="{{ url }}">{{ lang }}</a>
-    {{/each}}
-
     <button
       title="{{ t.commentsBtnTitle }}"
       class="button button--light header__button"
