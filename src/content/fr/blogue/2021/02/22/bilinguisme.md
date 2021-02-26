@@ -15,4 +15,4 @@ Ces derniers temps j'ai beaucoup pensé au fait de proposer du contenu pour mes 
 
 C'est toujours chiant pour bien l'implémenter, même si en travaillant au Québec on a **tout le temps besoin** de construire nos sites avec l'*i18n* en tête...
 
-Donc pour me lancer un petit défi, je vais essaye d'ajouter du contenu (pages, billets) en français. Je vais documenter le processus, si j'y pense... je vois déjà venir les heures passées à m'arracher les cheveux et à me battre avec de la duplication de contenu avant d'avoir un bon résultat, mais si j'y arrive je serai très heureux!
+Donc pour me lancer un petit défi, je vais essayer d'ajouter du contenu (pages, billets) en français. Je vais documenter le processus, si j'y pense... je vois déjà venir les heures passées à m'arracher les cheveux et à me battre avec de la duplication de contenu avant d'avoir un bon résultat, mais si j'y arrive je serai très heureux!
