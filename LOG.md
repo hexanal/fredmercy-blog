@@ -1,3 +1,11 @@
+## unfollow people on twitter
+
+- leave the people who don't help me be happier
+- add real people I've met that I kind of miss
+- reconnect, and push people toward privacy-friendly services
+- damn... these hacker news articles, man... I'm falling into this :)
+
+
 ##  i18n & big refactoring session
 
 - can we just... use a page "id" as the link between the languages?
@@ -173,6 +181,10 @@ export default ({ children }) => {
     * a web-based unit converter that's made for mobile/tablet
         - kitchen utility
     * a web-based recipe repository
+
+* something that suggest to create a redirection when changing the URL of a page/post
+    - so that links on other websites that were pointing to that URL aren't landing nowhere
+    - maybe that's an obvious thing that's being done by Wordpress out of the box? I don't know?
 
 ## discussion about zorg
 
