@@ -1,4 +1,5 @@
 const fs = require('fs')
+const marked = require('marked')
 const Handlebars = require('handlebars')
 
 const { write } = require('./files')
@@ -15,14 +16,41 @@ const registerPartialHelper = function() {
   })
 
   Handlebars.registerHelper('t', function (template, context, opts) {
-    console.log({ template, context, opts })
-    // const f = Handlebars.partials[template]
+    const { lang } = template.data.root.meta
 
-    // if (!f) return '[...]'
+    if (!lang) {
+      console.error('No language found in this item\'s `meta` data')
+      return ''
+    }
 
-    // const block = Handlebars.compile( f )
+    const i18nString = template.hash[lang]
 
-    return new Handlebars.SafeString( 'hello world!' )
+    if (!i18nString) {
+      console.error('Please provide correct language keys to the `t` helper!')
+      return ''
+    }
+
+    return new Handlebars.SafeString( i18nString )
+  })
+
+  // TODO split to own function
+  // maybe do something that helps with adding custom helpers?
+  Handlebars.registerHelper('t-markdown', function (template, context, opts) {
+    const { lang } = template.data.root.meta
+
+    if (!lang) {
+      console.error('No language found in this item\'s `meta` data')
+      return ''
+    }
+
+    const i18nString = template.hash[lang]
+
+    if (!i18nString) {
+      console.error('Please provide correct language keys to the `t` helper!')
+      return ''
+    }
+
+    return new Handlebars.SafeString( marked( i18nString ) )
   })
 
 }
