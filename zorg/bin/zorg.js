@@ -18,6 +18,9 @@ const getBasicMeta = function( contentFiles, lang ) {
     const { attributes, body } = frontMatter( file.toString() )
     const defaultAttributes = getDefaultAttributes( attributes, item )
 
+    // only handle drafts when in dev modein production
+    if ( process.env.NODE_ENV === 'development' && defaultAttributes.draft ) return
+
     return {
       _filePath: item,
       meta: {
@@ -37,12 +40,13 @@ const getBasicMeta = function( contentFiles, lang ) {
  * - set up sensible default when data is missing
  */
 const getDefaultAttributes = function( attributes, item ) {
-  const { type, title, description } = attributes
+  const { type, title, description, draft } = attributes
 
   return {
     type: type || 'page',
     title: title || getFilenameFromPath( item ).replace('.md', ''),
-    description: description || ''
+    description: description || '',
+    draft: draft || false,
   }
 }
 
@@ -54,11 +58,12 @@ const getDefaultAttributes = function( attributes, item ) {
  */
 const splitByType = function( items ) {
   return items.reduce( (acc, item) => {
+    if ( !item ) return acc // TODO
+
     const { type } = item.meta
 
-    if ( !type ) return acc // TODO error message for when we're not specifying the type of content?
-
-    if ( !acc[type] ) acc[type] = []
+    if ( !type ) return acc // type wasn't specified... TODO should it then be a page?
+    if ( !acc[type] ) acc[type] = [] // accumulator needs to be initialized with an empty array :)
 
     acc[type].push( item )
 

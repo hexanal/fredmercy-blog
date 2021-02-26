@@ -16,6 +16,5 @@ i18n:
 
 ### tech
 
-* [We Failed You](/ramblings/we-failed-you)
 * [Communicating](/ramblings/communicating)
 * [Big Dumb Tech](/ramblings/big-dumb-tech)
