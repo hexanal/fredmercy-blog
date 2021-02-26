@@ -7,6 +7,9 @@ module.exports = {
   menuBtnTitle: 'Afficher le menu de navigation principal',
   top: 'retour en haut',
 
+  newer: 'newer',
+  older: 'older',
+
   breadcrumbsRoot: 'Accueil',
   and: 'et',
   use: 'utiliser',
