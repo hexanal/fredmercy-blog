@@ -23,14 +23,6 @@ const shortcodes = [
     }
   },
   {
-    tag: 'drawer',
-    processor: function({ props, item, contentTypes }) {
-      const content = marked(props)
-
-      return useBlockWithData('drawer', { content })
-    }
-  },
-  {
     tag: 'children-pages',
     processor: function({ props, item, contentTypes }) {
       return useBlockWithData('children-pages', item)
@@ -58,14 +50,6 @@ const shortcodes = [
         return ''
 
       }
-    }
-  },
-  {
-    tag: 'test',
-    processor: function({ props, item, contentTypes }) {
-      const params = JSON.parse(props)
-
-      return useBlockWithData('test', params)
     }
   },
   {
