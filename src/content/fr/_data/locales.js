@@ -1,5 +1,12 @@
 module.exports = {
 
+  commentBtnTitle: 'Lire et participer à la discussion au sujet de cette page!',
+  help: 'aide',
+  helpBtntitle: 'Afficher la fenêtre aide et options',
+  menu: 'menu',
+  menuBtnTitle: 'Afficher le menu de navigation principal',
+  top: 'retour en haut',
+
   breadcrumbsRoot: 'Accueil',
   and: 'et',
   use: 'utiliser',
@@ -9,7 +16,7 @@ module.exports = {
 
   printIt: 'imprimer!',
 
-  help: {
+  helpWindow: {
     boxTitle: 'aide / options',
     settings: {
       title: 'paramètres',

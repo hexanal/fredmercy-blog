@@ -3,7 +3,7 @@
   <aside class="help" data-component="help">
     <div class="help__section">
       <h2 class="heading-alt">
-        {{ t.help.settings.title }}
+        {{ t.helpWindow.settings.title }}
       </h2>
 
       <ul class="help__list">
@@ -14,7 +14,7 @@
           </div>
           <div>
             <strong class="help__emphasis">
-              {{ t.help.settings.theme }}
+              {{ t.helpWindow.settings.theme }}
             </strong>
             <select
               class="help__select"
@@ -54,7 +54,7 @@
             to
             <span class="help__sound-enable">{{ t.enable }}</span>
             <span class="help__sound-disable">{{ t.disable }}</span>
-            {{ t.help.settings.bleepsAnSounds }}
+            {{ t.helpWindow.settings.bleepsAnSounds }}
           </div>
         </li>
         {{/if}}
@@ -70,7 +70,7 @@
               {{ t.and }}
               <button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
             </strong>
-            {{ t.help.settings.fontSizeDescription }}
+            {{ t.helpWindow.settings.fontSizeDescription }}
           </div>
         </li>
         <li class="help__item">
@@ -82,7 +82,7 @@
               {{ t.use }}
               <button class="hotkey help__key" data-component="emit" data-event="TOGGLE_BOX_MENU" type="button">m</button>
             </strong>
-            {{ t.help.settings.toggleMenuDescription }}
+            {{ t.helpWindow.settings.toggleMenuDescription }}
           </div>
         </li>
         <li class="help__item">
@@ -94,7 +94,7 @@
               {{ t.use }}
               <button class="hotkey help__key" data-component="emit" data-event="CLOSE_BOX_HELP" type="button">?</button>
             </strong>
-            {{ t.help.settings.toggleHelpDescription }}
+            {{ t.helpWindow.settings.toggleHelpDescription }}
           </div>
         </li>
       </ul>
