@@ -9,9 +9,9 @@ i18n:
 
 `1:25pm:` Pour moi, l'anglais c'est la langue du web. Les articles que je lis, les forums, les infolettres, les vidéos YouTube, et même mon site perso est anglophone!
 
-Comme ce n'est pas ma langue natale, je navigue sur un Internet un peu différent de celui-ci de mes amis (mais ça, ce sera pour un autre billet)
+Comme ce n'est pas ma langue natale, je navigue un web un peu différent de celui-ci de mes amis (mais ça, ce sera pour un autre billet)
 
-Ces derniers temps j'ai beaucoup pensé au fait de proposer du contenu pour mes amis francophones, ce qui m'amène à me confronter à un autre gros concept du webdev: l'[internationalisation](https://fr.wikipedia.org/wiki/Internationalisation_et_localisation)
+Ces derniers temps j'ai beaucoup pensé au fait de proposer du contenu pour mes amis francophones, ce qui m'amène à me confronter à un autre gros concept du développement web: l'[internationalisation](https://fr.wikipedia.org/wiki/Internationalisation_et_localisation)
 
 C'est toujours chiant pour bien l'implémenter, même si en travaillant au Québec on a **tout le temps besoin** de construire nos sites avec l'*i18n* en tête...
 

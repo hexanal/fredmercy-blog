@@ -17,6 +17,6 @@ Tounes d'en ce moment:[*](surtout découvertes grâce à Spotify, il faut l'avou
 - [Born For One Thing](https://www.youtube.com/watch?v=3p85-KtgDSs), by [Gojira](http://craigleon.com/) (youtube 😞 )
   - bah oui, parfois je balance des trucs bien franchouillards, t'sais
 
-Je continue de toujours lire les posts sur Hacker News, mais il faut que je diversifie mes sources de contenu. En plus que j'ai un peu repris Twitter...
+Je continue de toujours lire les posts sur Hacker News, mais il faut que je diversifie mes sources de contenu, en plus que j'ai repris l'habitude d'aller sur Twitter...
 
 `7:58pm:` _Good night_
