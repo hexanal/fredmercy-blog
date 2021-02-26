@@ -5,8 +5,35 @@
 - reconnect, and push people toward privacy-friendly services
 - damn... these hacker news articles, man... I'm falling into this :)
 
-
 ##  i18n & big refactoring session
+
+TODO:
+
+```hbs
+{{#lang en }}
+Content for English website
+{{/lang}}
+{{#lang fr }}
+Contenu pour site français
+{{/lang}}
+```
+
+```hbs
+{{#markdown }}
+
+# Blah blah!
+
+Yo!
+
+{{/markdown}}
+```
+
+- modify zorg
+    - path to content
+    - lang
+    - middlewares
+- then the `website.js` file just builds TWO sites?
+    - or add a "configuration" object/file, finally?
 
 - can we just... use a page "id" as the link between the languages?
     - name your page the same, and it'll be linked
@@ -41,6 +68,9 @@
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
+## markdown
+
+- shit like `[link but page url might change](${get-url:the-page-id-slug-or-whatever})
 
 ## 11ty
 
@@ -51,7 +81,16 @@
 - I think it's where I am at, maybe... to try something that's mainstream, maintained
 - looks like it works very similarly to my solution
 
+- or maybe just swap HandlebarsJS for Nunjucks, which seems way more extendable?
+
 ## future...
+
+* check out source code for a few projects, just to get a feel of how motherfuckers out there handle that stuff?
+
+* modal z-index management
+    - keep track of which are open
+    - latest is highest
+    - gotta learn about "heap/stack" programming structures
 
 * try editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
     - with preview
