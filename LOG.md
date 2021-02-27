@@ -1,13 +1,28 @@
-## unfollow people on twitter
+## i18n & big refactoring session
 
-- leave the people who don't help me be happier
-- add real people I've met that I kind of miss
-- reconnect, and push people toward privacy-friendly services
-- damn... these hacker news articles, man... I'm falling into this :)
+- modify zorg "entry"
+    - provide the path to content files
+    - language of website
+    - pass the plugins
+- then the `website.js` file just builds TWO sites?
+    - or add a "configuration" object/file, finally?
 
-##  i18n & big refactoring session
+- can we just... use a page "id" as the link between the languages?
+    - name your page the same, and it'll be linked
+    - i18n middleware could do:
+        - fetch the versions of the pages
+        - stick in `meta.translations`
+        - other plugins need to hook onto the i18n-enabled stuff
+            - `languages.length`
+- add server folder, stick the `server.js` file in it
+    - clean up server
+    - split up API routes
+    - split up websocket business
+    - split up server setup and middlewares
+- should the folder structure define the final URL, or can the URL be specified in the front-matter?
+- then we could use the `blog.en.md` and `blog.fr.md` trick?
 
-TODO:
+### try these
 
 ```hbs
 {{#lang en }}
@@ -28,34 +43,22 @@ Yo!
 {{/markdown}}
 ```
 
-- modify zorg
-    - path to content
-    - lang
-    - middlewares
-- then the `website.js` file just builds TWO sites?
-    - or add a "configuration" object/file, finally?
+## TODO
 
-- can we just... use a page "id" as the link between the languages?
-    - name your page the same, and it'll be linked
-    - i18n middleware could do:
-        - fetch the versions of the pages
-        - stick in `meta.translations`
-        - other plugins need to hook onto the i18n-enabled stuff
-            - `languages.length`
-- add server folder, stick the `server.js` file in it
-    - clean up server
-    - split up API routes
-    - split up websocket business
-    - split up server setup and middlewares
-- should the folder structure define the final URL, or can the URL be specified in the front-matter?
-- then we could use the `blog.en.md` and `blog.fr.md` trick?
-
-* TODO
-    * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
-    * Fix: allow "autoloaded" components to be hooked to a DOM element?
-        * maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
+* Fix: sitemap and rss feeds... are broken
+    - also gotta find a way to split those by locale
+* Fix: i18n for 'time ago'
+    - could rewrite s-ago? incorporate in the codebase, somehow?
+    - or fork it?
+* Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
+* Fix: allow "autoloaded" components to be hooked to a DOM element?
+    - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
+    - lifecycle is a good feature to have, I think...
+    - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
 
 ## put your thinking cap on
+
+* i18n: detect browser language, suggest redirect?
 
 * ability to stamp out HTML components from handlebarsjs
 * have something that just juggles all those references
@@ -70,7 +73,9 @@ Yo!
 
 ## markdown
 
-- shit like `[link but page url might change](${get-url:the-page-id-slug-or-whatever})
+- shit like: [a link whose URL might change in the future](${url:the-page-id-slug-or-whatever})
+    - or: have something that generates a unique id for a permalink? (based on what? `id`?)
+    - might be a combination of both things
 
 ## 11ty
 
@@ -253,3 +258,19 @@ And I get that sucker ANYWHERE that runs a browser: which means I can be anywher
 A website like that, is like a virus, bro. I now can linger on the internet and be displayed on any fucking screen.
 
 That's the power of the web. The New Web Era.
+
+## A website
+
+1. _performance_ on homepage -> first load, show something good
+2. _tracking_ -> should we **track the heck out of our users?** to figure out what they're interested in? **NO, NEVER!!!**
+3. _accessibility_ -> is the website easy to navigate for people with disabilities?
+4. _maintainability_ -> not implementing things too hastily, using unproven software, or obscure tech/libraries, etc.
+5. _content_ -> content is king, and the website's development should be content-driven
+  - this means that the content should be easily exported/imported
+  - pages are built around the content: the copy should be tailored for the web, but we shouldn't have to sacrifice good content because of technical limitations, or design constaints
+  - easy database management
+  - import/export images with **ease**
+  - explain how images on the web work (real quick documentation or something)
+6. _documentation_ -> explain to the people who enter the content how to do it well
+  - short & sweet, don't assume they know technical jargon -> explain simply
+7. _mobile-first_ -> the design and its default implementation is targetting mobile devices; tablet and desktop versions are the declinations
