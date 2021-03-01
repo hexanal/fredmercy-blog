@@ -1,55 +1,7 @@
-## i18n & big refactoring session
-
-- modify zorg "entry"
-    - provide the path to content files
-    - language of website
-    - pass the plugins
-- then the `website.js` file just builds TWO sites?
-    - or add a "configuration" object/file, finally?
-
-- can we just... use a page "id" as the link between the languages?
-    - name your page the same, and it'll be linked
-    - i18n middleware could do:
-        - fetch the versions of the pages
-        - stick in `meta.translations`
-        - other plugins need to hook onto the i18n-enabled stuff
-            - `languages.length`
-- add server folder, stick the `server.js` file in it
-    - clean up server
-    - split up API routes
-    - split up websocket business
-    - split up server setup and middlewares
-- should the folder structure define the final URL, or can the URL be specified in the front-matter?
-- then we could use the `blog.en.md` and `blog.fr.md` trick?
-
-### try these
-
-```hbs
-{{#lang en }}
-Content for English website
-{{/lang}}
-{{#lang fr }}
-Contenu pour site français
-{{/lang}}
-```
-
-```hbs
-{{#markdown }}
-
-# Blah blah!
-
-Yo!
-
-{{/markdown}}
-```
-
 ## TODO
 
 * Fix: sitemap and rss feeds... are broken
     - also gotta find a way to split those by locale
-* Fix: i18n for 'time ago'
-    - could rewrite s-ago? incorporate in the codebase, somehow?
-    - or fork it?
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
 * Fix: allow "autoloaded" components to be hooked to a DOM element?
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
@@ -57,8 +9,6 @@ Yo!
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
 
 ## put your thinking cap on
-
-* i18n: detect browser language, suggest redirect?
 
 * ability to stamp out HTML components from handlebarsjs
 * have something that just juggles all those references
@@ -71,17 +21,41 @@ Yo!
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
+* implement themes
+    - different from "colorscheme" :)
+* how to have a nice visual overview of the codebase
+    - to see what could be refactore
+    - to understand it faster (for devs unfamiliar with it)
+    - to debug
+
 ## markdown
 
 - shit like: [a link whose URL might change in the future](${url:the-page-id-slug-or-whatever})
     - or: have something that generates a unique id for a permalink? (based on what? `id`?)
     - might be a combination of both things
 
+```hbs
+{{#markdown }}
+
+# Blah blah!
+
+Yo!
+
+{{/markdown}}
+```
+
+## finds
+
+- horrible shit right here: https://github.com/qeeqbox/social-analyzer
+- try that bullshit: https://vitejs.dev/
+- toke up: http://omrelli.ug/smoke.js/
+- ditherpunk: https://www.makeworld.space/2021/02/dithering.html
+
 ## 11ty
 
 - why not use eleventy?
-- get i18n to work
 - get all the shortcodes to work
+- get i18n to work
 - use Nunjucks templating?
 - I think it's where I am at, maybe... to try something that's mainstream, maintained
 - looks like it works very similarly to my solution
@@ -91,6 +65,11 @@ Yo!
 ## future...
 
 * check out source code for a few projects, just to get a feel of how motherfuckers out there handle that stuff?
+
+* how about...?
+    - api endpoints, dynamic, to build JSONs
+        - on a per-page basis?
+    - use the same base functions/api to build out the static website
 
 * modal z-index management
     - keep track of which are open
@@ -141,6 +120,11 @@ Yo!
         - resize frame to match?
         - allow box to sit smack in the middle?
 
+* add something to handle client-side URL hash 'routing'
+    - `[...]/some-page-url/#(comments)` -> shows the comments box
+        - link to the "id" of a box? (box component shows when in URL hash)
+    -
+
 * maybe work with services?
     * **when I'm building something new, ----> LATER**
     - keyboard shortcut service
@@ -165,6 +149,8 @@ Yo!
         - whatever's hooked in `stater.changed` is updated?
     * can dynamically set spring
 
+## old ideas, needs revisiting
+
 * add some sort of GUI page... to rebuild pages?
     - **this is a bit far out...**
     - how to make it... secure?
@@ -182,6 +168,7 @@ Yo!
       - old? https://stackoverflow.com/questions/12276046/nodejs-express-how-to-secure-a-url
     - https://github.com/kelektiv/node.bcrypt.js -> use sqlite? idk...
 
+## very old, need to decide whether to keep or discard
 
 * exponent
     - only one "child" selector (combine ui/control)
@@ -221,7 +208,7 @@ export default ({ children }) => {
         - we don't write css -> sass, less, postcss, ... TAILWIND?!?!
         - js... more like, ecmascript2018?! with babel?!? that's weird as fuck
 
-* zorg-based websites?
+* more zorg-based websites?
     * a web-based unit converter that's made for mobile/tablet
         - kitchen utility
     * a web-based recipe repository
@@ -235,7 +222,7 @@ export default ({ children }) => {
     - continent
     - country
     - city
-    - ... etc?
+    - ... etc? `[...]/north-america/canada/quebec/montreal` and so on and so forth
     - chatroom as a graph, then?
         - I need to learn about fucking graphs
 
