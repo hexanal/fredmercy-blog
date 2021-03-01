@@ -10,12 +10,12 @@ i18n:
 
 Mes centres d'intérêts sont:
 
-- [programmation](https://github.com/hexanal)
-- science
-- [musiques](https://fredmercy.bandcamp.com)
-- [blogue](/blog)
-- art
-- skateboard
+- [la programmation](https://github.com/hexanal)
+- la science
+- [la musique](https://fredmercy.bandcamp.com)
+- [tenir un blogue](/blog)
+- l'art
+- le skateboard
 - *prendre ça relax*
 
 ## à propos de ce site
