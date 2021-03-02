@@ -51,9 +51,6 @@ content:
 
 ## todos
 
-- Fix: i18n for 'time ago'
-    - could rewrite s-ago? incorporate in the codebase, somehow?
-    - or fork it?
 - i18n: detect browser language, suggest redirect?
 - if no alternative page for current language, point to website root (in other languages)
 
