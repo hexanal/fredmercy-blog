@@ -1,7 +1,7 @@
-import ago from 's-ago'
 import marked from 'marked'
 import orderBy from 'lodash.orderby'
 import { t, months } from './i18n'
+import ago from '../tools/ago'
 import reefer, { onReef } from '../tools/reefer'
 
 export default function({element, ui, control, messaging }) {
