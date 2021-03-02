@@ -38,6 +38,6 @@ type: post
 
 It's evolving, slowly. It's a lot of frustration, and it's exhausting at times. It's a learning experience for everyone involved, and sometimes it's counter-intuitive. But it's also a lot of small victories, discoveries, beautiful moments, and heart-warming memories we will cherish forever. It's a deeply personal endeavor.
 
-This website is still in its infancy, too! And it's going to be bilingual. Right now, it doesn't say much that makes sense, if it says anything at all; but eventually I want this website to be a reflection of our local culture: effortlessly switching between French and English. Oscillating between cold serious talks and unabashedly lowbrowed vulgarity. Zig-zagging wildly, haphazardly tumbling, veering left and even further left before spontaneously jumping back to the center to find its balance.
+This website is still in its infancy, too! And it's going to be bilingual. Right now, it doesn't say much that makes sense, if it says anything at all; but eventually I want this website to be a reflection of our local culture: effortlessly switching between French and English. It should always be on the edge, oscillating between knowledgeable talk and unabashed ignorance, mixing profound thoughts and lowbrowed vulgarity.
 
 Its motto: _“Embrace the chaos”_
