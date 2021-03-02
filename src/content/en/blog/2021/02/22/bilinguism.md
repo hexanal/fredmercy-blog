@@ -4,8 +4,6 @@ description: making websites harder to build right
 type: post
 tags: tech, webdev, update
 edited: 2021-02-23 @ 11:30am
-i18n:
-  fr: '/fr/blogue/2021/02/22/bilinguisme/'
 ---
 
 `10:10am:` English is the language of the web, for me. The articles I read, the forums, the newsletters, the YouTube videos (!), and even this very website are anglophone.
