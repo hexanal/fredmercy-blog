@@ -71,22 +71,17 @@ const splitByType = function( items ) {
   }, {})
 }
 
+/**
+ * - extract the necessary base metadata for each content item
+ * - split by `type` of content
+ * - apply the plugins
+ */
 const zorg = function( website, plugins ) {
   const start = Date.now()
 
   const contentFiles = glob.sync( website.contentSrc, {})
-  /**
-   * - collating all the data:
-   *   - extracting the necessary base metadata
-   *   - splitting by `type`
-   *   - applying the plugins of each content type
-   *   - applying the global plugins
-   */
   const contentTypes = splitByType( getBasicMeta( contentFiles, website.locale ) )
-
-  const build = plugins.reduce( (acc, plugin) => {
-    return plugin(acc, website)
-  }, contentTypes)
+  const build = plugins.reduce( (acc, plugin) => plugin(acc, website), contentTypes)
 
   const end = Date.now()
   const time = (end - start) / 1000

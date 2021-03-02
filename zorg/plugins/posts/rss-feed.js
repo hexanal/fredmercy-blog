@@ -13,8 +13,6 @@ const rssTemplate = items => (`<rss version="2.0">
 </rss>`)
 
 const buildRSSFeed = function( contentTypes, website ) {
-  console.log( website )
-
   if ( !contentTypes.post ) return contentTypes // if no blog post yet
 
   const items = contentTypes.post.map( item => {
