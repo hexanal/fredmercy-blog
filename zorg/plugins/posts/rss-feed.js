@@ -12,7 +12,9 @@ const rssTemplate = items => (`<rss version="2.0">
   </channel>
 </rss>`)
 
-const buildRSSFeed = function( contentTypes ) {
+const buildRSSFeed = function( contentTypes, website ) {
+  console.log( website )
+
   if ( !contentTypes.post ) return contentTypes // if no blog post yet
 
   const items = contentTypes.post.map( item => {
@@ -29,7 +31,7 @@ const buildRSSFeed = function( contentTypes ) {
   }).join('')
 
   const rssFeed = rssTemplate( items )
-  const destination = `public/`
+  const destination = `public${ website.baseUrl }`
   const filename = 'rss.xml'
 
   write(destination, filename, rssFeed) // writing it!

@@ -2,8 +2,7 @@ const fs = require('fs')
 const frontMatter = require('front-matter')
 const glob = require('glob')
 const { getFilenameFromPath, pipe } = require('./utils')
-
-const DEFAULT_LOCALE = 'en'
+const { defaultLocale } = require('../config')
 
 /**
  * - go through `contentFiles`
@@ -18,13 +17,13 @@ const getBasicMeta = function( contentFiles, lang ) {
     const { attributes, body } = frontMatter( file.toString() )
     const defaultAttributes = getDefaultAttributes( attributes, item )
 
-    // only handle drafts when in dev modein production
+    // only handle drafts when in dev mode
     if ( process.env.NODE_ENV === 'development' && defaultAttributes.draft ) return
 
     return {
       _filePath: item,
       meta: {
-        root: lang === DEFAULT_LOCALE ? '/' : `/${ lang }`,
+        root: lang === defaultLocale ? '/' : `/${ lang }`,
         lang,
         ...defaultAttributes,
         ...attributes
@@ -62,7 +61,8 @@ const splitByType = function( items ) {
 
     const { type } = item.meta
 
-    if ( !type ) return acc // type wasn't specified... TODO should it then be a page?
+    if ( !type ) return acc['page'].push( item ) // type wasn't specified... default back to a 'page' type
+
     if ( !acc[type] ) acc[type] = [] // accumulator needs to be initialized with an empty array :)
 
     acc[type].push( item )
@@ -71,27 +71,27 @@ const splitByType = function( items ) {
   }, {})
 }
 
-const zorg = function( locales, plugins ) {
+const zorg = function( website, plugins ) {
   const start = Date.now()
 
-  const websites = locales.map( lang => {
-    const contentFiles = glob.sync(`./src/content/${lang}/**/*.md`, {})
-    /**
-     * - collating all the data:
-     *   - extracting the necessary base metadata
-     *   - splitting by `type`
-     *   - applying the plugins of each content type
-     *   - applying the global plugins
-     */
-    const contentTypes = splitByType( getBasicMeta( contentFiles, lang ) )
+  const contentFiles = glob.sync( website.contentSrc, {})
+  /**
+   * - collating all the data:
+   *   - extracting the necessary base metadata
+   *   - splitting by `type`
+   *   - applying the plugins of each content type
+   *   - applying the global plugins
+   */
+  const contentTypes = splitByType( getBasicMeta( contentFiles, website.locale ) )
 
-    return pipe( plugins )( contentTypes )
-  })
+  const build = plugins.reduce( (acc, plugin) => {
+    return plugin(acc, website)
+  }, contentTypes)
 
   const end = Date.now()
   const time = (end - start) / 1000
 
-  return { websites, time }
+  return { build, time }
 }
 
 module.exports = zorg

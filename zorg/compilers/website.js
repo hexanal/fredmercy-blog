@@ -3,6 +3,7 @@ require('dotenv').config() // get those sweet environment settings
 const chalk = require('chalk')
 const zorg = require('../bin/zorg')
 const watcher = require('../bin/watcher')
+const { websites } = require('../config')
 
 const plugins = [
   require('../plugins/posts/post-meta'),
@@ -22,9 +23,11 @@ const plugins = [
 ]
 
 const build = () => {
-  const { time } = zorg( ['en', 'fr'], plugins )
+  websites.map( websiteConfig => {
+    const { time } = zorg( websiteConfig, plugins )
 
-  console.log( chalk.magenta(`[compiler] [website/html] built in ${time} seconds`) )
+    console.log( chalk.magenta(`[compiler] [website/html] built "${ websiteConfig.name }" in ${ time } seconds`) )
+  })
 }
 
 const GLOB = ['./src/content/**/*.(md|js)', './src/**/*.html']

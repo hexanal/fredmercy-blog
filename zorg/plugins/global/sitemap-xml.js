@@ -4,7 +4,7 @@ const sitemapTemplate = urls => (`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${ urls }
 </urlset>`)
 
-const buildSitemap = function( contentTypes ) {
+const buildSitemap = function( contentTypes, website ) {
   const types = Object.keys(contentTypes)
   const urls = types.reduce( (acc, typeId) => {
     const urlsForType = contentTypes[typeId].map( item => (`
@@ -17,7 +17,7 @@ const buildSitemap = function( contentTypes ) {
   }, []).join('')
 
   const sitemap = sitemapTemplate( urls )
-  const destination = `public/`
+  const destination = `public${ website.baseUrl }`
   const filename = 'sitemap.xml'
 
   write(destination, filename, sitemap)
