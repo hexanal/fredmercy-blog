@@ -2,6 +2,8 @@
 title: Tension
 description: wound up tight!
 type: post
+i18n:
+  fr: '/fr/blogue/2021/03/02/tension'
 ---
 
 `10:15am:` Working on this website is one of the joys of my life. But raising a child is an amazing adventure, too! In a way I think the process of working on my little house-on-the-web is very similar.
