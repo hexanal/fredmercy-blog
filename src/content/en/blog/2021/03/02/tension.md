@@ -41,3 +41,5 @@ It's evolving, slowly. It's a lot of frustration, and it's exhausting at times. 
 This website is still in its infancy, too! And it's going to be bilingual. Right now, it doesn't say much that makes sense, if it says anything at all; but eventually I want this website to be a reflection of our local culture: effortlessly switching between French and English. It should always be on the edge, oscillating between knowledgeable talk and unabashed ignorance, mixing profound thoughts and lowbrowed vulgarity.
 
 Its motto: _“Embrace the chaos”_
+
+`7:52pm:` Ok. Deploying the website's i18n version tonight!
