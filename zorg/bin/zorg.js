@@ -18,7 +18,7 @@ const getBasicMeta = function( contentFiles, lang ) {
     const defaultAttributes = getDefaultAttributes( attributes, item )
 
     // only handle drafts when in dev mode
-    if ( process.env.NODE_ENV === 'development' && defaultAttributes.draft ) return
+    if ( process.env.NODE_ENV !== 'development' && defaultAttributes.draft ) return
 
     return {
       _filePath: item,

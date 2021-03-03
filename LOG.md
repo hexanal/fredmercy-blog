@@ -1,12 +1,11 @@
 ## TODO
 
-* Fix: sitemap and rss feeds... are broken
-    - also gotta find a way to split those by locale
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
 * Fix: allow "autoloaded" components to be hooked to a DOM element?
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
     - lifecycle is a good feature to have, I think...
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
+* make webmanifest translatable? -> is it useful?
 
 ## put your thinking cap on
 
@@ -23,6 +22,9 @@
 
 * implement themes
     - different from "colorscheme" :)
+    - `src/themes/june/layouts` [...]
+    - why?
+
 * how to have a nice visual overview of the codebase
     - to see what could be refactore
     - to understand it faster (for devs unfamiliar with it)
