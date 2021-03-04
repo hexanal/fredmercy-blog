@@ -13,7 +13,7 @@ const addPageMeta = function( contentTypes ) {
 
 const getPageMetaData = function( item ) {
   const route = item._filePath
-    .replace(`./src/content/${item.meta.lang}/`, '')
+    .replace(`./src/content/${item.meta.lang}/`, '') // FIXME path in config somewhere
     .replace('.md', '')
     .split('/')
   const id = route[route.length - 1]
@@ -24,7 +24,7 @@ const getPageMetaData = function( item ) {
   const rebuiltUrl = route.length ? route.reduce( (acc, part) => (acc + '/' + part), '') : '/'
   const urlLocalePrefix = item.meta.lang === 'en' ? '' : `/${item.meta.lang}`
   const url = urlLocalePrefix + rebuiltUrl
-  const permalink = `https://fredmercy.ca${url}`
+  const permalink = `https://fredmercy.ca${url}` // FIXME domain name in config
 
   return {
     id,

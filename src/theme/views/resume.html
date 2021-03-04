@@ -1,0 +1,11 @@
+{{#> layouts/page }}
+
+{{> components/breadcrumbs }}
+
+{{#each resume }}
+  {{> components/resume-section this }}
+{{/each}}
+
+{{> components/print-btn }}
+
+{{/layouts/page }}

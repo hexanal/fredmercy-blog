@@ -1,6 +1,6 @@
 {{#> layouts/page }}
 
-{{> ui/breadcrumbs }}
+{{> components/breadcrumbs }}
 
 <article class="post">
   <div
@@ -24,7 +24,7 @@
       </div>
     </header>
 
-    {{> ui/content }}
+    {{> components/content }}
 
     {{#if meta.edit}}
     <i class="post__edit-date">
@@ -32,7 +32,7 @@
     </i>
     {{/if}}
 
-    {{> ui/post-nav }}
+    {{> components/post-nav }}
   </div>
 
 </article>

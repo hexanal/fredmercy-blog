@@ -3,23 +3,23 @@ const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
 const WATCH = [
-  './src/assets/images',
-  './src/assets/fonts'
+  './src/theme/images',
+  './src/theme/fonts'
 ]
 const assets = [
   {
     id: 'manifest',
-    src: './src/assets/manifest.webmanifest',
-    dest: './public/assets/manifest.webmanifest',
+    src: './src/theme/manifest.webmanifest',
+    dest: './public/manifest.webmanifest',
   },
   {
     id: 'images',
-    src: './src/assets/images',
+    src: './src/theme/images',
     dest: './public/assets/images',
   },
   {
     id: 'fonts',
-    src: './src/assets/fonts',
+    src: './src/theme/fonts',
     dest: './public/assets/fonts'
   }
 ]

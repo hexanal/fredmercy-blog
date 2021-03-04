@@ -2,7 +2,7 @@
 title: Blogue
 description: Des idées pas claires
 type: page
-template: templates/blog
+template: blog
 i18n:
   en: '/blog'
 ---

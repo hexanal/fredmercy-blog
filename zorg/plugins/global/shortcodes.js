@@ -97,7 +97,7 @@ const applyShortcodes = function( item, contentTypes ) {
 const addShortcodes = function( contentTypes ) {
   const withShortcodes = {}
   const types = Object.keys( contentTypes )
-  templater.usePartials('./src/components')
+  templater.usePartials('./src/theme/views') // FIXME have these paths stored in some global object? config? dunno
 
   types.map( type => {
     withShortcodes[type] = contentTypes[type].map( item => {

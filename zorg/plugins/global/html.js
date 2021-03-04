@@ -3,7 +3,7 @@ const templater = require('../../bin/templater')
 const { debugLog } = require('../../bin/utils')
 
 const formatContent = function( contentTypes ) {
-  templater.usePartials('./src/components')
+  templater.usePartials('./src/theme/views')
 
   const types = Object.keys( contentTypes )
 
@@ -14,9 +14,8 @@ const formatContent = function( contentTypes ) {
       if ( !item.meta.url ) return
 
       const destination = `./public${item.meta.url}`
-      const defaultTemplate = `templates/${type}`
-      const templateName = item.meta.template || defaultTemplate
-      const templateFile = fs.readFileSync( `src/components/${ templateName }.html`, 'utf8' )
+      const templateName = item.meta.template || type // default to content type
+      const templateFile = fs.readFileSync( `src/theme/views/${ templateName }.html`, 'utf8' )
       const template = templater.compile( templateFile.toString() )
       const htmlTemplate = template(item)
 

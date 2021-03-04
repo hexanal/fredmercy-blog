@@ -2,7 +2,7 @@
 title: Signets
 description: Longue liste de trucs que j'ai trouvé intéressant
 type: page
-template: templates/bookmarks
+template: bookmarks
 i18n:
   en: '/bookmarks'
 ---

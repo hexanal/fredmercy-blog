@@ -4,11 +4,8 @@ const importer = require('node-sass-glob-importer')
 const { write } = require('../bin/files')
 const watcher = require('../bin/watcher')
 
-const WATCH_GLOB = [
-  './src/assets/**/*.scss',
-  './src/components/**/*.scss',
-]
-const SRC = './src/assets/scss/fredmercy.scss'
+const WATCH_GLOB = [ './src/**/*.scss' ] // absolutely anywhere there's Sass
+const SRC = './src/theme/styles/fredmercy.scss'
 const DEST_PATH = './public'
 const DEST_FILENAME = 'fredmercy.css'
 const DEST = `${DEST_PATH}/${DEST_FILENAME}`

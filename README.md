@@ -15,8 +15,8 @@ If you want to see how the sausage was made, here's the recipe:
 
 It runs an [Express](http://expressjs.com/) server at [localhost:8042](http://localhost:8042) and watches for changes in the **content** & **source files**
 
-- a **content file** is any Markdown `.md` inside the `/content` folder
-- the **source files** are the frontend "theme" files in `./src`
+- a **content file** is any Markdown `.md` inside the `./src/content` folder
+- the **source files** are the frontend theme files in `./src/theme`
   - **assets** — images, fonts, sounds, documents, etc. handled by `zorg/compilers/assets.js`
   - **components** — HandlebarsJS HTML templates, or "components"; compiled with `zorg/compilers/website.js`
   - **javascript** — compiled with [esbuild](https://esbuild.github.io) in `zorg/compilers/javascript.js`
@@ -46,9 +46,9 @@ We've got to understand **3 things** here, and it's the three folders in `./zorg
 
 ### templating
 
-By default, a content type will be matched with a Handlebars template of the same name in `./src/components/templates`. For instance, a `page` type content item will use `./src/components/templates/page.html`; neat!
+By default, a content type will be matched with a Handlebars template of the same name in `./src/theme/views`. For instance, a `page` type content item will use `./src/theme/views/page.html`; neat!
 
-You can add `template: template/whatever/path` to the front-matter which specifies a custom component to use for the entry (an example of that is my `./content/resume.md` page)
+You can add `template: template-name` to the front-matter which specifies a custom template (or “view”) to use for the entry (an example of that is my `./content/resume.md` page)
 
 Why [HandlebarsJS](https://handlebarsjs.com/)? It's a bit _old-school_ but it works for me.
 

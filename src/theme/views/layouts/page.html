@@ -18,20 +18,20 @@
 <body class="page">
   <div class="page__wrapper" data-barba="wrapper">
     <div class="page__container" data-barba="container" data-lang="{{ meta.lang }}">
-      {{> ui/header }}
-      {{> ui/nav }}
+      {{> components/header }}
+      {{> components/nav }}
 
       <div class="page__contents" data-barba="inside">
         {{> @partial-block }}
       </div>
 
-      {{> ui/comments}}
-      {{> ui/help }}
+      {{> components/comments}}
+      {{> components/help }}
     </div>
   </div>
 
-  {{> ui/rainbow }}
-  {{> ui/ball }}
+  {{> components/rainbow }}
+  {{> components/ball }}
 
   <script src="/fredmercy.js"></script>
 </body>

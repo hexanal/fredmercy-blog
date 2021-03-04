@@ -22,7 +22,7 @@ const removeLeadingZero = day => {
   return day
 }
 
-const getPostMetaData = function( item ) {
+const getPostMetaData = function( item, website ) {
   const urlParts = item._filePath // grab special key "_filePath" which contains the path to the markdown file
     .replace(`./src/content/${item.meta.lang}/`, '')
     .replace('.md', '')
@@ -39,9 +39,11 @@ const getPostMetaData = function( item ) {
   const monthName = getMonthName(month, item.meta.lang)
   const prettyDate = `${monthName} ${dayNoZero}, ${year}`
 
-  const urlLocalePrefix = item.meta.lang === 'en' ? '/' : `/${item.meta.lang}/`
-  const url = `${urlLocalePrefix}${blog}/${year}/${month}/${day}/${id}`
-  const permalink = `https://fredmercy.ca${url}`
+  const baseURL = website.baseUrl === '/'
+    ? ''
+    : website.baseUrl
+  const url = `${baseURL}/${blog}/${year}/${month}/${day}/${id}`
+  const permalink = `${website.baseDomain}${url}`
   const archive = `${monthName} ${year}`
 
   return {
@@ -59,7 +61,7 @@ const getPostMetaData = function( item ) {
   }
 }
 
-const addPostMeta = function( contentTypes ) {
+const addPostMeta = function( contentTypes, website ) {
   if ( !contentTypes.post ) return contentTypes // if no blog post yet
 
   return {
@@ -68,7 +70,7 @@ const addPostMeta = function( contentTypes ) {
       ...item,
       meta: {
         ...item.meta,
-        ...getPostMetaData(item)
+        ...getPostMetaData(item, website)
       }
     }) )
   }

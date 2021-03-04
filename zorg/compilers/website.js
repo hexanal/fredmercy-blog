@@ -30,7 +30,7 @@ const build = () => {
   })
 }
 
-const GLOB = ['./src/content/**/*.(md|js)', './src/**/*.html']
+const GLOB = ['./src/content/**/*.(md|js)', './src/theme/**/*.html']
 
 const watch = watcher({
   glob: GLOB,

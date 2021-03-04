@@ -2,7 +2,7 @@
 title: Bookmarks
 description: Long list of anything I found interesting
 type: page
-template: templates/bookmarks
+template: bookmarks
 i18n:
   fr: '/fr/signets'
 ---

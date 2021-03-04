@@ -2,10 +2,8 @@ const esbuild = require('esbuild')
 const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
-const WATCH_GLOB = [
-  './src/assets/js/**/*.js',
-]
-const SRC = ['./src/assets/js/fredmercy.js']
+const WATCH_GLOB = ['./src/theme/**/*.js'] // anywhere there's JS, my friend!
+const SRC = ['./src/theme/js/fredmercy.js']
 const DEST = './public/fredmercy.js'
 
 const build = function() {

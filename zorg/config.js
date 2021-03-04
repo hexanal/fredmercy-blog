@@ -3,12 +3,14 @@ const defaultLocale = 'en'
 const websites = [
   {
     baseUrl: '/',
+    baseDomain: 'https://fredmercy.ca',
     locale: 'en',
     name: 'english',
     contentSrc: './src/content/en/**/*.md'
   },
   {
     baseUrl: '/fr',
+    baseDomain: 'https://fredmercy.ca',
     locale: 'fr',
     name: 'français',
     contentSrc: './src/content/fr/**/*.md'
