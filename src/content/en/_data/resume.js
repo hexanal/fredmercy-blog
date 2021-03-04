@@ -1,6 +1,6 @@
 module.exports = [
   {
-    component: "ui/experience",
+    component: "components/experience",
     heading: "experience",
     items: [
       {
@@ -123,7 +123,7 @@ module.exports = [
   },
 
   {
-    component: "ui/sub-section",
+    component: "components/sub-section",
     heading: "skills",
     items: [
       {
@@ -161,7 +161,7 @@ module.exports = [
   },
 
   {
-    component: "ui/sub-section",
+    component: "components/sub-section",
     heading: "education",
     items: [
       {
