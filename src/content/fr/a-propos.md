@@ -10,10 +10,10 @@ i18n:
 
 Mes centres d'intérêts sont:
 
-- [la programmation](https://github.com/hexanal)
+- <a href="https://github.com/hexanal" target="_blank" rel="noopener noreferrer">la programmation</a>
 - la science
-- [la musique](https://fredmercy.bandcamp.com)
-- [tenir un blogue](/blog)
+- <a href="https://fredmercy.bandcamp.com" target="_blank" rel="noopener noreferrer">la musique</a>
+- [tenir un blogue](/fr/blogue)
 - l'art
 - le skateboard
 - *prendre ça relax*
@@ -28,16 +28,16 @@ Mes centres d'intérêts sont:
 
 **technologies**
 
-- hébergé chez [Digital Ocean](https://www.digitalocean.com)
+- hébergé chez <a href="https://www.digitalocean.com" target="_blank" rel="noopener noreferrer">Digital Ocean</a>
   - ubuntu 16.04
   - nginx
   - nodejs/express
 - fait maison:
-  - open-source [sur github](https://github.com/hexanal/fredmercy-blog), vous pouvez lire le `README.md` pour plus d'infos
+  - open-source <a href="https://github.com/hexanal/fredmercy-blog" target="_blank" rel="noopener noreferrer">sur github</a>, vous pouvez lire le `README.md` pour plus d'infos
 
 **vie privée**
 
-- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) qui aide ce site à se souvenir de vos préférences, surtout pour les fonctions d'accessibilité (taille des caractères, thème de couleur, etc.)
+- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer">localstorage</a> qui aide ce site à se souvenir de vos préférences, surtout pour les fonctions d'accessibilité (taille des caractères, thème de couleur, etc.)
 - vous pouvez laisser des commentares sur n'importe quelle page du site
   - rien ne vous empêche de _spammer_ les commentaires, mais essayez de ne pas le faire car ce n'est **pas très gentil**
   - vous pouvez utiliser votre vrai nom, mais je vous conseille d'utiliser un pseudonyme (ça fait plus web 1.0)

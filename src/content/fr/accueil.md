@@ -9,7 +9,7 @@ i18n:
 
 ## bienvenue!
 
-Je contruis des choses, surtout des sites. Ici, c'est mon site personnel.
+J'aime contruire des choses, surtout des sites. Ici, c'est mon site personnel.
 
 En ce moment, je travaille comme développeur chez
 <a href="https://cossette.com" target="_blank" rel="noopener noreferrer">Cossette</a>, à <a href="https://www.openstreetmap.org/#map=19/45.49977/-73.57726&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.\

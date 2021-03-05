@@ -10,13 +10,13 @@ i18n:
 
 I'm interested in:
 
-- [programming](https://github.com/hexanal)
+- <a href="https://github.com/hexanal" target="_blank" rel="noopener noreferrer">programming</a>
 - science
-- [music](https://fredmercy.bandcamp.com)
+- <a href="https://fredmercy.bandcamp.com" target="_blank" rel="noopener noreferrer">music</a>
 - [blogging](/blog)
 - art
 - skateboarding
-- having fun
+- _having fun_
 
 ## about this website
 

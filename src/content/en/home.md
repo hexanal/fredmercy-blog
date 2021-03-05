@@ -9,7 +9,7 @@ i18n:
 
 ## welcome!
 
-I build stuff, mostly websites like this one. This is my personal website.
+I like to build stuff, mostly websites like this one. This is my personal website.
 
 These days, I work as a developer at
 <a href="https://cossette.com" target="_blank" rel="noopener noreferrer">Cossette</a>, in beautiful <a href="https://www.openstreetmap.org/#map=19/45.49977/-73.57726&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.\
