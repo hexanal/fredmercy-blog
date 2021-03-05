@@ -1,22 +1,6 @@
 ## i18n & big refactoring session
 
-- modify zorg "entry"
-    - provide the path to content files
-    - language of website
-    - pass the plugins
-
-- then the `website.js` file just builds TWO sites?
-    - or add a "configuration" object/file, finally?
-
 ## to try someday
-
-- can we just... use a page "id" as the link between the languages?
-    - name your page the same, and it'll be linked
-    - i18n middleware could do:
-        - fetch the versions of the pages
-        - stick in `meta.translations`
-        - other plugins need to hook onto the i18n-enabled stuff
-            - `languages.length`
 
 - add server folder, stick the `server.js` file in it
     - clean up server
@@ -24,12 +8,7 @@
     - split up websocket business
     - split up server setup and middlewares
 
-## to think about
-
-- should the folder structure define the final URL, or can the URL be specified in the front-matter?
-    - then we could use the `blog.en.md` and `blog.fr.md` trick?
-
-## or something like:
+## something like?
 
 EN:
 
@@ -81,7 +60,6 @@ content:
   - block: 'blog-index'
   - block: 'blog-nav'
 ```
-
 
 ## todos
 

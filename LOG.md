@@ -1,11 +1,11 @@
 ## TODO
 
+* Add: js-free version of the website
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
 * Fix: allow "autoloaded" components to be hooked to a DOM element?
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
     - lifecycle is a good feature to have, I think...
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
-* make webmanifest translatable? -> is it useful?
 
 ## put your thinking cap on
 
@@ -20,25 +20,29 @@
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
-* implement themes
-    - different from "colorscheme" :)
-    - `src/themes/june/layouts` [...]
-    - why?
-    - idea1
-        - `src/theme/manifest.webmanifest`
-        - `src/theme/fonts/`
-        - `src/theme/images/`
-        - `src/theme/js/`
-        - `src/theme/styles/`
-        - `src/theme/views/`
-            - `blocks/`
-            - `components/`
-            - `layouts/`
-
 * how to have a nice visual overview of the codebase
     - to see what could be refactored
     - to understand it faster (for devs unfamiliar with it)
     - to debug
+
+* issue with handlebars -> can't put comments in the source that won't end up in the "compiled" HTML
+
+* plopJS -> https://github.com/plopjs/plop
+* zoom-based navigation on the z-axis -> how to make it feel and look cool?
+    - would help to solve the z-index issue I have with the `box` component
+    - then apply to that style of navigation?
+* browsersync, or something similar to reload on changes; something easy, fast, lightweight, not full of BULLSHIT
+* clearview:
+    - Send these to privacy@clearview.ai via email. Clearly state that your message is a CCPA or GDPR request.
+    - Follow any instructions you receive. Expect your request to take up to two months to process. Be persistent in following up. And remember that once you receive your data, you have the option to demand that Clearview [delete it or amend it](https://www.dataprotectionreport.com/2018/09/ccpa-extends-right-to-deletion-to-california-residents/) if you’d like them to do so.
+* PWA:
+    - [https://web.dev/codelab-make-installable/](https://web.dev/codelab-make-installable/)
+    - [https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
+
+* think of fastest track to having a webserver running my website
+    - is it some Docker bullshit again?!
+    - barebone, hand-made shit?
+    - most of it is NodeJS
 
 ## "dynamic" linking?
 
@@ -69,21 +73,9 @@ Yo!
 - try that bullshit: https://vitejs.dev/
 - toke up: http://omrelli.ug/smoke.js/
 - ditherpunk: https://www.makeworld.space/2021/02/dithering.html
-
-## 11ty
-
-- why not use eleventy?
-- get all the shortcodes to work
-- get i18n to work
-- use Nunjucks templating?
-- I think it's where I am at, maybe... to try something that's mainstream, maintained
-- looks like it works very similarly to my solution
-
-- or maybe just swap HandlebarsJS for Nunjucks, which seems way more extendable?
+- rawtext club: https://rawtext.club/sign-up.html
 
 ## future...
-
-* check out source code for a few projects, just to get a feel of how motherfuckers out there handle that stuff?
 
 * how about...?
     - api endpoints, dynamic, to build JSONs
@@ -121,6 +113,21 @@ Yo!
         - keep adding new stuff! it'll be alright!
         - it should be about taking the time and the care to deliver something special: something that simply works.
 
+* “next-gen” web buzzwords
+    - html imports
+    - declarative shadow-dom
+    - import dynamic js
+    - container queries
+    - modules
+    - all of it!
+
+* SVG
+    - learn about strokes, types of stroke
+    - learn about aspect ratio
+    - learn about morph?
+    - learn about controlling a few things with JS
+    - controlling curves with JS
+
 ```json
 {
     "meta": {
@@ -157,9 +164,9 @@ Yo!
 * add something to handle client-side URL hash 'routing'
     - `[...]/some-page-url/#(comments)` -> shows the comments box
         - link to the "id" of a box? (box component shows when in URL hash)
-    -
 
 * maybe work with services?
+    * also: when "exponent" is refactored into something a little better
     * **when I'm building something new, ----> LATER**
     - keyboard shortcut service
     - event service (with state service -> like a reducer?)
@@ -172,6 +179,7 @@ Yo!
 * add svg symbols support
     - **postponing until redesign**
     - for header icons and others (replace arrows, etc.)
+    - can't fucking put icons just because it's cool to have icons: they need to mean something
 
 * change a staterized value with reefer?
     - **HOLD FOR NOW -> thing might change when using a vdom implementation**
@@ -191,32 +199,12 @@ Yo!
     - or only build that page when developing?
     - but it would be nice to have it online too
 
-* for `static generation` ... from JS templates, import CSS
-    - do test with `hyperapp-notes` ?
-    - or the preact project?... I don't know dude
-
-* test `storeon`
-
 * pass protect?
     - https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js/8003291#8003291
       - old? https://stackoverflow.com/questions/12276046/nodejs-express-how-to-secure-a-url
     - https://github.com/kelektiv/node.bcrypt.js -> use sqlite? idk...
 
 ## very old, need to decide whether to keep or discard
-
-* exponent
-    - only one "child" selector (combine ui/control)
-        - get dataset from all?
-    - children ( data-child="something" )
-        - then can destructure in component
-
-```
-export default ({ children }) => {
-    const { something } = children
-
-    console.log( something.dataset )
-})
-```
 
 * highdea # 8932434
     - keep the user's data on their disk
@@ -243,37 +231,9 @@ export default ({ children }) => {
         - js... more like, ecmascript2018?! with babel?!? that's weird as fuck
     - need to get high again to understand wtf I wrote above...
 
-* more zorg-based websites?
-    * a web-based unit converter that's made for mobile/tablet
-        - kitchen utility
-    * a web-based recipe repository
-
 * something that suggest to create a redirection when changing the URL of a page/post
     - so that links on other websites that were pointing to that URL aren't landing nowhere
     - maybe that's an obvious thing that's being done by Wordpress out of the box? I don't know?
-
-* a dynamic folder-creating/ route-creating / cypher chatroom creator?
-    - that's just a tree...
-    - continent
-    - country
-    - city
-    - ... etc? `[...]/north-america/canada/quebec/montreal` and so on and so forth
-    - chatroom as a graph, then?
-        - I need to learn about fucking graphs
-
-## discussion about zorg
-
-The zorg "middleware" thing is super unwieldy. And it makes me yearn so much for a templating structure that's much much closer tied to the data, somehow.
-
-Ok. The point is to have a way to manage data in the simplest form possible. Format it in a way that's good enough for editing, and good enough for parsing it and sticking it inside templates.
-
-In my setup, I miss the ability to do some processing close to the template. The data needs to be massaged a bit before going into the template.
-
-For example, the blog index needs to have the list of all posts, grouped by month. This happens in a middleware, but probably could, and should happens at the template level. Using JS templating would solve that issue because the massaging would occur at or before the rendering of the HTML.
-
-There's a lot in there. It means... I need something that follows the structure of the data, but at the same time _transforms_ it to match what needs to be displayed in the browser. Something like a render-tree, vdom React-style thing, that takes some data input and renders the HTML.
-
-Looks like I'm trying to come up with the concept of ... `Model-View-Controller`
 
 ## MANIFEST
 
@@ -282,14 +242,6 @@ And I get that sucker ANYWHERE that runs a browser: which means I can be anywher
 A website like that, is like a virus, bro. I now can linger on the internet and be displayed on any fucking screen.
 
 That's the power of the web. The New Web Era.
-
-## OBJECTIVES
-
-* have a "starter" website structure that is:
-    - easy to understand
-    - modular, extendable
-    - simple to install, simple to update
-    - again... it should be full-featured, but **not complicated**
 
 ## A website
 
