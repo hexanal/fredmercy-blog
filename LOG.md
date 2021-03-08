@@ -17,10 +17,12 @@
 * the sap, running through the tree
 * **sève**
 
+* spreadsheets, bro
+
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
-* how to have a nice visual overview of the codebase
+* (!) how to have a nice visual overview of the codebase
     - to see what could be refactored
     - to understand it faster (for devs unfamiliar with it)
     - to debug
@@ -28,13 +30,7 @@
 * issue with handlebars -> can't put comments in the source that won't end up in the "compiled" HTML
 
 * plopJS -> https://github.com/plopjs/plop
-* zoom-based navigation on the z-axis -> how to make it feel and look cool?
-    - would help to solve the z-index issue I have with the `box` component
-    - then apply to that style of navigation?
 * browsersync, or something similar to reload on changes; something easy, fast, lightweight, not full of BULLSHIT
-* clearview:
-    - Send these to privacy@clearview.ai via email. Clearly state that your message is a CCPA or GDPR request.
-    - Follow any instructions you receive. Expect your request to take up to two months to process. Be persistent in following up. And remember that once you receive your data, you have the option to demand that Clearview [delete it or amend it](https://www.dataprotectionreport.com/2018/09/ccpa-extends-right-to-deletion-to-california-residents/) if you’d like them to do so.
 * PWA:
     - [https://web.dev/codelab-make-installable/](https://web.dev/codelab-make-installable/)
     - [https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
@@ -74,6 +70,7 @@ Yo!
 - toke up: http://omrelli.ug/smoke.js/
 - ditherpunk: https://www.makeworld.space/2021/02/dithering.html
 - rawtext club: https://rawtext.club/sign-up.html
+- my story of 2021: https://randsinrepose.com/archives/bored-people-quit/
 
 ## future...
 
@@ -128,6 +125,25 @@ Yo!
     - learn about controlling a few things with JS
     - controlling curves with JS
 
+* try some `<noscript>` bullshit to see if I can have a version of the website that's usable even without javascript
+
+* add something to handle client-side URL hash 'routing'
+    - `[...]/some-page-url/#(comments)` -> shows the comments box
+        - link to the "id" of a box? (box component shows when in URL hash)
+
+* add svg symbols support
+    - **postponing until redesign**
+    - for header icons and others (replace arrows, etc.)
+    - can't fucking put icons just because it's cool to have icons: they need to mean something
+
+## old ideas, needs revisiting
+
+* add some sort of GUI page... to rebuild pages?
+    - **this is a bit far out...**
+    - how to make it... secure?
+    - or only build that page when developing?
+    - but it would be nice to have it online too
+
 ```json
 {
     "meta": {
@@ -150,54 +166,6 @@ Yo!
     ]
 }
 ```
-
-* try some `<noscript>` bullshit to see if I can have a version of the website that's usable even without javascript
-
-* fix vertical alignment of comments box
-    * **when I've got some time**
-    * ResizeObserver ?
-    * box: onresize
-        - calculate height of contained div
-        - resize frame to match?
-        - allow box to sit smack in the middle?
-
-* add something to handle client-side URL hash 'routing'
-    - `[...]/some-page-url/#(comments)` -> shows the comments box
-        - link to the "id" of a box? (box component shows when in URL hash)
-
-* maybe work with services?
-    * also: when "exponent" is refactored into something a little better
-    * **when I'm building something new, ----> LATER**
-    - keyboard shortcut service
-    - event service (with state service -> like a reducer?)
-    - viewport service? -> where in the page, how big, media, etc.
-    - loader service?
-        - to determine when all the components on the page are loaded and ready,
-        - toggle a loading animation/state
-    - storage service -> localStorage / indexedDB
-
-* add svg symbols support
-    - **postponing until redesign**
-    - for header icons and others (replace arrows, etc.)
-    - can't fucking put icons just because it's cool to have icons: they need to mean something
-
-* change a staterized value with reefer?
-    - **HOLD FOR NOW -> thing might change when using a vdom implementation**
-    - everything in `.changed()` will get called, dude
-    - pass... a staterized state PLUGGED with the messaging middleware
-    - that way you have a redux-like thing
-        - an event calls a "reducer" function
-        - the reducer updates `stater` keys
-        - whatever's hooked in `stater.changed` is updated?
-    * can dynamically set spring
-
-## old ideas, needs revisiting
-
-* add some sort of GUI page... to rebuild pages?
-    - **this is a bit far out...**
-    - how to make it... secure?
-    - or only build that page when developing?
-    - but it would be nice to have it online too
 
 * pass protect?
     - https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js/8003291#8003291
@@ -234,6 +202,15 @@ Yo!
 * something that suggest to create a redirection when changing the URL of a page/post
     - so that links on other websites that were pointing to that URL aren't landing nowhere
     - maybe that's an obvious thing that's being done by Wordpress out of the box? I don't know?
+
+## random
+
+* zoom-based navigation on the z-axis -> how to make it feel and look cool?
+    - would help to solve the z-index issue I have with the `box` component
+    - then apply to that style of navigation?
+* clearview:
+    - Send these to privacy@clearview.ai via email. Clearly state that your message is a CCPA or GDPR request.
+    - Follow any instructions you receive. Expect your request to take up to two months to process. Be persistent in following up. And remember that once you receive your data, you have the option to demand that Clearview [delete it or amend it](https://www.dataprotectionreport.com/2018/09/ccpa-extends-right-to-deletion-to-california-residents/) if you’d like them to do so.
 
 ## MANIFEST
 
