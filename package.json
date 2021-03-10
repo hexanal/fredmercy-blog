@@ -16,7 +16,7 @@
     "front-matter": "^3.0.1",
     "handlebars": "^4.7.7",
     "handlebars-intl": "^1.1.2",
-    "marked": "1.2.2",
+    "marked": "^2.0.1",
     "sass": "1.30.0"
   },
   "dependencies": {
