@@ -1,3 +1,8 @@
+---
+title: Links
+description: “Living” list of links
+---
+
 ## just in / to sort
 
 - horrible shit right here: https://github.com/qeeqbox/social-analyzer
@@ -75,4 +80,3 @@
 - OpenC1 - a Carmageddon Remake: https://github.com/jeff-1amstudios/OpenC1 / http://1amstudios.com/projects/openc1/
 - PIHKAL, on Erowid.org: https://www.erowid.org/library/books_online/pihkal/pihkal.shtml
 - Periodic Table: https://ptable.com/#Properties
--
