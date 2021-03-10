@@ -6,6 +6,7 @@
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
     - lifecycle is a good feature to have, I think...
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
+* something to initalize the db with tables and shit
 
 ## put your thinking cap on
 
