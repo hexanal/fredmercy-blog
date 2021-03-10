@@ -2,7 +2,6 @@
 title: I Failed You
 description: Science & Technology (& Tech?)
 type: page
-draft: true
 ---
 
 `February 23, 11:21am:` Hey! It's me again, with another dose of absurd yammering!
