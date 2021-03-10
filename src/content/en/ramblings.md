@@ -2,8 +2,6 @@
 title: Ramblings
 description: My malformed thoughts
 type: page
-i18n:
-  fr: '/fr/baragouinages'
 ---
 
 ## incoherent verbiage
@@ -16,5 +14,6 @@ i18n:
 
 ### tech
 
+* [I Failed You](/ramblings/i-failed-you)
 * [Communicating](/ramblings/communicating)
 * [Big Dumb Tech](/ramblings/big-dumb-tech)

@@ -100,3 +100,4 @@ I don't have the answers, but my wish for the future is a social network that ha
 
 </div>
 
+<a href="/ramblings" class="button button--light"><- ramblings</a>
