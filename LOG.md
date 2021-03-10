@@ -63,15 +63,6 @@ Yo!
 {{/markdown}}
 ```
 
-## finds
-
-- horrible shit right here: https://github.com/qeeqbox/social-analyzer
-- try that bullshit: https://vitejs.dev/
-- toke up: http://omrelli.ug/smoke.js/
-- ditherpunk: https://www.makeworld.space/2021/02/dithering.html
-- rawtext club: https://rawtext.club/sign-up.html
-- my story of 2021: https://randsinrepose.com/archives/bored-people-quit/
-
 ## future...
 
 * how about...?
@@ -235,3 +226,32 @@ That's the power of the web. The New Web Era.
 6. _documentation_ -> explain to the people who enter the content how to do it well
   - short & sweet, don't assume they know technical jargon -> explain simply
 7. _mobile-first_ -> the design and its default implementation is targetting mobile devices; tablet and desktop versions are the declinations
+
+## structural changes
+
+### idea 1
+
+- `/zwicky/zwicky.js`
+- `/zwicky/config.js`
+    - `/zwicky/tasks/html.js`
+    - `/zwicky/tasks/javascript.js`
+    - `/zwicky/tasks/styles.js`
+    - `/zwicky/tasks/assets.js`
+- `/zwicky/utils/...`
+
+### idea 2
+
+- `/doohickey/main.js`
+- `/doohickey/config.js`
+- `/doohickey/html/html.js`
+    - `/doohickey/html/processors/post-meta.js`
+    - `/doohickey/html/processors/posts-by-months.js`
+- `/doohickey/javascript/javascript.js`
+- `/doohickey/styles/styles.js`
+- `/doohickey/assets/assets.js`
+
+or:
+
+- `/doohickey/scripts/**` -> templating, js, css, assets
+- `/doohickey/processors/**` -> data processor units
+- `/doohickey/utils/**` -> utilities
