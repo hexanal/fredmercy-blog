@@ -21,7 +21,7 @@ export default function({element, ui, control, messaging }) {
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
-    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+    messaging.dispatch({ id: 'SET_LOADING', payload: true }) // TODO this is not the way to handle loading, bro...
     state.animation.y.set( 1, { stiffness: 250, damping: 15 })
     state.animation.opacity.set( 0.25, { stiffness: 250, damping: 15 })
 
@@ -74,6 +74,8 @@ export default function({element, ui, control, messaging }) {
    * refresh the "convo" screen :)
    */
   const displayConversation = comments => {
+    if ( comments.code && comments.code === 'SQLITE_ERROR' ) return handleSqliteError( comments )
+
     ui['convo'].innerHTML = '' // FLUSH!!
 
     // that's the header button
@@ -107,6 +109,12 @@ export default function({element, ui, control, messaging }) {
 
       ui['convo'].appendChild($commentLine)
     })
+  }
+
+  const handleSqliteError = function( err ) {
+    document.querySelector('#show-comments-btn').style.display = 'none' // TODO bleh!
+
+    return console.error( t({en: "Something went wrong while we were getting the comments", fr: "Une erreur est survenue losrqu'on était en train de récupèrer les commentaires"}) )
   }
 
   const getMessageDataFromUI = function() {
