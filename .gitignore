@@ -10,6 +10,7 @@ npm-debug.log
 
 # Database
 fredmercy.db
+fredmercy.db-journal
 # FTP-uploaded media files
 /files
 # FTP-uploaded demos
