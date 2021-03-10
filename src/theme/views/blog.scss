@@ -28,6 +28,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
+  color: var(--color-secondary);
 
   &:hover {
     background-color: transparent;
@@ -35,10 +36,6 @@
     div {
       background-color: var(--color-secondary);
     }
-  }
-
-  small {
-    color: var(--color-secondary);
   }
 }
 
