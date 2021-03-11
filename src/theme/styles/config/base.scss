@@ -106,24 +106,6 @@ hr {
   border: none;
 }
 
-del {
-  background-color: var(--color-primary);
-  opacity: 0.5;
-
-  a {
-    color: var(--color-bg);
-    background-color: var(--color-primary);
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: var(--color-bg);
-      background-color: var(--color-primary);
-      cursor: not-allowed;
-    }
-  }
-}
-
 select {
   padding: 0.25rem;
   font-size: 0.9rem;

@@ -108,6 +108,37 @@
     }
   }
 
+  a[href^="http"] {
+    text-decoration: var(--color-secondary) wavy underline;
+  }
+
+  del {
+    background-color: var(--color-primary);
+    opacity: 0.5;
+    transition:
+      opacity 500ms cubic-bezier(1,.04,.68,1.37),
+      background-color 500ms cubic-bezier(1,.04,.68,1.37);
+
+    a {
+      color: var(--color-bg);
+      background-color: var(--color-primary);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-bg);
+        background-color: var(--color-primary);
+        cursor: not-allowed;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+      opacity: 1;
+    }
+  }
+
   .link {
     user-select: none;
     padding: 0;
