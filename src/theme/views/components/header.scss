@@ -68,7 +68,11 @@
   text-align: center;
 
   &.button--light {
-    text-decoration: underline;
+    text-decoration: var(--internal-link-underline);
+  }
+
+  @include hover-focus {
+    text-decoration: none;
   }
 
   @media print {

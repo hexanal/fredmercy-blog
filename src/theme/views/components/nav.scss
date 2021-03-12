@@ -36,12 +36,10 @@
   font-size: 1rem;
   color: var(--color-primary);
   background-color: transparent;
-  text-decoration: underline;
 
   @include hover-focus {
     color: var(--color-bg);
     background-color: var(--color-secondary);
-    text-decoration: none;
   }
 
   &:after {

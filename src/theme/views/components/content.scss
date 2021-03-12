@@ -109,7 +109,7 @@
   }
 
   a[href^="http"] {
-    text-decoration: var(--color-secondary) wavy underline;
+    text-decoration: var(--external-link-underline);
   }
 
   del {
@@ -149,7 +149,7 @@
     border: 0;
     outline: none;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: var(--internal-link-underline);
 
     @include hover-focus {
       color: var(--color-bg);

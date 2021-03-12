@@ -7,6 +7,9 @@
   --color-subdued: #65b25e; // Bud Green
   --color-extra: #ffdd21; // Banana Yellow
 
+  --internal-link-underline: var(--color-secondary) wavy underline;
+  --external-link-underline: var(--color-subdued) wavy underline;
+
   --font: 'Fantasque Sans Mono', Courier, monospace;
 }
 
