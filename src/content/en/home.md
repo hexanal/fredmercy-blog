@@ -11,9 +11,9 @@ i18n:
 
 I like to build stuff, mostly websites like this one. This is my personal website.
 
-These days, I work as a developer at
-<a href="https://cossette.com" target="_blank" rel="noopener noreferrer">Cossette</a>, in beautiful <a href="https://www.openstreetmap.org/#map=19/45.49977/-73.57726&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.\
-You can also check out my [resume](/resume) and the [about](/about) page.
+These days, I'm working on my little projects while enjoying life in beautiful <a href="https://www.openstreetmap.org/#map=19/45.49977/-73.57726&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.
+
+If you're looking for a frontend developer, I'm currently available for freelance work. You can also check out my [resume](/resume) and the [about](/about) page.
 
 ### latest blog post
 
@@ -25,4 +25,4 @@ You can also check out my [resume](/resume) and the [about](/about) page.
 - [ramblings](/ramblings)
 - [bookmarks](/bookmarks)
 - <button title="Show the “help & options” panel" class="link" type="button" aria-label="Toggle help" data-component="emit" data-event="SHOW_BOX_HELP">help / site settings</button>
-- [french language](/fr)
+- [visiter le site français](/fr)
