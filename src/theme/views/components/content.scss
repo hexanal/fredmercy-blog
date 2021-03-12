@@ -173,4 +173,31 @@
     background-color: var(--color-primary);
     border: 2px solid var(--color-primary);
   }
+
+  figure {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    p {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  figcaption {
+    position: relative;
+    z-index: 1;
+    padding-left: 1.5rem;
+    font-size: 0.8rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0rem;
+      top: -2.25rem;
+      width: 1rem;
+      height: 3rem;
+      border-left: 2px solid var(--color-secondary);
+      border-bottom: 2px solid var(--color-secondary);
+    }
+  }
 }
