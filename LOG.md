@@ -1,6 +1,5 @@
 ## TODO
 
-* Add: js-free version of the website
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
 * Fix: allow "autoloaded" components to be hooked to a DOM element?
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
@@ -10,15 +9,16 @@
 
 ## put your thinking cap on
 
-* ability to stamp out HTML components from handlebarsjs
-* have something that just juggles all those references
-* then inject data into that shit
-* rebuild a "tree" of dependencies
-* HTML into HTML + swell it up with data + data the lifeblood of a website
-* the sap, running through the tree
-* **sève**
+* how to handle media?
+    - can't have those on git...
+    - can't manually handle all of that?
+    - a job for a "media library" of some sort...
 
-* spreadsheets, bro
+* plopJS -> https://github.com/plopjs/plop
+    - or plop-inspired thing to quickly create new posts, pages, extract stuff, etc.
+    - what use, though?
+
+* spreadsheets, bro!
 
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
@@ -30,7 +30,6 @@
 
 * issue with handlebars -> can't put comments in the source that won't end up in the "compiled" HTML
 
-* plopJS -> https://github.com/plopjs/plop
 * browsersync, or something similar to reload on changes; something easy, fast, lightweight, not full of BULLSHIT
 * PWA:
     - [https://web.dev/codelab-make-installable/](https://web.dev/codelab-make-installable/)
@@ -44,13 +43,17 @@
 ## "dynamic" linking?
 
 - shit like: [a link whose URL might change in the future](${url:the-page-id-slug-or-whatever})
-    - or: have something that generates a unique id for a permalink? (based on what? `id`?)
+    - or: have something that generates a unique id for a permalink? (based on what? `id`?) -> perma-id ?
+        - or just a friggin permalink, straight up
     - might be a combination of both things
     - a job for a `token.js` ZORG plugin :)
         - gotta find a new name, seriously
+    - or... stick ALL THE LINKS, EVER inside a database, or JSON object?
+        - like, bro, `links.json`? maybe not
 - other
     - [go to the French version!](${lang:fr})
     - [go to the Spanish version!](${lang:es})
+- how to handle redirects?
 
 ## markdown
 
