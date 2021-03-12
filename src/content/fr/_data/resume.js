@@ -5,7 +5,7 @@ module.exports = [
     items: [
       {
         id: "cossette",
-        title: "oct. 2019 — présent",
+        title: "oct. 2019 — fév. 2021",
         company: "Cossette",
         location: "Montréal, Canada",
         url: "https://cossette.com",

@@ -1,11 +1,19 @@
 ## TODO
 
+* a website footer
+    - stick the language switcher in there
+    - stick the help button in there too
+        - transform main menu to inlined for desktop viewports
+        - that way: no js -> use desktop version, that's it
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
+    - fewer themes
+    - better themes
 * Fix: allow "autoloaded" components to be hooked to a DOM element?
     - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
     - lifecycle is a good feature to have, I think...
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
 * something to initalize the db with tables and shit
+    - when resetting the website (it'll happen...)
 
 ## put your thinking cap on
 
@@ -43,6 +51,7 @@
 ## "dynamic" linking?
 
 - shit like: [a link whose URL might change in the future](${url:the-page-id-slug-or-whatever})
+    - could a zorg plugin output a JSON with all the "routes", and then... you know? no, I don't know...
     - or: have something that generates a unique id for a permalink? (based on what? `id`?) -> perma-id ?
         - or just a friggin permalink, straight up
     - might be a combination of both things
@@ -93,17 +102,6 @@ Yo!
     * minimal JSON
     * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
     * could even all be in HandlebarsJS bro (see: `## markdown`)
-
-* taking the time, taking it slow to create something
-    - makes it sturdier, it weathers the storm
-    - can't crumble something that's already stripped down!
-    - build as you go, document your way, exploratory building
-    - the thoughtful act
-    - this is why products that help to develop faster, and _iterate_, and deploy faster, etc. are missing the point **I'm** trying to make
-        - building is an art whose value is great but it doesn't seek _value for value's sake_
-        - it shouldn't be about trying to get to a product sooner, otherwise it's just a race to the bottom, you know?
-        - keep adding new stuff! it'll be alright!
-        - it should be about taking the time and the care to deliver something special: something that simply works.
 
 * “next-gen” web buzzwords
     - html imports
@@ -245,9 +243,9 @@ That's the power of the web. The New Web Era.
 
 ### idea 2
 
-- `/doohickey/main.js`
+- `/doohickey/main.js` or `/doohickey/index.js` ?
 - `/doohickey/config.js`
-- `/doohickey/html/html.js`
+- `/doohickey/html/index.js`
     - `/doohickey/html/processors/post-meta.js`
     - `/doohickey/html/processors/posts-by-months.js`
 - `/doohickey/javascript/javascript.js`
