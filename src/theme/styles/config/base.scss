@@ -82,7 +82,7 @@ img {
 
 a {
   color: var(--color-primary);
-  text-decoration: var(--internal-link-underline);
+  text-decoration: underline;
   outline: none;
   user-select: none;
 

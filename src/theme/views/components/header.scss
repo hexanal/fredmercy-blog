@@ -68,7 +68,7 @@
   text-align: center;
 
   &.button--light {
-    text-decoration: var(--internal-link-underline);
+    text-decoration: underline;
   }
 
   @include hover-focus {

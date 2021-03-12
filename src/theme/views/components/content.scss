@@ -109,7 +109,12 @@
   }
 
   a[href^="http"] {
-    text-decoration: var(--external-link-underline);
+    &::after {
+      content: ' ✧';
+      // TODO?
+      // content: ' ✦';
+      // content: ' ❋';
+    }
   }
 
   del {
@@ -149,7 +154,7 @@
     border: 0;
     outline: none;
     cursor: pointer;
-    text-decoration: var(--internal-link-underline);
+    text-decoration: underline;
 
     @include hover-focus {
       color: var(--color-bg);
