@@ -1,0 +1,12 @@
+{{#> layouts/page}}
+
+{{#if meta.isHome }}
+{{else}}
+  {{> components/breadcrumbs }}
+{{/if}}
+
+<div class="page page--{{meta.id}}" data-page-id="{{meta.id}}">
+  {{> components/help type="page"}}
+</div>
+
+{{/layouts/page}}

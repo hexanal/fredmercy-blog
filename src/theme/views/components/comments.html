@@ -1,49 +1,47 @@
-{{#> components/box id="comments" title=t.comments.modalTitle shortcut="c" }}
-  <div
-    class="comments"
-    data-component="comments"
-    data-url="{{ meta.url }}"
-  >
-    <div class="comments__title">
-      <em>url:</em> <small>{{ meta.url }}</small>
-    </div>
-
-    <div
-      class="comments__convo"
-      data-ui="convo"
-    >
-    </div>
-
-    <form
-      class="comments__write"
-      data-control="comment-box"
-    >
-      <label class="visually-hidden" for="author">
-        {{ t.comments.nicknameLabel }}
-      </label>
-      <input
-        class="comments__input comments__author"
-        data-control="author"
-        type="text"
-        id="author"
-        name="author"
-        maxlength="32"
-        placeholder="{{ t.comments.nicknamePlaceholder }}"
-      >
-
-      <label class="visually-hidden" for="message">
-        {{ t.comments.messageLabel }}
-      </label>
-      <input
-        class="comments__input comments__message"
-        data-control="message"
-        type="text"
-        id="content"
-        name="content"
-        maxlength="1000"
-        placeholder="{{ t.comments.messagePlaceholder }}"
-        required
-      >
-    </form>
+<div
+  class="comments"
+  data-component="comments"
+  data-url="{{ meta.url }}"
+>
+  <div class="comments__title">
+    <em>url:</em> <small>{{ meta.url }}</small>
   </div>
-{{/components/box }}
+
+  <div
+    class="comments__convo"
+    data-ui="convo"
+  >
+  </div>
+
+  <form
+    class="comments__write"
+    data-control="comment-box"
+  >
+    <label class="visually-hidden" for="author">
+      {{ t.comments.nicknameLabel }}
+    </label>
+    <input
+      class="comments__input comments__author"
+      data-control="author"
+      type="text"
+      id="author"
+      name="author"
+      maxlength="32"
+      placeholder="{{ t.comments.nicknamePlaceholder }}"
+    >
+
+    <label class="visually-hidden" for="message">
+      {{ t.comments.messageLabel }}
+    </label>
+    <input
+      class="comments__input comments__message"
+      data-control="message"
+      type="text"
+      id="content"
+      name="content"
+      maxlength="1000"
+      placeholder="{{ t.comments.messagePlaceholder }}"
+      required
+    >
+  </form>
+</div>

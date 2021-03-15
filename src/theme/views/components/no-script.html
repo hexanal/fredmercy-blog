@@ -36,28 +36,14 @@
   display: none;
 }
 
-/* Altering main nav */
+[data-box-id="menu"] {
+  display: none;
+}
+.button.header__menu-btn {
+  display: none;
+}
 .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
-  padding: 0;
-}
-.nav__item + .nav__item {
-  margin-top: 0;
-}
-.nav__item {
-  margin-left: 2rem;
-}
-.nav hr {
-  flex-shrink: 0;
-  width: 100%;
-}
-@media (min-width: 50rem) {
-  [data-box-id="menu"] .box__frame {
-    width: auto;
-  }
+  display: block !important;
 }
 
 /* Removing comments and settings altogether as they currently only work when Javascript is enabled */

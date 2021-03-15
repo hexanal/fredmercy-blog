@@ -1,0 +1,34 @@
+<footer class="footer no-print">
+  ~~
+  <nav class="footer__nav">
+    <a
+      href="discuss"
+      title="{{ t.commentsBtnTitle }}"
+      id="show-comments-btn"
+      data-component="emit"
+      data-event="SHOW_BOX_COMMENTS"
+      data-no-transition
+    ><span id="comments-label"></span><small id="comments-count"></small></a>
+
+    <dot class="color-secondary">✷</dot>
+
+    <a
+      href="/{{ t.help }}"
+      title="{{ t.helpBtnTitle }}"
+      data-component="emit"
+      data-event="SHOW_BOX_HELP"
+      data-no-transition
+    >{{ t.help }}</a>
+
+    {{#if meta.i18n}}
+      {{#each meta.i18n as |url lang|}}
+      <dot class="color-secondary">✷</dot>
+      <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+      {{/each}}
+    {{/if}}
+  </nav>
+
+  <div class="footer__nav footer__extra">
+    ({{ t en="follow me on:" fr="suivez-moi sur :" }} {{> components/nav type="footer" items=footerNav}})
+  </div>
+</footer>

@@ -1,0 +1,17 @@
+.footer {
+  margin: 2.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer__nav {
+  margin: 1rem 0;
+}
+
+.footer__extra {
+  opacity: 0.75;
+  font-style: italic;
+
+  .dot, dot {
+    font-style: normal;
+  }
+}

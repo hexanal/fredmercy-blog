@@ -1,33 +1,22 @@
-{{#> components/box id="menu" shortcut="m" }}
-<div class="nav" role="navigation">
-  {{#each nav }}
+<div class="nav nav--{{ type }}" role="navigation">
+  {{#each this.items }}
     {{#if this.href }}
-      <div class="nav__item">
         <a
-          class="nav__link nav__link--{{ this.id }}"
           href="{{ this.href }}"
           {{#each this.attr }}
             {{#each this }}
               {{@key}}="{{this}}"
             {{/each}}
           {{/each}}
-        >
-          {{ this.label }}
-        </a>
-      </div>
+        >{{ this.label }}</a>
+
+        {{#if @last }}
+        {{else }}
+        <dot class="color-secondary">✷</dot>
+        {{/if}}
+
     {{else}}
-      <hr>
+        <span>~~</span>
     {{/if}}
   {{/each}}
-
-  {{#if meta.i18n }}
-  <hr>
-  {{/if}}
-
-  {{#each meta.i18n as |url lang|}}
-  <div class="nav__item">
-    <a class="nav__link nav__link--lang" href="{{ url }}" data-icon="💱">{{ t en="français" fr="english" }}</a>
-  </div>
-  {{/each}}
 </div>
-{{/components/box }}

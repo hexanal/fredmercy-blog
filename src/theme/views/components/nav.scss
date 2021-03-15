@@ -1,81 +1,23 @@
 [data-box-id="menu"] {
-  .box__frame {
-    height: auto;
-
-    @media (min-width: $mq-medium) {
-      width: 16rem;
-      left: auto;
-      right: 0;
-    }
+  .nav {
+    padding: 1rem;
   }
 }
 
 .nav {
-  padding: 1rem;
-
-  hr {
-    margin: 1rem 0;
-  }
-}
-
-.nav__item {
-  display: block;
+  font-size: 0.9rem;
   text-align: right;
+}
 
-  + .nav__item {
-    margin-top: 0.75em;
+.nav--main {
+  display: none;
+
+  @media (min-width: $mq-small) {
+    display: block;
   }
 }
 
-.nav__link {
-  display: inline-block;
-  position: relative;
-  padding: 0;
-  padding-right: 1.75em;
-  font-family: var(--font);
-  font-size: 1rem;
-  color: var(--color-primary);
-  background-color: transparent;
-
-  @include hover-focus {
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
-  }
-
-  &:after {
-    content: attr( data-icon );
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    filter: var(--icon-filter);
-  }
+.nav--footer {
+  display: inline;
+  text-align: left;
 }
-
-.nav__link--bandcamp {
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 1.15em;
-    height: 1.15em;
-    background-image: url('/assets/images/bandcamp.png');
-    background-size: contain;
-  }
-}
-
-// TODO: these are saved
-// .nav__link--demos {
-//   &:after {
-//     content: '🧪';
-//   }
-// }
-// .nav__link--sounds {
-//   &:after {
-//     content: '🔇';
-//   }
-//   &.state-sounds-enabled {
-//     &:after {
-//       content: '🔈';
-//     }
-//   }
-// }

@@ -28,7 +28,7 @@ export default function({ element, ui, control, messaging }) {
     ui['frame'].style.opacity = opacity
     ui['bg'].style.opacity = opacity * BG_OPACITY
 
-    ui['wrap'].style.transform = `translateY(${y * 1.5}rem) rotate(${ (1 - shadow) * ROTATE_MULTIPLIER }deg)`
+    ui['wrap'].style.transform = `translateY(${y * 1.5}rem) rotate(${ (1 - animation.shadow.get() ) * ROTATE_MULTIPLIER }deg)`
     ui['wrap'].style.boxShadow = `${ shadow }rem ${ shadow }rem 0 0 var(--color-primary)`
 
     if (ui['title']) { ui['title'].style.transform = `translateY(${y * 0.5}rem)` }

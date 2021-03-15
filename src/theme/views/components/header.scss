@@ -54,14 +54,16 @@
   }
 }
 
-.header__section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 1;
+.header__nav {
+  @media (min-width: $mq-small) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+  }
 }
 
-.button.header__button {
+.button.header__menu-btn {
   display: block;
   min-width: 2rem;
   margin-left: 0.5rem;
@@ -73,6 +75,10 @@
 
   @include hover-focus {
     text-decoration: none;
+  }
+
+  @media (min-width: $mq-small) {
+    display: none;
   }
 
   @media print {

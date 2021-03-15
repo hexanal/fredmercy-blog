@@ -10,7 +10,7 @@ export default function({messaging, _exponent}) {
     timeout: 10000,
     debug: false,
 
-    prevent: ({ el }) => 'disableTransition' in el.dataset,
+    prevent: ({ el }) => 'disableTransition' in el.dataset || 'noTransition' in el.dataset,
 
     transitions: [{
       before() {
