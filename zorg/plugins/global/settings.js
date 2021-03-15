@@ -1,3 +1,4 @@
+// FIXME settings in config file?
 const SETTINGS = {
   INTERFACE_ENABLED: true,
   USE_THEMES: true,

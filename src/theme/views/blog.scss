@@ -5,6 +5,7 @@
 
 .blog__month-archive {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .blog__month-posts {
@@ -13,7 +14,7 @@
   list-style: none;
 }
 
-.blog__item {
+.blog__head {
   display: flex;
   align-items: center;
   line-height: 1.6;
@@ -47,6 +48,13 @@
   line-height: 1.1;
   color: var(--color-bg);
   background-color: var(--color-primary);
+}
+
+.blog__preview {
+  // padding: 0 1rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  // border-left: 2px solid var(--color-secondary);
 }
 
 .blog__extra {

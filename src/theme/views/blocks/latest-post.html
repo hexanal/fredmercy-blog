@@ -1,4 +1,10 @@
-<p style="vertical-align: middle;">
-  <a href="{{ latest.meta.url }}">{{ latest.meta.title }}</a>
-  <small class="color-secondary">-> {{ latest.meta.description }}</small>
-</p>
+<div class="latest-post">
+  <p style="vertical-align: middle;">
+    <a href="{{ latest.meta.url }}">{{ latest.meta.title }}</a>
+    <small class="color-secondary">-> {{ latest.meta.description }}</small>
+  </p>
+
+  <div class="content">
+    {{{ latest.excerpt }}}
+  </div>
+</div>

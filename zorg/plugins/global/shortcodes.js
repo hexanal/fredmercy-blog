@@ -1,9 +1,14 @@
-// const fs = require('fs')
+const fs = require('fs')
+const frontMatter = require('front-matter')
 const marked = require('marked')
 const templater = require('../../bin/templater')
 const { debugLog } = require('../../bin/utils')
 
-const useBlockWithData = function(blockId, data) {
+const useBlockWithData = function(blockId, data, extra) {
+  // FIXME settings up the templating engine should be "another concern"
+  // it should be possible to swap out the templating engine easily, and use whatever?
+  templater.usePartials('./src/theme/views')
+
   const component = `{{>blocks/${blockId} data }}`;
   const template = templater.compile( component )
   const templateWithData = template({ data })
@@ -15,11 +20,19 @@ const useBlockWithData = function(blockId, data) {
   return templateWithData
 }
 
-const shortcodes = [
+const SHORTCODES = [
   {
     tag: '*',
     processor: function({ props, item, contentTypes }) {
-      return useBlockWithData('side-note', { content: marked( props ) })
+      return useBlockWithData('side-note', { ...item, content: marked( props ) })
+    }
+  },
+  {
+    tag: 'latest-post',
+    processor: function({ props, item, contentTypes }) {
+      const latest = { ...contentTypes.post[0] }
+      latest.excerpt = marked( latest.excerpt )
+      return useBlockWithData('latest-post', { ...item, latest })
     }
   },
   {
@@ -29,10 +42,12 @@ const shortcodes = [
     }
   },
   {
-    tag: 'latest-post',
-    processor: function({ props, item, contentTypes }) {
-      if ( !contentTypes.post ) return '' // no latest post
-      return useBlockWithData('latest-post', { latest: contentTypes.post[0] })
+    tag: 'include',
+    processor: function({props, contentTypes}) {
+      const file = fs.readFileSync(`./${props}`, 'utf8')
+      const { body } = frontMatter( file.toString() )
+
+      return getProcessedContent( body, contentTypes )
     }
   },
   {
@@ -61,43 +76,47 @@ const shortcodes = [
 ]
 
 const applyShortcodes = function( item, contentTypes ) {
-  const content = shortcodes.reduce( (accContent, shortcode) => {
-    const tag = `[${shortcode.tag}](`
-    const firstSplit = item.content.split( tag )
-    const exploded = firstSplit.map( part => part.split(')')[0] )
-
-    exploded.shift()
-
-    if ( !exploded.length ) return accContent // no shortcode
-
-    const content = exploded.reduce( (acc, props) => {
-      const replaceString = `${tag}${props})`
-      const module = shortcode.processor({
-        props: props.trim(),
-        item,
-        contentTypes,
-      })
-        .replace('\n', '')
-        .replace('\r', '')
-
-      debugLog(`processing shortcode “${shortcode.tag}” (in page: “${item.meta.title}”)`)
-
-      return acc.replace(replaceString, module)
-    }, accContent)
-
-    return content
-  }, item.content)
+  if (!item.body) return item
 
   return {
     ...item,
-    content
+    body: getProcessedContent( item.body, contentTypes )
   }
+}
+
+const getProcessedContent = function( content, contentTypes ) {
+  return SHORTCODES.reduce( (accContent, shortcode) => {
+    const tag = `[${shortcode.tag}](`
+    const firstSplit = content.split( tag )
+    const splits = firstSplit.map( part => part.split(')')[0] )
+
+    splits.shift()
+
+    if ( !splits.length ) return accContent // no shortcode found
+
+    return splits.reduce( (acc, props) => {
+      const replaceString = `${tag}${props})`
+      const shortcoded = shortcode.processor({
+        props: props.trim(),
+        contentTypes,
+      })
+
+      if (!shortcoded) return acc
+
+      const module = shortcoded
+        .replace('\n', '')
+        .replace('\r', '')
+
+      debugLog(`processing shortcode “${shortcode.tag}”`)
+
+      return acc.replace(replaceString, module)
+    }, accContent)
+  }, content)
 }
 
 const addShortcodes = function( contentTypes ) {
   const withShortcodes = {}
   const types = Object.keys( contentTypes )
-  templater.usePartials('./src/theme/views') // FIXME have these paths stored in some global object? config? dunno
 
   types.map( type => {
     withShortcodes[type] = contentTypes[type].map( item => {

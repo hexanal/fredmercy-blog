@@ -16,6 +16,11 @@ const registerPartialHelper = function() {
   })
 
   Handlebars.registerHelper('t', function (template, context, opts) {
+    if( !template.data.root.meta ) {
+      console.error('No `meta` found! huh?!')
+      return ''
+    }
+
     const { lang } = template.data.root.meta
 
     if (!lang) {

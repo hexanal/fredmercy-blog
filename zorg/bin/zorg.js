@@ -28,7 +28,7 @@ const getBasicMeta = function( contentFiles, lang ) {
         ...defaultAttributes,
         ...attributes
       },
-      content: body
+      body
     }
   })
 }

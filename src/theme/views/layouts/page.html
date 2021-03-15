@@ -21,14 +21,24 @@
   <div class="page__wrapper" data-barba="wrapper">
     <div class="page__container" data-barba="container" data-lang="{{ meta.lang }}">
       {{> components/header }}
-      {{> components/nav }}
 
       <div class="page__contents" data-barba="inside">
         {{> @partial-block }}
+
+        {{> components/footer }}
       </div>
 
-      {{> components/comments}}
-      {{> components/help }}
+      {{#> components/box id="comments" title=t.comments.modalTitle shortcut="c" }}
+        {{> components/comments}}
+      {{/components/box}}
+
+      {{#> components/box id="help" title=t.helpWindow.boxTitle shortcut="?" }}
+        {{> components/help type="box"}}
+      {{/components/box}}
+
+      {{#> components/box id="menu" shortcut="m" }}
+        {{> components/nav type="box" items=nav}}
+      {{/components/box }}
     </div>
   </div>
 

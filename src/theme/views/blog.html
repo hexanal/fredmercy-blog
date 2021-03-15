@@ -20,31 +20,43 @@
     <ul class="blog__month-posts">
     {{#each entries}}
       <li class="blog__item">
-        <div class="blog__meta">
-          <span class="blog__date">
-            {{ this.meta.month }}/{{ this.meta.day }}
-          </span>
+        <div class="blog__head">
+          <div class="blog__meta">
+            <span class="blog__date">
+              {{ this.meta.month }}/{{ this.meta.day }}
+            </span>
+          </div>
+
+          {{#if this.meta.title}}
+            <div class="blog__title">
+              <a
+                class="button"
+                href="{{ this.meta.url }}"
+                data-js="entry"
+              >
+                {{this.meta.title}}
+              </a>
+              <small>{{this.meta.description}}</small>
+            </div>
+          {{else}}
+            missing title...
+          {{/if}}
         </div>
 
-        {{#if this.meta.title}}
-          <div class="blog__title">
-            <a
-              class="button"
-              href="{{ this.meta.url }}"
-              title="{{ this.meta.description }}"
-              data-js="entry"
-            >
-              {{this.meta.title}}
-            </a>
-            <small>{{this.meta.description}}</small>
+        {{#if this.excerpt }}
+          <div class="blog__preview content">
+            {{{ this.excerpt }}}
           </div>
-        {{else}}
-          missing title...
         {{/if}}
       </li>
     {{/each}}
     </ul>
   </div>
+
+  {{#if @last }}
+  {{else}}
+  <p>~~</p>
+  {{/if}}
 
 {{/each}}
 </div>

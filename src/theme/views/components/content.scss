@@ -111,9 +111,8 @@
   a[href^="http"] {
     &::after {
       content: ' ✧';
-      // TODO?
-      // content: ' ✦';
-      // content: ' ❋';
+      font-style: normal;
+      font-weight: normal;
     }
   }
 

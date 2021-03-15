@@ -5,6 +5,8 @@ const zorg = require('../bin/zorg')
 const watcher = require('../bin/watcher')
 const { websites } = require('../config')
 
+// FIXME: hate the fact that it's... linear
+// I want those to be order-agnostic, as much as possible...
 const plugins = [
   require('../plugins/posts/post-meta'),
   require('../plugins/posts/order'),
@@ -13,12 +15,12 @@ const plugins = [
   require('../plugins/pages/page-meta'),
   require('../plugins/pages/relationship'),
   require('../plugins/global/post-index-as-parent'),
-  require('../plugins/global/posts-by-months'),
+  require('../plugins/global/excerpt'),
   require('../plugins/global/shortcodes'),
-  require('../plugins/global/content'),
   require('../plugins/global/extra-data'),
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),
+  require('../plugins/global/posts-by-months'),
   require('../plugins/global/html'),
 ]
 
