@@ -1,22 +1,14 @@
-{{#if meta.isHome }}
-{{else}}
-<div class="breadcrumbs">
-  <a class="breadcrumbs__root" href="{{ meta.root }}">
-    {{ t.breadcrumbsRoot }}
-  </a>
+<div class="breadcrumbs no-print">
+  <a class="breadcrumbs__root" href="{{ meta.root }}">{{ t.breadcrumbsRoot }}</a>
 
   {{#if meta.breadcrumbs }}
     {{#each meta.breadcrumbs }}
-    <span>→</span>
-    <a class="breadcrumbs__node" href="{{ this.meta.url }}">
-      {{ this.meta.title }}
-    </a>
+    <dot class="color-secondary">✷</dot>
+    <a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
     {{/each}}
   {{/if}}
 
-  <span>→</span>
-  <div class="breadcrumbs__leaf">
-    {{ meta.title }}
-  </div>
+  <dot class="color-secondary">✷</dot>
+
+  <span class="breadcrumbs__leaf">{{ meta.title }}</span>
 </div>
-{{/if}}

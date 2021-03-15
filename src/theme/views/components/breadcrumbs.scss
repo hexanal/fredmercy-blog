@@ -1,20 +1,6 @@
 .breadcrumbs {
-  display: flex;
   margin-bottom: 1.5rem;
-
-  span {
-    margin: 0 0.5rem;
-  }
-
-  @media print {
-    display: none;
-  }
-}
-
-.breadcrumbs__node,
-.breadcrumbs__root {
-	font-size: 1em;
-	font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .breadcrumbs__leaf {
