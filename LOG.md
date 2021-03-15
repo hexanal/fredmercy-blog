@@ -1,5 +1,48 @@
 ## TODO
 
+* debug the "root" object, with all the data
+    - have a bird's eye view of the content / data / wirings
+* should know to give specific day/time for _rendez-vous_... give it away
+* should templating (UI) be close to the content?
+    - goes against the separation of concerns; but... only slightly?
+* redesign idea
+    - center everything
+* a social media based on an interface that you can
+    - customize as you wish
+    - publish, easily, with a _simple_, _intuitive_ UI
+    - any content
+    - and
+    - connect with you friends with a chat service
+    - that
+    - allow you to chat with other people as long as you are visiting this page
+    - they see your page when you chat on your page
+    - they see their page when you chat on their page
+    - easy
+    - and you can do business pages on their
+    - how to counter?
+    - we **flag** the user that might be _ads_;
+    - so it's social _restrictive by default_ philosophy of social media
+    - supposedly private, but not at all; public by default
+    - but ability to **mute** coming from another website
+* I've got to try TailwindCSS, man!
+* I've got all this fucking personal data...
+    - what the fuck should I do with all this _stuff_?!?!
+    - considering the weigh as... actual weigh of data in grams
+        - something to consider i mean... haha
+    - dragging along all this fucking data, man
+    - get rid of it
+    - burn it all
+    - _datadafe_
+    - all the digital crumbs I'm carrying, I don't want it
+    - I have to inseminate the web
+    - with my fucking data, so _they_ have to handle it for me... forever
+    - **hahahahah**
+    - my data will live forever, because I'll be forever transported, from one server to another
+    - floating
+    - just transmitting my data all around the globe
+    - servers in **China**, **Kazakhstan**, **Croatia**, anywhere!
+    - just fucking data
+
 * a website footer
     - stick the language switcher in there
     - stick the help button in there too
@@ -14,6 +57,9 @@
     - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
 * something to initalize the db with tables and shit
     - when resetting the website (it'll happen...)
+* with the `markdown include` thing I've just implemented, try to figure something out...
+    - zorg-process the file?
+    - allow injecting some styles, dynamically? per-page?
 
 ## put your thinking cap on
 
@@ -63,18 +109,6 @@
     - [go to the French version!](${lang:fr})
     - [go to the Spanish version!](${lang:es})
 - how to handle redirects?
-
-## markdown
-
-```hbs
-{{#markdown }}
-
-# Blah blah!
-
-Yo!
-
-{{/markdown}}
-```
 
 ## future...
 
@@ -257,3 +291,5 @@ or:
 - `/doohickey/scripts/**` -> templating, js, css, assets
 - `/doohickey/processors/**` -> data processor units
 - `/doohickey/utils/**` -> utilities
+
+[include](./logs/markdown.md)

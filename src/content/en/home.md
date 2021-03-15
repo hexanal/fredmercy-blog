@@ -15,10 +15,6 @@ Right now, I'm working on a few personal projects while enjoying life in beautif
 
 If you're looking for a frontend developer, I'm currently available for freelance work. You can check out my [resume](/resume).
 
-### latest blog post
-
-[latest-post]()
-
 ### a few links
 
 - [about](/about) <small class="color-secondary">-> about me & this website</small>
