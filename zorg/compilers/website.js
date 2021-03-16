@@ -20,6 +20,7 @@ const plugins = [
   require('../plugins/global/extra-data'),
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),
+  require('../plugins/global/aliases'),
   require('../plugins/global/posts-by-months'),
   require('../plugins/global/html'),
 ]
