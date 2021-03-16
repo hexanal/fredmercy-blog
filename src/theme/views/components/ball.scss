@@ -15,10 +15,10 @@
     display: none;
   }
   @media (orientation: landscape) {
-    --ball-size: 220vw;
+    --ball-size: 200vw;
   }
   @media (orientation: portrait) {
-    --ball-size: 220vh;
+    --ball-size: 200vh;
   }
 
   @media (min-width: $mq-large) {
