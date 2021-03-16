@@ -79,7 +79,8 @@ export default function({element, ui, control, messaging }) {
     ui['convo'].innerHTML = '' // FLUSH!!
 
     const commentsCount = comments.length ? `(${comments.length})` : ''
-    document.getElementById('comments-count').textContent = commentsCount
+    document.querySelectorAll('[data-comments-count]')
+      .forEach( count => count.textContent = commentsCount )
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
 

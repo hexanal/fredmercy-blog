@@ -28,4 +28,14 @@
       ↓ {{ t.older }}
     </a>
   {{/if}}
+
+  <a
+    class="post-nav__link post-nav__discuss button"
+    href="discuss"
+    title="{{ t.commentsBtnTitle }}"
+    id="show-comments-btn"
+    data-component="emit"
+    data-event="SHOW_BOX_COMMENTS"
+    data-no-transition
+  >discussion<span data-comments-count></span></a>
 </div>
