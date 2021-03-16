@@ -16,7 +16,7 @@ export default function({element, messaging}) {
 
   const initThemes = function() {
     element.querySelectorAll('option').forEach( opt => availableThemes.push( opt.value ) )
-    element.addEventListener('change', e => useTheme( e.target.value ) )
+    element.addEventListener('change', e => messaging.dispatch({id:'SET_THEME', payload: e.target.value }) )
     useTheme( Storage.get('selected_theme') ) // manage "saved" theme, in localstorage
   }
 

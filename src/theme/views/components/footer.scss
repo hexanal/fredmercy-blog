@@ -15,3 +15,11 @@
     font-style: normal;
   }
 }
+
+.footer__select {
+  padding: 0;
+  border: none;
+  color: var(--color-primary);
+  text-transform: lowercase;
+  text-decoration: underline;
+}
