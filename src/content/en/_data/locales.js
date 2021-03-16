@@ -41,7 +41,7 @@ module.exports = {
   },
 
   comments: {
-    modalTitle: "Comments",
+    modalTitle: "discussion",
     nicknameLabel: "nickname",
     messageLabel: "message",
     nicknamePlaceholder: "your display name",

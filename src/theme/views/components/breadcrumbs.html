@@ -3,12 +3,12 @@
 
   {{#if meta.breadcrumbs }}
     {{#each meta.breadcrumbs }}
-    <dot class="color-secondary">✷</dot>
+    <dot class="color-secondary"><-</dot>
     <a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
     {{/each}}
   {{/if}}
 
-  <dot class="color-secondary">✷</dot>
+  <dot class="color-secondary"><-</dot>
 
   <span class="breadcrumbs__leaf">{{ meta.title }}</span>
 </div>

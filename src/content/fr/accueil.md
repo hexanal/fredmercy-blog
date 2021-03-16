@@ -20,5 +20,5 @@ Si vous cherchez un dév frontend, je suis disponible pour travailler à la pige
 - [à propos](/fr/a-propos) <small class="color-secondary">-> à propos de moi et de ce site</small>
 - [blogue](/fr/blogue) <small class="color-secondary">-> journal public avec mes idées sur l'existence</small>
 - [signets](/fr/signets) <small class="color-secondary">-> liste de liens que je partage avec vous</small>
-- <button title="Afficher l'aide du site" class="link" type="button" data-component="emit" data-event="SHOW_BOX_HELP">aide / paramètres du site</button>
+- <a href="/aide" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>aide / paramètres</a> <small class="color-secondary">-> thèmes, accessibilité, politique du site...</small>
 - <a href="/" lang="en"><i>visit English site</i></a>

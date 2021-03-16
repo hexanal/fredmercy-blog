@@ -2,7 +2,6 @@
   <div class="help__section">
     <h2 class="heading-alt">
       {{ t.helpWindow.settings.title }}
-      {{ type }}
     </h2>
 
     <ul class="help__list">
@@ -101,7 +100,7 @@
 
   <div class="help__section help__section--policy">
     <h2 class="heading-alt">
-      {{ t en="website policy" fr="politique du site" }}
+      {{ t en="website terms" fr="politique du site" }}
     </h2>
 
     <ul class="help__list">
@@ -110,9 +109,9 @@
           🌼
         </div>
         <div class="content">
-          {{ t
-            en="As webmaster, I expect the comments left on this website to be civil. Any content that I deem offensive will be moderated."
-            fr="En tant que de webmestre, je m'attends à ce que les commentaires laissés sur le site soient raisonnables. Tout contenu que je juge 'dérangeant' sera modéré."
+          {{ t-markdown
+            en="**Moderation:** As webmaster, I expect the comments left on this website to be civil. Any content that I deem offensive will be moderated."
+            fr="**Modération :** En tant que de webmestre, je m'attends à ce que les commentaires laissés sur le site soient raisonnables. Tout contenu que je juge 'dérangeant' sera modéré."
           }}
         </div>
       </li>
@@ -121,22 +120,12 @@
           💌
         </div>
         <div class="content">
-          {{ t
-            en="Don't expect your comments to be kept online forever. Think of them as scribbled notes you leave on a page. If you write something that needs to be kept online forever: write it on your blog, then link it here! It's easy!"
-            fr="Ne vous attendez pas à ce que les commentaires soient gardés en ligne pour toujours. Considérez-les comme des petites notes écrites laissées sur une page. Sinon, créez un lien vers ce site depuis votre site ou votre plateforme sociale préférée!"
+          {{ t-markdown
+            en="**Your data:** Don't expect your comments to be kept online forever. Think of them as scribbled notes you leave on a page. If you write something that needs to be kept online forever: write it on your blog, then link it here! It's easy!"
+            fr="**Vos données :** Ne vous attendez pas à ce que les commentaires soient gardés en ligne pour toujours. Considérez-les comme des petites notes écrites laissées sur une page. Sinon, créez un lien vers ce site depuis votre site ou votre plateforme sociale préférée!"
           }}
         </div>
       </li>
-    </ul>
-  </div>
-
-  <div class="help__section help__section--privacy">
-    <h2 class="heading-alt">
-      {{ t.privacy }}
-    </h2>
-
-
-    <ul class="help__list">
       <li class="help__item">
         <div class="help__icon">
           🥠
@@ -144,7 +133,7 @@
         <div class="content">
           {{ t-markdown
             en="
-This is how you will leave data on my website (data that I can identify as being *yours*):
+**Privacy:** this is how you will leave data on my website (data that I can identify as being *yours*):
 
 - posting a comment with your real name;
 - ...
@@ -152,7 +141,7 @@ This is how you will leave data on my website (data that I can identify as being
             "
 
             fr="
-Voici comment vous pourriez laisser des données sur mon site (données que je pourrais associer comme étant *les vôtres*) :
+**Vie privée :** voici comment vous pourriez laisser des données sur mon site (données que je pourrais associer comme étant *les vôtres*) :
 
 - en laissant un commentaire avec votre vrai nom;
 - ...
@@ -171,7 +160,7 @@ Voici comment vous pourriez laisser des données sur mon site (données que je p
         🐛
       </i>
       <div class="content">
-        {{t en="Found a bug? Help me fix it by submitting a" fr="Un problème avec le site? Aidez-moi à le corriger en soumettant un" }}
+        {{t en="Found a bug? <br> Help me fix it by submitting a" fr="Un problème avec le site? <br> Aidez-moi à le corriger en soumettant un" }}
         <em>
           <a
             href="https://github.com/hexanal/fredmercy-blog/issues"

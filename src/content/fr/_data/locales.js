@@ -41,7 +41,7 @@ module.exports = {
   },
 
   comments: {
-    modalTitle: "Commentaires",
+    modalTitle: "discussion",
     nicknameLabel: "pseudo",
     messageLabel: "message",
     nicknamePlaceholder: "pseudonyme / nom",

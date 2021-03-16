@@ -21,5 +21,5 @@ If you're looking for a frontend developer, I'm currently available for freelanc
 - [blog](/blog) <small class="color-secondary">-> a public journal with my thoughts about existence</small>
 - [ramblings](/ramblings) <small class="color-secondary">-> longer essays about various topics</small>
 - [bookmarks](/bookmarks) <small class="color-secondary">-> a _semi-curated_ list of links I wish to share</small>
-- <button title="Show the “help & options” panel" class="link" type="button" aria-label="Toggle help" data-component="emit" data-event="SHOW_BOX_HELP">help / site settings</button>
+- <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>help / settings</a> <small class="color-secondary">-> color themes, accessibility, privacy policy...</small>
 - <a href="/fr" lang="fr"><i>visiter le site français</i></a>

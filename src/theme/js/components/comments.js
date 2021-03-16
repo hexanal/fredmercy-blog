@@ -78,12 +78,7 @@ export default function({element, ui, control, messaging }) {
 
     ui['convo'].innerHTML = '' // FLUSH!!
 
-    // that's the header button
-    const commentsLabel = comments.length
-      ? t({en: 'comments', fr: 'commentaires'})
-      : t({en: 'comment!', fr: 'commenter!'})
     const commentsCount = comments.length ? `(${comments.length})` : ''
-    document.getElementById('comments-label').textContent = commentsLabel
     document.getElementById('comments-count').textContent = commentsCount
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')

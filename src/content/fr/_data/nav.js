@@ -1,13 +1,5 @@
 module.exports = [
   {
-    id: "home",
-    href: "/fr",
-    label: "accueil",
-    attr: [
-      { "data-icon": "🌀" }
-    ]
-  },
-  {
     id: "blog",
     href: "/fr/blogue",
     label: "blogue",
