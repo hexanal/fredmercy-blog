@@ -21,22 +21,17 @@
     {{#each entries}}
       <li class="blog__item">
         <div class="blog__head">
-          <div class="blog__meta">
-            <span class="blog__date">
-              {{ this.meta.month }}/{{ this.meta.day }}
-            </span>
-          </div>
+          <small class="blog__date">
+            {{ this.meta.month }}/{{ this.meta.day }}
+          </small>
 
           {{#if this.meta.title}}
             <div class="blog__title">
               <a
-                class="button"
                 href="{{ this.meta.url }}"
                 data-js="entry"
-              >
-                {{this.meta.title}}
-              </a>
-              <small>{{this.meta.description}}</small>
+              >{{this.meta.title}}</a>
+              <small class="blog__description">✷ {{this.meta.description}}</small>
             </div>
           {{else}}
             missing title...

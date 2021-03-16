@@ -3,7 +3,9 @@
 }
 
 .help__section {
-  padding: 0 0 1.5rem;
+  + .help__section {
+    margin-top: 3rem;
+  }
 }
 
 .help__separator {
