@@ -18,3 +18,11 @@ In terms of stuff I could share with y'all, here are the news:
 Today's entry wasn't so bad, eh? Short and sweet.
 
 🙏 Have a great day, guys!
+
+`2:59pm:` Taking it easy these days, mate!
+
+I've been thinking... man, what I'm building feels like a retrofuturist version of a website. Like, mixing the aesthetic of early computer screens, but (at least when viewed on a retina screen laptop) much better looking, in the end; because of how web browsers gained in power. But it should degrade gracefully to adapt to any _environment_.[note: I haven't tried it but I'm kind of curious as to how it looks if I try to access it via my PS4, for example?]
+
+Anyway: my website should be _light_, _legible_, _fun_, _accessible_, _full-featured_, _easy to update_, _easy to manage_, _long-lasting_, _portable_. I'll figure it out.
+
+Guys, I talked too soon: this entry's gonna be epic.
