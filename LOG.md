@@ -1,53 +1,6 @@
 ## TODO
 
-* debug the "root" object, with all the data
-    - have a bird's eye view of the content / data / wirings
-* should know to give specific day/time for _rendez-vous_... give it away
-* should templating (UI) be close to the content?
-    - goes against the separation of concerns; but... only slightly?
-* redesign idea
-    - center everything
-* a social media based on an interface that you can
-    - customize as you wish
-    - publish, easily, with a _simple_, _intuitive_ UI
-    - any content
-    - and
-    - connect with you friends with a chat service
-    - that
-    - allow you to chat with other people as long as you are visiting this page
-    - they see your page when you chat on your page
-    - they see their page when you chat on their page
-    - easy
-    - and you can do business pages on their
-    - how to counter?
-    - we **flag** the user that might be _ads_;
-    - so it's social _restrictive by default_ philosophy of social media
-    - supposedly private, but not at all; public by default
-    - but ability to **mute** coming from another website
-* I've got to try TailwindCSS, man!
-* I've got all this fucking personal data...
-    - what the fuck should I do with all this _stuff_?!?!
-    - considering the weigh as... actual weigh of data in grams
-        - something to consider i mean... haha
-    - dragging along all this fucking data, man
-    - get rid of it
-    - burn it all
-    - _datadafe_
-    - all the digital crumbs I'm carrying, I don't want it
-    - I have to inseminate the web
-    - with my fucking data, so _they_ have to handle it for me... forever
-    - **hahahahah**
-    - my data will live forever, because I'll be forever transported, from one server to another
-    - floating
-    - just transmitting my data all around the globe
-    - servers in **China**, **Kazakhstan**, **Croatia**, anywhere!
-    - just fucking data
-
-* a website footer
-    - stick the language switcher in there
-    - stick the help button in there too
-        - transform main menu to inlined for desktop viewports
-        - that way: no js -> use desktop version, that's it
+* http://1linelayouts.glitch.me/
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     - fewer themes
     - better themes
@@ -60,19 +13,20 @@
 * with the `markdown include` thing I've just implemented, try to figure something out...
     - zorg-process the file?
     - allow injecting some styles, dynamically? per-page?
+* debug the "root" object, with all the data
+    - have a bird's eye view of the content / data / wirings
+    - a version of each page with just it's JSON?
+    - that's the idea of a API route for each route
+* might not need the split between content types in an object
+    - simplify the creation of "plugins"
+    - for things that require "other" content, have the plugin grab what it needs, on a _per page basis_
+* I've got to try TailwindCSS, man!
 
 ## put your thinking cap on
 
 * how to handle media?
-    - can't have those on git...
-    - can't manually handle all of that?
-    - a job for a "media library" of some sort...
-
-* plopJS -> https://github.com/plopjs/plop
-    - or plop-inspired thing to quickly create new posts, pages, extract stuff, etc.
-    - what use, though?
-
-* spreadsheets, bro!
+    - right now... Nextcloud with public images
+    - here's hoping that the server holds...
 
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
@@ -82,9 +36,6 @@
     - to understand it faster (for devs unfamiliar with it)
     - to debug
 
-* issue with handlebars -> can't put comments in the source that won't end up in the "compiled" HTML
-
-* browsersync, or something similar to reload on changes; something easy, fast, lightweight, not full of BULLSHIT
 * PWA:
     - [https://web.dev/codelab-make-installable/](https://web.dev/codelab-make-installable/)
     - [https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
@@ -92,7 +43,13 @@
 * think of fastest track to having a webserver running my website
     - is it some Docker bullshit again?!
     - barebone, hand-made shit?
-    - most of it is NodeJS
+    - most of it is NodeJS right now; damn
+
+* plopJS -> https://github.com/plopjs/plop
+    - or plop-inspired thing to quickly create new posts, pages, extract stuff, etc.
+    - what use, though?
+
+* spreadsheets, bro!
 
 ## "dynamic" linking?
 
@@ -137,22 +94,12 @@
     * block-stitching; there's already something to use "blocks" easily, see in `resume.html`
     * could even all be in HandlebarsJS bro (see: `## markdown`)
 
-* “next-gen” web buzzwords
-    - html imports
-    - declarative shadow-dom
-    - import dynamic js
-    - container queries
-    - modules
-    - all of it!
-
 * SVG
     - learn about strokes, types of stroke
     - learn about aspect ratio
     - learn about morph?
     - learn about controlling a few things with JS
     - controlling curves with JS
-
-* try some `<noscript>` bullshit to see if I can have a version of the website that's usable even without javascript
 
 * add something to handle client-side URL hash 'routing'
     - `[...]/some-page-url/#(comments)` -> shows the comments box
@@ -225,6 +172,39 @@
         - we don't write css -> sass, less, postcss, ... TAILWIND?!?!
         - js... more like, ecmascript2018?! with babel?!? that's weird as fuck
     - need to get high again to understand wtf I wrote above...
+
+* highdea # 897232
+    - a social media based on an interface that you can customize as you wish
+    - publish any content, easily, with a _simple_, _intuitive_ UI
+    - and connect with your friends with a chat service
+        - that allows you to chat with other people as long as you are visiting this page
+    - they see your page when you chat on your page
+    - they see their page when you chat on their page
+    - and you can do business pages on their
+        - how to counter ads?
+        - we **flag** the user that might be _ads_;
+        - you decide
+    - supposedly private, but not at all; public by default
+        - but ability to **mute** stuff coming from specific sources
+
+* highdea # 5571233
+    - I've got all this fucking personal data...
+    - what the fuck should I do with all this _stuff_?!?!
+    - considering the weigh as... actual weigh of data in grams
+        - something to consider i mean... haha
+    - dragging along all this fucking data, man
+    - get rid of it
+    - burn it all
+    - _datadafe_
+    - all the digital crumbs I'm carrying, I don't want it
+    - I have to inseminate the web
+    - with my fucking data, so _they_ have to handle it for me... forever
+    - **hahahahah**
+    - my data will live forever, because I'll be forever transported, from one server to another
+    - floating
+    - just transmitting my data all around the globe
+    - servers in **China**, **Kazakhstan**, **Croatia**, anywhere!
+    - just fucking data
 
 * something that suggest to create a redirection when changing the URL of a page/post
     - so that links on other websites that were pointing to that URL aren't landing nowhere
