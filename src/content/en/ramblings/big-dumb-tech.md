@@ -42,7 +42,7 @@ In short: a Free, Libre & Open Source Software is a program for which you have a
 
 — Yeah, _oops_! that's a problem! How are _normal folks_ supposed to free themselves from the grips of Big Tech?
 
-Big Tech is always hunting for new leads... but it's not exactly a safari hunt: it's more like they're fishing using [bottom trawlers](https://en.wikipedia.org/wiki/Bottom_trawling)[*](which seems a fitting comparison, considering there's a section on “Lack of regulation” 💩). They want to reach _everybody_; they want to corner the market, they want it all.
+Big Tech is always hunting for new leads... but it's not exactly a safari hunt: it's more like they're fishing using [bottom trawlers](https://en.wikipedia.org/wiki/Bottom_trawling)[note: which seems a fitting comparison, considering there's a section on “Lack of regulation” 💩]. They want to reach _everybody_; they want to corner the market, they want it all.
 
 People who aren't tech-inclined get lured in and will never hear of the alternatives. My uncle will probably never use FLOSS. My mom uses an iPad and probably already installed so many dumb apps on it that her data is now leaking out into the network, ready to inform some AI on her profile in order to show her ads with a better **conversion rate**. Almost all of my friends are still on Facebook, Instagram and Whatsapp; and probably dozens of other predatory services.
 

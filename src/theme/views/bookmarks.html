@@ -2,29 +2,35 @@
 
 {{> components/breadcrumbs }}
 
-<div class="index post bookmarks" data-component="filter-bookmarks">
-  <template data-ui="filter-item">
-    <li class="bookmarks__filter-item">
-      <button class="bookmarks__filter-btn button" type="button" class="button">
-      </button>
-    </li>
-  </template>
+<div class="bookmarks content">
+  {{#each meta.bookmarks as |bookmarks tag| }}
+    <aside data-component="drawer" data-label="show: {{ tag }} (+)" data-close-label="hide {{ tag }} (-)" data-open>
+      <h2>{{ tag }}</h2>
+      <ul>
+        {{#each bookmarks }}
+          <li>
+            <a href="{{ this.link }}" target="_blank" rel="noreferrer noopener">
+              “{{{ title }}}”
+            </a>
 
-  <div class="bookmarks__filters">
-    <h2 class="heading-alt">{{ t.byTags }}</h2>
-    {{ t.show }}:
-    <button class="button button--light" data-control="all">{{ t.all }}</button>
-    <button class="button button--light" data-control="none">{{ t.none }}</button>
-  </div>
+            {{#if this.notes }}
+            <blockquote>
+              {{#each this.notes }}
+                {{markdown this }}
+              {{/each}}
 
-  <ul class="bookmarks__filter-list" data-ui="filters-list">
-  </ul>
-
-  <div class="bookmarks__wrapper" data-ui="bookmarks">
-    <div class="bookmarks__list content">
-      {{{ content }}}
-    </div>
-  </div>
+              {{#if this.rating }}
+              <div class="bookmark__rating">
+                {{{ this.rating }}}
+              </div>
+              {{/if}}
+            </blockquote>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </aside>
+  {{/each}}
 </div>
 
 {{/layouts/page}}

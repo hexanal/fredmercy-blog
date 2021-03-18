@@ -43,6 +43,13 @@
     background-color: var(--color-secondary);
   }
 
+  [data-theme="mini-dark"] & {
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-bg);
+    }
+  }
+
   span {
     display: none;
   }

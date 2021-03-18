@@ -1,5 +1,11 @@
 ## TODO
 
+* one-page printable version of website
+    - per type
+* do I need `chalk`?
+    - what about `chokidar` ?
+    - can I use something else than `express` to serve files?
+    - do I even need a friggin' server; it's a static website...
 * http://1linelayouts.glitch.me/
 * Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
     - fewer themes
@@ -249,10 +255,10 @@ That's the power of the web. The New Web Era.
 
 - `/zwicky/zwicky.js`
 - `/zwicky/config.js`
-    - `/zwicky/tasks/html.js`
-    - `/zwicky/tasks/javascript.js`
-    - `/zwicky/tasks/styles.js`
-    - `/zwicky/tasks/assets.js`
+- `/zwicky/scripts/html.js`
+- `/zwicky/scripts/javascript.js`
+- `/zwicky/scripts/styles.js`
+- `/zwicky/scripts/assets.js`
 - `/zwicky/utils/...`
 
 ### idea 2

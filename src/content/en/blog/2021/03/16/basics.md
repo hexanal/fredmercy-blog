@@ -21,8 +21,21 @@ Today's entry wasn't so bad, eh? Short and sweet.
 
 `2:59pm:` Taking it easy these days, mate!
 
-I've been thinking... man, what I'm building feels like a retrofuturist version of a website. Like, mixing the aesthetic of early computer screens, but (at least when viewed on a retina screen laptop) much better looking, in the end; because of how web browsers gained in power. But it should degrade gracefully to adapt to any _environment_.[note: I haven't tried it but I'm kind of curious as to how it looks if I try to access it via my PS4, for example?]
+I've been thinking... man, what I'm building feels like a retrofuturist version of a website. Like, mixing the aesthetic of early computer screens with web browsers' rendering superpowers, to provide something that feels much more performant and _usable_ [note: that's the hope, at least] I grew up using a bit of DOS, and sometimes I miss the blockiness of it all; I guess I also miss the _consistency_ of these interfaces (you couldn't use crazy colors, weird shapes, or anything... the _constraints_ were many!)
+
+<figure>
+
+![example DOS interface](https://cloud.fredmercy.com/index.php/s/N33ojXci7wX4DqT/preview)
+![another example](https://cloud.fredmercy.com/index.php/s/iDkYnM6Tbpb7FKc/preview)
+
+<figcaption>
+
+[source](http://migo.sixbit.org/software/dos/)
+
+</figcaption>
+
+</figure>
+
+But it must [degrade gracefully](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) to adapt to any _environment_. [note: I haven't tried it but I'm kind of curious as to how it looks if I try to access it via my PS4, for example?]
 
 Anyway: my website should be _light_, _legible_, _fun_, _accessible_, _full-featured_, _easy to update_, _easy to manage_, _long-lasting_, _portable_. I'll figure it out.
-
-Guys, I talked too soon: this entry's gonna be epic.

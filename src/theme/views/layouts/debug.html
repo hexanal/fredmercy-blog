@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ meta.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+
+  <title>[debug]  —  {{ meta.title }}{{#if meta.isHome }}{{else}}  —  Fred Mercy{{/if}}</title>
+
+  <meta name="description" content="{{ meta.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle fill=%22%23a46bea%22 cx=%2250%22 cy=%2250%22 r=%2250%22/></svg>">
+  <link rel="stylesheet" href="/fredmercy.css">
+
+  {{> components/no-script }}
+</head>
+
+  <body class="page">
+    <div class="page__wrapper" data-barba="wrapper">
+      <div class="page__container" data-barba="container" data-lang="{{ meta.lang }}">
+        {{> components/header }}
+
+        <div class="page__contents" data-barba="inside">
+          <div class="content debug">
+            <h2>{{ t en="Raw data for page" fr="Données brutes pour page :"}} <em>{{ meta.url }}</em> </h2>
+
+            {{> blocks/debugger this }}
+          </div>
+
+          {{> components/footer }}
+        </div>
+
+        {{#> components/box id="comments" title=t.comments.modalTitle shortcut="c" }}
+          {{> components/comments}}
+        {{/components/box}}
+
+        {{#> components/box id="help" title=t.helpWindow.boxTitle shortcut="?" }}
+          {{> components/help type="box"}}
+        {{/components/box}}
+
+        {{#> components/box id="menu" shortcut="m" }}
+          {{> components/nav type="box" items=nav}}
+        {{/components/box }}
+      </div>
+    </div>
+
+    {{> components/rainbow }}
+    {{> components/ball }}
+
+    <script src="/fredmercy.js"></script>
+
+<style>
+.debug ul {
+  padding: 0.25rem;
+  border: 1px dotted var(--color-secondary);
+}
+</style>
+
+</html>

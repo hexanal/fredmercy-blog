@@ -38,6 +38,27 @@ const registerPartialHelper = function() {
     return new Handlebars.SafeString( i18nString )
   })
 
+  Handlebars.registerHelper('if-object', function (template, context, opts) {
+    if( typeof template === 'object') return new Handlebars.SafeString( context.fn( template ) )
+
+    return ''
+  })
+
+  Handlebars.registerHelper('debug', function (template, context, opts) {
+    const isString = typeof template === 'string'
+
+    if (isString) return new Handlebars.SafeString( template )
+
+    return ''
+  })
+
+  Handlebars.registerHelper('markdown', function (template, context, opts) {
+    const content = typeof template === 'string'
+      ? marked( template )
+      : ''
+
+    return new Handlebars.SafeString( content )
+  })
   // TODO split to own function
   // maybe do something that helps with adding custom helpers?
   Handlebars.registerHelper('t-markdown', function (template, context, opts) {

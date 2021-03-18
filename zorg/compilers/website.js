@@ -21,6 +21,9 @@ const plugins = [
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),
   require('../plugins/global/aliases'),
+  // require('../plugins/global/debug'), // TODO
+  require('../plugins/global/export-to-json'),
+  require('../plugins/global/frontmatter-process'), // TODO rename?
   require('../plugins/global/posts-by-months'),
   require('../plugins/global/html'),
 ]

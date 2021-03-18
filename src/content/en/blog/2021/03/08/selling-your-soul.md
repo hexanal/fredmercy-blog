@@ -17,7 +17,7 @@ At least, that's what
 <a href="https://www.nytimes.com/2021/03/06/opinion/data-tech-privacy-opt-in.html" target="_blank" rel="noopener noreferrer">Times'</a>
 <a href="https://www.nytimes.com/2021/03/10/opinion/quit-internet.html" target="_blank" rel="noopener noreferrer">opinion</a>
 <a href="https://www.nytimes.com/2021/02/04/opinion/michael-goldhaber-internet.html" target="_blank" rel="noopener noreferrer">pieces</a>
-are leading me to believe; but they could be pumping out this kind of article in order to get me hooked to _their_ model (articles behind paywalls)[*](just open them in a new “private” tab; if it's important, it should be freely accessible).
+are leading me to believe; but they could be pumping out this kind of article in order to get me hooked to _their_ model (articles behind paywalls)[note: just open them in a new “private” tab; if it's important, it should be freely accessible].
 
 But hey... I kind of want to be active on those addictive social media platforms because I, too, want to be part of the action! I want to be able to monetize my videos about this niche activity which I'm gonna do in my bedroom which I recently turned into a studio. Who wants to see me play the Xen levels from the original Half-Life game while high on DMT? I could do that. Could be fun. Maybe do some live coding, where I'd share tips and tricks about HTML and CSS? Something for _real nerds_, like, something about <a href="https://www.vim.org/" target="_blank" rel="noreferrer noopener">vim</a>, maybe?
 
@@ -27,4 +27,4 @@ How would anyone discover this content? Again, the important thing is the <a hre
 
 `wed, march 10 — 10:53am:` Man... I do write a lot of bullshit, don't I? This blog will get better with time, I swear! And if it gets popular, I'll even monetize it, and I'll put articles behind paywalls, hahahaha! 😈
 
-Listen guys, I just want to pass on my knowledge, communicate my love of writing about _anything at all_, and have fun. Don't take anyone for granted, and don't take anything seriously[*](except, incidentally, this very advice... but only if you dare 🤪).
+Listen guys, I just want to pass on my knowledge, communicate my love of writing about _anything at all_, and have fun. Don't take anyone for granted, and don't take anything seriously [note: except, incidentally, this very advice... but only if you dare 🤪]

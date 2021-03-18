@@ -10,6 +10,7 @@ export default function({ element }) {
   const state = {
     expanded: false,
     label: element.dataset.label || DEFAULT_LABEL,
+    closeLabel: element.dataset.closeLabel || DEFAULT_LABEL_CLOSE,
     animation: {
       height: reefer(MIN_HEIGHT),
       y: reefer(1.5),
@@ -36,6 +37,8 @@ export default function({ element }) {
       state.wrap.style.opacity = state.animation.opacity.get()
       state.wrap.style.transform = `translateY( ${state.animation.y.get()}rem )`
     })
+
+    if ( typeof element.dataset.open !== 'undefined' ) expand()
   }
 
   const onResize = function() {
@@ -79,7 +82,7 @@ export default function({ element }) {
   const expand = (e) => {
     state.expanded = !state.expanded
 
-    state.toggler.textContent = state.expanded ? DEFAULT_LABEL_CLOSE : state.label
+    state.toggler.textContent = state.expanded ? state.closeLabel : state.label
     element.classList.toggle('state-drawer-expand', state.expanded)
 
     const newHeight = state.expanded ? state.wrap.offsetHeight : MIN_HEIGHT

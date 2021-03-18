@@ -11,7 +11,7 @@ i18n:
 
 Ici sinon c'est froid, c'est glacial, c'est l'hiver. _But I've got some good weed!_
 
-Tounes d'en ce moment:[*](surtout découvertes grâce à Spotify, il faut l'avouer... Mais franchement j'ai envie de trouver ma musique autrement. Par des forums, des blogues, des conversations avec mes amis, ce genre de trucs)
+Tounes d'en ce moment:[note: surtout découvertes grâce à Spotify, il faut l'avouer... Mais franchement j'ai envie de trouver ma musique autrement. Par des forums, des blogues, des conversations avec mes amis, ce genre de trucs]
 
 - [Standing Crosswise in the Square](https://beatsinspace.bandcamp.com/track/craig-leon-standing-crosswise-in-the-square), by [Craig Leon](http://craigleon.com/) (bandcamp)
 - [Born For One Thing](https://www.youtube.com/watch?v=3p85-KtgDSs), by [Gojira](http://craigleon.com/) (youtube 😞 )

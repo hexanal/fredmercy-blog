@@ -57,7 +57,7 @@ My thoughts on the modern technologies we use to communicate:
 
 Of course there are alternatives! Those are the ones I'm looking at right now:
 
-**[Signal](https://www.signal.org/)** Messenger sounds like the best alternative to the other messengers. It has an app for iOS, Android, MacOS, Windows, and Linux; it's fully encrypted; it's easy to use.[*](It needs access to your contact list, which is always weird, but let's hope it's all encrypted anyway and that nothing fishy is happening.)
+**[Signal](https://www.signal.org/)** Messenger sounds like the best alternative to the other messengers. It has an app for iOS, Android, MacOS, Windows, and Linux; it's fully encrypted; it's easy to use.[note: It needs access to your contact list, which is always weird, but let's hope it's all encrypted anyway and that nothing fishy is happening.]
 
 As for fully-fledged social networks, like a _Facebook clone_, I've heard of two projects:
 

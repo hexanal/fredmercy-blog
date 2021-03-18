@@ -1,13 +1,13 @@
-const { write } = require('../../helpers/files')
+const { write } = require('../../bin/files')
 
 const exportToJson = function( contentTypes ) {
-  const types = Object.keys( contentTypes )
+  Object.keys( contentTypes ).map( type => {
+    contentTypes[type].map( item => {
+      const stringified = JSON.stringify( item )
+      const destination = `./public${item.meta.url}`
 
-  types.map( id => {
-    const stringified = JSON.stringify( contentTypes[id] )
-    const destination = `exports/${id}`
-
-    write(destination, `${id}-export.json`, stringified)
+      write(destination, `_data.json`, stringified)
+    })
   })
 
   return contentTypes

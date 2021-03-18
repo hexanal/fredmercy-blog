@@ -32,10 +32,18 @@
     line-height: 1.4;
     color: var(--color-bg);
     background-color: var(--color-secondary);
+
+    [data-theme="mini-dark"] & {
+      color: var(--color-primary);
+    }
   }
   h2 {
     display: inline-block;
     background-color: var(--color-primary);
+
+    [data-theme="mini-dark"] & {
+      color: var(--color-bg);
+    }
   }
   h1 + h2 {
     margin-top: 3rem;
@@ -63,13 +71,13 @@
 
   ul {
     overflow: auto; // TODO testing this out: this is for overflowing URLs in lists, on mobile (prevents full-screen horizontal scrolling)
-    padding-left: 0.5rem;
+    padding-left: 0;
     margin: 1.5rem 0;
     list-style: none;
 
     ul {
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
+      margin-top: 0;
+      margin-bottom: 0;
 
       li {
         &:before {
@@ -79,7 +87,7 @@
     }
 
     li {
-      padding-left: 1.5rem;
+      padding-left: 1.25rem;
 
       &:before {
         content: '● ';

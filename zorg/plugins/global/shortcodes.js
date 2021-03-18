@@ -22,12 +22,6 @@ const useBlockWithData = function(blockId, data, extra) {
 
 const SHORTCODES = [
   {
-    tag: '*',
-    processor: function({ props, item, contentTypes }) {
-      return useBlockWithData('side-note', { ...item, content: marked( props ) })
-    }
-  },
-  {
     tag: 'latest-post',
     processor: function({ props, item, contentTypes }) {
       const latest = { ...contentTypes.post[0] }

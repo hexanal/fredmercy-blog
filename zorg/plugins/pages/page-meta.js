@@ -26,13 +26,16 @@ const getPageMetaData = function( item ) {
   const url = urlLocalePrefix + rebuiltUrl
   const permalink = `https://fredmercy.ca${url}` // FIXME domain name in config
 
-  return {
+  const meta = {
+    ...item.meta,
     id,
     url,
     permalink,
     route,
     isHome
   }
+
+  return meta
 }
 
 module.exports = addPageMeta

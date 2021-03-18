@@ -5,7 +5,7 @@ type: post
 ---
 
 Hey there friend! These are some tracks I fell in love with in *2020*! What a great year! _ahem!_ ...music kept us alive, didn't it?! It surely helped me cope with everything, and I hope these songs will brighten your day as well!
-[*](By the way these were **found** *in* 2020 but are not *from* 2020)
+[note: these were **added** to a playlist *in* 2020, but they're not *from* 2020]
 
 NOTE: Most links point to Bandcamp, otherwise it's a link to the YouTube official video, unless specified otherwise 🤙
 

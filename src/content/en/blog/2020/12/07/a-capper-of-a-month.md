@@ -8,7 +8,7 @@ type: post
 
 I'm making soup and wanted to wish y'all Happy Holidays!
 
-Despite the dwindling stocks of herbal medication, it's been chill here. Well, okay... my mood's been swinging wildly and it felt like I was losing my mind for a second, but look: everything's all good now. It looks like I've been stretching myself quite thin these days![*](i'm talking “one-atom-thick” Fred right here, you could call me graphene)
+Despite the dwindling stocks of herbal medication, it's been chill here. Well, okay... my mood's been swinging wildly and it felt like I was losing my mind for a second, but look: everything's all good now. It looks like I've been stretching myself quite thin these days! _[note: i'm talking “one-atom-thick” Fred right here, you could call me graphene]_
 
 Locked some vacation time during which I intend to do what I do best: sitting on own ass doing nothing, haha! Man, I surely hope not 'cause I have a bunch of things I wanted to take care of:
 

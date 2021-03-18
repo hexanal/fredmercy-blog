@@ -1,0 +1,14 @@
+{{#if-object this }}
+<ul>
+  {{#each this as |value key| }}
+  <li>
+    <span class="color-secondary">{{ key }}</span>
+    {{#if value }}
+      <span>{{debug value }}</span>
+
+      {{> blocks/debugger value }}
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
+{{/if-object}}

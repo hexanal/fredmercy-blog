@@ -20,6 +20,6 @@ I'm a human being, lost in space and time. Questioning everything, paralyzed by 
 
 You're witnessing someone probably suffering from Seasonal Affective Disorder, or whatever it is... days are short, they say, yet I'm working the same old 7.5h every day, wasting my time on bullshit. I'm burning out.
 
-About this website: I'll bring some of my notes over to the web, in a new "Notes" section. There will probably be a lot of cleaning up to do, and some *programming*[*](by that I mean: new HTML templates, which really isn't programming, let's be honest) to do to display all of that correctly. If the Universe is kind, I might have some more free time soon.
+About this website: I'll bring some of my notes over to the web, in a new "Notes" section. There will probably be a lot of cleaning up to do, and some programming _[note: by that I mean: new HTML templates, which really isn't programming, let's be honest)_ to do to display all of that correctly. If the Universe is kind, I might have some more free time soon.
 
 Later, I'll be adding even more shit on the website. But... later.

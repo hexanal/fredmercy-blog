@@ -77,6 +77,8 @@ export default function({ ui, control }) {
     })
   }
 
+  enableAll()
+
   /**
    * EVENTS
    */

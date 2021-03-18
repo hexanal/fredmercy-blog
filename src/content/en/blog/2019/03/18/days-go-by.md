@@ -19,6 +19,6 @@ type: post
 
 There nothing to do, which means there's _everything_ to do.
 
-`2:13pm:` Yesterday was <span class="st-paddys">🍀 St Patrick's Day! 🍀</span><sup data-note="Drank two beers, none of them Guinnesses, and made tacos, none of them with beef stew.">[1]</sup>
+`2:13pm:` Yesterday was <span class="st-paddys">🍀 St Patrick's Day! 🍀</span>[note: Drank two beers, none of them Guinnesses, and made tacos, none of them with beef stew]
 
 `3:56pm:` Let's try to get that blog updated, gosh darn it.
