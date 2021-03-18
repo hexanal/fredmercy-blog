@@ -36,7 +36,7 @@ type: post
 }
 </style>
 
-`2:29pm:` This “new” blog has been up for two years now! I put back online the original entries from 2019, to try and see whether my _compilation setup_ handles a lot of posts. So this blog's anniversary date is [January 29th](/blog/2019/01/29/first-post.), I guess?! 🤔
+`2:29pm:` This “new” blog has been up for two years now! I put back online the original entries from 2019, to try and see whether my _compilation setup_ handles a lot of posts. So this blog's anniversary date is [January 29th](/blog/2019/01/29/first-post), I guess?! 🤔
 
 Today's <span class="st-paddys">🍀 St Patrick's Day 🍀</span> and I'm using the same little CSS snippet I used back in 2019!
 
