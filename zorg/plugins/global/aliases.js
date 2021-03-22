@@ -5,7 +5,7 @@ const getAliases = function( items ) {
   const duplicated = itemsWithAliases.flatMap( item =>
     item.meta.aliases.flatMap( alias => ({
       ...item,
-      meta: { ...item.meta, url: alias }
+      meta: { ...item.meta, alias: true, url: alias }
     }) )
   )
 
