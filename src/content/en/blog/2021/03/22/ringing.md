@@ -36,12 +36,15 @@ Good, man... _considering_!
 
 Recently:
 
-- moved the language "switcher" link to the new _site footer_
+- a new, more "classic" header
+- a new footer!
+- moved the "language switcher", "comments", and "help" links to the footer
+- apparently, me telling my audience of 0 people about the development I do on that blog in a really nerdy developer-style _commit log_... it's crazy
 
 <aside data-component="drawer" data-label="it gets nerdier! (+)">
 
-1. I've tried implementing "multi-site" to my setup, but it came a bloated mess, which probably means I need to revisit this later, or start again from scratch now with another perspective.
-2. I've implemented url "aliases", which means I can fake redirects. If I change the title of this post later, I will manually add the previous name as an "aliases" in the _frontmatter_ of the content file. If I forget, or if I don't; no redirect, I might have created a broken link in someone's bookmarks.
+- I've tried implementing "multi-site" to my setup, but it came a bloated mess, which probably means I need to revisit this later, or start again from scratch now with another perspective.
+- I've implemented url "aliases", which means I can fake redirects. If I change the title of this post later, I will manually add the previous name as an "aliases" in the _frontmatter_ of the content file. If I forget, or if I don't; no redirect, I might have created a broken link in someone's bookmarks.
     - also, it's cool if I want a page to have many possible URL entries, as a "catch-all" route of sorts... but manual? For example, this post is also available at the URL [https://fredmercy.ca/ringing-in-my-ears](/ringing-in-my-ears)
     - cool for permalinks also [note: I probably should implement a `permalink` key in the frontmatter to that effect]
 
