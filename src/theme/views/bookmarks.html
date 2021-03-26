@@ -4,32 +4,33 @@
 
 <div class="bookmarks content">
   {{#each meta.bookmarks as |bookmarks tag| }}
-    <aside data-component="drawer" data-label="show: {{ tag }} (+)" data-close-label="hide {{ tag }} (-)" data-open>
-      <h2>{{ tag }}</h2>
-      <ul>
-        {{#each bookmarks }}
-          <li>
-            <a href="{{ this.link }}" target="_blank" rel="noreferrer noopener">
-              “{{{ title }}}”
-            </a>
+    <h2>{{ tag }}</h2>
+    <ul>
+      {{#each bookmarks }}
+        <li>
+          <a href="{{ this.link }}" target="_blank" rel="noreferrer noopener">
+            “{{{ title }}}”
+          </a>
+          {{# if this.source }}
+            <small class="color-secondary">->&nbsp;{{ this.source }}</small>
+          {{/if}}
 
-            {{#if this.notes }}
-            <blockquote>
-              {{#each this.notes }}
-                {{markdown this }}
-              {{/each}}
+          {{#if this.notes }}
+          <blockquote>
+            {{#each this.notes }}
+              {{markdown this }}
+            {{/each}}
 
-              {{#if this.rating }}
-              <div class="bookmark__rating">
-                {{{ this.rating }}}
-              </div>
-              {{/if}}
-            </blockquote>
+            {{#if this.rating }}
+            <div class="bookmark__rating">
+              {{{ this.rating }}}
+            </div>
             {{/if}}
-          </li>
-        {{/each}}
-      </ul>
-    </aside>
+          </blockquote>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
   {{/each}}
 </div>
 
