@@ -1,9 +1,11 @@
 ## TODO
 
+* start "vendoring" everything :)
 * one-page printable version of website
     - per type
-* do I need `chalk`?
-    - what about `chokidar` ?
+- what about `chokidar` ?
+    - can I "poll" without having to go through nodejs?
+        - that's if I don't even want to refresh anything
     - can I use something else than `express` to serve files?
     - do I even need a friggin' server; it's a static website...
 * http://1linelayouts.glitch.me/
@@ -29,6 +31,27 @@
 * I've got to try TailwindCSS, man!
 
 ## put your thinking cap on
+
+* each template is a js file
+    - `templates/page/page.js`
+    - `templates/page/page.html`
+    - `templates/page/page.scss`
+* a content file refers to a template
+    - the template JS file knows what operations to do on the data, and which data to "fetch"
+    - compiles the data and feeds it to its markup (handlebars or other!)
+    - outputs the HTML to a file, as always
+* co-locate the fetching/data-massaging logic with templates
+    - easier to maintain?
+    - easier to extend?
+    - more portable
+    - zorg is now just the "defaults", with "adapters" handling the data
+* ... maybe this could work?
+    - could it import scss on demand as well?
+    - what about "components"? handlebars?
+    - ...
+
+* thing with the pages not being in an object by type, but just a straight-up array with everything
+    - and utility functions to filter/grab/access the data you want in each "adapter"?
 
 * how to handle media?
     - right now... Nextcloud with public images
@@ -123,29 +146,6 @@
     - how to make it... secure?
     - or only build that page when developing?
     - but it would be nice to have it online too
-
-```json
-{
-    "meta": {
-        "title": "Bookmarks",
-        "description": "Let's say this is a description",
-        "type": "page"
-    },
-    "blocks": [
-        {
-            "component": "blocks/markdown",
-            "file": "/content/bookmarks.md"
-        },
-        {
-            "component": "blocks/newsletter"
-        },
-        {
-            "component": "blocks/markdown",
-            "file": "/content/bookmarks.footer.md"
-        }
-    ]
-}
-```
 
 * pass protect?
     - https://stackoverflow.com/questions/7990890/how-to-implement-login-auth-in-node-js/8003291#8003291
@@ -248,34 +248,3 @@ That's the power of the web. The New Web Era.
 6. _documentation_ -> explain to the people who enter the content how to do it well
   - short & sweet, don't assume they know technical jargon -> explain simply
 7. _mobile-first_ -> the design and its default implementation is targetting mobile devices; tablet and desktop versions are the declinations
-
-## structural changes
-
-### idea 1
-
-- `/zwicky/zwicky.js`
-- `/zwicky/config.js`
-- `/zwicky/scripts/html.js`
-- `/zwicky/scripts/javascript.js`
-- `/zwicky/scripts/styles.js`
-- `/zwicky/scripts/assets.js`
-- `/zwicky/utils/...`
-
-### idea 2
-
-- `/doohickey/main.js` or `/doohickey/index.js` ?
-- `/doohickey/config.js`
-- `/doohickey/html/index.js`
-    - `/doohickey/html/processors/post-meta.js`
-    - `/doohickey/html/processors/posts-by-months.js`
-- `/doohickey/javascript/javascript.js`
-- `/doohickey/styles/styles.js`
-- `/doohickey/assets/assets.js`
-
-or:
-
-- `/doohickey/scripts/**` -> templating, js, css, assets
-- `/doohickey/processors/**` -> data processor units
-- `/doohickey/utils/**` -> utilities
-
-[include](./logs/markdown.md)
