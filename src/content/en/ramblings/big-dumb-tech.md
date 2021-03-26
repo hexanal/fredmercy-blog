@@ -1,7 +1,8 @@
 ---
 title: Big Dumb Tech
-description: The headless chicken theory
+description: the “headless chicken theory”
 type: page
+edited: 2021-03-21 @ 6:33pm
 ---
 
 ## hey, what's wrong?!
@@ -48,13 +49,9 @@ People who aren't tech-inclined get lured in and will never hear of the alternat
 
 We're giving away our **privacy**, **data-ownership**, **freedom**... for _convenience_. Big Tech built their own web and trapped everybody in there, and they're letting anyone feed on our data _for a fee_!
 
-## so what? we know that shit already
+And I hope you're happy.
 
-I'm not a genius. Maybe I'm wrong. Maybe I'm just parrotting what I read in Hacker News again.
-
-Or maybe something really needs to be done?
-
-## further reading
+## what inspired me to write this drivel:
 
 * Mark Hurst's blog on Creative Good:
   * https://creativegood.com/blog/21/exploitative-is-not-great.html

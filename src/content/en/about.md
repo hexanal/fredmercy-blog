@@ -10,7 +10,7 @@ i18n:
 
 I'm interested in: <a href="https://github.com/hexanal" target="_blank" rel="noopener noreferrer">programming</a>; science; <a href="https://fredmercy.bandcamp.com" target="_blank" rel="noopener noreferrer">music</a>; [blogging](/blog); art; skateboarding; _having fun_
 
-I'm an average _dude_ (he/him); and like most of you, I'm a human being and I'm trying to give meaning to our existence [note: seems like _love_ is the answer? 🤷‍♂️]
+I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to our existence [note: seems like _love_ is the answer? 🤷‍♂️]
 
 ## about this website
 

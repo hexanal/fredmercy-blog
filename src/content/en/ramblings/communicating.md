@@ -1,6 +1,6 @@
 ---
 title: Communicating
-description: What to communicate with/through?
+description: what to communicate with/through?
 type: page
 ---
 

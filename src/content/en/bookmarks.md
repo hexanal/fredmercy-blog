@@ -22,7 +22,7 @@ bookmarks:
     link: https://daily.bandcamp.com/label-profile/planet-mu-25th-anniversary-guide
     title: Celebrating 25 Years of Legendary Electronic Label Planet Mu
     notes:
-      - I loved that label when I was a teen... still do!
+      - I loved that label when I was a teen... and I still do!
     rating: n/a
 
   - tag: misc
@@ -52,6 +52,7 @@ bookmarks:
   - tag: misc
     title: JuliaMono (official website)
     link: https://juliamono.netlify.app
+    source: official website
     notes:
       - "I'm currently using this font: it's clean, it's legible, it has the right amount of ligatures, etc."
 
@@ -64,206 +65,191 @@ bookmarks:
   - tag: read
     title: Dérive ("drifting"; wikipedia article)
     link: https://en.wikipedia.org/wiki/D%C3%A9rive
+    source: wikipedia.org
     notes:
       - Take a walk through your city, without a destination in mind; let your mind wander, let your body follow, roam around this (urban?) landscape and discover new things
 
   - tag: watch
-    title: The Midnight Gospel (IMDb)
+    title: The Midnight Gospel
     link: https://www.imdb.com/title/tt11639414/reference
+    source: imdb.com
     notes:
       - "A trippy Netflix series based on recordings from Duncan Trussell's podcast, with awesome animations!"
     rating: 4, yummy!
 
   - tag: watch
-    title: _The Neon Demon_ (IMDb)
+    title: _The Neon Demon_
     link: https://www.imdb.com/title/tt1974419
+    source: imdb.com
     notes:
       - "Artsy movie about... Hollywood's obsession with beauty and fame, I think? (was probably too high while watching it)"
     rating: 3, it's cool...
 
   - tag: watch
-    title: _Akira_ (IMDb)
+    title: _Akira_
     link: https://www.imdb.com/title/tt0094625
+    source: imdb.com
     notes:
       - A **must-watch** for anybody who likes wonderfully _weird_ science-fiction
     rating: 5, mandatory viewing
 
   - tag: watch
     title: _Interface_, u m a m i
-    source: youtube.com
     link: https://www.youtube.com/watch?v=b_V-VJQT6pM
+    source: youtube.com
     notes:
       - "As I write this, [Justin Tomchuk](https://justintomchuk.com/) is working on the last two episodes of this brilliant animated series. It's **fucking good**."
     rating: 5, fucking good!
 
   - tag: read
-    title: _The Efficiency Delusion_, Evan Selinger (Medium)
+    title: _The Efficiency Delusion_, Evan Selinger
     link: https://onezero.medium.com/the-efficiency-delusion-f6a97241e1e1
+    source: medium.com
+    notes:
+      - This article seemed interesting, and linked to my thoughts about the _slow movement_ and how I should adopt a leisurely pace to stay focused on what's real
 
   - tag: music
-    title: _I Wanna Go Home_, Bill Wurtz (YouTube)
+    title: _I Wanna Go Home_, Bill Wurtz
     link: https://www.youtube.com/watch?v=vjUOJEXiX3g
-
-  - tag: music
-    title: _Spirits Will Collide_, Devin Townsend (YouTube)
-    link: https://www.youtube.com/watch?v=AdHJurX0yVA
+    source: youtube.com
+    notes:
+      - at some point I was on a full-blown Bill Wurtz craze, listening to his songs **a lot!!**
+      - these days not so much, but be sure to watch his other videos
 
   - tag: science
-    title: Sean Carroll's “Mindscape” podcast (official)
+    title: Sean Carroll's “Mindscape” podcast
     link: https://www.preposterousuniverse.com/podcast/
+    notes:
+      - this guy has a ton of guests from all kinds of scientific backgrounds. He's got a nice voice and is a good interviewer.
+    rating: 4, _pretty cool_
 
   - tag: music
     title: _Planet B_, King Gizzard and the Lizard Wizard (YouTube)
     link: https://www.youtube.com/watch?v=qtTi_uyYynA
+    source: youtube.com
+    rating: 4, _heavy!_
+    notes:
+      - this is if you like thrash metal :)
 
   - tag: web
-    title: Devine Lu Linvega's website (official)
+    title: Devine Lu Linvega's website
     link: https://wiki.xxiivv.com/#home
-
-  - tag: web
-    title: httpster (official)
-    link: http://httpster.net
-
-  - tag: misc
-    title: Zoom H5 (official)
-    link: https://www.zoom-na.com/products/field-video-recording/field-recording/zoom-h5-handy-recorder
+    notes:
+      - my main inspiration to start blogging again and to build my own tools
 
   - tag: music
-    title: _Worship_, Bongripper (YouTube)
+    title: _Worship_, Bongripper
     link: https://www.youtube.com/watch?v=drzzGClaEKU
+    source: youtube.com
+    rating: 3, okay!
+    notes:
+      - this is if you like sloooow doom metal sludge
 
   - tag: music
-    title: Lawrence English & William Basinski (Last.fm)
+    title: Lawrence English & William Basinski
+    source: last.fm
     link: https://www.last.fm/music/William+Basinski+%252B+Lawrence+English
-
-  - tag: watch
-    title: Chocolat (IDMB)
-    link: https://www.imdb.com/title/tt0241303
+    rating: 4, relaxing!
+    notes:
+      - saw those two in a church in London; good if you like drone/ambient music
 
   - tag: music
-    title: _Phase Zero_, Morgan Delt (Bandcamp)
+    title: _Phase Zero_, Morgan Delt
     link: https://morgandelt.bandcamp.com/album/phase-zero
+    source: bandcamp.com
+    rating: 4, I like it!
+    notes:
+      - very mellow and psychedelic album :)
 
   - tag: read
-    title: Seasonal Affective Disorder (Wikipedia)
-    link: https://en.wikipedia.org/wiki/Seasonal_affective_disorder
-
-  - tag: read
-    title: The Dispossessed (Goodreads)
+    source: goodreads.com
+    title: The Dispossessed, by Ursula K. Le Guin
     link: https://www.goodreads.com/book/show/13651.The_Dispossessed
+    rating: 5, an awesome read
+    notes:
+      - a book for socialists! ain't saying this is something I agree with! (but maybe I do)
 
   - tag: read
-    title: The Left Hand of Darkness (Goodreads)
+    title: The Left Hand of Darkness, by Ursula K. Le Guin
     link: https://www.goodreads.com/book/show/18423.The_Left_Hand_of_Darkness
-
-  - tag: music
-    title: Discover Quickly
-    link: https://discoverquickly.com
-
-  - tag: misc
-    title: Mastodon (official website)
-    link: https://joinmastodon.org/
+    source: goodreads.com
+    rating: 5, _superb_
+    notes:
+      - much, much recommended
 
   - tag: music
     title: _I Followed The River South To What_, Cass McCombs
     source: youtube.com
     link: https://www.youtube.com/watch?v=zDU76HfuaBY
+    notes:
+      - just a cool song, dude
 
   - tag: music
     title: _Fishing For Fishies_, King Gizzard and the Lizard Wizard
     source: youtube.com
     link: https://www.youtube.com/watch?v=beIDKFwXam0
-
-  - tag: music
-    title: Shaper
-    source: last.fm
-    link: https://www.last.fm/music/Shaper
-
-  - tag: culture
-    title: '#trashtag'
-    source: twitter.com
-    link: https://twitter.com/search?q=%23trashtag
+    notes:
+      - just another great song, dude
 
   - tag: watch
-    title: The Thirteenth Floor (IMDb)
+    title: The Thirteenth Floor
+    source: imdb.com
     link: https://www.imdb.com/title/tt0139809
 
   - tag: watch
-    title: Naked Lunch (IMDb)
+    title: Naked Lunch
+    source: imdb.com
     link: https://www.imdb.com/title/tt0102511
 
   - tag: watch
-    title: Scanners (IMDb)
+    title: Scanners
     link: https://www.imdb.com/title/tt0081455
+    source: imdb.com
 
   - tag: read
-    title: _Bullshit Jobs_, David Graeber (Goodreads)
+    title: _Bullshit Jobs_, David Graeber
     link: https://www.goodreads.com/book/show/34466958-bullshit-jobs
+    source: goodreads.com
 
   - tag: read
-    title: _The Doors of Perception_, Aldous Huxley (Goodreads)
+    title: _The Doors of Perception_, Aldous Huxley
     link: https://www.goodreads.com/book/show/3188964-the-doors-of-perception
+    source: goodreads.com
 
   - tag: read
-    title: _A Brief History of Time_, Stephen Hawking (Goodreads)
+    title: _A Brief History of Time_, Stephen Hawking
     link: https://www.goodreads.com/book/show/3869.A_Brief_History_of_Time
-
-  - tag: misc
-    title: Workflowy (official website)
-    link: https://workflowy.com/
-
-  - tag: watch
-    title: The Good Place (IMDb)
-    link: https://www.imdb.com/title/tt4955642/
+    source: goodreads.com
 
   - tag: music
-    title: King Buffalo (official website)
-    link: https://kingbuffalo.com/
-
-  - tag: music
-    title: Musitelligence (official website)
-    link: https://musitelligence.com
-
-  - tag: music
-    title: Bill MacKay, _Pre-California_ (YouTube)
+    title: Bill MacKay, _Pre-California_
     link: https://www.youtube.com/watch?v=wxMq8wu7nmg
+    source: youtube.com
 
   - tag: music
-    title: Steve Gunn, _Ancient Jules_ (YouTube)
+    title: Steve Gunn, _Ancient Jules_
     link: https://www.youtube.com/watch?v=W79x_WuvQ5Y
+    source: youtube.com
 
   - tag: music
-    title: William Tyler, _Alpine Star_ (YouTube)
+    title: William Tyler, _Alpine Star_
     link: https://www.youtube.com/watch?v=WDuSevWPnCA
+    source: youtube.com
 
   - tag: music
-    title: Leah Senior, _Graves_ (YouTube)
+    title: Leah Senior, _Graves_
     link: https://www.youtube.com/watch?v=-R30wogqnhU
+    source: youtube.com
 
   - tag: misc
-    title: Tresorit (official website)
-    link: https://tresorit.com
-
-  - tag: misc
-    title: Nextcloud (official website)
+    title: Nextcloud
     link: https://nextcloud.com/
-
-  - tag: misc
-    title: ResilioSync (official website)
-    link: https://www.resilio.com/individuals/
-
-  - tag: culture
-    title: Trigger Warning (Wired)
-    link: https://www.wired.com/story/trigger-warning-netflix-hosted-shows/
-
-  - tag: watch
-    title: Brian Cox on the Joe Rogan Experience podcast
-    source: youtube.com
-    link: https://www.youtube.com/watch?v=wieRZoJSVtw
-
-  - tag: music
-    title: _Cyboogie_, by King Gizzard & the Lizard Wizard
-    source: youtube.com
-    link: https://www.youtube.com/watch?v=_un9PYsE1_g
+    source: official website
+    rating: 3, adequate
+    notes:
+      - I've been using this for a while now to replace Google Drive, and Google Calendar
+      - It works sufficiently well that I'm not too bothered by any lack of feature (in fact, there's such a big “app” ecosystem that there's surely an app for your needs)
+      - The UI still sucks, though, which is why I rate it so low. :)
+      - It'll get better, just wait
 
 ---
