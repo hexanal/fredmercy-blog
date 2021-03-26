@@ -1,23 +1,7 @@
 .post-nav {
-  display: flex;
-	margin: 2.5rem 0 1rem;
+  margin: 2rem 0 1rem;
 
   @media print {
     display: none;
-  }
-}
-
-.post-nav__link {
-  + .post-nav__link {
-    margin-left: 1rem;
-  }
-}
-
-.post-nav__discuss {
-  margin-left: 1rem;
-  background-color: var(--color-secondary);
-
-  &:hover {
-    background-color: var(--color-active);
   }
 }

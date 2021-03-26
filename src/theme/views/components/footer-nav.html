@@ -1,0 +1,47 @@
+<nav class="footer-nav nav">
+  <a
+    href="discuss"
+    title="{{ t.commentsBtnTitle }}"
+    data-component="emit"
+    data-event="SHOW_BOX_COMMENTS"
+    data-no-transition
+  >discussion<small data-comments-count></small></a>
+
+  {{> components/dot }}
+
+  <a
+    href="/{{ t.help }}"
+    title="{{ t.helpBtnTitle }}"
+    data-component="emit"
+    data-event="SHOW_BOX_HELP"
+    data-no-transition
+  >{{ t.help }}</a>
+
+  <span class="footer-nav__theme">
+    {{> components/dot }}
+
+    theme:
+    <select
+      class="footer-nav__select"
+      data-component="themes"
+    >
+      <optgroup label="Light">
+        {{#each themes.light }}
+          <option value="{{ this.id }}">{{ this.label }}</option>
+        {{/each}}
+      </optgroup>
+      <optgroup label="Dark">
+        {{#each themes.dark }}
+          <option value="{{ this.id }}">{{ this.label }}</option>
+        {{/each}}
+      </optgroup>
+    </select>
+  </span>
+
+  {{#if meta.i18n}}
+    {{#each meta.i18n as |url lang|}}
+    {{> components/dot }}
+    <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+    {{/each}}
+  {{/if}}
+</nav>

@@ -6,7 +6,7 @@
 
 {{#each postsByMonth as |entries archive| }}
 
-  <div class="blog__month-archive">
+  <div class="blog__month-archive {{#if @first }}blog__month-archive--first{{/if}}">
     <h2
       id="{{ archive }}"
       class="heading blog__month-year"
@@ -31,7 +31,7 @@
                 href="{{ this.meta.url }}"
                 data-js="entry"
               >{{this.meta.title}}</a>
-              <small class="blog__description">✷ {{this.meta.description}}</small>
+              <small class="blog__description">{{> components/dot}} {{this.meta.description}}</small>
             </div>
           {{else}}
             missing title...
@@ -47,11 +47,6 @@
     {{/each}}
     </ul>
   </div>
-
-  {{#if @last }}
-  {{else}}
-  <p>~~</p>
-  {{/if}}
 
 {{/each}}
 </div>

@@ -2,7 +2,7 @@
 
 <div class="post-nav">
   <a
-    class="post-nav__link button button--light"
+    class="button button--light"
     href="{{ meta.parents.0.meta.url }}"
     title="back to {{ meta.parents.0.meta.title }}"
   >
@@ -11,7 +11,7 @@
 
   {{#if meta.next }}
     <a
-      class="post-nav__link button"
+      class="button"
       href="{{ meta.next.meta.url }}"
       title="{{ meta.next.meta.title }}"
     >
@@ -21,19 +21,11 @@
 
   {{#if meta.previous }}
     <a
-      class="post-nav__link button"
+      class="button"
       href="{{ meta.previous.meta.url }}"
       title="{{ meta.previous.meta.title }}"
     >
       ↓ {{ t.older }}
     </a>
   {{/if}}
-
-  <a
-    class="post-nav__link post-nav__discuss button"
-    href="discuss"
-    data-component="emit"
-    data-event="SHOW_BOX_COMMENTS"
-    data-no-transition
-  >❏ discussion<span data-comments-count></span></a>
 </div>

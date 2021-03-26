@@ -1,54 +1,10 @@
 <footer class="footer no-print">
   ~~
-  <nav class="footer__nav">
-    <a
-      href="discuss"
-      title="{{ t.commentsBtnTitle }}"
-      data-component="emit"
-      data-event="SHOW_BOX_COMMENTS"
-      data-no-transition
-    >discussion<small data-comments-count></small></a>
-
-    <dot class="color-secondary">✷</dot>
-
-    <a
-      href="/{{ t.help }}"
-      title="{{ t.helpBtnTitle }}"
-      data-component="emit"
-      data-event="SHOW_BOX_HELP"
-      data-no-transition
-    >{{ t.help }}</a>
-
-    <span class="footer__theme">
-      <dot class="color-secondary">✷</dot>
-
-      theme:
-      <select
-        class="footer__select"
-        data-component="themes"
-      >
-        <optgroup label="Light">
-          {{#each themes.light }}
-            <option value="{{ this.id }}">{{ this.label }}</option>
-          {{/each}}
-        </optgroup>
-        <optgroup label="Dark">
-          {{#each themes.dark }}
-            <option value="{{ this.id }}">{{ this.label }}</option>
-          {{/each}}
-        </optgroup>
-      </select>
-    </span>
-
-    {{#if meta.i18n}}
-      {{#each meta.i18n as |url lang|}}
-      <dot class="color-secondary">✷</dot>
-      <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
-      {{/each}}
-    {{/if}}
-  </nav>
+  <div class="footer__nav">
+    {{> components/footer-nav }}
+  </div>
 
   <div class="footer__nav footer__extra">
-    ({{> components/nav type="footer" items=footerNav}})
+    <em>{{> components/nav type="footer" items=footerNav}}</em>
   </div>
 </footer>

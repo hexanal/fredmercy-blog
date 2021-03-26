@@ -1,11 +1,20 @@
 .blog {
   margin: 0 0 5em;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .blog__month-archive {
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+  + .blog__month-archive {
+    &:before {
+      content: '~~';
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .blog__month-posts {

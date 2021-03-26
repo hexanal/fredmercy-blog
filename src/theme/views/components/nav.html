@@ -1,4 +1,4 @@
-<div class="nav nav--{{ type }}" role="navigation">
+<nav class="nav nav--{{ type }}" role="navigation">
   {{#each this.items }}
     {{#if this.href }}
         <a
@@ -12,11 +12,11 @@
 
         {{#if @last }}
         {{else }}
-        <dot class="color-secondary">✷</dot>
+          {{> components/dot }}
         {{/if}}
 
     {{else}}
         <span>~~</span>
     {{/if}}
   {{/each}}
-</div>
+</nav>

@@ -19,7 +19,11 @@
         {{/if}}
 
         {{#if meta.tags }}
-        <small class="post__type">(tagged: {{ meta.tags }})</small>
+        <small class="post__type">(tagged: <em>{{ meta.tags }}</em>)</small>
+        {{/if}}
+
+        {{#if meta.edited }}
+        <small class="post__edited color-subdued">-> edited on: {{ meta.edited }}</small>
         {{/if}}
       </div>
     </header>

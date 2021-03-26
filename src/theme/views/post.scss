@@ -10,18 +10,19 @@
   color: var(--color-secondary);
 }
 
+.post__meta {
+  line-height: 1.5;
+}
+
 .post__date {
   display: inline-block;
   padding: 0.25rem;
+  line-height: 1;
 }
 
 .post__date {
   color: var(--color-bg);
   background-color: var(--color-primary);
-}
-
-.post__type {
-  font-style: italic;
 }
 
 .post__body {
@@ -139,8 +140,3 @@
   }
 }
 
-.post__edit-date {
-  display: inline-block;
-  margin: 1.5em 0;
-  color: var(--color-secondary);
-}

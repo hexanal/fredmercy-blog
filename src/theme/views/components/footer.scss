@@ -4,16 +4,12 @@
 }
 
 .footer__nav {
-  margin: 1rem 0;
+  margin: 0.75rem 0;
+  line-height: 1.5;
 }
 
 .footer__extra {
   opacity: 0.75;
-  font-style: italic;
-
-  .dot, dot {
-    font-style: normal;
-  }
 }
 
 .footer__select {
@@ -22,4 +18,8 @@
   color: var(--color-primary);
   text-transform: lowercase;
   text-decoration: underline;
+}
+
+.footer__theme {
+  white-space: nowrap;
 }
