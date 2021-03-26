@@ -1,6 +1,8 @@
 ---
 title: Links
 description: “Living” list of links
+aliases:
+  - /logs/links
 ---
 
 ## just in / to sort
