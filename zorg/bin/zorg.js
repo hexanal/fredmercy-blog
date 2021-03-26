@@ -1,7 +1,7 @@
 const fs = require('fs')
 const frontMatter = require('front-matter')
 const glob = require('glob')
-const { getFilenameFromPath, pipe } = require('./utils')
+const { getFilenameFromPath, getFormattedTimestamp } = require('./utils')
 const { defaultLocale } = require('../config')
 
 /**
@@ -22,6 +22,9 @@ const getBasicMeta = function( contentFiles, lang ) {
 
     return {
       _filePath: item,
+      _info: {
+        built: getFormattedTimestamp( Date.now() ),
+      },
       meta: {
         root: lang === defaultLocale ? '/' : `/${ lang }`,
         lang,

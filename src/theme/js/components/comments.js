@@ -64,7 +64,7 @@ export default function({element, ui, control, messaging }) {
     const year = date.getUTCFullYear()
 
     const time = getAmPmTime( date )
-    const timeAgo = ago( new Date( timestamp ) )
+    const timeAgo = ago( date )
 
     return `${timeAgo} (${time}, ${day} ${month} ${year})`
   }
