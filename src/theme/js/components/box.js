@@ -5,6 +5,8 @@ import reefer, { onReef } from '../tools/reefer'
 const ROTATE_MULTIPLIER = -1.5
 const SHADOW_DISTANCE = 0.8 // in rem
 const BG_OPACITY = 0.9
+const ZINDEX = 10
+const ZS = []
 
 export default function({ element, ui, control, messaging }) {
   const state = stater({
@@ -39,6 +41,9 @@ export default function({ element, ui, control, messaging }) {
     element.classList.toggle('state-box-active', active)
 
     Mousetrap[active ? 'bind' : 'unbind']('escape', close)
+
+    ZS[active ? 'push' : 'pop']( element )
+    element.style.zIndex = ZS.length + ZINDEX
 
     const y = active ? 0 : 1
     const opacity = active ? 1 : 0
