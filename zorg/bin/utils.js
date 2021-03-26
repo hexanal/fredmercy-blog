@@ -1,7 +1,5 @@
-const chalk = require('chalk')
-
 const debugLog = msg => {
-  if ( process.argv.includes('--verbose') ) console.log( chalk.green(`[debug] ${msg}`) )
+  if ( process.argv.includes('--verbose') ) console.log( `[fredmercy] debug: "${msg}"`)
 }
 
 const extractBasicMeta = items => {

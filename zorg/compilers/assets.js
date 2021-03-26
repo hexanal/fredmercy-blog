@@ -1,5 +1,4 @@
 const fse = require('fs-extra')
-const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
 const WATCH = [
@@ -27,10 +26,10 @@ const assets = [
 const build = function() {
   const copy = ({id, src, dest}) => fse.copy(src, dest)
     .then(() => {
-      console.log( chalk.magenta(`[compiler] [assets/${id}]`) )
+      console.log( `[fredmercy] copied assets: assets/${id}`)
     })
     .catch(err => {
-      console.log( chalk.red(`[compiler] [assets/${id}] [error] something broke while copying the assets...`) )
+      console.log( `[fredmercy] assets: assets/${id} -> error: something broke while copying the assets...` )
       console.error( err )
     })
 

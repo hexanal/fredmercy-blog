@@ -1,5 +1,4 @@
 const sass = require('sass')
-const chalk = require('chalk')
 const importer = require('node-sass-glob-importer')
 const { write } = require('../bin/files')
 const watcher = require('../bin/watcher')
@@ -23,7 +22,7 @@ const build = function() {
 
   return write(DEST_PATH, DEST_FILENAME, compiledCSS.css)
     .then( () => {
-      console.log( chalk.magenta(`[compiler] [sass] built in ${cssTimeElapsed} seconds`) )
+      console.log( `[fredmercy] compiled sass, in ${cssTimeElapsed} seconds` )
     })
 }
 

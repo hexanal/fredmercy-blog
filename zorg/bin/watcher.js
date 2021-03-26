@@ -1,5 +1,4 @@
 const chokidar = require('chokidar')
-const chalk = require('chalk')
 
 module.exports = function({ glob, type, callback }) {
   return () => {
@@ -9,9 +8,10 @@ module.exports = function({ glob, type, callback }) {
     })
 
     return watcher
-      .on('ready', () => console.log( chalk.yellow(`[watch] [${type}]`)) )
+      .on('ready', () => console.log( `[fredmercy] watching: ${type}`) )
       .on('change', path => {
-        console.log( chalk.yellow(`[watch] [changed!] `) + chalk.dim(`[${type}] ${path}`) )
+        console.log(`~~`)
+        console.log( `[fredmercy] "${type}" file changed: ${path}` )
         callback()
       })
   }

@@ -1,5 +1,4 @@
 const esbuild = require('esbuild')
-const chalk = require('chalk')
 const watcher = require('../bin/watcher')
 
 const WATCH_GLOB = ['./src/theme/**/*.js'] // anywhere there's JS, my friend!
@@ -17,7 +16,7 @@ const build = function() {
   })
 
   if (!js.warnings.length) {
-    console.log( chalk.magenta(`[compiler] [js] [env: ${process.env.NODE_ENV}]`) )
+    console.log( `[fredmercy] compiled js` )
   }
 }
 

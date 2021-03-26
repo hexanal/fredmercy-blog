@@ -1,12 +1,11 @@
 require('dotenv').config() // get those sweet environment settings
 
-const chalk = require('chalk')
 const zorg = require('../bin/zorg')
 const watcher = require('../bin/watcher')
 const { websites } = require('../config')
 
 // FIXME: hate the fact that it's... linear
-// I want those to be order-agnostic, as much as possible...
+// I want those to be order-agnostic, as much as possible...?
 const plugins = [
   require('../plugins/posts/post-meta'),
   require('../plugins/posts/order'),
@@ -32,7 +31,7 @@ const build = () => {
   websites.map( websiteConfig => {
     const { time } = zorg( websiteConfig, plugins )
 
-    console.log( chalk.magenta(`[compiler] [website/html] built "${ websiteConfig.name }" in ${ time } seconds`) )
+    console.log( `[fredmercy] html (built “${ websiteConfig.name }” in ${ time } seconds)` )
   })
 }
 
@@ -40,7 +39,7 @@ const GLOB = ['./src/content/**/*.(md|js)', './src/theme/**/*.html']
 
 const watch = watcher({
   glob: GLOB,
-  type: 'website/html',
+  type: 'html & content',
   callback: build
 })
 
