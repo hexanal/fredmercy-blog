@@ -1,5 +1,6 @@
 const marked = require('marked')
 const groupBy = require('lodash.groupby')
+const orderBy = require('lodash.orderby')
 
 const FULL = '★'
 const EMPTY = '☆'
@@ -55,7 +56,8 @@ const PROCESSORS = [
     fn: function( item ) {
       const { bookmarks } = item.meta
       const withRating = bookmarks.map( processRating )
-      const withMarkdownTitle = withRating.map( bookmark => ({...bookmark, title: stripSingleParagraph(marked( bookmark.title )) }) )
+      const withOrder = orderBy( withRating, 'title' )
+      const withMarkdownTitle = withOrder.map( bookmark => ({...bookmark, title: stripSingleParagraph(marked( bookmark.title )) }) )
       const withTags = groupBy( withMarkdownTitle, 'tag' )
 
       return withTags
