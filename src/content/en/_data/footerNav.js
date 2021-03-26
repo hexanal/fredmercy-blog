@@ -1,5 +1,15 @@
 module.exports = [
   {
+    id: "rss",
+    href: "/rss.xml",
+    label: "rss",
+    attr: [
+      {
+        "data-icon": "🌈"
+      }
+    ]
+  },
+  {
     id: "github",
     href: "https://github.com/hexanal",
     label: "github",
@@ -30,5 +40,10 @@ module.exports = [
         "target": "_blank"
       }
     ]
+  },
+  {
+    id: "email",
+    href: "mailto:hello@fredmercy.ca",
+    label: "email"
   }
 ]
