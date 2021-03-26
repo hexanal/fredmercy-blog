@@ -1,4 +1,4 @@
-import Exponent from 'exponent-core'
+import Exponent from './tools/Exponent'
 import Messaging from './tools/Messaging'
 
 // autoloaded

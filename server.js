@@ -5,12 +5,10 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const session = require('express-session');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const chalk = require('chalk');
+const marked = require('marked');
+const morgan = require('morgan');
 const sanitizeHtml = require('sanitize-html');
 const lusca = require('lusca');
-const WebSocket = require('ws');
 const sqlite3 = require('sqlite3');
 
 const db = new sqlite3.Database('./fredmercy.db');
@@ -20,10 +18,9 @@ const { build, watch } = require('./zorg');
 
 app.set('host', process.env.HOST || '0.0.0.0');
 app.set('port', process.env.PORT || 8042);
-app.use(compression());
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use( compression() )
+app.use( morgan('tiny') )
+app.use( express.json());
 app.use(session({
 	resave: true,
 	saveUninitialized: true,
@@ -59,7 +56,9 @@ app.post('/api/comments/byUrl', (req, res) => {
 		(error, rows) => {
 			if ( error ) res.send( error )
 
-			res.send( rows )
+			const formatted = rows.map( row => ({ ...row, comment: marked(row.comment) }) )
+
+			res.send( formatted )
 	})
 })
 
@@ -81,33 +80,21 @@ app.use(function(error, req, res, next) {
 });
 
 const server = app.listen(app.get('port'), () => {
-	console.log(chalk.blue(`[server] [env: ${app.get('env')}]`));
-	console.log(chalk.blue(`[server] [url: http://${app.get('host')}:${app.get('port')} ]`));
+	console.log(`[fredmercy] env: ${app.get('env')}`)
+	console.log(`[fredmercy] url: http://${app.get('host')}:${app.get('port')}`)
+	console.log(`~~`)
+
+	console.log(`[fredmercy] launching build...`)
 
 	build() // compile the necessary stuff
-	if ( app.get('env') === 'development' ) watch() // watch for changes
+
+	if ( app.get('env') === 'development' ) {
+		setTimeout( () => {
+			console.log(`~~`)
+			console.log(`[fredmercy] development mode: watching files`)
+			watch() // watch for changes
+		}, 2000)
+	}
 });
-
-/**
- * BEGIN Websocket business
- */
-const wss = new WebSocket.Server({ server });
-
-wss.on('connection', function(ws) {
-	ws.on('message', function incoming(data) {
-		wss.clients.forEach(function each(client) {
-			if (client !== ws && client.readyState === WebSocket.OPEN) {
-				client.send(data);
-			}
-		});
-	});
-
-	ws.on('close', function() {
-		console.log('close ws connection');
-	});
-});
-/**
- * END Websocket business
- */
 
 module.exports = app;

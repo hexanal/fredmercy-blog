@@ -1,4 +1,3 @@
-import marked from 'marked'
 import orderBy from 'lodash.orderby'
 import { t, months } from './i18n'
 import ago from '../tools/ago'
@@ -96,7 +95,7 @@ export default function({element, ui, control, messaging }) {
         $timestamp.classList.add('comment-line__time')
 
       $author.textContent = `${ author }`
-      $content.innerHTML = marked(comment)
+      $content.innerHTML = comment
       $timestamp.innerHTML = getFormattedTimestamp(timestamp)
 
       $commentLine.appendChild($author)
