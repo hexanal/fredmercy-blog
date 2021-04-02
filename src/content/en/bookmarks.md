@@ -25,14 +25,14 @@ bookmarks:
       - I loved that label when I was a teen... and I still do!
     rating: n/a
 
-  - tag: misc
+  - tag: nerd
     source: official website
     link: https://www.eff.org/issues/privacy
     title: Electronic Frontier Foundation's Privacy page
     notes:
       - if you need to learn more about privacy on the Internet
 
-  - tag: watch
+  - tag: nerd
     title: 'Star Trek: The Next Generation'
     source: imdb.com
     link: https://www.imdb.com/title/tt0092455/reference
@@ -49,20 +49,20 @@ bookmarks:
       - This game absolutely gave me PTSD! Not to joke about this condition, though... the graphic violence and tortured characters often made me feel really bad for the people living in this world.
     rating: 5, very good!
 
-  - tag: misc
+  - tag: nerd
     title: JuliaMono (official website)
     link: https://juliamono.netlify.app
     source: official website
     notes:
       - "I'm currently using this font: it's clean, it's legible, it has the right amount of ligatures, etc."
 
-  - tag: read
+  - tag: philosophy
     title: Wikipedia article for the Slow Movement
     link: https://www.slowmovement.com/
     notes:
       - A philosphy about taking things slow, dude...!
 
-  - tag: read
+  - tag: philosophy
     title: Dérive ("drifting"; wikipedia article)
     link: https://en.wikipedia.org/wiki/D%C3%A9rive
     source: wikipedia.org
@@ -101,22 +101,14 @@ bookmarks:
       - "As I write this, [Justin Tomchuk](https://justintomchuk.com/) is working on the last two episodes of this brilliant animated series. It's **fucking good**."
     rating: 5, fucking good!
 
-  - tag: read
+  - tag: nerd
     title: _The Efficiency Delusion_, Evan Selinger
     link: https://onezero.medium.com/the-efficiency-delusion-f6a97241e1e1
     source: medium.com
     notes:
       - This article seemed interesting, and linked to my thoughts about the _slow movement_ and how I should adopt a leisurely pace to stay focused on what's real
 
-  - tag: music
-    title: _I Wanna Go Home_, Bill Wurtz
-    link: https://www.youtube.com/watch?v=vjUOJEXiX3g
-    source: youtube.com
-    notes:
-      - at some point I was on a full-blown Bill Wurtz craze, listening to his songs **a lot!!**
-      - these days not so much, but be sure to watch his other videos
-
-  - tag: science
+  - tag: nerd
     title: Sean Carroll's “Mindscape” podcast
     link: https://www.preposterousuniverse.com/podcast/
     notes:
@@ -131,7 +123,7 @@ bookmarks:
     notes:
       - this is if you like thrash metal :)
 
-  - tag: web
+  - tag: programming
     title: Devine Lu Linvega's website
     link: https://wiki.xxiivv.com/#home
     notes:
@@ -241,7 +233,7 @@ bookmarks:
     link: https://www.youtube.com/watch?v=-R30wogqnhU
     source: youtube.com
 
-  - tag: misc
+  - tag: nerd
     title: Nextcloud
     link: https://nextcloud.com/
     source: official website

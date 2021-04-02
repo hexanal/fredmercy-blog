@@ -15,12 +15,10 @@ const plugins = [
   require('../plugins/pages/relationship'),
   require('../plugins/global/post-index-as-parent'),
   require('../plugins/global/shortcodes'),
-  require('../plugins/global/excerpt'),
   require('../plugins/global/extra-data'),
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),
   require('../plugins/global/aliases'),
-  // require('../plugins/global/debug'), // TODO
   require('../plugins/global/export-to-json'),
   require('../plugins/global/frontmatter-process'), // TODO rename?
   require('../plugins/global/posts-by-months'),

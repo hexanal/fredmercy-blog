@@ -2,31 +2,43 @@
 
 {{> components/breadcrumbs }}
 
-<div class="bookmarks content">
+<div class="bookmarks content" data-component="bookmarks">
   {{#each meta.bookmarks as |bookmarks tag| }}
     <h2>{{ tag }}</h2>
     <ul>
       {{#each bookmarks }}
-        <li>
-          <a href="{{ this.link }}" target="_blank" rel="noreferrer noopener">
+        <li
+          data-element="bookmark"
+          data-id="{{ @index }}"
+          data-title="{{{ this.title }}}"
+          data-tag="{{ this.tag }}"
+          data-source="{{ this.source }}"
+          data-rating="{{ this.rating }}"
+        >
+          <a
+            href="{{ this.link }}"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             “{{{ title }}}”
           </a>
           {{# if this.source }}
             <small class="color-secondary">->&nbsp;{{ this.source }}</small>
           {{/if}}
 
-          {{#if this.notes }}
-          <blockquote>
-            {{#each this.notes }}
-              {{markdown this }}
-            {{/each}}
 
-            {{#if this.rating }}
-            <div class="bookmark__rating">
-              {{{ this.rating }}}
-            </div>
-            {{/if}}
-          </blockquote>
+          {{#if this.notes }}
+            <blockquote>
+              {{#each this.notes }}
+                {{markdown this }}
+              {{/each}}
+
+              {{#if this.rating }}
+              <div class="bookmark__rating">
+                {{{ this.rating }}}
+              </div>
+              {{/if}}
+            </blockquote>
           {{/if}}
         </li>
       {{/each}}

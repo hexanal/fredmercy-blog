@@ -18,30 +18,27 @@
 </head>
 
 <body class="page">
-  <div class="page__wrapper" data-barba="wrapper">
-    <div class="page__container" data-barba="container" data-lang="{{ meta.lang }}">
-      {{> components/header }}
+  <div id="🌀" class="page__wrapper" data-lang="{{ meta.lang }}">
+    {{> components/header }}
 
-      <div class="page__contents" data-barba="inside">
-        {{> @partial-block }}
+    <div class="page__contents">
+      {{> @partial-block }}
 
-        {{> components/footer }}
-      </div>
-
-      {{#> components/box id="comments" title=t.comments.modalTitle shortcut="c" }}
-        {{> components/comments}}
-      {{/components/box}}
-
-      {{#> components/box id="help" title=t.helpWindow.boxTitle shortcut="?" }}
-        {{> components/help type="box"}}
-      {{/components/box}}
-
-      {{> components/box-nav }}
+      {{> components/footer }}
     </div>
+
+    {{#> components/box id="comments" title=t.comments.modalTitle shortcut="c" }}
+      {{> components/comments}}
+    {{/components/box}}
+
+    {{#> components/box id="help" title=t.helpWindow.boxTitle shortcut="?" }}
+      {{> components/help type="box"}}
+    {{/components/box}}
+
+    {{> components/box-nav }}
   </div>
 
   {{> components/rainbow }}
-  {{> components/ball }}
 
   <script src="/fredmercy.js"></script>
 </body>

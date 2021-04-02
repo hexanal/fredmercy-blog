@@ -5,9 +5,7 @@ tags: journal
 type: post
 ---
 
-`7:40am:` Sipping on a cup of coffee and staring out the window at the uncharacteristically blue sky; I'm thinking about how hectic the last few weeks have been while at the same time how little I've been able to achieve. But, everything in due time, I suppose.
-
-Things don't look half bad right now, and this week is full of promises. I need lords to allow me to slave away all week to make them more prosperous, so that when the gold coins spill over, I can amass them and afford sustenance.
+`7:40am:` ~~Sipping on a cup of coffee and staring out the window at the uncharacteristically blue sky; I'm thinking about how hectic the last few weeks have been while at the same time how little I've been able to achieve. But, everything in due time, I suppose.~~
 
 `7:49am:` Eventually I will try to incorporate more fun things in this blog. Maybe some day it'll get to a point where I'm comfortable sharing it to the world! (no it's not live... haven't shared the link yet!)
 

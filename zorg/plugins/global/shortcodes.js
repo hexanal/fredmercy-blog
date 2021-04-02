@@ -1,7 +1,7 @@
 const fs = require('fs')
-const frontMatter = require('front-matter')
 const marked = require('marked')
-const templater = require('../../bin/templater')
+const templater = require('../../bin/templater') // FIXME swap templater to.. something else?
+const frontMatter = require('../../bin/frontmatter') // FIXME make sure this is clean
 const { debugLog } = require('../../bin/utils')
 
 const useBlockWithData = function(blockId, data, extra) {
@@ -25,7 +25,6 @@ const SHORTCODES = [
     tag: 'latest-post',
     processor: function({ props, item, contentTypes }) {
       const latest = { ...contentTypes.post[0] }
-      latest.excerpt = marked( latest.excerpt )
       return useBlockWithData('latest-post', { ...item, latest })
     }
   },

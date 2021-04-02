@@ -11,7 +11,7 @@ These days I sort of struggle with this idea of plugging in technology — often
 
 The Modern World is a mindfuck. It's a sensory overload, and motherfuckers are out there boasting about their meditation sessions, their _mindfulness_... heck, some of them are microdosing psychedelics because it makes them more creative when solving problems at their stupid fucking yuppie start-up job. Man, nowadays, if you manage to give yourself twenty minutes of quiet respite a day, that's an incredible feat and a _lifehack_. Get the fuck out of here with your obvious shit.
 
-***
+~~
 
 `9:49am:` This blog is somewhat optimized, in a way, so that I don't have to do much copy-pasting. **BUT**, it's also not really efficient and super advanced; the process is actually rather tedious. Not too much work, but a far cry from the super easy process most writers are used to, usually consisting of drafting a post in a well-designed Content Management System, and then simply hitting the “Publish” button!
 

@@ -3,6 +3,7 @@ title: Planning / Dreading
 description: The best is to come; the worst as well.
 tags: journal
 type: post
+edited: 2021-03-02 @ 1:09pm
 ---
 
 `11:25am:` Most of the morning spent on planning my short-term future: travel plans, moving out, in, insurance, temporary accomodations, etc. Anxiety is creeping, my psoriasis is flaring, but the World keeps on turning.
@@ -19,6 +20,3 @@ Oh, and by the way, check out today's track:
 - [...and the music video](https://www.youtube.com/watch?v=_un9PYsE1_g)
 
 `1:17pm:` Nice little life events _loop_ right now: buying tickets for a show overseas while in the same exact coffee shop from which I had ordered tickets for our first ever King Gizzard & the Lizard Wizard show, which was also overseas. We be travelin'! Loving it.
-
-`1:38pm:` Currently **furious** at Firefox because apparently I can't tab through links the way I'm used to... maybe it's a bug? It just focuses on the whole page for some stupid reason. Same on other websites: only focuses on seemingly random elements. Very frustrating. (**2019-02-01_EDIT:** after some research, it appears it was a macOS system preference setting, under "Keyboard", that I needed to change. Cool.)
-

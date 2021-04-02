@@ -1,14 +1,17 @@
-<div class="breadcrumbs no-print">
+<div class="breadcrumbs no-print" role="navigation">
+  <h2 class="visually-hidden">{{ t en="Breadcrumbs" fr="Fil d'Ariane" }}</h2>
+
   <a class="breadcrumbs__root" href="{{ meta.root }}">{{ t.breadcrumbsRoot }}</a>
 
   {{#if meta.breadcrumbs }}
     {{#each meta.breadcrumbs }}
-    <dot class="color-secondary"><-</dot>
-    <a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
+      <span class="color-secondary" aria-hidden="true"><-</span>
+
+      <a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
     {{/each}}
   {{/if}}
 
-  <dot class="color-secondary"><-</dot>
+  <span class="color-secondary" aria-hidden="true"><-</span>
 
   <span class="breadcrumbs__leaf">{{ meta.title }}</span>
 </div>

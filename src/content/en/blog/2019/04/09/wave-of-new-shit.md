@@ -20,7 +20,7 @@ type: post
 
 Another thing I found out right when I opened Twitter, is this fucking thing:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qtTi_uyYynA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qtTi_uyYynA" frameborder="0" allowfullscreen></iframe>
 
 These boys can do no wrong!
 

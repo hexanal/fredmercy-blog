@@ -8,13 +8,13 @@ i18n:
 
 ## about me
 
-I'm interested in: <a href="https://github.com/hexanal" target="_blank" rel="noopener noreferrer">programming</a>; science; <a href="https://fredmercy.bandcamp.com" target="_blank" rel="noopener noreferrer">music</a>; [blogging](/blog); art; skateboarding; _having fun_
+I'm interested in: an open web & [programming](/bookmarks#(tagged:nerd)), [science](/bookmarks#(tagged:science)), [music](/bookmarks#(tagged:personal,music)), [blogging](/blog), and art ([movies](/bookmarks#(tagged:watch)), [
 
-I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to our existence [note: seems like _love_ is the answer? 🤷‍♂️]
+I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to our existence
 
 ## about this website
 
-**preferences:** <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>site settings and preferences</a>
+**preferences:** <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP">site settings and preferences</a>
 
 **_raison d'être:_**
 
@@ -33,7 +33,7 @@ I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being
 
 **privacy**
 
-- I don't use cookies to track you, but I do use a browser feature called [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) which helps this website remember your preferences, mostly for accessibility features (font style, font size, high contrast color scheme, etc.)
+- I don't use cookies to track you, but I do use a browser feature called [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) which helps this website remember your preferences (your name and any unsubmitted message in the comment box, your preferred font size and theme)
 - you can leave comments on any page of this website
   - you can spam the comments, but please don't do it because **it's not nice**
   - you can use your real name, but you could also use any name: there is currently no support for user accounts

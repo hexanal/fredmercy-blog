@@ -1,5 +1,5 @@
 const fs = require('fs')
-const frontMatter = require('front-matter')
+const frontMatter = require('./frontmatter')
 const glob = require('glob')
 const { getFilenameFromPath, getFormattedTimestamp } = require('./utils')
 const { defaultLocale } = require('../config')
@@ -9,7 +9,7 @@ const { defaultLocale } = require('../config')
  * - read file for each path
  * - extract front-matter
  * - rename to match our nomenclature
- * - return { meta, content }
+ * - return { meta, body } and other "developer" keys
  */
 const getBasicMeta = function( contentFiles, lang ) {
   return contentFiles.map( item => {

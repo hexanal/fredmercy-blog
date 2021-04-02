@@ -28,8 +28,8 @@ const getFilenameFromPath = function( filepath ) {
 const getFormattedTimestamp = function( timestamp ) {
   const date = new Date( timestamp )
 
-  const day = withLeadingZero( date.getUTCDate() + 1 ) // these are indexes...
-  const month = withLeadingZero( date.getUTCMonth() + 1 ) // these are indexes...
+  const day = withLeadingZero( date.getUTCDate() )
+  const month = withLeadingZero( date.getUTCMonth() )
   const year = date.getUTCFullYear()
 
   const time = getAmPmTime( date )

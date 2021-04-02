@@ -13,10 +13,4 @@ Recently, I've turned a closet into some sort of workstation where I'll be tinke
 
 For this blog, I finally gave up on the idea of making it super *evolved*: I want it to be barebone, really old school. Real easy to maintain. I want it to look cool, and feel right, improve the UX, etc. while keeping it absolutely ancient in terms of technology. Ideally, I'm aiming for some plain HTML, CSS, Javascript; with maybe an API on the server to handle all that bullshit with creating pages, comments, etc. It'll still be super basic, but fuck you. I want something simple.
 
-Next, I want to set up some sort of **music** section, where I'll be dumping some track drafts, finished or not, samples, weird experiments, anything. I want this dumb blog to be a hodge-podge of all the crap I'm toying with. It'll be fun.
-
-That's all I'm gonna write today. I still have to push this entry and it's a long process. Ah! I know: in my next entry, I'll write about the Slow Movement!
-
-Take care!
-
-(**2020-10-06_EDIT:** Fixed the line-breaking... I edited that post in vim and forgot to remove the line breaks! oops...)
+[content deleleted]

@@ -1,34 +1,27 @@
 ## TODO
 
-* start "vendoring" everything :)
-* one-page printable version of website
-    - per type
-- what about `chokidar` ?
-    - can I "poll" without having to go through nodejs?
-        - that's if I don't even want to refresh anything
-    - can I use something else than `express` to serve files?
-    - do I even need a friggin' server; it's a static website...
-* http://1linelayouts.glitch.me/
-* Fix: accessibility audit of themes / fix contrasts / create a11y specific themes?
-    - fewer themes
-    - better themes
-* Fix: allow "autoloaded" components to be hooked to a DOM element?
-    - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
-    - lifecycle is a good feature to have, I think...
-    - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
+* Do: accessibility audit of themes
+* might not need the split between content types in an object
+    - simplify the creation of "plugins"
+    - for things that require "other" content, have the plugin grab what it needs, on a _per page basis_
 * something to initalize the db with tables and shit
     - when resetting the website (it'll happen...)
 * with the `markdown include` thing I've just implemented, try to figure something out...
     - zorg-process the file?
     - allow injecting some styles, dynamically? per-page?
-* debug the "root" object, with all the data
-    - have a bird's eye view of the content / data / wirings
-    - a version of each page with just it's JSON?
-    - that's the idea of a API route for each route
-* might not need the split between content types in an object
-    - simplify the creation of "plugins"
-    - for things that require "other" content, have the plugin grab what it needs, on a _per page basis_
-* I've got to try TailwindCSS, man!
+* one-page printable version of website?
+    - per content type?
+    - printable version of source-code (!) -> future-proofing the website by keeping a physical copy :)
+* http://1linelayouts.glitch.me/
+
+## are we still using exponent?!?!?
+
+if yes:
+
+* Fix: allow "autoloaded" components to be hooked to a DOM element?
+    - maybe drop `exponent` altogether, or figure out a better `onInit` / `onDestroy` lifecycle system?
+    - lifecycle is a good feature to have, I think...
+    - something that sends a signal when every component is loaded? (hook onto that stuff to trigger things when all the elements of the page are ready)
 
 ## put your thinking cap on
 
@@ -50,20 +43,12 @@
     - what about "components"? handlebars?
     - ...
 
-* thing with the pages not being in an object by type, but just a straight-up array with everything
-    - and utility functions to filter/grab/access the data you want in each "adapter"?
-
 * how to handle media?
     - right now... Nextcloud with public images
     - here's hoping that the server holds...
 
 * look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
-
-* (!) how to have a nice visual overview of the codebase
-    - to see what could be refactored
-    - to understand it faster (for devs unfamiliar with it)
-    - to debug
 
 * PWA:
     - [https://web.dev/codelab-make-installable/](https://web.dev/codelab-make-installable/)
@@ -74,11 +59,10 @@
     - barebone, hand-made shit?
     - most of it is NodeJS right now; damn
 
-* plopJS -> https://github.com/plopjs/plop
-    - or plop-inspired thing to quickly create new posts, pages, extract stuff, etc.
-    - what use, though?
-
 * spreadsheets, bro!
+    - Geoffrey Litt-style spreadsheet-like live-programming GUI
+    - edit content that way, with a modular UI?
+    - create new "adapters" in an exploratory way instead of manually iterating through the data with `map` and `reduce`
 
 ## "dynamic" linking?
 

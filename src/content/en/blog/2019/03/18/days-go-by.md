@@ -15,10 +15,8 @@ type: post
 }
 </style>
 
-`2:07pm:` My days earlier this month were so hectic and full of tension that it makes the present days so dull and full of... waiting. Yet despite that lack of “walking around dealing with stuff” energy, there's still a huge deal of “thinking about loads of stuff” energy being spent.
+`2:07pm:` ~~My days earlier this month were so hectic and full of tension that it makes the present days so dull and full of... waiting. Yet despite that lack of “walking around dealing with stuff” energy, there's still a huge deal of “thinking about loads of stuff” energy being spent.~~
 
-There nothing to do, which means there's _everything_ to do.
+~~There nothing to do, which means there's _everything_ to do.~~
 
 `2:13pm:` Yesterday was <span class="st-paddys">🍀 St Patrick's Day! 🍀</span>[note: Drank two beers, none of them Guinnesses, and made tacos, none of them with beef stew]
-
-`3:56pm:` Let's try to get that blog updated, gosh darn it.

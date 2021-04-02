@@ -33,7 +33,7 @@ Je suis un mec _lambda_ (il/le/autre); et comme la plupart d'entre vous, je suis
 
 **vie privée**
 
-- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer">localstorage</a> qui aide ce site à se souvenir de vos préférences, surtout pour les fonctions d'accessibilité (taille des caractères, thème de couleur, etc.)
+- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer">localstorage</a> qui aide ce site à se souvenir de vos préférences (votre nom et message non-envoyé dans la boite de commentaires, votre taille de texte et thème de couleur préférés)
 - vous pouvez laisser des commentaires sur n'importe quelle page du site
   - rien ne vous empêche de _spammer_ les commentaires, mais essayez de ne pas le faire car ce n'est **pas très gentil**
   - vous pouvez utiliser votre vrai nom, mais je vous conseille d'utiliser un pseudonyme (ça fait plus web 1.0)
