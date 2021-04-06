@@ -17,6 +17,10 @@ En ce moment, je travaille sur quelques petits projets personnels en profitant d
 
 Si vous cherchez un dév frontend, je suis disponible pour travailler à la pige. Vous pouvez parcourir mon [CV](/fr/cv).
 
+## dernier billet du blogue
+
+[latest-post]()
+
 ### quelques liens
 
 - [à propos](/fr/a-propos) <small class="color-secondary">-> à propos de moi et de ce site</small>
