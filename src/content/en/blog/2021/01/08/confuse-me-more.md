@@ -6,7 +6,7 @@ type: post
 
 `1:45pm:` Yesterday, I spent most of the afternoon freaking out over [the news](https://en.wikipedia.org/wiki/2021_storming_of_the_United_States_Capitol); maybe some of you did, too?
 
-These motherfuckers better get a grip, and soon. I can't believe these dumbasses, I can't believe the lack of security, I can't believe these social media platforms, man!... _unbelievable!_
+These guys better get a grip, and soon. I can't believe these dumbasses, I can't believe the lack of security, I can't believe these social media platforms, man!... _unbelievable!_
 
 `1:48pm:` I've been working on my website a little... added some funky things. I don't know if it performant or cool or well-coded or accessible, but I will have to figure this all out. The [bookmarks](/bookmarks) page now features a very basic filtering mechanism, by tags. I've been thinking about a future “case studies” section, where I would describe my work on some projects (this is mostly for my _developer_ profile 😄)
 

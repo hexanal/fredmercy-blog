@@ -10,6 +10,19 @@ format:
   - bookmarks: 'bookmarks'
 
 bookmarks:
+  - tag: nerd
+    title: Ditherpunk
+    link: https://www.makeworld.space/2021/02/dithering.html
+    notes:
+      - i just love the lo-fi esthetic of dithering :)
+
+  - tag: nerd
+    title: Rawtext Club
+    link: https://rawtext.club/sign-up.html
+    notes:
+      - for people with raw text websites
+      - mine doesn't really apply, but I love the concept
+
   - tag: gaming
     title: Deus Ex
     link: /ramblings/playtime-is-now

@@ -15,9 +15,6 @@ And so, via [Twitter](https://twitter.com/neauoire), I fall further down the rab
 
 All that certainly reignites my willingness to get weird, get creative, get musical, with my projects. I really like the aesthetic, the minimalism of it all. It makes me think about maybe creating a Bookmarks page on the blog where I list all the links I've posted. Sounds like a cool and easy idea.
 
-type: post
----
-
 Another thing I found out right when I opened Twitter, is this fucking thing:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qtTi_uyYynA" frameborder="0" allowfullscreen></iframe>

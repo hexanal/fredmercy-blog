@@ -34,7 +34,7 @@ const getFormattedTimestamp = function( timestamp ) {
 
   const time = getAmPmTime( date )
 
-  return `${month}-${day}-${year} @ ${time}`
+  return `${year}-${month}-${day} @ ${time}`
 }
 
 const getItemByURL = function(items, url) {

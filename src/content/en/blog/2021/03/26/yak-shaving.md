@@ -11,5 +11,3 @@ type: post
 Also, I continued my quest of removing dependencies from this project and it felt good to drop a couple of libraries from `package.json`, and shave a few kilobytes off of the javascript file! This sucker's now at a comfy 70 KB. The whole website clocks in at a hefty 6.3 MB though, which, if you use a _1 byte = 1 gram_ conversion rate, means that my tiny website would still weigh almost **7 tons**. When I wrote about making this website "portable", this is what I had in mind, guys: what do you need to transport something that weighs 7 tons? At least a couple of Ford F-350s, if I can transport it _disassembled_ 😄
 
 Anyway... stay cool, and take it slow, people!
-
-`12:18pm:` Also added an "orphaned" page where I dumped [a few bookmarks](/links): these are different from the links in the [bookmarks](/bookmarks) but eventually I'll merge both. I'm still thinking about how to manage that, but it's _very low_ priority.
