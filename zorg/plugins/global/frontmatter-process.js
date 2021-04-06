@@ -55,7 +55,8 @@ const PROCESSORS = [
     id: 'bookmarks',
     fn: function( item ) {
       const { bookmarks } = item.meta
-      const withRating = bookmarks.map( processRating )
+      const withIds = bookmarks.map( (bookmark, index) =>({ ...bookmark, id: `${bookmark.tag}_${index}` }) )
+      const withRating = withIds.map( processRating )
       const withOrder = orderBy( withRating, 'title' )
       const withMarkdownTitle = withOrder.map( bookmark => ({...bookmark, title: stripSingleParagraph(marked( bookmark.title )) }) )
       const withTags = groupBy( withMarkdownTitle, 'tag' )

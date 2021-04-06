@@ -1,35 +1,50 @@
 // import Mousetrap from 'mousetrap'
 // import stater from '../tools/stater'
 // import reefer, { onReef } from '../tools/reefer'
+import { getHashes, getHash } from '../../tools/hashish'
 
 export default function({ element, ui, control, messaging }) {
   const state = {
     filtered: [],
-    bookmarks,
+    bookmarks: [],
     tag: false,
   }
   // const animation = { shadow: reefer(0) }
 
-  const init = function() {
-
-    ui.bookmarks.forEach( bookmark => {
-      const { id, title, rating, source } = bookmark.dataset
-      state.bookmarks[id] = { id, title, rating, source }
-      state.filtered[id] = { id, title, rating, source }
+  const main = function() {
+    ui.bookmark.map( bookmark => {
+      const { id, title, tag, rating, source } = bookmark.dataset
+      state.bookmarks.push({ id, title, tag, rating, source })
+      state.filtered.push({ id, title, tag, rating, source })
     })
+
+    window.addEventListener('hashchange', onHashChange, false)
+    onHashChange()
+  }
+
+  const onHashChange = function() {
+    const tag = getHash('tagged')
+    filterByTag( tag )
   }
 
   const filterByTag = function( tag ) {
     state.filtered = state.bookmarks.filter( bookmark => {
       return bookmark.tag === tag
     })
+
+    ui.tag.map( tagSection => {
+      tagSection.style.display = tag && tagSection.dataset.tag !== tag
+        ? 'none'
+        : 'block'
+    })
   }
 
-  messaging.subscribe('FILTER_BY_TAG', filterByTag)
+  main()
 
   // onReef( function() { })
   // state.active.changed( active => { })
   // messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
+
 
   // return function() {
     // messaging.unsubscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)

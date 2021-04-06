@@ -8,7 +8,7 @@ i18n:
 
 ## about me
 
-I'm interested in: an open web & [programming](/bookmarks#(tagged:nerd)), [science](/bookmarks#(tagged:science)), [music](/bookmarks#(tagged:personal,music)), [blogging](/blog), and art ([movies](/bookmarks#(tagged:watch)), [
+I'm interested in: an open web & [programming](/bookmarks#tagged:nerd), [reading](/bookmarks#tagged:read), art ([movies](/bookmarks#tagged:watch), [music](/bookmarks#tagged:music)), and [blogging](/blog)
 
 I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to our existence
 

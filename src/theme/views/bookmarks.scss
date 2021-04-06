@@ -1,5 +1,28 @@
-.bookmarks {
-  .drawer + .drawer {
-    margin-top: 3rem;
+.bookmarks.content {
+  h2 {
+    margin-top: 0;
   }
+  ol {
+    list-style-type: lower-greek;
+  }
+  ol li::marker {
+    color: var(--color-secondary);
+  }
+  ol li + li {
+    margin-top: 1.5rem;
+  }
+}
+
+// .bookmarks__tag {
+//   + .bookmarks__tag {
+//     padding-top: 5rem;
+//   }
+// }
+
+.bookmarks__anchor {
+  padding-top: 5rem;
+}
+
+.bookmark__rating {
+  font-style: normal;
 }

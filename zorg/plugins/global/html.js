@@ -14,11 +14,10 @@ const formatContent = function( contentTypes ) {
     return contentTypes[type].map( item => {
       if ( !item.meta.url ) return
 
-      // FIXME ?
+      // FIXME ? hey
       const templateData = {
         ...item,
-        content: item.content ? marked( item.content ) : false,
-        excerpt: item.excerpt ? marked( item.excerpt ) : false,
+        content: marked( item.body )
       }
       const destination = `./public${item.meta.url}`
       const templateName = item.meta.template || type // default to content type

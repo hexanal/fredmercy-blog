@@ -50,11 +50,11 @@ bookmarks:
     rating: 5, very good!
 
   - tag: nerd
-    title: JuliaMono (official website)
-    link: https://juliamono.netlify.app
-    source: official website
+    title: Fantasque Sans Mono
+    link: https://github.com/belluzj/fantasque-sans
+    source: github.com
     notes:
-      - "I'm currently using this font: it's clean, it's legible, it has the right amount of ligatures, etc."
+      - The font I use for this website and for everything I code/write/script in!
 
   - tag: philosophy
     title: Wikipedia article for the Slow Movement
@@ -123,11 +123,11 @@ bookmarks:
     notes:
       - this is if you like thrash metal :)
 
-  - tag: programming
+  - tag: nerd
     title: Devine Lu Linvega's website
     link: https://wiki.xxiivv.com/#home
     notes:
-      - my main inspiration to start blogging again and to build my own tools
+      - inspired me to start this blog thing again and to build my own tools
 
   - tag: music
     title: _Worship_, Bongripper
@@ -245,3 +245,5 @@ bookmarks:
       - It'll get better, just wait
 
 ---
+
+This is a semi-curated, almost-organized list of links that I *think* are interesting.

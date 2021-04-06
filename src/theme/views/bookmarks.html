@@ -2,47 +2,68 @@
 
 {{> components/breadcrumbs }}
 
+{{> components/content }}
+
+{{> components/squiggle }}
+
+{{#each meta.bookmarks as |bookmarks tag| }}
+  <a href="#tagged:{{tag}}">{{ tag }}</a>
+  {{> components/dot }}
+{{/each}}
+
+{{> components/squiggle }}
+
 <div class="bookmarks content" data-component="bookmarks">
   {{#each meta.bookmarks as |bookmarks tag| }}
-    <h2>{{ tag }}</h2>
-    <ul>
-      {{#each bookmarks }}
-        <li
-          data-element="bookmark"
-          data-id="{{ @index }}"
-          data-title="{{{ this.title }}}"
-          data-tag="{{ this.tag }}"
-          data-source="{{ this.source }}"
-          data-rating="{{ this.rating }}"
-        >
-          <a
-            href="{{ this.link }}"
-            target="_blank"
-            rel="noreferrer noopener"
+    <div class="bookmarks__tag">
+      <div class="bookmarks__anchor" id="tagged:{{tag}}">
+        <h2>{{ tag }}</h2>
+      </div>
+
+      <ol>
+        {{#each bookmarks }}
+          <li
+            data-ui="bookmark"
+            data-id="{{ this.id }}"
+            data-tag="{{ tag }}"
+            data-title="{{{ this.title }}}"
+            data-source="{{ this.source }}"
+            data-rating="{{ this.rating }}"
           >
-            “{{{ title }}}”
-          </a>
-          {{# if this.source }}
-            <small class="color-secondary">->&nbsp;{{ this.source }}</small>
-          {{/if}}
+            <a
+              href="{{ this.link }}"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              “{{{ title }}}”
+            </a>
+            {{# if this.source }}
+              <small class="color-secondary">->&nbsp;{{ this.source }}</small>
+            {{/if}}
 
 
-          {{#if this.notes }}
-            <blockquote>
-              {{#each this.notes }}
-                {{markdown this }}
-              {{/each}}
+            {{#if this.notes }}
+              <blockquote>
+                {{#each this.notes }}
+                  {{markdown this }}
+                {{/each}}
 
-              {{#if this.rating }}
-              <div class="bookmark__rating">
-                {{{ this.rating }}}
-              </div>
-              {{/if}}
-            </blockquote>
-          {{/if}}
-        </li>
-      {{/each}}
-    </ul>
+                {{#if this.rating }}
+                <div class="bookmark__rating">
+                  {{{ this.rating }}}
+                </div>
+                {{/if}}
+              </blockquote>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ol>
+
+      {{#if @last }}
+      {{else}}
+        {{> components/squiggle }}
+      {{/if}}
+    </div>
   {{/each}}
 </div>
 
