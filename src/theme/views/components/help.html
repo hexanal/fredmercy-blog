@@ -1,5 +1,6 @@
 <aside class="help" data-component="help" data-type-{{ type }}>
-  <div class="help__section">
+  <!-- this section requires javascript to function -->
+  <div class="help__section no-js">
     <h2 class="heading-alt">
       {{ t.helpWindow.settings.title }}
     </h2>
@@ -12,9 +13,10 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            {{ t.helpWindow.settings.theme }}
+            <label for="helpThemeSelect">{{ t.helpWindow.settings.theme }}</label>
           </strong>
           <select
+          id="helpThemeSelect"
             class="help__select"
             data-component="themes"
           >

@@ -3,6 +3,8 @@ const marked = require('marked')
 const templater = require('../../bin/templater')
 const { debugLog } = require('../../bin/utils')
 
+const ALLOWED_TYPES = ['page', 'post'] // content types to "build out"
+
 const getTemplate = function( templateName, contentType ) {
   let templateFile
 
@@ -29,6 +31,7 @@ const formatContent = function( contentTypes ) {
     debugLog( `[middleware] [html] ${contentTypes[type].length} “${type}” items` )
 
     return contentTypes[type].map( item => {
+      if ( !ALLOWED_TYPES.includes( item.meta.type ) ) return
       if ( !item.meta.url ) return
 
       // FIXME ? hey

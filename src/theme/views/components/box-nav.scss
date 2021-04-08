@@ -1,4 +1,9 @@
 [data-box-id="menu"] {
+  .box__frame {
+    width: auto;
+    left: auto;
+    right: 0;
+  }
   .box__wrap {
     height: auto;
   }
@@ -6,5 +11,8 @@
 
 .box-nav {
   padding: 1rem;
-  text-align: right;
+
+  .nav {
+    text-align: left;
+  }
 }

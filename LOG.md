@@ -1,6 +1,7 @@
 ## TODO
 
 * Do: accessibility audit of themes
+
 * use {{ t en="" fr="" }} for everything?
 * might not need the split between content types in an object
     - simplify the creation of "plugins"
@@ -45,7 +46,6 @@ if yes:
     - right now... Nextcloud with public images
     - here's hoping that the server holds...
 
-* look into implementing [microformats](https://microformats.io/)
 * look into implementing [webmentions](https://www.w3.org/TR/webmention/)
 
 * PWA:

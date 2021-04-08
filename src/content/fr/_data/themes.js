@@ -1,7 +1,7 @@
 module.exports = {
   light: [
     { id: "june", label: "june" },
-    { id: "mini", label: "Minimal" },
+    { id: "mini", label: "Contraste élevé" },
     { id: "january", label: "Janvier" },
     { id: "camper-van", label: "Roulotte '77" }
   ],

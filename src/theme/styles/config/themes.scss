@@ -15,7 +15,7 @@ html { // specify that we're dealing with the documentElement
     --color-primary: #000;
     --color-active: #000;
     --color-secondary: #00f;
-    --color-subdued: #f0f;
+    --color-subdued: #4A00AA;
     --color-extra: #0f0;
     --icon-filter: grayscale(1) brightness(0.75) contrast(3.5);
   }
@@ -43,7 +43,7 @@ html { // specify that we're dealing with the documentElement
   &[data-theme="mini-dark"] {
     --color-bg: #000;
     --color-primary: #fff;
-    --color-active: #f0f;
+    --color-active: #4A00AA;
     --color-secondary: #fff;
     --color-subdued: #0f0;
     --color-extra: #00f;

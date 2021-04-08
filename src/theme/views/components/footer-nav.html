@@ -17,11 +17,12 @@
     data-no-transition
   >{{ t.help }}</a>
 
-  <span class="footer-nav__theme">
+  <span class="footer-nav__theme no-js">
     {{> components/dot }}
 
-    theme:
+    <label for="footerThemeSelect">theme:</label>
     <select
+      id="footerThemeSelect"
       class="footer-nav__select"
       data-component="themes"
     >

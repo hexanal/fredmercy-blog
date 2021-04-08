@@ -16,6 +16,7 @@ const plugins = [
   require('../plugins/global/post-index-as-parent'),
   require('../plugins/global/shortcodes'),
   require('../plugins/global/extra-data'),
+  require('../plugins/global/modules'),
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),
   require('../plugins/global/aliases'),

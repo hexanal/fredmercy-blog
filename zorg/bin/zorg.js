@@ -45,6 +45,7 @@ const getDefaultAttributes = function( attributes, item ) {
   const { type, title, description, draft } = attributes
 
   return {
+    id: getFilenameFromPath( item ).replace('.md', ''),
     type: type || 'page',
     title: title || getFilenameFromPath( item ).replace('.md', ''),
     description: description || '',

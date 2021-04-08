@@ -65,6 +65,12 @@
     color: var(--color-bg);
     background-color: var(--color-active);
   }
+  // TODO: seems strange to have to tweak this for some specific themes... but this is for better a11y
+  [data-theme="mini-dark"] & {
+    h3, code {
+      color: var(--color-primary);
+    }
+  }
   h2 + h3 {
     margin-top: 1.5rem;
   }
