@@ -2,43 +2,32 @@
 
 {{> components/breadcrumbs }}
 
-<article class="post">
-  <div
-    class="post__window"
-    aria-label="{{ meta.title }}"
-    data-component="highlight"
-  >
-    <header class="post__heading">
-      <div class="post__meta">
-        <time class="post__date">
-          {{ meta.prettyDate }}
-        </time>
+<article class="post h-entry">
+  <header class="post__heading">
+    <div class="post__meta">
+      <h2 class="visually-hidden p-name">{{ meta.title }}</h2>
 
-        {{#if meta.description }}
-        <small class="post__description">{{ meta.description }}</small>
-        {{/if}}
+      <time class="heading-alt dt-published" datetime="{{ meta.date }}">
+        {{ meta.prettyDate }}
+      </time>
 
-        {{#if meta.tags }}
-        <small class="post__type">(tagged: <em>{{ meta.tags }}</em>)</small>
-        {{/if}}
+      {{#if meta.description }}
+      <small class="color-secondary p-summary">{{ meta.description }}</small>
+      {{/if}}
 
-        {{#if meta.edited }}
-        <small class="post__edited color-subdued">-> edited on: {{ meta.edited }}</small>
-        {{/if}}
-      </div>
-    </header>
+      {{#if meta.tags }}
+      <small class="p-category">(tagged: <em>{{ meta.tags }}</em>)</small>
+      {{/if}}
 
-    {{> components/content }}
+      {{#if meta.edited }}
+      <small class="color-subdued">-> edited on: {{ meta.edited }}</small>
+      {{/if}}
+    </div>
+  </header>
 
-    {{#if meta.edit}}
-    <i class="post__edit-date">
-      (last edited: {{ meta.edit }})
-    </i>
-    {{/if}}
+  {{> components/content }}
 
-    {{> components/post-nav }}
-  </div>
-
+  {{> components/post-nav }}
 </article>
 
 {{/layouts/page}}

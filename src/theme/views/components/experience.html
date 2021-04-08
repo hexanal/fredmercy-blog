@@ -16,7 +16,7 @@
 
     <div class="experience__description">
       <p>{{ location }}</p>
-      <p>{{ description }}</p>
+      <p class="p-skill">{{ description }}</p>
 
       {{#if extra}}
       <ul class="experience__more">
@@ -26,7 +26,7 @@
               {{this.label}}
             </a>
             {{#if this.description }}
-            <small>
+            <small class="p-summary">
               {{ this.description }}
             </small>
             {{/if}}
