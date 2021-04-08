@@ -1,6 +1,4 @@
-.page__wrapper {
-  max-width: none;
-
+.page > main {
   @media (min-width: $mq-medium) {
     max-width: $site-width;
   }

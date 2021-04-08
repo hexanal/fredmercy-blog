@@ -15,7 +15,6 @@ const plugins = [
   require('../plugins/pages/relationship'),
   require('../plugins/global/post-index-as-parent'),
   require('../plugins/global/shortcodes'),
-  require('../plugins/global/extra-data'),
   require('../plugins/global/modules'),
   require('../plugins/global/settings'),
   require('../plugins/global/sitemap-xml'),

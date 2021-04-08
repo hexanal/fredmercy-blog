@@ -4,24 +4,12 @@ type: module
 data:
   main:
     - id: "blog"
-      href: "/blog"
-      label: "blog"
-
-    - id: "resume"
-      href: "/resume"
-      label: "resume"
-
-    - id: "ramblings"
-      href: "/ramblings"
-      label: "ramblings"
-
-    - id: "bookmarks"
-      href: "/bookmarks"
-      label: "bookmarks"
+      href: "/fr/blogue"
+      label: "blogue"
 
     - id: "about"
-      href: "/about"
-      label: "about"
+      href: "/fr/a-propos"
+      label: "à propos"
 
   footer:
     - id: "rss"

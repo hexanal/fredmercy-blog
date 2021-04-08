@@ -1,7 +1,6 @@
 <nav class="footer-nav nav">
   <a
     href="discuss"
-    title="{{ t.commentsBtnTitle }}"
     data-component="emit"
     data-event="SHOW_BOX_COMMENTS"
     data-no-transition
@@ -10,12 +9,11 @@
   {{> components/dot }}
 
   <a
-    href="/{{ t.help }}"
-    title="{{ t.helpBtnTitle }}"
+    href='{{ t en="/help" fr="/fr/aide" }}'
     data-component="emit"
     data-event="SHOW_BOX_HELP"
     data-no-transition
-  >{{ t.help }}</a>
+  >{{ t en="help" fr="aide" }}</a>
 
   <span class="footer-nav__theme no-js">
     {{> components/dot }}

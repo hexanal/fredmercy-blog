@@ -9,13 +9,12 @@
     {{> components/nav type="main" items=nav.main}}
 
     <button
-      title="{{ t.menuBtnTitle }}"
       class="button header__menu-btn"
       type="button"
       data-component="emit"
       data-event="SHOW_BOX_MENU"
     >
-      {{ t.menu }}
+      {{ t en="menu" fr="menu" }}
     </button>
   </div>
 
@@ -25,6 +24,6 @@
     type="button"
   >
     <span aria-hidden="true">↑</span>
-    <span class="visually-hidden">{{ t.top }}</span>
+    <span class="visually-hidden">{{ t en="to top" fr="retour en haut" }}</span>
   </button>
 </header>

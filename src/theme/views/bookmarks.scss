@@ -2,25 +2,20 @@
   h2 {
     margin-top: 0;
   }
-  ol {
-    list-style-type: lower-greek;
-  }
-  ol li::marker {
+  ul li::marker {
     color: var(--color-secondary);
   }
-  ol li + li {
+  ul li blockquote {
+    margin-left: -1rem;
+    font-size: 0.9rem;
+  }
+  ul li + li {
     margin-top: 1.5rem;
   }
 }
 
-// .bookmarks__tag {
-//   + .bookmarks__tag {
-//     padding-top: 5rem;
-//   }
-// }
-
 .bookmarks__anchor {
-  padding-top: 5rem;
+  padding-top: 10rem;
 }
 
 .bookmark__rating {

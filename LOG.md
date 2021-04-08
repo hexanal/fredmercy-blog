@@ -2,7 +2,6 @@
 
 * Do: accessibility audit of themes
 
-* use {{ t en="" fr="" }} for everything?
 * might not need the split between content types in an object
     - simplify the creation of "plugins"
     - for things that require "other" content, have the plugin grab what it needs, on a _per page basis_

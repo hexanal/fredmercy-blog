@@ -6,12 +6,13 @@
 
 {{> components/squiggle }}
 
+<div class="jump-to">
+jump to:
 {{#each meta.bookmarks as |bookmarks tag| }}
   <a href="#tagged:{{tag}}">{{ tag }}</a>
   {{> components/dot }}
 {{/each}}
-
-{{> components/squiggle }}
+</div>
 
 <div class="bookmarks content" data-component="bookmarks">
   {{#each meta.bookmarks as |bookmarks tag| }}
@@ -20,7 +21,7 @@
         <h2>{{ tag }}</h2>
       </div>
 
-      <ol>
+      <ul>
         {{#each bookmarks }}
           <li
             data-ui="bookmark"
@@ -57,7 +58,7 @@
             {{/if}}
           </li>
         {{/each}}
-      </ol>
+      </ul>
 
       {{#if @last }}
       {{else}}

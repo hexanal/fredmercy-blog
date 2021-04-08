@@ -2,7 +2,7 @@
   <!-- this section requires javascript to function -->
   <div class="help__section no-js">
     <h2 class="heading-alt">
-      {{ t.helpWindow.settings.title }}
+      {{ t en="help / options" fr="aide / paramètres" }}
     </h2>
 
     <ul class="help__list">
@@ -13,10 +13,12 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            <label for="helpThemeSelect">{{ t.helpWindow.settings.theme }}</label>
+            <label for="helpThemeSelect">
+              {{ t en="theme:" fr="thème:" }}
+            </label>
           </strong>
           <select
-          id="helpThemeSelect"
+            id="helpThemeSelect"
             class="help__select"
             data-component="themes"
           >
@@ -45,16 +47,16 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            {{ t.use }}
+            {{ t en="use" fr="utiliser" }}
             <button
               class="hotkey help__key"
               data-control="enable-sounds"
               type="button">s</button>
           </strong>
           to
-          <span class="help__sound-enable">{{ t.enable }}</span>
-          <span class="help__sound-disable">{{ t.disable }}</span>
-          {{ t.helpWindow.settings.bleepsAnSounds }}
+          <span class="help__sound-enable">{{ t en="enable" fr="activer" }}</span>
+          <span class="help__sound-disable">{{ t en="disable" fr="désactiver" }}</span>
+          {{ t en="bleeps & sounds." fr="sons et bips." }}
         </div>
       </li>
       {{/if}}
@@ -65,12 +67,12 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            {{ t.use }}
+            {{ t en="use" fr="utiliser" }}
             <button class="hotkey help__key" data-control="help-big-font" type="button">+</button>
-            {{ t.and }}
+            {{ t en="and" fr="et" }}
             <button class="hotkey help__key" data-control="help-normal-font" type="button">-</button>
           </strong>
-          {{ t.helpWindow.settings.fontSizeDescription }}
+          {{ t en="to increase and decrease the size of the text." fr="pour augmenter ou diminuer la taille du texte." }}
         </div>
       </li>
       <li class="help__item">
@@ -79,10 +81,10 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            {{ t.use }}
+            {{ t en="use" fr="utiliser" }}
             <button class="hotkey help__key" data-component="emit" data-event="TOGGLE_BOX_MENU" type="button">m</button>
           </strong>
-          {{ t.helpWindow.settings.toggleMenuDescription }}
+          {{ t en="to toggle the main menu." fr="pour afficher et cacher le menu principal." }}
         </div>
       </li>
       <li class="help__item">
@@ -91,10 +93,10 @@
         </div>
         <div>
           <strong class="help__emphasis">
-            {{ t.use }}
+            {{ t en="use" fr="utiliser" }}
             <button class="hotkey help__key" data-component="emit" data-event="CLOSE_BOX_HELP" type="button">?</button>
           </strong>
-          {{ t.helpWindow.settings.toggleHelpDescription }}
+          {{ t en="to toggle this popup." fr="pour afficher et cacher cette fenêtre." }}
         </div>
       </li>
     </ul>

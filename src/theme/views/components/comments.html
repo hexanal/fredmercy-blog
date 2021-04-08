@@ -18,7 +18,7 @@
     data-control="comment-box"
   >
     <label class="visually-hidden" for="author">
-      {{ t.comments.nicknameLabel }}
+      {{ t en="nickname" fr="pseudonyme" }}
     </label>
     <input
       class="comments__input comments__author"
@@ -27,11 +27,12 @@
       id="author"
       name="author"
       maxlength="32"
-      placeholder="{{ t.comments.nicknamePlaceholder }}"
+      placeholder='{{ t en="nickname" fr="pseudonyme" }}'
+      required
     >
 
     <label class="visually-hidden" for="message">
-      {{ t.comments.messageLabel }}
+      {{ t en="message" fr="message" }}
     </label>
     <input
       id="message"
@@ -40,7 +41,7 @@
       type="text"
       name="content"
       maxlength="1000"
-      placeholder="{{ t.comments.messagePlaceholder }}"
+      placeholder='{{ t en="say something!" fr="exprimez-vous!" }}'
       required
     >
   </form>
