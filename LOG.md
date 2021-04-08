@@ -1,14 +1,12 @@
 ## TODO
 
 * Do: accessibility audit of themes
+* use {{ t en="" fr="" }} for everything?
 * might not need the split between content types in an object
     - simplify the creation of "plugins"
     - for things that require "other" content, have the plugin grab what it needs, on a _per page basis_
 * something to initalize the db with tables and shit
     - when resetting the website (it'll happen...)
-* with the `markdown include` thing I've just implemented, try to figure something out...
-    - zorg-process the file?
-    - allow injecting some styles, dynamically? per-page?
 * one-page printable version of website?
     - per content type?
     - printable version of source-code (!) -> future-proofing the website by keeping a physical copy :)

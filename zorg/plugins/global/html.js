@@ -3,6 +3,23 @@ const marked = require('marked')
 const templater = require('../../bin/templater')
 const { debugLog } = require('../../bin/utils')
 
+const getTemplate = function( templateName, contentType ) {
+  let templateFile
+
+  try {
+    templateFile = fs.readFileSync( `src/theme/views/${ templateName }.html`, 'utf8' )
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      console.log(`[fredmercy] [ERROR] template file “theme/views/${ templateName }” not found! (defaulting to: ${ contentType })`)
+      templateFile = fs.readFileSync( `src/theme/views/${ contentType }.html`, 'utf8' )
+    } else {
+      throw err
+    }
+  }
+
+  return templateFile
+}
+
 const formatContent = function( contentTypes ) {
   templater.usePartials('./src/theme/views')
 
@@ -21,7 +38,7 @@ const formatContent = function( contentTypes ) {
       }
       const destination = `./public${item.meta.url}`
       const templateName = item.meta.template || type // default to content type
-      const templateFile = fs.readFileSync( `src/theme/views/${ templateName }.html`, 'utf8' )
+      const templateFile = getTemplate( templateName, type )
       const template = templater.compile( templateFile.toString() )
       const htmlTemplate = template( templateData )
 
