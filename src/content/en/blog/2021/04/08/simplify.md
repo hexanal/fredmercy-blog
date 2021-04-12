@@ -3,7 +3,7 @@ title: Simplify
 description: the quest for a sustainable website
 type: post
 tagged: nerd, update, high
-edited: 2021-04-09 @ 1:04pm
+edited: 2021-04-12 @ 6:23pm
 ---
 
 > Hey there! I combined two posts in one here; it's a long one, and it's about **“a sustainable low-tech web”**, I guess?
@@ -30,7 +30,7 @@ These are my current obsessions:
 * obviously: sustainability in websites
   - which is funny because it would kind of kill the market that pays me: imagine if you built a website that's so good and long-lasting you wouldn't have to change it _ever?_
 * going _lower-tech_: trying to find a lowtech alternative to almost anything. By _low-tech_, I mean something that would vastly outlast me, would only break down after a couple generations.
-  - in computers, it means something that's future proof and sturdy.[[#computation]](#computation)
+  - in computers, it means something that works well enough for basic productivity tasks, and will continue working for a long while.[[#computation]](#computation)
   - with anything else: usually it has the characteristic of being easily repairable, and to have been built with very resistant materials (long-lasting)
 * the science of the very small, and the science of the very big, and how we are seemingly in the _very middle_ of that; pinched between two infinite fractals
 * the richness of the human condition, its diversity, its depth
@@ -39,33 +39,35 @@ These are my current obsessions:
 
 ## computation
 
-As an aside: these days, I'm finding it hard to believe that we will somehow settle for a maximum amount of computation power. We could decide that we don't usually need crazy computer technology considering the boost in productivity that it already offers today!...
+As an aside: these days, I'm finding it hard to believe that we will somehow settle for a minimum/maximum acceptable amount of computational power. I mean, we could decide that we don't need more powerful CPUs anymore, considering the boost in productivity that past generations already offer!
 
-If we don't feel comfortable enough at our current stage of technology, I'm afraid progress will keep on happening in hardware and we'll just waste more and more computatition/energy on stupid new _bloated_ software. I need to find simpler software.
+If we don't feel comfortable enough at our current stage of technology, and we think we require evermore computational power, I'm afraid progress will keep on happening in hardware while we'll just waste more and more computation/energy on stupid new _bloated_ software.
+
+I need to find simpler software!
 
 ~~
 
 `2021-04-08 @ 3:18pm:` Okay, maybe it's because it's my _job_, but I truly believe in _websites_. And the technology we use to build them isn't so bad (I'm talking about the HTML/CSS/JS stack here) so I think it's somewhat sustainable to keep _documents_ in this format.
 
-I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It's the ultimate book replacement. I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. I mean, it's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
+I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It pretends to be "software", but it's actually more than software. It's open, it's accessible, it's supposed to be lightweight, it's supposed to be a standard and show be widely compatible. It's also the ultimate book replacement. By the way, I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. It's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
 
 ## retreat!
 
 `2021-04-09 @ 1:06pm:` I'm beating a quick retreat! It's a _retreat_ in every sense of the word: a) a move away from the buzzing of hi-tech bullshittery; b) a withdrawal from the battlefield of “new-ideas”; c) a process of becoming smaller (smaller ecological footprint); and d) maybe a decline of value of my own life?
 
-Today, this retreat into low-tech seems like a way to brace myself for whatever might happens to modern technology.
+Today, this retreat into [low-tech](https://en.wikipedia.org/wiki/Low_technology) seems like a way to brace myself for whatever might happens to modern technology.
 
 We've seen that the lifespans of the even the most mainstream technologies we used to write/read/encode/decode data can be really short: we've seen magnetic tape come and go, you know... the cassettes, the floppy disks; we've seen optical storage, with CDs, minidiscs, DVDs, Blurays....
 
-Ok, so these are just the media _substrate_ that "host" the data (music, movie, text, etc.) that we now _encode_ into digital bits. To store these bits, lately I think we're mostly using [solid-state drives](https://en.wikipedia.org/wiki/Solid-state_drive), the best technology we've found to hold data for longer periods of time. I wonder how long we're gonna be able to keep some of this data around?
+Ok, so these are just the media _substrate_ that "host" the data (music, movie, text, etc.) that we now _encode_ into digital bits. To store these bits, lately I think we're mostly using [solid-state drives](https://en.wikipedia.org/wiki/Solid-state_drive), the best technology we've found to hold data for longer periods of time. I wonder how long we're gonna be able to keep some of this data around? And will this data still be decodable and interpretable in the far future?
 
 ## what does _low-tech_ mean for a web developer?
 
-To me, working on a website feels just like building something physical; sometimes, it only needs to be built to look good and maybe it's a bit rushed... which means the foundations might not have been properly setup. Or maybe no real architect oversaw the process of building the website and it ends up being a shallow façade with a lot of flismy or outright _broken_ features.
+To me, working on a website feels just like building something physical; sometimes it only needs to be built to look good and maybe its construction is a bit rushed... which means the foundations might not have been properly setup, and it might end up a shallow façade with a lot of _broken_ features.
 
-I've built many websites that were pretty much destined for digital landfills: like building temporary accomodations, for an event, and not even thinking about how to disassemble it later and what to do with it.
+I've built many websites that were pretty much destined for digital landfills: it felt like building temporary accomodations for an event, while never thinking ahead as to how to disassemble it later and what to do with it.
 
-At that point in my career, I want to build _real_ websites. A website like a monument: build to last, build to the highest standards, build from noble materials. And also: it would be built with its own **repairability** and **expandability** in mind. Something to survive _deep time_. And I imagine a website as a _user experience_ that spans generations, and never discriminates: if you can read the language used by the original author(s), you should be able to navigate the content effortlessly. And if it is destined to be “demolished” at some future date, let me think about how we're going to recycle it.
+At that point in my career, I want to build _sturdy_ websites. A website like a monument: build to last, build to the highest standards, build from noble materials. And also: it would be built with its own **repairability** and **expandability** in mind. Something to survive _deep time_. And I imagine a website as a _user experience_ that spans generations, and never discriminates: if you can read the language used by the original author(s), you should be able to navigate the content effortlessly. And if it is destined to be “demolished” at some future date, let me think about how we're going to recycle it.
 
 ## existential risks
 
