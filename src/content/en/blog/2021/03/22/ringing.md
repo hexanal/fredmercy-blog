@@ -46,6 +46,6 @@ Recently:
 - I've tried implementing "multi-site" to my setup, but it became a bloated mess, which probably means I need to revisit this later, or start again from scratch now with another perspective.
 - I've implemented url "aliases", which means I can fake redirects. If I change the title of this post later, I will manually add the previous name as an "aliases" in the _frontmatter_ of the content file. If I forget, or if I don't; no redirect, I might have created a broken link in someone's bookmarks.
     - also, it's cool if I want a page to have many possible URL entries: for example, this post is also available at the URL [https://fredmercy.ca/ringing-in-my-ears](/ringing-in-my-ears)
-    - cool for permalinks also [note: I probably should implement a `permalink` key in the frontmatter to that effect]
+    - cool for permalinks also (note: I probably should implement a `permalink` key in the frontmatter to that effect)
 
 </aside>

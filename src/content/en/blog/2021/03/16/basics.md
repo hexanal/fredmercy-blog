@@ -36,6 +36,6 @@ I've been thinking... man, what I'm building feels like a retrofuturist version 
 
 </figure>
 
-But it must [degrade gracefully](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) to adapt to any _environment_. [note: I haven't tried it but I'm kind of curious as to how it looks if I try to access it via my PS4, for example?]
+But it must [degrade gracefully](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation) to adapt to any _environment_. (note: I haven't tried it but I'm kind of curious as to how it looks if I try to access it via my PS4, for example?)
 
 Anyway: my website should be _light_, _legible_, _fun_, _accessible_, _full-featured_, _easy to update_, _easy to manage_, _long-lasting_, _portable_. I'll figure it out.

@@ -16,10 +16,10 @@ I think my current mission echoes what my fellow _front-end developers_ out ther
 
 ### what's coming then?
 
-This blog is an answer to the bloat of today's Internet. Many bloggers out there don't even bother with colors![note: I for one _need_ my colors, however!]
+This blog is an answer to the bloat of today's Internet. Many bloggers out there don't even bother with colors! (note: I for one _need_ my colors, however!)
 
 I hope there will be new trends in the web industry towards these goals:
 
-* building simpler websites (less ads, less popups, less _garbage_, less distractions overall)
-* build for a smaller ecological footprint (lower-tech server technologies? less videos/images?)
-* finding an easier way to manage the content/data that's handled by the UI (decoupling it, somehow?! the right way...)
+* building simpler websites: less ads, less popups, less _garbage_, less distractions overall
+* build for a smaller ecological footprint: lower-tech server technologies? less videos/images?
+* finding an easier way to manage the content/data that's handled by the UI: decoupling it, somehow?! (note: more research needed!)

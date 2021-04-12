@@ -27,4 +27,4 @@ How would anyone discover this content? Again, the important thing is the <a hre
 
 `wed, march 10 — 10:53am:` Man... I do write a lot of bullshit, don't I? This blog will get better with time, I swear! And if it gets popular, I'll even monetize it, and I'll put articles behind paywalls, hahahaha! 😈
 
-Listen guys, I just want to pass on my knowledge, communicate my love of writing about _anything at all_, and have fun. Don't take anyone for granted, and don't take anything seriously [note: except, incidentally, this very advice... but only if you dare 🤪]
+Listen guys, I just want to pass on my knowledge, communicate my love of writing about _anything at all_, and have fun. Don't take anyone for granted, and don't take anything seriously (note: except, incidentally, this very advice... but only if you dare 🤪)
