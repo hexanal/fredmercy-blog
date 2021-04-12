@@ -1,25 +1,11 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 1rem;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% - 2rem);
   max-width: $site-width;
   padding: 1rem 0;
   background-color: var(--color-bg);
-  border-bottom: 2px solid transparent;
-
-  [data-scrolled="true"] & {
-    border-color: var(--color-secondary);
-  }
-
-  @media (min-width: $mq-medium) {
-    width: calc(100% - 6rem);
-    left: 3rem;
-  }
 
   @media print {
     position: absolute;
@@ -72,8 +58,7 @@
 
 .button.header__menu-btn {
   display: block;
-  min-width: 2rem;
-  margin-left: 0.5rem;
+  width: 3.5rem;
   text-align: center;
 
   &.button--light {
@@ -94,29 +79,27 @@
 }
 
 .header__back-to-top {
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  right: 0;
-  width: 2.5rem;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 1rem;
+  width: 3.5rem;
+  margin: 0;
   padding: 0.25rem;
   border-radius: 0 0 0.75rem 0.75rem;
+  transform: translateY(-100%);
+  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  [data-scrolled="true"] & {
+    transform: translateY(0);
+  }
 
   &.button {
-    display: none;
     background-color: var(--color-secondary);
 
     @include hover-focus {
       background-color: var(--color-active);
     }
-
-    [data-scrolled="true"] & {
-      display: inline-block;
-    }
-  }
-
-  @media (min-width: $mq-medium) {
-    right: 0;
   }
 
   @media print {

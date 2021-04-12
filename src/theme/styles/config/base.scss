@@ -41,8 +41,7 @@ html {
 }
 
 body {
-  margin: 1rem;
-  padding-top: 3.25rem; // TODO
+  margin: 0 1rem;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,7 +52,7 @@ body {
   }
 
   @media (min-width: $mq-medium) {
-    margin: 0.75rem 3rem;
+    margin: 0 3rem;
   }
 }
 
