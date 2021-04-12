@@ -49,9 +49,9 @@ I need to find simpler software!
 
 `2021-04-08 @ 3:18pm:` Okay, maybe it's because it's my _job_, but I truly believe in _websites_. And the technology we use to build them isn't so bad (I'm talking about the HTML/CSS/JS stack here) so I think it's somewhat sustainable to keep _documents_ in this format.
 
-I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It pretends to be "software", but it's actually more than software. It's open, it's accessible, it's supposed to be lightweight, it's supposed to be a standard and show be widely compatible. It's also the ultimate book replacement. By the way, I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. It's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
+I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It pretends to be "software", but it's actually more than software. It's open, it's accessible, it's supposed to be lightweight, it's supposed to be a standard and should be widely compatible. It's also the ultimate book replacement. By the way, I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. It's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
 
-## retreat!
+## low-tech retreat
 
 `2021-04-09 @ 1:06pm:` I'm beating a quick retreat! It's a _retreat_ in every sense of the word: a) a move away from the buzzing of hi-tech bullshittery; b) a withdrawal from the battlefield of “new-ideas”; c) a process of becoming smaller (smaller ecological footprint); and d) maybe a decline of value of my own life?
 
