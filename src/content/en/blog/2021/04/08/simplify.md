@@ -20,19 +20,34 @@ I wish I could program all of what I want in one language. Just one uniform lang
 
 This website has to leave a very _lightweight_ footprint on the climate. It has to be in harmony with nature. To keep energy consumption very low, I'm thinking of hosting my own server on extremely basic hardware, but I'd need a fixed IP to avoid sysadmin nightmare. I would have to manage the server, also... which is some sysadmin-level stuff I never really learned. Learning it might help me discover this "uniform language", though!
 
-`2021-04-08 @ 2:26pm:` Current obsessions are many; so are the questions.
+
+~~
+
+`2021-04-08 @ 2:26pm:`
+
+These are my current obsessions:
 
 * obviously: sustainability in websites
   - which is funny because it would kind of kill the market that pays me: imagine if you built a website that's so good and long-lasting you wouldn't have to change it _ever?_
 * going _lower-tech_: trying to find a lowtech alternative to almost anything. By _low-tech_, I mean something that would vastly outlast me, would only break down after a couple generations.
-  - with computers, I'm finding it hard to believe we'll settle for a minimum amount of computation power required for the boost in productivity that it offers...
-  - with anything: usually it has the characteristic of being easily repairable, and to have been built with very resistant materials.
+  - in computers, it means something that's future proof and sturdy.[[#computation]](#computation)
+  - with anything else: usually it has the characteristic of being easily repairable, and to have been built with very resistant materials (long-lasting)
 * the science of the very small, and the science of the very big, and how we are seemingly in the _very middle_ of that; pinched between two infinite fractals
 * the richness of the human condition, its diversity, its depth
 
+~~
+
+## computation
+
+As an aside: these days, I'm finding it hard to believe that we will somehow settle for a maximum amount of computation power. We could decide that we don't usually need crazy computer technology considering the boost in productivity that it already offers today!...
+
+If we don't feel comfortable enough at our current stage of technology, I'm afraid progress will keep on happening in hardware and we'll just waste more and more computatition/energy on stupid new _bloated_ software. I need to find simpler software.
+
+~~
+
 `2021-04-08 @ 3:18pm:` Okay, maybe it's because it's my _job_, but I truly believe in _websites_. And the technology we use to build them isn't so bad (I'm talking about the HTML/CSS/JS stack here) so I think it's somewhat sustainable to keep _documents_ in this format.
 
-I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It's the ultimate book replacement. I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. I mean, it's perfect for displaying something in a book format. [Note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible]
+I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It's the ultimate book replacement. I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. I mean, it's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
 
 ## retreat!
 
