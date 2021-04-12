@@ -8,11 +8,9 @@ i18n:
 
 ## à propos de moi
 
-Mes centres d'intérêts sont: <a href="https://github.com/hexanal" target="_blank" rel="noopener noreferrer">la programmation</a>; la science; <a href="https://fredmercy.bandcamp.com" target="_blank" rel="noopener noreferrer">la musique</a>; [tenir un blogue](/fr/blogue); l'art; le skateboard; *prendre ça relax*
-
 Mes centres d'intérêts sont: l'_open web_ & [la programmation](/bookmarks#tagged:nerd), [lire](/bookmarks#tagged:read), l'art (ex: [films](/bookmarks#tagged:watch), [musique](/bookmarks#tagged:music)), et [tenir un blogue](/fr/blogue)
 
-Je suis un mec _lambda_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à notre existence [note: ça a l'air que _l'amour_ est la clé? 🤷‍♂️]
+Je suis un mec _lambda_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
 
 ## à propos de ce site
 
