@@ -79,25 +79,6 @@ if yes:
 
 ## future...
 
-* how about...?
-    - api endpoints, dynamic, to build JSONs
-        - on a per-page basis?
-    - `api/v1/get-page/ramblings/we-failed-you` -> JSON object for that page?
-    - use the same base functions/api to build out the static website
-
-* modal z-index management
-    - keep track of which are open
-    - latest is highest
-    - gotta learn about "heap/stack" programming structures
-
-* try editing markdown in browser with http://coolwanglu.github.io/vim.js/emterpreter/vim.html
-    - with preview
-    - ..?
-
-* try search powered by: https://stork-search.net/docs/config-ref/
-    - yeah?
-    - dunno...
-
 * is the better source of truth for content the Markdown, or the JSON?
     * considering I'm already intermixing markdown with JSON, and produce a JSON file for final consumption, why not just stick everything in JSON, and use references to markdown files to build the pages (markdown content would be like... a module; a page without "editorial ccontent" would just be a JSON with basic configuration
     * minimal JSON

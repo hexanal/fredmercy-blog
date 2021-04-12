@@ -1,46 +1,53 @@
 const fs = require('fs')
 const marked = require('marked')
+const jsyaml = require('js-yaml')
 const templater = require('../../bin/templater') // FIXME swap templater to.. something else?
 const frontMatter = require('../../bin/frontmatter') // FIXME make sure this is clean
 const { debugLog } = require('../../bin/utils')
 
-const useBlockWithData = function(blockId, data, extra) {
+const useBlockWithData = function(blockId, data) {
   // FIXME settings up the templating engine should be "another concern"
   // it should be possible to swap out the templating engine easily, and use whatever?
   templater.usePartials('./src/theme/views')
 
-  const component = `{{>blocks/${blockId} data }}`;
+  const component = `{{>${blockId} data }}`;
   const template = templater.compile( component )
   const templateWithData = template({ data })
-  // const yaml = split.join('\n').replace(split[0], '')
-  // const templateWithData = template({ data: jsyaml.load(yaml) })
 
   debugLog(`templating block “${blockId}”`)
 
   return templateWithData
 }
 
+// FIXME  all of this is HIGHLY EXPERIMENTAL
 const SHORTCODES = [
+  {
+    tag: 'block',
+    processor: function({ props, item }) {
+      const data = jsyaml.load( props )
+      return useBlockWithData( data.component, { ...item, ...data } )
+    }
+  },
   {
     tag: 'latest-post',
     processor: function({ props, item, contentTypes }) {
       const latest = { ...contentTypes.post[0] }
-      return useBlockWithData('latest-post', { ...item, latest })
+      return useBlockWithData('blocks/latest-post', { ...item, latest })
     }
   },
   {
     tag: 'children-pages',
     processor: function({ props, item, contentTypes }) {
-      return useBlockWithData('children-pages', item)
+      return useBlockWithData('blocks/children-pages', item)
     }
   },
   {
     tag: 'include',
-    processor: function({props, contentTypes}) {
+    processor: function({props, item, contentTypes}) {
       const file = fs.readFileSync(`./${props}`, 'utf8')
       const { body } = frontMatter( file.toString() )
 
-      return getProcessedContent( body, contentTypes )
+      return getProcessedContent( body, item, contentTypes )
     }
   },
   {
@@ -49,7 +56,7 @@ const SHORTCODES = [
       try {
 
         const params = JSON.parse(props)
-        return useBlockWithData('external-link', params)
+        return useBlockWithData('blocks/external-link', params)
 
       } catch(err) {
 
@@ -59,13 +66,7 @@ const SHORTCODES = [
 
       }
     }
-  },
-  {
-    tag: 'audio',
-    processor: function({ props }) {
-      return useBlockWithData('audio', { src: props })
-    }
-  },
+  }
 ]
 
 const applyShortcodes = function( item, contentTypes ) {
@@ -73,11 +74,11 @@ const applyShortcodes = function( item, contentTypes ) {
 
   return {
     ...item,
-    body: getProcessedContent( item.body, contentTypes )
+    body: getProcessedContent( item.body, item, contentTypes )
   }
 }
 
-const getProcessedContent = function( content, contentTypes ) {
+const getProcessedContent = function( content, item, contentTypes ) {
   return SHORTCODES.reduce( (accContent, shortcode) => {
     const tag = `[${shortcode.tag}](`
     const firstSplit = content.split( tag )
@@ -91,6 +92,7 @@ const getProcessedContent = function( content, contentTypes ) {
       const replaceString = `${tag}${props})`
       const shortcoded = shortcode.processor({
         props: props.trim(),
+        item,
         contentTypes,
       })
 

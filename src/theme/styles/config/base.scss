@@ -27,7 +27,7 @@ html {
     }
   }
 
-  &.state-a11y-big-font {
+  &.a11y_use_zoom {
     font-size: 22px;
 
     @media (min-width: $mq-large) {

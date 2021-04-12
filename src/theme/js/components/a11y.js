@@ -1,21 +1,19 @@
 import Mousetrap from 'mousetrap';
-import Storage from '../tools/Storage';
 
 export default function({messaging}) {
   const state = {
-    useBigFont: Storage.flag('a11y_use_big_font'),
-    useZoom: Storage.flag('a11y_use_zoom'),
-  };
+    zoomed: window.localStorage.getItem('a11y_use_zoom') || 'no'
+  }
 
-  document.documentElement.classList.toggle('state-a11y-big-font', state.useBigFont);
+  document.documentElement.classList.toggle('a11y_use_zoom', state.zoomed === 'yes')
 
-  const updateFontSize = function(useBig) {
-    document.documentElement.classList.toggle('state-a11y-big-font', useBig);
-    Storage.set('a11y_use_big_font', useBig);
-  };
+  const setZoom = function(zoomed) {
+    document.documentElement.classList.toggle('a11y_use_zoom', zoomed === 'yes')
+    window.localStorage.setItem('a11y_use_zoom', zoomed)
+  }
 
-  messaging.subscribe('A11Y_SET_LARGE_FONT', updateFontSize);
+  messaging.subscribe('A11Y_SET_LARGE_FONT', setZoom)
 
-  Mousetrap.bind('=', () => updateFontSize(true) );
-  Mousetrap.bind('-', () => updateFontSize(false) );
+  Mousetrap.bind('=', () => setZoom('yes') )
+  Mousetrap.bind('-', () => setZoom('no') )
 }

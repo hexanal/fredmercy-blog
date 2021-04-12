@@ -10,8 +10,6 @@ import {
   Filter
 } from 'tone';
 
-import Storage from '../tools/Storage';
-
 const EFFECTS = {
   compressor: new Compressor({
     threshold: -6,
@@ -101,9 +99,9 @@ export default function({ element, control, messaging }) {
 
   const enable = () => {
     state.enabled = true;
-    element.classList.add('state-sounds-enabled');
+    element.classList.add('state-sounds-enabled')
 
-    Storage.set('sounds_enabled', 1);
+    window.localStorage.setItem('sounds_enabled', 'yes')
     Master.mute = false;
   }
 
@@ -111,7 +109,7 @@ export default function({ element, control, messaging }) {
     state.enabled = false;
     element.classList.remove('state-sounds-enabled');
 
-    Storage.set('sounds_enabled', 0);
+    window.localStorage.setItem('sounds_enabled', 'no')
     Master.mute = true;
   }
 
@@ -325,7 +323,7 @@ export default function({ element, control, messaging }) {
   })
 
   // let's go...
-  if ( Storage.flag('sounds_enabled') ) {
+  if ( window.localStorage.getItem('sounds_enabled') === 'yes' ) {
     init()
       .then(enable);
   }

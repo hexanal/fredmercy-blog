@@ -65,6 +65,9 @@
     color: var(--color-bg);
     background-color: var(--color-active);
   }
+  code {
+    font-size: 0.9rem;
+  }
   // TODO: seems strange to have to tweak this for some specific themes... but this is for better a11y
   [data-theme="mini-dark"] & {
     h3, code {
@@ -93,13 +96,13 @@
     }
 
     li {
-      padding-left: 1.25rem;
+      padding-left: 1rem;
 
       &:before {
         content: '● ';
         position: absolute;
         top: 0;
-        left: 0.15rem;
+        left: 0;
         color: var(--color-secondary);
       }
     }

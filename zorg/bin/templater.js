@@ -8,7 +8,14 @@ const registerPartialHelper = function() {
   Handlebars.registerHelper('block', function (template, context, opts) {
     const f = Handlebars.partials[template]
 
+    // TODO?
+    // const filteredContext = Object.keys(context).filter( key => key !== 'component' )
+    // const blockContext = filteredContext.length
+    //   ? { ...opts.data.root, ...context }
+    //   : opts.data.root
+
     if (!f) return '[...]'
+    if (typeof f === 'function') return new Handlebars.SafeString( f(context) )
 
     const block = Handlebars.compile( f )
 

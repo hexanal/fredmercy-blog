@@ -3,6 +3,7 @@ title: Simplify
 description: the quest for a sustainable website
 type: post
 tagged: nerd, update, high
+edited: 2021-04-09 @ 1:04pm
 ---
 
 `2:14pm:` In my forever quest for a sustainable website [note: By which I denote a website that can be maintained and kept online and "accessible"], I've been trying to simplify everything about this website.
@@ -15,7 +16,7 @@ Everything is in Javascript, dude. Server, database access layer, packagers, fil
 
 I wish I could program all of what I want in one language. Just one uniform language. Maybe it's PHP? What do I know?
 
-This website has to leave a very _lightweight_ footprint on the climate. It has to be in harmony with nature: I'm thinking of hosting my own server but I'd need a fixed IP. That I would manage... but this is some sysadmin-level stuff I never really learned. Learning sysadmin stuff might help me discover this "uniform language", though!
+This website has to leave a very _lightweight_ footprint on the climate. It has to be in harmony with nature. To keep energy consumption very low, I'm thinking of hosting my own server on extremely basic hardware, but I'd need a fixed IP to avoid sysadmin nightmare. I would have to manage the server, also... which is some sysadmin-level stuff I never really learned. Learning it might help me discover this "uniform language", though!
 
 `2:26pm:` Current obsessions are many; so are the questions.
 

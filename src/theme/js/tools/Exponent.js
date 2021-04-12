@@ -14,7 +14,7 @@ const Exponent = function() {
   // all the mounted components (dangling from the DOM Tree!)
   this.mounted = [];
 
-  // arrays of functions to plug into the object injected into every component
+  // arrays of functions to plug into the data object (the object passed as single argument into every component)
   this.middlewares = [];
 
   /**

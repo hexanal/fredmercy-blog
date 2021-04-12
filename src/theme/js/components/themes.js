@@ -1,5 +1,3 @@
-import Storage from '../tools/Storage'
-
 const DEFAULT_THEME = 'june'
 
 export default function({element, messaging}) {
@@ -8,7 +6,7 @@ export default function({element, messaging}) {
   const useTheme = function( id ) {
     const themeId = !availableThemes.includes( id ) ? DEFAULT_THEME : id
 
-    Storage.set('selected_theme', themeId)
+    window.localStorage.setItem('selected_theme', themeId)
     document.documentElement.dataset.theme = themeId
     element.value = themeId
     setFavicon()
@@ -17,7 +15,7 @@ export default function({element, messaging}) {
   const initThemes = function() {
     element.querySelectorAll('option').forEach( opt => availableThemes.push( opt.value ) )
     element.addEventListener('change', e => messaging.dispatch({id:'SET_THEME', payload: e.target.value }) )
-    useTheme( Storage.get('selected_theme') ) // manage "saved" theme, in localstorage
+    useTheme( window.localStorage.getItem('selected_theme') ) // manage "saved" theme, in localstorage
   }
 
   const setFavicon = function() {
