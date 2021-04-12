@@ -11,7 +11,7 @@ i18n:
 
 This is my personal website!
 
-I originally created it to showcase my work as a web person, but I also use it to share stuff, and talk about anything. I just like to **create** stuff; lately it's been **mostly websites**
+I originally created it to showcase my work as a web person, but I also use it to share and talk about anything. I just like to **create** stuff; lately it's been [websites](/resume).
 
 Right now, I'm working on a few personal projects while enjoying life in beautiful <a href="https://www.openstreetmap.org/#map=16/45.5386/-73.6174&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.
 

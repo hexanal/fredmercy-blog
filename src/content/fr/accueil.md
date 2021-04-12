@@ -11,7 +11,7 @@ i18n:
 
 Ceci est mon site personnel!
 
-Je l'ai créé pour présenter mon profil de _travailleur du web_, mais je l'utilise aussi pour partager des trucs et pour parler de n'importe quoi. J'adore **créer** des choses; ces temps-ci c'est surtout des **sites web**.
+Je l'ai créé pour présenter mon profil de _travailleur du web_, mais je l'utilise aussi pour partager des trucs et pour parler de n'importe quoi. J'adore **créer** des choses; ces temps-ci c'est surtout des [sites web](/fr/cv).
 
 En ce moment, je travaille sur quelques petits projets personnels en profitant de la vie à <a href="https://www.openstreetmap.org/#map=16/45.5386/-73.6174&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.
 
