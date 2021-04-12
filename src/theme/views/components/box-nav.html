@@ -2,6 +2,33 @@
   <div class="box-nav">
     {{> components/nav type="box" items=nav.main}}
     {{> components/squiggle small="true" }}
+
+    <div class="nav">
+      <a
+        href="discuss"
+        data-component="emit"
+        data-event="SHOW_BOX_COMMENTS"
+        data-no-transition
+      >discussion<small data-comments-count></small></a>
+
+      {{> components/dot }}
+
+      <a
+        href='{{ t en="/help" fr="/fr/aide" }}'
+        data-component="emit"
+        data-event="SHOW_BOX_HELP"
+        data-no-transition
+      >{{ t en="help" fr="aide" }}</a>
+
+      {{#if meta.i18n}}
+        {{#each meta.i18n as |url lang|}}
+        {{> components/dot }}
+        <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+        {{/each}}
+      {{/if}}
+    </div>
+
+    {{> components/squiggle small="true" }}
     {{> components/nav type="footer" items=nav.footer}}
   </div>
 {{/components/box }}
