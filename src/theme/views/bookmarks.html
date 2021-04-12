@@ -6,11 +6,13 @@
 
 {{> components/squiggle }}
 
-<div class="jump-to">
-jump to:
+<div class="bookmarks__tag-nav">
 {{#each meta.bookmarks as |bookmarks tag| }}
   <a href="#tagged:{{tag}}">{{ tag }}</a>
-  {{> components/dot }}
+  {{#if @last }}
+  {{else}}
+    {{> components/dot }}
+  {{/if }}
 {{/each}}
 </div>
 

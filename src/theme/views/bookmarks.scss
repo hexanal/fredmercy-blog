@@ -1,7 +1,4 @@
 .bookmarks.content {
-  h2 {
-    margin-top: 0;
-  }
   ul li::marker {
     color: var(--color-secondary);
   }
@@ -15,9 +12,24 @@
 }
 
 .bookmarks__anchor {
-  padding-top: 10rem;
+  padding-top: 1rem;
 }
 
 .bookmark__rating {
   font-style: normal;
+}
+
+.bookmarks__tag-nav {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  padding: 1rem 5rem 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  background-color: var(--color-bg);
+  border-bottom: 2px solid var(--color-secondary);
+
+  @media (min-width: $mq-small) {
+    padding: 1rem 5rem 1rem 0;
+  }
 }
