@@ -10,7 +10,7 @@ i18n:
 
 I'm interested in: an open web & [programming](/bookmarks#tagged:nerd), [reading](/bookmarks#tagged:read), art ([movies](/bookmarks#tagged:watch), [music](/bookmarks#tagged:music)), and [blogging](/blog)
 
-I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to our existence
+I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to my short existence.
 
 ## about this website
 
