@@ -13,7 +13,7 @@ data:
 
   footer:
     - id: "rss"
-      href: "/rss.xml"
+      href: "/fr/rss.xml"
       label: "rss"
 
     - id: "github"
