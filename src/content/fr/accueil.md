@@ -15,7 +15,7 @@ Je l'ai créé pour présenter mon profil de _travailleur du web_, mais je l'uti
 
 En ce moment, je travaille sur quelques petits projets personnels en profitant de la vie à <a href="https://www.openstreetmap.org/#map=16/45.5386/-73.6174&layers=N" target="_blank" rel="noopener noreferrer">Montréal</a>.
 
-> Si vous cherchez un dév frontend, je suis disponible pour travailler à la pige. Vous pouvez parcourir mon [CV](/fr/cv).
+> Je suis présentement à la recherche de ma prochaine mission en développement frontend.<br>Vous pouvez [parcourir mon CV](/fr/cv).
 
 ## dernier billet du blogue
 
