@@ -10,16 +10,17 @@
     <h2
       id="{{ archive }}"
       class="heading blog__month-year"
-      aria-level="2"
-      data-anchor="{{ archive }}"
-      data-js="archive"
     >
       {{ archive }}
     </h2>
 
     <ul class="blog__month-posts">
     {{#each entries}}
-      <li class="blog__item">
+      <li
+        id="{{ this.meta.id }}"
+        data-component="highlight"
+        class="blog__item"
+      >
         <div class="blog__head">
           <small class="blog__date">
             {{ this.meta.month }}/{{ this.meta.day }}
@@ -27,10 +28,7 @@
 
           {{#if this.meta.title}}
             <div class="blog__title">
-              <a
-                href="{{ this.meta.url }}"
-                data-js="entry"
-              >{{this.meta.title}}</a>
+              <a href="{{ this.meta.url }}">{{this.meta.title}}</a>
               <small class="blog__description">{{> components/dot}} {{this.meta.description}}</small>
             </div>
           {{else}}

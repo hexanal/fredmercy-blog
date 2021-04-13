@@ -23,14 +23,23 @@
   list-style: none;
 }
 
-.blog__head {
-  display: flex;
-  align-items: center;
-  line-height: 1.6;
+// when highlighted
+.blog__item.state-highlighted .blog__title::before {
+  content: '->';
+  color: var(--color-secondary);
+}
+.blog__item.state-highlighted .blog__date {
+  background-color: var(--color-secondary);
 }
 
 .blog__item + .blog__item {
   margin-top: 0.25rem;
+}
+
+.blog__head {
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
 }
 
 .blog__date {

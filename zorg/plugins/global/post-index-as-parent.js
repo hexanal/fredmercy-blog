@@ -10,14 +10,28 @@ const addPostIndexAsParent = function( contentTypes ) {
 
   return {
     ...contentTypes,
-    post: contentTypes.post.map( item => ({
-      ...item,
-      meta: {
-        ...item.meta,
-        parents: [ indexes[item.meta.lang] ],
-        breadcrumbs: [ indexes[item.meta.lang] ]
+    post: contentTypes.post.map( item => {
+      const parentIndex = indexes[item.meta.lang]
+
+      // modifying the URL for the index to include the anchor!
+      const parentItem = {
+        ...parentIndex,
+        meta: {
+          ...parentIndex.meta,
+          url: `${parentIndex.meta.url}/#${item.meta.id}`
+        }
       }
-    }) )
+
+      return {
+        ...item,
+        meta: {
+          ...item.meta,
+          parents: [ parentItem ],
+          breadcrumbs: [ parentItem ]
+        }
+      }
+
+    } )
   }
 }
 
