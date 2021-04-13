@@ -37,7 +37,7 @@ const getPostMetaData = function( item, website ) {
   const date = `${year}-${month}-${day}`
 
   const monthName = getMonthName(month, item.meta.lang)
-  const prettyDate = `${monthName} ${dayNoZero}, ${year}`
+  const prettyDate = `${dayNoZero} ${monthName}, ${year}`
 
   const baseURL = website.baseUrl === '/'
     ? ''
