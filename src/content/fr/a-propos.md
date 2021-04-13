@@ -1,6 +1,6 @@
 ---
 title: À propos
-description: C'est quoi le délire?
+description: Ok c'est quoi ton histoire?
 type: page
 i18n:
   en: '/about'
@@ -10,7 +10,7 @@ i18n:
 
 Mes centres d'intérêts sont: l'_open web_ & [la programmation](/bookmarks#tagged:nerd), [lire](/bookmarks#tagged:read), l'art (ex: [films](/bookmarks#tagged:watch), [musique](/bookmarks#tagged:music)), et [tenir un blogue](/fr/blogue)
 
-Je suis un mec _lambda_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
+Je suis un mec _moyen_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
 
 ## à propos de ce site
 

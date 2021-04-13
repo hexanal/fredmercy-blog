@@ -4,5 +4,5 @@ description: Help & Options
 type: page
 template: help
 i18n:
-  fr: '/aide'
+  fr: '/fr/aide'
 ---
