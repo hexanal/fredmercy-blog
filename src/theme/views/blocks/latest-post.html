@@ -1,4 +1,7 @@
 <p class="latest-post">
+  <small class="blog__date">
+    {{ latest.meta.prettyDate }}
+  </small>
   <a href="{{ latest.meta.url }}">{{ latest.meta.title }}</a>
   {{> components/dot }}
   <small class="color-secondary">{{ latest.meta.description }}</small>
