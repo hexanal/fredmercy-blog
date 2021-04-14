@@ -1,4 +1,4 @@
-.bookmarks.content {
+.now.content {
   ul li::marker {
     color: var(--color-secondary);
   }
@@ -11,19 +11,19 @@
   }
 }
 
-.bookmarks__anchor {
+.now__anchor {
   padding-top: 1rem;
 }
 
-.bookmark__source {
+.now__source {
   white-space: nowrap;
 }
 
-.bookmark__rating {
+.now__rating {
   font-style: normal;
 }
 
-.bookmarks__tag-nav {
+.now__tag-nav {
   position: sticky;
   z-index: 1;
   top: 0;

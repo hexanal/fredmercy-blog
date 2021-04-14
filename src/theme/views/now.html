@@ -4,10 +4,12 @@
 
 {{> components/content }}
 
+{{#if themeFlags.USE_NOW_NAVIGATION }}
+
 {{> components/squiggle }}
 
-<div class="bookmarks__tag-nav">
-{{#each meta.bookmarks as |bookmarks tag| }}
+<div class="now__tag-nav">
+{{#each meta.links as |links tag| }}
   <a href="#tagged:{{tag}}">{{ tag }}</a>
   {{#if @last }}
   {{else}}
@@ -15,24 +17,16 @@
   {{/if }}
 {{/each}}
 </div>
+{{/if}}
 
-<div class="bookmarks content" data-component="bookmarks">
-  {{#each meta.bookmarks as |bookmarks tag| }}
-    <div class="bookmarks__tag">
-      <div class="bookmarks__anchor" id="tagged:{{tag}}">
-        <h2>{{ tag }}</h2>
-      </div>
+<div class="now content">
+  {{#each meta.links as |links tag| }}
+    <div class="now__tag">
+      <h3 id="tagged:{{tag}}">{{ tag }}</h3>
 
       <ul>
-        {{#each bookmarks }}
-          <li
-            data-ui="bookmark"
-            data-id="{{ this.id }}"
-            data-tag="{{ tag }}"
-            data-title="{{{ this.title }}}"
-            data-source="{{ this.source }}"
-            data-rating="{{ this.rating }}"
-          >
+        {{#each links }}
+          <li>
             <a
               href="{{ this.link }}"
               target="_blank"
@@ -41,7 +35,7 @@
               “{{{ title }}}”
             </a>
             {{# if this.source }}
-              <small class="bookmark__source color-secondary">->&nbsp;{{ this.source }}</small>
+              <small class="now__source color-secondary">->&nbsp;{{ this.source }}</small>
             {{/if}}
 
 
@@ -52,7 +46,7 @@
                 {{/each}}
 
                 {{#if this.rating }}
-                <div class="bookmark__rating">
+                <div class="now__rating" aria-hidden>
                   {{{ this.rating }}}
                 </div>
                 {{/if}}
