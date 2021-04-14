@@ -6,7 +6,7 @@
     </h2>
 
     <ul class="help__list">
-      {{#if SETTINGS.USE_THEMES }}
+      {{#if themeFlags.USE_THEMES }}
       <li class="help__item">
         <div class="help__icon">
           🎨
@@ -37,7 +37,7 @@
       </li>
       {{/if}}
 
-      {{#if SETTINGS.USE_BLEEPS }}
+      {{#if themeFlags.USE_BLEEPS }}
       <li
         class="help__item help__item--bleeps"
         data-component="bleeps"
