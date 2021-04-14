@@ -25,6 +25,9 @@ tagged: hippie, théorie sans action, paix et sérénité
   transform: scale(1);
   animation: sunGlow 2s infinite alternate-reverse ease-in-out;
 }
+@media (prefers-reduced-motion: reduce) {
+  .sunray { animation: none; }
+}
 .sunray:nth-child(2) {
   margin: 2rem;
   animation-delay: -0.5s;

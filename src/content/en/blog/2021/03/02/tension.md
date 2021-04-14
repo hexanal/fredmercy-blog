@@ -13,6 +13,9 @@ i18n:
   display: flex; justify-content: space-around; align-items: center;
   padding: 2rem 0;
 }
+@media (prefers-reduced-motion: reduce) {
+  .evolve { display: none; }
+}
 .evolve svg {
   --delay: -200ms;
   animation: evolveBob 800ms ease-in-out alternate-reverse infinite;

@@ -17,6 +17,9 @@ type: post
   padding: 0.1em 0.25em;;
   animation: jitters 500ms infinite alternate-reverse;
 }
+@media (prefers-reduced-motion: reduce) {
+  .big-ole-2021 { animation: none; }
+}
 .big-ole-2021::selection {
   color: var(--color-primary);
   background-color: var(--color-bg);
