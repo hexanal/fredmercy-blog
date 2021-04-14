@@ -8,9 +8,11 @@ i18n:
 
 ## à propos de moi
 
-Mes centres d'intérêts sont: l'_open web_ & [la programmation](/bookmarks#tagged:nerd), [lire](/bookmarks#tagged:read), l'art (ex: [films](/bookmarks#tagged:watch), [musique](/bookmarks#tagged:music)), et [tenir un blogue](/fr/blogue)
+Mes centres d'intérêts sont: l'_open web_ & la programmation, la lecture, l'art, et [tenir un blogue](/fr/blogue)
 
 Je suis un mec _moyen_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
+
+Je suis aussi un développeur web en recherche d'emploi; [voici mon CV](/fr/cv).
 
 ## à propos de ce site
 
@@ -30,6 +32,7 @@ Je suis un mec _moyen_ (il/le/autre); et comme la plupart d'entre vous, je suis 
   - nodejs/express
 - fait maison:
   - open-source <a href="https://github.com/hexanal/fredmercy-blog" target="_blank" rel="noopener noreferrer">sur github</a>, vous pouvez lire le `README.md` pour plus d'infos
+  - son _design_ est expressément minimaliste: l'objectif étant d'avoir un site qui s'affiche sans problème sur n'importe quel appareil, qui est accessible, performant, lisible, facile à modifier, etc.
 
 **vie privée**
 

@@ -1,19 +1,31 @@
 ---
 title: Navigation
 type: module
+
+# test
+schema:
+  main:
+    - id: string
+      href: string
+      label: string
+  footer:
+    - id: string
+      href: string
+      label: string
+
 data:
   main:
     - id: "blog"
       href: "/blog"
       label: "blog"
 
+    - id: "now"
+      href: "/now"
+      label: "now"
+
     - id: "ramblings"
       href: "/ramblings"
       label: "ramblings"
-
-    - id: "bookmarks"
-      href: "/bookmarks"
-      label: "bookmarks"
 
     - id: "about"
       href: "/about"

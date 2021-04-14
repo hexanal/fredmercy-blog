@@ -8,9 +8,11 @@ i18n:
 
 ## about me
 
-I'm interested in: an open web & [programming](/bookmarks#tagged:nerd), [reading](/bookmarks#tagged:read), art ([movies](/bookmarks#tagged:watch), [music](/bookmarks#tagged:music)), and [blogging](/blog)
+I'm interested in: an open web & programming, reading, art, and [blogging](/blog)
 
 I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to my short existence.
+
+I'm also a web developer currently looking for work; [here's my resume](/resume).
 
 ## about this website
 
@@ -30,6 +32,7 @@ I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being
   - nodejs/express
 - made by me
   - open sourced [on github](https://github.com/hexanal/fredmercy-blog), you can read the `README.md` file for more technical information
+  - its design is minimalist on purpose: the goal is to have a website that runs smoothly on almost any hardware, that's accessible, performant, legible, easy to maintain, etc.
 
 **privacy**
 

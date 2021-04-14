@@ -4,7 +4,7 @@ tags: journal
 type: post
 ---
 
-`8:22am:` Feeling quite miserable at the moment, for a variety of reasons, [probably because it's overcast today](/blog/2019-03-25/sun-power/). It's as though I'm starting everything again, but like, I bumped the difficulty level up one notch and I'm still struggling with the first stage!
+`8:22am:` Feeling quite miserable at the moment, for a variety of reasons, probably because it's overcast today. It's as though I'm starting everything again, but like, I bumped the difficulty level up one notch and I'm still struggling with the first stage!
 
 `10:35am:` Second cup of coffee today and I'm back on track. I just needed a little pick-me-up. And the clouds are parting a little, too.
 

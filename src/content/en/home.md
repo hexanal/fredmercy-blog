@@ -24,8 +24,8 @@ Right now, I'm working on a few personal projects while enjoying life in beautif
 ## a few links
 
 - [about](/about) <small class="color-secondary">✷ about me & this website</small>
-- [blog](/blog) <small class="color-secondary">✷ a public journal with my thoughts about existence (and the _web_)</small>
-- [ramblings](/ramblings) <small class="color-secondary">✷ longer essays about various topics</small>
-- [bookmarks](/bookmarks) <small class="color-secondary">✷ a _semi-curated_ list of links I wish to share</small>
+- [blog](/blog) <small class="color-secondary">✷ a public journal where I overshare about everything</small>
 - <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP">help / settings</a> <small class="color-secondary">✷ color themes, accessibility, privacy policy...</small>
+- [now](/now) <small class="color-secondary">✷ things I'm currently into (previously _bookmarks_)</small>
+- [ramblings](/ramblings) <small class="color-secondary">✷ longer essays about various topics</small>
 - <a href="/fr" lang="fr"><i>visiter le site français</i></a>

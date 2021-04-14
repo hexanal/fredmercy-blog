@@ -37,11 +37,11 @@ What can I do? Encrypt stuff _end-to-end_? I don't really know what it means, an
 
 ## conclusion
 
-To reach these extremes, you're either ready to nerd-up **BIG TIME** and encrypt everything that you care to keep private, or keep nothing private and assume that privacy is a concept made-up by _white men_.
+To reach these extremes, you're either ready to nerd-up **BIG TIME** and encrypt everything that you care to keep private, or keep nothing private and assume that privacy is a concept made-up by _the modern man_.
 
-My current obsession with _low tech_, minimalism, slow-growth, etc. indicates a hybrid route: I avoid the digital fairs, the communications superhighways, the Big Tech forums, the centralized [doomscroller](https://en.wikipedia.org/wiki/Doomscrolling) feeds, and instead I stay on my small digital farm where I cultivate my own stuff, slowly, haphazardly. And it's all in the open, too, which means it fits my description of the _total-public_ way. But around that farm, I have my stashes with more sensitive data under lock and key; I have to remember where they are, and what in it, which requires _work_.
+My current obsession with _low tech_, minimalism, slow-growth, etc. indicates a hybrid route: I avoid the digital fairs, the communications superhighways, the Big Tech forums, the centralized [doomscroller](https://en.wikipedia.org/wiki/Doomscrolling) feeds, and instead I stay on my small digital farm where I cultivate my own stuff, slowly, haphazardly. And it's all in the open, too, which means it fits my description of the _total-public_ way. But around that farm, I have my stashes with more sensitive data under lock and key; I have to remember where the key is, where the actual stash is, and what's in it, which requires a little bit of _management_.
 
-I want to keep (and manage) as little data as possible.
+This make me want to manage as little data as possible.
 
 ~~
 
