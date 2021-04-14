@@ -21,25 +21,15 @@
         data-component="highlight"
         class="blog__item"
       >
-        <div class="blog__head">
-          <small class="blog__date">
-            {{ this.meta.month }}/{{ this.meta.day }}
-          </small>
+        <small class="blog__date">
+          {{ this.meta.month }}/{{ this.meta.day }}
+        </small>
 
-          {{#if this.meta.title}}
-            <div class="blog__title">
-              <a href="{{ this.meta.url }}">{{this.meta.title}}</a>
-              <small class="blog__description">{{> components/dot}} {{this.meta.description}}</small>
-            </div>
-          {{else}}
-            missing title...
-          {{/if}}
-        </div>
-
-        {{#if this.excerpt }}
-          <div class="blog__preview content">
-            {{{ this.excerpt }}}
-          </div>
+        {{#if this.meta.title}}
+          <a class="blog__title" href="{{ this.meta.url }}">{{this.meta.title}}</a>
+          <small class="color-secondary">{{> components/dot}} {{this.meta.description}}</small>
+        {{else}}
+          missing title...
         {{/if}}
       </li>
     {{/each}}
