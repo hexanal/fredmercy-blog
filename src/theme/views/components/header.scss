@@ -35,16 +35,6 @@
       color: var(--color-bg);
     }
   }
-
-  span {
-    display: none;
-  }
-
-  @media (min-width: 420px) {
-    span {
-      display: inline;
-    }
-  }
 }
 
 .header__nav {
@@ -105,4 +95,7 @@
   @media print {
     display: none !important;
   }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header__back-to-top { transition: none; }
 }

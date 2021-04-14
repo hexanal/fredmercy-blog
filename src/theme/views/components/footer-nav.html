@@ -3,7 +3,6 @@
     href="discuss"
     data-component="emit"
     data-event="SHOW_BOX_COMMENTS"
-    data-no-transition
   >discussion<small data-comments-count></small></a>
 
   {{> components/dot }}
@@ -12,9 +11,9 @@
     href='{{ t en="/help" fr="/fr/aide" }}'
     data-component="emit"
     data-event="SHOW_BOX_HELP"
-    data-no-transition
   >{{ t en="help" fr="aide" }}</a>
 
+  {{#if themeFlags.USE_THEMES }}
   <span class="footer-nav__theme no-js">
     {{> components/dot }}
 
@@ -36,6 +35,7 @@
       </optgroup>
     </select>
   </span>
+  {{/if }}
 
   {{#if meta.i18n}}
     {{#each meta.i18n as |url lang|}}
