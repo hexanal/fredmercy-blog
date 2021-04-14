@@ -1,4 +1,4 @@
-const { extractBasicMeta } = require('../../bin/utils')
+const { extractBasicMeta } = require('../../lib/utils')
 
 const addRelationship = function( contentTypes ) {
   const items = contentTypes.page

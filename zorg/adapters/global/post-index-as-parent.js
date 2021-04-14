@@ -1,4 +1,4 @@
-const { getItemByURL } = require('../../bin/utils')
+const { getItemByURL } = require('../../lib/utils')
 
 const addPostIndexAsParent = function( contentTypes ) {
   const indexes = {

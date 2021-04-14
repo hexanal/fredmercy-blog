@@ -1,5 +1,5 @@
 const esbuild = require('esbuild')
-const watcher = require('../bin/watcher')
+const watcher = require('../lib/watcher')
 
 const WATCH_GLOB = ['./src/theme/**/*.js'] // anywhere there's JS, my friend!
 const SRC = ['./src/theme/js/fredmercy.js']

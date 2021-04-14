@@ -1,4 +1,4 @@
-const { write } = require('../../bin/files')
+const { write } = require('../../lib/files')
 const sanitizeHtml = require('sanitize-html')
 
 const rssTemplate = items => (`<rss version="2.0">

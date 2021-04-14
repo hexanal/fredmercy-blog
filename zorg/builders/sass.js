@@ -1,7 +1,7 @@
 const sass = require('sass')
 const importer = require('node-sass-glob-importer')
-const { write } = require('../bin/files')
-const watcher = require('../bin/watcher')
+const { write } = require('../lib/files')
+const watcher = require('../lib/watcher')
 
 const WATCH_GLOB = [ './src/**/*.scss' ] // absolutely anywhere there's Sass
 const SRC = './src/theme/styles/fredmercy.scss'

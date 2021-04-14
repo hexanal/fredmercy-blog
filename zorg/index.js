@@ -1,7 +1,7 @@
-const website = require('./compilers/website')
-const js = require('./compilers/javascript')
-const sass = require('./compilers/sass')
-const assets = require('./compilers/assets')
+const website = require('./builders/website')
+const js = require('./builders/javascript')
+const sass = require('./builders/sass')
+const assets = require('./builders/assets')
 
 const build = function() {
   website.build()

@@ -1,5 +1,5 @@
 const debugLog = msg => {
-  if ( process.argv.includes('--verbose') ) console.log( `[fredmercy] debug: "${msg}"`)
+  if ( process.argv.includes('--verbose') ) console.log( `[fredmercy] ${msg}`)
 }
 
 const extractBasicMeta = items => {

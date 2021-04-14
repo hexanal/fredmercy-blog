@@ -3,7 +3,7 @@ const getModulesData = function( contentTypes ) {
 
   return contentTypes.module.reduce( (acc, item) => ({
     ...acc,
-    [item.meta.id]: item.meta.data
+    [item.meta.id]: item.meta.data // the data will be accessible to every item under a key of the same name as the module's file (id)
   }), {})
 }
 

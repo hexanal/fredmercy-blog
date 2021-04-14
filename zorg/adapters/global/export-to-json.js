@@ -1,4 +1,4 @@
-const { write } = require('../../bin/files')
+const { write } = require('../../lib/files')
 
 const ALLOWED_TYPES = ['page', 'post']
 

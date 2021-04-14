@@ -1,9 +1,9 @@
 const fs = require('fs')
 const marked = require('marked')
 const jsyaml = require('js-yaml')
-const templater = require('../../bin/templater') // FIXME swap templater to.. something else?
-const frontMatter = require('../../bin/frontmatter') // FIXME make sure this is clean
-const { debugLog } = require('../../bin/utils')
+const templater = require('../../lib/templater') // FIXME swap templater to.. something else?
+const frontMatter = require('../../lib/frontmatter') // FIXME make sure this is clean
+const { debugLog } = require('../../lib/utils')
 
 const useBlockWithData = function(blockId, data) {
   // FIXME settings up the templating engine should be "another concern"
@@ -13,8 +13,6 @@ const useBlockWithData = function(blockId, data) {
   const component = `{{>${blockId} data }}`;
   const template = templater.compile( component )
   const templateWithData = template({ data })
-
-  debugLog(`templating block “${blockId}”`)
 
   return templateWithData
 }
@@ -54,16 +52,12 @@ const SHORTCODES = [
     tag: 'external',
     processor: function({ props }) {
       try {
-
         const params = JSON.parse(props)
         return useBlockWithData('blocks/external-link', params)
-
       } catch(err) {
-
         console.log('Error with these props:', props)
         console.log( err )
         return ''
-
       }
     }
   }
@@ -101,8 +95,6 @@ const getProcessedContent = function( content, item, contentTypes ) {
       const module = shortcoded
         .replace('\n', '')
         .replace('\r', '')
-
-      debugLog(`processing shortcode “${shortcode.tag}”`)
 
       return acc.replace(replaceString, module)
     }, accContent)
