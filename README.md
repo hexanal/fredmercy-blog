@@ -34,7 +34,7 @@ However, a more personal goal of this endeavour is to learn, to experiment, to t
 
 Let's say you want to try and use this as a starter for your own website. Are you sure!?
 
-Look inside the `./zorg/bin/zorg.js` file. _What the heck is happening in there?_
+Look inside the `./zorg/lib/zorg.js` file. _What the heck is happening in there?_
 
 It's something I came up with to orchestrate the building of my content files into HTML files.
 
