@@ -1,5 +1,6 @@
 export const getHashes = function() {
   return window.location.hash
+    .replace('~~', '') // remove the squiggle placeholder
     .substr(1) // remove #
     .split('/') // split into parts
     .filter( hashPart => hashPart !== '' )
@@ -32,6 +33,8 @@ export const getHash = function( hashType ) {
 }
 
 const formatHashes = function(hashes) {
+  if ( hashes.length === 0 ) return '#~~'
+
   return hashes.reduce( (acc, hash, i) => {
     if ( hash.value === false ) return acc
 
