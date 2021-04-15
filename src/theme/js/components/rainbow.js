@@ -4,7 +4,7 @@ import reefer, { onReef } from '../tools/reefer'
 const TOTAL_FRAMES = 100
 const FRAME_MULTIPLIER = 0.75
 
-export default function({ messaging }) {
+export default function({ events }) {
   const rainbows = document.getElementById('🌈')
 
   const state = {
@@ -32,7 +32,7 @@ export default function({ messaging }) {
   window.addEventListener('resize', debounce( setDirectionFromBreakpoint, 500 ) )
   setDirectionFromBreakpoint()
 
-  messaging.subscribe('SET_LOADING', loading => {
+  events.subscribe('SET_LOADING', loading => {
     if ( loading ) {
       state.transition.set( 1, { stiffness: 200, damping: 14 })
     } else {

@@ -1,6 +1,7 @@
 import Mousetrap from 'mousetrap'
 import stater from '../tools/stater'
 import reefer, { onReef } from '../tools/reefer'
+import { getHash, setHash } from '../tools/hashish'
 
 const ROTATE_MULTIPLIER = -1.5
 const SHADOW_DISTANCE = 0.8 // in rem
@@ -8,7 +9,7 @@ const BG_OPACITY = 0.9
 const ZINDEX = 10
 const ZS = []
 
-export default function({ element, ui, control, messaging }) {
+export default function({ element, ui, control, events }) {
   const state = stater({
     id: element.dataset.boxId || '',
     shortcut: element.dataset.boxShortcut || false,
@@ -53,6 +54,8 @@ export default function({ element, ui, control, messaging }) {
     animation.y.set( y, { stiffness, damping: 16 })
     animation.shadow.set( shadow, { stiffness, damping: 13 })
     animation.opacity.set( opacity, { stiffness: 400, damping: 20 })
+
+    setHash( state.get().id, active )
   })
 
   const toggle = () => {
@@ -62,20 +65,22 @@ export default function({ element, ui, control, messaging }) {
   const open = () => state.active.set(true)
   const close = () => state.active.set(false)
 
-  messaging.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
-  messaging.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
-  messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
+  events.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
+  events.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
+  events.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
 
   control['close'].addEventListener('click', close)
   control['bg'].addEventListener('click', close)
+
+  if ( getHash( state.get().id ) ) open()
 
   if ( state.get().shortcut ) Mousetrap.bind( state.get().shortcut, toggle )
 
   state.update()
 
   return function() {
-    messaging.unsubscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
-    messaging.unsubscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
-    messaging.unsubscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
+    events.unsubscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
+    events.unsubscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
+    events.unsubscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
   }
 }

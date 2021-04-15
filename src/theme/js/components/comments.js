@@ -1,9 +1,9 @@
 import orderBy from 'lodash.orderby'
-import { t, months } from './i18n'
+import { t, months } from '../tools/i18n'
 import ago from '../tools/ago'
 import reefer, { onReef } from '../tools/reefer'
 
-export default function({element, ui, control, messaging }) {
+export default function({element, ui, control, events }) {
   const state = {
     show: false,
     animation: {
@@ -20,7 +20,7 @@ export default function({element, ui, control, messaging }) {
   const getCommentsFromDB = function() {
     const url = element.dataset.url
 
-    messaging.dispatch({ id: 'SET_LOADING', payload: true }) // TODO this is not the way to handle loading, bro...
+    events.dispatch('SET_LOADING', true) // FIXME this is not the way to handle loading, bro...
     state.animation.y.set( 1, { stiffness: 250, damping: 15 })
     state.animation.opacity.set( 0.25, { stiffness: 250, damping: 15 })
 
@@ -30,7 +30,7 @@ export default function({element, ui, control, messaging }) {
       body: JSON.stringify({ url })
     })
       .then( r => {
-        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        events.dispatch('SET_LOADING', false)
         state.animation.y.set( 0, { stiffness: 350, damping: 13 })
         state.animation.opacity.set( 1, { stiffness: 200, damping: 18 })
         return r.json()
@@ -38,7 +38,7 @@ export default function({element, ui, control, messaging }) {
   }
 
   const insertCommentIntoDB = function( comment ) {
-    messaging.dispatch({ id: 'SET_LOADING', payload: true })
+    events.dispatch('SET_LOADING', true)
     state.animation.y.set( 1, { stiffness: 250, damping: 15 })
     state.animation.opacity.set( 0.25, { stiffness: 250, damping: 15 })
 
@@ -48,7 +48,7 @@ export default function({element, ui, control, messaging }) {
       body: JSON.stringify( comment )
     })
       .then( r => {
-        messaging.dispatch({ id: 'SET_LOADING', payload: false })
+        events.dispatch('SET_LOADING', false)
         state.animation.y.set( 0, { stiffness: 350, damping: 13 })
         state.animation.opacity.set( 1, { stiffness: 200, damping: 18 })
 
@@ -168,13 +168,13 @@ export default function({element, ui, control, messaging }) {
       window.localStorage.setItem('comments_message', e.currentTarget.value)
 
       if ( e.key === 'Enter' && !e.shiftKey ) submitComment(e)
-      if ( e.key === 'Escape' ) messaging.dispatch({ id: 'CLOSE_BOX_COMMENTS' })
+      if ( e.key === 'Escape' ) events.dispatch('CLOSE_BOX_COMMENTS')
     })
   }
 
   const setupMessaging = function() {
     state.messages = [
-      messaging.subscribe('SHOW_BOX_COMMENTS', () => {
+      events.subscribe('SHOW_BOX_COMMENTS', () => {
         // focus the comment box on show
         setTimeout( () => control['message'].focus(), 50 )
       })

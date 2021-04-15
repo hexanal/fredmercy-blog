@@ -1,4 +1,4 @@
-export default function({ element, ui }) {
+export default function({ element }) {
   const state = {
     visible: false
   }

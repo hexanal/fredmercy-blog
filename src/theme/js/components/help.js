@@ -1,4 +1,4 @@
-export default function({ control, messaging }) {
-  control['help-big-font'].addEventListener('click', () => messaging.dispatch({ id: 'A11Y_SET_LARGE_FONT', payload: 'yes' }) );
-  control['help-normal-font'].addEventListener('click', () => messaging.dispatch({ id: 'A11Y_SET_LARGE_FONT', payload: 'no' }) );
+export default function({ control, events }) {
+  control['help-big-font'].addEventListener('click', () => events.dispatch('A11Y_SET_LARGE_FONT', 'yes') )
+  control['help-normal-font'].addEventListener('click', () => events.dispatch('A11Y_SET_LARGE_FONT', 'no') )
 }

@@ -1,6 +1,6 @@
 const DEFAULT_THEME = 'june'
 
-export default function({element, messaging}) {
+export default function({element, events}) {
   const availableThemes = []
 
   const useTheme = function( id ) {
@@ -14,7 +14,7 @@ export default function({element, messaging}) {
 
   const initThemes = function() {
     element.querySelectorAll('option').forEach( opt => availableThemes.push( opt.value ) )
-    element.addEventListener('change', e => messaging.dispatch({id:'SET_THEME', payload: e.target.value }) )
+    element.addEventListener('change', e => events.dispatch('SET_THEME', e.target.value ) )
     useTheme( window.localStorage.getItem('selected_theme') ) // manage "saved" theme, in localstorage
   }
 
@@ -29,9 +29,5 @@ export default function({element, messaging}) {
 
   initThemes()
 
-  messaging.subscribe('SET_THEME', useTheme)
-
-  return function() {
-    messaging.unsubscribe('SET_THEME', useTheme)
-  }
+  events.subscribe('SET_THEME', useTheme)
 }

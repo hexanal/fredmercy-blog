@@ -26,7 +26,7 @@ const EFFECTS = {
 
 let INIT = false
 
-export default function({ element, control, messaging }) {
+export default function({ element, control, events }) {
   if ( INIT ) return
   INIT = true
 
@@ -299,15 +299,15 @@ export default function({ element, control, messaging }) {
     window.addEventListener('resize', onResize);
   };
 
-  messaging.subscribe('TOGGLE_BLEEPS', toggleSounds);
-  messaging.subscribe('PLAY_SOUND', play);
-  messaging.subscribe('TOGGLE_HELP', () => playBurst('gong', false, 3, 70) );
-  messaging.subscribe('PAGE_CHANGED', ({next}) => hookEventListeners(next.container) );
-  messaging.subscribe('MENU_TOGGLED', toggled => {
+  events.subscribe('TOGGLE_BLEEPS', toggleSounds);
+  events.subscribe('PLAY_SOUND', play);
+  events.subscribe('TOGGLE_HELP', () => playBurst('gong', false, 3, 70) );
+  events.subscribe('PAGE_CHANGED', ({next}) => hookEventListeners(next.container) );
+  events.subscribe('MENU_TOGGLED', toggled => {
     const sound = toggled ? 'gnuf' : 'gnaf';
     playBurst(sound, false, 3, 50, 50);
   });
-  messaging.subscribe('A11Y_SET_LARGE_FONT', big => {
+  events.subscribe('A11Y_SET_LARGE_FONT', big => {
     const notes = big ? ['C4', 'C#4', 'D4'] : ['D3', 'C#3', 'C3'];
     const burst = 3;
     const delay = 40;

@@ -1,6 +1,6 @@
 import Mousetrap from 'mousetrap';
 
-export default function({messaging}) {
+export default function({ events }) {
   const state = {
     zoomed: window.localStorage.getItem('a11y_use_zoom') || 'no'
   }
@@ -12,7 +12,7 @@ export default function({messaging}) {
     window.localStorage.setItem('a11y_use_zoom', zoomed)
   }
 
-  messaging.subscribe('A11Y_SET_LARGE_FONT', setZoom)
+  events.subscribe('A11Y_SET_LARGE_FONT', setZoom)
 
   Mousetrap.bind('=', () => setZoom('yes') )
   Mousetrap.bind('-', () => setZoom('no') )

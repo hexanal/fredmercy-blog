@@ -1,5 +1,5 @@
 import Exponent from './tools/Exponent'
-import Messaging from './tools/Messaging'
+import events from './tools/eventer'
 
 // autoloaded
 import a11y from './components/a11y'
@@ -21,10 +21,9 @@ import toTop from './components/to-top'
 const container = document.getElementById('🌀')
 
 Exponent
-  .use([ Messaging ])
+  .use([ events ])
   .autoload([
     a11y,
-    i18n,
     rainbow,
     scroll
   ])
