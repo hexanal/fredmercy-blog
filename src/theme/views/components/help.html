@@ -37,30 +37,6 @@
       </li>
       {{/if}}
 
-      {{#if themeFlags.USE_BLEEPS }}
-      <li
-        class="help__item help__item--bleeps"
-        data-component="bleeps"
-      >
-        <div class="help__icon">
-          🎵
-        </div>
-        <div>
-          <strong class="help__emphasis">
-            {{ t en="use" fr="utiliser" }}
-            <button
-              class="hotkey help__key"
-              data-control="enable-sounds"
-              type="button">s</button>
-          </strong>
-          to
-          <span class="help__sound-enable">{{ t en="enable" fr="activer" }}</span>
-          <span class="help__sound-disable">{{ t en="disable" fr="désactiver" }}</span>
-          {{ t en="bleeps & sounds." fr="sons et bips." }}
-        </div>
-      </li>
-      {{/if}}
-
       <li class="help__item">
         <div class="help__icon">
           🔠
@@ -99,6 +75,33 @@
           {{ t en="to toggle this popup." fr="pour afficher et cacher cette fenêtre." }}
         </div>
       </li>
+
+      {{#if themeFlags.USE_BLEEPS }}
+      <li
+        class="help__item help__item--bleeps"
+        data-component="bleeps"
+      >
+        <div class="help__icon">
+          🎵
+        </div>
+        <div>
+          <strong class="help__emphasis">
+            {{ t en="use" fr="utiliser" }}
+            <button
+              class="hotkey help__key"
+              data-control="enable-sounds"
+              type="button">s</button>
+          </strong>
+          {{ t en="to" fr="pour" }}
+          <span class="help__sound-enable">{{ t en="enable" fr="activer" }}</span>
+          <span class="help__sound-disable">{{ t en="disable" fr="désactiver" }}</span>
+          {{ t en="bleeps & sounds." fr="les sons et les bips." }}
+
+          <span class="help__sound-enable">({{ t en="on mute" fr="en sourdine" }} 🔇 )</span>
+          <span class="help__sound-disable">({{ t en="bleeps activated!" fr="sons actifs!" }} 🔊 )</span>
+        </div>
+      </li>
+      {{/if}}
     </ul>
   </div>
 

@@ -52,3 +52,10 @@
   margin: 0;
   white-space: nowrap;
 }
+
+.help__sound-enable { display: inline; }
+.help__sound-disable { display: none; }
+.state-sounds-enabled {
+  .help__sound-enable { display: none; }
+  .help__sound-disable { display: inline; }
+}

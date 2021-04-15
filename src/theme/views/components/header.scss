@@ -8,7 +8,6 @@
   background-color: var(--color-bg);
 
   @media print {
-    position: absolute;
     background-color: transparent;
     border-color: transparent !important; // it's ok, we're priting
   }
@@ -46,6 +45,15 @@
   }
 }
 
+.header__page-title {
+  display: none;
+
+  @media print {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
 .button.header__menu-btn {
   display: block;
   width: 3.5rem;
@@ -60,10 +68,6 @@
   }
 
   @media (min-width: $mq-small) {
-    display: none;
-  }
-
-  @media print {
     display: none;
   }
 }
@@ -90,10 +94,6 @@
     @include hover-focus {
       background-color: var(--color-active);
     }
-  }
-
-  @media print {
-    display: none !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {

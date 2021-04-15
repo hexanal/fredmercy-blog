@@ -1,5 +1,6 @@
 export const getHashes = function() {
   return window.location.hash
+    .replace('~~', '')
     .substr(1) // remove #
     .split('(~') // remove opening parens
     .filter( hashPart => hashPart !== '' )
@@ -10,34 +11,32 @@ export const getHashes = function() {
     })
 }
 
+export const setHash = function( hashType, value ) {
+  const currentHashes = getHashes()
+  const plucked = currentHashes.map( hash => hash.type )
+  const hashExists = plucked.includes( hashType )
+
+  const nextHashes = hashExists
+    ? currentHashes.map( hash => (hash.type !== hashType) ? hash : {...hash, value }).filter( hash => hash.value !== false )
+    : [...currentHashes, { type: hashType, value }]
+
+  const formattedHash = formatHashes( nextHashes )
+
+  window.location.hash = formattedHash
+}
+
 export const getHash = function( hashType ) {
   const match = getHashes().find( hash => hash.type === hashType )
 
   if (!match) return false
 
-  return match.value
+  return match
 }
 
-// export default function({ messaging }) {
-//   const state = {
-//     hashes: []
-//   }
+const formatHashes = function(hashes) {
+  return hashes.reduce( (acc, hash) => {
+    if ( hash.value === false ) return acc
 
-//   window.addEventListener('hashchange', onHashChange, false)
-
-
-//   const onHashChange = e => {
-//     state.hashes = getHashes()
-//     // console.log( e )
-//     // console.log( window.location.hash )
-//   }
-
-//   main()
-//   // onReef( function() { })
-//   // state.active.changed( active => { })
-//   // messaging.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
-
-//   // return function() {
-//     // messaging.unsubscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
-//   // }
-// }
+    return `${acc}(~${hash.type}${typeof hash.value === 'string' ? ':' + hash.value : ''})` // !!!
+  }, '#')
+}

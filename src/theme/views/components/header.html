@@ -5,7 +5,14 @@
     </a>
   </h1>
 
-  <div class="header__nav">
+  {{#if meta.isHome }}
+  {{else}}
+  <h2 class="heading header__page-title">
+    ✺ {{ meta.title }}
+  </h2>
+  {{/if}}
+
+  <div class="header__nav no-print">
     {{> components/nav type="main" items=nav.main}}
 
     <button
@@ -19,7 +26,7 @@
   </div>
 
   <button
-    class="header__back-to-top button"
+    class="header__back-to-top button no-print"
     data-component="to-top"
     type="button"
   >
