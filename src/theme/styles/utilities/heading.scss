@@ -10,6 +10,12 @@
   background-color: var(--color-active);
 }
 
+.heading {
+  [data-theme="mini-dark"] & {
+    color: var(--color-primary)
+  }
+}
+
 .heading-alt {
   background-color: var(--color-primary);
 }

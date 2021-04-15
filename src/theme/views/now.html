@@ -19,9 +19,11 @@
 </div>
 {{/if}}
 
-<div class="now content">
+{{> components/squiggle }}
+
+<div class="now">
   {{#each meta.links as |links tag| }}
-    <div class="now__tag">
+    <div class="now__tag content">
       <h3 id="tagged:{{tag}}">{{ tag }}</h3>
 
       <ul>
@@ -55,11 +57,6 @@
           </li>
         {{/each}}
       </ul>
-
-      {{#if @last }}
-      {{else}}
-        {{> components/squiggle }}
-      {{/if}}
     </div>
   {{/each}}
 </div>

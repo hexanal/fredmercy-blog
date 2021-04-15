@@ -1,4 +1,9 @@
-.now.content {
+.now__tag.content {
+  margin-top: 2rem;
+
+  ul {
+    margin-bottom: 0;
+  }
   ul li::marker {
     color: var(--color-secondary);
   }

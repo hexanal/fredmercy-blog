@@ -9,7 +9,7 @@ aliases:
 links:
 
   nerd:
-    - title: Ditherpunk
+    - title: “Ditherpunk 2 — beyond 1-bit”
       link: https://www.makeworld.space/2021/02/dithering.html
       notes:
         - i just love the lo-fi esthetic of dithering :)
@@ -45,20 +45,20 @@ links:
         - something I've been getting more interested in lately...
 
   watch:
-    - title: _Interface_, u m a m i
+    - title: “Interface”, u m a m i
       link: https://www.youtube.com/watch?v=b_V-VJQT6pM
       source: youtube.com
       notes:
         - As I write this, Justin Tomchuk (https://justintomchuk.com/) is working on the last two episodes of this brilliant animated series. It's fucking good.
 
-    - title: The Midnight Gospel
+    - title: “The Midnight Gospel”, Duncan Trussell
       link: https://www.imdb.com/title/tt11639414/reference
       source: imdb.com
       notes:
         - A trippy Netflix series based on recordings from Duncan Trussell's podcast, with awesome animations!
 
   gaming:
-    - title: Deus Ex
+    - title: “Playtime is now!”, about the game “Deus Ex”
       link: /ramblings/playtime-is-now
       notes:
         - a nostalgia-soaked article about my favorite game :)
