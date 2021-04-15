@@ -7,7 +7,7 @@ aliases:
 
 ## Privacy, or nah?
 
-> I'm a silly person who writes stuff. If you disagree, by all means <a href="discuss" data-component="emit" data-event="SHOW_BOX_COMMENTS" data-no-transition>start a discussion</a> for this post or if you prefer more privacy: <a href="mailto:hello@fredmercy.ca">email me</a>. _😉_
+> I'm a silly person who writes stuff. If you disagree, by all means <a href="#discuss" data-component="emit" data-event="SHOW_BOX_COMMENTS" data-no-transition>start a discussion</a> for this post or if you prefer more privacy: <a href="mailto:hello@fredmercy.ca">email me</a>. _😉_
 
 Because I'm a nerdy web-guy, I've been thinking about online privacy a lot, especially in early 2019 when I started this blog and first [wrote about degooglin'](/blog/2019/02/02/entry). Since then, our lives were forced evermore online because of _you-know-what_ and I have been trying to plug some of my data “leaks”.
 

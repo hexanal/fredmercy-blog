@@ -24,7 +24,7 @@
 <div class="now">
   {{#each meta.links as |links tag| }}
     <div class="now__tag content">
-      <h3 id="tagged:{{tag}}">{{ tag }}</h3>
+      <h3 id="{{tag}}">{{ tag }}</h3>
 
       <ul>
         {{#each links }}
@@ -34,7 +34,7 @@
               target="_blank"
               rel="noreferrer noopener"
             >
-              “{{{ title }}}”
+              {{{ title }}}
             </a>
             {{# if this.source }}
               <small class="now__source color-secondary">->&nbsp;{{ this.source }}</small>

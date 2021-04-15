@@ -1,10 +1,8 @@
 export const getHashes = function() {
   return window.location.hash
-    .replace('~~', '')
     .substr(1) // remove #
-    .split('(~') // remove opening parens
+    .split('/') // split into parts
     .filter( hashPart => hashPart !== '' )
-    .map( hashPart => hashPart.slice(0, -1) ) // remove closing parens
     .map( hashPart => {
       const [type, value] = hashPart.split(':')
       return { type, value }
@@ -34,9 +32,9 @@ export const getHash = function( hashType ) {
 }
 
 const formatHashes = function(hashes) {
-  return hashes.reduce( (acc, hash) => {
+  return hashes.reduce( (acc, hash, i) => {
     if ( hash.value === false ) return acc
 
-    return `${acc}(~${hash.type}${typeof hash.value === 'string' ? ':' + hash.value : ''})` // !!!
+    return `${acc}${ i > 0 ? '/' : ''}${hash.type}${typeof hash.value === 'string' ? ':' + hash.value : ''}` // !!!
   }, '#')
 }
