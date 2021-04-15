@@ -8,7 +8,7 @@ import scroll from './components/scroll'
 
 // ui
 import box from './components/box'
-import bleeps from './components/bleeps'
+// import bleeps from './components/bleeps'
 import comments from './components/comments'
 import drawer from './components/drawer'
 import emit from './components/emit'
@@ -29,7 +29,7 @@ Exponent
   ])
   .register({
     'box': box,
-    'bleeps': bleeps,
+    // 'bleeps': bleeps,
     'comments': comments,
     'drawer': drawer,
     'emit': emit,
