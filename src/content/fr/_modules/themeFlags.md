@@ -5,5 +5,5 @@ type: module
 
 data:
   USE_THEMES: true
-  USE_BLEEPS: false
+  USE_BLEEPS: true
 ---
