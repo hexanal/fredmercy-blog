@@ -3,9 +3,8 @@ import events from './tools/eventer'
 
 // autoloaded
 import a11y from './components/a11y'
-import i18n from './components/i18n'
 import rainbow from './components/rainbow'
-import scroll from './components/scroll/scroll'
+import scroll from './components/scroll'
 
 // ui
 import box from './components/box'

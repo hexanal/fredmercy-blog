@@ -1,5 +1,5 @@
 // "forked" from `s-ago`
-import { t } from '../components/i18n'
+import { t } from './i18n'
 
 const format = function(diff, divisor, unit, past, future, isInTheFuture) {
   const val = Math.round(Math.abs(diff) / divisor)

@@ -16,10 +16,3 @@ export const months = [
   t({en: 'nov', fr: 'nov' }),
   t({en: 'dec', fr: 'déc' }),
 ]
-
-export default function({ messaging }) {
-  messaging.subscribe('PAGE_CHANGED', ({next}) => {
-    lang = next.container.dataset.lang
-    document.documentElement.setAttribute('lang', lang)
-  })
-}
