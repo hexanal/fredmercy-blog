@@ -10,19 +10,21 @@ links:
 
   nerd:
     - title: “Ditherpunk 2 — beyond 1-bit”
+      source: makeworld's website
       link: https://www.makeworld.space/2021/02/dithering.html
       notes:
         - i just love the lo-fi esthetic of dithering :)
 
     - title: Rawtext Club
+      source: official website
       link: https://rawtext.club/sign-up.html
       notes:
         - for people with raw text websites
         - mine doesn't really apply, but I love the concept
 
     - title: Fantasque Sans Mono
-      link: https://github.com/belluzj/fantasque-sans
       source: github.com
+      link: https://github.com/belluzj/fantasque-sans
       notes:
         - The font I use for this website and for everything I code/write/script in
 
