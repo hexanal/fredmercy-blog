@@ -10,7 +10,7 @@ const exportToJson = function( contentTypes ) {
       const stringified = JSON.stringify( item )
       const destination = `./public${item.meta.url}`
 
-      write(destination, `_data.json`, stringified)
+      write(destination, `data.json`, stringified)
     })
   })
 
