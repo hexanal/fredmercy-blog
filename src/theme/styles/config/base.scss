@@ -8,25 +8,6 @@ html {
   background-color: var(--color-bg);
   border-color: var(--shit);
 
-  &[data-input-device="keyboard"] {
-    pointer-events: none;
-    user-select: none;
-
-    * {
-      pointer-events: none;
-      user-select: none;
-    }
-  }
-
-  &[data-hide-cursor] {
-    cursor: none;
-
-    * {
-      user-select: none;
-      cursor: none;
-    }
-  }
-
   &.a11y_use_zoom {
     font-size: 22px;
 
