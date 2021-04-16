@@ -29,7 +29,7 @@ const buildRSSFeed = function( contentTypes, website ) {
   }).join('')
 
   const rssFeed = rssTemplate( items )
-  const destination = `public${ website.baseUrl }`
+  const destination = `public${ website.baseURL }`
   const filename = 'rss.xml'
 
   write(destination, filename, rssFeed) // writing it!

@@ -17,7 +17,7 @@ const buildSitemap = function( contentTypes, website ) {
   }, []).join('')
 
   const sitemap = sitemapTemplate( urls )
-  const destination = `public${ website.baseUrl }`
+  const destination = `public${ website.baseURL }`
   const filename = 'sitemap.xml'
 
   write(destination, filename, sitemap)

@@ -1,18 +1,16 @@
-const defaultLocale = 'en'
-// TODO maybe this can be a config object for "multisite"?
 const websites = [
   {
-    baseUrl: '/',
+    baseURL: '/',
     baseDomain: 'https://fredmercy.ca',
     locale: 'en',
-    name: 'english',
+    name: '[fredmercy.ca -> english]',
     contentSrc: './src/content/en/**/*.md'
   },
   {
-    baseUrl: '/fr',
+    baseURL: '/fr',
     baseDomain: 'https://fredmercy.ca',
     locale: 'fr',
-    name: 'français',
+    name: '[fredmercy.ca -> français]',
     contentSrc: './src/content/fr/**/*.md'
   }
 ]
@@ -40,8 +38,4 @@ const adapters = [
   require('./adapters/global/html'),
 ]
 
-module.exports = {
-  websites,
-  adapters,
-  defaultLocale
-}
+module.exports = { websites, adapters }

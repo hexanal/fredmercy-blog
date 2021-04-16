@@ -8,12 +8,6 @@ const registerPartialHelper = function() {
   Handlebars.registerHelper('block', function (template, context, opts) {
     const f = Handlebars.partials[template]
 
-    // TODO?
-    // const filteredContext = Object.keys(context).filter( key => key !== 'component' )
-    // const blockContext = filteredContext.length
-    //   ? { ...opts.data.root, ...context }
-    //   : opts.data.root
-
     if (!f) return '[...]'
     if (typeof f === 'function') return new Handlebars.SafeString( f(context) )
 
@@ -24,21 +18,21 @@ const registerPartialHelper = function() {
 
   Handlebars.registerHelper('t', function (template, context, opts) {
     if( !template.data.root.meta ) {
-      console.error('No `meta` found! huh?!')
+      console.error('[error] No `meta` found! huh?!')
       return ''
     }
 
     const { lang } = template.data.root.meta
 
     if (!lang) {
-      console.error('No language found in this item\'s `meta` data')
+      console.error('[error] No language found in this item\'s `meta` data')
       return ''
     }
 
     const i18nString = template.hash[lang]
 
     if (!i18nString) {
-      console.error('Please provide correct language keys to the `t` helper!')
+      console.error('[error] Please provide correct language keys to the `t` helper!')
       return ''
     }
 
@@ -72,14 +66,14 @@ const registerPartialHelper = function() {
     const { lang } = template.data.root.meta
 
     if (!lang) {
-      console.error('No language found in this item\'s `meta` data')
+      console.error('[error] No language found in this item\'s `meta` data')
       return ''
     }
 
     const i18nString = template.hash[lang]
 
     if (!i18nString) {
-      console.error('Please provide correct language keys to the `t` helper!')
+      console.error('[error] Please provide correct language keys to the `t-markdown` helper!')
       return ''
     }
 

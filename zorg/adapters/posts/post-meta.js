@@ -39,9 +39,9 @@ const getPostMetaData = function( item, website ) {
   const monthName = getMonthName(month, item.meta.lang)
   const prettyDate = `${dayNoZero} ${monthName}, ${year}`
 
-  const baseURL = website.baseUrl === '/'
+  const baseURL = website.baseURL === '/'
     ? ''
-    : website.baseUrl
+    : website.baseURL
   const url = `${baseURL}/${blog}/${year}/${month}/${day}/${id}`
   const permalink = `${website.baseDomain}${url}`
   const archive = `${monthName} ${year}`

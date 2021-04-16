@@ -2,7 +2,6 @@ const fs = require('fs')
 const frontMatter = require('./frontmatter')
 const glob = require('glob')
 const { getFilenameFromPath, getFormattedTimestamp } = require('./utils')
-const { defaultLocale } = require('../config')
 
 /**
  * - go through `contentFiles`
@@ -11,7 +10,7 @@ const { defaultLocale } = require('../config')
  * - rename to match our nomenclature
  * - return { meta, body } and other "developer" keys
  */
-const getBasicMeta = function( contentFiles, lang ) {
+const getBasicMeta = function( contentFiles, websiteConfig ) {
   return contentFiles.map( item => {
     const file = fs.readFileSync(item, 'utf8')
     const { attributes, body } = frontMatter( file.toString() )
@@ -26,8 +25,8 @@ const getBasicMeta = function( contentFiles, lang ) {
         built: getFormattedTimestamp( Date.now() ),
       },
       meta: {
-        root: lang === defaultLocale ? '/' : `/${ lang }`,
-        lang,
+        baseURL: websiteConfig.baseURL,
+        lang: websiteConfig.locale,
         ...defaultAttributes,
         ...attributes
       },
@@ -84,7 +83,7 @@ const zorg = function( website, plugins ) {
   const start = Date.now()
 
   const contentFiles = glob.sync( website.contentSrc, {})
-  const contentTypes = splitByType( getBasicMeta( contentFiles, website.locale ) )
+  const contentTypes = splitByType( getBasicMeta( contentFiles, website ) )
   const build = plugins.reduce( (acc, plugin) => plugin(acc, website), contentTypes)
 
   const end = Date.now()
