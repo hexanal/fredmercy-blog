@@ -3,16 +3,15 @@ const marked = require('marked')
 const jsyaml = require('js-yaml')
 const templater = require('../../lib/templater') // FIXME swap templater to.. something else?
 const frontMatter = require('../../lib/frontmatter') // FIXME make sure this is clean
-const { debugLog } = require('../../lib/utils')
 
 const useBlockWithData = function(blockId, data) {
   // FIXME settings up the templating engine should be "another concern"
   // it should be possible to swap out the templating engine easily, and use whatever?
   templater.usePartials('./src/theme/views')
 
-  const component = `{{>${blockId} data }}`;
+  const component = `{{>${blockId} }}`;
   const template = templater.compile( component )
-  const templateWithData = template({ data })
+  const templateWithData = template( data )
 
   return templateWithData
 }
@@ -30,6 +29,7 @@ const SHORTCODES = [
     tag: 'latest-post',
     processor: function({ props, item, contentTypes }) {
       const latest = { ...contentTypes.post[0] }
+      // console.log( item )
       return useBlockWithData('blocks/latest-post', { ...item, latest })
     }
   },
