@@ -16,6 +16,15 @@
     - edit content that way, with a modular UI?
     - create new "adapters" in an exploratory way instead of manually iterating through the data with `map` and `reduce`
 
+## flat-structure for content types
+
+* it's all about _adapters_
+* no split by "type"
+* add utility functions to extract a given "type"
+* easier "meta" functions?
+* a more streamlined way of adding/using adapters
+  - maybe offer some basic primitives that can be used to massage the data?
+
 ## old ideas, needs revisiting
 
 * pass protect?
