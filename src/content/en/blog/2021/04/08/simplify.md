@@ -8,7 +8,7 @@ edited: 2021-04-12 @ 6:23pm
 
 > Hey there! I combined two posts in one here; it's a long one, and it's about **“a sustainable low-tech web”**, I guess?
 
-`2021-04-08 @ 2:14pm:` In my forever quest for a sustainable website (note: By which I denote a website that can be maintained and kept online and "accessible"), I've been trying to simplify everything about this website.
+`2:14pm:` In my forever quest for a sustainable website (note: By which I denote a website that can be maintained and kept online and "accessible"), I've been trying to simplify everything about this website.
 
 It's still quite complicated, I think. First of all: it won't run on PC. I've tried it and the non tech-savvy person won't be able to install it; because right now this website can't run **without having to install many other programs first**.
 
@@ -23,7 +23,7 @@ This website has to leave a very _lightweight_ footprint on the climate. It has 
 
 ~~
 
-`2021-04-08 @ 2:26pm:`
+`2:26pm:`
 
 These are my current obsessions:
 
@@ -47,9 +47,11 @@ I need to find simpler software!
 
 ~~
 
-`2021-04-08 @ 3:18pm:` Okay, maybe it's because it's my _job_, but I truly believe in _websites_. And the technology we use to build them isn't so bad (I'm talking about the HTML/CSS/JS stack here) so I think it's somewhat sustainable to keep _documents_ in this format.
+`3:18pm:` Okay, maybe it's because it's my _job_, but I truly believe in _websites_. And the technology we use to build them isn't so bad (I'm talking about the HTML/CSS/JS stack here) so I think it's somewhat sustainable to keep _documents_ in this format.
 
 I just love the expressiveness of a website to illustrate content: it's interactive, it can become a game, it's a discovery. It pretends to be "software", but it's actually more than software. It's open, it's accessible, it's supposed to be lightweight, it's supposed to be a standard and should be widely compatible. It's also the ultimate book replacement. By the way, I just read on Hacker News today that the `.epub` format used for e-books is actually HTML and CSS; I believe it. It's perfect for displaying something in a book format. (note: at some point I even thought of making a "book" theme for this website, where the whole design would be centered on making it feel like as _book-like_ as possible)
+
+~~
 
 ## low-tech retreat
 
@@ -88,3 +90,12 @@ Lately I've been writing a lot about advertising and how it's all bad, but the t
 * Generate wealth: yes, it's cool.
 * Generate happiness: oh yeah, much better.
 * Generate love: _the best!_
+
+~~
+
+## inspired by / sources
+
+`added 2021-04-15 @ 13:09pm:`
+
+* https://jeffhuang.com/designed_to_last/
+* https://tedium.co/2021/04/07/make-digital-preservation-easier
