@@ -1,13 +1,22 @@
 {
   "name": "Fred Mercy",
   "short_name": "Fred Mercy's Website",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#f9eaea",
   "description": "My Personal Website",
-  "icons": [{
-    "src": "./assets/images/favicon-big.png",
-    "sizes": "180x180",
-    "type": "image/png"
-  }]
+  "start_url": "/",
+  "background_color": "#a46bea",
+  "theme_color": "#a46bea",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./assets/images/fav192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/images/fav512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
