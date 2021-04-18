@@ -1,40 +1,49 @@
 <div class="experience">
-  <div class="experience__period">
-    <h2>{{ title }}</h2>
-  </div>
 
-  <div class="experience__details content">
-    {{#if url }}
-      <strong>
-        <a class="experience__link" href="{{ url }}" target="_blank" rel="noopener noreferrer">
-          {{ company }}
-        </a>
-      </strong>
-    {{else}}
-      <div class="experience__company">{{ company }}</div>
-    {{/if}}
+<div class="experience__period"><h2>{{ title }}</h2></div>
 
-    <div class="experience__description">
-      <p>{{ location }}</p>
-      <p class="p-skill">{{ description }}</p>
+<div class="experience__details content">
 
-      {{#if extra}}
-      <ul class="experience__more">
-        {{#each extra }}
-          <li class="experience__website">
-            <a class="experience__link" href="{{this.href}}" target="_blank" rel="noopener noreferrer">
-              {{this.label}}
-            </a>
-            {{#if this.description }}
-            <small class="p-summary">
-              {{ this.description }}
-            </small>
-            {{/if}}
-          </li>
-        {{/each}}
-      </ul>
-      {{/if}}
-    </div>
+{{#if url }}
+<strong><a
+  class="experience__link"
+  href="{{ url }}"
+  target="_blank"
+  rel="noopener noreferrer"
+>{{ company }}</a></strong>
+{{else}}
+<div class="experience__company">{{ company }}</div>
+{{/if}}
 
-  </div>
+<div class="experience__description">
+
+<p>{{ location }}</p>
+
+<p class="p-skill">{{ description }}</p>
+
+{{#if extra}}
+<ul class="experience__more">
+
+{{#each extra }}
+<li class="experience__website">
+
+<a
+class="experience__link"
+href="{{this.href}}"
+target="_blank"
+rel="noopener noreferrer"
+>{{this.label}}</a>
+
+{{#if this.description }}<small class="p-summary">{{ this.description }}</small>{{/if}}
+
+</li>
+{{/each}}
+
+</ul>
+{{/if}}
+
+</div>
+
+</div>
+
 </div>

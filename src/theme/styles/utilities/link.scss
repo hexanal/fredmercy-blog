@@ -1,18 +1,17 @@
 .link {
-  padding: 0;
-  margin: 0;
-  font-size: 1em;
-  font-family: var(--font);
-  text-decoration: underline;
-  color: var(--color-primary);
-  background-color: transparent;
-  border: 0;
-  outline: none;
-  cursor: pointer;
+padding: 0;
+margin: 0;
+font-size: 1em;
+font-family: var(--font);
+text-decoration: underline;
+color: var(--color-primary);
+background-color: transparent;
+border: 0;
+outline: none;
+cursor: pointer;
 
-  @include hover-focus {
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
-    text-decoration: none;
-  }
-}
+@include hover-focus {
+color: var(--color-bg);
+background-color: var(--color-secondary);
+text-decoration: none;
+}}

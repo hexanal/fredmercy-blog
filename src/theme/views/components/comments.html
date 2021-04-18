@@ -1,48 +1,41 @@
 <div
-  class="comments"
-  data-component="comments"
-  data-url="{{ meta.url }}"
+class="comments"
+data-component="comments"
+data-url="{{ meta.url }}"
 >
-  <div class="comments__title">
-    <em>url:</em> <small>{{ meta.url }}</small>
-  </div>
 
-  <div
-    class="comments__convo"
-    data-ui="convo"
-  >
-  </div>
+<div class="comments__title"><em>url:</em> <small>{{ meta.url }}</small></div>
 
-  <form
-    class="comments__write"
-    data-control="comment-box"
-  >
-    <label class="visually-hidden" for="author">
-      {{ t en="nickname" fr="pseudonyme" }}
-    </label>
-    <input
-      class="comments__input comments__author"
-      data-control="author"
-      type="text"
-      id="author"
-      name="author"
-      maxlength="32"
-      placeholder='{{ t en="nickname" fr="pseudonyme" }}'
-      required
-    >
+<div class="comments__convo" data-ui="convo"></div>
 
-    <label class="visually-hidden" for="message">
-      {{ t en="message" fr="message" }}
-    </label>
-    <input
-      id="message"
-      class="comments__input comments__message"
-      data-control="message"
-      type="text"
-      name="content"
-      maxlength="1000"
-      placeholder='{{ t en="say something!" fr="exprimez-vous!" }}'
-      required
-    >
-  </form>
+<form class="comments__write" data-control="comment-box">
+
+<label class="visually-hidden" for="author">{{ t en="nickname" fr="pseudonyme" }}</label>
+
+<input
+class="comments__input comments__author"
+data-control="author"
+type="text"
+id="author"
+name="author"
+maxlength="32"
+placeholder='{{ t en="nickname" fr="pseudonyme" }}'
+required
+>
+
+<label class="visually-hidden" for="message">{{ t en="message" fr="message" }}</label>
+
+<input
+id="message"
+class="comments__input comments__message"
+data-control="message"
+type="text"
+name="content"
+maxlength="1000"
+placeholder='{{ t en="say something!" fr="exprimez-vous!" }}'
+required
+>
+
+</form>
+
 </div>

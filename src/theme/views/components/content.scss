@@ -158,6 +158,15 @@
     }
   }
 
+  pre {
+    overflow: auto;
+    padding: 0.5rem;
+    font-size: .6rem;
+    letter-spacing: -0.075rem;
+    color: var(--color-bg);
+    background-color: var(--color-subdued);
+  }
+
   .link {
     user-select: none;
     padding: 0;

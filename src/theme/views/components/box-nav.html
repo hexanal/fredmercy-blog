@@ -1,32 +1,40 @@
 {{#> components/box id="menu" shortcut="m" }}
-  <div class="box-nav">
-    {{> components/nav type="box" items=nav.main}}
-    {{> components/squiggle small="true" }}
 
-    <div class="nav">
-      <button
-        class="no-js link"
-        data-component="emit"
-        data-event="SHOW_BOX_DISCUSS"
-      >discussion<small data-comments-count></small></button>
+<div class="box-nav">
 
-      {{> components/dot }}
+{{> components/nav type="box" items=nav.main}}
 
-      <a
-        href='{{ t en="/help" fr="/fr/aide" }}'
-        data-component="emit"
-        data-event="SHOW_BOX_HELP"
-      >{{ t en="help" fr="aide" }}</a>
+{{> components/squiggle small="true" }}
 
-      {{#if meta.i18n}}
-        {{#each meta.i18n as |url lang|}}
-        {{> components/dot }}
-        <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
-        {{/each}}
-      {{/if}}
-    </div>
+<div class="nav">
 
-    {{> components/squiggle small="true" }}
-    {{> components/nav type="footer" items=nav.footer}}
-  </div>
+<button
+class="no-js link"
+data-component="emit"
+data-event="SHOW_BOX_DISCUSS"
+>discussion<small data-comments-count></small></button>
+
+{{> components/dot }}
+
+<a
+href='{{ t en="/help" fr="/fr/aide" }}'
+data-component="emit"
+data-event="SHOW_BOX_HELP"
+>{{ t en="help" fr="aide" }}</a>
+
+{{#if meta.i18n}}
+{{#each meta.i18n as |url lang|}}
+{{> components/dot }}
+<em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+{{/each}}
+{{/if}}
+
+</div>
+
+{{> components/squiggle small="true" }}
+
+{{> components/nav type="footer" items=nav.footer}}
+
+</div>
+
 {{/components/box }}

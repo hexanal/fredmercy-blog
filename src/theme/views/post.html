@@ -3,31 +3,36 @@
 {{> components/breadcrumbs }}
 
 <article class="post h-entry">
-  <header class="post__heading">
-    <div class="post__meta">
-      <h2 class="visually-hidden p-name">{{ meta.title }}</h2>
 
-      <time class="heading-alt dt-published" datetime="{{ meta.date }}">
-        {{ meta.prettyDate }}
-      </time>
+<header class="post__heading">
 
-      {{#if meta.description }}
-      <small class="color-secondary p-summary">{{ meta.description }}</small>
-      {{/if}}
+<div class="post__meta">
 
-      {{#if meta.tags }}
-      <small class="p-category">(tagged: <em>{{ meta.tags }}</em>)</small>
-      {{/if}}
+<h2 class="visually-hidden p-name">{{ meta.title }}</h2>
 
-      {{#if meta.edited }}
-      <small class="color-subdued">-> edited on: {{ meta.edited }}</small>
-      {{/if}}
-    </div>
-  </header>
+<time class="heading-alt dt-published" datetime="{{ meta.date }}">
+  {{ meta.prettyDate }}
+</time>
 
-  {{> components/content }}
+{{#if meta.description }}
+<small class="color-secondary p-summary">{{ meta.description }}</small>
+{{/if}}
 
-  {{> components/post-nav }}
+{{#if meta.tags }}
+<small class="p-category">(tagged: <em>{{ meta.tags }}</em>)</small>
+{{/if}}
+
+{{#if meta.edited }}
+<small class="color-subdued">-> edited on: {{ meta.edited }}</small>
+{{/if}}
+
+</div>
+
+</header>
+
+{{> components/content }}
+
+{{> components/post-nav }}
 </article>
 
 {{/layouts/page}}

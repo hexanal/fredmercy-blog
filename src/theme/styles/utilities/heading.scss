@@ -1,21 +1,15 @@
 .heading,
 .heading-alt {
-  display: inline-block;
-  padding: 0.1rem 0.25rem;
-  margin: 0 0 1rem;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--color-bg);
-  background-color: var(--color-active);
+display: inline-block;
+padding: 0.1rem 0.25rem;
+margin: 0 0 1rem;
+font-size: 1em;
+font-weight: 400;
+line-height: 1.2;
+color: var(--color-bg);
+background-color: var(--color-active);
 }
 
-.heading {
-  [data-theme="mini-dark"] & {
-    color: var(--color-primary)
-  }
-}
+[data-theme="mini-dark"] .heading { color: var(--color-primary) }
 
-.heading-alt {
-  background-color: var(--color-primary);
-}
+.heading-alt { background-color: var(--color-primary); }

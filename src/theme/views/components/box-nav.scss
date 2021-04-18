@@ -1,19 +1,17 @@
 [data-box-id="menu"] {
-  .box__frame {
-    width: auto;
-    height: auto;
-    left: auto;
-    right: 0;
-  }
-  .box__wrap {
-    height: auto;
-  }
+.box__frame {
+width: auto;
+height: auto;
+left: auto;
+right: 0;
 }
+.box__wrap {
+height: auto;
+}}
 
 .box-nav {
-  padding: 1rem;
+padding: 1rem;
 
-  .nav {
-    text-align: left;
-  }
-}
+.nav {
+text-align: left;
+}}

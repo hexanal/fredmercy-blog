@@ -1,27 +1,26 @@
 .hotkey {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-family: var(--font);
-  text-align: center;
-  color: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
-  border-radius: 0.3rem;
-  background-color: transparent;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 2rem;
+height: 2rem;
+margin: 0;
+padding: 0;
+font-size: 1rem;
+font-family: var(--font);
+text-align: center;
+color: var(--color-secondary);
+border: 2px solid var(--color-secondary);
+border-radius: 0.3rem;
+background-color: transparent;
 
-  @include hover-focus {
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
-  }
-}
+@include hover-focus {
+color: var(--color-bg);
+background-color: var(--color-secondary);
+}}
 
 .hotkey--wide {
-  width: auto;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+width: auto;
+padding-left: 0.25rem;
+padding-right: 0.25rem;
 }
