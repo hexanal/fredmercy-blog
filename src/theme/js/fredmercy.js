@@ -3,7 +3,7 @@ import events from './tools/eventer'
 
 // autoloaded
 import a11y from './components/a11y'
-import rainbow from './components/rainbow'
+// import rainbow from './components/rainbow'
 import scroll from './components/scroll'
 
 // ui
@@ -24,7 +24,7 @@ Exponent
   .use([ events ])
   .autoload([
     a11y,
-    rainbow,
+    // rainbow,
     scroll
   ])
   .register({
