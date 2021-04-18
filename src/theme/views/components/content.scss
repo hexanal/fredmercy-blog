@@ -1,5 +1,5 @@
 /**
- * how to display "user content"
+ * TODO: flatten this css? :troll:
  */
 .content {
   line-height: 1.5em;
@@ -156,6 +156,16 @@
         cursor: not-allowed;
       }
     }
+  }
+
+  pre {
+    overflow: auto;
+    padding: 1rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+    letter-spacing: -0.075rem;
+    color: var(--color-bg);
+    background-color: var(--color-subdued);
   }
 
   .link {
