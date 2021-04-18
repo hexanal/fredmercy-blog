@@ -1,16 +1,14 @@
-.comment-line {
-  margin: 0.25rem 0;
-}
-
 .comment-line__author {
-  margin-right: 0.75rem;
+  display: inline-block;
+  padding: 0 0.25rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
   background-color: var(--color-extra);
 }
 
 .comment-line__time {
   font-size: 0.75rem;
-  line-height: 1.4;
-  font-style: italic;
+  line-height: 1rem;
   color: var(--color-secondary);
   white-space: nowrap;
 }
@@ -18,9 +16,10 @@
 .comment-line__message {
   width: 100%;
 
-  p {
-    display: inline;
-    margin: 0.75rem 0;
-    line-height: 1.4;
+  &::after {
+    content: '~~';
+    display: block;
+    font-size: 0.8rem;
+    line-height: 2;
   }
 }

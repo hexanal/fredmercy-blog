@@ -1,6 +1,5 @@
 import orderBy from 'lodash.orderby'
-import { t, months } from '../tools/i18n'
-import ago from '../tools/ago'
+import { t } from '../tools/i18n'
 import reefer, { onReef } from '../tools/reefer'
 
 export default function({element, ui, control, events }) {
@@ -57,16 +56,15 @@ export default function({element, ui, control, events }) {
   }
 
   const getFormattedTimestamp = timestamp => {
+    if ( typeof timestamp === 'string' ) return ''
+
     const date = new Date( timestamp )
-    const day = date.getUTCDate()
-    const monthIndex = date.getUTCMonth()
-    const month = months[monthIndex]
+    const day = withLeadingZero( date.getUTCDate() )
+    const month = withLeadingZero( date.getUTCMonth() )
     const year = date.getUTCFullYear()
-
     const time = getAmPmTime( date )
-    const timeAgo = ago( date )
 
-    return `${timeAgo} (${time}, ${day} ${month} ${year})`
+    return `✷ ${year}-${month}-${day} @ ${time}`
   }
 
   /**
@@ -86,21 +84,21 @@ export default function({element, ui, control, events }) {
     withChronologicalOrder.map( ({comment, author, timestamp}) => {
       const $commentLine = document.createElement('div')
         const $timestamp = document.createElement('time')
-        const $author = document.createElement('span')
-        const $content = document.createElement('span')
+        const $author = document.createElement('div')
+        const $content = document.createElement('div')
 
       $commentLine.classList.add('comment-line')
         $author.classList.add('comment-line__author')
-        $content.classList.add('comment-line__message')
         $timestamp.classList.add('comment-line__time')
+        $content.classList.add('comment-line__message', 'content', 'font-small')
 
-      $author.textContent = `${ author }`
-      $content.innerHTML = comment
+      $author.textContent = author
       $timestamp.innerHTML = getFormattedTimestamp(timestamp)
+      $content.innerHTML = `${comment}`
 
       $commentLine.appendChild($author)
-      $commentLine.appendChild($content)
       $commentLine.appendChild($timestamp)
+      $commentLine.appendChild($content)
 
       ui['convo'].appendChild($commentLine)
     })
