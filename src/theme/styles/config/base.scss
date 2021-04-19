@@ -70,6 +70,12 @@ a {
   }
 }
 
+a[href^="http"]::after {
+content: ' ✧';
+font-style: normal;
+font-weight: normal;
+}
+
 button {
   border: 0;
   outline: none;

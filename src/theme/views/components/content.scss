@@ -77,12 +77,6 @@ font-style: italic;
 [data-theme="mini-dark"] {
 .content h3, .content code { color: var(--color-primary); }}
 
-.content a[href^="http"]::after {
-content: ' ✧';
-font-style: normal;
-font-weight: normal;
-}
-
 .content del { background-color: var(--color-primary); opacity: 0.5; }
 
 .content del a {
