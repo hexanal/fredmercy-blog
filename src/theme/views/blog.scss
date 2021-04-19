@@ -37,7 +37,7 @@ background-color: var(--color-primary);
 
 // when highlighted
 .blog__item.state-highlighted .blog__date::after {
-content: '✷';
+content: ' ✷';
 color: var(--color-bg);
 }
 
