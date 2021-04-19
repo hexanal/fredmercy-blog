@@ -1,45 +1,46 @@
 .blog {
-  margin: 0 0 5em;
-  line-height: 1.5;
+margin: 0 0 5em;
+line-height: 1.5;
 }
 
 .blog__month-archive {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
 
-  + .blog__month-archive {
-    &:before {
-      content: '~~';
-      display: block;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
+.blog__month-archive
++ .blog__month-archive::before {
+content: '~~';
+display: block;
+margin-top: 1rem;
+margin-bottom: 1rem;
 }
 
 .blog__month-posts {
-  padding-left: 0;
-  margin: 0;
-  list-style: none;
+padding-left: 0;
+margin: 0;
+list-style: none;
 }
 
-.blog__item + .blog__item {
-  margin-top: 0.25rem;
+.blog__item
++ .blog__item {
+margin-top: 0.25rem;
 }
 
 .blog__date {
-  display: inline-block;
-  padding: 0.25rem;
-  line-height: 1.1;
-  color: var(--color-bg);
-  background-color: var(--color-primary);
+display: inline-block;
+padding: 0.25rem;
+line-height: 1.1;
+color: var(--color-bg);
+background-color: var(--color-primary);
 }
 
 // when highlighted
 .blog__item.state-highlighted .blog__date::after {
-  content: '✷';
-  color: var(--color-bg);
+content: '✷';
+color: var(--color-bg);
 }
+
 .blog__item.state-highlighted .blog__date {
-  background-color: var(--color-secondary);
+background-color: var(--color-secondary);
 }

@@ -1,17 +1,13 @@
-[data-box-id="menu"] {
+[data-box-id="menu"]
 .box__frame {
 width: auto;
 height: auto;
 left: auto;
 right: 0;
 }
-.box__wrap {
-height: auto;
-}}
 
-.box-nav {
-padding: 1rem;
+[data-box-id="menu"]
+.box__wrap { height: auto; }
 
-.nav {
-text-align: left;
-}}
+.box-nav { padding: 1rem; }
+.box-nav .nav { text-align: left; }

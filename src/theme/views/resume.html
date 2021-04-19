@@ -5,9 +5,11 @@
 {{> components/content }}
 
 <div class="h-resume">
+
 {{#each meta.resume }}
-  {{> components/resume-section this }}
+{{> components/resume-section this }}
 {{/each}}
+
 </div>
 
 {{> components/print-btn }}

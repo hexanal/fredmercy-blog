@@ -1,232 +1,177 @@
-/**
- * TODO: flatten this css? :troll:
- */
-.content {
-  line-height: 1.5em;
+.content { line-height: 1.5rem; }
 
-  @media (min-width: $mq-medium) {
-    position: relative;
-  }
+@media (min-width: $mq-medium) { .content { position: relative; }}
 
-  > * {
-    margin: 0;
-    line-height: 1.5;
+.content > * { margin: 0; line-height: 1.5rem; }
 
-    + * {
-      margin-top: 1.25em;
-    }
-  }
+.content * + * { margin-top: 1.25rem; }
 
-  > :first-child {
-    margin-top: 0;
-  }
+.content > :first-child { margin-top: 0; }
 
-  h1,
-  h2,
-  h3 {
-    margin-top: 3rem;
-    padding: 0.1rem 0.25rem;
-    font-family: var(--font);
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--color-bg);
-    background-color: var(--color-secondary);
+.content h1,
+.content h2,
+.content h3 {
+margin-top: 3rem;
+padding: 0.1rem 0.25rem;
+font-family: var(--font);
+font-size: 1em;
+font-weight: 400;
+line-height: 1.4;
+color: var(--color-bg);
+background-color: var(--color-secondary);
 
-    [data-theme="mini-dark"] & {
-      color: var(--color-primary);
-    }
-  }
-  h2 {
-    display: inline-block;
-    background-color: var(--color-primary);
+[data-theme="mini-dark"] & { color: var(--color-primary); }
+}
 
-    [data-theme="mini-dark"] & {
-      color: var(--color-bg);
-    }
-  }
-  h1 + h2 {
-    margin-top: 3rem;
-  }
+.content h2 { display: inline-block; background-color: var(--color-primary); }
+[data-theme="mini-dark"] .content h2 { color: var(--color-bg); }
 
-  strong {
-    font-weight: normal;
-    background-color: var(--color-extra);
-  }
+.content h1 + .content h2 { margin-top: 3rem; }
 
-  h3,
-  code {
-    display: inline-block;
-    padding: 0.1rem 0.25rem;
-    font-family: var(--font);
-    font-size: 1rem;
-    line-height: 1;
-    font-style: italic;
-    color: var(--color-bg);
-    background-color: var(--color-active);
-  }
-  code {
-    font-size: 0.9rem;
-  }
-  // TODO: seems strange to have to tweak this for some specific themes... but this is for better a11y
-  [data-theme="mini-dark"] & {
-    h3, code {
-      color: var(--color-primary);
-    }
-  }
-  h2 + h3 {
-    margin-top: 1.5rem;
-  }
+.content h2 + .content h3 { margin-top: 1.5rem; }
 
-  ul {
-    overflow: auto; // TODO testing this out: this is for overflowing URLs in lists, on mobile (prevents full-screen horizontal scrolling)
-    padding-left: 0;
-    margin: 1.5rem 0;
-    list-style: none;
+.content h3,
+.content code {
+display: inline-block;
+padding: 0.1rem 0.25rem;
+font-family: var(--font);
+font-size: 1rem;
+line-height: 1;
+font-style: italic;
+color: var(--color-bg);
+background-color: var(--color-active);
+}
 
-    ul {
-      margin-top: 0.25rem;
-      margin-bottom: 0;
+.content ul {
+overflow: auto; // TODO testing this out: this is for overflowing URLs in lists, on mobile (prevents full-screen horizontal scrolling)
+padding-left: 0;
+margin: 1.5rem 0;
+list-style: none;
+}
 
-      li {
-        &:before {
-          content: '○';
-        }
-      }
-    }
+.content ul ul {
+margin-top: 0.25rem;
+margin-bottom: 0;
+}
 
-    li {
-      padding-left: 1rem;
+.content ul ul li:before { content: '○'; }
 
-      &:before {
-        content: '● ';
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: var(--color-secondary);
-      }
-    }
-  }
+.content li {
+position: relative;
+padding-left: 1rem;
+}
 
-  li {
-    position: relative;
-  }
+.content li:before {
+content: '● ';
+position: absolute;
+top: 0;
+left: 0;
+color: var(--color-secondary);
+}
 
-  li + li {
-    margin-top: 0.5em;
-  }
+.content li
++ .content li {
+margin-top: 0.5em;
+}
 
-  blockquote {
-    padding-left: 1.5rem;
-    border-left: 2px solid var(--color-secondary);
-    font-style: italic;
+.content blockquote {
+padding-left: 1.5rem;
+border-left: 2px solid var(--color-secondary);
+font-style: italic;
+}
 
-    em, i {
-      font-style: normal;
-    }
-  }
+.content strong { font-weight: normal; background-color: var(--color-extra); }
 
-  li blockquote {
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
+.content em, .content i { font-style: normal; }
 
+.content li blockquote { margin-left: 0; margin-bottom: 2rem; }
 
-  a[href^="http"] {
-    &::after {
-      content: ' ✧';
-      font-style: normal;
-      font-weight: normal;
-    }
-  }
+.content code { font-size: 0.9rem; }
 
-  del {
-    background-color: var(--color-primary);
-    opacity: 0.5;
+// TODO: seems strange to have to tweak this for some specific themes... but this is for better a11y
+[data-theme="mini-dark"] {
+.content h3, .content code { color: var(--color-primary); }}
 
-    a {
-      color: var(--color-bg);
-      background-color: var(--color-primary);
-      text-decoration: none;
+.content
+a[href^="http"]::after {
+content: ' ✧';
+font-style: normal;
+font-weight: normal;
+}
 
-      &:hover,
-      &:focus {
-        color: var(--color-bg);
-        background-color: var(--color-primary);
-        cursor: not-allowed;
-      }
-    }
-  }
+.content del { background-color: var(--color-primary); opacity: 0.5; }
 
-  pre {
-    overflow: auto;
-    padding: 0.5rem;
-    font-size: 0.6rem;
-    color: var(--color-bg);
-    background-color: var(--color-subdued);
-  }
+.content del a {
+color: var(--color-bg);
+background-color: var(--color-primary);
+text-decoration: none;
 
-  .link {
-    user-select: none;
-    padding: 0;
-    font-family: var(--font);
-    font-size: 1rem;
-    color: var(--color-primary);
-    background-color: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    text-decoration: underline;
+@include hover-focus {
+color: var(--color-bg);
+background-color: var(--color-primary);
+cursor: not-allowed;
+}}
 
-    @include hover-focus {
-      color: var(--color-bg);
-      background-color: var(--color-secondary);
-      text-decoration: none;
-    }
-  }
+.content pre {
+overflow: auto;
+padding: 0.5rem;
+font-size: 0.6rem;
+color: var(--color-bg);
+background-color: var(--color-subdued);
+}
 
-  iframe {
-    width: 100%;
-    height: 200px;
+.content .link {
+user-select: none;
+padding: 0;
+font-family: var(--font);
+font-size: 1rem;
+color: var(--color-primary);
+background-color: transparent;
+border: 0;
+outline: none;
+cursor: pointer;
+text-decoration: underline;
 
-    @media (min-width: $mq-xsmall) {
-      height: 394px; // best ratio when video is full-width (700px wide)
-    }
-  }
+@include hover-focus {
+color: var(--color-bg);
+background-color: var(--color-secondary);
+text-decoration: none;
+}}
 
-  audio {
-    width: 100%;
-    height: 30px;
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-  }
+.content iframe {
+width: 100%;
+height: 200px;
 
-  figure {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+@media (min-width: $mq-xsmall) { height: 394px; }
+}
 
-    p {
-      position: relative;
-      z-index: 2;
-    }
-  }
-  figcaption {
-    position: relative;
-    z-index: 1;
-    padding-left: 1.5rem;
-    margin-top: -0.5rem;
-    margin-left: 2rem;
-    font-size: 0.8rem;
+.content audio {
+width: 100%;
+height: 30px;
+background-color: var(--color-primary);
+border: 2px solid var(--color-primary);
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0rem;
-      top: -2.25rem;
-      width: 1rem;
-      height: 3rem;
-      border-left: 2px solid var(--color-secondary);
-      border-bottom: 2px solid var(--color-secondary);
-    }
-  }
+.content figure { margin-top: 2rem; margin-bottom: 3rem; }
+
+.content figure p { position: relative; z-index: 2; }
+
+.content figcaption {
+position: relative;
+z-index: 1;
+padding-left: 1.5rem;
+margin-top: -0.5rem;
+margin-left: 2rem;
+font-size: 0.8rem;
+}
+
+.content figcaption::before {
+content: '';
+position: absolute;
+left: 0rem;
+top: -2.25rem;
+width: 1rem;
+height: 3rem;
+border-left: 2px solid var(--color-secondary);
+border-bottom: 2px solid var(--color-secondary);
 }

@@ -15,10 +15,11 @@ white-space: nowrap;
 
 .comment-line__message {
 width: 100%;
+}
 
-&::after {
+.comment-line__message::after {
 content: '~~';
 display: block;
 font-size: 0.8rem;
 line-height: 2;
-}}
+}

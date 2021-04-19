@@ -1,44 +1,53 @@
-.now__tag.content {
-  margin-top: 2rem;
+.content.now__tag {
+margin-top: 2rem;
+}
 
-  ul {
-    margin-bottom: 0;
-  }
-  ul li::marker {
-    color: var(--color-secondary);
-  }
-  ul li blockquote {
-    margin-left: -1rem;
-    font-size: 0.9rem;
-  }
-  ul li + li {
-    margin-top: 1.5rem;
-  }
+.content.now__tag
+ul {
+margin-bottom: 0;
+}
+
+.content.now__tag
+ul
+li::marker {
+color: var(--color-secondary);
+}
+
+.content.now__tag
+ul
+li
+blockquote {
+margin-left: -1rem;
+font-size: 0.9rem;
+}
+
+.content.now__tag
+ul
+li
++ li {
+margin-top: 1.5rem;
 }
 
 .now__anchor {
-  padding-top: 1rem;
+padding-top: 1rem;
 }
 
 .now__source {
-  white-space: nowrap;
+white-space: nowrap;
 }
 
 .now__rating {
-  font-style: normal;
+font-style: normal;
 }
 
 .now__tag-nav {
-  position: sticky;
-  z-index: 1;
-  top: 0;
-  padding: 0.5rem 5rem 0.5rem 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  background-color: var(--color-bg);
-  border-bottom: 2px solid var(--color-secondary);
-
-  @media (min-width: $mq-small) {
-    padding: 1rem 5rem 1rem 0;
-  }
+position: sticky;
+z-index: 1;
+top: 0;
+padding: 0.5rem 5rem 0.5rem 0;
+font-size: 0.9rem;
+line-height: 1.4;
+background-color: var(--color-bg);
+border-bottom: 2px solid var(--color-secondary);
+@media (min-width: $mq-small) { padding: 1rem 5rem 1rem 0; }
 }

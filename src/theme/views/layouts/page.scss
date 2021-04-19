@@ -1,10 +1,5 @@
-.page > main {
-  @media (min-width: $mq-medium) {
-    max-width: $site-width;
-  }
+@media (min-width: $mq-medium) {
+.page > main { max-width: $site-width; }
 }
 
-.page__contents {
-  padding-bottom: 2rem;
-  transform-origin: top center;
-}
+.page__contents { padding-bottom: 2rem; transform-origin: top center; }

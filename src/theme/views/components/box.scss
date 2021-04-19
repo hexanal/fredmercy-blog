@@ -2,9 +2,8 @@
 position: relative;
 z-index: 3;
 display: none;
-&.state-box-active {
-display: block;
-}}
+}
+.box.state-box-active { display: block; }
 
 .box__positioner {
 position: fixed;
@@ -46,10 +45,10 @@ position: absolute;
 z-index: 3;
 top: -2.5rem;
 left: 0;
-
-&.heading {
+}
+.box__title.heading {
 line-height: 1.4;
-}}
+}
 
 .box__wrap {
 position: relative;
