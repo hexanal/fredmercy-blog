@@ -16,6 +16,12 @@ data:
       href: "/fr/rss.xml"
       label: "rss"
 
+    - id: "contact"
+      href: "mailto:hello@fredmercy.ca"
+      label: "contact"
+      attr:
+        - target: "_blank"
+
     - id: "github"
       href: "https://github.com/hexanal"
       label: "github"
@@ -31,12 +37,6 @@ data:
     - id: "bandcamp"
       href: "https://fredmercy.bandcamp.com"
       label: "bandcamp"
-      attr:
-        - target: "_blank"
-
-    - id: "email"
-      href: "mailto:hello@fredmercy.ca"
-      label: "email"
       attr:
         - target: "_blank"
 ---
