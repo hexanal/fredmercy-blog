@@ -43,26 +43,10 @@ padding-left: 2rem;
 padding-left: 5rem;
 }}
 
-.experience__description {
-margin-top: 1rem;
-}
+.experience__description { margin-top: 1rem; }
 
-.content
-.experience__more {
-list-style: none;
-margin-top: 1rem;
-}
+.content .experience__more { margin-top: 1rem; }
 
-.experience__website
-+ .experience__website {
-margin-top: 0.25rem;
-}
+.experience__website + .experience__website { margin-top: 0.25rem; }
 
-.experience__website small {
-display: block;
-color: var(--color-secondary);
-}
-
-.experience__website:before {
-content: '- ';
-}
+.experience__website small { display: block; color: var(--color-secondary); }

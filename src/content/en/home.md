@@ -7,7 +7,7 @@ i18n:
   fr: '/fr'
 ---
 
-## welcome!
+## _welcome!_
 
 This is my personal website!
 

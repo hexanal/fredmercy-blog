@@ -12,7 +12,7 @@ export default function({ events }) {
     window.localStorage.setItem('a11y_use_zoom', zoomed)
   }
 
-  events.subscribe('A11Y_SET_LARGE_FONT', setZoom)
+  events.on('A11Y_SET_LARGE_FONT', setZoom)
 
   Mousetrap.bind('=', () => setZoom('yes') )
   Mousetrap.bind('-', () => setZoom('no') )

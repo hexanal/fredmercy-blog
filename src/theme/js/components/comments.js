@@ -166,13 +166,13 @@ export default function({element, ui, control, events }) {
       window.localStorage.setItem('comments_message', e.currentTarget.value)
 
       if ( e.key === 'Enter' && !e.shiftKey ) submitComment(e)
-      if ( e.key === 'Escape' ) events.dispatch('CLOSE_BOX_COMMENTS')
+      if ( e.key === 'Escape' ) events.dispatch('CLOSE_BOX_DISCUSS')
     })
   }
 
   const setupMessaging = function() {
     state.messages = [
-      events.subscribe('SHOW_BOX_COMMENTS', () => {
+      events.on('SHOW_BOX_DISCUSS', () => {
         // focus the comment box on show
         setTimeout( () => control['message'].focus(), 50 )
       })

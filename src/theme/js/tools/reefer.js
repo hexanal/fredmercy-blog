@@ -1,16 +1,15 @@
 import stepper from './stepper.js'
 
-// TODO - what to export here?
-export const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-
 export const SPRING_SNAP = { stiffness: 420, damping: 20 }
 export const SPRING_TIGHT = { stiffness: 350, damping: 16 }
 export const SPRING_LOOSE = { stiffness: 400, damping: 12 }
 export const SPRING_SOFT = { stiffness: 180, damping: 20 }
 
-// TODO how to dispose of the callbacks?
+// FIXME use registry to be able to hook/unhook from the rAF
 export function onFrame(fn, timestamp = 0) {
-  if ( !prefersReducedMotion ) fn(timestamp) // TODO?
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+  if ( !prefersReducedMotion ) fn(timestamp)
 
   requestAnimationFrame( function(timestamp) {
     onFrame(fn, timestamp)
@@ -19,7 +18,6 @@ export function onFrame(fn, timestamp = 0) {
 
 export const onReef = onFrame
 
-// TODO extract reefer to be targeting ONE prop at a time; while running the raf?
 export default function reefer(startWith = 0) {
   // in state object instead?
   let target = startWith
@@ -70,10 +68,6 @@ export default function reefer(startWith = 0) {
       target = value
       interpolated = value
     },
-
-    // withSpring?
-    // withInertia? // acceleration?
-    // withCubicBezier // change in acceleration?!!??!
   }
 
   return methods
