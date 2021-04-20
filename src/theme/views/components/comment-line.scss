@@ -3,6 +3,7 @@ display: inline-block;
 padding: 0 0.25rem;
 margin-right: 0.5rem;
 margin-bottom: 0.25rem;
+font-size: 0.9rem;
 background-color: var(--color-extra);
 }
 
@@ -15,6 +16,7 @@ white-space: nowrap;
 
 .comment-line__message {
 width: 100%;
+margin-top: 0.25rem;
 }
 
 .comment-line__message::after {

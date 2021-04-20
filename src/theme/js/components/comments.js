@@ -90,7 +90,7 @@ export default function({element, ui, control, events }) {
       $commentLine.classList.add('comment-line')
         $author.classList.add('comment-line__author')
         $timestamp.classList.add('comment-line__time')
-        $content.classList.add('comment-line__message', 'content', 'font-small')
+        $content.classList.add('comment-line__message', 'content')
 
       $author.textContent = author
       $timestamp.innerHTML = getFormattedTimestamp(timestamp)
