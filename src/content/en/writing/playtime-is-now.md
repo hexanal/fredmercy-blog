@@ -1,6 +1,8 @@
 ---
 title: Playtime is... now!
 description: a love letter to the game Deus Ex
+aliases:
+  - /ramblings/playtime-is-now
 ---
 
 Like most of my peers, I have played my fair share of videogames over the years! One of my all-time favorite games is <a href="https://en.wikipedia.org/wiki/Deus_Ex_(video_game)" target="_blank" rel="noopener noreferrer">Deus Ex</a>. I must have been 13 when it came out. I think it was one of the first games I'd been anticipating, so I read everything I could about it prior to its release in 2000.

@@ -3,6 +3,7 @@ title: Privacy, or nah?
 description: Scorched-earth policy for escaping the online privacy crisis
 aliases:
   - /s/privacy
+  - /ramblings/privacy-or-nah
 ---
 
 ## Privacy, or nah?

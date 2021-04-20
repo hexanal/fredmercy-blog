@@ -23,9 +23,9 @@ data:
       href: "/now"
       label: "now"
 
-    - id: "ramblings"
-      href: "/ramblings"
-      label: "ramblings"
+    - id: "writing"
+      href: "/writing"
+      label: "writing"
 
     - id: "about"
       href: "/about"
