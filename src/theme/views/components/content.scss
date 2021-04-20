@@ -44,16 +44,19 @@ background-color: var(--color-active);
 
 .content ul {
 overflow: auto;
-padding-left: 0;
+padding-left: 1rem;
 margin: 1.5rem 0;
-list-style-position: inside;
+}
+
+.content li {
+padding-left: 0.5rem;
 }
 
 .content li::marker { content: '❋ '; font-size: 0.9rem; color: var(--color-secondary); }
-.content li + li { margin-top: 0.5em; }
+.content li + li { margin-top: 0.25em; }
 
-.content ul ul { padding-left: 1rem; margin-top: 0.5rem; margin-bottom: 0; }
-.content ul ul li::marker { content: '-> '; }
+.content ul ul { padding-left: 1rem; margin-top: 0.5rem; margin-bottom: 1rem; }
+.content ul ul li::marker { content: '->'; }
 
 .content li blockquote { margin-left: 0; margin-bottom: 2rem; }
 
