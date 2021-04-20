@@ -1,5 +1,23 @@
 .footer { margin: 2.5rem 0; font-size: 0.9rem; }
 
+.button.footer__discussion {
+position: fixed;
+bottom: 1.5rem;
+left: 1rem;
+padding: 0.25rem 0.5rem;
+border-radius: 0.75rem 0.75rem 0 0;
+background-color: var(--color-secondary);
+
+@include hover-focus {
+background-color: var(--color-active);
+}
+
+@media (min-width: $mq-medium) {
+bottom: 0;
+left: 3rem;
+}
+}
+
 .footer__nav { margin: 0.75rem 0; line-height: 1.5; }
 
 .footer__extra { opacity: 0.75; }

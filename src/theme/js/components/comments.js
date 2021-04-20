@@ -75,9 +75,9 @@ export default function({element, ui, control, events }) {
 
     ui['convo'].innerHTML = '' // FLUSH!!
 
-    const commentsCount = comments.length ? `(${comments.length})` : ''
+    const getCommentsCount = `(${comments.length})`
     document.querySelectorAll('[data-comments-count]')
-      .forEach( count => count.textContent = commentsCount )
+      .forEach( count => count.textContent = getCommentsCount )
 
     const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
 
@@ -164,8 +164,6 @@ export default function({element, ui, control, events }) {
     })
     control['message'].addEventListener('keyup', e => {
       window.localStorage.setItem('comments_message', e.currentTarget.value)
-
-      if ( e.key === 'Enter' && !e.shiftKey ) submitComment(e)
       if ( e.key === 'Escape' ) events.dispatch('CLOSE_BOX_DISCUSS')
     })
   }

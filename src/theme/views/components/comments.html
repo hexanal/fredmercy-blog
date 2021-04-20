@@ -25,16 +25,17 @@ required
 
 <label class="visually-hidden" for="message">{{ t en="message" fr="message" }}</label>
 
-<input
+<textarea
 id="message"
-class="comments__input comments__message"
+class="comments__input comments__message content"
 data-control="message"
-type="text"
 name="content"
 maxlength="1000"
 placeholder='{{ t en="say something!" fr="exprimez-vous!" }}'
 required
->
+></textarea>
+
+<button class="comments__submit" type="submit" data-control="send">{{ t en="send" fr="envoyer" }}</button>
 
 </form>
 

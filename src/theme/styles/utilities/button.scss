@@ -14,6 +14,10 @@ background-color: var(--color-subdued);
 color: var(--color-bg);
 text-decoration: none;
 background-color: var(--color-secondary);
+}
+&:active {
+border-color: var(--color-active);
+background-color: var(--color-active);
 }}
 
 .button--light {
