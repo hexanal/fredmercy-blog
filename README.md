@@ -70,7 +70,7 @@ Why did I do it this way? I don't know. It felt right at the time, and it's buil
 {
   "page": [
     {
-      "_filePath": "./content/hello-world.md",
+      "_info": { "src": "./content/hello-world.md" },
       "meta": {
         "title": "Hello World!",
         "description": "Foo",
@@ -81,7 +81,7 @@ Why did I do it this way? I don't know. It felt right at the time, and it's buil
   ],
   "post": [
     {
-      "_filePath": "./content/blog/2020/04/20/toke-up-brother.md",
+      "_info": { "src": "./content/blog/2020/04/20/toke-up-brother.md" },
       "meta": {
         "title": "Yeah...",
         "description": "bruh...",

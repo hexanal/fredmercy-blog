@@ -1,7 +1,6 @@
 const fs = require('fs')
 const marked = require('marked')
 const templater = require('../../lib/templater')
-const { debugLog } = require('../../lib/utils')
 
 const ALLOWED_TYPES = ['page', 'post'] // content types to "build out"
 
@@ -28,8 +27,6 @@ const formatContent = function( contentTypes ) {
   const types = Object.keys( contentTypes )
 
   types.map( type => {
-    debugLog( `[html] ${contentTypes[type].length} “${type}” items` )
-
     return contentTypes[type].map( item => {
       if ( !ALLOWED_TYPES.includes( item.meta.type ) ) return
       if ( !item.meta.url ) return

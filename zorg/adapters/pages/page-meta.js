@@ -12,7 +12,7 @@ const addPageMeta = function( contentTypes ) {
 }
 
 const getPageMetaData = function( item ) {
-  const route = item._filePath
+  const route = item._info.src
     .replace(`./src/content/${item.meta.lang}/`, '') // FIXME path in config somewhere
     .replace('.md', '')
     .split('/')

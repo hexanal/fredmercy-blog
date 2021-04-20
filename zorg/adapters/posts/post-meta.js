@@ -23,7 +23,7 @@ const removeLeadingZero = day => {
 }
 
 const getPostMetaData = function( item, website ) {
-  const urlParts = item._filePath // grab special key "_filePath" which contains the path to the markdown file
+  const urlParts = item._info.src // grab special key "_info.src" which contains the path to the markdown file
     .replace(`./src/content/${item.meta.lang}/`, '')
     .replace('.md', '')
     .split('/')

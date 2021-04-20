@@ -1,4 +1,4 @@
-const { getItemByURL } = require('../../lib/utils')
+const getItemByURL = (items, url) => items.find( item => item.meta.url === url )
 
 const addPostIndexAsParent = function( contentTypes ) {
   const indexes = {
