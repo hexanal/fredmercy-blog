@@ -14,6 +14,8 @@ const getBasicMeta = function( contentFiles, websiteConfig ) {
     const file = fs.readFileSync(item, 'utf8')
     const { attributes, body } = frontMatter( file.toString() )
     const defaultAttributes = getDefaultAttributes( attributes, item, websiteConfig )
+    const built = getFormattedTimestamp( new Date().toISOString() )
+    const updated = getFormattedTimestamp( getFileUpdatedDate(item) )
 
     // FIXME: use a "draft" adapter for this?
     if ( process.env.NODE_ENV !== 'development' && defaultAttributes.draft ) return
@@ -21,7 +23,8 @@ const getBasicMeta = function( contentFiles, websiteConfig ) {
     return {
       _info: {
         src: item,
-        built: getFormattedTimestamp( Date.now() ),
+        updated,
+        built
       },
       meta: { ...defaultAttributes, ...attributes },
       body
@@ -70,6 +73,11 @@ const splitByType = function( items ) {
 }
 
 /* various utility/formatting functions */
+const getFileUpdatedDate = (path) => {
+  const stats = fs.statSync(path)
+  return stats.mtime
+}
+
 const getFilenameFromPath = function( filepath ) {
   const route = filepath.replace('./content/', '').split('/')
   return route[route.length - 1]
@@ -99,8 +107,6 @@ const getFormattedTimestamp = function( timestamp ) {
 
   return `${year}-${month}-${day} @ ${time}`
 }
-
-
 
 /**
  * - extract the necessary base metadata for each content item

@@ -22,11 +22,9 @@
 <small class="p-category">(tagged: <em>{{ meta.tags }}</em>)</small>
 {{/if}}
 
-{{#if meta.edited }}
-<small class="color-subdued">-> edited on: {{ meta.edited }}
+<small class="color-subdued">-> last updated: {{ _info.updated }}
 <a href="https://github.com/hexanal/fredmercy-blog/commits/master/{{ _info.src }}" target="_blank" rel="noreferrer nopener">(history)</a>
 </small>
-{{/if}}
 
 </div>
 
