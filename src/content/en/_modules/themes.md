@@ -13,10 +13,10 @@ data:
     - id: "camper-van"
       label: "Camper Van '77"
   dark:
+    - id: "june-night"
+      label: "june (by night)"
     - id: "mini-dark"
       label: "Minimal Dark"
-    - id: "frost"
-      label: "Frost"
     - id: "the-greys"
       label: "The Greys"
     - id: "bioluminesce"

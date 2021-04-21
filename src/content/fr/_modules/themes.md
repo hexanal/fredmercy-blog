@@ -13,10 +13,10 @@ data:
     - id: "camper-van"
       label: "Roulotte '77"
   dark:
+    - id: "june-night"
+      label: "june (la nuit)"
     - id: "mini-dark"
       label: "Minimal Sombre"
-    - id: "frost"
-      label: "Givré"
     - id: "the-greys"
       label: "Lunaire"
     - id: "bioluminesce"
