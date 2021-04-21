@@ -23,7 +23,9 @@
 {{/if}}
 
 <small class="color-subdued">-> last updated: {{ _info.updated }}
+{{#if meta.edited }}
 <a href="https://github.com/hexanal/fredmercy-blog/commits/master/{{ _info.src }}" target="_blank" rel="noreferrer nopener">(history)</a>
+{{/if}}
 </small>
 
 </div>
