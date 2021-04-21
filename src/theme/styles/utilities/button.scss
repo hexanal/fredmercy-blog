@@ -1,30 +1,32 @@
 .button {
-display: inline-block;
-padding: 0.1rem .25rem;
-margin: 0;
-font-size: 1rem;
-line-height: 1.4;
-font-style: normal;
-font-family: var(--font);
-text-decoration: none;
-color: var(--color-bg);
-background-color: var(--color-subdued);
+  display: inline-block;
+  padding: 0.1rem .25rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-style: normal;
+  font-family: var(--font);
+  text-decoration: none;
+  color: var(--color-bg);
+  background-color: var(--color-subdued);
 
-@include hover-focus {
-color: var(--color-bg);
-text-decoration: none;
-background-color: var(--color-secondary);
+  @include hover-focus {
+    color: var(--color-bg);
+    text-decoration: none;
+    background-color: var(--color-secondary);
+  }
+  &:active {
+    border-color: var(--color-active);
+    background-color: var(--color-active);
+  }
 }
-&:active {
-border-color: var(--color-active);
-background-color: var(--color-active);
-}}
 
 .button--light {
-color: var(--color-primary);
-font-style: italic;
-background-color: transparent;
+  color: var(--color-primary);
+  font-style: italic;
+  background-color: transparent;
 
-@include hover-focus {
-color: var(--color-bg);
-}}
+  @include hover-focus {
+    color: var(--color-bg);
+  }
+}

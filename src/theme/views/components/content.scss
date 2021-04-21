@@ -11,20 +11,17 @@
 .content h1,
 .content h2,
 .content h3 {
-margin-top: 3rem;
-padding: 0.1rem 0.25rem;
-font-family: var(--font);
-font-size: 1em;
-font-weight: 400;
-line-height: 1.4;
-color: var(--color-bg);
-background-color: var(--color-secondary);
-
-[data-theme="mini-dark"] & { color: var(--color-primary); }
+  margin-top: 3rem;
+  padding: 0.1rem 0.25rem;
+  font-family: var(--font);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-bg);
+  background-color: var(--color-secondary);
 }
 
 .content h2 { display: inline-block; background-color: var(--color-primary); }
-[data-theme="mini-dark"] .content h2 { color: var(--color-bg); }
 
 .content h1 + .content h2 { margin-top: 3rem; }
 
@@ -32,27 +29,25 @@ background-color: var(--color-secondary);
 
 .content h3,
 .content code {
-display: inline-block;
-padding: 0.1rem 0.25rem;
-font-family: var(--font);
-font-size: 1rem;
-line-height: 1;
-font-style: italic;
-color: var(--color-bg);
-background-color: var(--color-active);
+  display: inline-block;
+  padding: 0.1rem 0.25rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1;
+  font-style: italic;
+  color: var(--color-bg);
+  background-color: var(--color-active);
 }
 
 .content ul {
-overflow: auto;
-padding-left: 1rem;
-margin: 1.5rem 0;
+  overflow: auto;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
 }
 
-.content li {
-padding-left: 0.5rem;
-}
+.content li { padding-left: 0.5rem; }
 
-.content li::marker { content: '❋ '; font-size: 0.9rem; color: var(--color-secondary); }
+.content li::marker { content: '❋ '; color: var(--color-secondary); }
 .content li + li { margin-top: 0.25em; }
 
 .content ul ul { padding-left: 1rem; margin-top: 0.5rem; margin-bottom: 1rem; }
@@ -75,10 +70,6 @@ font-style: italic;
 .content strong { font-weight: normal; background-color: var(--color-extra); }
 
 .content code { font-size: 0.9rem; }
-
-// TODO: seems strange to have to tweak this for some specific themes... but this is for better a11y
-[data-theme="mini-dark"] {
-.content h3, .content code { color: var(--color-primary); }}
 
 .content del { background-color: var(--color-primary); opacity: 0.5; }
 

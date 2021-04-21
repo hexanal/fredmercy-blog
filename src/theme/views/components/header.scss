@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: $site-width;
+  max-width: var(--site-width);
   padding: 1rem 0;
   background-color: var(--color-bg);
 
@@ -26,13 +26,6 @@
 
   @include hover-focus {
     background-color: var(--color-secondary);
-  }
-
-  [data-theme="mini-dark"] & {
-    color: var(--color-primary);
-    &:hover {
-      color: var(--color-bg);
-    }
   }
 }
 

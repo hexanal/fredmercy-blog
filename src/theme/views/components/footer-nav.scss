@@ -1,22 +1,4 @@
-[data-box-id="menu"] {
-  .nav.footer-nav {
-    text-align: right;
-  }
-}
-
-.nav.footer-nav {
-  text-align: left;
-
-  .dot { display: block; } // acts as separator on small viewports
-
-  @media (min-width: $mq-small) {
-    .dot { display: inline; }
-  }
-}
-
-.footer-nav__theme {
-  white-space: nowrap;
-}
+.footer-nav__theme { white-space: nowrap; }
 
 .footer-nav__select {
   padding: 0;

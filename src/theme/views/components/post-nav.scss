@@ -1,7 +1,11 @@
 .post-nav {
   margin: 2rem 0 1rem;
 
-  @media print {
-    display: none;
-  }
+  @media print { display: none; }
+}
+
+.button.post-nav__discuss {
+  display: none;
+
+  @media (min-width: $mq-small) { display: inline-block; }
 }

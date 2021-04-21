@@ -1,13 +1,11 @@
-[data-box-id="menu"]
-.box__frame {
-width: auto;
-height: auto;
-left: auto;
-right: 0;
+[data-box-id="menu"] .box__frame {
+  width: auto;
+  height: auto;
+  left: auto;
+  right: 0;
 }
 
-[data-box-id="menu"]
-.box__wrap { height: auto; }
+[data-box-id="menu"] .box__wrap { height: auto; }
 
 .box-nav { padding: 1.25rem; text-align: center; }
 .box-nav .squiggle { margin: 0.25rem 0; }

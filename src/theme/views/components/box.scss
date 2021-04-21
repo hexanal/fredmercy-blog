@@ -11,7 +11,7 @@ z-index: 2;
 top: 3.5rem;
 left: 1rem;
 right: 1rem;
-max-width: $site-width;
+max-width: var(--site-width);
 height: 100%;
 max-height: calc(100vh - 6.5rem);
 

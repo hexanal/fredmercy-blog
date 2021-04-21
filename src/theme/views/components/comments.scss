@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: $site-width;
+  max-width: var(--site-width);
 }
 
 .comments__title { padding: 0.5rem; border: 2px solid; }

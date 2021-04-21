@@ -10,27 +10,27 @@
   </a>
 
   {{#if meta.next }}
-    <a
-      class="button"
-      href="{{ meta.next.meta.url }}"
-      title="{{ meta.next.meta.title }}"
-    >
-      ↑ {{ t en="newer" fr="suivant" }}
-    </a>
+  <a
+    class="button"
+    href="{{ meta.next.meta.url }}"
+    title="{{ meta.next.meta.title }}"
+  >
+    ↑ {{ t en="newer" fr="suivant" }}
+  </a>
   {{/if}}
 
   {{#if meta.previous }}
-    <a
-      class="button"
-      href="{{ meta.previous.meta.url }}"
-      title="{{ meta.previous.meta.title }}"
-    >
-      ↓ {{ t en="older" fr="précédent" }}
-    </a>
+  <a
+    class="button"
+    href="{{ meta.previous.meta.url }}"
+    title="{{ meta.previous.meta.title }}"
+  >
+    ↓ {{ t en="older" fr="précédent" }}
+  </a>
   {{/if}}
 
   <button
-  class="no-js button button"
+  class="no-js button post-nav__discuss"
   data-component="emit"
   data-event="SHOW_BOX_DISCUSS"
   >✤ discuss<small data-comments-count></small></button>

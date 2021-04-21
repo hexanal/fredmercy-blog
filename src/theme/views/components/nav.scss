@@ -1,10 +1,6 @@
-.nav {
-  font-size: 0.9rem;
-  text-align: right;
-}
-
 .nav--main {
   display: none;
+  text-align: right;
 
   @media (min-width: $mq-small) {
     display: block;
@@ -13,6 +9,5 @@
 
 .nav--footer {
   display: inline;
-  text-align: left;
   font-size: 0.8rem;
 }
