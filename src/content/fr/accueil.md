@@ -7,7 +7,7 @@ i18n:
   en: '/'
 ---
 
-## bienvenue!
+## _bienvenue!_
 
 Ceci est mon site personnel!
 
