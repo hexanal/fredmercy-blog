@@ -8,20 +8,26 @@ aliases:
 
 links:
 
-  nerd:
+  minimal:
+    - title: Gemini
+      link: https://gemini.circumlunar.space/
+      notes:
+        - It's an alternative hypertext protocol, but stripped down to the bare necessities
+        - I spoke about it in [a blog post](/blog/2021/04/16/speaking-of-mission/)!
+
     - title: “Ditherpunk 2 — beyond 1-bit”
       source: makeworld's website
       link: https://www.makeworld.space/2021/02/dithering.html
       notes:
-        - i just love the lo-fi esthetic of dithering :)
+        - I just love the lo-fi esthetic of dithering :)
 
     - title: Rawtext Club
       source: official website
       link: https://rawtext.club/sign-up.html
       notes:
-        - for people with raw text websites
-        - mine doesn't really apply, but I love the concept
+        - For people with raw text websites (mine doesn't really apply, but I love the concept)
 
+  web:
     - title: Fantasque Sans Mono
       source: github.com
       link: https://github.com/belluzj/fantasque-sans
@@ -31,7 +37,7 @@ links:
     - title: Devine Lu Linvega's website
       link: https://wiki.xxiivv.com/#home
       notes:
-        - inspired me to start this blog thing again and to build my own tools
+        - Inspired me to start this blog thing again and to build my own tools
 
   philosophy:
     - title: Slow Movement
@@ -44,7 +50,7 @@ links:
       link: https://en.wikipedia.org/wiki/Low_technology
       source: wikipedia.org
       notes:
-        - something I've been getting more interested in lately...
+        - Something I've been getting more interested in lately...
 
   watch:
     - title: “Interface”, u m a m i
@@ -63,12 +69,10 @@ links:
     - title: “Playtime is now!”, about the game “Deus Ex”
       link: /ramblings/playtime-is-now
       notes:
-        - a nostalgia-soaked article about my favorite game :)
+        - A nostalgia-soaked article about my favorite game :)
 
 ---
 
 ## what i'm into now
 
 These are some links related to stuff I've been interested in these days.
-
-> Items in the list will get curated and eventually I'll revive my _bookmarks_ page with only the **very best** stuff
