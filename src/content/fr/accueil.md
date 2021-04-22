@@ -1,6 +1,6 @@
 ---
 title: Fred Mercy
-description: Mon site web
+description: Un site de Développeur Web; je parle web, technologie, art, science, société, amitié, et philosophie
 type: page
 isHome: true
 i18n:

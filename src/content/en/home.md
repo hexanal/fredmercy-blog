@@ -1,6 +1,6 @@
 ---
 title: Fred Mercy
-description: My website
+description: A Web Developer's personal website; I write about the web, technology, art, science, society, friendship, and philosophy
 type: page
 isHome: true
 i18n:
