@@ -2,17 +2,6 @@
 title: Navigation
 type: module
 
-# test
-schema:
-  main:
-    - id: string
-      href: string
-      label: string
-  footer:
-    - id: string
-      href: string
-      label: string
-
 data:
   main:
     - id: "blog"
