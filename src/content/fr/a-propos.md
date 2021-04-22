@@ -34,9 +34,19 @@ Je suis aussi un développeur web en recherche d'emploi; [voici mon CV](/fr/cv).
   - open-source <a href="https://github.com/hexanal/fredmercy-blog" target="_blank" rel="noopener noreferrer">sur github</a>, vous pouvez lire le `README.md` pour plus d'infos
   - son _design_ est expressément minimaliste: l'objectif étant d'avoir un site qui s'affiche sans problème sur n'importe quel appareil, qui est accessible, performant, lisible, facile à modifier, etc.
 
+**commentaires**
+
+Il y a un bouton “discussion” dans le coin inférieur-droit sur chaque page du site. La boite de discussion ne nécessite aucun compte et est ouvert à quiconque veut commenter. En cas d'abus quel qu'il soit, la boite de discussion sera supprimée, et les commentaires soumis jusqu'alors seront possiblement perdus! _Restez courtois!_
+
+Pour toutes autres commentaires ou question plus personnelles, n'hésitez pas à [me contacter directement](mailto:hello@fredmercy.ca)
+
 **vie privée**
 
-- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer">localstorage</a> qui aide ce site à se souvenir de vos préférences (votre nom et message non-envoyé dans la boite de commentaires, votre taille de texte et thème de couleur préférés)
+- Je n'utilise aucun _cookie_ pour suivre votre progression sur le site, mais j'utilise une fonctionalité du navigateur appelé <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer">localstorage</a> qui aide ce site à se souvenir de vos préférences:
+  1. le nom entré dans la boite de commentaires;
+  2. un message non-envoyé dans la boite de commentaires;
+  3. votre taille de texte préférée;
+  4. votre thème de couleur préféré
 - vous pouvez laisser des commentaires sur n'importe quelle page du site
   - rien ne vous empêche de _spammer_ les commentaires, mais essayez de ne pas le faire car ce n'est **pas très gentil**
   - vous pouvez utiliser votre vrai nom, mais je vous conseille d'utiliser un pseudonyme (ça fait plus web 1.0)
