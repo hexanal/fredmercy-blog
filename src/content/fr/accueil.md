@@ -9,7 +9,14 @@ i18n:
 
 ## _bienvenue!_
 
-Ceci est mon site personnel!
+Ceci est mon site personnel. Ma petite maison dans la prairie mondiale!
+
+<pre title="trouvé sur: https://asciiart.website/">
+  []___
+ /    /\
+/____/__\
+|[][]||||
+</pre>
 
 Je l'ai créé pour présenter mon profil de _travailleur du web_, mais je l'utilise aussi pour partager des trucs et pour parler de n'importe quoi. J'adore **créer** des choses; ces temps-ci c'est surtout des [sites web](/fr/cv).
 

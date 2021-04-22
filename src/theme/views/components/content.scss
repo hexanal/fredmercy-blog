@@ -61,14 +61,15 @@
 .content li blockquote { margin-left: 0; margin-bottom: 2rem; }
 
 .content blockquote {
-margin-left: 0;
-padding-left: 0.75rem;
-border-left: 2px solid var(--color-secondary);
-font-style: italic;
+  margin-left: 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--color-secondary);
+  font-style: italic;
 
-@media (min-width: $mq-xsmall) {
-  padding-left: 1.5rem;
-}}
+  @media (min-width: $mq-xsmall) {
+    padding-left: 1.5rem;
+  }
+}
 
 .content blockquote em, .content blockquote i { font-style: normal; }
 
@@ -79,52 +80,55 @@ font-style: italic;
 .content del { background-color: var(--color-primary); opacity: 0.5; }
 
 .content del a {
-color: var(--color-bg);
-background-color: var(--color-primary);
-text-decoration: none;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  text-decoration: none;
 
-@include hover-focus {
-color: var(--color-bg);
-background-color: var(--color-primary);
-cursor: not-allowed;
-}}
+  @include hover-focus {
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  cursor: not-allowed;
+  }
+}
 
 .content pre {
-overflow: auto;
-font-size: 0.8rem;
-font-family: Menlo,Consolas,DejaVu Sans Mono,Monaco,monospace;
+  overflow: auto;
+  font-family: Menlo,Consolas,DejaVu Sans Mono,Monaco,monospace;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 
 .content .link {
-user-select: none;
-padding: 0;
-font-family: var(--font);
-font-size: 1rem;
-color: var(--color-primary);
-background-color: transparent;
-border: 0;
-outline: none;
-cursor: pointer;
-text-decoration: underline;
+  user-select: none;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
 
-@include hover-focus {
-color: var(--color-bg);
-background-color: var(--color-secondary);
-text-decoration: none;
-}}
+  @include hover-focus {
+  color: var(--color-bg);
+  background-color: var(--color-secondary);
+  text-decoration: none;
+  }
+}
 
 .content iframe {
-width: 100%;
-height: 200px;
+  width: 100%;
+  height: 200px;
 
-@media (min-width: $mq-xsmall) { height: 394px; }
+  @media (min-width: $mq-xsmall) { height: 394px; }
 }
 
 .content audio {
-width: 100%;
-height: 30px;
-background-color: var(--color-primary);
-border: 2px solid var(--color-primary);
+  width: 100%;
+  height: 30px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .content figure { margin-top: 2rem; margin-bottom: 3rem; }
@@ -132,21 +136,21 @@ border: 2px solid var(--color-primary);
 .content figure p { position: relative; z-index: 2; }
 
 .content figcaption {
-position: relative;
-z-index: 1;
-padding-left: 1.5rem;
-margin-top: -0.5rem;
-margin-left: 2rem;
-font-size: 0.8rem;
+  position: relative;
+  z-index: 1;
+  padding-left: 1.5rem;
+  margin-top: -0.5rem;
+  margin-left: 2rem;
+  font-size: 0.8rem;
 }
 
 .content figcaption::before {
-content: '';
-position: absolute;
-left: 0rem;
-top: -2.25rem;
-width: 1rem;
-height: 3rem;
-border-left: 2px solid var(--color-secondary);
-border-bottom: 2px solid var(--color-secondary);
+  content: '';
+  position: absolute;
+  left: 0rem;
+  top: -2.25rem;
+  width: 1rem;
+  height: 3rem;
+  border-left: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
 }

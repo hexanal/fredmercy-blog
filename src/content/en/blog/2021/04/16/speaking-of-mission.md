@@ -4,17 +4,11 @@ description: remember the Space Age?
 type: post
 ---
 
-<style>
-.uncut-gem {
-  font: 0.8rem Menlo,Consolas,DejaVu Sans Mono,Monaco,monospace;
-}
-</style>
-
 `2:09pm:` In an entry from this winter, I wrote that it felt like I lived “on another planet”: when days were cold, and the crisis got even more severe in my region, and leaving the house was like going on a spacewalk. 👨‍🚀
 
 In my information-bubble, my _nerdosphere_, there is something going on... some sort of trend, which I'm approaching slowly but around which I'm not in orbit yet: [Gemini](https://gemini.circumlunar.space/)
 
-<pre class="uncut-gem">
+<pre>
                   _      _
   ___ ____ __ _  (_)__  (_)
  / _ `/ -_)  ' \/ / _ \/ /

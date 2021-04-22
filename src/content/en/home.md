@@ -9,7 +9,14 @@ i18n:
 
 ## _welcome!_
 
-This is my personal website!
+This is my personal website. My little house on the worldwide prairie!
+
+<pre title="found on: https://asciiart.website/">
+  []___
+ /    /\
+/____/__\
+|[][]||||
+</pre>
 
 I originally created it to showcase my work as a web person, but I also use it to share and talk about anything. I just like to **create** stuff; lately it's been [websites](/resume).
 
