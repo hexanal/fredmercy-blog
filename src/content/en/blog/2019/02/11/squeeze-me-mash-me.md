@@ -1,7 +1,7 @@
 ---
 title: Squeeze Me Like A Lime, Mash Me Like A Guacamole
 description: Goodbye, goodbye y'all! We must go but we shall return.
-tags: journal
+tagged: journal
 type: post
 ---
 

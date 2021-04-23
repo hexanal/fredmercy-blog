@@ -1,7 +1,7 @@
 ---
 title: The Quest Begins
 description: Feels like I'm chasing the dragon, trying not to get burnt.
-tags: journal
+tagged: journal
 type: post
 ---
 

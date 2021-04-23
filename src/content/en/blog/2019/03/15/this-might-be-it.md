@@ -1,7 +1,7 @@
 ---
 title: This Might Be It
 description: Life currently feeling like a lot of waiting
-tags: journal
+tagged: journal
 type: post
 ---
 

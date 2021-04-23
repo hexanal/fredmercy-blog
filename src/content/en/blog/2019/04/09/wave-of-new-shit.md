@@ -1,7 +1,7 @@
 ---
 title: A Wave Of New Shit
 description: So much new stuff coming my way, I'm lowkey almost overwhelmed, but not.
-tags: journal
+tagged: journal
 type: post
 ---
 

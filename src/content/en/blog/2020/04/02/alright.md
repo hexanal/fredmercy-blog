@@ -1,7 +1,7 @@
 ---
 title: Alright...
 description: This is time to change shit up.
-tags: journal
+tagged: journal
 type: post
 ---
 

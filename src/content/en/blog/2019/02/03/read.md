@@ -1,6 +1,6 @@
 ---
 description: Snowy Sunday
-tags: journal
+tagged: journal
 type: post
 ---
 

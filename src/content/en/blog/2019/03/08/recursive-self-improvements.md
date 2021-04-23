@@ -1,7 +1,7 @@
 ---
 title: Recursive Self-Improvements
 description: Not self-improvements if I'm the one implementing them... I'm more like a slave to the machine here.
-tags: journal
+tagged: journal
 type: post
 ---
 

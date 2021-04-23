@@ -1,7 +1,7 @@
 ---
 title: Stone Cold Buffalo
 description: Another great post title by yours truly. Enjoy.
-tags: journal, songs
+tagged: journal, songs
 type: post
 ---
 

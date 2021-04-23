@@ -1,7 +1,7 @@
 ---
 title: Photofeed
 description: Don't wanna be on instagram no more!
-tags: journal, update
+tagged: journal, update
 type: post
 ---
 

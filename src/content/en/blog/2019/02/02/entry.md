@@ -1,6 +1,6 @@
 ---
 description: Looks like the hipster thing to do is to move away from the Big Internet Companies
-tags: journal
+tagged: journal
 type: post
 ---
 

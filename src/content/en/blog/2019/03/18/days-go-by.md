@@ -1,7 +1,7 @@
 ---
 title: Days go by, my man
 description: Trying to keep a firm hold on that frenzy-stricken life
-tags: journal
+tagged: journal
 type: post
 ---
 

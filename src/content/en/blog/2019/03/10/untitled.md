@@ -1,6 +1,6 @@
 ---
 description: Picking up new reading material
-tags: journal
+tagged: journal
 type: post
 ---
 

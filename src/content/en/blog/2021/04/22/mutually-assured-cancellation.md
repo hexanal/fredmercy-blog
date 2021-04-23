@@ -1,6 +1,6 @@
 ---
 title: Mutually Assured Cancellation
-description: how I learn to stop worrying and love my lack of privacy
+description: how I learned to stop worrying and love my lack of privacy
 type: post
 tagged: dumb
 ---

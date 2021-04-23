@@ -1,7 +1,7 @@
 ---
 title: Wacky Comments
 description: Coming up with a weird way of leaving comments
-tags: journal
+tagged: journal
 type: post
 edited: 2021-03-02 @ 1:10pm
 ---

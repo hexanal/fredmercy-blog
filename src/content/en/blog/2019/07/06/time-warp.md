@@ -1,7 +1,7 @@
 ---
 title: Time Warp
 description: Stuck in suspended animation, a weird anxious feeling of finally being able to do all the things I've been meaning to do
-tags: journal
+tagged: journal
 type: post
 ---
 

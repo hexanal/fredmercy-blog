@@ -1,6 +1,6 @@
 ---
 description: Just another one of those days...! Man, there sure are a lot of them this year!
-tags: journal
+tagged: journal
 type: post
 ---
 

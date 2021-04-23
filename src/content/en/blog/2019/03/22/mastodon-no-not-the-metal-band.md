@@ -1,7 +1,7 @@
 ---
 title: Mastodon. No, not the metal band...
 description: Still trying to find alternatives and fight the big social media monopolies
-tags: journal
+tagged: journal
 type: post
 ---
 

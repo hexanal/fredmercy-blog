@@ -1,7 +1,7 @@
 ---
 title: Sun Power
 description: “Sun Power Everywhere”
-tags: journal
+tagged: journal
 type: post
 ---
 

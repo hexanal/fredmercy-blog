@@ -1,6 +1,6 @@
 ---
 description: What Is This All About?
-tags: long rant
+tagged: long rant
 type: post
 ---
 

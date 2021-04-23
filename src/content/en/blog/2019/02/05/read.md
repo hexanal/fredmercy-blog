@@ -1,6 +1,6 @@
 ---
 description: Productivity boost on a Monday, also I got sore muscles.
-tags: journal, song
+tagged: journal, song
 type: post
 edited: 2021-03-02 @ 1:12pm
 ---

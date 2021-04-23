@@ -2,7 +2,7 @@
 title: Ça avance!
 description: les soirs je travaille
 type: post
-tags: webdev, quoi de neuf
+tagged: webdev, quoi de neuf
 i18n:
   en: '/blog/2021/02/25/ça-avance'
 ---

@@ -1,7 +1,7 @@
 ---
 title: Whooosh
 description: Life gives you lemons, and orange, and apples, and bananas and you gotta choose wisely, or else...!
-tags: journal
+tagged: journal
 type: post
 ---
 

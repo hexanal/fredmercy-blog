@@ -1,7 +1,7 @@
 ---
 title: Wishy-washy
 description: Good old rainy day washes my blues away.
-tags: journal
+tagged: journal
 type: post
 ---
 

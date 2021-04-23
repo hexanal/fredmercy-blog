@@ -1,7 +1,7 @@
 ---
 title: Busy Guy
 description: I am the busy guy.
-tags: updates
+tagged: updates
 type: post
 ---
 

@@ -2,7 +2,7 @@
 title: Ça avance! (french post)
 description: I work on evenings
 type: post
-tags: webdev, what's up
+tagged: webdev, what's up
 i18n:
   fr: '/fr/blogue/2021/02/25/ça-avance'
 ---

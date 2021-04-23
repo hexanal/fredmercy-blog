@@ -1,6 +1,6 @@
 ---
 description: Can I help you? — Nah, just browsing, thanks... well, actually, maybe you can help.
-tags: journal
+tagged: journal
 type: post
 ---
 

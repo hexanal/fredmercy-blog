@@ -1,6 +1,6 @@
 ---
 description: Isolation
-tags: journal
+tagged: journal
 type: post
 ---
 

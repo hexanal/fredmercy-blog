@@ -2,7 +2,7 @@
 title: Bilinguisme
 description: rend les sites plus difficiles à bien faire!
 type: post
-tags: techno, webdev, quoi de neuf
+tagged: techno, webdev, quoi de neuf
 i18n:
   en: '/blog/2021/02/22/bilinguism'
 ---

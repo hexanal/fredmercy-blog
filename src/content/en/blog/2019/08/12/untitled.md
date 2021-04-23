@@ -1,6 +1,6 @@
 ---
 description: Slowing My Descent Into Madness & Psychosis
-tags: journal
+tagged: journal
 type: post
 ---
 

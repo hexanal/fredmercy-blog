@@ -1,7 +1,7 @@
 ---
 title: First Post
 description: First post on this here blog
-tags: journal
+tagged: journal
 type: post
 ---
 

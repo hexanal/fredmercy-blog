@@ -2,7 +2,7 @@
 title: Selling your soul
 description: monetize yourself
 type: post
-tags: high, opinion, rant, with emojis
+tagged: high, opinion, rant, with emojis
 edited: 2021-03-11 @ 2:19pm
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Adventures in Blogging
 description: One day I will have a blog I can be proud of!
-tags: update
+tagged: update
 type: post
 ---
 

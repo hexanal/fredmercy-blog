@@ -2,7 +2,7 @@
 title: Solstice Solace
 description: What went right, what went wrong
 type: post
-tags: journal, end-of-year
+tagged: journal, end-of-year
 ---
 
 `8:42am:` Being super self-analytic, and generally concerned about "my self" means that I'm *selfish*. But, my self-analyses are done in the hope of becoming a more equipped person to deal with the rest of the World. Too bad I was also blind to the fact that being *selfless* is actually a better way to connect with others, which helps with becoming a nicer person, a better friend, and a more trustworthy ally.

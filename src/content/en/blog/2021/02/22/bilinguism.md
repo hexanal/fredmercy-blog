@@ -2,7 +2,7 @@
 title: Bilinguism
 description: making websites harder to build right
 type: post
-tags: tech, webdev, update
+tagged: tech, webdev, update
 edited: february 23, 2021 @ 11:30am
 ---
 

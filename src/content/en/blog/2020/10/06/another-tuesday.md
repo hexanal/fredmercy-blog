@@ -1,7 +1,7 @@
 ---
 title: Another Tuesday
 description: I'm settling in slowly!
-tags: update, thoughts
+tagged: update, thoughts
 type: post
 ---
 

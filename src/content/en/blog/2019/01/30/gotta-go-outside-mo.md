@@ -1,7 +1,7 @@
 ---
 title: Gotta Go Outside More
 description: Motherfuckers commenting on YouTube videos or Twitter threads should go outside more.
-tags: journal
+tagged: journal
 type: post
 ---
 

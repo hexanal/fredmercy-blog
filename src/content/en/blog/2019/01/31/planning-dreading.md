@@ -1,7 +1,7 @@
 ---
 title: Planning / Dreading
 description: The best is to come; the worst as well.
-tags: journal
+tagged: journal
 type: post
 edited: 2021-03-02 @ 1:09pm
 ---

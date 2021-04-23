@@ -1,7 +1,7 @@
 ---
 title: Gonna change again
 description: Might be changing the formula a bit for a while before I launch a new website for real
-tags: cool beans
+tagged: cool beans
 type: post
 ---
 
