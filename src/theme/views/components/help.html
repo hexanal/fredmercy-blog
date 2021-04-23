@@ -1,4 +1,4 @@
-<aside class="help" data-component="help" data-type-{{ type }}>
+<aside class="help">
   <!-- this section requires javascript to function -->
   <div class="help__section no-js">
     <h2 class="heading-alt">
@@ -44,9 +44,19 @@
         <div>
           <strong class="help__emphasis">
             {{ t en="use" fr="utiliser" }}
-            <button class="hotkey help__key" data-child="help-big-font" type="button">+</button>
+            <button
+              class="hotkey help__key"
+              data-component="emit"
+              data-event="A11Y_SET_LARGE_FONT"
+              data-event-payload="yes"
+              type="button">+</button>
             {{ t en="and" fr="et" }}
-            <button class="hotkey help__key" data-child="help-normal-font" type="button">-</button>
+            <button
+              class="hotkey help__key"
+              data-component="emit"
+              data-event="A11Y_SET_LARGE_FONT"
+              data-event-payload="no"
+              type="button">-</button>
           </strong>
           {{ t en="to increase and decrease the size of the text." fr="pour augmenter ou diminuer la taille du texte." }}
         </div>
