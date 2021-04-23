@@ -24,8 +24,9 @@ data-event="SHOW_BOX_HELP"
 
 {{#if meta.i18n}}
 {{#each meta.i18n as |url lang|}}
-{{> components/dot }}
-<em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+  {{> components/dot }}
+
+  <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
 {{/each}}
 {{/if}}
 

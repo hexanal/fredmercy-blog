@@ -22,25 +22,17 @@
 <body class="page" id="🌀">
 
 <main data-component="a11y, scroll">
+  {{> components/header }}
 
-{{> components/header }}
+  <div class="page__contents">
+    {{> @partial-block }}
 
-<div class="page__contents">
-{{> @partial-block }}
+    {{> components/footer }}
+  </div>
 
-{{> components/footer }}
-</div>
-
-{{#> components/box id="discuss" shortcut="d" }}
-{{> components/comments}}
-{{/components/box}}
-
-{{#> components/box id="help" shortcut="?" }}
-{{> components/help type="box"}}
-{{/components/box}}
-
-{{> components/box-nav }}
-
+  {{> components/box-comments }}
+  {{> components/box-help }}
+  {{> components/box-nav }}
 </main>
 
 {{> components/rainbow }}
