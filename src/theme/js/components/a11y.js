@@ -1,5 +1,3 @@
-import Mousetrap from 'mousetrap';
-
 export default function({ events }) {
   const state = {
     zoomed: window.localStorage.getItem('a11y_use_zoom') || 'no'
@@ -12,8 +10,21 @@ export default function({ events }) {
     window.localStorage.setItem('a11y_use_zoom', zoomed)
   }
 
-  events.on('A11Y_SET_LARGE_FONT', setZoom)
+  const onKeyUp = e => {
+    const focused = document.activeElement.tagName
+    if ( focused === 'TEXTAREA' || focused === 'INPUT' ) return
 
-  Mousetrap.bind('=', () => setZoom('yes') )
-  Mousetrap.bind('-', () => setZoom('no') )
+    switch( e.key ) {
+      case '=':
+        setZoom('yes')
+        break
+      case '-':
+        setZoom('no')
+        break;
+    }
+  }
+
+  document.addEventListener('keyup', onKeyUp)
+
+  events.on('A11Y_SET_LARGE_FONT', setZoom)
 }

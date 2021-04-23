@@ -1,4 +1,3 @@
-import Mousetrap from 'mousetrap'
 import stater from '../tools/stater'
 import { getHash, setHash } from '../tools/hashish'
 
@@ -14,13 +13,9 @@ export default function({ element, ui, control, events }) {
 
   state.active.changed( active => {
     element.classList.toggle('state-box-active', active)
-
-    Mousetrap[active ? 'bind' : 'unbind']('escape', close)
-
     element.style.display = active ? 'block' : 'none'
 
-    // z-index management
-    ZS[active ? 'push' : 'pop']( element )
+    ZS[active ? 'push' : 'pop']( element ) // naive z-index management
     element.style.zIndex = ZS.length + ZINDEX
 
     setHash( state.get().id, active )
@@ -33,6 +28,16 @@ export default function({ element, ui, control, events }) {
   const open = () => state.active.set(true)
   const close = () => state.active.set(false)
 
+  const onKeyUp = e => {
+    const focused = document.activeElement.tagName
+    if ( focused === 'TEXTAREA' || focused === 'INPUT' ) return
+
+    const { active, shortcut } = state.get()
+
+    if ( active && e.key === 'Escape') close()
+    if ( e.key === shortcut ) toggle()
+  }
+
   events.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
   events.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
   events.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
@@ -42,7 +47,9 @@ export default function({ element, ui, control, events }) {
 
   if ( getHash( state.get().id ) ) open()
 
-  if ( state.get().shortcut ) Mousetrap.bind( state.get().shortcut, toggle )
+  if ( state.get().shortcut ) {
+    document.addEventListener('keyup', onKeyUp)
+  }
 
   state.update()
 
