@@ -31,8 +31,11 @@ export const eventer = {
           console.log(`[events] with payload:`)
           console.log( payload )
         }
+        console.log(`[events] subscribers: `)
+        console.log( eventer.subscribers )
       console.groupEnd()
     }
+
 
     eventer.subscribers.map(({id, cb}) => {
       if (id === eventId) return cb(payload)

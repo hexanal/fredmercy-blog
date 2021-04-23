@@ -1,11 +1,9 @@
-export default function({ events }) {
-  const state = {
-    zoomed: window.localStorage.getItem('a11y_use_zoom') || 'no'
-  }
+export default function({ element, events }) {
+  let zoomed = window.localStorage.getItem('a11y_use_zoom') || 'no'
 
-  document.documentElement.classList.toggle('a11y_use_zoom', state.zoomed === 'yes')
+  document.documentElement.classList.toggle('a11y_use_zoom', zoomed === 'yes')
 
-  const setZoom = function(zoomed) {
+  const setZoom = function( zoomed ) {
     document.documentElement.classList.toggle('a11y_use_zoom', zoomed === 'yes')
     window.localStorage.setItem('a11y_use_zoom', zoomed)
   }
