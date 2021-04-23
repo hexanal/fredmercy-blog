@@ -18,17 +18,17 @@ const build = function() {
     outFile: DEST
   })
 
-  const cssTimeElapsed = compiledCSS.stats.duration / 1000
+  const time = compiledCSS.stats.duration
 
   return write(DEST_PATH, DEST_FILENAME, compiledCSS.css)
     .then( () => {
-      console.log( `[fredmercy] bundled CSS in ${cssTimeElapsed} seconds` )
+      console.log( `[fredmercy] [sass] bundled ~~ ${time}ms` )
     })
 }
 
 const watch = watcher({
   glob: WATCH_GLOB,
-  type: 'sass',
+  type: 'Sass',
   callback: build
 })
 

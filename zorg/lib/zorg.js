@@ -120,8 +120,7 @@ const zorg = function( website, plugins ) {
   const contentTypes = splitByType( getBasicMeta( contentFiles, website ) )
   const build = plugins.reduce( (acc, plugin) => plugin(acc, website), contentTypes)
 
-  const end = Date.now()
-  const time = (end - start) / 1000
+  const time = Date.now() - start
 
   return { build, time }
 }

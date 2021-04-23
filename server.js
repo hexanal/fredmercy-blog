@@ -14,7 +14,7 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('./fredmercy.db');
 
 const app = express();
-const { build, watch } = require('./zorg');
+const zorg = require('./zorg');
 
 app.set('host', process.env.HOST || '0.0.0.0');
 app.set('port', process.env.PORT || 8042);
@@ -79,22 +79,13 @@ app.use(function(error, req, res, next) {
 	res.send(html)
 });
 
-const server = app.listen(app.get('port'), () => {
+app.listen(app.get('port'), () => {
+	console.log(`~~`)
 	console.log(`[fredmercy] env: ${app.get('env')}`)
 	console.log(`[fredmercy] url: http://${app.get('host')}:${app.get('port')}`)
 	console.log(`~~`)
 
-	console.log(`[fredmercy] launching build...`)
-
-	build() // compile the necessary stuff
-
-	if ( app.get('env') === 'development' ) {
-		setTimeout( () => {
-			console.log(`~~`)
-			console.log(`[fredmercy] development mode: watching files`)
-			watch() // watch for changes
-		}, 2000)
-	}
+	zorg( app.get('env') )
 });
 
 module.exports = app;

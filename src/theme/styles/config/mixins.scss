@@ -1,5 +1,5 @@
 // box with border and drop shadow
-@mixin box($color: var(--color-primary), $bg: var(--color-bg) ) {
+@mixin box( $color: var(--color-primary), $bg: var(--color-bg) ) {
   color: $color;
   border: 2px solid $color;
   background-color: $bg;

@@ -11,16 +11,28 @@ import events from './tools/eventer.js'
  * `moduler.mount` accepts a single DOM element; it will find all elements with
  * the attribute [data-component] and load the appropriate JS module for them.
  *
- * A module is a function which is passed an object, with this shape:
+ * A module is a function which is passed an object of this shape:
  *
- * `{ element, children, [other middlewares] }`
+ * { element, children, [other middlewares] }
  *
  * - `element` is the DOM element found by `moduler`
- * - `children` is any element with a `[data-child]` attribute
+ * - `children` are all the `[data-child]` elements found inside `element`
  * - [other middlewares] in this case will be `events`, which is instantiated
  *   using the other props above -> useful to extend moduler
  */
 
+console.info('-> %cwelcome to:', 'font-style: italic')
+console.info(`
+ ╔═╗         ╔╗
+ ║╔╝         ║║
+╔╝╚╗╔═╗╔══╗╔═╝║╔╗╔╗╔══╗╔═╗╔══╗╔╗ ╔╗  ╔══╗╔══╗
+╚╗╔╝║╔╝║╔╗║║╔╗║║╚╝║║╔╗║║╔╝║╔═╝║║ ║║  ║╔═╝╚ ╗║
+ ║║ ║║ ║║═╣║╚╝║║║║║║║═╣║║ ║╚═╗║╚═╝║╔╗║╚═╗║╚╝╚╗
+ ╚╝ ╚╝ ╚══╝╚══╝╚╩╩╝╚══╝╚╝ ╚══╝╚═╗╔╝╚╝╚══╝╚═══╝
+                              ╔═╝║
+                              ╚══╝
+`)
+
 moduler
   .use({ events })
-  .mount( document.getElementById('🌀') )
+  .mount( document.body )

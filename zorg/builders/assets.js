@@ -2,9 +2,9 @@ const fse = require('fs-extra')
 const watcher = require('../lib/watcher')
 
 const WATCH = [
-  './src/theme/js',
-  './src/theme/images',
-  './src/theme/fonts',
+  './src/theme/js/**/*',
+  './src/theme/images/**/*',
+  './src/theme/fonts/**/*',
 ]
 const assets = [
   {
@@ -29,14 +29,19 @@ const assets = [
   },
 ]
 
-const copy = ({id, src, dest}) => fse.copy(src, dest)
-  .then(() => {
-    console.log( `[fredmercy] copied assets: assets/${id}`)
-  })
-  .catch(err => {
-    console.log( `[fredmercy] assets: assets/${id} -> error: something broke while copying the assets...` )
-    console.error( err )
-  })
+const copy = ({id, src, dest}) => {
+  const start = Date.now()
+
+  return fse.copy(src, dest)
+    .then(() => {
+      const time = Date.now() - start
+      console.log( `[fredmercy] [assets] copied '${id}' ~~ ${time}ms`)
+    })
+    .catch(err => {
+      console.log( `[fredmercy] huh? something broke while copying assets: '${id}'` )
+      console.error( err )
+    })
+  }
 
 const build = function() {
   return assets.map( copy )

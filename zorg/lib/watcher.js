@@ -8,10 +8,10 @@ module.exports = function({ glob, type, callback }) {
     })
 
     return watcher
-      .on('ready', () => console.log( `[fredmercy] watching: ${type}`) )
+      .on('ready', () => console.log( `[fredmercy] [watch] ${type}`))
       .on('change', path => {
         console.log(`~~`)
-        console.log( `[fredmercy] "${type}" file changed: ${path}` )
+        console.log( `[fredmercy] [watch] ${type} changed: '${path}'` )
         callback()
       })
   }

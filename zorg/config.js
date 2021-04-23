@@ -3,14 +3,14 @@ const websites = [
     baseURL: '/',
     baseDomain: 'https://fredmercy.ca',
     locale: 'en',
-    name: '[fredmercy.ca -> english]',
+    name: 'fredmercy.ca/',
     contentSrc: './src/content/en/**/*.md'
   },
   {
     baseURL: '/fr',
     baseDomain: 'https://fredmercy.ca',
     locale: 'fr',
-    name: '[fredmercy.ca -> français]',
+    name: 'fredmercy.ca/fr',
     contentSrc: './src/content/fr/**/*.md'
   }
 ]

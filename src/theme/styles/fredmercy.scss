@@ -18,5 +18,5 @@
 @import 'utilities/no-print';
 @import 'utilities/symbol';
 
-// the rest is co-located with HTML "components"
+// the rest is co-located with the HTML "views" (src/theme/views)
 @import '../views/**/*.scss';
