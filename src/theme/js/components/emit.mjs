@@ -1,8 +1,8 @@
 export default function({element, events}) {
-  const { event } = element.dataset
+  const { event, eventPayload } = element.dataset
 
   element.addEventListener('click', e => {
     e.preventDefault()
-    events.dispatch( event )
+    events.dispatch( event, eventPayload )
   })
 }

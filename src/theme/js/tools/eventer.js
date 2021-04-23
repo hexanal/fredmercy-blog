@@ -40,10 +40,10 @@ export const eventer = {
   }
 }
 
-const eventerMiddleware = ({props}) => {
+const eventerMiddleware = function() {
   const { subscribe, unsubscribe, dispatch } = eventer
 
-  props.events = {
+  return {
     subscribe,
     on: subscribe,
     listen: subscribe,
@@ -54,8 +54,6 @@ const eventerMiddleware = ({props}) => {
     dispatch,
     emit: dispatch
   }
-
-  return props
 }
 
 export default eventerMiddleware

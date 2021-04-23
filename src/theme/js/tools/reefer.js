@@ -19,7 +19,6 @@ export function onFrame(fn, timestamp = 0) {
 export const onReef = onFrame
 
 export default function reefer(startWith = 0) {
-  // in state object instead?
   let target = startWith
   let interpolated = startWith
   let currentVelocity = 0

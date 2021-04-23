@@ -22,7 +22,7 @@ const build = function() {
 
   return write(DEST_PATH, DEST_FILENAME, compiledCSS.css)
     .then( () => {
-      console.log( `[fredmercy] compiled sass, in ${cssTimeElapsed} seconds` )
+      console.log( `[fredmercy] bundled CSS in ${cssTimeElapsed} seconds` )
     })
 }
 

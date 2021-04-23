@@ -2,10 +2,16 @@ const fse = require('fs-extra')
 const watcher = require('../lib/watcher')
 
 const WATCH = [
+  './src/theme/js',
   './src/theme/images',
-  './src/theme/fonts'
+  './src/theme/fonts',
 ]
 const assets = [
+  {
+    id: 'js',
+    src: './src/theme/js',
+    dest: './public/assets/js'
+  },
   {
     id: 'manifest',
     src: './src/theme/manifest.webmanifest',
@@ -20,7 +26,7 @@ const assets = [
     id: 'fonts',
     src: './src/theme/fonts',
     dest: './public/assets/fonts'
-  }
+  },
 ]
 
 const copy = ({id, src, dest}) => fse.copy(src, dest)

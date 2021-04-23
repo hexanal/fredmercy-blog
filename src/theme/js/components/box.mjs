@@ -1,10 +1,10 @@
-import stater from '../tools/stater'
-import { getHash, setHash } from '../tools/hashish'
+import stater from '../tools/stater.js'
+import { getHash, setHash } from '../tools/hashish.js'
 
 const ZINDEX = 10
 const ZS = []
 
-export default function({ element, ui, control, events }) {
+export default function({ element, children, events }) {
   const state = stater({
     id: element.dataset.boxId || '',
     shortcut: element.dataset.boxShortcut || false,
@@ -42,8 +42,8 @@ export default function({ element, ui, control, events }) {
   events.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
   events.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
 
-  control['close'].addEventListener('click', close)
-  control['bg'].addEventListener('click', close)
+  children['close'].addEventListener('click', close)
+  children['bg'].addEventListener('click', close)
 
   if ( getHash( state.get().id ) ) open()
 

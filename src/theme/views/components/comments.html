@@ -6,15 +6,15 @@ data-url="{{ meta.url }}"
 
 <div class="comments__title"><em>url:</em> <small>{{ meta.url }}</small></div>
 
-<div class="comments__convo" data-ui="convo"></div>
+<div class="comments__convo" data-child="convo"></div>
 
-<form class="comments__write" data-control="comment-box">
+<form class="comments__write" data-child="comment-box">
 
 <label class="visually-hidden" for="author">{{ t en="nickname" fr="pseudonyme" }}</label>
 
 <input
 class="comments__input comments__author"
-data-control="author"
+data-child="author"
 type="text"
 id="author"
 name="author"
@@ -28,14 +28,14 @@ required
 <textarea
 id="message"
 class="comments__input comments__message content"
-data-control="message"
+data-child="message"
 name="content"
 maxlength="1000"
 placeholder='{{ t en="say something!" fr="exprimez-vous!" }}'
 required
 ></textarea>
 
-<button class="comments__submit button" type="submit" data-control="send">{{ t en="send" fr="envoyer" }} -></button>
+<button class="comments__submit button" type="submit" data-child="send">{{ t en="send" fr="envoyer" }} -></button>
 
 </form>
 

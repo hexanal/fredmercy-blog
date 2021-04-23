@@ -1,8 +1,7 @@
-import orderBy from 'lodash.orderby'
-import { t } from '../tools/i18n'
-import reefer, { onReef } from '../tools/reefer'
+import { t } from '../tools/i18n.js'
+import reefer, { onReef } from '../tools/reefer.js'
 
-export default function({element, ui, control, events }) {
+export default function({element, children, events }) {
   const state = {
     show: false,
     animation: {
@@ -12,8 +11,8 @@ export default function({element, ui, control, events }) {
   }
 
   onReef( function() {
-    ui['convo'].style.transform = `translateY(${ state.animation.y * 2 }rem)`
-    ui['convo'].style.opacity = state.animation.opacity.get()
+    children['convo'].style.transform = `translateY(${ state.animation.y * 2 }rem)`
+    children['convo'].style.opacity = state.animation.opacity.get()
   })
 
   const getCommentsFromDB = function() {
@@ -73,13 +72,13 @@ export default function({element, ui, control, events }) {
   const displayConversation = comments => {
     if ( comments.code && comments.code === 'SQLITE_ERROR' ) return handleSqliteError( comments )
 
-    ui['convo'].innerHTML = '' // FLUSH!!
+    children['convo'].innerHTML = '' // FLUSH!!
 
     const getCommentsCount = `(${comments.length})`
     document.querySelectorAll('[data-comments-count]')
       .forEach( count => count.textContent = getCommentsCount )
 
-    const withChronologicalOrder = orderBy(comments, 'timestamp', 'desc')
+    const withChronologicalOrder = comments.sort( (a,b) => a.timestamp < b.timestamp )
 
     withChronologicalOrder.map( ({comment, author, timestamp}) => {
       const $commentLine = document.createElement('div')
@@ -100,7 +99,7 @@ export default function({element, ui, control, events }) {
       $commentLine.appendChild($timestamp)
       $commentLine.appendChild($content)
 
-      ui['convo'].appendChild($commentLine)
+      children['convo'].appendChild($commentLine)
     })
   }
 
@@ -111,8 +110,8 @@ export default function({element, ui, control, events }) {
   }
 
   const getMessageDataFromUI = function() {
-    const author = control['author'].value.trim() !== '' ? control['author'].value : t({en: '(anonymous)', fr: '(anonyme)'})
-    const comment = control['message'].value.trim() !== '' ? control['message'].value : false
+    const author = children['author'].value.trim() !== '' ? children['author'].value : t({en: '(anonymous)', fr: '(anonyme)'})
+    const comment = children['message'].value.trim() !== '' ? children['message'].value : false
     const url = element.dataset.url
     const timestamp= Date.now()
 
@@ -123,7 +122,7 @@ export default function({element, ui, control, events }) {
     getCommentsFromDB()
       .then( displayConversation )
       .catch(function (error) {
-        console.error(error);
+        console.error(error)
       });
   }
 
@@ -132,20 +131,18 @@ export default function({element, ui, control, events }) {
 
     const data = getMessageDataFromUI()
 
-    if ( !data.comment ) return control['message'].focus()
+    if ( !data.comment ) return children['message'].focus()
 
     insertCommentIntoDB( data )
       .then( () => {
         clearMessage()
         fetchComments()
       })
-      .catch(function (error) {
-        console.error(error)
-      });
-  };
+      .catch( console.error )
+  }
 
   const clearMessage = function() {
-    control['message'].value = '';
+    children['message'].value = ''
     window.localStorage.removeItem('comments_message')
   }
 
@@ -153,16 +150,16 @@ export default function({element, ui, control, events }) {
     const author = window.localStorage.getItem('comments_author')
     const message = window.localStorage.getItem('comments_message')
 
-    if ( author ) control['author'].value = author
-    if ( message ) control['message'].value = message
+    if ( author ) children['author'].value = author
+    if ( message ) children['message'].value = message
   }
 
   const setupEventListeners = function() {
-    control['comment-box'].addEventListener('submit', submitComment)
-    control['author'].addEventListener('keyup', e => {
+    children['comment-box'].addEventListener('submit', submitComment)
+    children['author'].addEventListener('keyup', e => {
       window.localStorage.setItem('comments_author', e.currentTarget.value)
     })
-    control['message'].addEventListener('keyup', e => {
+    children['message'].addEventListener('keyup', e => {
       window.localStorage.setItem('comments_message', e.currentTarget.value)
       if ( e.key === 'Escape' ) events.dispatch('CLOSE_BOX_DISCUSS')
     })
@@ -172,7 +169,7 @@ export default function({element, ui, control, events }) {
     state.messages = [
       events.on('SHOW_BOX_DISCUSS', () => {
         // focus the comment box on show
-        setTimeout( () => control['message'].focus(), 50 )
+        setTimeout( () => children['message'].focus(), 50 )
       })
     ]
   }

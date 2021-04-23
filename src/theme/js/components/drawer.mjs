@@ -1,5 +1,5 @@
-import reefer, { onReef, SPRING_TIGHT, SPRING_SOFT } from '../tools/reefer'
-import debounce from 'lodash.debounce'
+import reefer, { onReef, SPRING_TIGHT, SPRING_SOFT } from '../tools/reefer.js'
+import debounce from '../tools/debounce.js'
 
 const MIN_OPACITY = 0.25
 const MIN_HEIGHT = 0
