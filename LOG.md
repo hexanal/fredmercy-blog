@@ -1,5 +1,6 @@
 ## TODO
 
+* holy shit... I'm going build-less JS, using modules... I'm crazy
 * adapters "per type"?
 * might not need the split between content types in an object
     - simplify the creation of "plugins"

@@ -21,7 +21,12 @@ import events from './tools/eventer.js'
  *   using the other props above -> useful to extend moduler
  */
 
-console.info('-> %cwelcome to:', 'font-style: italic')
+moduler
+  .use({ events })
+  .mount( document.body )
+
+// ~~
+
 console.info(`
  ╔═╗         ╔╗
  ║╔╝         ║║
@@ -32,7 +37,3 @@ console.info(`
                               ╔═╝║
                               ╚══╝
 `)
-
-moduler
-  .use({ events })
-  .mount( document.body )

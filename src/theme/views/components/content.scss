@@ -98,6 +98,10 @@
   line-height: 1rem;
 }
 
+.content dfn {
+  text-decoration: underline dashed var(--color-secondary);
+}
+
 .content .link {
   user-select: none;
   padding: 0;
