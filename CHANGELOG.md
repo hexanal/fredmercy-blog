@@ -1,3 +1,14 @@
+[2.0.0] - 2021-04-24
+Added
+    Entry for April 23, 2021
+Changed
+    Theme's JS is now all native "js modules" and it's cool
+    Removed all dependencies, vendored-in the lodash micro-libs
+    Using "tagged" instead of "tags" in frontmatter for posts
+    Removed "bleeps" component
+Fixed
+    a bunch of stuff
+
 [1.2.2] - 2021-04-22
 Added
     Entry for April 22, 2021
