@@ -1,5 +1,6 @@
 html { --icon-filter: none; }
 
+// june colorscheme originally created using: https://coolors.co
 html[data-theme="june"] {
   --color-bg: #f9eaea; // Linen
   --color-primary: #a46bea; // Rich Lavender
@@ -7,15 +8,6 @@ html[data-theme="june"] {
   --color-secondary: #ea8fcd; // Kobi
   --color-subdued: #65b25e; // Bud Green
   --color-extra: #ffdd21; // Banana Yellow
-}
-
-html[data-theme="paper"] {
-  --color-bg: #fffefc;
-  --color-primary: #00b288;
-  --color-active: #f72762;
-  --color-secondary: #3c449e;
-  --color-subdued: #b8adbc;
-  --color-extra: #ffe400;
 }
 
 html[data-theme="mini"] {
