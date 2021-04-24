@@ -5,6 +5,10 @@ type: post
 tagged: web development, site update
 ---
 
+> _⚠️ tl;dr:_ this post is about web development and goes into nerdy details; skip it if you don't care about that stuff!
+
+~~
+
 `2:38pm:` This morning I thought I'd try something kind of random/crazy/dumb: how about I don't use any bundler/transpiler and I just try to match current browser support when writing my scripts, while at the same time leveraging [JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)?
 
 So I did it and it... kind of works! Naturally, I had to convert a few things to _modules_, and get rid of some dependencies. I'm proud to say the frontend doesn't _depend_ on any external library anymore, as I have been <dfn title="i.e. keeping a local copy of an external library">vendoring</dfn> the last remaining ones, which ended up only being [lodash.debounce](https://www.npmjs.com/package/lodash.debounce). **pfew!** 😅
