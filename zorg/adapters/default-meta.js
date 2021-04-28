@@ -1,3 +1,4 @@
+const fs = require('fs')
 const frontMatter = require('../lib/frontmatter')
 
 const getDefaultAttributes = function( attributes, item, websiteConfig ) {

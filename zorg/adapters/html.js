@@ -31,7 +31,7 @@ const formatContent = function( items ) {
     const templateName = item.meta.template || item.meta.type // default to content type
     const templateFile = getTemplate( templateName, item.meta.type )
     const template = templater.compile( templateFile.toString() )
-    const htmlTemplate = template( templateData )
+    const htmlTemplate = template( item )
 
     templater.render(destination, htmlTemplate)
 
