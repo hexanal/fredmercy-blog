@@ -1,5 +1,6 @@
 # Fred Mercy's Website
 
+Allô Fred, on essaie te rejoindre par courriel! :)
 ## what is it?
 
 * *handmade*, *minimal*, *work-in-progress*
