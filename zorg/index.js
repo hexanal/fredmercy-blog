@@ -1,9 +1,10 @@
-const website = require('./builders/website')
-const sass = require('./builders/sass')
-const assets = require('./builders/assets')
+const log = require('./lib/log')
+const website = require('./website')
+const sass = require('./sass')
+const assets = require('./assets')
 
 const build = function() {
-	console.log(`[fredmercy] -> building into /public`)
+  log('building into /public')
 
   website.build()
   sass.build()
@@ -11,8 +12,8 @@ const build = function() {
 }
 
 const watch = function() {
-  console.log(`~~`)
-  console.log(`[fredmercy] -> watching for changes in source files`)
+  console.log('~~')
+  log('watching for changes in source files')
 
   website.watch()
   sass.watch()

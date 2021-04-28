@@ -26,27 +26,21 @@ const getLinks = function( items ) {
   return allLinks
 }
 
-const addLinkChecker = function( contentTypes, website ) {
-  if ( !process.argv.includes('--check-links') ) return contentTypes
+const addLinkChecker = function( items, website ) {
+  if ( !process.argv.includes('--check-links') ) return items
 
-  const types = Object.keys( contentTypes )
-
-  const allURLs = types.reduce( (acc, type) => {
-    return acc.concat( getURLs( contentTypes[type] ) )
-  }, [])
-  const allLinks = types.reduce( (acc, type) => {
-    return acc.concat( getLinks( contentTypes[type] ) )
-  }, [])
+  const allURLs = getURLs( items )
+  const allLinks = getLinks( items )
 
   const orphans = allLinks
     .map( link => {
       const isValidInternalLink = allURLs.includes( link )
       if (isValidInternalLink ) return
 
-      console.log(`[fredmercy] possible broken link -> ${ link } (in website: ${ website.name })`)
+      console.log(`[${process.env.npm_package_name}] possible broken link -> ${ link } (in website: ${ website.name })`)
     })
 
-  return contentTypes
+  return items
 }
 
 module.exports = addLinkChecker

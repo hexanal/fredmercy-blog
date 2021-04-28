@@ -1,4 +1,4 @@
-const { write } = require('../../lib/files')
+const { write } = require('../lib/files')
 const sanitizeHtml = require('sanitize-html')
 
 const rssTemplate = items => (`<rss version="2.0">
@@ -12,13 +12,13 @@ const rssTemplate = items => (`<rss version="2.0">
   </channel>
 </rss>`)
 
-const buildRSSFeed = function( contentTypes, website ) {
-  if ( !contentTypes.post ) return contentTypes // if no blog post yet
+const buildRSSFeed = function( items, website ) {
+  const posts = items.filter( item => item.meta.type === 'post' )
 
-  const items = contentTypes.post.map( item => {
-      const pubDate = new Date( item.meta.date )
+  const rssItems = posts.map( item => {
+    const pubDate = new Date( item.meta.date )
 
-      return `
+    return `
     <item>
       <title>${ sanitizeHtml( item.meta.title ) }</title>
       <description>${ sanitizeHtml( item.meta.description ) }</description>
@@ -28,13 +28,13 @@ const buildRSSFeed = function( contentTypes, website ) {
 `
   }).join('')
 
-  const rssFeed = rssTemplate( items )
+  const rssFeed = rssTemplate( rssItems )
   const destination = `public${ website.baseURL }`
   const filename = 'rss.xml'
 
-  write(destination, filename, rssFeed) // writing it!
+  write(destination, filename, rssFeed)
 
-  return contentTypes
+  return items
 }
 
 module.exports = buildRSSFeed

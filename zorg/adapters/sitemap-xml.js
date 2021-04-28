@@ -1,19 +1,17 @@
-const { write } = require('../../lib/files')
+const { write } = require('../lib/files')
 
 const sitemapTemplate = urls => (`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${ urls }
 </urlset>`)
 
-const buildSitemap = function( contentTypes, website ) {
-  const types = Object.keys(contentTypes)
-  const urls = types.reduce( (acc, typeId) => {
-    const urlsForType = contentTypes[typeId].map( item => (`
+const buildSitemap = function( items, website ) {
+  const urls = items.reduce( (acc, item) => {
+    const urlEntry = `
   <url>
     <loc>${ item.meta.permalink }</loc>
   </url>`
-    ))
 
-    return acc.concat(urlsForType)
+    return acc.concat(urlEntry)
   }, []).join('')
 
   const sitemap = sitemapTemplate( urls )
@@ -22,7 +20,7 @@ const buildSitemap = function( contentTypes, website ) {
 
   write(destination, filename, sitemap)
 
-  return contentTypes
+  return items
 }
 
 module.exports = buildSitemap

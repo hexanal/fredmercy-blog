@@ -1,7 +1,8 @@
 const sass = require('sass')
 const importer = require('node-sass-glob-importer')
-const { write } = require('../lib/files')
-const watcher = require('../lib/watcher')
+const { write } = require('./lib/files')
+const log = require('./lib/log')
+const watcher = require('./lib/watcher')
 
 const WATCH_GLOB = [ './src/**/*.scss' ] // absolutely anywhere there's Sass
 const SRC = './src/theme/styles/fredmercy.scss'
@@ -22,13 +23,13 @@ const build = function() {
 
   return write(DEST_PATH, DEST_FILENAME, compiledCSS.css)
     .then( () => {
-      console.log( `[fredmercy] [sass] bundled ~~ ${time}ms` )
+      log( `sass: bundled ~~ ${time}ms` )
     })
 }
 
 const watch = watcher({
   glob: WATCH_GLOB,
-  type: 'Sass',
+  type: 'sass',
   callback: build
 })
 

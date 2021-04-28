@@ -5,28 +5,22 @@ const getBasicMeta = function(item) {
   }
 }
 
-const addRelationship = function( contentTypes ) {
-  const items = contentTypes.page
+const getRelatedItems = function( item, items ) {
+  const children = getChildrenItems( item, items )
+  const parents = getParentItems( item, items )
 
   return {
-    ...contentTypes,
-    page: items.map( (item, index) => {
-      const children = getChildrenItems( item, index, items )
-      const parents = getParentItems( item, index, items )
-
-      item.meta.children = children
-      item.meta.parents = parents.reverse()
-      item.meta.breadcrumbs = parents
-
-      return item
-    })
+    children,
+    parents: parents.reverse(), // get the direct parents first
+    breadcrumbs: parents
   }
 }
 
-const getChildrenItems = function( item, index, items ) {
-  if (item.meta.id === 'home') return []; // don't bother finding children for home: it has them all anyway
+const getChildrenItems = function( item, items ) {
+  if (item.meta.id === 'home') return [] // don't bother finding children for home: it has them all anyway
 
   const children = items
+    .filter( candidateItem => candidateItem.meta.type === 'page' )
     .filter( candidateItem => {
       const isSameRoute = candidateItem.meta.id === item.meta.id
       const isPartOfRoute = candidateItem.meta.url.includes( item.meta.url + '/' )
@@ -39,10 +33,11 @@ const getChildrenItems = function( item, index, items ) {
   return children
 }
 
-const getParentItems = function( item, index, items ) {
-  if (item.meta.isHome) return []; // don't bother finding parents for home: it has none
+const getParentItems = function( item, items ) {
+  if (item.meta.isHome) return [] // don't bother finding parents for home: it has none
 
   const parents = items
+    .filter( candidateItem => candidateItem.meta.type === 'page' )
     .filter( candidateItem => {
       if (candidateItem.meta.isHome) return false // nope
       const candidateUrl = candidateItem.meta.url + '/'
@@ -56,4 +51,10 @@ const getParentItems = function( item, index, items ) {
   return parents
 }
 
-module.exports = addRelationship
+module.exports = function( items ) {
+  return items.map( item => {
+    if( item.meta.type !== 'page' ) return item
+
+    return { ...item, ...getRelatedItems( item, items ) }
+  })
+}

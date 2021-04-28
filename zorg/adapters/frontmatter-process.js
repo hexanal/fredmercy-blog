@@ -2,44 +2,6 @@ const marked = require('marked')
 const groupBy = require('lodash.groupby')
 const orderBy = require('lodash.orderby')
 
-const FULL = '★'
-const EMPTY = '☆'
-const LOWEST_RATING = 0
-const HIGHEST_RATING = 5
-
-const giveStarRating = function( rating ) {
-  const stars = new Array(5)
-    .fill(EMPTY)
-    .map( (_, i) => (i < rating ? FULL : EMPTY) )
-    .join('')
-
-  return stars
-}
-
-const processRating = function( bookmark ) {
-  if (!bookmark.rating) return bookmark
-
-  const split = bookmark.rating.split(',').map( i => i.trim() )
-  const parsedRating = parseInt(split[0], 10)
-
-  const ratingGrade = typeof parsedRating === 'number' && (parsedRating >= LOWEST_RATING && parsedRating <= HIGHEST_RATING)
-    ? giveStarRating(parsedRating)
-    : false
-
-  if ( !ratingGrade ) return { ...bookmark, rating: false } // don't include rating if it's not a number, bro
-
-  const comment = split[1]
-    ? ' ' + stripSingleParagraph( marked(split[1]) )
-    : ''
-
-  const rating = `${ratingGrade}${comment}`
-
-  return {
-    ...bookmark,
-    rating
-  }
-}
-
 const stripSingleParagraph = function( htmlString ) {
   const splitByLines = htmlString.split(/\r\n|\r|\n/)
   const lines = splitByLines.length
@@ -56,8 +18,7 @@ const PROCESSORS = [
     fn: function( item ) {
       const { bookmarks } = item.meta
       const withIds = bookmarks.map( (bookmark, index) =>({ ...bookmark, id: `${bookmark.tag}_${index}` }) )
-      const withRating = withIds.map( processRating )
-      const withOrder = orderBy( withRating, 'title' )
+      const withOrder = orderBy( withIds, 'title' )
       const withMarkdownTitle = withOrder.map( bookmark => ({...bookmark, title: stripSingleParagraph(marked( bookmark.title )) }) )
       const withTags = groupBy( withMarkdownTitle, 'tag' )
 
@@ -83,15 +44,8 @@ const processFrontmatter = function( item ) {
   return processed
 }
 
-const addProcessedFrontmatter = function( contentTypes ) {
-  const withProcessedFrontmatter = {}
-  const types = Object.keys( contentTypes )
-
-  types.map( type => {
-    withProcessedFrontmatter[type] = contentTypes[type].map( processFrontmatter )
-  })
-
-  return withProcessedFrontmatter
+const addProcessedFrontmatter = function( items ) {
+  return items.map( processFrontmatter )
 }
 
 module.exports = addProcessedFrontmatter

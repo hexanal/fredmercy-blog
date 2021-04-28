@@ -1,4 +1,5 @@
 const chokidar = require('chokidar')
+const log = require('./log')
 
 module.exports = function({ glob, type, callback }) {
   return () => {
@@ -8,10 +9,10 @@ module.exports = function({ glob, type, callback }) {
     })
 
     return watcher
-      .on('ready', () => console.log( `[fredmercy] [watch] ${type}`))
+      .on('ready', () => log( `watch: ${type}`))
       .on('change', path => {
         console.log(`~~`)
-        console.log( `[fredmercy] [watch] ${type} changed: '${path}'` )
+        log( `watch: ${type} changed @ '${path}'` )
         callback()
       })
   }

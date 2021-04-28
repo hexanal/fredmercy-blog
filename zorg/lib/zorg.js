@@ -17,9 +17,6 @@ const getBasicMeta = function( contentFiles, websiteConfig ) {
     const built = getFormattedTimestamp( new Date().toISOString() )
     const updated = getFormattedTimestamp( getFileUpdatedDate(item) )
 
-    // FIXME: use a "draft" adapter for this?
-    if ( process.env.NODE_ENV !== 'development' && defaultAttributes.draft ) return
-
     return {
       _info: {
         src: item,
@@ -51,27 +48,6 @@ const getDefaultAttributes = function( attributes, item, websiteConfig ) {
   }
 }
 
-/**
- * - given all the items
- * - categorize by the meta `type`
- * - return an object which keys are each `type` of content we've found, and whose values is an array of items of that type
- */
-const splitByType = function( items ) {
-  return items.reduce( (acc, item) => {
-    if ( !item ) return acc // TODO
-
-    const { type } = item.meta
-
-    if ( !type ) return acc['page'].push( item ) // type wasn't specified... default back to a 'page' type
-
-    if ( !acc[type] ) acc[type] = [] // accumulator needs to be initialized with an empty array :)
-
-    acc[type].push( item )
-
-    return acc
-  }, {})
-}
-
 /* various utility/formatting functions */
 const getFileUpdatedDate = (path) => {
   const stats = fs.statSync(path)
@@ -79,7 +55,7 @@ const getFileUpdatedDate = (path) => {
 }
 
 const getFilenameFromPath = function( filepath ) {
-  const route = filepath.replace('./content/', '').split('/')
+  const route = filepath.split('/')
   return route[route.length - 1]
 }
 
@@ -117,8 +93,8 @@ const zorg = function( website, plugins ) {
   const start = Date.now()
 
   const contentFiles = glob.sync( website.contentSrc, {})
-  const contentTypes = splitByType( getBasicMeta( contentFiles, website ) )
-  const build = plugins.reduce( (acc, plugin) => plugin(acc, website), contentTypes)
+  const items = getBasicMeta( contentFiles, website )
+  const build = plugins.reduce( (acc, plugin) => plugin(acc, website), items)
 
   const time = Date.now() - start
 

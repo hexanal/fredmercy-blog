@@ -47,6 +47,7 @@ const getPostMetaData = function( item, website ) {
   const archive = `${monthName} ${year}`
 
   return {
+    ...item.meta,
     url,
     permalink,
     date,
@@ -61,19 +62,13 @@ const getPostMetaData = function( item, website ) {
   }
 }
 
-const addPostMeta = function( contentTypes, website ) {
-  if ( !contentTypes.post ) return contentTypes // if no blog post yet
+module.exports = function( items, website ) {
+  return items.map( item => {
+    if ( item.meta.type !== 'post' ) return item
 
-  return {
-    ...contentTypes,
-    post: contentTypes.post.map( item => ({
+    return {
       ...item,
-      meta: {
-        ...item.meta,
-        ...getPostMetaData(item, website)
-      }
-    }) )
-  }
+      meta: getPostMetaData(item, website)
+    }
+  })
 }
-
-module.exports = addPostMeta

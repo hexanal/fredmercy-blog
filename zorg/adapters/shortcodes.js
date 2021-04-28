@@ -1,8 +1,7 @@
 const fs = require('fs')
-const marked = require('marked')
 const jsyaml = require('js-yaml')
-const templater = require('../../lib/templater') // FIXME swap templater to.. something else?
-const frontMatter = require('../../lib/frontmatter') // FIXME make sure this is clean
+const templater = require('../lib/templater')
+const frontMatter = require('../lib/frontmatter')
 
 const useBlockWithData = function(blockId, data) {
   // FIXME settings up the templating engine should be "another concern"
@@ -27,25 +26,24 @@ const SHORTCODES = [
   },
   {
     tag: 'latest-post',
-    processor: function({ props, item, contentTypes }) {
-      const latest = { ...contentTypes.post[0] }
-      // console.log( item )
+    processor: function({ item, items }) {
+      const latest = items.filter( item => item.meta.type === 'post' )[0]
       return useBlockWithData('blocks/latest-post', { ...item, latest })
     }
   },
   {
     tag: 'children-pages',
-    processor: function({ props, item, contentTypes }) {
+    processor: function({ item }) {
       return useBlockWithData('blocks/children-pages', item)
     }
   },
   {
     tag: 'include',
-    processor: function({props, item, contentTypes}) {
+    processor: function({props, item, items}) {
       const file = fs.readFileSync(`./${props}`, 'utf8')
       const { body } = frontMatter( file.toString() )
 
-      return getProcessedContent( body, item, contentTypes )
+      return getProcessedContent( body, item, items )
     }
   },
   {
@@ -63,16 +61,7 @@ const SHORTCODES = [
   }
 ]
 
-const applyShortcodes = function( item, contentTypes ) {
-  if (!item.body) return item
-
-  return {
-    ...item,
-    body: getProcessedContent( item.body, item, contentTypes )
-  }
-}
-
-const getProcessedContent = function( content, item, contentTypes ) {
+const getProcessedContent = function( content, item, items ) {
   return SHORTCODES.reduce( (accContent, shortcode) => {
     const tag = `[${shortcode.tag}](`
     const firstSplit = content.split( tag )
@@ -87,7 +76,7 @@ const getProcessedContent = function( content, item, contentTypes ) {
       const shortcoded = shortcode.processor({
         props: props.trim(),
         item,
-        contentTypes,
+        items,
       })
 
       if (!shortcoded) return acc
@@ -101,17 +90,16 @@ const getProcessedContent = function( content, item, contentTypes ) {
   }, content)
 }
 
-const addShortcodes = function( contentTypes ) {
-  const withShortcodes = {}
-  const types = Object.keys( contentTypes )
 
-  types.map( type => {
-    withShortcodes[type] = contentTypes[type].map( item => {
-      return applyShortcodes( item, contentTypes ) // passing along the whole data array
-    })
-  });
+const applyShortcodes = function( item, items ) {
+  if (!item.body) return item
 
-  return withShortcodes
+  return {
+    ...item,
+    body: getProcessedContent( item.body, item, items )
+  }
 }
 
-module.exports = addShortcodes
+module.exports = function( items ) {
+  return items.map( item => applyShortcodes( item, items ) )
+}
