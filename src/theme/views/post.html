@@ -4,37 +4,39 @@
 
 <article class="post h-entry">
 
-<header class="post__heading">
+  <header class="post__heading">
+    <div class="post__meta">
 
-<div class="post__meta">
+      <h2 class="visually-hidden p-name">{{ meta.title }}</h2>
 
-<h2 class="visually-hidden p-name">{{ meta.title }}</h2>
+      <time class="heading-alt dt-published" datetime="{{ meta.date }}">
+        {{ meta.prettyDate }}
+      </time>
 
-<time class="heading-alt dt-published" datetime="{{ meta.date }}">
-  {{ meta.prettyDate }}
-</time>
+      {{#if meta.description }}
+      <small class="color-secondary p-summary">{{ meta.description }}</small>
+      {{/if}}
 
-{{#if meta.description }}
-<small class="color-secondary p-summary">{{ meta.description }}</small>
-{{/if}}
+      {{#if meta.tagged }}
+      <small class="p-category">-> tagged: <em>{{ meta.tagged }}</em></small>
+      {{/if}}
 
-{{#if meta.tagged }}
-<small class="p-category">(tagged: <em>{{ meta.tagged }}</em>)</small>
-{{/if}}
-
-<small class="color-subdued">-> last updated: {{ _info.updated }}
-{{#if meta.edited }}
-<a href="https://github.com/hexanal/fredmercy-blog/commits/master/{{ _info.src }}" target="_blank" rel="noreferrer nopener">(history)</a>
-{{/if}}
-</small>
-
-</div>
-
-</header>
+    </div>
+  </header>
 
 {{> components/content }}
 
-{{> components/post-nav }}
+  {{> components/post-nav }}
+
+  <small class="color-secondary font-xsmall">
+    <em>
+      last updated:
+      {{ _info.updated }}
+      {{#if meta.edited }}
+      <a href="https://github.com/hexanal/fredmercy-blog/commits/master/{{ _info.src }}" target="_blank" rel="noreferrer nopener">(history)</a>
+      {{/if}}
+    </em>
+  </small>
 </article>
 
 {{/layouts/page}}
