@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
-const session = require('express-session');
 const marked = require('marked');
 const morgan = require('morgan');
 const sanitizeHtml = require('sanitize-html');
@@ -21,16 +20,12 @@ app.set('port', process.env.PORT || 8042);
 app.use( compression() )
 app.use( morgan('tiny') )
 app.use( express.json());
-app.use(session({
-	resave: true,
-	saveUninitialized: true,
-	secret: process.env.SESSION_SECRET || 'THIS_IS_SECRET!',
-	cookie: { maxAge: 1209600000 }
-}));
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
+
 app.use((req, res, next) => {
-	res.locals.user = req.user;
+	res.set('Permissions-Policy', 'interest-cohort=()') // floc off!
+	res.removeHeader('X-Powered-By') // kind of useless?
 	next();
 });
 
