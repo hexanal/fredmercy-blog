@@ -15,8 +15,6 @@ const addAdjacents = function( items ) {
     copy.meta.previous = getBasicMeta( items[ index + 1 ] )
     copy.meta.next = getBasicMeta( items[ index - 1 ] )
 
-    console.log( copy.meta )
-
     return copy
   })
 }
