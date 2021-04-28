@@ -43,8 +43,10 @@ const adapters = [
   require('./adapters/sitemap-xml'),
   require('./adapters/aliases'),
   require('./adapters/link-checker'),
-  require('./adapters/export-to-json'),
   require('./adapters/posts-by-months'),
+
+  // output to JSON
+  require('./adapters/export-to-json'),
 
   // output to HTML
   require('./adapters/html'),

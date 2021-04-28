@@ -42,7 +42,7 @@ const copy = ({id, src, dest}) => {
       log( `assets: huh?! something broke while copying assets: '${id}'` )
       console.error( err )
     })
-  }
+}
 
 const build = function() {
   return assets.map( copy )
