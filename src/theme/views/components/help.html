@@ -88,6 +88,7 @@
         </div>
       </li>
 
+      {{#if themeFlags.USE_COMMENTS }}
       <li class="help__item">
         <div class="help__icon">
           ✤
@@ -100,6 +101,7 @@
           {{ t en="to show the discussion for this page." fr="pour afficher les commentaires pour cette page." }}
         </div>
       </li>
+      {{/if}}
 
       {{#if themeFlags.USE_BLEEPS }}
       <li

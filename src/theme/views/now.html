@@ -4,65 +4,42 @@
 
 {{> components/content }}
 
-{{#if themeFlags.USE_NOW_NAVIGATION }}
-<div class="now__tag-nav">
-
-{{> components/squiggle }}
-
-{{#each meta.links as |links tag| }}
-
-<a href="#tagged:{{tag}}">{{ tag }}</a>
-
-{{#if @last }}
-{{else}}
-{{> components/dot }}
-{{/if }}
-
-{{/each}}
-
-</div>
-{{/if}}
-
 {{> components/squiggle }}
 
 <div class="now">
-{{#each meta.links as |links tag| }}
-<div class="now__tag content">
-<h3 id="{{tag}}">{{ tag }}</h3>
 
-<ul>
-{{#each links }}
-<li>
-<a
-href="{{ this.link }}"
-target="_blank"
-rel="noreferrer noopener"
->
-{{{ title }}}
-</a>
-{{# if this.source }}
-<small class="now__source color-secondary">->&nbsp;{{ this.source }}</small>
-{{/if}}
+  {{#each meta.links as |links tag| }}
+  <div class="now__tag content">
 
+    <h3 id="{{tag}}">{{ tag }}</h3>
 
-{{#if this.notes }}
-<blockquote>
-{{#each this.notes }}
-{{markdown this }}
-{{/each}}
+    <ul>
 
-{{#if this.rating }}
-<div class="now__rating" aria-hidden>
-{{{ this.rating }}}
-</div>
-{{/if}}
-</blockquote>
-{{/if}}
-</li>
-{{/each}}
-</ul>
-</div>
-{{/each}}
+      {{#each links }}
+      <li>
+
+        <a
+          href="{{ this.link }}"
+          target="_blank"
+          rel="noreferrer noopener"
+        >{{{ title }}}</a>
+
+        {{# if this.source }}
+        <small class="now__source color-secondary">->&nbsp;{{ this.source }}</small>
+        {{/if}}
+
+        {{#if this.notes }}
+        <blockquote>{{#each this.notes }}{{ markdown this }}{{/each}}</blockquote>
+        {{/if}}
+
+      </li>
+      {{/each}}
+
+    </ul>
+
+  </div>
+  {{/each}}
+
 </div>
 
 {{/layouts/page}}

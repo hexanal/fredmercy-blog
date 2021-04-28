@@ -29,9 +29,11 @@
   </a>
   {{/if}}
 
+  {{#if themeFlags.USE_COMMENTS }}
   <button
     class="no-js button post-nav__discuss"
     data-component="emit"
     data-event="SHOW_BOX_DISCUSS"
   >✤ discuss<small data-comments-count></small></button>
+  {{/if}}
 </div>

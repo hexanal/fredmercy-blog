@@ -1,4 +1,5 @@
 <footer class="footer no-print">
+  {{#if themeFlags.USE_COMMENTS }}
   <button
   class="no-js button footer__discussion"
   data-component="emit"
@@ -6,6 +7,8 @@
   >discuss<small data-comments-count></small></button>
 
   ~~
+  {{/if}}
+
   <div class="footer__nav">
     {{> components/footer-nav }}
   </div>
