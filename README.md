@@ -1,101 +1,91 @@
-# Fred Mercy's Website
+# fredmercy.ca
 
 ## what is it?
 
-* *handmade*, *minimal*, *work-in-progress*
+* handmade
+* minimalist
+* a work in progress (version `2.0.0`)
 * **experimental**
 * [fredmercy.ca](https://fredmercy.ca)
 
-## how?
+## architecture / concepts
 
-If you want to see how the sausage was made, here's the recipe:
+1. The website is built using a collection of functions I call **Zorg**.
+1. The website is built from **source files** found in `src/`
+1. The content is in `src/content` & the _theme_ is in `src/theme`:
+    * _content items_ are written in Markdown
+    * _HTML views/components_ are written in HandlebarsJS
+    * _styles_ are written in Sass
+    * _JavaScript_ files are written in plain JS (no transpiling nor bundling) and use JS Modules
+1. It's built on top of an ExpressJS server:
+    * when developing, the `npm start` command will build, serve, and watch for changes in source files
+    * to run on the production server, use `npm run serve`
+    * an `.env` file can be used to specify `HOST` and `PORT` for Express
+1. The compilation of theme assets is handled by the following files:
+    * `zorg/assets.js`: simply copies files from the source folder to the `./public` destination folder
+    * `zorg/sass.js`: uses the `sass` package to compile styles
+    * `zorg/websites.js`: uses Zorg to gather the content and process it
 
-1. install the npm dependencies with a quick `npm i`
-1. fire up the dev server with `npm start`
+## zorg
 
-It runs an [Express](http://expressjs.com/) server at [localhost:8042](http://localhost:8042) and watches for changes in the **content** & **source files**
+* The `zorg/index.js` file is the entry point where all the _building_ and _watching_ takes place.
+* The `zorg/website.js` file takes care of the content file, by using Zorg (the `zorg/lib/zorg.js` file)
+    * The website configuration and the `adapters` (explained below) are specified inside the `zorg/website.js` file.
+    * Zorg fetches the content specified by the website's configuration object, and applies _each adapter to the content items_ in series, each one processing the content item in a certain way.
 
-- a **content file** is any Markdown `.md` inside the `./src/content` folder
-- the **source files** are the frontend theme files in `./src/theme`
-  - **assets** — images, fonts, sounds, documents, etc. handled by `zorg/compilers/assets.js`
-  - **components** — HandlebarsJS HTML templates, or "components"; compiled with `zorg/compilers/website.js`
-  - **javascript** — compiled with [esbuild](https://esbuild.github.io) in `zorg/compilers/javascript.js`
-  - **scss** — compiled with [Sass](https://sass-lang.com/dart-sass) in `zorg/compilers/sass.js`
+## adapters
 
-## why?
+_Adapters_ are functions that are passed the list of content files Zorg finds:
+    * the `zorg/adapters/default-meta.js` file sets up the default **array of items** (see below)
 
-The goal was to have this whole website be tailor-made to my specific needs and to use the least amount of _dependencies_ as possible. I tried to write as little code as I could in order to keep it somewhat maintainable.
+Here's an example of an **item** for a content file `src/content/thing.md`, after it was processed by `zorg/adapters/default-meta.js`:
 
-Obviously, seasoned developers who look at this codebase will roll their eyes.
+### the markdown content file:
 
-However, a more personal goal of this endeavour is to learn, to experiment, to try new things.
+```markdown
+---
+title: A thing!
+description: These are things
+---
 
-## going deeper
+_Hello World!_
 
-Let's say you want to try and use this as a starter for your own website. Are you sure!?
+```
 
-Look inside the `./zorg/lib/zorg.js` file. _What the heck is happening in there?_
-
-It's something I came up with to orchestrate the building of my content files into HTML files.
-
-We've got to understand **3 things** here, and it's the three folders in `./zorg`:
-
-1. `bin` — in this folder are the "core" files, utility functions used to stitch the data together (to use for a website, an app or whatever)
-2. `compilers` — that's the tools I use to compile the CSS, the Javascript, copy the assets, and build the HTML
-3. `middlewares` — these are all the _assembly-line machines_ used to enhance, process, add to, extract, etc. the **content**
-
-### templating
-
-By default, a content type will be matched with a Handlebars template of the same name in `./src/theme/views`. For instance, a `page` type content item will use `./src/theme/views/page.html`; neat!
-
-You can add `template: template-name` to the front-matter which specifies a custom template (or “view”) to use for the entry (an example of that is my `./content/resume.md` page)
-
-Why [HandlebarsJS](https://handlebarsjs.com/)? It's a bit _old-school_ but it works for me.
-
-### middlewares
-
-The handling of **data + templates** business is done via in `zorg/compilers/website.js` file, and it's using a bunch of *middlewares*. Each of them adds bits and pieces to mold the data into what we need to display in templates.
-
-Look into `./zorg/middlewares`. If you open, say, `pages/relationship.js`, you'll see that it exports a function that expects to receive the `contentTypes` object (see JSON above). This function then goes through all the items in `contentTypes.page` and tacks on extra keys to each *item*.
-
-Why did I do it this way? I don't know. It felt right at the time, and it's building my website fine. Works for me! _(for now at least...)_
-
-## what does Zorg do?
-
-- Zorg goes through all the Markdown files in `/content`
-- it looks at their [front-matter](https://www.npmjs.com/package/front-matter) for a `type`
-- it divides all the content into thoses types, to create a big old Javascript object of this shape:
+### the item, once processed by Zorg and the "default-meta" adapter:
 
 ```js
 {
-  "page": [
-    {
-      "_info": { "src": "./content/hello-world.md" },
-      "meta": {
-        "title": "Hello World!",
-        "description": "Foo",
-        "type": "page"
-      },
-      "content": "Some *markdown*, probably."
-    }
-  ],
-  "post": [
-    {
-      "_info": { "src": "./content/blog/2020/04/20/toke-up-brother.md" },
-      "meta": {
-        "title": "Yeah...",
-        "description": "bruh...",
-        "type": "post"
-      },
-      "content": "Wait, what did I want to write again?!"
-    }
-  ]
+  _info: {
+    src: "./src/content/thing.md",
+    updated: "2021-04-20 @ 4:20pm",
+    built:"2021-04-20 @ 4:20pm"
+  },
+  meta: {
+    baseURL: "/",
+    lang: "en",
+    id: "thing",
+    type: "page",
+    title: "A thing!",
+    description: "These are things",
+    draft: false
+  },
+  body: "_Hello World!_"
 }
 ```
 
-Oh! We can see we've got two pages here:
+### more adapters?
 
-1. one `hello-world.md` page of type `page`
-2. one `toke-up-brother` page (nested deep in folders) of type `post`
+The example above can't build a website yet.
 
-That's what the `zorg()` function will generate, by default. But it accepts one argument which is **an array of middlewares**: the object above is passed through each of the middlewares.
+But a few more adapters will get us there:
+
+1. `zorg/adapters/page-meta.js`
+    * adds some properties to `item.meta`, for example: `item.meta.url` (inferred from the source file's path)
+1. `zorg/adapters/markdown.js`
+    * uses the `marked` package to format the string found in `item.body`, and adds an `item.content` property with the rendered HTML string.
+1. `zorg/adapters/html.js`
+    * uses HandlebarsJS to generate an `index.html`, and writes it inside a folder specified by `item.meta.url`. We pass _the entire `item` object_ as data to the HandlebarsJS template.
+
+To sum up: if we use the adapters `default-meta`, `page-meta`, `markdown`, and `html`, our content files will be processed and rendered as HTML in the `./public` folder.
+

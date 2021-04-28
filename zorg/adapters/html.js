@@ -1,5 +1,4 @@
 const fs = require('fs')
-const marked = require('marked')
 const templater = require('../lib/templater')
 
 const ALLOWED_TYPES = ['page', 'post'] // content types to "build out"
@@ -28,11 +27,6 @@ const formatContent = function( items ) {
     if ( !ALLOWED_TYPES.includes( item.meta.type ) ) return
     if ( !item.meta.url ) return
 
-    // FIXME ? hey
-    const templateData = {
-      ...item,
-      content: marked( item.body )
-    }
     const destination = `./public${item.meta.url}`
     const templateName = item.meta.template || item.meta.type // default to content type
     const templateFile = getTemplate( templateName, item.meta.type )

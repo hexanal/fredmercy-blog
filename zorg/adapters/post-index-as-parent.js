@@ -3,11 +3,11 @@ const getItemByURL = (items, url) => items.find( item => item.meta.url === url )
 const getMetaWithIndexAsParent = function( item, indexes ) {
   const parentIndex = indexes[item.meta.lang]
 
-  // modifying the parent URL (the blog index) to include the anchor!
   const parentItem = {
     ...parentIndex,
     meta: {
       ...parentIndex.meta,
+      // modifying the parent URL (the blog index) to include the anchor!
       url: `${parentIndex.meta.url}/#${item.meta.id}`
     }
   }

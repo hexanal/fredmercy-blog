@@ -1,4 +1,5 @@
 const getPageMeta = function( item ) {
+  // FIXME: can definitely simplify this
   const route = item._info.src
     .replace(`./src/content/${item.meta.lang}/`, '') // FIXME path in config somewhere
     .replace('.md', '')

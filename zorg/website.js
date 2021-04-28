@@ -25,6 +25,7 @@ const websites = [
 // Adapters are functions that go through the content to "process" it
 const adapters = [
   // FIXME: order matters here; should it? can we get around it?
+  require('./adapters/default-meta'),
 
   // for posts
   require('./adapters/post-meta'),
@@ -40,10 +41,11 @@ const adapters = [
   require('./adapters/post-index-as-parent'),
   require('./adapters/shortcodes'),
   require('./adapters/modules'),
-  require('./adapters/sitemap-xml'),
+  require('./adapters/markdown'),
   require('./adapters/aliases'),
-  require('./adapters/link-checker'),
   require('./adapters/posts-by-months'),
+  require('./adapters/sitemap-xml'),
+  require('./adapters/link-checker'),
 
   // output to JSON
   require('./adapters/export-to-json'),
