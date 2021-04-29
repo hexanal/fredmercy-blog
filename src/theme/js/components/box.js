@@ -22,10 +22,7 @@ export default function({ element, children }) {
     setHash( state.id, active )
   })
 
-  const toggle = () => {
-    const { active } = state.get()
-    state.active.set(!active)
-  }
+  const toggle = () => state.active.set( !state.active.get() )
   const open = () => state.active.set(true)
   const close = () => state.active.set(false)
 

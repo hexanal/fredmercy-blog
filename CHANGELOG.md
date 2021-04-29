@@ -1,3 +1,7 @@
+[3.0.1] - 2021-04-29
+Fixed
+    Issue with box component
+
 [3.0.0] - 2021-04-29
 Added
     Headers to opt-out of this FloC thing by Google
