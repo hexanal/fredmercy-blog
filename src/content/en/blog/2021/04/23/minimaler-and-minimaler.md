@@ -24,3 +24,11 @@ As for Zorg, its dependencies aren't crazy and I will need them; it's out of the
 Just 21 direct dependencies so far, and most of them are linked to the Express server. I only use the server for two API endpoints related to the comments, and I'm thinking of ditching that too, at some point. I have other ideas for “comments”... ain't nobody commenting on those rambling posts anyhow!
 
 Man, it feels good to go **minimal**!
+
+~~
+
+## update: april 29, 2021
+
+`12:00pm:` Getting super minimal on this website doesn't mean I can't go crazy with web stuff elsewhere! ...which is why I will soon embark on some other projects, and finally end this updating-spree.
+
+See ya later!
