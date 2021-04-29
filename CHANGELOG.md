@@ -1,3 +1,15 @@
+[3.0.0] - 2021-04-29
+Added
+    Headers to opt-out of this FloC thing by Google
+Changed
+    Big refactoring of the way Zorg handles website building
+    Zorg's content items are now just an array
+    Zorg's content "adapters" now need to test the item's type before processing
+    Removed comments everywhere (it'll have to wait for another implementation)
+    Removed dependencies on `lodash.debounce` and `lodash.throttle`
+Fixed
+    A few things ;)
+
 [2.0.0] - 2021-04-24
 Added
     Entry for April 23, 2021

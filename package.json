@@ -1,6 +1,6 @@
 {
   "name": "fredmercy",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "my personal website",
   "author": "Fred Mercy<hello@fredmercy.ca>",
   "scripts": {
@@ -22,10 +22,8 @@
     "glob": "^7.1.6",
     "handlebars": "^4.7.7",
     "js-yaml": "^4.0.0",
-    "lodash.debounce": "^4.0.8",
     "lodash.groupby": "^4.6.0",
     "lodash.orderby": "^4.6.0",
-    "lodash.throttle": "^4.1.1",
     "lusca": "^1.6.1",
     "marked": "^2.0.1",
     "morgan": "^1.10.0",
