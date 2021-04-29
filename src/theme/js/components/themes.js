@@ -1,6 +1,8 @@
+import events from '../tools/events.js'
+
 const DEFAULT_THEME = 'june'
 
-export default function({element, events}) {
+export default function({element}) {
   const availableThemes = []
 
   const useTheme = function( id ) {

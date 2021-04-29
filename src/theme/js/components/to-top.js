@@ -1,4 +1,6 @@
-export default function({element, events}) {
+import events from '../tools/events.js'
+
+export default function({element}) {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
   element.addEventListener('click', () => window.scrollTo({

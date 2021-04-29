@@ -2,39 +2,31 @@
 
 <div class="box-nav">
 
-{{> components/nav type="box" items=nav.main}}
+  {{> components/nav type="box" items=nav.main}}
 
-{{> components/squiggle small="true" }}
+  {{> components/squiggle small="true" }}
 
-<div class="nav">
+  <div class="nav">
 
-<button
-class="no-js link"
-data-component="emit"
-data-event="SHOW_BOX_DISCUSS"
->discussion<small data-comments-count></small></button>
+    <a
+    href='{{ t en="/help" fr="/fr/aide" }}'
+    data-component="emit"
+    data-event="SHOW_BOX_HELP"
+    >{{ t en="help" fr="aide" }}</a>
 
-{{> components/dot }}
+    {{#if meta.i18n}}
+    {{#each meta.i18n as |url lang|}}
+      {{> components/dot }}
 
-<a
-href='{{ t en="/help" fr="/fr/aide" }}'
-data-component="emit"
-data-event="SHOW_BOX_HELP"
->{{ t en="help" fr="aide" }}</a>
+      <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
+    {{/each}}
+    {{/if}}
 
-{{#if meta.i18n}}
-{{#each meta.i18n as |url lang|}}
-  {{> components/dot }}
+  </div>
 
-  <em><a href="{{ url }}">{{ t en="français" fr="english" }}</a></em>
-{{/each}}
-{{/if}}
+  {{> components/squiggle small="true" }}
 
-</div>
-
-{{> components/squiggle small="true" }}
-
-{{> components/nav type="footer" items=nav.footer}}
+  {{> components/nav type="footer" items=nav.footer}}
 
 </div>
 

@@ -1,24 +1,25 @@
 import stater from '../tools/stater.js'
+import events from '../tools/events.js'
 import { getHash, setHash } from '../tools/hashish.js'
 
 const ZINDEX = 10
 const ZS = []
 
-export default function({ element, children, events }) {
-  const state = stater({
+export default function({ element, children }) {
+  const state = {
     id: element.dataset.boxId || '',
     shortcut: element.dataset.boxShortcut || false,
-    active: false,
-  })
+    active: stater(false),
+  }
 
-  state.active.changed( active => {
+  state.active.onChange( active => {
     element.classList.toggle('state-box-active', active)
     element.style.display = active ? 'block' : 'none'
 
     ZS[active ? 'push' : 'pop']( element ) // naive z-index management
     element.style.zIndex = ZS.length + ZINDEX
 
-    setHash( state.get().id, active )
+    setHash( state.id, active )
   })
 
   const toggle = () => {
@@ -32,26 +33,26 @@ export default function({ element, children, events }) {
     const focused = document.activeElement.tagName
     if ( focused === 'TEXTAREA' || focused === 'INPUT' ) return
 
-    const { active, shortcut } = state.get()
+    const { active, shortcut } = state
 
-    if ( active && e.key === 'Escape') close()
+    if ( active.get() && e.key === 'Escape') close()
     if ( e.key === shortcut ) toggle()
   }
 
-  events.subscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
-  events.subscribe(`SHOW_BOX_${state.get().id.toUpperCase()}`, open)
-  events.subscribe(`CLOSE_BOX_${state.get().id.toUpperCase()}`, close)
+  events.subscribe(`TOGGLE_BOX_${state.id.toUpperCase()}`, toggle)
+  events.subscribe(`SHOW_BOX_${state.id.toUpperCase()}`, open)
+  events.subscribe(`CLOSE_BOX_${state.id.toUpperCase()}`, close)
 
   children['close'].addEventListener('click', close)
   children['bg'].addEventListener('click', close)
 
-  if ( getHash( state.get().id ) ) open()
+  // if hash present, open box by default (on load)
+  if ( getHash( state.id ) ) open()
 
-  if ( state.get().shortcut ) {
-    document.addEventListener('keyup', onKeyUp)
-  }
+  // shortcut/hotkey to toggle the box
+  if ( state.shortcut ) document.addEventListener('keyup', onKeyUp)
 
-  state.update()
+  state.active.update()
 
   return function() {
     events.unsubscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)

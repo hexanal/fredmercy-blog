@@ -1,4 +1,6 @@
-export default function({ element, events }) {
+import events from '../tools/events.js'
+
+export default function() {
   let zoomed = window.localStorage.getItem('a11y_use_zoom') || 'no'
 
   document.documentElement.classList.toggle('a11y_use_zoom', zoomed === 'yes')
@@ -24,5 +26,5 @@ export default function({ element, events }) {
 
   document.addEventListener('keyup', onKeyUp)
 
-  events.on('A11Y_SET_LARGE_FONT', setZoom)
+  events.subscribe('A11Y_SET_LARGE_FONT', setZoom)
 }

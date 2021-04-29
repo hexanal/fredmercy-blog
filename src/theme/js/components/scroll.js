@@ -1,7 +1,8 @@
+import events from '../tools/events.js'
+
 const HAS_SCROLLED_THRESHOLD = 5; // pixels scrolled before slapping on the `scrolled` data attribute
 
-// TODO overengineer, much?
-export default function({ events }) {
+export default function() {
   const state = {
     y: 0,
     scrolled: false,

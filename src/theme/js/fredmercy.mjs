@@ -1,29 +1,24 @@
 import moduler from './tools/moduler.js'
-import events from './tools/eventer.js'
 
 /**
  * What's going on?
  * ----------------
  *
- * `moduler.use` accepts an object of middlewares: these are functions which are
- * passed the props for each of the found modules on the page, to "augment" them
- *
  * `moduler.mount` accepts a single DOM element; it will find all elements with
- * the attribute [data-component] and load the appropriate JS module for them.
+ * the attribute [data-component] and load the appropriate JS modules for them.
  *
  * A module is a function which is passed an object of this shape:
  *
- * { element, children, [other middlewares] }
+ * { element, children }
  *
- * - `element` is the DOM element found by `moduler`
- * - `children` are all the `[data-child]` elements found inside `element`
- * - [other middlewares] in this case will be `events`, which is instantiated
- *   using the other props above -> useful to extend moduler
+ * -> `element` is the DOM element found by `moduler` (it has a [data-component]
+ *   attribute)
+ *
+ * -> `children` are all the elements with a `[data-child]` attribute found
+ *   inside `element`
  */
 
-moduler
-  .use({ events })
-  .mount( document.body )
+moduler.mount( document.getElementById('✷') )
 
 // ~~
 

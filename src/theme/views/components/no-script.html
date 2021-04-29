@@ -1,36 +1,15 @@
 <noscript>
 <style>
 
-.no-js {
-  display: none;
-}
+/* class marked as being 'no-js' */
+.no-js,
 
-:root {
-  --color-bg: #f9eaea;
-  --color-primary: #a46bea;
-  --color-active: #ff6c23;
-  --color-secondary: #ea8fcd;
-  --color-subdued: #65b25e;
-  --color-extra: #ffdd21;
-}
+/* no need for header buttons */
+.button.header__button,
 
-/* No need for header buttons */
-.button.header__button {
+/* hide settings as they only work with js enabled */
+[data-box-id="help"] {
   display: none;
-}
-
-/* Removing comments and settings altogether as they currently only work when Javascript is enabled */
-[data-box-id="help"],
-[data-box-id="discuss"] {
-  display: none;
-}
-
-/* Bookmarks */
-.bookmarks__filters {
-  display: none;
-}
-.bookmarks__list.content li {
-  display: list-item;
 }
 
 </style>
