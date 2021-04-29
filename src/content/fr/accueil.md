@@ -27,10 +27,3 @@ En ce moment, je travaille sur quelques petits projets personnels en profitant d
 ## dernier billet du blogue
 
 [latest-post]()
-
-### quelques liens
-
-- [à propos](/fr/a-propos) <small class="color-secondary">-> à propos de moi et de ce site</small>
-- <a href="/aide" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>aide / paramètres</a> <small class="color-secondary">-> thèmes, accessibilité, politique du site...</small>
-- [blogue](/fr/blogue) <small class="color-secondary">-> journal public avec mes idées sur l'existence</small>
-- <a href="/" lang="en"><i>visit English site</i></a>
