@@ -23,10 +23,10 @@ const addItemToSearchIndex = function( item, websiteConfig ) {
 
 const extractSearchableFields = function( item ) {
   const { body } = item
-  const { title, description, date, tagged } = item.meta
+  const { title, description, date, tagged, url } = item.meta
 
   return {
-    meta: { title, description, date, tagged },
+    meta: { title, description, date, tagged, url },
     body
   }
 }

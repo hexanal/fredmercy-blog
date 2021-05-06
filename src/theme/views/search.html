@@ -1,0 +1,17 @@
+{{#> layouts/page }}
+
+{{> components/breadcrumbs }}
+
+{{> components/content }}
+
+<div class="search" data-component="search">
+  <form action="/search" method="get" data-component="search">
+    <label for="searchterm">Search term</label>
+    <input id="searchterm" type="search" data-child="searchterm">
+
+    <div data-child="results">
+    </div>
+  </form>
+</div>
+
+{{/layouts/page}}

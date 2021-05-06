@@ -30,14 +30,14 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/search', function (req, res) {
+app.get('/api/search', function (req, res) {
   let body = {
     size: 200,
     from: 0,
     query: {
       multi_match: {
-        query: req.query['q'],
-        fields: [ 'meta.title', 'meta.description' ]
+        query: req.query['searchterm'],
+        fields: [ 'meta.title', 'meta.description', 'body' ]
       }
     }
   }

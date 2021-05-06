@@ -2,7 +2,7 @@ export default function stater( startValue ) {
   let value = startValue
   let callbacks = []
 
-  return {
+  const staterState = {
     get: () => value,
 
     set: newValue => {
@@ -13,7 +13,7 @@ export default function stater( startValue ) {
 
     onChange: cb => {
       callbacks.push(cb)
-      return cb
+      return staterState
     },
 
     update: () => {
@@ -21,4 +21,6 @@ export default function stater( startValue ) {
       return value
     }
   }
+
+  return staterState
 }
