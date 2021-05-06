@@ -2,6 +2,7 @@ const log = require('./lib/log')
 const website = require('./website')
 const sass = require('./sass')
 const assets = require('./assets')
+const { exec } = require('child_process')
 
 const build = function() {
   log('building into /public')

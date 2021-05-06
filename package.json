@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development node server.js",
     "watch": "NODE_ENV=development node zorg --watch",
+    "search-index": "NODE_ENV=development node zorg --search-index",
     "build": "NODE_ENV=production node zorg --build",
     "debug": "NODE_ENV=production node zorg --build --verbose --check-links",
     "serve": "NODE_ENV=production node server.js",
@@ -15,6 +16,7 @@
     "chokidar": "^3.4.3",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
+    "elasticsearch": "^16.7.2",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",

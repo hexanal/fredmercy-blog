@@ -8,7 +8,7 @@ const websites = [
     baseURL: '/',
     baseDomain: 'https://fredmercy.ca',
     locale: 'en',
-    name: 'fredmercy.ca/',
+    name: 'fredmercy-en',
     contentSrc: './src/content/en/**/*.md', // FIXME maybe `contentDir: 'src/content/en'` and we add the rest in `zorg`?
     contentDir: 'src/content/en/' // with trailing slash
   },
@@ -16,7 +16,7 @@ const websites = [
     baseURL: '/fr',
     baseDomain: 'https://fredmercy.ca',
     locale: 'fr',
-    name: 'fredmercy.ca/fr',
+    name: 'fredmercy-fr',
     contentSrc: './src/content/fr/**/*.md',
     contentDir: 'src/content/fr/' // with trailing slash
   }
@@ -46,6 +46,8 @@ const adapters = [
   require('./adapters/posts-by-months'),
   require('./adapters/sitemap-xml'),
   require('./adapters/link-checker'),
+
+  require('./adapters/search-index'),
 
   // output to JSON
   require('./adapters/export-to-json'),
