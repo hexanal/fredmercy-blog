@@ -31,19 +31,17 @@ app.use((req, res, next) => {
 })
 
 app.get('/search', function (req, res) {
-  // declare the query object to search elastic search and return only 200 results from the first result found.
-  // also match any data where the name is like the query string sent in
   let body = {
     size: 200,
     from: 0,
     query: {
-      match: {
-        'meta.title': req.query['q'],
-        'meta.description': req.query['q']
+      multi_match: {
+        query: req.query['q'],
+        fields: [ 'meta.title', 'meta.description' ]
       }
     }
   }
-  // perform the actual search passing in the index, the search query and the type
+
   client.search({
     index: 'fredmercy-en',
     type: 'page',
@@ -52,7 +50,6 @@ app.get('/search', function (req, res) {
     .then(results => {
       // console.log(`found hits for ${ req.query['q'] }!`)
       console.log( results.hits )
-
       res.send(results.hits.hits)
     })
     .catch(err=>{
