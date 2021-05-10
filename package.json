@@ -28,7 +28,7 @@
     "marked": "^2.0.1",
     "morgan": "^1.10.0",
     "node-sass-glob-importer": "^5.3.2",
-    "sanitize-html": "^1.27.5",
+    "sanitize-html": "2.3.2",
     "sass": "1.30.0"
   }
 }
