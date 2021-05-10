@@ -1,3 +1,11 @@
+[3.0.2] - 2021-05-10
+Changed
+    Minor change on homepage
+    Color and symbol that indicate the post the user is coming from (when using breadcrumbs from a post)
+    Merge latest-post component into a general-purpose "post-shortcut" component
+Fixed
+    Bumped version for sanitize-html
+
 [3.0.1] - 2021-04-29
 Fixed
     Issue with box component
