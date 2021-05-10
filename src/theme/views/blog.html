@@ -4,42 +4,25 @@
 
 <div class="blog">
 
-{{#each postsByMonth as |entries archive| }}
+  {{#each postsByMonth as |entries archive| }}
+  <div class="blog__month-archive {{#if @first }}blog__month-archive--first{{/if}}">
 
-<div class="blog__month-archive {{#if @first }}blog__month-archive--first{{/if}}">
+    <h2 id="{{ archive }}" class="heading blog__month-year">{{ archive }}</h2>
 
-<h2
-  id="{{ archive }}"
-  class="heading blog__month-year"
->{{ archive }}</h2>
+    <ul class="blog__month-posts">
+      {{#each entries}}
+      <li
+        id="{{ this.meta.id }}"
+        data-component="highlight"
+        class="blog__item"
+      >
+        {{> components/post-shortcut this }}
+      </li>
+      {{/each}}
+    </ul>
 
-<ul class="blog__month-posts">
-
-{{#each entries}}
-<li
-id="{{ this.meta.id }}"
-data-component="highlight"
-class="blog__item"
->
-
-<small class="blog__date">{{ this.meta.month }}/{{ this.meta.day }}</small>
-
-{{#if this.meta.title}}
-<a class="blog__title" href="{{ this.meta.url }}">{{this.meta.title}}</a>
-
-<small class="color-secondary">{{> components/dot}} {{this.meta.description}}</small>
-{{else}}
-missing title...
-{{/if}}
-
-</li>
-{{/each}}
-
-</ul>
-
-</div>
-
-{{/each}}
+  </div>
+  {{/each}}
 
 </div>
 

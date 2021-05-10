@@ -26,9 +26,16 @@ const SHORTCODES = [
   },
   {
     tag: 'latest-post',
-    processor: function({ item, items }) {
-      const latest = items.filter( item => item.meta.type === 'post' )[0]
-      return useBlockWithData('blocks/latest-post', { ...item, latest })
+    processor: function({ items }) {
+      const latestPostItem = items.filter( item => item.meta.type === 'post' )[0]
+      if ( !latestPostItem ) return ''
+
+      const props = {
+        ...latestPostItem,
+        showViewAllLink: true
+      }
+
+      return useBlockWithData('components/post-shortcut', props)
     }
   },
   {

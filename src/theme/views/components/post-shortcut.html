@@ -1,0 +1,18 @@
+<div class="post-shortcut">
+  <small class="post-shortcut__date">
+    {{ meta.month }}/{{ meta.day }}
+  </small>
+  <a href="{{ meta.url }}">{{#if meta.title }}{{ meta.title }}{{else}}untitled post{{/if}}</a>
+  {{> components/dot }}
+  <small class="color-secondary">{{ meta.description }}</small>
+  {{#if showViewAllLink }}
+  <small class="nowrap">
+    ->
+    <em>
+      <a href='{{ t en="/blog" fr="/fr/blogue" }}'>
+        {{ t en="view all posts" fr="voir tous les billets" }}
+      </a>
+    </em>
+  </small>
+  {{/if}}
+</div>
