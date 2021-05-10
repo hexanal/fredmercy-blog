@@ -35,10 +35,10 @@
 
 // when highlighted
 .blog__item.state-highlighted .post-shortcut__date::after {
-  content: ' ✷';
-  color: var(--color-bg);
+  content: ' ->';
 }
 
 .blog__item.state-highlighted .post-shortcut__date {
-  background-color: var(--color-active);
+  color: var(--color-primary);
+  background-color: var(--color-extra);
 }
