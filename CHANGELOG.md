@@ -1,3 +1,9 @@
+[3.0.3] - 2021-05-24
+Added
+    Entry for May 24
+Fixed
+    font-display property in CSS
+
 [3.0.2] - 2021-05-10
 Changed
     Minor change on homepage
