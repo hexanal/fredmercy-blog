@@ -12,8 +12,6 @@ Mes centres d'intérêts sont: l'_open web_ & la programmation, la lecture, l'ar
 
 Je suis un mec _moyen_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
 
-Je suis aussi un développeur web en recherche d'emploi; [voici mon CV](/fr/cv).
-
 ## à propos de ce site
 
 **préférences:** <a href="/aide" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>paramètres et préférences du site</a>

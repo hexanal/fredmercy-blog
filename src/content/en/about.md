@@ -12,8 +12,6 @@ I'm interested in: an open web & programming, reading, art, and [blogging](/blog
 
 I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to my short existence.
 
-I'm also a web developer currently looking for work; [here's my resume](/resume).
-
 ## about this website
 
 > Disclaimer: the views expressed on this website are entirely my own and are not related in any way to those of my current or past employers, friends, family, or community.
