@@ -4,10 +4,6 @@ description: lowering expectations
 type: post
 ---
 
-`2021-04-13 @ 10:44am:` Brought back some weird old post, which I filed under the _ramblings_ section because it's a bit long, and it's _all over the place_, as usual: [“Privacy or nah”](/ramblings/privacy-or-nah)
-
-I'm a bit torn on the issue of online privacy, as well. Everything I do on this website is technically all out in the open, but since this blog's not connected to any large-scale network, I'm rather safe, when it comes to my data being crawled and copied and processed and anything...
-
 `2021-04-13 @ 10:49pm:` Let's talk _hardware_!
 
 Recently, I sold my 2019 Macbook Air to jump back to my much older 2014 Macbook Pro. It's still going strong, and is a joy to work with but it still shows signs of aging (no sound if headset isn't plugged in, battery life good but obviously not as good as Day 1, shuts down when it heats up too much...!)
