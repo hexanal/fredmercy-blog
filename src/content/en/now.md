@@ -3,6 +3,7 @@ title: Now
 description: A list of things I'm currently intersted about
 type: page
 template: now
+published: false
 aliases:
   - /bookmarks
 
@@ -64,12 +65,6 @@ links:
       source: imdb.com
       notes:
         - A trippy Netflix series based on recordings from Duncan Trussell's podcast, with awesome animations!
-
-  gaming:
-    - title: “Playtime is now!”, about the game “Deus Ex”
-      link: /ramblings/playtime-is-now
-      notes:
-        - A nostalgia-soaked article about my favorite game :)
 
 ---
 

@@ -8,10 +8,9 @@ data:
       href: "/blog"
       label: "blog"
 
-    - id: "now"
-      href: "/now"
-      label: "now"
-
+    # - id: "now"
+    #   href: "/now"
+    #   label: "now"
 
     - id: "about"
       href: "/about"
