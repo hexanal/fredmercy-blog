@@ -1,3 +1,12 @@
+[3.0.4] - 2021-06-08
+Added
+    Entry for June 5
+    "published" adapter for Zorg (to be able to "unpublish" stuff)
+Removed
+    Writing section
+    Now page
+    Some stuff
+
 [3.0.3] - 2021-05-24
 Added
     Entry for May 24
