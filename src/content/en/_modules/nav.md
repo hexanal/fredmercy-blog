@@ -12,9 +12,6 @@ data:
       href: "/now"
       label: "now"
 
-    - id: "writing"
-      href: "/writing"
-      label: "writing"
 
     - id: "about"
       href: "/about"
