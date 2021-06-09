@@ -26,6 +26,7 @@ const websites = [
 const adapters = [
   // FIXME: order matters here; should it? can we get around it?
   require('./adapters/default-meta'),
+  require('./adapters/published'),
 
   // for posts
   require('./adapters/post-meta'),
