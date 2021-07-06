@@ -54,9 +54,9 @@
 .content ul ul li::marker { content: '->'; }
 
 .content ul ul,
-.content ol ul { padding-left: 1rem; margin-top: 0.5rem; margin-bottom: 1rem; }
+.content ol ul { padding-left: 1rem; margin: 0.5rem 0; }
 .content ul ol,
-.content ol ol { margin-top: 0.5rem; margin-bottom: 1rem; }
+.content ol ol { margin: 0.5rem 0; }
 
 .content li blockquote { margin-left: 0; margin-bottom: 2rem; }
 
