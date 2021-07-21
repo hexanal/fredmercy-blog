@@ -10,8 +10,3 @@ i18n:
 ## latest!
 
 [latest-post]()
-[latest-post]()
-[latest-post]()
-[latest-post]()
-[latest-post]()
-[latest-post]()

@@ -8,15 +8,13 @@ i18n:
 
 ## about me
 
-I'm interested in: an open web & programming, reading, art, and [blogging](/blog)
-
-I'm an average _dude_ (he/him/whatever); and like most of you, I'm a human being and I'm trying to give meaning to my short existence.
+coming soon.
 
 ## about this website
 
-> Disclaimer: the views expressed on this website are entirely my own and are not related in any way to those of my current or past employers, friends, family, or community.
+> Disclaimer: the views expressed on this website are entirely my own and are not related in any way to those of my current or past employers, friends, family, or community. But maybe they share the same views, who knows?
 
-**preferences:** <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP">site settings and preferences</a>
+**preferences:** <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP" data-transition="none">site settings and preferences</a>
 
 **_raison d'être:_**
 
@@ -38,4 +36,5 @@ If you have any question, feel free to [contact me](mailto:hello@fredmercy.ca).
 
 ~~
 
-<a href="/" class="button button--light">← back to homepage</a>
+<a href="/" class="button">← back to homepage</a>
+<a href="/resume" class="button button--light"><em>✺</em> more about this&#8230;</a>

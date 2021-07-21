@@ -8,9 +8,7 @@ i18n:
 
 ## à propos de moi
 
-Mes centres d'intérêts sont: l'_open web_ & la programmation, la lecture, l'art, et [tenir un blogue](/fr/blogue)
-
-Je suis un mec _moyen_ (il/le/autre); et comme la plupart d'entre vous, je suis humain et je cherche à donner un sens à ma courte existence.
+meh.
 
 ## à propos de ce site
 

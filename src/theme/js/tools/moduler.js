@@ -1,17 +1,28 @@
 const moduler = {
+  state: {},
+
   mount: function ( root ) {
+    const rootComponents = root.dataset && root.dataset.component || ''
     const elementsWithModule = root.querySelectorAll(`[data-component]`)
 
     elementsWithModule.forEach( element => {
       const { component } = element.dataset
 
-      component
+      this.state = component
         .split(',')
+        .concat(rootComponents.split(','))
         .map( module => this.mountModuleOnElement( element, module.trim() ) )
     })
   },
 
+  kill: function () {
+    this.state = {}
+    return Promise.resolve()
+  },
+
   mountModuleOnElement: function( element, moduleId ) {
+    if ( !moduleId ) return
+
     const children = {}
 
     element
@@ -19,7 +30,12 @@ const moduler = {
       .forEach( child => children[ child.dataset.child ] = child )
 
     import(`../components/${ moduleId }.js`)
-      .then( m => m.default({ element, children }) )
+      .then( m => {
+        m.default({ element, children })
+      })
+      .catch( err => {
+        console.error( err.message )
+      })
   }
 }
 

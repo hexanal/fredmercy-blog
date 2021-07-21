@@ -26,17 +26,7 @@
 
 {{> components/content }}
 
-  {{> components/post-nav }}
-
-  <small class="color-secondary font-xsmall">
-    <em>
-      last updated:
-      {{ _info.updated }}
-      {{#if meta.edited }}
-      <a href="https://github.com/hexanal/fredmercy-blog/commits/master/{{ _info.src }}" target="_blank" rel="noreferrer nopener">(history)</a>
-      {{/if}}
-    </em>
-  </small>
+{{> components/post-nav }}
 </article>
 
 {{/layouts/page}}
