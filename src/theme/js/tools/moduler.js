@@ -2,7 +2,6 @@ const moduler = {
   state: {},
 
   mount: function ( root ) {
-    const rootComponents = root.dataset && root.dataset.component || ''
     const elementsWithModule = root.querySelectorAll(`[data-component]`)
 
     elementsWithModule.forEach( element => {
@@ -10,13 +9,12 @@ const moduler = {
 
       this.state = component
         .split(',')
-        .concat(rootComponents.split(','))
         .map( module => this.mountModuleOnElement( element, module.trim() ) )
     })
   },
 
   kill: function () {
-    this.state = {}
+    // this.state = {}
     return Promise.resolve()
   },
 

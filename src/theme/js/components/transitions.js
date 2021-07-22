@@ -7,32 +7,38 @@ const GLOBAL = {
 }
 
 export default function() {
-  const leave = ({current, next, trigger})=> {
-    return GLOBAL.moduler.kill( current.container )
+  const leave = ({current, trigger})=> {
+    GLOBAL.moduler.kill( current.container )
   }
 
   const enter = ({next}) => {
     GLOBAL.index++
-    GLOBAL.history.push(next.url.href)
+    GLOBAL.history.push( next.url.href )
     GLOBAL.moduler.mount( next.container )
 
     return Promise.resolve()
   }
 
-  const afterEnter = ({next}) => {
-    // console.log('afterEnter')
-  }
+  // const afterEnter = ({next}) => { }
 
   const liftoff = barba => {
     barba.default.init({
-      // debug: true,
+      debug: true,
       prevent: ({ el }) => el.dataset && el.dataset.transition === 'none',
-      transitions: [{
-        name: 'base',
-        leave,
-        enter,
-        afterEnter,
-      }]
+      transitions: [
+        {
+          name: 'self',
+          enter() {
+            console.log('self transition')
+          },
+        },
+        {
+          name: 'base',
+          leave,
+          enter,
+          // afterEnter,
+        }
+      ]
     })
   };
 
