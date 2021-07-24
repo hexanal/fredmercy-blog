@@ -9,9 +9,10 @@
   <div class="nav">
 
     <a
-    href='{{ t en="/help" fr="/fr/aide" }}'
-    data-component="emit"
-    data-event="SHOW_BOX_HELP"
+      href='{{ t en="/help" fr="/fr/aide" }}'
+      data-component="emit"
+      data-event="SHOW_BOX_HELP"
+      data-transition="none"
     >{{ t en="help" fr="aide" }}</a>
 
     {{#if meta.i18n}}

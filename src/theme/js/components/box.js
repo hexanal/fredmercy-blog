@@ -1,6 +1,7 @@
 import stater from '../tools/stater.js'
 import events from '../tools/events.js'
-import { getHash, setHash } from '../tools/hashish.js'
+import reefer, { onReef, SPRING_SNAP, SPRING_SOFT } from '../tools/reefer.js'
+// import { getHash, setHash } from '../tools/hashish.js'
 
 const ZINDEX = 10
 const ZS = []
@@ -11,20 +12,47 @@ export default function({ element, children }) {
     shortcut: element.dataset.boxShortcut || false,
     active: stater(false),
   }
+  const opacity = reefer(0)
+  const transform = reefer(-0.5) // rem
+  const shadow = reefer(0) // rem
 
   state.active.onChange( active => {
     element.classList.toggle('state-box-active', active)
-    element.style.display = active ? 'block' : 'none'
 
     ZS[active ? 'push' : 'pop']( element ) // naive z-index management
     element.style.zIndex = ZS.length + ZINDEX
 
-    setHash( state.id, active )
+    opacity.set( active ? 1 : 0, SPRING_SOFT )
+    transform.set( active ? 0 : -1, active ? SPRING_SNAP : SPRING_SOFT )
+    shadow.set( active ? 0.8 : 0, SPRING_SNAP)
+
+    // setHash( state.id, active )
   })
 
   const toggle = () => state.active.set( !state.active.get() )
   const open = () => state.active.set(true)
   const close = () => state.active.set(false)
+
+  events.subscribe(`TOGGLE_BOX_${state.id.toUpperCase()}`, toggle)
+  events.subscribe(`SHOW_BOX_${state.id.toUpperCase()}`, open)
+  events.subscribe(`CLOSE_BOX_${state.id.toUpperCase()}`, close)
+  events.subscribe('PAGE_CHANGED', close)
+
+  children['close'].addEventListener('click', close)
+  children['bg'].addEventListener('click', close)
+
+  // if hash present, open box by default (on load)
+  // if ( getHash( state.id ) ) open()
+
+  state.active.update()
+
+  onReef( () => {
+    element.style.opacity = opacity.get()
+    children['wrap'].style.transform = `translateY(${transform.get()}rem)`
+    children['wrap'].style.boxShadow = `${shadow.get()}rem ${shadow.get()}rem 0 0 var(--color-primary)`
+    children['close'].style.transform = `translateY(${transform.get() * 0.25}rem)`
+    children['bg'].style.opacity = opacity.get() * 0.9
+  })
 
   const onKeyUp = e => {
     const focused = document.activeElement.tagName
@@ -33,23 +61,10 @@ export default function({ element, children }) {
     const { active, shortcut } = state
 
     if ( active.get() && e.key === 'Escape') close()
-    if ( e.key === shortcut ) toggle()
+    if ( shortcut && e.key === shortcut ) toggle()
   }
 
-  events.subscribe(`TOGGLE_BOX_${state.id.toUpperCase()}`, toggle)
-  events.subscribe(`SHOW_BOX_${state.id.toUpperCase()}`, open)
-  events.subscribe(`CLOSE_BOX_${state.id.toUpperCase()}`, close)
-
-  children['close'].addEventListener('click', close)
-  children['bg'].addEventListener('click', close)
-
-  // if hash present, open box by default (on load)
-  if ( getHash( state.id ) ) open()
-
-  // shortcut/hotkey to toggle the box
-  if ( state.shortcut ) document.addEventListener('keyup', onKeyUp)
-
-  state.active.update()
+  document.addEventListener('keyup', onKeyUp)
 
   return function() {
     events.unsubscribe(`TOGGLE_BOX_${state.get().id.toUpperCase()}`, toggle)
