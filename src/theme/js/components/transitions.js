@@ -1,43 +1,66 @@
 import moduler from '../tools/moduler.js'
+import events from '../tools/events.js'
+import rainbow from '../tools/rainbow.js'
 
-const GLOBAL = {
-  index: 0,
-  history: [],
-  moduler
-}
+const TRANSITION_DURATION = 400;
+
+rainbow()
 
 export default function() {
-  const leave = ({current, trigger})=> {
-    GLOBAL.moduler.kill( current.container )
+  const leave = ({ current, next }) => {
+    return new Promise(resolve => {
+      events.dispatch('PAGE_LEAVE', { current, next })
+      document.body.classList.add('transition')
+
+      setTimeout(() => {
+        resolve();
+      }, TRANSITION_DURATION)
+    });
   }
-
-  const enter = ({next}) => {
-    GLOBAL.index++
-    GLOBAL.history.push( next.url.href )
-    GLOBAL.moduler.mount( next.container )
-
-    return Promise.resolve()
-  }
-
-  // const afterEnter = ({next}) => { }
 
   const liftoff = barba => {
     barba.default.init({
-      debug: true,
+      // debug: true,
+      timeout: 10000,
       prevent: ({ el }) => el.dataset && el.dataset.transition === 'none',
       transitions: [
+
         {
-          name: 'self',
-          enter() {
-            console.log('self transition')
+          name: 'default-transition',
+
+          before() {
+            // moduler.kill()
           },
-        },
-        {
-          name: 'base',
+
           leave,
-          enter,
-          // afterEnter,
-        }
+
+          beforeEnter({ current, next }) {
+            document.body.classList.remove('transition')
+            current.container.style.position = 'absolute'
+          },
+
+          enter({ next }) {
+            return new Promise(resolve => {
+              window.scrollTo(0, 0)
+              resolve()
+            });
+          },
+
+          afterEnter({ current, next }) {
+            moduler.mount(next.container)
+            events.dispatch('PAGE_CHANGED', { current, next })
+          }
+        },
+
+        // TODO
+        // {
+        //   name: 'self',
+
+        //   leave() {
+        //     events.dispatch('SAME_PAGE')
+        //   },
+        // },
+
       ]
     })
   };

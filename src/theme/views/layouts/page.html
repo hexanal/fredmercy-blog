@@ -26,17 +26,17 @@
 <main data-barba="container" data-component="transitions,a11y,scroll">
   {{> components/header }}
 
-  <div class="page__contents">
+  <div class="page__contents" data-barba="inside">
 
 {{> @partial-block }}
 
     {{> components/footer }}
   </div>
 
-  {{> components/box-help }}
-  {{> components/box-nav }}
 </main>
 
+{{> components/box-help }}
+{{> components/box-nav }}
 {{> components/rainbow }}
 
 <script src="/assets/js/fredmercy.mjs" type="module"></script>

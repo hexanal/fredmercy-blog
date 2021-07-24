@@ -4,17 +4,4 @@ body > main {
 
 .page__contents {
   padding-bottom: 5rem;
-  transform-origin: top center;
-  transition:
-    opacity 400ms ease-out,
-    transform 400ms ease-out;
-
-  .state-is-entering & {
-    opacity: 0;
-    transform: scale(0.95) translateY(1rem);
-  }
-  .state-is-leaving & {
-    opacity: 0;
-    transform: scale(0.95) translateY(-1rem);
-  }
 }
