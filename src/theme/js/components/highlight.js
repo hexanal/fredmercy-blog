@@ -1,13 +1,19 @@
+const SAFETY_ZONE = 10
+
 export default function({element}) {
   const hash = window.location.hash.substr(1)
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
-  element.classList.toggle('state-highlighted', element.getAttribute('id') === hash )
+  if (element.getAttribute('id') !== hash) return
 
-  // const { top } = element.getBoundingClientRect()
-  // window.scrollTo({
-  //   top,
-  //   left: 0,
-  //   behavior: prefersReducedMotion ? 'auto' : 'smooth'
-  // })
+  element.classList.add('state-highlighted')
+
+  const bounds = element.getBoundingClientRect()
+  const top = bounds.top - SAFETY_ZONE
+
+  window.scrollTo({
+    top,
+    left: 0,
+    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+  })
 }
