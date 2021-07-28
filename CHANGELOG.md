@@ -1,3 +1,9 @@
+[4.0.0] - 2021-07-27
+Added
+    BarbaJS is back to power some transitions
+    "reefer" is also back to animate shit
+    depressive posts, as usual
+
 [3.0.4] - 2021-06-08
 Added
     Entry for June 5
