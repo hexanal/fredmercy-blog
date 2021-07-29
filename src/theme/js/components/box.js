@@ -1,5 +1,6 @@
 import stater from '../tools/stater.js'
 import events from '../tools/events.js'
+import focuser from '../tools/focuser.js'
 import reefer, { onReef, SPRING_SNAP, SPRING_SOFT } from '../tools/reefer.js'
 // import { getHash, setHash } from '../tools/hashish.js'
 
@@ -26,6 +27,7 @@ export default function({ element, children }) {
     transform.set( active ? 0 : -1, active ? SPRING_SNAP : SPRING_SOFT )
     shadow.set( active ? 0.8 : 0, SPRING_SNAP)
 
+    focuser(active, element)
     // setHash( state.id, active )
   })
 

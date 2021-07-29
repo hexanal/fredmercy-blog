@@ -1,4 +1,5 @@
 import reefer, { onReef, SPRING_TIGHT, SPRING_SOFT } from '../tools/reefer.js'
+import focuser from '../tools/focuser.js'
 import debounce from '../tools/debounce.js'
 
 const MIN_OPACITY = 0.25
@@ -29,6 +30,8 @@ export default function({ element }) {
     element.appendChild( state.heightContainer )
     state.heightContainer.appendChild( state.wrap )
     element.appendChild( state.toggler )
+
+    focuser(state.expanded, state.wrap)
 
     window.addEventListener('resize', debounce(onResize, 200) )
 
@@ -84,6 +87,8 @@ export default function({ element }) {
 
     state.toggler.textContent = state.expanded ? state.closeLabel : state.label
     element.classList.toggle('state-drawer-expand', state.expanded)
+
+    focuser(state.expanded, state.wrap)
 
     const newHeight = state.expanded ? state.wrap.offsetHeight : MIN_HEIGHT
     const newOpacity = state.expanded ? 1 : MIN_OPACITY

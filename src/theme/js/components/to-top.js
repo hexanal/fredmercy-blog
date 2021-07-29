@@ -9,11 +9,15 @@ export default function({element}) {
     behavior: prefersReducedMotion ? 'auto' : 'smooth'
   }))
 
-  events.subscribe('SCROLLED', ({scrolled}) => {
+  const init = ({scrolled}) => {
     if ( scrolled ) {
       return element.removeAttribute('tabindex')
     }
 
     return element.setAttribute('tabindex', '-1')
-  })
+  }
+
+  events.subscribe('SCROLLED', init)
+
+  init({scrolled: false})
 }
