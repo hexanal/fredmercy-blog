@@ -27,12 +27,14 @@
 {{#each extra }}
 <li class="experience__website">
 
+{{#if this.href }}
 <a
 class="experience__link"
 href="{{this.href}}"
 target="_blank"
 rel="noopener noreferrer"
 >{{this.label}}</a>
+{{/if}}
 
 {{#if this.description }}<small class="p-summary">{{ this.description }}</small>{{/if}}
 

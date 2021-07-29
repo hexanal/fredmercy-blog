@@ -10,6 +10,12 @@ resume:
 - component: components/experience
   heading: expériences
   items:
+  - id: folklore
+    title: mai 2021 — présent
+    company: Folklore (URBANIA)
+    location: Montréal, Canada
+    url: https://folkloreinc.ca/
+    description: Développement web frontend
   - id: cossette
     title: oct. 2019 — fév. 2021
     company: Cossette
