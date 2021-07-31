@@ -37,4 +37,3 @@ If you have any question, feel free to [contact me](mailto:hello@fredmercy.ca).
 ~~
 
 <a href="/" class="button">← back to homepage</a>
-<a href="/resume" class="button button--light"><em>✺</em> more about this&#8230;</a>
