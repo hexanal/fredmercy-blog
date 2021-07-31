@@ -11,6 +11,8 @@ export default function({element}) {
   const bounds = element.getBoundingClientRect()
   const top = bounds.top - SAFETY_ZONE
 
+  element.querySelector('a').focus()
+
   window.scrollTo({
     top,
     left: 0,
