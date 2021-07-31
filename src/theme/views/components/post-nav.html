@@ -2,11 +2,14 @@
 
 <div class="post-nav">
   <a
-    class="button button--light"
+    class="post-nav__index button button--light"
     href="{{ meta.parents.0.meta.url }}"
     title="back to {{ meta.parents.0.meta.title }}"
   >
-    ← index
+    {{> icons/arrow-left}}
+    <span>
+      index
+    </span>
   </a>
 
   {{#if meta.next }}
@@ -15,17 +18,23 @@
     href="{{ meta.next.meta.url }}"
     title="{{ meta.next.meta.title }}"
   >
-    ↑ {{ t en="newer" fr="suivant" }}
+    {{> icons/arrow-up}}
+    <span>
+      {{ t en="next" fr="suivant" }}
+    </span>
   </a>
   {{/if}}
 
   {{#if meta.previous }}
   <a
-    class="button"
+    class="post-nav__previous button"
     href="{{ meta.previous.meta.url }}"
     title="{{ meta.previous.meta.title }}"
   >
-    ↓ {{ t en="older" fr="précédent" }}
+    {{> icons/arrow-down}}
+    <span>
+      {{ t en="previous" fr="précédent" }}
+    </span>
   </a>
   {{/if}}
 
