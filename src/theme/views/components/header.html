@@ -13,8 +13,6 @@
   {{/if}}
 
   <div class="header__nav no-print">
-    {{> components/nav type="main" items=nav.main}}
-
     <button
       class="button header__menu-btn"
       type="button"
@@ -25,12 +23,14 @@
     </button>
   </div>
 
-  <button
-    class="header__back-to-top button no-print"
-    data-component="to-top"
-    type="button"
-  >
-    <span aria-hidden="true">↑</span>
-    <span class="visually-hidden">{{ t en="to top" fr="retour en haut" }}</span>
-  </button>
+  <!-- <div class="header__back-to-top">
+    <button
+      class="header__to-top-btn button no-print"
+      data-component="to-top"
+      type="button"
+    >
+      <span aria-hidden="true">↑</span>
+      <span class="visually-hidden">{{ t en="to top" fr="retour en haut" }}</span>
+    </button>
+  </div> -->
 </header>
