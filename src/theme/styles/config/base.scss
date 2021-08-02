@@ -7,10 +7,10 @@ html {
   background-color: var(--background-color);
 
   &.a11y_use_zoom {
-    font-size: var(--font-size-xxl);
+    font-size: 22px;
 
     @media (min-width: $mq-large) {
-      font-size: var(--font-size-huge);
+      font-size: 24px;
     }
   }
 
