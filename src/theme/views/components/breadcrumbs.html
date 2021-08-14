@@ -6,12 +6,12 @@
 
 {{#if meta.breadcrumbs }}
 {{#each meta.breadcrumbs }}
-<span class="color-secondary" aria-hidden="true"><-</span>
-<a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
+  {{> icons/arrow-left class="color-secondary"}}
+  <a class="breadcrumbs__node" href="{{ this.meta.url }}">{{ this.meta.title }}</a>
 {{/each}}
 {{/if}}
 
-<span class="color-secondary" aria-hidden="true"><-</span>
+{{> icons/arrow-left class="color-secondary"}}
 
 <span class="breadcrumbs__leaf">{{ meta.title }}</span>
 
