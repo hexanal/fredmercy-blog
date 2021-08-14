@@ -12,7 +12,8 @@
 .content h2,
 .content h3 {
   margin-top: 3rem;
-  padding: 0.1rem 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
   font-family: var(--font);
   font-size: var(--font-size);
   font-weight: 400;
@@ -37,6 +38,9 @@
   font-style: italic;
   color: var(--color-bg);
   background-color: var(--color-active);
+}
+.content code {
+  border-radius: 0.25rem;
 }
 
 .content ul, .content ol { overflow: auto; padding-left: 1.25rem; margin: 1.5rem 0; }
