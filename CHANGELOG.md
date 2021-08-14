@@ -1,3 +1,7 @@
+[4.1.0] - 2021-08-14
+Added
+    rounded buttons, and a lot of minor visual tweaks
+
 [4.0.0] - 2021-07-27
 Added
     BarbaJS is back to power some transitions
