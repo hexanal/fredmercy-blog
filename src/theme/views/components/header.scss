@@ -48,16 +48,8 @@
 }
 
 .button.header__menu-btn {
-  position: fixed;
-  z-index: 3;
-  top: 1rem;
-  right: 1rem;
   display: block;
   text-align: center;
-
-  @media (min-width: $mq-small) {
-    right: 3rem;
-  }
 }
 
 .header__back-to-top {
