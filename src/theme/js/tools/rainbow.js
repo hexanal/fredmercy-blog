@@ -2,7 +2,6 @@ import debounce from '../tools/debounce.js'
 import events from '../tools/events.js'
 import reefer, { onReef, SPRING_SNAP, SPRING_SOFT } from '../tools/reefer.js'
 
-const TRANSLATE_MULTIPLIER = 0.5 // rem
 const TOTAL_FRAMES = 100
 const FRAME_MULTIPLIER = 1
 
@@ -22,10 +21,12 @@ export default function() {
   }
 
   onReef( function() {
-    const { translate, opacity, transition } = state.animation
+    const { translate, transition } = state.animation
 
-    state.container.style.transform = `translateY(${ translate.get() * TRANSLATE_MULTIPLIER }rem)`
-    state.container.style.opacity = opacity.get()
+    const translateX = state.transitioning
+      ? translate.get() * -120
+      : translate.get() * 120
+    state.container.style.transform = `translateX(${translateX}%)`
 
     state.frame = state.frame < TOTAL_FRAMES
       ? state.frame + (FRAME_MULTIPLIER * transition.get() )
