@@ -1,3 +1,7 @@
+[4.1.1] - 2021-09-21
+Added
+    whatever
+
 [4.1.0] - 2021-08-14
 Added
     rounded buttons, and a lot of minor visual tweaks
