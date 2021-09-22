@@ -1,13 +1,7 @@
-.nav--main {
-  display: none;
-  text-align: right;
-
-  @media (min-width: $mq-small) {
-    display: block;
+.nav {
+  ul {
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
   }
-}
-
-.nav--footer {
-  display: inline;
-  font-size: 0.8rem;
 }

@@ -8,9 +8,13 @@ data:
       href: "/blog"
       label: "blog"
 
-    # - id: "now"
-    #   href: "/now"
-    #   label: "now"
+    - id: "help"
+      href: "/help"
+      label: "help"
+      attr:
+        - data-component: emit
+        - data-event: SHOW_BOX_HELP
+        - data-transition: none
 
     - id: "about"
       href: "/about"

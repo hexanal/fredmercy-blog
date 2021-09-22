@@ -5,8 +5,9 @@
   right: 0;
 }
 
-[data-box-id="menu"] .box__wrap { height: auto; }
-
-.box-nav { padding: 1.25rem; text-align: center; }
-.box-nav .squiggle { margin: 0.25rem 0; }
-.box-nav .nav { text-align: center; }
+[data-box-id="menu"] {
+  .box__wrap {
+    max-width: 15rem;
+    text-align: center;
+  }
+}

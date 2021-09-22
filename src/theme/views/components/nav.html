@@ -1,5 +1,7 @@
 <nav class="nav nav--{{ type }}" role="navigation">
+  <ul>
   {{#each this.items }}
+    <li>
     {{#if this.href }}
         <a
           href="{{ this.href }}"
@@ -8,15 +10,13 @@
               {{@key}}="{{this}}"
             {{/each}}
           {{/each}}
-        >{{ this.label }}</a>
-
-        {{#if @last }}
-        {{else }}
-          {{> components/dot }}
-        {{/if}}
-
+        >
+          {{ this.label }}
+        </a>
+    </li>
     {{else}}
         <span>~~</span>
     {{/if}}
   {{/each}}
+  </ul>
 </nav>

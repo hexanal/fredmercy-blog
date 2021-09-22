@@ -21,12 +21,13 @@ export default function() {
   }
 
   onReef( function() {
-    const { translate, transition } = state.animation
+    const { translate, transition, opacity } = state.animation
 
     const translateX = state.transitioning
-      ? translate.get() * -120
-      : translate.get() * 120
-    state.container.style.transform = `translateX(${translateX}%)`
+      ? translate.get() * -2
+      : translate.get() * 2
+    state.container.style.transform = `translateY(${translateX}rem)`
+    state.container.style.opacity = opacity.get()
 
     state.frame = state.frame < TOTAL_FRAMES
       ? state.frame + (FRAME_MULTIPLIER * transition.get() )

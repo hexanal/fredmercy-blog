@@ -2,6 +2,13 @@
   padding: 1rem;
 }
 
+.help__select {
+  border-radius: 0.75rem;
+  color: var(--color-bg);
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+}
+
 .help__section {
   + .help__section {
     margin-top: 3rem;
