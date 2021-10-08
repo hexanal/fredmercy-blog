@@ -6,8 +6,11 @@
     href="{{ meta.parents.0.meta.url }}"
     title="back to {{ meta.parents.0.meta.title }}"
   >
-    {{> icons/arrow-left}}
-    <span>
+    <-
+    <span class="short">
+      ind.
+    </span>
+    <span class="long">
       index
     </span>
   </a>
@@ -18,9 +21,12 @@
     href="{{ meta.next.meta.url }}"
     title="{{ meta.next.meta.title }}"
   >
-    {{> icons/arrow-up}}
-    <span>
+    ↑
+    <span class="long">
       {{ t en="next" fr="suivant" }}
+    </span>
+    <span class="short">
+      {{ t en="next" fr="suiv." }}
     </span>
   </a>
   {{/if}}
@@ -31,9 +37,12 @@
     href="{{ meta.previous.meta.url }}"
     title="{{ meta.previous.meta.title }}"
   >
-    {{> icons/arrow-down}}
-    <span>
+    ↓
+    <span class="long">
       {{ t en="previous" fr="précédent" }}
+    </span>
+    <span class="short">
+      {{ t en="prev." fr="préc." }}
     </span>
   </a>
   {{/if}}

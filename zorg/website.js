@@ -56,9 +56,10 @@ const adapters = [
 ]
 
 const build = () => {
-  websites.map( websiteConfig => {
+  return websites.map( websiteConfig => {
     const { time } = zorg( websiteConfig, adapters )
     log( `html: ${ websiteConfig.name } ~~ ${ time }ms` )
+    return time
   })
 }
 

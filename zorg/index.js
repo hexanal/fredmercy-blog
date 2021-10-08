@@ -6,24 +6,34 @@ const assets = require('./assets')
 const build = function() {
   log('building into /public')
 
-  website.build()
-  sass.build()
-  assets.build()
+  return Promise.all([
+    website.build(),
+    sass.build(),
+    assets.build()
+  ])
 }
 
 const watch = function() {
+  build();
   console.log('~~')
   log('watching for changes in source files')
 
-  website.watch()
-  sass.watch()
-  assets.watch()
+  return Promise.all([
+    website.watch(),
+    sass.watch(),
+    assets.watch()
+  ])
 }
 
-if ( process.argv.includes('--build') ) build()
-if ( process.argv.includes('--watch') ) watch()
+// if ( process.argv.includes('-b') ) build()
+// if ( process.argv.includes('-w') ) watch()
 
 module.exports = function( env ) {
-  build() // compile the necessary stuff
-  if ( env === 'development' ) setTimeout( () => { watch() }, 1000)
+  // return Promise.all([
+    // env === 'development' ? watch() : [],
+    if (env === 'development') {
+      watch()
+    }
+    build() // compile the necessary stuff
+  // ])
 }

@@ -50,7 +50,7 @@ export default function({ element, children }) {
   state.active.update()
 
   onReef( () => {
-    element.style.opacity = 1 - transform.get()
+    element.style.opacity = opacity.get()
     children['wrap'].style.transform = `translateY(${transform.get() * 3}rem)`
     children['wrap'].style.boxShadow = `${shadow.get()}rem ${shadow.get()}rem 0 0 var(--color-primary)`
     children['close'].style.transform = `translateY(${transform.get() * -4}rem)`

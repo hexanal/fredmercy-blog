@@ -1,4 +1,4 @@
-const fse = require('fs-extra')
+const fs = require('fs')
 const log = require('./lib/log')
 const watcher = require('./lib/watcher')
 
@@ -33,15 +33,26 @@ const assets = [
 const copy = ({id, src, dest}) => {
   const start = Date.now()
 
-  return fse.copy(src, dest)
-    .then(() => {
-      const time = Date.now() - start
-      log( `assets: copied '${id}' ~~ ${time}ms` )
-    })
-    .catch(err => {
-      log( `assets: huh?! something broke while copying assets: '${id}'` )
-      console.error( err )
-    })
+  return fs.readFile(src, (err, contents) => {
+      if (err) return err
+      return contents
+  });
+  // return new Promise((resolve, reject) => {
+  //   fs.readFile(src, 'utf8'), function(err, contents) {
+  //     if (err) reject(err)
+  //     return ({id, src, dest})
+  //   });
+  // })
+  // return fs.readFile(src)
+    // .then(meh => {
+    //   log(meh)
+    //   // const time = Date.now() - start
+    //   // log( `assets: copied '${id}' ~~ ${time}ms` )
+    // })
+    // .catch(err => {
+    //   log( `assets: huh?! something broke while copying assets: '${id}'` )
+    //   console.error( err )
+    // })
 }
 
 const build = function() {

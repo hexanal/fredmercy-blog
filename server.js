@@ -39,12 +39,10 @@ app.use(function(req, res) {
 })
 
 app.listen(app.get('port'), () => {
-  console.log(`~~`)
-  log(`env: ${app.get('env')}`)
-  log(`url: http://${app.get('host')}:${app.get('port')}`)
-  console.log(`~~`)
-
+  log(`~~`)
   zorg( app.get('env') )
+  log(`env: ${app.get('env')}`, true)
+  log(`url: http://${app.get('host')}:${app.get('port')}`, true)
 });
 
 module.exports = app

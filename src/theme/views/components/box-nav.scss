@@ -1,13 +1,18 @@
 [data-box-id="menu"] .box__frame {
-  width: auto;
+  width: 100%;
   height: auto;
   left: auto;
   right: 0;
+
+  @media (min-width: $mq-small) {
+    width: auto;
+  }
 }
 
 [data-box-id="menu"] {
   .box__wrap {
-    max-width: 15rem;
+    min-width: 15rem;
     text-align: center;
+    border-radius: 1.25rem;
   }
 }

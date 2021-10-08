@@ -1,9 +1,10 @@
-<nav class="nav nav--{{ type }}" role="navigation">
+<nav class="nav" role="navigation">
   <ul>
   {{#each this.items }}
     <li>
     {{#if this.href }}
         <a
+          class="button button--light"
           href="{{ this.href }}"
           {{#each this.attr }}
             {{#each this }}

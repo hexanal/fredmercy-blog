@@ -6,13 +6,10 @@
   {{> components/dot }}
   <small class="color-secondary">{{ meta.description }}</small>
   {{#if showViewAllLink }}
-  <small class="nowrap">
-    ->
-    <em>
-      <a href='{{ t en="/blog" fr="/fr/blogue" }}'>
-        {{ t en="view all posts" fr="voir tous les billets" }}
+  <div class="post-shortcut__content content">
+      <a href='{{ t en="/blog" fr="/fr/blogue" }}' class="button button--light">
+        {{ t en="view all posts" fr="voir tous les billets" }} ->
       </a>
-    </em>
-  </small>
+  </div>
   {{/if}}
 </div>

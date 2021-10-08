@@ -12,7 +12,7 @@ module.exports = function({ glob, type, callback }) {
       .on('ready', () => log( `watch: ${type}`))
       .on('change', path => {
         console.log(`~~`)
-        log( `watch: ${type} changed @ '${path}'` )
+        log( `watch: ${type} changed @ '${path}'`, true)
         callback()
       })
   }
