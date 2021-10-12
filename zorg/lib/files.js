@@ -10,11 +10,11 @@ const createDir = function(dir) {
   })
 }
 
-const writeFile = function(dir, contents) {
+const writeFile = function(filePath, contents) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(dir, contents, (err) => {
+    fs.writeFile(filePath, contents, (err) => {
       if (err) reject(err)
-      resolve({ dir, contents })
+      resolve({ dir: filePath, contents })
     })
   })
 }
