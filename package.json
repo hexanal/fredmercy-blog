@@ -7,9 +7,7 @@
     "start": "NODE_ENV=development node server.js",
     "watch": "NODE_ENV=development node zorg --watch",
     "build": "NODE_ENV=production node zorg --build",
-    "debug": "NODE_ENV=production node zorg --build --verbose --check-links",
-    "serve": "NODE_ENV=production node server.js",
-    "clean": "rm -rf public"
+    "debug": "NODE_ENV=production node zorg --build --verbose --check-links"
   },
   "dependencies": {
     "chokidar": "^3.4.3",

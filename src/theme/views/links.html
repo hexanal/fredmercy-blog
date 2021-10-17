@@ -2,14 +2,10 @@
 
 {{> components/breadcrumbs }}
 
-{{> components/content }}
-
-{{> components/squiggle }}
-
-<div class="now">
+<div class="links">
 
   {{#each meta.links as |links tag| }}
-  <div class="now__tag content">
+  <div class="links__tag content">
 
     <h3 id="{{tag}}">{{ tag }}</h3>
 
@@ -25,7 +21,7 @@
         >{{{ title }}}</a>
 
         {{# if this.source }}
-        <small class="now__source color-secondary">->&nbsp;{{ this.source }}</small>
+        <small class="links__source color-secondary">->&nbsp;{{ this.source }}</small>
         {{/if}}
 
         {{#if this.notes }}
