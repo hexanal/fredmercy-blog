@@ -39,10 +39,13 @@ app.use(function(req, res) {
 })
 
 app.listen(app.get('port'), () => {
-  log(`~~`)
-  zorg( app.get('env') )
-  log(`env: ${app.get('env')}`, true)
-  log(`url: http://${app.get('host')}:${app.get('port')}`, true)
+  const { build, watch } = zorg
+
+  build()
+  if (app.get('env') === 'development') watch()
+
+  log(`env: ${app.get('env')}`, { critical: true })
+  log(`url: http://${app.get('host')}:${app.get('port')}`, { critical: true })
 });
 
 module.exports = app

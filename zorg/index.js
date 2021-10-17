@@ -14,7 +14,6 @@ const build = function() {
 }
 
 const watch = function() {
-  build();
   console.log('~~')
   log('watching for changes in source files')
 
@@ -25,15 +24,9 @@ const watch = function() {
   ])
 }
 
-// if ( process.argv.includes('-b') ) build()
-// if ( process.argv.includes('-w') ) watch()
+// when calling zorg through node directly
+if ( process.argv.includes('--build') ) build()
+if ( process.argv.includes('--watch') ) watch()
 
-module.exports = function( env ) {
-  // return Promise.all([
-    // env === 'development' ? watch() : [],
-    if (env === 'development') {
-      watch()
-    }
-    build() // compile the necessary stuff
-  // ])
-}
+// when using zorg from other scripts
+module.exports = { build, watch }
