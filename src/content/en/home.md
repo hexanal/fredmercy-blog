@@ -1,6 +1,6 @@
 ---
 title: Fred Mercy
-description: Welcome to my home on the web; it is a blend of a many things. It's a portfolio, a repository of public notes, a way to express myself creatively, a blog. Feel free to browse and let me know if you need anything, eh? Alright cool.
+description: Welcome to my home on the web; it is a blend of a many things. It's a portfolio, a repository of public notes, a way to express myself creatively, a blog, and anything else I want it to be. Feel free to browse and let me know if you need anything, eh? Alright, cool.
 type: page
 isHome: true
 i18n:
@@ -9,7 +9,7 @@ i18n:
 
 ## Hey!
 
-> Fred here. You've landed on my homepage; wow! How? *[let me know](/contact)*
+> Fred here. You've landed on my homepage, **wow!**
 
 ### What's up?
 
