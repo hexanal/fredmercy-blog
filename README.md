@@ -4,7 +4,7 @@
 
 * handmade
 * minimalist
-* a work in progress (version `4.1.0`)
+* a work in progress (version `4.2.0`)
 * **experimental**
 * [fredmercy.ca](https://fredmercy.ca)
 

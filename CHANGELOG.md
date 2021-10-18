@@ -1,3 +1,11 @@
+[4.2.0] - 2021-10-17
+Added
+    the now & then page
+Fixed
+    probably nothing
+Notes
+    never updating this website again :)
+
 [4.1.1] - 2021-09-21
 Added
     whatever
