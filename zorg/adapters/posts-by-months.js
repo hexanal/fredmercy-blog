@@ -8,7 +8,7 @@ const addPostsByMonth = function( items, website ) {
   const postsByMonth = groupBy(posts, 'meta.archive')
 
   return items.map( item => {
-    if ( item.meta.url === '/blog' || item.meta.url === '/fr/blogue' ) {
+    if ( item.meta.url === '/archived' || item.meta.url === '/fr/archivés' ) {
       return { ...item, postsByMonth }
     }
 

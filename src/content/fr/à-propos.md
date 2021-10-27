@@ -2,17 +2,15 @@
 title: À propos
 description: Ok c'est quoi ton histoire?
 type: page
+aliases:
+  - /a-propos
 i18n:
   en: '/about'
 ---
 
-## à propos de moi
-
-meh.
-
 ## à propos de ce site
 
-**préférences:** <a href="/aide" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>paramètres et préférences du site</a>
+**préférences:** <a href="/fr/aide" data-component="emit" data-event="SHOW_BOX_HELP" data-no-transition>paramètres et préférences du site</a>
 
 **objectifs**
 

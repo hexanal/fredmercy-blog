@@ -3,7 +3,7 @@
     {{ meta.month }}/{{ meta.day }}
   </small>
   <a href="{{ meta.url }}">{{#if meta.title }}{{ meta.title }}{{else}}untitled post{{/if}}</a>
-  {{> components/dot }}
+  <span class="dot" aria-hidden="true">✷</span>
   <small class="color-secondary">{{ meta.description }}</small>
   {{#if showViewAllLink }}
   <div class="post-shortcut__content content">

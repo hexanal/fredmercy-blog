@@ -7,25 +7,17 @@ i18n:
   fr: '/fr'
 ---
 
-## Hey!
+## hello!
 
-> Fred here. You've landed on my homepage, **wow!**
+On this website you may:
 
-### What's up?
+* [read my blog](/blog)
+  - _[lire le blogue en français](/fr/blogue)_
+* [learn about this website](/about)
+* [browse my resume](/resume)
 
-On this website you may browse my [resume](/resume), my [blog](/blog), the [about](/about) page.
-
-### What else?
+### what else?
 
 There's also the [now](/now) page, which where I dump random links and notes and such.
 
 The [contact](/contact) page will exist eventually. If you need any help in the meantime, there's a [help](/help) page.
-
-### More
-
-Here's a list of social media links if you want to stalk:
-
-- rss feed: https://fredmercy.ca/rss.xml
-- github: https://github.com/hexanal
-- twitter: https://twitter.com/hexanal
-- bandcamp: https://fredmercy.bandcamp.com

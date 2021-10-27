@@ -21,8 +21,8 @@ const getMetaWithIndexAsParent = function( item, indexes ) {
 
 const addPostIndexAsParent = function( items ) {
   const indexes = {
-    en: getItemByURL( items, '/blog' ),
-    fr: getItemByURL( items, '/fr/blogue' )
+    en: getItemByURL( items, '/archived' ),
+    fr: getItemByURL( items, '/fr/archivés' )
   }
 
   if (!indexes.en && !indexes.fr) return items

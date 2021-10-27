@@ -6,10 +6,6 @@ i18n:
   fr: '/fr/a-propos'
 ---
 
-## about me
-
-coming soon.
-
 ## about this website
 
 > Disclaimer: the views expressed on this website are entirely my own and are not related in any way to those of my current or past employers, friends, family, or community. But maybe they share the same views, who knows?

@@ -71,6 +71,22 @@
   }
 }
 
+.content blockquote {
+  blockquote {
+    border-left: 0;
+    padding-left: 0;
+
+    @media (min-width: $mq-small) {
+      float: right;
+      width: 15rem;
+      padding: 0 1rem;
+      margin: 0 0 2rem 2rem;
+      color: var(--color-bg);
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
 .content blockquote em, .content blockquote i { font-style: normal; }
 
 .content strong { font-weight: normal; background-color: var(--color-extra); }
@@ -124,9 +140,11 @@
 
 .content iframe {
   width: 100%;
-  height: 200px;
+  height: 150px;
 
   @media (min-width: $mq-xsmall) { height: 394px; }
+
+  @media (min-width: $mq-medium) { height: 28rem; }
 }
 
 .content audio {

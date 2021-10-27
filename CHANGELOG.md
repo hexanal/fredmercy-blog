@@ -1,3 +1,9 @@
+[4.3.0] - 2021-10-26
+Added
+    too much
+Fixed
+    too little
+
 [4.2.0] - 2021-10-17
 Added
     the now & then page

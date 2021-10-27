@@ -1,36 +1,43 @@
 .header {
-  position: sticky;
-  top: 0;
   z-index: 3;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   justify-content: space-between;
   max-width: var(--site-width);
   padding: 1rem 0;
-  // background-color: var(--color-bg);
+
+  @media (min-width: $mq-small) {
+    flex-direction: row;
+  }
 
   @media print {
-    // background-color: transparent;
     border-color: transparent !important; // it's ok, we're priting
   }
 }
 
 .header__title {
-  margin: 0;
+  position: sticky;
+  top: 0;
+  margin: 0 0 1rem;
   font-weight: normal;
   white-space: nowrap;
+
+  @media (min-width: $mq-small) {
+    margin: 0;
+  }
 }
 
 .button.header__home-btn {
   display: block;
   line-height: 1.4;
   background-color: var(--color-active);
-  transform: translateY(0);
-  transition: transform 500ms cubic-bezier(.1,1.3,.5,1);
+  // transform: translateY(0);
+  // transition: transform 500ms cubic-bezier(.1,1.3,.5,1);
 
-  [data-scrolled="true"] & {
-    transform: translateY(-3rem);
-  }
+  // [data-scrolled="true"] & {
+  //   transform: translateY(-3rem);
+  // }
 
   @include hover-focus {
     background-color: var(--color-secondary);
