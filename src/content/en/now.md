@@ -6,6 +6,10 @@ aliases:
   - /bookmarks
 ---
 
+## playlist
+
+- [October 2021](/playlists/october-2021)
+
 ## books
 
 - “A (Very) Short History of Life On Earth : 4.6 Billion Years in 12 Chapters”

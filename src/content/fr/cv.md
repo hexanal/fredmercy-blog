@@ -16,6 +16,10 @@ resume:
     location: Montréal, Canada
     url: https://folkloreinc.ca/
     description: Développement web frontend
+    extra:
+    - label: Festival du Nouveau Cinéma
+      href: https://nouveaucinema.ca
+      description: frontend development
   - id: cossette
     title: oct. 2019 — fév. 2021
     company: Cossette

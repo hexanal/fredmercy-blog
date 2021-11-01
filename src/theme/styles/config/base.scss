@@ -101,7 +101,7 @@ select {
   cursor: pointer;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: var(--color-hover);
     background-color: var(--background-color-hover);
     border-color: var(--color-secondary);
@@ -112,14 +112,14 @@ select {
 a,
 button,
 select {
-  &:focus {
+  &:focus-visible {
     outline: 2px dotted var(--color-secondary);
     outline-offset: 2px;
   }
 
-  &:active {
-    outline: 2px dotted var(--color-active);
-  }
+  // &:active {
+  //   outline: 2px dotted var(--color-active);
+  // }
 }
 
 // FIXME
