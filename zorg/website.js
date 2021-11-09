@@ -25,6 +25,7 @@ const websites = [
 // Adapters are functions that go through the content to "process" it
 const adapters = [
   // FIXME: order matters here; should it? can we get around it?
+  // TODO: split adapters by type? how? blah blah, add specific adapters from meta data?
   require('./adapters/default-meta'),
   require('./adapters/published'),
 

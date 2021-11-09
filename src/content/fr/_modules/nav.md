@@ -3,10 +3,6 @@ title: Navigation
 type: module
 data:
   main:
-    - id: "blog"
-      href: "/fr/blogue"
-      label: "blogue"
-
     - id: "about"
       href: "/fr/à-propos"
       label: "à propos"

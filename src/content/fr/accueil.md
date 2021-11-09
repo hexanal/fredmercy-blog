@@ -7,15 +7,18 @@ i18n:
   en: '/'
 ---
 
-## salut!
+## dernièrement:
 
-Sur mon site vous pourrez:
+`8 novembre, 2021` / `9:54am`
 
-- [lire le “live blog”](/fr/blogue)
-    - [ici en anglais](/blog)
-- [voir mon CV](/fr/cv)
-- [lire à propos de ce site](/fr/à-propos)
+Bienvenue sur ce site. Plus de page d'accueil, on arrive direct sur le blogue *live*!
 
-### quoi d'autre?
+Pas grand chose sur ce site pour le moment, mais revenez plus tard; je mets à jour le site à peu près tous les mois, au moins.
 
-La page [contact](/fr/contact) va exister un jour. Entre temps si vous avez besoin d'aide, il y a une page [aide](/fr/aide).
+## quelques liens
+
+* le site *[in English](/)*
+* [billets archivés](/fr/archivés)
+* [à propos de ce site](/fr/à-propos)
+* [mon CV](/fr/cv) de développeur web *frontend*
+* le page d'[aide](/fr/aide), où vous pouvez modifier les paramètres du site

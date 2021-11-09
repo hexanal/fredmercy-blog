@@ -14,9 +14,9 @@ i18n:
 
 **_raison d'être:_**
 
-- hosting my [blog](/blog)
+- writing for my live blog, which is on the [homepage](/)
 - showcasing my web experiments *(coming soon!)*
-- and more generally: it's a (public) brain dump, a repository of my notes
+- and more generally: it's a public brain dump where I write and display anything I want to.
 
 **technology**
 

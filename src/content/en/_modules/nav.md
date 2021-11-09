@@ -4,10 +4,6 @@ type: module
 
 data:
   main:
-    - id: "blog"
-      href: "/blog"
-      label: "blog"
-
     - id: "about"
       href: "/about"
       label: "about"
