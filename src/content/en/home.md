@@ -9,15 +9,16 @@ i18n:
 
 ## the live blog way
 
-`november 8, 2021` / `8:10pm`
+`november 9, 2021` / `11:29am`
 
-Light on content. It will come.
+This blog is a work in progress but I don't really have a definitive vision for
+it, so I will leave at that for now. No stress.
 
 ## some links
 
-* this website *[en français](/fr)*
+* *[en français](/fr)*
 * [archived posts](/archived)
 * [about this website](/about)
-* my frontend developer [resume](/resume)
-* the [now](/now) page, where I dump random links
-* the [help](/help) page, where you can tweak the website's settings to your liking
+* [resume](/resume)
+* [now](/now)
+* [help](/help)
