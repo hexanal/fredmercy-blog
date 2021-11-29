@@ -7,18 +7,21 @@ i18n:
   fr: '/fr'
 ---
 
-## the live blog way
+`november 26, 2021` / `7:23pm`
 
-`november 9, 2021` / `11:29am`
+* Just had a baby girl. Her name's Nova.
+* Struggling with the idea of *what to do with what I got*: not who am I, but where am I going?
+* Trying out a [light theme](https://marketplace.visualstudio.com/items?itemName=jolaleye.horizon-theme-vscode) for my [VSCodium](https://vscodium.com/) setup, just to switch things up a bit
+* prefer work in the morning... seems like this is when I have the most energy! 🌅
 
-This blog is a work in progress but I don't really have a definitive vision for
-it, so I will leave at that for now. No stress.
+---
 
-## some links
+<aside data-component="drawer" data-label="other links (+)">
 
 * *[en français](/fr)*
-* [archived posts](/archived)
 * [about this website](/about)
 * [resume](/resume)
 * [now](/now)
 * [help](/help)
+
+</aside>
