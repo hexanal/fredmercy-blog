@@ -2,18 +2,10 @@
   z-index: 3;
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
   justify-content: space-between;
   max-width: var(--site-width);
   padding: 1rem 0;
-
-  @media (min-width: $mq-small) {
-    flex-direction: row;
-  }
-
-  @media print {
-    border-color: transparent !important; // it's ok, we're priting
-  }
+  flex-wrap: wrap;
 }
 
 .header__title {
@@ -30,12 +22,6 @@
   display: block;
   line-height: 1.4;
   background-color: var(--color-active);
-  // transform: translateY(0);
-  // transition: transform 500ms cubic-bezier(.1,1.3,.5,1);
-
-  // [data-scrolled="true"] & {
-  //   transform: translateY(-3rem);
-  // }
 
   @include hover-focus {
     background-color: var(--color-secondary);

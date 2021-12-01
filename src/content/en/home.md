@@ -7,22 +7,23 @@ i18n:
   fr: '/fr'
 ---
 
+## hey!
 
-* Just had a baby girl. Her name's Nova.
-* Struggling with the idea of *what to do with what I got*: not who am I, but where am I going?
-* Trying out a [light theme](https://marketplace.visualstudio.com/items?itemName=jolaleye.horizon-theme-vscode) for my [VSCodium](https://vscodium.com/) setup, just to switch things up a bit
-* prefer work in the morning... seems like this is when I have the most energy! 🌅
+Welcome to this website. I'm Fred Mercy and this is my homepage. Below, you'll find a list of pages I think you might wanna checkout!
 
-last edit: `november 28, 2021` / `7:29pm`
-
----
-
-<aside data-component="drawer" data-label="other links (+)">
-
-* *[en français](/fr)*
+* *[ce site, en français](/fr)*
 * [about this website](/about)
-* [resume](/resume)
-* [now](/now)
+* [about me?](/about-me)
+* [my resume](/resume)
+* [shoutouts](/shoutouts)
 * [help](/help)
+
+<aside data-component="drawer" data-label="show the news (+)" data-shortcut="Plus">
+
+`december 1, 2021` / `8:50am`
+
+I added yet another very *[kosmische](https://www.wikiwand.com/en/Krautrock)* and trippy track to [November's playlist](/playlists/november-2021)*. Music, eh?
+
+But now it's December, time to find new songs! I'm feeling a bit adventurous so I might go super weird and experimental, or super poppy and saccharose. Time will tell ⏳
 
 </aside>

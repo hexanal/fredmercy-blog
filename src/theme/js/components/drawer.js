@@ -12,6 +12,7 @@ export default function({ element }) {
     expanded: false,
     label: element.dataset.label || DEFAULT_LABEL,
     closeLabel: element.dataset.closeLabel || DEFAULT_LABEL_CLOSE,
+    shortcut: element.dataset.shortcut || false,
     animation: {
       height: reefer(MIN_HEIGHT),
       y: reefer(1.5),
@@ -34,6 +35,11 @@ export default function({ element }) {
     focuser(state.expanded, state.wrap)
 
     window.addEventListener('resize', debounce(onResize, 200) )
+
+    window.addEventListener('keyup', e => {
+      if ( e.code !== 'KeyM' ) return
+      expand()
+    })
 
     onReef( () => {
       state.heightContainer.style.height = `${ state.animation.height.get() }px`
@@ -82,6 +88,11 @@ export default function({ element }) {
     return toggler
   }
 
+  const hookCloseShortcutEvent = e => {
+    if ( e.code !== 'Minus' ) return
+    expand()
+  }
+
   const expand = (e) => {
     state.expanded = !state.expanded
 
@@ -94,6 +105,12 @@ export default function({ element }) {
     const newOpacity = state.expanded ? 1 : MIN_OPACITY
     const newTranslateY = state.expanded ? 0 : 2
     const spring = state.expanded ? SPRING_TIGHT : SPRING_SOFT
+
+    if ( state.expanded ) {
+      window.addEventListener('keyup', hookCloseShortcutEvent)
+    } else {
+      window.removeEventListener('keyup', hookCloseShortcutEvent)
+    }
 
     state.animation.height.set(newHeight, spring)
     state.animation.opacity.set(newOpacity, spring)

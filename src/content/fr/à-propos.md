@@ -1,6 +1,6 @@
 ---
 title: À propos
-description: Ok c'est quoi ton histoire?
+description: Objectifs, technologies utilisées, philosophie, etc. Tout ce qui est en rapport avec le site devrait être mentionné dans cette page.
 type: page
 aliases:
   - /a-propos

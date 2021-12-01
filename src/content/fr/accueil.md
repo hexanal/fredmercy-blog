@@ -7,15 +7,14 @@ i18n:
   en: '/'
 ---
 
-`8 novembre, 2021` / `9:54am`
+## salut!
 
-Bienvenue sur ce site. Plus de page d'accueil, on arrive direct sur le blogue *live*!
+Bienvenue sur mon site. Mon nom est Fred Mercy et ceci est mon site personnel.
 
-Pas grand chose sur ce site pour le moment, mais revenez plus tard; je mets à jour le site à peu près tous les mois, au moins.
+### quelques liens
 
-## liens
-
-* le site *[in English](/)*
+* *[this website, but in English](/)*
 * [à propos de ce site](/fr/à-propos)
+* [à propos de moi](/fr/à-propos-de-moi)
 * [mon CV](/fr/cv) de développeur web *frontend*
 * le page d'[aide](/fr/aide), où vous pouvez modifier les paramètres du site
