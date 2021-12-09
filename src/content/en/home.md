@@ -9,16 +9,22 @@ i18n:
 
 ## hey!
 
-Welcome to this website. I'm Fred Mercy and this is my homepage. Below, you'll find a list of pages I think you might wanna checkout!
+Welcome to this website. I'm Fred Mercy and this is my homepage. Below, you'll find a list of pages I think you might wanna checkout:
 
-* *[ce site, en français](/fr)*
 * [about this website](/about)
-* [about me?](/about-me)
+* [about me](/about-me)
 * [my resume](/resume)
 * [shoutouts](/shoutouts)
 * [help](/help)
+* *[ce site, en français (French version of the website)](/fr)*
 
 <aside data-component="drawer" data-label="show the news (+)" data-shortcut="Plus">
+
+`december 8, 2021` / `7:52pm`
+
+I will be taking a real break now.
+
+~~
 
 `december 1, 2021` / `8:50am`
 
