@@ -25,13 +25,3 @@
     border-radius: 0 0 0.75rem 0.75rem;
   }
 }
-
-.content .drawer__wrap {
-  h1, h2, h3, h4, h5 {
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-}
-
-.content .drawer__wrap blockquote { margin-left: 0; margin-bottom: 3rem; }

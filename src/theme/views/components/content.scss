@@ -177,3 +177,28 @@
   border-left: 2px solid var(--color-secondary);
   border-bottom: 2px solid var(--color-secondary);
 }
+
+.content aside {
+  position: relative;
+  overflow: hidden;
+  border-left: 2px solid var(--color-secondary);
+  background-color: rgba(0, 0, 0, 0.01);
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 4px 0 0 rgba(0,0,0,0.05);
+  padding: 0 1rem 1rem 2rem;
+}
+
+.content aside {
+  h1, h2, h3, h4, h5 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.content aside {
+  blockquote {
+    margin-left: 0;
+    margin-bottom: 3rem;
+  }
+}

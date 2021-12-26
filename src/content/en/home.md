@@ -7,9 +7,25 @@ i18n:
   fr: '/fr'
 ---
 
-## hey!
+## news
 
-Welcome to this website. I'm Fred Mercy and this is my homepage. Below, you'll find a list of pages I think you might wanna checkout:
+<aside>
+
+`december 25, 2021` / `12:21pm`
+
+I wish you all a **Merry Christmas and Happy New Year**!
+
+This year was a special one again, for many reasons, so I hope you had the chance to meet with friends and family, and had a good time.
+
+Keep your head up high, stay safe, and have fun. I love you all!
+
+Bye for now.
+
+—fred
+
+</aside>
+
+## links
 
 * [about this website](/about)
 * [about me](/about-me)
@@ -17,19 +33,3 @@ Welcome to this website. I'm Fred Mercy and this is my homepage. Below, you'll f
 * [shoutouts](/shoutouts)
 * [help](/help)
 * *[ce site, en français (French version of the website)](/fr)*
-
-<aside data-component="drawer" data-label="show the news (+)" data-shortcut="Plus">
-
-`december 8, 2021` / `7:52pm`
-
-I will be taking a real break now.
-
-~~
-
-`december 1, 2021` / `8:50am`
-
-I added yet another very *[kosmische](https://www.wikiwand.com/en/Krautrock)* and trippy track to [November's playlist](/playlists/november-2021)*. Music, eh?
-
-But now it's December, time to find new songs! I'm feeling a bit adventurous so I might go super weird and experimental, or super poppy and saccharose. Time will tell ⏳
-
-</aside>
