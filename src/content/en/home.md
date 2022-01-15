@@ -11,17 +11,11 @@ i18n:
 
 <aside>
 
-`december 25, 2021` / `12:21pm`
+`january 14, 2022` / `5:15pm`
 
-I wish you all a **Merry Christmas and Happy New Year**!
+this website is kind of... under construction, man.
 
-This year was a special one again, for many reasons, so I hope you had the chance to meet with friends and family, and had a good time.
-
-Keep your head up high, stay safe, and have fun. I love you all!
-
-Bye for now.
-
-—fred
+It kind of *always will be*, in fact.
 
 </aside>
 
@@ -33,3 +27,4 @@ Bye for now.
 * [shoutouts](/shoutouts)
 * [help](/help)
 * *[ce site, en français (French version of the website)](/fr)*
+
