@@ -2,8 +2,8 @@
 title: About Fred Mercy
 description: Who?
 type: page
-# i18n:
-#   fr: '/fr/a-propos'
+i18n:
+  fr: '/fr/a-propos'
 ---
 
 ## about me

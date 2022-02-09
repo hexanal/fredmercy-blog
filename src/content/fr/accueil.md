@@ -11,15 +11,9 @@ i18n:
 
 <aside>
 
-`25 décembre, 2021` / `12:21pm`
+`8 février 2022` / `20h20`
 
-Je vous souhaite à toutes et à tous un **Joyeux Noël et une Bonne Année**!
-
-Encore une fois, cette année fut spéciale pour bien des raisons, alors j'espère que vous avez pu voir vos amis et vos proches, et que vous avez passé du bon temps.
-
-Gardez la tête haute, restez vigilants, et ayez du *fun*. Je vous aime.
-
-*Ciao*,
+[...]
 
 —fred
 

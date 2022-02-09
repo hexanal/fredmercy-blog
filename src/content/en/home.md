@@ -11,11 +11,11 @@ i18n:
 
 <aside>
 
-`january 14, 2022` / `5:15pm`
+`february 8, 2022` / `8:20pm`
 
-this website is kind of... under construction, man.
+[...]
 
-It kind of *always will be*, in fact.
+—fred
 
 </aside>
 
