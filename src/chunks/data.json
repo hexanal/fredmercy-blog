@@ -1,0 +1,32 @@
+{
+  "_info":{
+    "src":"./src/content/en/home.md",
+    "updated":"2022-01-16 @ 8:17pm",
+    "built":"2022-01-16 @ 8:17pm"
+  },
+  "meta": {
+    "baseURL":"/",
+    "lang":"en",
+    "id":"home",
+    "type":"page",
+    "title":"Fred Mercy",
+    "description": "Welcome to my home on the web; it is a blend of a many things. It's a portfolio, a repository of public notes, a way to express myself creatively, a blog, and anything else I want it to be. Feel free to browse and let me know if you need anything, eh? Alright, cool.",
+    "draft":false,
+    "isHome":true,
+    "i18n":{"fr":"/fr"},
+    "url":"/",
+    "permalink":"https://fredmercy.ca/",
+    "route":[]
+  },
+  "body":"## news\n\n<aside>\n\n`february 8, 2022` / `8:20pm`\n\n[...]\n\n—fred\n\n</aside>\n\n## links\n\n* [about this website](/about)\n* [about me](/about-me)\n* [my resume](/resume)\n* [shoutouts](/shoutouts)\n* [help](/help)\n* *[ce site, en français (French version of the website)](/fr)*\n\n",
+  "children":[],
+  "parents":[],
+  "breadcrumbs":[],
+  "nav":{
+    "main":[
+      {"id":"about","href":"/about","label":"about"},
+      {"id":"help","href":"/help","label":"?","attr":[
+        {"data-component":"emit"},
+        {"data-event":"SHOW_BOX_HELP"},
+        {"data-transition":"none"}
+      ]}]},"themeFlags":{"USE_THEMES":true,"USE_BLEEPS":false},"themes":{"light":[{"id":"june","label":"june"},{"id":"mini","label":"High contrast"},{"id":"january","label":"January"},{"id":"camper-van","label":"Camper Van '77"}],"dark":[{"id":"june-night","label":"june (by night)"},{"id":"mini-dark","label":"Minimal Dark"},{"id":"the-greys","label":"The Greys"},{"id":"bioluminesce","label":"Bioluminesce"}]},"content":"<h2 id=\"news\">news</h2>\n<aside>\n\n<p><code>february 8, 2022</code> / <code>8:20pm</code></p>\n<p>[...]</p>\n<p>—fred</p>\n</aside>\n\n<h2 id=\"links\">links</h2>\n<ul>\n<li><a href=\"/about\">about this website</a></li>\n<li><a href=\"/about-me\">about me</a></li>\n<li><a href=\"/resume\">my resume</a></li>\n<li><a href=\"/shoutouts\">shoutouts</a></li>\n<li><a href=\"/help\">help</a></li>\n<li><em><a href=\"/fr\">ce site, en français (French version of the website)</a></em></li>\n</ul>\n"}

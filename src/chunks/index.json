@@ -1,0 +1,21 @@
+{
+  "id": "ee06e267-e1c5-49b4-bdd6-76ca1e43d849",
+  "name": "home",
+  "type": "page",
+  "created": "1645062911613",
+  "modified": "1645062911613",
+  "value": {
+    "route": "/",
+    "metadata": {},
+    "template": "homepage",
+    "chunks": [
+      {
+        "id": "C58CACD6-45EE-4268-A55B-C76562AFC854",
+        "name": "",
+        "type": "page",
+        "created": "1645062911613",
+        "modified": "1645062911613"
+      }
+    ]
+  }
+}
