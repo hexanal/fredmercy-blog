@@ -1,0 +1,13 @@
+{{#> layouts/page}}
+
+{{#if meta.isHome }}
+{{else}}
+  {{> components/breadcrumbs }}
+{{/if}}
+
+<div class="page" data-component="editor">
+  <input type="file" data-child="imagefile" />
+  <img src="" data-child="preview" />
+</div>
+
+{{/layouts/page}}

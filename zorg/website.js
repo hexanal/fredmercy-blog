@@ -26,6 +26,11 @@ const websites = [
 const adapters = [
   // FIXME: order matters here; should it? can we get around it?
   // TODO: split adapters by type? how? blah blah, add specific adapters from meta data?
+  // adapters are "per chunk", and may apply to anything upstream in the chunk hierarchy
+  // page chunk adds a few things
+  // post chunk adds whatever
+  // specific post index list page uses the `post-index-as-parent` adapter
+
   require('./adapters/default-meta'),
   require('./adapters/published'),
 
