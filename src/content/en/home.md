@@ -9,22 +9,39 @@ i18n:
 
 ## news
 
-<aside>
+`march 24, 2022` / `9:08pm`
 
-`february 8, 2022` / `8:20pm`
+Quick update to the old website...! *pfew*
 
-[...]
+Quick word about my situation for those who might be interested: 
+
+> I'm back! I'm alive.
+> Winter's got me pinned down to the bottom of the Mariana Trench.
+> But springtime is upon us, and there is hope yet.
+> When I'm not battling depression, life's keeping me quite busy.
+
+I have not much else to share for now.
+
+I'm back on Instagram over at [instagram.com/fredmercy.ca](https://instagram.com/fredmercy.ca). I needed a place to share dumb pictures. And maybe reconnect with old friends.
+
+Stay safe out there.
 
 —fred
 
-</aside>
+~~
+
+`february 8, 2022` / `8:20pm` [...] —fred
+
+~~
 
 ## links
 
 * [about this website](/about)
 * [about me](/about-me)
 * [my resume](/resume)
-* [shoutouts](/shoutouts)
+* [random links & thoughts](/links)
 * [help](/help)
+* [on twitter.com](https://twitter.com/hexanal)
+* [on bandcamp.com](https://bandcamp.com/hexanal)
 * *[ce site, en français (French version of the website)](/fr)*
 
