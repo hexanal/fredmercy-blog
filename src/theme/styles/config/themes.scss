@@ -10,6 +10,15 @@ html[data-theme="june"] {
   --color-extra: #ffdd21; // Banana Yellow
 }
 
+html[data-theme="nova"] {
+  --color-bg: #fff7e7;
+  --color-primary: #8930d3;
+  --color-secondary: #e4006b;
+  --color-active: #ff503e;
+  --color-subdued: #fc9a00;
+  --color-extra: #ffef00;
+}
+
 html[data-theme="mini"] {
   --color-bg: #fff;
   --color-primary: #000;
@@ -61,6 +70,15 @@ html[data-theme="mini-dark"] {
   --icon-filter: grayscale(1) brightness(0.75) contrast(3.5);
 }
 
+html[data-theme="hypernova"] {
+  --color-bg: #191221;
+  --color-primary: #ffbae7;
+  --color-active: #fd526a;
+  --color-secondary: #9052ff;
+  --color-subdued: #eb9094;
+  --color-extra: #41305f;
+}
+
 html[data-theme="the-greys"] {
   --color-bg: #262125;
   --color-primary: #f7f7f7;
@@ -79,4 +97,14 @@ html[data-theme="bioluminesce"] {
   --color-subdued: #838db3;
   --color-extra: #4f496a;
   --icon-filter: saturate(0.25) brightness(1.5);
+}
+
+html[data-theme="dim"] {
+  --color-bg: #000;
+  --color-primary: #5e5e5e;
+  --color-active: #575757;
+  --color-secondary: #656565;
+  --color-subdued: #6c6c6c;
+  --color-extra: #2a2a2a;
+  --icon-filter: saturate(0) brightness(0.5);
 }

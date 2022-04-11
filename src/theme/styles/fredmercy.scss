@@ -17,7 +17,9 @@
 @import 'utilities/hotkey';
 @import 'utilities/link';
 @import 'utilities/no-print';
+@import 'utilities/spacing';
 @import 'utilities/symbol';
 
 // the rest is co-located with the HTML "views" (src/theme/views)
 @import '../views/**/*.scss';
+@import '../js/components/**/*.scss';

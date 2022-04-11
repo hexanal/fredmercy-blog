@@ -7,7 +7,36 @@ i18n:
   fr: '/fr'
 ---
 
-## news
+`april 11, 2022` / `12:02pm`
+
+Hey! Hope you're doing fine today. Personally, I'm fighting a mother~~fuck~~er of a cold which I **can't wait** to *K.O.*
+
+After that, homie's gotta take a break, you know? Take a little breather, relax, *recuperate*.
+
+Other:
+
+* I updated the [links](/links) page with more bull~~shit~~.
+* Added new themes:
+  * <a href="#theme-nova" data-component="emit" data-event="SET_THEME" data-event-payload="nova" data-transition="none">nova</a> & <a href="#theme-hypernova" data-component="emit" data-event="SET_THEME" data-event-payload="hypernova" data-transition="none">hypernova</a>, its dark version
+  * <a href="#theme-dim" data-component="emit" data-event="SET_THEME" data-event-payload="dim" data-transition="none">Dim</a>, not an [*accessible*](https://www.wikiwand.com/en/Web_accessibility) theme, but one to use while reading in *very low light* maybe!
+
+### menu ->
+
+* [random links & thoughts](/links)
+* [my resume](/resume)
+* [about this website](/about)
+* [about me](/about-me)
+* [me on twitter.com](https://twitter.com/hexanal)
+* [me on bandcamp.com](https://bandcamp.com/hexanal)
+* <a href="/help" data-component="emit" data-event="SHOW_BOX_HELP" data-transition="none">help</a>
+* *[ce site, en français (French version of the website)](/fr)*
+* previous updates / temporary archive:
+
+<div
+  data-component="drawer"
+  data-label="📁 open archive"
+  data-close-label="📂 close archive"
+>
 
 `march 24, 2022` / `9:08pm`
 
@@ -28,20 +57,8 @@ Stay safe out there.
 
 —fred
 
-~~
+---
 
 `february 8, 2022` / `8:20pm` [...] —fred
 
-~~
-
-## links
-
-* [about this website](/about)
-* [about me](/about-me)
-* [my resume](/resume)
-* [random links & thoughts](/links)
-* [help](/help)
-* [on twitter.com](https://twitter.com/hexanal)
-* [on bandcamp.com](https://bandcamp.com/hexanal)
-* *[ce site, en français (French version of the website)](/fr)*
-
+</div>

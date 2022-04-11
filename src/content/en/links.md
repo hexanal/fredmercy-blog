@@ -6,19 +6,21 @@ aliases:
   - /shoutouts
   - /bookmarks
   - /now
+updated: april 11, 2022
 ---
 
-## things I'm into lately
+### gaming
 
-1. not reading the news no mo'!
-    - because of the abursdity of today's societal _vibe_
-    - it's bringing me down
-2. [MARCH2022](https://open.spotify.com/playlist/0HtaHoUbcORjumElFJK8ul?si=4c1664f09bd54320)
-    - this month's personal playlist *(uncurated recent discoveries)*
-    - still oscillating between hip-hop and psych
-3. [Deep Ecology](https://www.wikiwand.com/en/Deep_ecology)
-    - still sorta touched by this philosophy...
-4. [SSRI pills](https://en.wikipedia.org/wiki/Selective_serotonin_reuptake_inhibitor)
-    - hopefully they'll work their magic
+* [Escape from Tarkov](https://www.wikiwand.com/en/Escape_from_Tarkov)
+    - watched a ton of videos on youtube of “raids”
+* [Neurovoider](http://neurovoider.com/)
+    - *really enjoyed* this one! (on PS4)
+
+---
+
+### blabbering
+
+* Lately I've been commuting/driving to & from the clinic so many times... That's what kids'll do to you!
+* I'm very fortunate not to have to drive everywhere I need to go; I'm grateful because driving in the city and owning a car kind of *sucks*, I think.
 
 <a href="/" class="button"><- homepage</a>
