@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   height: 0;
+  top: 1rem;
   border-left: 2px solid var(--color-secondary);
   background-color: rgba(0, 0, 0, 0.01);
   border-radius: 0 0.75rem 0.75rem 0;
@@ -17,11 +18,8 @@
 }
 
 .drawer__btn {
-  position: relative;
+  position: sticky;
   z-index: 2;
+  top: 1rem;
   transition: border-radius 200ms ease-out;
-
-  .state-drawer-expand & {
-    border-radius: 0 0 0.75rem 0.75rem;
-  }
 }

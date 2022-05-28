@@ -2,7 +2,7 @@ import moduler from '../tools/moduler.js'
 import events from '../tools/events.js'
 import rainbow from '../tools/rainbow.js'
 
-const TRANSITION_DURATION = 400;
+const TRANSITION_DURATION = 600;
 
 rainbow()
 

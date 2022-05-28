@@ -73,8 +73,8 @@ resume:
         description: Frontend web development. HTML, CSS, JS (NodeJS, React, ThreeJS),
           PHP
         extra:
-        - label: toutgarni.com
-          href: https://toutgarni.com
+        - label: toutgarni.telequebec.tv
+          href: http://toutgarni.telequebec.tv/
           description: main website, and first two episodes
       - id: kffein
         title: sep. 2015 — june 2016

@@ -1,6 +1,9 @@
 .footer {
-  margin: 2.5rem 0;
+  margin: 5rem 0 2.5rem;
   font-size: 0.9rem;
+  text-align: right;
+  transform-origin: 100% 0%;
+  transform: rotate(2deg);
 
   svg {
     width: 1em;

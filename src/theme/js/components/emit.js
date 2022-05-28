@@ -5,6 +5,7 @@ export default function({element}) {
 
   element.addEventListener('click', e => {
     e.preventDefault()
+    console.log('clicked')
     events.dispatch( event, eventPayload )
   })
 }

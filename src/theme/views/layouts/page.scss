@@ -1,8 +1,9 @@
-body > main {
+.page {
   max-width: var(--site-width);
+  margin: 0 0 0 auto;
+  background-color: var(--color-bg);
 }
 
 .page__contents {
   transform-origin: top center;
-  padding-bottom: 5rem;
 }

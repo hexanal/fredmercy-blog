@@ -28,9 +28,9 @@ export default function({ element }) {
     element.innerHTML = ''
 
     element.classList.add('drawer')
+    element.appendChild( state.toggler )
     element.appendChild( state.heightContainer )
     state.heightContainer.appendChild( state.wrap )
-    element.appendChild( state.toggler )
 
     focuser(state.expanded, state.wrap)
 
