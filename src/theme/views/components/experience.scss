@@ -1,52 +1,11 @@
-@media (min-width: 700px) {
 .experience {
-display: flex;
-align-items: start;
-justify-content: space-between;
-}}
+    + .experience {
+        margin-top: 2rem;
+    }
 
-.experience
-+ .experience {
-margin-top: 2rem;
+    small {
+        display: block;
+        color: var(--color-secondary);
+        margin-top: 0.2rem;
+    }
 }
-
-.experience__period
-h2 {
-display: inline-block;
-margin: 0;
-font-size: 1em;
-line-height: 1.35;
-font-weight: 400;
-font-style: italic;
-text-align: left;
-}
-
-@media (min-width: 700px) {
-.experience__period {
-margin-bottom: 1rem;
-flex-shrink: 0;
-width: 30%;
-text-align: right;
-}}
-
-.experience__details {
-margin-bottom: 5rem;
-
-@media (min-width: 700px) {
-flex-shrink: 0;
-width: 70%;
-margin-bottom: 2rem;
-padding-left: 2rem;
-}
-
-@media (min-width: $mq-large) {
-padding-left: 5rem;
-}}
-
-.experience__description { margin-top: 1rem; }
-
-.content .experience__more { margin-top: 1rem; }
-
-.experience__website + .experience__website { margin-top: 0.25rem; }
-
-.experience__website small { display: block; color: var(--color-secondary); }

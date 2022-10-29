@@ -15,11 +15,14 @@ resume:
         company: Folklore (URBANIA)
         location: Montreal, Canada
         url: https://folkloreinc.ca/
-        description: Frontend web development
+        description: Frontend web development (react/animations/maintenance/refactoring/highly dynamic tailor-made websites)
         extra:
         - label: Festival du Nouveau Cinéma
           href: https://nouveaucinema.ca
-          description: frontend development
+          description: frontend development + maintenance work on each year's event
+        - label: Micromag
+          href: https://urbania.ca/sujets/micromag
+          description: frontend development, transitions/animations
       - id: cossette
         title: oct. 2019 — feb. 2021
         company: Cossette
@@ -122,7 +125,7 @@ resume:
       - id: tech
         title: technical
         lines:
-        - Proficient with most of the popular creative tools (Sketch, Photoshop, Illustrator,
+        - Proficient with most of the popular creative tools *(Sketch, Photoshop, Illustrator,
           Audition, Premiere, etc.)
         - Extensive knowledge of most web development tools (Webpack, Git, etc.), techniques
           (BEM, OOCSS, web accessibility, etc.) and libraries (React/Redux, ThreeJS, lodash,

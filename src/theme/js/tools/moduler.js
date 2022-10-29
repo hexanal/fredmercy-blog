@@ -29,7 +29,7 @@ const moduler = {
 
     import(`../components/${ moduleId }.js`)
       .then( m => {
-        console.log( 'bop', { element, moduleId , m } )
+        // console.log( 'bop', { element, moduleId , m } )
         m.default({ element, children })
       })
       .catch( err => {
